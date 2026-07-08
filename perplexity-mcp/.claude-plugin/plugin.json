@@ -1,0 +1,21 @@
+{
+  "name": "perplexity-mcp",
+  "description": "Connect Claude Code to Perplexity's search, ask, research, and reasoning tools via the Model Context Protocol.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Varia"
+  },
+  "homepage": "https://docs.perplexity.ai/guides/mcp-server",
+  "repository": "https://github.com/perplexityai/modelcontextprotocol",
+  "license": "MIT",
+  "keywords": ["perplexity", "search", "mcp", "research"],
+  "userConfig": {
+    "perplexity_api_key": {
+      "type": "string",
+      "title": "Perplexity API key",
+      "description": "API key from the Perplexity API Portal (console.perplexity.ai)",
+      "sensitive": true,
+      "required": true
+    }
+  }
+}

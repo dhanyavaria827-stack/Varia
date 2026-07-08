@@ -1,0 +1,13 @@
+{
+  "name": "varia",
+  "owner": {
+    "name": "Varia"
+  },
+  "plugins": [
+    {
+      "name": "perplexity-mcp",
+      "source": "./perplexity-mcp",
+      "description": "Connect Claude Code to Perplexity's search, ask, research, and reasoning tools via MCP."
+    }
+  ]
+}

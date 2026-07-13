@@ -32,7 +32,7 @@ export function Contact() {
       <div className="mt-12 grid gap-8 lg:grid-cols-5">
         <Reveal className="lg:col-span-2">
           <div className="h-full space-y-5 rounded-sm border border-ink/10 bg-parchment-2/40 p-6 shadow-card">
-            <ContactRow icon={Mail} label="Email" value="hello@gurukulam.app" />
+            <ContactRow icon={Mail} label="Email" value="Gurukulam941@Gmail.com" href="mailto:Gurukulam941@Gmail.com" />
             <ContactRow icon={Phone} label="Phone" value="+91 98765 43210" />
             <ContactRow icon={MapPin} label="Location" value="Surat, Gujarat, India" />
           </div>
@@ -126,10 +126,12 @@ function ContactRow({
   icon: Icon,
   label,
   value,
+  href,
 }: {
   icon: typeof Mail;
   label: string;
   value: string;
+  href?: string;
 }) {
   return (
     <div className="flex items-start gap-3">
@@ -140,7 +142,13 @@ function ContactRow({
         <div className="text-xs font-medium uppercase tracking-wide text-ink-soft">
           {label}
         </div>
-        <div className="text-sm font-medium text-ink">{value}</div>
+        {href ? (
+          <a href={href} className="text-sm font-medium text-ink transition hover:text-camel-600">
+            {value}
+          </a>
+        ) : (
+          <div className="text-sm font-medium text-ink">{value}</div>
+        )}
       </div>
     </div>
   );

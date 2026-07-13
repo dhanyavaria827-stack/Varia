@@ -44,7 +44,12 @@ export function Footer() {
         <div>
           <h3 className="text-xs font-semibold uppercase tracking-[0.14em] text-ink">Get in touch</h3>
           <ul className="mt-3 space-y-2.5 text-sm text-ink-soft">
-            <li className="flex items-center gap-2"><Mail size={15} /> hello@gurukulam.app</li>
+            <li className="flex items-center gap-2">
+              <Mail size={15} />
+              <a href="mailto:Gurukulam941@Gmail.com" className="transition hover:text-camel-600">
+                Gurukulam941@Gmail.com
+              </a>
+            </li>
             <li className="flex items-center gap-2"><Phone size={15} /> +91 98765 43210</li>
             <li className="flex items-center gap-2"><MapPin size={15} /> Surat, Gujarat, India</li>
           </ul>

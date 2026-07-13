@@ -1,0 +1,118 @@
+import { motion } from "framer-motion";
+import { CalendarHeart } from "lucide-react";
+import { Reveal, RevealStagger, staggerItem } from "@/components/Reveal";
+import { SwapTabs } from "@/components/SwapTabs";
+import { Gallery } from "@/components/Gallery";
+import { ARTS, FESTIVALS, DAILY_RHYTHM } from "@/data/content";
+import photoPottery from "@/assets/gallery-pottery.jpg";
+import photoSand from "@/assets/gallery-sand.jpg";
+import photoStudent from "@/assets/gallery-student.jpg";
+
+const PHOTOS = [
+  { src: photoPottery, caption: "Craft, learnt by hand", rotate: -3 },
+  { src: photoSand, caption: "First letters, traced in sand", rotate: 2 },
+  { src: photoStudent, caption: "Seated cross-legged, at practice", rotate: -2 },
+];
+
+export function Life() {
+  return (
+    <div className="mx-auto max-w-4xl px-5 py-16">
+      <Reveal className="text-center">
+        <span className="text-xs font-semibold uppercase tracking-[0.2em] text-camel-600 dark:text-brass-300">
+          Life & arts
+        </span>
+        <h1 className="mt-3 font-display text-4xl font-medium text-ink">
+          Every afternoon, a different craft
+        </h1>
+        <p className="mx-auto mt-4 max-w-xl text-ink-soft">
+          Kalavatsav 2.0, Gurukulam's cultural showcase at Sanjeevkumar
+          Auditorium, drew wide praise — a glimpse of what fills the
+          afternoons here.
+        </p>
+      </Reveal>
+
+      {/* Glimpses */}
+      <div className="mt-14">
+        <Gallery photos={PHOTOS} />
+      </div>
+
+      {/* Arts swap tabs */}
+      <div id="arts" className="mt-20 scroll-mt-24">
+        <SwapTabs
+          tabs={ARTS.map((a) => ({
+            id: a.id,
+            label: a.name,
+            content: (
+              <div className="rounded-sm border border-ink/10 bg-parchment-2/40 p-8">
+                <div className="flex flex-wrap justify-center gap-2.5">
+                  {a.items.map((item) => (
+                    <span
+                      key={item}
+                      className="rounded-full border border-camel-500/30 bg-parchment px-4 py-2 text-sm text-ink-soft"
+                    >
+                      {item}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            ),
+          }))}
+        />
+      </div>
+
+      {/* Daily rhythm recap */}
+      <div className="mt-24">
+        <Reveal className="text-center">
+          <span className="text-xs font-semibold uppercase tracking-[0.2em] text-camel-600 dark:text-brass-300">
+            Structure
+          </span>
+          <h2 className="mt-3 font-display text-3xl font-medium text-ink">
+            The shape of a day
+          </h2>
+        </Reveal>
+
+        <RevealStagger className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {DAILY_RHYTHM.map((r) => (
+            <motion.div
+              key={r.time}
+              variants={staggerItem}
+              className="rounded-sm border border-ink/10 bg-parchment p-5 text-center shadow-card"
+            >
+              <div className="font-display text-lg font-medium text-camel-700 dark:text-brass-300">
+                {r.time}
+              </div>
+              <div className="mt-1 text-sm font-medium text-ink">{r.title}</div>
+              <p className="mt-1 text-xs leading-relaxed text-ink-soft">{r.desc}</p>
+            </motion.div>
+          ))}
+        </RevealStagger>
+      </div>
+
+      {/* Festivals */}
+      <div className="mt-24">
+        <Reveal className="text-center">
+          <span className="text-xs font-semibold uppercase tracking-[0.2em] text-camel-600 dark:text-brass-300">
+            Observed together
+          </span>
+          <h2 className="mt-3 font-display text-3xl font-medium text-ink">
+            Festivals & holidays
+          </h2>
+        </Reveal>
+
+        <RevealStagger className="mt-10 grid gap-4 sm:grid-cols-3">
+          {FESTIVALS.map((f) => (
+            <motion.div
+              key={f.name}
+              variants={staggerItem}
+              className="rounded-sm border border-ink/10 bg-parchment-2/40 p-6 text-center"
+            >
+              <CalendarHeart className="mx-auto text-camel-600 dark:text-brass-300" size={20} />
+              <h3 className="mt-3 font-display text-lg font-medium text-ink">{f.name}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-ink-soft">{f.desc}</p>
+            </motion.div>
+          ))}
+        </RevealStagger>
+      </div>
+    </div>
+  );
+}

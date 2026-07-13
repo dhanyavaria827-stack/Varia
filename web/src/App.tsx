@@ -6,8 +6,8 @@ import { PageTransition } from "@/components/PageTransition";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import { Home } from "@/pages/Home";
 import { About } from "@/pages/About";
-import { Programs } from "@/pages/Programs";
-import { Gurus } from "@/pages/Gurus";
+import { Academics } from "@/pages/Academics";
+import { Life } from "@/pages/Life";
 import { Admissions } from "@/pages/Admissions";
 import { Contact } from "@/pages/Contact";
 import { NotFound } from "@/pages/NotFound";
@@ -24,8 +24,8 @@ function App() {
           <Routes location={location}>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
-            <Route path="/programs" element={<Programs />} />
-            <Route path="/gurus" element={<Gurus />} />
+            <Route path="/academics" element={<Academics />} />
+            <Route path="/life" element={<Life />} />
             <Route path="/admissions" element={<Admissions />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="*" element={<NotFound />} />

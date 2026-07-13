@@ -1,134 +1,121 @@
 import { motion } from "framer-motion";
-import { HeartHandshake, BookMarked, Users2, Compass, Sunrise, Leaf } from "lucide-react";
+import { CheckCircle2 } from "lucide-react";
 import { Reveal, RevealStagger, staggerItem } from "@/components/Reveal";
-
-const VALUES = [
-  {
-    icon: BookMarked,
-    title: "Guru-Shishya Parampara",
-    desc: "Knowledge is transmitted directly from teacher to student — through presence, question and practice, not just textbooks.",
-  },
-  {
-    icon: Compass,
-    title: "Discipline as freedom",
-    desc: "A structured daily rhythm — study, seva, meditation, rest — gives students the steadiness to grow.",
-  },
-  {
-    icon: Users2,
-    title: "Community living",
-    desc: "Students and teachers share meals, chores and festivals, learning as much from each other as from any lesson.",
-  },
-  {
-    icon: HeartHandshake,
-    title: "Character before achievement",
-    desc: "We ask not only what a student knows, but who they are becoming.",
-  },
-];
-
-const TIMELINE = [
-  {
-    year: "1999",
-    title: "A single room, a handful of students",
-    desc: "Gurukulam began as a small daily gathering for Vedic chanting and Sanskrit study.",
-  },
-  {
-    year: "2008",
-    title: "The residential campus opens",
-    desc: "A permanent campus allowed students to live and study full-time under resident gurus.",
-  },
-  {
-    year: "2016",
-    title: "Classical arts program added",
-    desc: "Music, dance and traditional crafts joined the curriculum alongside scripture and yoga.",
-  },
-  {
-    year: "Today",
-    title: "A living tradition",
-    desc: "Gurukulam continues to welcome students seeking an education rooted in wisdom and practice.",
-  },
-];
+import { TIMELINE, UNIQUENESS, DRESS_CODE, PHILOSOPHY } from "@/data/content";
 
 export function About() {
   return (
     <div className="px-5 py-16">
       <Reveal className="mx-auto max-w-3xl text-center">
-        <span className="text-xs font-semibold uppercase tracking-[0.2em] text-saffron-600 dark:text-saffron-300">
+        <span className="text-xs font-semibold uppercase tracking-[0.2em] text-camel-600 dark:text-brass-300">
           Our story
         </span>
-        <h1 className="mt-3 font-serif text-4xl font-semibold text-ink dark:text-white">
-          A tradition older than any of us
+        <h1 className="mt-3 font-display text-4xl font-medium text-ink">
+          Five children, and a shared conviction
         </h1>
-        <p className="mx-auto mt-4 max-w-2xl text-lg leading-relaxed text-ink-soft dark:text-indigo-200">
-          Gurukulam takes its name from the ancient Indian gurukul — a home where
-          students lived alongside their teacher, learning not from a syllabus but
-          from a life shared in common. We carry that same spirit forward today.
+        <p className="mx-auto mt-4 max-w-2xl text-lg leading-relaxed text-ink-soft">
+          A handful of thoughtful parents in Surat believed their children
+          needed more than a syllabus — they needed sanskar. In 2004, that
+          conviction became Gurukulam.
         </p>
       </Reveal>
 
-      <RevealStagger className="mx-auto mt-14 grid max-w-5xl gap-6 sm:grid-cols-2">
-        {VALUES.map((v) => (
-          <motion.div
-            key={v.title}
-            variants={staggerItem}
-            className="rounded-2xl border border-ink/10 bg-white/70 p-6 shadow-card dark:border-white/10 dark:bg-white/5"
-          >
-            <div className="grid h-11 w-11 place-items-center rounded-full bg-indigo-50 text-indigo-600 dark:bg-white/10 dark:text-indigo-200">
-              <v.icon size={19} />
-            </div>
-            <h3 className="mt-4 font-serif text-lg font-semibold text-ink dark:text-white">
-              {v.title}
-            </h3>
-            <p className="mt-2 text-sm leading-relaxed text-ink-soft dark:text-indigo-200">
-              {v.desc}
-            </p>
-          </motion.div>
-        ))}
-      </RevealStagger>
-
       {/* Timeline */}
-      <div className="mx-auto mt-24 max-w-3xl">
-        <Reveal className="text-center">
-          <h2 className="font-serif text-3xl font-semibold text-ink dark:text-white">
-            Our journey
-          </h2>
-        </Reveal>
-
-        <div className="relative mt-12 space-y-10 border-l-2 border-dashed border-saffron-300/60 pl-8 dark:border-indigo-500/40">
+      <div className="mx-auto mt-16 max-w-3xl">
+        <div className="relative space-y-10 border-l border-brass-500/40 pl-8">
           {TIMELINE.map((t, i) => (
             <Reveal key={t.year} delay={i * 0.05} className="relative">
-              <span className="absolute -left-[41px] grid h-6 w-6 place-items-center rounded-full bg-saffron-500 text-[10px] font-bold text-white shadow-soft">
-                {i + 1}
-              </span>
-              <span className="text-sm font-semibold uppercase tracking-wide text-saffron-600 dark:text-saffron-300">
+              <span className="absolute -left-[37px] top-1 h-3 w-3 rounded-full border-2 border-brass-500 bg-parchment" />
+              <span className="text-sm font-semibold uppercase tracking-wide text-camel-600 dark:text-brass-300">
                 {t.year}
               </span>
-              <h3 className="mt-1 font-serif text-lg font-semibold text-ink dark:text-white">
-                {t.title}
-              </h3>
-              <p className="mt-1 text-sm leading-relaxed text-ink-soft dark:text-indigo-200">
-                {t.desc}
-              </p>
+              <h3 className="mt-1 font-display text-lg font-medium text-ink">{t.title}</h3>
+              <p className="mt-1 max-w-xl text-sm leading-relaxed text-ink-soft">{t.desc}</p>
             </Reveal>
           ))}
         </div>
       </div>
 
-      <Reveal className="mx-auto mt-24 max-w-4xl rounded-3xl bg-gradient-to-br from-saffron-100 to-saffron-50 p-8 text-center dark:from-indigo-700/40 dark:to-indigo-800/40 sm:p-12">
-        <div className="mx-auto grid h-12 w-12 place-items-center rounded-full bg-white text-saffron-600 shadow-soft dark:bg-white/10 dark:text-saffron-300">
-          <Sunrise size={20} />
-        </div>
-        <h2 className="mt-4 font-serif text-2xl font-semibold text-ink dark:text-white">
-          A day at the Gurukulam
-        </h2>
-        <p className="mx-auto mt-3 max-w-2xl text-ink-soft dark:text-indigo-200">
-          Mornings begin before sunrise with meditation and chanting, followed by
-          study, communal chores, classes in the classical arts, and evening
-          satsang. Every part of the day is treated as an opportunity to learn.
-        </p>
-        <div className="mx-auto mt-2 inline-flex items-center gap-1.5 text-sm font-medium text-emerald-700 dark:text-emerald-400">
-          <Leaf size={14} /> Simple living, deep learning
-        </div>
-      </Reveal>
+      {/* Philosophy */}
+      <div id="philosophy" className="mx-auto mt-24 max-w-4xl scroll-mt-24 rounded-sm border border-brass-500/30 bg-parchment-2/50 p-8 text-center sm:p-12">
+        <Reveal>
+          <span className="text-xs font-semibold uppercase tracking-[0.2em] text-camel-600 dark:text-brass-300">
+            The foundation
+          </span>
+          <h2 className="mt-3 font-display text-2xl font-medium text-ink sm:text-3xl">
+            {PHILOSOPHY.eighty} codes for men, {PHILOSOPHY.fiftyFour} for women
+          </h2>
+          <p className="mx-auto mt-4 max-w-2xl text-ink-soft">
+            Gurukulam's curriculum is grounded in the codes of conduct laid
+            down by {PHILOSOPHY.founder} — covering how one speaks, acts and
+            carries oneself, not only what one knows. Bhantar, education, and
+            ghadtar, character-building, are taught as one and the same
+            thing.
+          </p>
+          <p className="mx-auto mt-4 max-w-2xl text-ink-soft">
+            Every gurujan at Gurukulam cooks, cleans and cares for the
+            children as their own — which is why the school calls itself,
+            without ceremony, the <em className="font-display not-italic text-ink">Gurukulam Parivar</em>.
+          </p>
+        </Reveal>
+      </div>
+
+      {/* Uniqueness */}
+      <div className="mx-auto mt-20 max-w-4xl">
+        <Reveal className="text-center">
+          <span className="text-xs font-semibold uppercase tracking-[0.2em] text-camel-600 dark:text-brass-300">
+            What makes it different
+          </span>
+          <h2 className="mt-3 font-display text-3xl font-medium text-ink">
+            Taught at each child's own pace
+          </h2>
+        </Reveal>
+
+        <RevealStagger className="mt-10 grid gap-4 sm:grid-cols-2">
+          {UNIQUENESS.map((u) => (
+            <motion.div
+              key={u}
+              variants={staggerItem}
+              className="flex items-start gap-3 rounded-sm border border-ink/10 bg-parchment p-5 shadow-card"
+            >
+              <CheckCircle2 size={18} className="mt-0.5 shrink-0 text-camel-600 dark:text-brass-300" />
+              <p className="text-sm leading-relaxed text-ink-soft">{u}</p>
+            </motion.div>
+          ))}
+        </RevealStagger>
+      </div>
+
+      {/* Dress code */}
+      <div className="mx-auto mt-20 max-w-3xl text-center">
+        <Reveal>
+          <span className="text-xs font-semibold uppercase tracking-[0.2em] text-camel-600 dark:text-brass-300">
+            Traditional attire
+          </span>
+          <h2 className="mt-3 font-display text-2xl font-medium text-ink">
+            Dressed as we teach
+          </h2>
+          <p className="mx-auto mt-3 max-w-xl text-ink-soft">
+            Footwear is left at the door, and gurujans and students alike
+            dress according to Aryan tradition — seated cross-legged, below
+            the guru, for every period.
+          </p>
+        </Reveal>
+
+        <RevealStagger className="mt-8 grid gap-4 sm:grid-cols-3">
+          {DRESS_CODE.map((d) => (
+            <motion.div
+              key={d.group}
+              variants={staggerItem}
+              className="rounded-sm border border-ink/10 bg-parchment-2/40 p-5"
+            >
+              <div className="text-xs font-semibold uppercase tracking-[0.14em] text-camel-600 dark:text-brass-300">
+                {d.group}
+              </div>
+              <div className="mt-2 font-display text-lg text-ink">{d.attire}</div>
+            </motion.div>
+          ))}
+        </RevealStagger>
+      </div>
     </div>
   );
 }

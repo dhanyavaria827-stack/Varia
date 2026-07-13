@@ -19,26 +19,27 @@ export function Contact() {
   return (
     <div className="mx-auto max-w-5xl px-5 py-16">
       <Reveal className="text-center">
-        <h1 className="font-serif text-4xl font-semibold text-ink dark:text-white">
+        <span className="text-xs font-semibold uppercase tracking-[0.2em] text-camel-600 dark:text-brass-300">
           Get in touch
-        </h1>
-        <p className="mx-auto mt-3 max-w-xl text-ink-soft dark:text-indigo-200">
-          Questions about admissions, our programs, or visiting the campus? We'd
-          love to hear from you.
+        </span>
+        <h1 className="mt-3 font-display text-4xl font-medium text-ink">Contact Gurukulam</h1>
+        <p className="mx-auto mt-3 max-w-xl text-ink-soft">
+          Questions about admissions, a visit, or how to support our search
+          for a larger campus? We'd love to hear from you.
         </p>
       </Reveal>
 
       <div className="mt-12 grid gap-8 lg:grid-cols-5">
         <Reveal className="lg:col-span-2">
-          <div className="h-full space-y-5 rounded-2xl border border-ink/10 bg-white/70 p-6 shadow-card dark:border-white/10 dark:bg-white/5">
+          <div className="h-full space-y-5 rounded-sm border border-ink/10 bg-parchment-2/40 p-6 shadow-card">
             <ContactRow icon={Mail} label="Email" value="hello@gurukulam.app" />
             <ContactRow icon={Phone} label="Phone" value="+91 98765 43210" />
-            <ContactRow icon={MapPin} label="Location" value="Gujarat, India" />
+            <ContactRow icon={MapPin} label="Location" value="Surat, Gujarat, India" />
           </div>
         </Reveal>
 
         <Reveal delay={0.1} className="lg:col-span-3">
-          <div className="relative overflow-hidden rounded-2xl border border-ink/10 bg-white/70 p-6 shadow-card dark:border-white/10 dark:bg-white/5 sm:p-8">
+          <div className="relative overflow-hidden rounded-sm border border-ink/10 bg-parchment-2/40 p-6 shadow-card sm:p-8">
             <AnimatePresence mode="wait">
               {submitted ? (
                 <motion.div
@@ -53,17 +54,17 @@ export function Contact() {
                     animate={{ scale: 1 }}
                     transition={{ type: "spring", stiffness: 260, damping: 16, delay: 0.1 }}
                   >
-                    <CheckCircle2 className="text-emerald-500" size={48} />
+                    <CheckCircle2 className="text-forest-500" size={48} />
                   </motion.div>
-                  <h3 className="mt-4 font-serif text-xl font-semibold text-ink dark:text-white">
+                  <h3 className="mt-4 font-display text-xl font-medium text-ink">
                     Message sent!
                   </h3>
-                  <p className="mt-1 text-sm text-ink-soft dark:text-indigo-200">
-                    Thanks for reaching out — we'll get back to you soon.
+                  <p className="mt-1 text-sm text-ink-soft">
+                    Thanks for reaching out — a gurujan will get back to you soon.
                   </p>
                   <button
                     onClick={() => setSubmitted(false)}
-                    className="mt-6 rounded-full border border-ink/15 px-5 py-2 text-sm font-medium text-ink transition hover:border-saffron-500 hover:text-saffron-700 dark:border-white/15 dark:text-white"
+                    className="mt-6 rounded-sm border border-ink/15 px-5 py-2 text-sm font-medium text-ink transition hover:border-brass-500 hover:text-camel-700"
                   >
                     Send another message
                   </button>
@@ -83,7 +84,7 @@ export function Contact() {
                   </div>
                   <Field label="Subject" name="subject" placeholder="What's this about?" required />
                   <div>
-                    <label className="mb-1.5 block text-sm font-medium text-ink dark:text-white">
+                    <label className="mb-1.5 block text-sm font-medium text-ink">
                       Message
                     </label>
                     <textarea
@@ -91,20 +92,20 @@ export function Contact() {
                       name="message"
                       rows={5}
                       placeholder="How can we help?"
-                      className="w-full rounded-xl border border-ink/15 bg-white/80 px-4 py-3 text-sm text-ink outline-none transition focus:border-saffron-500 dark:border-white/15 dark:bg-white/5 dark:text-white"
+                      className="w-full rounded-sm border border-ink/15 bg-parchment px-4 py-3 text-sm text-ink outline-none transition focus:border-brass-500"
                     />
                   </div>
                   <motion.button
                     whileTap={{ scale: 0.97 }}
                     type="submit"
                     disabled={submitting}
-                    className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-indigo-600 px-6 py-3.5 text-sm font-semibold text-white shadow-soft transition hover:bg-indigo-500 disabled:opacity-70 sm:w-auto"
+                    className="inline-flex w-full items-center justify-center gap-2 rounded-sm bg-camel-600 px-6 py-3.5 text-sm font-medium uppercase tracking-[0.06em] text-camel-50 shadow-soft transition hover:bg-camel-700 disabled:opacity-70 sm:w-auto"
                   >
                     {submitting ? (
                       <motion.span
                         animate={{ rotate: 360 }}
                         transition={{ repeat: Infinity, duration: 0.8, ease: "linear" }}
-                        className="h-4 w-4 rounded-full border-2 border-white/40 border-t-white"
+                        className="h-4 w-4 rounded-full border-2 border-camel-50/40 border-t-camel-50"
                       />
                     ) : (
                       <Send size={15} />
@@ -132,14 +133,14 @@ function ContactRow({
 }) {
   return (
     <div className="flex items-start gap-3">
-      <div className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-saffron-100 text-saffron-700 dark:bg-white/10 dark:text-saffron-300">
+      <div className="grid h-10 w-10 shrink-0 place-items-center rounded-full border border-brass-500/50 text-camel-700 dark:text-brass-300">
         <Icon size={16} />
       </div>
       <div>
-        <div className="text-xs font-medium uppercase tracking-wide text-ink-soft dark:text-indigo-300">
+        <div className="text-xs font-medium uppercase tracking-wide text-ink-soft">
           {label}
         </div>
-        <div className="text-sm font-medium text-ink dark:text-white">{value}</div>
+        <div className="text-sm font-medium text-ink">{value}</div>
       </div>
     </div>
   );
@@ -160,7 +161,7 @@ function Field({
 }) {
   return (
     <div>
-      <label htmlFor={name} className="mb-1.5 block text-sm font-medium text-ink dark:text-white">
+      <label htmlFor={name} className="mb-1.5 block text-sm font-medium text-ink">
         {label}
       </label>
       <input
@@ -169,7 +170,7 @@ function Field({
         type={type}
         required={required}
         placeholder={placeholder}
-        className="w-full rounded-xl border border-ink/15 bg-white/80 px-4 py-3 text-sm text-ink outline-none transition focus:border-saffron-500 dark:border-white/15 dark:bg-white/5 dark:text-white"
+        className="w-full rounded-sm border border-ink/15 bg-parchment px-4 py-3 text-sm text-ink outline-none transition focus:border-brass-500"
       />
     </div>
   );

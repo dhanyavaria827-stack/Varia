@@ -1,0 +1,116 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+@theme {
+  --font-sans: "Poppins", system-ui, "Segoe UI", Roboto, sans-serif;
+  --font-serif: "Fraunces", Georgia, serif;
+
+  --color-cream: #fdf8ef;
+  --color-cream-2: #f7efdc;
+  --color-ink: #241a12;
+  --color-ink-soft: #5c4d3f;
+
+  --color-saffron-50: #fff8ec;
+  --color-saffron-100: #ffedc7;
+  --color-saffron-300: #ffce6b;
+  --color-saffron-500: #f5a524;
+  --color-saffron-600: #db8a12;
+  --color-saffron-700: #b16c0c;
+
+  --color-indigo-50: #eef1fb;
+  --color-indigo-200: #b9c4ea;
+  --color-indigo-500: #2f3c8c;
+  --color-indigo-600: #26306f;
+  --color-indigo-700: #1c2554;
+  --color-indigo-900: #11152f;
+
+  --color-leaf-500: #4a8f5c;
+
+  --shadow-soft: 0 10px 30px -12px rgba(28, 37, 84, 0.25);
+  --shadow-card: 0 4px 18px -6px rgba(28, 37, 84, 0.15);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  color-scheme: light;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --color-cream: #11152f;
+  --color-cream-2: #1a2050;
+  --color-ink: #f3f0e8;
+  --color-ink-soft: #b9c4ea;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  background: var(--color-cream);
+  color: var(--color-ink);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+
+::selection {
+  background: var(--color-saffron-300);
+  color: var(--color-ink);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-saffron-300);
+  border-radius: 999px;
+}
+
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+/* focus ring for accessibility */
+a:focus-visible,
+button:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--color-saffron-500);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-18px) rotate(4deg); }
+}
+
+.animate-float-slow {
+  animation: float-slow 7s ease-in-out infinite;
+}
+
+@keyframes float-slower {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(14px) rotate(-3deg); }
+}
+
+.animate-float-slower {
+  animation: float-slower 9s ease-in-out infinite;
+}
+
+.bg-grain {
+  background-image: radial-gradient(currentColor 1px, transparent 1px);
+  background-size: 18px 18px;
+}

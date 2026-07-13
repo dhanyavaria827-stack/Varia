@@ -146,6 +146,5 @@ export const PHILOSOPHY = {
   eighty: 80,
   fiftyFour: 54,
   founder: "Rushabhdev",
-  tagline: "આજનો બાળ, કાલનો રખેવાળ",
-  taglineTranslation: "Today's child, tomorrow's guardian",
+  tagline: "Today's child, tomorrow's guardian",
 } as const;

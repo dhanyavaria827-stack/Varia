@@ -244,15 +244,6 @@ function Hero() {
       <div className="pointer-events-none absolute inset-0 -z-20 bg-grain opacity-[0.035] text-ink" />
 
       <div className="mx-auto flex max-w-6xl flex-col items-center px-5 pb-20 pt-20 text-center sm:pt-28">
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.5 }}
-          className="mb-7 grid h-16 w-16 place-items-center rounded-full border border-brass-500/60"
-        >
-          <span className="font-display text-2xl text-camel-700 dark:text-brass-300">ॐ</span>
-        </motion.div>
-
         <motion.p
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
@@ -278,14 +269,6 @@ function Hero() {
           className="mt-5 font-display text-xl italic text-camel-700 dark:text-brass-300 sm:text-2xl"
         >
           {PHILOSOPHY.tagline}
-        </motion.p>
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.26 }}
-          className="text-sm uppercase tracking-[0.14em] text-ink-soft"
-        >
-          {PHILOSOPHY.taglineTranslation}
         </motion.p>
 
         <motion.p

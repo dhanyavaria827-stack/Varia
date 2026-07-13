@@ -3,8 +3,8 @@
 @custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
 
 @theme {
-  --font-display: "Bodoni Moda", "Didot", "Times New Roman", serif;
-  --font-body: "EB Garamond", "Cormorant Garamond", Georgia, serif;
+  --font-display: "Cormorant", "Didot", Georgia, serif;
+  --font-body: "Cormorant Garamond", Georgia, serif;
 
   /* parchment / espresso ground */
   --color-parchment: #f2e7d0;

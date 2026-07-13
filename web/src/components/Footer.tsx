@@ -16,8 +16,9 @@ export function Footer() {
             </span>
           </div>
           <p className="mt-3 max-w-xs text-sm leading-relaxed text-ink-soft">
-            આજનો બાળ, કાલનો રખેવાળ — a gurukul-style school in Surat, teaching
-            bhantar (education) with ghadtar (character), since 2004.
+            "Today's child, tomorrow's guardian" — a gurukul-style school in
+            Surat, teaching bhantar (education) with ghadtar (character),
+            since 2004.
           </p>
         </div>
 

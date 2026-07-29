@@ -7,8 +7,10 @@ import { ARTS, FESTIVALS, DAILY_RHYTHM } from "@/data/content";
 import photoPottery from "@/assets/gallery-pottery.jpg";
 import photoSand from "@/assets/gallery-sand.jpg";
 import photoStudent from "@/assets/gallery-student.jpg";
+import photoChalk from "@/assets/gallery-chalk.jpg";
 
 const PHOTOS = [
+  { src: photoChalk, caption: "Desi games, played barefoot", rotate: 2 },
   { src: photoPottery, caption: "Craft, learnt by hand", rotate: -3 },
   { src: photoSand, caption: "First letters, traced in sand", rotate: 2 },
   { src: photoStudent, caption: "Seated cross-legged, at practice", rotate: -2 },

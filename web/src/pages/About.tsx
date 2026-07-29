@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { CheckCircle2 } from "lucide-react";
 import { Reveal, RevealStagger, staggerItem } from "@/components/Reveal";
 import { TIMELINE, UNIQUENESS, DRESS_CODE, PHILOSOPHY } from "@/data/content";
+import photoMealtime from "@/assets/gallery-mealtime.jpg";
 
 export function About() {
   return (
@@ -37,22 +38,32 @@ export function About() {
       </div>
 
       {/* Philosophy */}
-      <div id="philosophy" className="mx-auto mt-24 max-w-4xl scroll-mt-24 rounded-sm border border-brass-500/30 bg-parchment-2/50 p-8 text-center sm:p-12">
-        <Reveal>
+      <div
+        id="philosophy"
+        className="mx-auto mt-24 max-w-5xl scroll-mt-24 overflow-hidden rounded-sm border border-brass-500/30 bg-parchment-2/50 sm:grid sm:grid-cols-5"
+      >
+        <Reveal className="sm:col-span-2">
+          <img
+            src={photoMealtime}
+            alt="A gurujan feeding a young student at Gurukulam"
+            className="h-64 w-full object-cover sm:h-full"
+          />
+        </Reveal>
+        <Reveal delay={0.08} className="p-8 text-center sm:col-span-3 sm:p-10 sm:text-left">
           <span className="text-xs font-semibold uppercase tracking-[0.2em] text-camel-600 dark:text-brass-300">
             The foundation
           </span>
           <h2 className="mt-3 font-display text-2xl font-medium text-ink sm:text-3xl">
             {PHILOSOPHY.eighty} codes for men, {PHILOSOPHY.fiftyFour} for women
           </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-ink-soft">
+          <p className="mx-auto mt-4 max-w-2xl text-ink-soft sm:mx-0">
             Gurukulam's curriculum is grounded in the codes of conduct laid
             down by {PHILOSOPHY.founder} — covering how one speaks, acts and
             carries oneself, not only what one knows. Bhantar, education, and
             ghadtar, character-building, are taught as one and the same
             thing.
           </p>
-          <p className="mx-auto mt-4 max-w-2xl text-ink-soft">
+          <p className="mx-auto mt-4 max-w-2xl text-ink-soft sm:mx-0">
             Every gurujan at Gurukulam cooks, cleans and cares for the
             children as their own — which is why the school calls itself,
             without ceremony, the <em className="font-display not-italic text-ink">Gurukulam Parivar</em>.

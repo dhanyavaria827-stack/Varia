@@ -199,6 +199,19 @@ export function Contact() {
           </div>
         </Reveal>
       </div>
+
+      <Reveal delay={0.15} className="mt-8">
+        <div className="overflow-hidden rounded-sm border border-ink/10 shadow-card">
+          <iframe
+            title="Gurukulam location on Google Maps"
+            src={`https://www.google.com/maps?q=${encodeURIComponent(LOCATION.address)}&output=embed`}
+            className="h-80 w-full grayscale-[0.3] sepia-[0.15] sm:h-96"
+            style={{ border: 0 }}
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          />
+        </div>
+      </Reveal>
     </div>
   );
 }

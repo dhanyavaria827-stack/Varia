@@ -18,7 +18,7 @@ const MotionLink = motion.create(Link);
 
 const PHOTOS = [
   { src: photoChalk, caption: "Desi games, played barefoot", rotate: 2 },
-  { src: photoPottery, caption: "Craft, learnt by hand", rotate: -3 },
+  { src: photoPottery, caption: "Guided, one letter at a time", rotate: -3 },
   { src: photoSand, caption: "First letters, traced in sand", rotate: 2 },
   { src: photoStudent, caption: "Seated cross-legged, at practice", rotate: -2 },
 ];

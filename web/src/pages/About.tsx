@@ -53,7 +53,7 @@ export function About() {
             initial={{ clipPath: "inset(0 0 100% 0)" }}
             whileInView={{ clipPath: "inset(0 0 0% 0)" }}
             viewport={{ once: true, amount: 0.4 }}
-            transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 1.6, ease: [0.16, 1, 0.3, 1] }}
           >
             <img
               src={photoMealtime}

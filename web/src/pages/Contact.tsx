@@ -131,7 +131,7 @@ export function Contact() {
                   <motion.div
                     initial={{ scale: 0 }}
                     animate={{ scale: 1 }}
-                    transition={{ type: "spring", stiffness: 260, damping: 16, delay: 0.1 }}
+                    transition={{ type: "spring", stiffness: 160, damping: 15, delay: 0.15 }}
                   >
                     <CheckCircle2 className="text-forest-500" size={48} />
                   </motion.div>

@@ -1,12 +1,11 @@
 import { Link } from "react-router-dom";
 import type { MouseEvent } from "react";
-import { motion, useMotionTemplate, useMotionValue, useScroll, useTransform } from "framer-motion";
+import { motion, useMotionTemplate, useMotionValue, useSpring } from "framer-motion";
 import { ArrowRight, Languages, Calculator, BookHeart, Palette } from "lucide-react";
 import { Reveal, RevealStagger, staggerItem } from "@/components/Reveal";
 import { FlipStat } from "@/components/FlipStat";
 import { QuoteCarousel } from "@/components/QuoteCarousel";
 import { SwapTabs } from "@/components/SwapTabs";
-import { OrnamentRing } from "@/components/OrnamentRing";
 import { TiltCard } from "@/components/TiltCard";
 import { Magnetic } from "@/components/Magnetic";
 import { SplitText } from "@/components/SplitText";
@@ -53,7 +52,7 @@ export function Home() {
       <Hero />
 
       {/* Stats */}
-      <RevealStagger className="mx-auto grid max-w-4xl grid-cols-2 gap-3 px-5 pb-16 sm:grid-cols-4 sm:gap-4" staggerDelay={0.1}>
+      <RevealStagger className="mx-auto grid max-w-4xl grid-cols-2 gap-3 px-5 pb-16 sm:grid-cols-4 sm:gap-4" staggerDelay={0.18}>
         {STATS.map((s) => (
           <motion.div key={s.label} variants={staggerItem}>
             <FlipStat value={s.value} prefix={"prefix" in s ? s.prefix : undefined} suffix={"suffix" in s ? s.suffix : undefined} label={s.label} />
@@ -245,19 +244,16 @@ function Marquee({ items }: { items: readonly string[] }) {
 }
 
 function Hero() {
-  const { scrollY } = useScroll();
-  const ringY = useTransform(scrollY, [0, 600], [0, 140]);
-  const ringScale = useTransform(scrollY, [0, 600], [1, 1.15]);
-  const ringRotate = useTransform(scrollY, [0, 600], [0, 25]);
-
-  const mouseX = useMotionValue(0);
-  const mouseY = useMotionValue(0);
+  const rawX = useMotionValue(0);
+  const rawY = useMotionValue(0);
+  const mouseX = useSpring(rawX, { stiffness: 55, damping: 20, mass: 0.6 });
+  const mouseY = useSpring(rawY, { stiffness: 55, damping: 20, mass: 0.6 });
   const glow = useMotionTemplate`radial-gradient(480px circle at ${mouseX}px ${mouseY}px, rgba(184,145,47,0.16), transparent 70%)`;
 
   function handleMouseMove(e: MouseEvent<HTMLElement>) {
     const rect = e.currentTarget.getBoundingClientRect();
-    mouseX.set(e.clientX - rect.left);
-    mouseY.set(e.clientY - rect.top);
+    rawX.set(e.clientX - rect.left);
+    rawY.set(e.clientY - rect.top);
   }
 
   return (
@@ -267,41 +263,35 @@ function Hero() {
         style={{ background: glow }}
         className="pointer-events-none absolute inset-0 -z-30"
       />
-      <motion.div
-        style={{ y: ringY, scale: ringScale, rotate: ringRotate }}
-        className="pointer-events-none absolute inset-0 -z-10 flex items-center justify-center text-camel-600 dark:text-brass-500/70"
-      >
-        <OrnamentRing className="h-[560px] w-[560px] opacity-40 sm:h-[720px] sm:w-[720px]" />
-      </motion.div>
       <div className="pointer-events-none absolute inset-0 -z-20 bg-grain opacity-[0.035] text-ink" />
 
       <div className="mx-auto flex max-w-6xl flex-col items-center px-5 pb-20 pt-20 text-center sm:pt-28">
         <motion.p
-          initial={{ opacity: 0, y: 12 }}
+          initial={{ opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.1 }}
+          transition={{ duration: 1, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
           className="text-xs font-semibold uppercase tracking-[0.3em] text-camel-600 dark:text-brass-300"
         >
           Surat, Gujarat · Established 2004
         </motion.p>
 
         <h1 className="mt-5 text-balance font-display text-4xl font-medium leading-[1.1] tracking-tight text-ink [perspective:600px] sm:text-6xl">
-          <SplitText text="Gurukulam" delay={0.15} />
+          <SplitText text="Gurukulam" delay={0.5} stagger={0.09} />
         </h1>
 
         <motion.p
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 22 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.22 }}
+          transition={{ duration: 1, delay: 1.6, ease: [0.16, 1, 0.3, 1] }}
           className="mt-5 font-display text-xl italic text-camel-700 dark:text-brass-300 sm:text-2xl"
         >
           {PHILOSOPHY.tagline}
         </motion.p>
 
         <motion.p
-          initial={{ opacity: 0, y: 24 }}
+          initial={{ opacity: 0, y: 26 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.32 }}
+          transition={{ duration: 1, delay: 2, ease: [0.16, 1, 0.3, 1] }}
           className="mt-6 max-w-2xl text-balance text-lg leading-relaxed text-ink-soft"
         >
           A gurukul-style school where 225 students learn Sanskrit,
@@ -310,9 +300,9 @@ function Hero() {
         </motion.p>
 
         <motion.div
-          initial={{ opacity: 0, y: 24 }}
+          initial={{ opacity: 0, y: 26 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
+          transition={{ duration: 1, delay: 2.4, ease: [0.16, 1, 0.3, 1] }}
           className="mt-9 flex flex-col gap-3 sm:flex-row"
         >
           <Magnetic strength={12}>

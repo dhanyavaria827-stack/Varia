@@ -20,12 +20,12 @@ export function SplitText({
           {word.split("").map((char, ci) => (
             <motion.span
               key={ci}
-              initial={{ opacity: 0, y: "0.6em", rotateX: 40, filter: "blur(6px)" }}
+              initial={{ opacity: 0, y: "0.7em", rotateX: 55, filter: "blur(8px)" }}
               animate={{ opacity: 1, y: 0, rotateX: 0, filter: "blur(0px)" }}
               transition={{
-                duration: 0.6,
+                duration: 0.9,
                 delay: delay + (words.slice(0, wi).join("").length + ci) * stagger,
-                ease: [0.22, 1, 0.36, 1],
+                ease: [0.16, 1, 0.3, 1],
               }}
               style={{ display: "inline-block", transformStyle: "preserve-3d" }}
             >

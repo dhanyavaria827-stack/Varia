@@ -28,7 +28,7 @@ export function SwapTabs({ tabs, className }: { tabs: SwapTab[]; className?: str
               <motion.span
                 layoutId="swap-tab-pill"
                 className="absolute inset-0 rounded-sm bg-camel-600"
-                transition={{ type: "spring", stiffness: 380, damping: 32 }}
+                transition={{ type: "spring", stiffness: 200, damping: 28 }}
               />
             )}
             <span className="relative z-10">{tab.label}</span>
@@ -40,10 +40,10 @@ export function SwapTabs({ tabs, className }: { tabs: SwapTab[]; className?: str
         <AnimatePresence mode="wait">
           <motion.div
             key={activeTab.id}
-            initial={{ opacity: 0, y: 12 }}
+            initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -12 }}
-            transition={{ duration: 0.32, ease: [0.22, 1, 0.36, 1] }}
+            exit={{ opacity: 0, y: -16 }}
+            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           >
             {activeTab.content}
           </motion.div>

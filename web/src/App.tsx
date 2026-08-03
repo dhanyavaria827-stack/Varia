@@ -6,6 +6,7 @@ import { PageTransition } from "@/components/PageTransition";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import { ScrollProgress } from "@/components/ScrollProgress";
 import { BackToTop } from "@/components/BackToTop";
+import { AmbientBackground } from "@/components/AmbientBackground";
 import { Home } from "@/pages/Home";
 import { About } from "@/pages/About";
 import { Academics } from "@/pages/Academics";
@@ -19,6 +20,7 @@ function App() {
 
   return (
     <div className="flex min-h-screen flex-col">
+      <AmbientBackground />
       <ScrollProgress />
       <ScrollToTop />
       <Navbar />

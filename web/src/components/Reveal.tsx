@@ -2,7 +2,7 @@ import { motion, type Variants } from "framer-motion";
 import type { ReactNode } from "react";
 
 const variants: Variants = {
-  hidden: { opacity: 0, y: 28 },
+  hidden: { opacity: 0, y: 36 },
   show: { opacity: 1, y: 0 },
 };
 
@@ -25,7 +25,7 @@ export function Reveal({
       initial="hidden"
       whileInView="show"
       viewport={{ once: true, amount: 0.2 }}
-      transition={{ duration: 0.6, delay, ease: [0.22, 1, 0.36, 1] }}
+      transition={{ duration: 1.1, delay, ease: [0.16, 1, 0.3, 1] }}
     >
       {children}
     </motion.div>
@@ -35,7 +35,7 @@ export function Reveal({
 export function RevealStagger({
   children,
   className,
-  staggerDelay = 0.08,
+  staggerDelay = 0.14,
 }: {
   children: ReactNode;
   className?: string;
@@ -49,7 +49,7 @@ export function RevealStagger({
       viewport={{ once: true, amount: 0.15 }}
       variants={{
         hidden: {},
-        show: { transition: { staggerChildren: staggerDelay } },
+        show: { transition: { staggerChildren: staggerDelay, delayChildren: 0.05 } },
       }}
     >
       {children}
@@ -58,6 +58,6 @@ export function RevealStagger({
 }
 
 export const staggerItem: Variants = {
-  hidden: { opacity: 0, y: 24, scale: 0.97 },
-  show: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] } },
+  hidden: { opacity: 0, y: 30, scale: 0.96 },
+  show: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.9, ease: [0.16, 1, 0.3, 1] } },
 };

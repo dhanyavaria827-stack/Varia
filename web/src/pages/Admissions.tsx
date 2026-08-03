@@ -55,7 +55,7 @@ export function Admissions() {
           initial={{ clipPath: "inset(0 0 100% 0)" }}
           whileInView={{ clipPath: "inset(0 0 0% 0)" }}
           viewport={{ once: true, amount: 0.4 }}
-          transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 1.6, ease: [0.16, 1, 0.3, 1] }}
         >
           <img
             src={photoPortrait}
@@ -94,7 +94,7 @@ export function Admissions() {
                 initial={{ scale: 0, rotate: -45 }}
                 whileInView={{ scale: 1, rotate: 0 }}
                 viewport={{ once: true, amount: 0.8 }}
-                transition={{ type: "spring", stiffness: 400, damping: 16, delay: i * 0.06 + 0.2 }}
+                transition={{ type: "spring", stiffness: 200, damping: 15, delay: i * 0.1 + 0.2 }}
                 className="absolute -top-3 -left-3 grid h-8 w-8 place-items-center rounded-full bg-camel-600 text-xs font-semibold text-camel-50 shadow-soft"
               >
                 {i + 1}

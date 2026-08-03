@@ -7,7 +7,7 @@ export function Timeline({ children, className }: { children: ReactNode; classNa
     target: ref,
     offset: ["start 0.85", "end 0.5"],
   });
-  const scaleY = useSpring(scrollYProgress, { stiffness: 260, damping: 40, mass: 0.3 });
+  const scaleY = useSpring(scrollYProgress, { stiffness: 90, damping: 34, mass: 0.6 });
 
   return (
     <div ref={ref} className={className}>

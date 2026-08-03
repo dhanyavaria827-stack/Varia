@@ -12,7 +12,7 @@ export function Footer() {
     <footer className="border-t border-ink/10 bg-parchment-2/60">
       <RevealStagger
         className="mx-auto grid max-w-6xl gap-10 px-5 py-14 sm:grid-cols-2 lg:grid-cols-4"
-        staggerDelay={0.08}
+        staggerDelay={0.14}
       >
         <motion.div variants={staggerItem}>
           <div className="flex items-center gap-2.5">

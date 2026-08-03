@@ -5,7 +5,7 @@ export function useTilt(strength = 10) {
   const ref = useRef<HTMLDivElement>(null);
   const px = useMotionValue(0);
   const py = useMotionValue(0);
-  const spring = { stiffness: 300, damping: 22, mass: 0.6 };
+  const spring = { stiffness: 140, damping: 20, mass: 1 };
 
   const rotateX = useSpring(useTransform(py, [-0.5, 0.5], [strength, -strength]), spring);
   const rotateY = useSpring(useTransform(px, [-0.5, 0.5], [-strength, strength]), spring);

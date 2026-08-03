@@ -59,8 +59,8 @@ export function Navbar() {
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4">
         <Link to="/" className="group flex items-center gap-2.5">
           <motion.span
-            whileHover={{ rotate: 8 }}
-            transition={{ type: "spring", stiffness: 300, damping: 12 }}
+            whileHover={{ rotate: 10 }}
+            transition={{ type: "spring", stiffness: 160, damping: 14 }}
             className="h-10 w-10 overflow-hidden rounded-full border border-brass-500/60"
           >
             <img src={logo} alt="Gurukulam" className="h-full w-full object-cover" />
@@ -88,7 +88,7 @@ export function Navbar() {
                   <motion.span
                     layoutId="nav-pill"
                     className="absolute inset-x-2 -bottom-0.5 h-[2px] bg-brass-500"
-                    transition={{ type: "spring", stiffness: 400, damping: 32 }}
+                    transition={{ type: "spring", stiffness: 220, damping: 28 }}
                   />
                 )}
                 <span className="relative z-10">{link.label}</span>
@@ -109,7 +109,7 @@ export function Navbar() {
                 initial={{ rotate: -90, opacity: 0 }}
                 animate={{ rotate: 0, opacity: 1 }}
                 exit={{ rotate: 90, opacity: 0 }}
-                transition={{ duration: 0.2 }}
+                transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
                 className="grid place-items-center"
               >
                 {theme === "dark" ? <Sun size={17} /> : <Moon size={17} />}
@@ -142,7 +142,7 @@ export function Navbar() {
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.28, ease: "easeInOut" }}
+            transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
             className="overflow-hidden border-t border-ink/10 bg-parchment/95 backdrop-blur-md dark:border-white/10 md:hidden"
           >
             <div className="flex flex-col gap-1 px-5 py-4">
@@ -151,7 +151,7 @@ export function Navbar() {
                   key={link.to}
                   initial={{ x: -16, opacity: 0 }}
                   animate={{ x: 0, opacity: 1 }}
-                  transition={{ delay: i * 0.05 }}
+                  transition={{ delay: i * 0.08, duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
                 >
                   <Link
                     to={link.to}
@@ -169,7 +169,7 @@ export function Navbar() {
               <motion.div
                 initial={{ x: -16, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
-                transition={{ delay: LINKS.length * 0.05 }}
+                transition={{ delay: LINKS.length * 0.08, duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
               >
                 <Link
                   to="/admissions"

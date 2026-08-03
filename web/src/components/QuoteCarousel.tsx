@@ -21,7 +21,7 @@ export function QuoteCarousel({ quotes }: { quotes: readonly QuoteItem[] }) {
     const id = window.setInterval(() => {
       setDirection(1);
       setIndex((i) => (i + 1) % quotes.length);
-    }, 6500);
+    }, 8000);
     return () => window.clearInterval(id);
   }, [quotes.length]);
 
@@ -44,7 +44,7 @@ export function QuoteCarousel({ quotes }: { quotes: readonly QuoteItem[] }) {
             initial="enter"
             animate="center"
             exit="exit"
-            transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
             className="absolute inset-0"
           >
             <p className="font-display text-xl italic leading-snug text-ink sm:text-2xl">
@@ -70,7 +70,7 @@ export function QuoteCarousel({ quotes }: { quotes: readonly QuoteItem[] }) {
               <motion.span
                 layoutId="quote-dot"
                 className="absolute inset-0 rounded-full bg-camel-600 dark:bg-brass-400"
-                transition={{ type: "spring", stiffness: 400, damping: 30 }}
+                transition={{ type: "spring", stiffness: 220, damping: 26 }}
               />
             )}
           </button>

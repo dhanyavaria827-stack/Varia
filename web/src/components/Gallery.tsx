@@ -15,11 +15,17 @@ function GalleryPhoto({ photo, index }: { photo: Photo; index: number }) {
       ref={ref}
       onMouseMove={onMouseMove}
       onMouseLeave={onMouseLeave}
-      initial={{ opacity: 0, y: 24, rotate: 0 }}
+      initial={{ opacity: 0, y: 32, rotate: 0 }}
       whileInView={{ opacity: 1, y: 0, rotate: photo.rotate }}
       viewport={{ once: true, amount: 0.4 }}
-      whileHover={{ rotate: 0, scale: 1.06, z: 30, zIndex: 10 }}
-      transition={{ duration: 0.55, delay: index * 0.08, ease: [0.22, 1, 0.36, 1] }}
+      whileHover={{
+        rotate: 0,
+        scale: 1.06,
+        z: 30,
+        zIndex: 10,
+        transition: { type: "spring", stiffness: 140, damping: 16 },
+      }}
+      transition={{ duration: 1, delay: index * 0.15, ease: [0.16, 1, 0.3, 1] }}
       className="w-40 shrink-0 border-8 border-parchment bg-parchment p-0 shadow-soft sm:w-48"
       style={{
         boxShadow: "0 10px 30px -10px rgba(36,26,16,0.35)",

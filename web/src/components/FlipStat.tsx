@@ -3,7 +3,7 @@ import { AnimatePresence, motion, useInView } from "framer-motion";
 import { useTilt } from "@/lib/useTilt";
 
 const PLACEHOLDER = "–";
-const REVEAL_INTERVAL = 220;
+const REVEAL_INTERVAL = 420;
 
 function FlipDigit({ char }: { char: string }) {
   return (
@@ -14,7 +14,7 @@ function FlipDigit({ char }: { char: string }) {
           initial={{ rotateX: 70, opacity: 0 }}
           animate={{ rotateX: 0, opacity: 1 }}
           exit={{ rotateX: -70, opacity: 0 }}
-          transition={{ duration: 0.32, ease: "easeOut" }}
+          transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
           className="absolute inset-0 flex items-center justify-center"
         >
           {char}
@@ -58,7 +58,7 @@ export function FlipStat({
       ref={ref}
       onMouseMove={onMouseMove}
       onMouseLeave={onMouseLeave}
-      whileHover={{ z: 14 }}
+      whileHover={{ z: 14, transition: { type: "spring", stiffness: 120, damping: 18 } }}
       style={{ rotateX, rotateY, transformPerspective: 700 }}
       className="rounded-sm border border-camel-500/25 bg-parchment-2/50 px-4 py-6 text-center shadow-card"
     >

@@ -10,7 +10,7 @@ export function OrnamentRing({ className }: { className?: string }) {
       viewBox="0 0 400 400"
       className={className}
       animate={{ rotate: 360 }}
-      transition={{ duration: 220, repeat: Infinity, ease: "linear" }}
+      transition={{ duration: 90, repeat: Infinity, ease: "linear" }}
       aria-hidden="true"
     >
       <circle cx="200" cy="200" r="188" fill="none" stroke="currentColor" strokeWidth="1" opacity="0.35" />

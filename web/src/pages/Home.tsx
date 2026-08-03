@@ -246,9 +246,9 @@ function Marquee({ items }: { items: readonly string[] }) {
 
 function Hero() {
   const { scrollY } = useScroll();
-  const ringY = useTransform(scrollY, [0, 600], [0, 140]);
-  const ringScale = useTransform(scrollY, [0, 600], [1, 1.15]);
-  const ringRotate = useTransform(scrollY, [0, 600], [0, 25]);
+  const ringY = useTransform(scrollY, [0, 600], [0, 220]);
+  const ringScale = useTransform(scrollY, [0, 600], [1, 1.3]);
+  const ringRotate = useTransform(scrollY, [0, 600], [0, 55]);
 
   const rawX = useMotionValue(0);
   const rawY = useMotionValue(0);

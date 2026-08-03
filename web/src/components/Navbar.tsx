@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, type MouseEvent } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X, Moon, Sun } from "lucide-react";
@@ -31,6 +31,21 @@ export function Navbar() {
   useEffect(() => {
     setOpen(false);
   }, [pathname]);
+
+  function handleThemeToggle(e: MouseEvent<HTMLButtonElement>) {
+    const { clientX, clientY } = e;
+    document.documentElement.style.setProperty("--theme-x", `${clientX}px`);
+    document.documentElement.style.setProperty("--theme-y", `${clientY}px`);
+
+    const doc = document as Document & {
+      startViewTransition?: (callback: () => void) => void;
+    };
+    if (doc.startViewTransition) {
+      doc.startViewTransition(() => toggle());
+    } else {
+      toggle();
+    }
+  }
 
   return (
     <header
@@ -85,7 +100,7 @@ export function Navbar() {
         <div className="flex items-center gap-2">
           <button
             aria-label="Toggle color theme"
-            onClick={toggle}
+            onClick={handleThemeToggle}
             className="grid h-10 w-10 place-items-center rounded-full border border-ink/10 text-ink-soft transition hover:border-brass-500 hover:text-camel-600 dark:border-white/10"
           >
             <AnimatePresence mode="wait" initial={false}>

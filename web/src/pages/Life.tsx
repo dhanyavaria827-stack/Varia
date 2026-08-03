@@ -4,6 +4,8 @@ import { InstagramIcon } from "@/components/icons/InstagramIcon";
 import { Reveal, RevealStagger, staggerItem } from "@/components/Reveal";
 import { SwapTabs } from "@/components/SwapTabs";
 import { Gallery } from "@/components/Gallery";
+import { CursorGlow } from "@/components/CursorGlow";
+import { TiltCard } from "@/components/TiltCard";
 import { ARTS, FESTIVALS, DAILY_RHYTHM, SOCIAL } from "@/data/content";
 import photoPottery from "@/assets/gallery-pottery.jpg";
 import photoSand from "@/assets/gallery-sand.jpg";
@@ -20,19 +22,21 @@ const PHOTOS = [
 export function Life() {
   return (
     <div className="mx-auto max-w-4xl px-5 py-16">
-      <Reveal className="text-center">
-        <span className="text-xs font-semibold uppercase tracking-[0.2em] text-camel-600 dark:text-brass-300">
-          Life & arts
-        </span>
-        <h1 className="mt-3 font-display text-4xl font-medium text-ink">
-          Every afternoon, a different craft
-        </h1>
-        <p className="mx-auto mt-4 max-w-xl text-ink-soft">
-          Kalavatsav 2.0, Gurukulam's cultural showcase at Sanjeevkumar
-          Auditorium, drew wide praise — a glimpse of what fills the
-          afternoons here.
-        </p>
-      </Reveal>
+      <CursorGlow className="py-2">
+        <Reveal className="text-center">
+          <span className="text-xs font-semibold uppercase tracking-[0.2em] text-camel-600 dark:text-brass-300">
+            Life & arts
+          </span>
+          <h1 className="mt-3 font-display text-4xl font-medium text-ink">
+            Every afternoon, a different craft
+          </h1>
+          <p className="mx-auto mt-4 max-w-xl text-ink-soft">
+            Kalavatsav 2.0, Gurukulam's cultural showcase at Sanjeevkumar
+            Auditorium, drew wide praise — a glimpse of what fills the
+            afternoons here.
+          </p>
+        </Reveal>
+      </CursorGlow>
 
       {/* Glimpses */}
       <div className="mt-14">
@@ -58,16 +62,23 @@ export function Life() {
             label: a.name,
             content: (
               <div className="rounded-sm border border-ink/10 bg-parchment-2/40 p-8">
-                <div className="flex flex-wrap justify-center gap-2.5">
+                <motion.div
+                  initial="hidden"
+                  animate="show"
+                  variants={{ hidden: {}, show: { transition: { staggerChildren: 0.04 } } }}
+                  className="flex flex-wrap justify-center gap-2.5"
+                >
                   {a.items.map((item) => (
-                    <span
+                    <motion.span
                       key={item}
-                      className="rounded-full border border-camel-500/30 bg-parchment px-4 py-2 text-sm text-ink-soft"
+                      variants={staggerItem}
+                      whileHover={{ scale: 1.08, borderColor: "var(--color-brass-500)" }}
+                      className="rounded-full border border-camel-500/30 bg-parchment px-4 py-2 text-sm text-ink-soft transition-colors"
                     >
                       {item}
-                    </span>
+                    </motion.span>
                   ))}
-                </div>
+                </motion.div>
               </div>
             ),
           }))}
@@ -113,17 +124,20 @@ export function Life() {
           </h2>
         </Reveal>
 
-        <RevealStagger className="mt-10 grid gap-4 sm:grid-cols-3">
+        <RevealStagger className="mt-10 grid gap-4 [perspective:1200px] sm:grid-cols-3">
           {FESTIVALS.map((f) => (
-            <motion.div
+            <TiltCard
               key={f.name}
               variants={staggerItem}
-              className="rounded-sm border border-ink/10 bg-parchment-2/40 p-6 text-center"
+              strength={6}
+              className="group rounded-sm border border-ink/10 bg-parchment-2/40 p-6 text-center"
             >
-              <CalendarHeart className="mx-auto text-camel-600 dark:text-brass-300" size={20} />
+              <motion.div whileHover={{ rotate: 12, scale: 1.15 }} className="inline-block">
+                <CalendarHeart className="mx-auto text-camel-600 dark:text-brass-300" size={20} />
+              </motion.div>
               <h3 className="mt-3 font-display text-lg font-medium text-ink">{f.name}</h3>
               <p className="mt-2 text-sm leading-relaxed text-ink-soft">{f.desc}</p>
-            </motion.div>
+            </TiltCard>
           ))}
         </RevealStagger>
       </div>

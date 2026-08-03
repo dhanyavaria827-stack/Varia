@@ -2,25 +2,28 @@ import { CheckCircle2 } from "lucide-react";
 import { Reveal, RevealStagger, staggerItem } from "@/components/Reveal";
 import { TiltCard } from "@/components/TiltCard";
 import { Timeline } from "@/components/Timeline";
+import { CursorGlow } from "@/components/CursorGlow";
 import { TIMELINE, UNIQUENESS, DRESS_CODE, PHILOSOPHY } from "@/data/content";
 import photoMealtime from "@/assets/gallery-mealtime.jpg";
 
 export function About() {
   return (
     <div className="px-5 py-16">
-      <Reveal className="mx-auto max-w-3xl text-center">
-        <span className="text-xs font-semibold uppercase tracking-[0.2em] text-camel-600 dark:text-brass-300">
-          Our story
-        </span>
-        <h1 className="mt-3 font-display text-4xl font-medium text-ink">
-          Five children, and a shared conviction
-        </h1>
-        <p className="mx-auto mt-4 max-w-2xl text-lg leading-relaxed text-ink-soft">
-          A handful of thoughtful parents in Surat believed their children
-          needed more than a syllabus — they needed sanskar. In 2004, that
-          conviction became Gurukulam.
-        </p>
-      </Reveal>
+      <CursorGlow className="py-2">
+        <Reveal className="mx-auto max-w-3xl text-center">
+          <span className="text-xs font-semibold uppercase tracking-[0.2em] text-camel-600 dark:text-brass-300">
+            Our story
+          </span>
+          <h1 className="mt-3 font-display text-4xl font-medium text-ink">
+            Five children, and a shared conviction
+          </h1>
+          <p className="mx-auto mt-4 max-w-2xl text-lg leading-relaxed text-ink-soft">
+            A handful of thoughtful parents in Surat believed their children
+            needed more than a syllabus — they needed sanskar. In 2004, that
+            conviction became Gurukulam.
+          </p>
+        </Reveal>
+      </CursorGlow>
 
       {/* Timeline */}
       <div className="mx-auto mt-16 max-w-3xl">

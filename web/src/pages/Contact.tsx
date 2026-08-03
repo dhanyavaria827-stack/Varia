@@ -5,6 +5,7 @@ import { InstagramIcon } from "@/components/icons/InstagramIcon";
 import { Reveal } from "@/components/Reveal";
 import { TiltCard } from "@/components/TiltCard";
 import { Magnetic } from "@/components/Magnetic";
+import { CursorGlow } from "@/components/CursorGlow";
 import { CONTACTS, SOCIAL, LOCATION } from "@/data/content";
 import { waLink, telLink } from "@/lib/utils";
 
@@ -38,16 +39,18 @@ export function Contact() {
 
   return (
     <div className="mx-auto max-w-5xl px-5 py-16">
-      <Reveal className="text-center">
-        <span className="text-xs font-semibold uppercase tracking-[0.2em] text-camel-600 dark:text-brass-300">
-          Get in touch
-        </span>
-        <h1 className="mt-3 font-display text-4xl font-medium text-ink">Contact Gurukulam</h1>
-        <p className="mx-auto mt-3 max-w-xl text-ink-soft">
-          Questions about admissions, a visit, or how to support our search
-          for a larger campus? We'd love to hear from you.
-        </p>
-      </Reveal>
+      <CursorGlow className="py-2">
+        <Reveal className="text-center">
+          <span className="text-xs font-semibold uppercase tracking-[0.2em] text-camel-600 dark:text-brass-300">
+            Get in touch
+          </span>
+          <h1 className="mt-3 font-display text-4xl font-medium text-ink">Contact Gurukulam</h1>
+          <p className="mx-auto mt-3 max-w-xl text-ink-soft">
+            Questions about admissions, a visit, or how to support our search
+            for a larger campus? We'd love to hear from you.
+          </p>
+        </Reveal>
+      </CursorGlow>
 
       <div className="mt-12 grid gap-8 lg:grid-cols-5">
         <Reveal className="[perspective:1400px] lg:col-span-2">

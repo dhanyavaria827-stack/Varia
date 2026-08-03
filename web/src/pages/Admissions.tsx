@@ -5,6 +5,7 @@ import { Reveal, RevealStagger, staggerItem } from "@/components/Reveal";
 import { FlipStat } from "@/components/FlipStat";
 import { TiltCard } from "@/components/TiltCard";
 import { Magnetic } from "@/components/Magnetic";
+import { CursorGlow } from "@/components/CursorGlow";
 import { DIVISIONS } from "@/data/content";
 import photoPortrait from "@/assets/gallery-portrait.jpg";
 
@@ -34,16 +35,18 @@ const STEPS = [
 export function Admissions() {
   return (
     <div className="mx-auto max-w-4xl px-5 py-16">
-      <Reveal className="text-center">
-        <span className="text-xs font-semibold uppercase tracking-[0.2em] text-camel-600 dark:text-brass-300">
-          Join us
-        </span>
-        <h1 className="mt-3 font-display text-4xl font-medium text-ink">Admissions</h1>
-        <p className="mx-auto mt-4 max-w-xl text-ink-soft">
-          225 students already learn at Gurukulam, with more families on our
-          waiting list than we currently have room to seat.
-        </p>
-      </Reveal>
+      <CursorGlow className="py-2">
+        <Reveal className="text-center">
+          <span className="text-xs font-semibold uppercase tracking-[0.2em] text-camel-600 dark:text-brass-300">
+            Join us
+          </span>
+          <h1 className="mt-3 font-display text-4xl font-medium text-ink">Admissions</h1>
+          <p className="mx-auto mt-4 max-w-xl text-ink-soft">
+            225 students already learn at Gurukulam, with more families on our
+            waiting list than we currently have room to seat.
+          </p>
+        </Reveal>
+      </CursorGlow>
 
       {/* Photo */}
       <Reveal delay={0.08} className="mx-auto mt-10 max-w-2xl overflow-hidden rounded-sm border border-brass-500/30 [perspective:1400px]">
@@ -87,9 +90,15 @@ export function Admissions() {
         {STEPS.map((s, i) => (
           <Reveal key={s.title} delay={i * 0.06}>
             <TiltCard strength={6} className="relative h-full rounded-sm border border-ink/10 bg-parchment p-6 shadow-card">
-              <span className="absolute -top-3 -left-3 grid h-8 w-8 place-items-center rounded-full bg-camel-600 text-xs font-semibold text-camel-50 shadow-soft">
+              <motion.span
+                initial={{ scale: 0, rotate: -45 }}
+                whileInView={{ scale: 1, rotate: 0 }}
+                viewport={{ once: true, amount: 0.8 }}
+                transition={{ type: "spring", stiffness: 400, damping: 16, delay: i * 0.06 + 0.2 }}
+                className="absolute -top-3 -left-3 grid h-8 w-8 place-items-center rounded-full bg-camel-600 text-xs font-semibold text-camel-50 shadow-soft"
+              >
                 {i + 1}
-              </span>
+              </motion.span>
               <div className="grid h-11 w-11 place-items-center rounded-full border border-brass-500/50 text-camel-700 dark:text-brass-300">
                 <s.icon size={19} />
               </div>

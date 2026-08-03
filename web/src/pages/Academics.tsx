@@ -4,6 +4,7 @@ import { ChevronDown } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
 import { FlipStat } from "@/components/FlipStat";
 import { TiltCard } from "@/components/TiltCard";
+import { CursorGlow } from "@/components/CursorGlow";
 import { SUBJECTS, DIVISIONS } from "@/data/content";
 import { cn } from "@/lib/utils";
 import photoNotebook from "@/assets/gallery-notebook.jpg";
@@ -13,18 +14,20 @@ export function Academics() {
 
   return (
     <div className="mx-auto max-w-4xl px-5 py-16">
-      <Reveal className="text-center">
-        <span className="text-xs font-semibold uppercase tracking-[0.2em] text-camel-600 dark:text-brass-300">
-          Academics
-        </span>
-        <h1 className="mt-3 font-display text-4xl font-medium text-ink">
-          Bhantar, taught at speed
-        </h1>
-        <p className="mx-auto mt-4 max-w-xl text-ink-soft">
-          From Bal Vibhag through Std. 10, every subject is paced to the
-          child — not the calendar.
-        </p>
-      </Reveal>
+      <CursorGlow className="py-2">
+        <Reveal className="text-center">
+          <span className="text-xs font-semibold uppercase tracking-[0.2em] text-camel-600 dark:text-brass-300">
+            Academics
+          </span>
+          <h1 className="mt-3 font-display text-4xl font-medium text-ink">
+            Bhantar, taught at speed
+          </h1>
+          <p className="mx-auto mt-4 max-w-xl text-ink-soft">
+            From Bal Vibhag through Std. 10, every subject is paced to the
+            child — not the calendar.
+          </p>
+        </Reveal>
+      </CursorGlow>
 
       {/* Photo: personal attention */}
       <Reveal delay={0.08} className="mx-auto mt-12 max-w-2xl overflow-hidden rounded-sm border border-brass-500/30 [perspective:1400px]">

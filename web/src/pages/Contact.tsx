@@ -7,6 +7,7 @@ import { CONTACTS, SOCIAL } from "@/data/content";
 import { waLink, telLink } from "@/lib/utils";
 
 const ADMISSIONS_EMAIL = "Gurukulam941@Gmail.com";
+const MAPS_URL = "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent("Gurukulam, Surat, Gujarat, India");
 
 export function Contact() {
   const [submitted, setSubmitted] = useState(false);
@@ -51,7 +52,7 @@ export function Contact() {
         <Reveal className="lg:col-span-2">
           <div className="h-full space-y-5 rounded-sm border border-ink/10 bg-parchment-2/40 p-6 shadow-card">
             <ContactRow icon={Mail} label="Email" value={ADMISSIONS_EMAIL} href={`mailto:${ADMISSIONS_EMAIL}`} />
-            <ContactRow icon={MapPin} label="Location" value="Surat, Gujarat, India" />
+            <ContactRow icon={MapPin} label="Location" value="Surat, Gujarat, India" href={MAPS_URL} external />
 
             <div className="rule-brass" />
 
@@ -203,11 +204,13 @@ function ContactRow({
   label,
   value,
   href,
+  external,
 }: {
   icon: typeof Mail;
   label: string;
   value: string;
   href?: string;
+  external?: boolean;
 }) {
   return (
     <div className="flex items-start gap-3">
@@ -219,7 +222,12 @@ function ContactRow({
           {label}
         </div>
         {href ? (
-          <a href={href} className="text-sm font-medium text-ink transition hover:text-camel-600">
+          <a
+            href={href}
+            target={external ? "_blank" : undefined}
+            rel={external ? "noreferrer" : undefined}
+            className="text-sm font-medium text-ink transition hover:text-camel-600"
+          >
             {value}
           </a>
         ) : (

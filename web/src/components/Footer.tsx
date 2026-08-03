@@ -61,7 +61,17 @@ export function Footer() {
                 </a>
               </li>
             ))}
-            <li className="flex items-center gap-2"><MapPin size={15} /> Surat, Gujarat, India</li>
+            <li className="flex items-center gap-2">
+              <MapPin size={15} />
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=Gurukulam%2C%20Surat%2C%20Gujarat%2C%20India"
+                target="_blank"
+                rel="noreferrer"
+                className="transition hover:text-camel-600"
+              >
+                Surat, Gujarat, India
+              </a>
+            </li>
           </ul>
           <div className="mt-4 flex items-center gap-3">
             <a

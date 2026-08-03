@@ -3,6 +3,7 @@ import { Reveal, RevealStagger, staggerItem } from "@/components/Reveal";
 import { TiltCard } from "@/components/TiltCard";
 import { Timeline } from "@/components/Timeline";
 import { CursorGlow } from "@/components/CursorGlow";
+import { Photo } from "@/components/Photo";
 import { TIMELINE, UNIQUENESS, DRESS_CODE, PHILOSOPHY } from "@/data/content";
 import photoMealtime from "@/assets/gallery-mealtime.jpg";
 
@@ -55,7 +56,7 @@ export function About() {
             viewport={{ once: true, amount: 0.4 }}
             transition={{ duration: 1.6, ease: [0.16, 1, 0.3, 1] }}
           >
-            <img
+            <Photo
               src={photoMealtime}
               alt="A gurujan feeding a young student at Gurukulam"
               className="h-64 w-full object-cover sm:h-full"

@@ -6,6 +6,7 @@ import { FlipStat } from "@/components/FlipStat";
 import { TiltCard } from "@/components/TiltCard";
 import { Magnetic } from "@/components/Magnetic";
 import { CursorGlow } from "@/components/CursorGlow";
+import { Photo } from "@/components/Photo";
 import { DIVISIONS } from "@/data/content";
 import photoPortrait from "@/assets/gallery-portrait.jpg";
 
@@ -57,7 +58,7 @@ export function Admissions() {
           viewport={{ once: true, amount: 0.4 }}
           transition={{ duration: 1.6, ease: [0.16, 1, 0.3, 1] }}
         >
-          <img
+          <Photo
             src={photoPortrait}
             alt="A young student at Gurukulam"
             className="max-h-80 w-full object-cover"

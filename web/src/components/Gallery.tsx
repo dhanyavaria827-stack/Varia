@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { useTilt } from "@/lib/useTilt";
+import { Photo } from "@/components/Photo";
 
 interface Photo {
   src: string;
@@ -35,7 +36,7 @@ function GalleryPhoto({ photo, index }: { photo: Photo; index: number }) {
       }}
     >
       <div className="overflow-hidden">
-        <img
+        <Photo
           src={photo.src}
           alt={photo.caption}
           className="aspect-square w-full object-cover"

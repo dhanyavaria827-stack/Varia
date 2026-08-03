@@ -6,6 +6,7 @@ import { Reveal, staggerItem } from "@/components/Reveal";
 import { FlipStat } from "@/components/FlipStat";
 import { TiltCard } from "@/components/TiltCard";
 import { CursorGlow } from "@/components/CursorGlow";
+import { Photo } from "@/components/Photo";
 import { SUBJECTS, DIVISIONS } from "@/data/content";
 import { cn, slugify } from "@/lib/utils";
 import photoNotebook from "@/assets/gallery-notebook.jpg";
@@ -41,7 +42,7 @@ export function Academics() {
           viewport={{ once: true, amount: 0.4 }}
           transition={{ duration: 1.6, ease: [0.16, 1, 0.3, 1] }}
         >
-          <img
+          <Photo
             src={photoNotebook}
             alt="Gurujans recording each student's progress by hand"
             className="max-h-96 w-full object-cover"

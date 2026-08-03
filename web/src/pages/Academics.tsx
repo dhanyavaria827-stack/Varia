@@ -3,6 +3,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
 import { FlipStat } from "@/components/FlipStat";
+import { TiltCard } from "@/components/TiltCard";
 import { SUBJECTS, DIVISIONS } from "@/data/content";
 import { cn } from "@/lib/utils";
 import photoNotebook from "@/assets/gallery-notebook.jpg";
@@ -26,15 +27,17 @@ export function Academics() {
       </Reveal>
 
       {/* Photo: personal attention */}
-      <Reveal delay={0.08} className="mx-auto mt-12 max-w-2xl overflow-hidden rounded-sm border border-brass-500/30">
-        <img
-          src={photoNotebook}
-          alt="Gurujans recording each student's progress by hand"
-          className="max-h-96 w-full object-cover"
-        />
-        <p className="bg-parchment-2/50 px-5 py-3 text-center font-display text-sm italic text-ink-soft">
-          Every child's progress, tracked by hand
-        </p>
+      <Reveal delay={0.08} className="mx-auto mt-12 max-w-2xl overflow-hidden rounded-sm border border-brass-500/30 [perspective:1400px]">
+        <TiltCard strength={6}>
+          <img
+            src={photoNotebook}
+            alt="Gurujans recording each student's progress by hand"
+            className="max-h-96 w-full object-cover"
+          />
+          <p className="bg-parchment-2/50 px-5 py-3 text-center font-display text-sm italic text-ink-soft">
+            Every child's progress, tracked by hand
+          </p>
+        </TiltCard>
       </Reveal>
 
       {/* Class ratio stats */}
@@ -104,10 +107,11 @@ export function Academics() {
       </div>
 
       {/* Divisions recap */}
-      <div className="mt-20 grid gap-5 sm:grid-cols-2">
+      <div className="mt-20 grid gap-5 [perspective:1200px] sm:grid-cols-2">
         {DIVISIONS.map((d, i) => (
           <Reveal key={d.id} delay={i * 0.06}>
-            <div
+            <TiltCard
+              strength={6}
               className={cn(
                 "h-full rounded-sm border p-6",
                 "border-ink/10 bg-parchment"
@@ -121,7 +125,7 @@ export function Academics() {
                 Age {d.age} · {d.hours}
               </p>
               <p className="mt-3 text-sm leading-relaxed text-ink-soft">{d.desc}</p>
-            </div>
+            </TiltCard>
           </Reveal>
         ))}
       </div>

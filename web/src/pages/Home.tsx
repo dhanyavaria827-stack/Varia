@@ -1,11 +1,12 @@
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowRight, Languages, Calculator, BookHeart, Palette } from "lucide-react";
 import { Reveal, RevealStagger, staggerItem } from "@/components/Reveal";
 import { FlipStat } from "@/components/FlipStat";
 import { QuoteCarousel } from "@/components/QuoteCarousel";
 import { SwapTabs } from "@/components/SwapTabs";
 import { OrnamentRing } from "@/components/OrnamentRing";
+import { TiltCard } from "@/components/TiltCard";
 import {
   STATS,
   DIVISIONS,
@@ -86,12 +87,12 @@ export function Home() {
             </h2>
           </Reveal>
 
-          <RevealStagger className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          <RevealStagger className="mt-12 grid gap-5 [perspective:1200px] sm:grid-cols-2 lg:grid-cols-4">
             {PILLARS.map((p) => (
-              <motion.div key={p.name} variants={staggerItem}>
+              <TiltCard key={p.name} variants={staggerItem} strength={7} className="h-full">
                 <Link
                   to={p.to}
-                  className="group block h-full rounded-sm border border-ink/10 bg-parchment p-6 shadow-card transition hover:-translate-y-1 hover:shadow-soft"
+                  className="group block h-full rounded-sm border border-ink/10 bg-parchment p-6 shadow-card transition-shadow hover:shadow-soft"
                 >
                   <div className="inline-grid h-11 w-11 place-items-center rounded-full border border-brass-500/50 text-camel-700 transition-transform group-hover:scale-110 dark:text-brass-300">
                     <p.icon size={19} />
@@ -103,7 +104,7 @@ export function Home() {
                     <ArrowRight size={14} className="transition-transform group-hover:translate-x-1" />
                   </span>
                 </Link>
-              </motion.div>
+              </TiltCard>
             ))}
           </RevealStagger>
         </div>
@@ -187,26 +188,31 @@ export function Home() {
       </section>
 
       {/* Campus appeal CTA */}
-      <section id="support" className="px-5 py-24">
-        <Reveal className="mx-auto max-w-4xl overflow-hidden rounded-sm border border-brass-500/30 bg-gradient-to-br from-camel-700 via-camel-600 to-camel-700 px-8 py-14 text-center shadow-soft">
-          <span className="text-xs font-semibold uppercase tracking-[0.2em] text-brass-300">
-            Outgrowing our home
-          </span>
-          <h2 className="mt-3 font-display text-3xl font-medium text-camel-50 sm:text-4xl">
-            30–35 children are waiting for a seat
-          </h2>
-          <p className="mx-auto mt-3 max-w-xl text-camel-50/85">
-            Our current premises can't clear a fire-safety NOC to expand, and
-            we've outgrown the space we have. We're searching for a new home
-            for Gurukulam — and would welcome your support.
-          </p>
-          <Link
-            to="/admissions#support"
-            className="mt-8 inline-flex items-center gap-2 rounded-sm bg-brass-500 px-7 py-3.5 text-sm font-medium uppercase tracking-[0.06em] text-camel-700 shadow-soft transition hover:bg-brass-300 active:scale-95"
+      <section id="support" className="px-5 py-24 [perspective:1400px]">
+        <Reveal className="mx-auto max-w-4xl">
+          <TiltCard
+            strength={5}
+            className="overflow-hidden rounded-sm border border-brass-500/30 bg-gradient-to-br from-camel-700 via-camel-600 to-camel-700 px-8 py-14 text-center shadow-soft"
           >
-            See how to help
-            <ArrowRight size={16} />
-          </Link>
+            <span className="text-xs font-semibold uppercase tracking-[0.2em] text-brass-300">
+              Outgrowing our home
+            </span>
+            <h2 className="mt-3 font-display text-3xl font-medium text-camel-50 sm:text-4xl">
+              30–35 children are waiting for a seat
+            </h2>
+            <p className="mx-auto mt-3 max-w-xl text-camel-50/85">
+              Our current premises can't clear a fire-safety NOC to expand, and
+              we've outgrown the space we have. We're searching for a new home
+              for Gurukulam — and would welcome your support.
+            </p>
+            <Link
+              to="/admissions#support"
+              className="mt-8 inline-flex items-center gap-2 rounded-sm bg-brass-500 px-7 py-3.5 text-sm font-medium uppercase tracking-[0.06em] text-camel-700 shadow-soft transition hover:bg-brass-300 active:scale-95"
+            >
+              See how to help
+              <ArrowRight size={16} />
+            </Link>
+          </TiltCard>
         </Reveal>
       </section>
     </>
@@ -236,11 +242,19 @@ function Marquee({ items }: { items: readonly string[] }) {
 }
 
 function Hero() {
+  const { scrollY } = useScroll();
+  const ringY = useTransform(scrollY, [0, 600], [0, 140]);
+  const ringScale = useTransform(scrollY, [0, 600], [1, 1.15]);
+  const ringRotate = useTransform(scrollY, [0, 600], [0, 25]);
+
   return (
     <section className="relative overflow-hidden">
-      <div className="pointer-events-none absolute inset-0 -z-10 flex items-center justify-center text-camel-600 dark:text-brass-500/70">
+      <motion.div
+        style={{ y: ringY, scale: ringScale, rotate: ringRotate }}
+        className="pointer-events-none absolute inset-0 -z-10 flex items-center justify-center text-camel-600 dark:text-brass-500/70"
+      >
         <OrnamentRing className="h-[560px] w-[560px] opacity-40 sm:h-[720px] sm:w-[720px]" />
-      </div>
+      </motion.div>
       <div className="pointer-events-none absolute inset-0 -z-20 bg-grain opacity-[0.035] text-ink" />
 
       <div className="mx-auto flex max-w-6xl flex-col items-center px-5 pb-20 pt-20 text-center sm:pt-28">

@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { ArrowRight, FileText, MessageCircle, Users, CheckCircle2, Home } from "lucide-react";
 import { Reveal, RevealStagger, staggerItem } from "@/components/Reveal";
 import { FlipStat } from "@/components/FlipStat";
+import { TiltCard } from "@/components/TiltCard";
 import { DIVISIONS } from "@/data/content";
 import photoPortrait from "@/assets/gallery-portrait.jpg";
 
@@ -44,22 +45,24 @@ export function Admissions() {
       </Reveal>
 
       {/* Photo */}
-      <Reveal delay={0.08} className="mx-auto mt-10 max-w-2xl overflow-hidden rounded-sm border border-brass-500/30">
-        <img
-          src={photoPortrait}
-          alt="A young student at Gurukulam"
-          className="max-h-80 w-full object-cover"
-        />
-        <p className="bg-parchment-2/50 px-5 py-3 text-center font-display text-sm italic text-ink-soft">
-          Curious, and ready to begin
-        </p>
+      <Reveal delay={0.08} className="mx-auto mt-10 max-w-2xl overflow-hidden rounded-sm border border-brass-500/30 [perspective:1400px]">
+        <TiltCard strength={6}>
+          <img
+            src={photoPortrait}
+            alt="A young student at Gurukulam"
+            className="max-h-80 w-full object-cover"
+          />
+          <p className="bg-parchment-2/50 px-5 py-3 text-center font-display text-sm italic text-ink-soft">
+            Curious, and ready to begin
+          </p>
+        </TiltCard>
       </Reveal>
 
       {/* Divisions */}
-      <div className="mt-12 grid gap-5 sm:grid-cols-2">
+      <div className="mt-12 grid gap-5 [perspective:1200px] sm:grid-cols-2">
         {DIVISIONS.map((d, i) => (
           <Reveal key={d.id} delay={i * 0.06}>
-            <div className="h-full rounded-sm border border-ink/10 bg-parchment-2/40 p-6">
+            <TiltCard strength={6} className="h-full rounded-sm border border-ink/10 bg-parchment-2/40 p-6">
               <span className="text-xs font-semibold uppercase tracking-[0.14em] text-camel-600 dark:text-brass-300">
                 {d.subtitle}
               </span>
@@ -67,16 +70,16 @@ export function Admissions() {
               <p className="mt-1 text-sm text-ink-soft">
                 Age {d.age} · {d.hours}
               </p>
-            </div>
+            </TiltCard>
           </Reveal>
         ))}
       </div>
 
       {/* Steps */}
-      <div className="mt-16 grid gap-5 sm:grid-cols-2">
+      <div className="mt-16 grid gap-5 [perspective:1200px] sm:grid-cols-2">
         {STEPS.map((s, i) => (
           <Reveal key={s.title} delay={i * 0.06}>
-            <div className="relative h-full rounded-sm border border-ink/10 bg-parchment p-6 shadow-card">
+            <TiltCard strength={6} className="relative h-full rounded-sm border border-ink/10 bg-parchment p-6 shadow-card">
               <span className="absolute -top-3 -left-3 grid h-8 w-8 place-items-center rounded-full bg-camel-600 text-xs font-semibold text-camel-50 shadow-soft">
                 {i + 1}
               </span>
@@ -85,7 +88,7 @@ export function Admissions() {
               </div>
               <h3 className="mt-4 font-display text-lg font-medium text-ink">{s.title}</h3>
               <p className="mt-2 text-sm leading-relaxed text-ink-soft">{s.desc}</p>
-            </div>
+            </TiltCard>
           </Reveal>
         ))}
       </div>
@@ -113,23 +116,25 @@ export function Admissions() {
       </Reveal>
 
       {/* Campus appeal */}
-      <Reveal id="support" className="mt-20 scroll-mt-24 rounded-sm border border-brass-500/30 bg-parchment-2/50 p-8 sm:p-12">
-        <span className="text-xs font-semibold uppercase tracking-[0.2em] text-camel-600 dark:text-brass-300">
-          A space to grow into
-        </span>
-        <h2 className="mt-3 font-display text-2xl font-medium text-ink sm:text-3xl">
-          We're looking for a new home
-        </h2>
-        <p className="mx-auto mt-4 max-w-2xl text-ink-soft">
-          Our current premises can't secure the fire-safety NOC needed to
-          expand, and Gurukulam has outgrown the space it has. Right now,
-          30–35 waiting students can't be admitted simply because there isn't
-          room. If you know of a suitable space in Surat, or would like to
-          support the search for one, we'd be glad to hear from you.
-        </p>
-        <div className="mx-auto mt-8 max-w-xs">
-          <FlipStat value={35} prefix="Up to " label="students on our waiting list" />
-        </div>
+      <Reveal id="support" className="mt-20 scroll-mt-24 [perspective:1400px]">
+        <TiltCard strength={5} className="rounded-sm border border-brass-500/30 bg-parchment-2/50 p-8 sm:p-12">
+          <span className="text-xs font-semibold uppercase tracking-[0.2em] text-camel-600 dark:text-brass-300">
+            A space to grow into
+          </span>
+          <h2 className="mt-3 font-display text-2xl font-medium text-ink sm:text-3xl">
+            We're looking for a new home
+          </h2>
+          <p className="mx-auto mt-4 max-w-2xl text-ink-soft">
+            Our current premises can't secure the fire-safety NOC needed to
+            expand, and Gurukulam has outgrown the space it has. Right now,
+            30–35 waiting students can't be admitted simply because there isn't
+            room. If you know of a suitable space in Surat, or would like to
+            support the search for one, we'd be glad to hear from you.
+          </p>
+          <div className="mx-auto mt-8 max-w-xs">
+            <FlipStat value={35} prefix="Up to " label="students on our waiting list" />
+          </div>
+        </TiltCard>
       </Reveal>
 
       {/* CTA */}

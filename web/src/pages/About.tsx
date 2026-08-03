@@ -1,6 +1,6 @@
-import { motion } from "framer-motion";
 import { CheckCircle2 } from "lucide-react";
 import { Reveal, RevealStagger, staggerItem } from "@/components/Reveal";
+import { TiltCard } from "@/components/TiltCard";
 import { TIMELINE, UNIQUENESS, DRESS_CODE, PHILOSOPHY } from "@/data/content";
 import photoMealtime from "@/assets/gallery-mealtime.jpg";
 
@@ -40,14 +40,16 @@ export function About() {
       {/* Philosophy */}
       <div
         id="philosophy"
-        className="mx-auto mt-24 max-w-5xl scroll-mt-24 overflow-hidden rounded-sm border border-brass-500/30 bg-parchment-2/50 sm:grid sm:grid-cols-5"
+        className="mx-auto mt-24 max-w-5xl scroll-mt-24 overflow-hidden rounded-sm border border-brass-500/30 bg-parchment-2/50 [perspective:1600px] sm:grid sm:grid-cols-5"
       >
         <Reveal className="sm:col-span-2">
-          <img
-            src={photoMealtime}
-            alt="A gurujan feeding a young student at Gurukulam"
-            className="h-64 w-full object-cover sm:h-full"
-          />
+          <TiltCard strength={6} className="h-full">
+            <img
+              src={photoMealtime}
+              alt="A gurujan feeding a young student at Gurukulam"
+              className="h-64 w-full object-cover sm:h-full"
+            />
+          </TiltCard>
         </Reveal>
         <Reveal delay={0.08} className="p-8 text-center sm:col-span-3 sm:p-10 sm:text-left">
           <span className="text-xs font-semibold uppercase tracking-[0.2em] text-camel-600 dark:text-brass-300">
@@ -82,16 +84,17 @@ export function About() {
           </h2>
         </Reveal>
 
-        <RevealStagger className="mt-10 grid gap-4 sm:grid-cols-2">
+        <RevealStagger className="mt-10 grid gap-4 [perspective:1200px] sm:grid-cols-2">
           {UNIQUENESS.map((u) => (
-            <motion.div
+            <TiltCard
               key={u}
               variants={staggerItem}
+              strength={6}
               className="flex items-start gap-3 rounded-sm border border-ink/10 bg-parchment p-5 shadow-card"
             >
               <CheckCircle2 size={18} className="mt-0.5 shrink-0 text-camel-600 dark:text-brass-300" />
               <p className="text-sm leading-relaxed text-ink-soft">{u}</p>
-            </motion.div>
+            </TiltCard>
           ))}
         </RevealStagger>
       </div>
@@ -112,18 +115,19 @@ export function About() {
           </p>
         </Reveal>
 
-        <RevealStagger className="mt-8 grid gap-4 sm:grid-cols-3">
+        <RevealStagger className="mt-8 grid gap-4 [perspective:1200px] sm:grid-cols-3">
           {DRESS_CODE.map((d) => (
-            <motion.div
+            <TiltCard
               key={d.group}
               variants={staggerItem}
+              strength={6}
               className="rounded-sm border border-ink/10 bg-parchment-2/40 p-5"
             >
               <div className="text-xs font-semibold uppercase tracking-[0.14em] text-camel-600 dark:text-brass-300">
                 {d.group}
               </div>
               <div className="mt-2 font-display text-lg text-ink">{d.attire}</div>
-            </motion.div>
+            </TiltCard>
           ))}
         </RevealStagger>
       </div>

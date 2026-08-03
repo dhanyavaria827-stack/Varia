@@ -3,6 +3,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Mail, MapPin, Phone, MessageCircle, Send, CheckCircle2 } from "lucide-react";
 import { InstagramIcon } from "@/components/icons/InstagramIcon";
 import { Reveal } from "@/components/Reveal";
+import { TiltCard } from "@/components/TiltCard";
 import { CONTACTS, SOCIAL } from "@/data/content";
 import { waLink, telLink } from "@/lib/utils";
 
@@ -49,8 +50,8 @@ export function Contact() {
       </Reveal>
 
       <div className="mt-12 grid gap-8 lg:grid-cols-5">
-        <Reveal className="lg:col-span-2">
-          <div className="h-full space-y-5 rounded-sm border border-ink/10 bg-parchment-2/40 p-6 shadow-card">
+        <Reveal className="[perspective:1400px] lg:col-span-2">
+          <TiltCard strength={5} className="h-full space-y-5 rounded-sm border border-ink/10 bg-parchment-2/40 p-6 shadow-card">
             <ContactRow icon={Mail} label="Email" value={ADMISSIONS_EMAIL} href={`mailto:${ADMISSIONS_EMAIL}`} />
             <ContactRow icon={MapPin} label="Location" value="Surat, Gujarat, India" href={MAPS_URL} external />
 
@@ -110,7 +111,7 @@ export function Contact() {
                 </a>
               </div>
             </div>
-          </div>
+          </TiltCard>
         </Reveal>
 
         <Reveal delay={0.1} className="lg:col-span-3">

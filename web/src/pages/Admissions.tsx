@@ -4,6 +4,7 @@ import { ArrowRight, FileText, MessageCircle, Users, CheckCircle2, Home } from "
 import { Reveal, RevealStagger, staggerItem } from "@/components/Reveal";
 import { FlipStat } from "@/components/FlipStat";
 import { TiltCard } from "@/components/TiltCard";
+import { Magnetic } from "@/components/Magnetic";
 import { DIVISIONS } from "@/data/content";
 import photoPortrait from "@/assets/gallery-portrait.jpg";
 
@@ -145,13 +146,15 @@ export function Admissions() {
         <p className="mx-auto mt-3 max-w-md text-camel-50/85">
           Reach out and a gurujan will follow up to arrange a conversation.
         </p>
-        <Link
-          to="/contact"
-          className="mt-7 inline-flex items-center gap-2 rounded-sm bg-brass-500 px-7 py-3.5 text-sm font-medium uppercase tracking-[0.06em] text-camel-700 shadow-soft transition hover:bg-brass-300 active:scale-95"
-        >
-          Start a conversation
-          <ArrowRight size={16} />
-        </Link>
+        <Magnetic strength={12} className="mt-7 inline-block">
+          <Link
+            to="/contact"
+            className="inline-flex items-center gap-2 rounded-sm bg-brass-500 px-7 py-3.5 text-sm font-medium uppercase tracking-[0.06em] text-camel-700 shadow-soft transition hover:bg-brass-300 active:scale-95"
+          >
+            Start a conversation
+            <ArrowRight size={16} />
+          </Link>
+        </Magnetic>
       </Reveal>
     </div>
   );

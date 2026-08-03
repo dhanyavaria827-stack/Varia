@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import { motion, useScroll, useTransform } from "framer-motion";
+import type { MouseEvent } from "react";
+import { motion, useMotionTemplate, useMotionValue, useScroll, useTransform } from "framer-motion";
 import { ArrowRight, Languages, Calculator, BookHeart, Palette } from "lucide-react";
 import { Reveal, RevealStagger, staggerItem } from "@/components/Reveal";
 import { FlipStat } from "@/components/FlipStat";
@@ -7,6 +8,7 @@ import { QuoteCarousel } from "@/components/QuoteCarousel";
 import { SwapTabs } from "@/components/SwapTabs";
 import { OrnamentRing } from "@/components/OrnamentRing";
 import { TiltCard } from "@/components/TiltCard";
+import { Magnetic } from "@/components/Magnetic";
 import {
   STATS,
   DIVISIONS,
@@ -205,13 +207,15 @@ export function Home() {
               we've outgrown the space we have. We're searching for a new home
               for Gurukulam — and would welcome your support.
             </p>
-            <Link
-              to="/admissions#support"
-              className="mt-8 inline-flex items-center gap-2 rounded-sm bg-brass-500 px-7 py-3.5 text-sm font-medium uppercase tracking-[0.06em] text-camel-700 shadow-soft transition hover:bg-brass-300 active:scale-95"
-            >
-              See how to help
-              <ArrowRight size={16} />
-            </Link>
+            <Magnetic strength={12} className="mt-8 inline-block">
+              <Link
+                to="/admissions#support"
+                className="inline-flex items-center gap-2 rounded-sm bg-brass-500 px-7 py-3.5 text-sm font-medium uppercase tracking-[0.06em] text-camel-700 shadow-soft transition hover:bg-brass-300 active:scale-95"
+              >
+                See how to help
+                <ArrowRight size={16} />
+              </Link>
+            </Magnetic>
           </TiltCard>
         </Reveal>
       </section>
@@ -247,8 +251,23 @@ function Hero() {
   const ringScale = useTransform(scrollY, [0, 600], [1, 1.15]);
   const ringRotate = useTransform(scrollY, [0, 600], [0, 25]);
 
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+  const glow = useMotionTemplate`radial-gradient(480px circle at ${mouseX}px ${mouseY}px, rgba(184,145,47,0.16), transparent 70%)`;
+
+  function handleMouseMove(e: MouseEvent<HTMLElement>) {
+    const rect = e.currentTarget.getBoundingClientRect();
+    mouseX.set(e.clientX - rect.left);
+    mouseY.set(e.clientY - rect.top);
+  }
+
   return (
-    <section className="relative overflow-hidden">
+    <section onMouseMove={handleMouseMove} className="relative overflow-hidden">
+      <motion.div
+        aria-hidden="true"
+        style={{ background: glow }}
+        className="pointer-events-none absolute inset-0 -z-30"
+      />
       <motion.div
         style={{ y: ringY, scale: ringScale, rotate: ringRotate }}
         className="pointer-events-none absolute inset-0 -z-10 flex items-center justify-center text-camel-600 dark:text-brass-500/70"
@@ -302,19 +321,23 @@ function Hero() {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="mt-9 flex flex-col gap-3 sm:flex-row"
         >
-          <Link
-            to="/admissions"
-            className="group inline-flex items-center justify-center gap-2 rounded-sm bg-camel-600 px-7 py-3.5 text-sm font-medium uppercase tracking-[0.06em] text-camel-50 shadow-soft transition hover:bg-camel-700 active:scale-95"
-          >
-            Enquire about admission
-            <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
-          </Link>
-          <Link
-            to="/about"
-            className="inline-flex items-center justify-center gap-2 rounded-sm border border-ink/15 bg-parchment/60 px-7 py-3.5 text-sm font-medium uppercase tracking-[0.06em] text-ink backdrop-blur transition hover:border-brass-500 hover:text-camel-700 active:scale-95"
-          >
-            Our story
-          </Link>
+          <Magnetic strength={12}>
+            <Link
+              to="/admissions"
+              className="group inline-flex items-center justify-center gap-2 rounded-sm bg-camel-600 px-7 py-3.5 text-sm font-medium uppercase tracking-[0.06em] text-camel-50 shadow-soft transition hover:bg-camel-700 active:scale-95"
+            >
+              Enquire about admission
+              <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
+            </Link>
+          </Magnetic>
+          <Magnetic strength={12}>
+            <Link
+              to="/about"
+              className="inline-flex items-center justify-center gap-2 rounded-sm border border-ink/15 bg-parchment/60 px-7 py-3.5 text-sm font-medium uppercase tracking-[0.06em] text-ink backdrop-blur transition hover:border-brass-500 hover:text-camel-700 active:scale-95"
+            >
+              Our story
+            </Link>
+          </Magnetic>
         </motion.div>
       </div>
     </section>

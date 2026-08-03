@@ -4,6 +4,8 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { PageTransition } from "@/components/PageTransition";
 import { ScrollToTop } from "@/components/ScrollToTop";
+import { ScrollProgress } from "@/components/ScrollProgress";
+import { BackToTop } from "@/components/BackToTop";
 import { Home } from "@/pages/Home";
 import { About } from "@/pages/About";
 import { Academics } from "@/pages/Academics";
@@ -17,6 +19,7 @@ function App() {
 
   return (
     <div className="flex min-h-screen flex-col">
+      <ScrollProgress />
       <ScrollToTop />
       <Navbar />
       <AnimatePresence mode="wait" initial={false}>
@@ -33,6 +36,7 @@ function App() {
         </PageTransition>
       </AnimatePresence>
       <Footer />
+      <BackToTop />
     </div>
   );
 }

@@ -4,6 +4,7 @@ import { Mail, MapPin, Phone, MessageCircle, Send, CheckCircle2 } from "lucide-r
 import { InstagramIcon } from "@/components/icons/InstagramIcon";
 import { Reveal } from "@/components/Reveal";
 import { TiltCard } from "@/components/TiltCard";
+import { Magnetic } from "@/components/Magnetic";
 import { CONTACTS, SOCIAL } from "@/data/content";
 import { waLink, telLink } from "@/lib/utils";
 
@@ -173,23 +174,25 @@ export function Contact() {
                       className="w-full rounded-sm border border-ink/15 bg-parchment px-4 py-3 text-sm text-ink outline-none transition focus:border-brass-500"
                     />
                   </div>
-                  <motion.button
-                    whileTap={{ scale: 0.97 }}
-                    type="submit"
-                    disabled={submitting}
-                    className="inline-flex w-full items-center justify-center gap-2 rounded-sm bg-camel-600 px-6 py-3.5 text-sm font-medium uppercase tracking-[0.06em] text-camel-50 shadow-soft transition hover:bg-camel-700 disabled:opacity-70 sm:w-auto"
-                  >
-                    {submitting ? (
-                      <motion.span
-                        animate={{ rotate: 360 }}
-                        transition={{ repeat: Infinity, duration: 0.8, ease: "linear" }}
-                        className="h-4 w-4 rounded-full border-2 border-camel-50/40 border-t-camel-50"
-                      />
-                    ) : (
-                      <Send size={15} />
-                    )}
-                    {submitting ? "Sending..." : "Send message"}
-                  </motion.button>
+                  <Magnetic strength={8} className="inline-block w-full sm:w-auto">
+                    <motion.button
+                      whileTap={{ scale: 0.97 }}
+                      type="submit"
+                      disabled={submitting}
+                      className="inline-flex w-full items-center justify-center gap-2 rounded-sm bg-camel-600 px-6 py-3.5 text-sm font-medium uppercase tracking-[0.06em] text-camel-50 shadow-soft transition hover:bg-camel-700 disabled:opacity-70 sm:w-auto"
+                    >
+                      {submitting ? (
+                        <motion.span
+                          animate={{ rotate: 360 }}
+                          transition={{ repeat: Infinity, duration: 0.8, ease: "linear" }}
+                          className="h-4 w-4 rounded-full border-2 border-camel-50/40 border-t-camel-50"
+                        />
+                      ) : (
+                        <Send size={15} />
+                      )}
+                      {submitting ? "Sending..." : "Send message"}
+                    </motion.button>
+                  </Magnetic>
                 </motion.form>
               )}
             </AnimatePresence>

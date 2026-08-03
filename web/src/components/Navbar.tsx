@@ -4,6 +4,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X, Moon, Sun } from "lucide-react";
 import { useTheme } from "@/lib/theme";
 import { cn } from "@/lib/utils";
+import { Magnetic } from "@/components/Magnetic";
 import logo from "@/assets/logo-icon.png";
 
 const LINKS = [
@@ -101,12 +102,14 @@ export function Navbar() {
             </AnimatePresence>
           </button>
 
-          <Link
-            to="/admissions"
-            className="hidden rounded-sm bg-camel-600 px-5 py-2.5 text-sm font-medium uppercase tracking-[0.06em] text-camel-50 shadow-soft transition hover:bg-camel-700 active:scale-95 sm:inline-block"
-          >
-            Admissions
-          </Link>
+          <Magnetic strength={10} className="hidden sm:inline-block">
+            <Link
+              to="/admissions"
+              className="inline-block rounded-sm bg-camel-600 px-5 py-2.5 text-sm font-medium uppercase tracking-[0.06em] text-camel-50 shadow-soft transition hover:bg-camel-700 active:scale-95"
+            >
+              Admissions
+            </Link>
+          </Magnetic>
 
           <button
             aria-label="Toggle menu"

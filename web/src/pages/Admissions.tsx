@@ -4,6 +4,7 @@ import { ArrowRight, FileText, MessageCircle, Users, CheckCircle2, Home } from "
 import { Reveal, RevealStagger, staggerItem } from "@/components/Reveal";
 import { FlipStat } from "@/components/FlipStat";
 import { DIVISIONS } from "@/data/content";
+import photoPortrait from "@/assets/gallery-portrait.jpg";
 
 const STEPS = [
   {
@@ -39,6 +40,18 @@ export function Admissions() {
         <p className="mx-auto mt-4 max-w-xl text-ink-soft">
           225 students already learn at Gurukulam, with more families on our
           waiting list than we currently have room to seat.
+        </p>
+      </Reveal>
+
+      {/* Photo */}
+      <Reveal delay={0.08} className="mx-auto mt-10 max-w-2xl overflow-hidden rounded-sm border border-brass-500/30">
+        <img
+          src={photoPortrait}
+          alt="A young student at Gurukulam"
+          className="max-h-80 w-full object-cover"
+        />
+        <p className="bg-parchment-2/50 px-5 py-3 text-center font-display text-sm italic text-ink-soft">
+          Curious, and ready to begin
         </p>
       </Reveal>
 

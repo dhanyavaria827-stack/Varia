@@ -5,6 +5,7 @@ import { Reveal } from "@/components/Reveal";
 import { FlipStat } from "@/components/FlipStat";
 import { SUBJECTS, DIVISIONS } from "@/data/content";
 import { cn } from "@/lib/utils";
+import photoNotebook from "@/assets/gallery-notebook.jpg";
 
 export function Academics() {
   const [open, setOpen] = useState<string | null>(SUBJECTS[0].id);
@@ -21,6 +22,18 @@ export function Academics() {
         <p className="mx-auto mt-4 max-w-xl text-ink-soft">
           From Bal Vibhag through Std. 10, every subject is paced to the
           child — not the calendar.
+        </p>
+      </Reveal>
+
+      {/* Photo: personal attention */}
+      <Reveal delay={0.08} className="mx-auto mt-12 max-w-2xl overflow-hidden rounded-sm border border-brass-500/30">
+        <img
+          src={photoNotebook}
+          alt="Gurujans recording each student's progress by hand"
+          className="max-h-96 w-full object-cover"
+        />
+        <p className="bg-parchment-2/50 px-5 py-3 text-center font-display text-sm italic text-ink-soft">
+          Every child's progress, tracked by hand
         </p>
       </Reveal>
 

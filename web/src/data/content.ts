@@ -160,3 +160,8 @@ export const SOCIAL = {
   instagramBalmandir: "https://www.instagram.com/balmandir_gurukulam/",
   instagramBalmandirLabel: "@balmandir_gurukulam",
 } as const;
+
+export const LOCATION = {
+  address: "D, Third Floor, Agam Arcade, Opposite Jolly Residency, Vesu, Surat - 395007, Gujarat",
+  mapsUrl: "https://jsdl.in/DT-54Y4LZTK",
+} as const;

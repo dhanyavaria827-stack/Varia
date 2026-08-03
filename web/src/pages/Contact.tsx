@@ -5,11 +5,10 @@ import { InstagramIcon } from "@/components/icons/InstagramIcon";
 import { Reveal } from "@/components/Reveal";
 import { TiltCard } from "@/components/TiltCard";
 import { Magnetic } from "@/components/Magnetic";
-import { CONTACTS, SOCIAL } from "@/data/content";
+import { CONTACTS, SOCIAL, LOCATION } from "@/data/content";
 import { waLink, telLink } from "@/lib/utils";
 
 const ADMISSIONS_EMAIL = "Gurukulam941@Gmail.com";
-const MAPS_URL = "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent("Gurukulam, Surat, Gujarat, India");
 
 export function Contact() {
   const [submitted, setSubmitted] = useState(false);
@@ -54,7 +53,7 @@ export function Contact() {
         <Reveal className="[perspective:1400px] lg:col-span-2">
           <TiltCard strength={5} className="h-full space-y-5 rounded-sm border border-ink/10 bg-parchment-2/40 p-6 shadow-card">
             <ContactRow icon={Mail} label="Email" value={ADMISSIONS_EMAIL} href={`mailto:${ADMISSIONS_EMAIL}`} />
-            <ContactRow icon={MapPin} label="Location" value="Surat, Gujarat, India" href={MAPS_URL} external />
+            <ContactRow icon={MapPin} label="Location" value={LOCATION.address} href={LOCATION.mapsUrl} external />
 
             <div className="rule-brass" />
 

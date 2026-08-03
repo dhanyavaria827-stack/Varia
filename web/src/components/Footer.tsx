@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { Mail, MapPin, Phone } from "lucide-react";
 import { InstagramIcon } from "@/components/icons/InstagramIcon";
 import logo from "@/assets/logo-icon.png";
-import { CONTACTS, SOCIAL } from "@/data/content";
+import { CONTACTS, SOCIAL, LOCATION } from "@/data/content";
 import { telLink } from "@/lib/utils";
 
 export function Footer() {
@@ -61,15 +61,15 @@ export function Footer() {
                 </a>
               </li>
             ))}
-            <li className="flex items-center gap-2">
-              <MapPin size={15} />
+            <li className="flex items-start gap-2">
+              <MapPin size={15} className="mt-0.5 shrink-0" />
               <a
-                href="https://www.google.com/maps/search/?api=1&query=Gurukulam%2C%20Surat%2C%20Gujarat%2C%20India"
+                href={LOCATION.mapsUrl}
                 target="_blank"
                 rel="noreferrer"
                 className="transition hover:text-camel-600"
               >
-                Surat, Gujarat, India
+                {LOCATION.address}
               </a>
             </li>
           </ul>
@@ -79,6 +79,7 @@ export function Footer() {
               target="_blank"
               rel="noreferrer"
               aria-label="Gurukulam on Instagram"
+              title="Gurukulam on Instagram"
               className="grid h-8 w-8 place-items-center rounded-full border border-brass-500/50 text-camel-700 transition hover:border-brass-500 hover:text-camel-600 dark:text-brass-300"
             >
               <InstagramIcon size={15} />
@@ -88,6 +89,7 @@ export function Footer() {
               target="_blank"
               rel="noreferrer"
               aria-label="Balmandir Gurukulam on Instagram"
+              title="Balmandir Gurukulam on Instagram"
               className="grid h-8 w-8 place-items-center rounded-full border border-brass-500/50 text-camel-700 transition hover:border-brass-500 hover:text-camel-600 dark:text-brass-300"
             >
               <InstagramIcon size={15} />

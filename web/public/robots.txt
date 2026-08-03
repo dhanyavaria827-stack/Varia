@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://dhanyavaria827-stack.github.io/Varia/sitemap.xml

@@ -3,17 +3,32 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Mail, MapPin, Phone, Send, CheckCircle2 } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
 
+const ADMISSIONS_EMAIL = "Gurukulam941@Gmail.com";
+
 export function Contact() {
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
 
   function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    const data = new FormData(e.currentTarget);
+    const name = String(data.get("name") ?? "");
+    const email = String(data.get("email") ?? "");
+    const subject = String(data.get("subject") ?? "");
+    const message = String(data.get("message") ?? "");
+
+    const mailSubject = `Gurukulam enquiry: ${subject}`;
+    const mailBody = `Name: ${name}\nReply-to email: ${email}\n\n${message}`;
+    const mailtoUrl = `mailto:${ADMISSIONS_EMAIL}?subject=${encodeURIComponent(
+      mailSubject
+    )}&body=${encodeURIComponent(mailBody)}`;
+
     setSubmitting(true);
+    window.location.href = mailtoUrl;
     window.setTimeout(() => {
       setSubmitting(false);
       setSubmitted(true);
-    }, 900);
+    }, 600);
   }
 
   return (
@@ -57,10 +72,12 @@ export function Contact() {
                     <CheckCircle2 className="text-forest-500" size={48} />
                   </motion.div>
                   <h3 className="mt-4 font-display text-xl font-medium text-ink">
-                    Message sent!
+                    Almost there
                   </h3>
-                  <p className="mt-1 text-sm text-ink-soft">
-                    Thanks for reaching out — a gurujan will get back to you soon.
+                  <p className="mx-auto mt-1 max-w-sm text-sm text-ink-soft">
+                    Your email app should have opened with this enquiry
+                    addressed to <strong className="font-semibold text-ink">{ADMISSIONS_EMAIL}</strong>.
+                    Just hit send there to reach Gurukulam.
                   </p>
                   <button
                     onClick={() => setSubmitted(false)}

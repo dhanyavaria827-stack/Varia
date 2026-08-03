@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { CalendarHeart } from "lucide-react";
 import { InstagramIcon } from "@/components/icons/InstagramIcon";
@@ -7,6 +8,9 @@ import { Gallery } from "@/components/Gallery";
 import { CursorGlow } from "@/components/CursorGlow";
 import { TiltCard } from "@/components/TiltCard";
 import { ARTS, FESTIVALS, DAILY_RHYTHM, SOCIAL } from "@/data/content";
+import { slugify } from "@/lib/utils";
+
+const MotionLink = motion.create(Link);
 import photoPottery from "@/assets/gallery-pottery.jpg";
 import photoSand from "@/assets/gallery-sand.jpg";
 import photoStudent from "@/assets/gallery-student.jpg";
@@ -69,14 +73,16 @@ export function Life() {
                   className="flex flex-wrap justify-center gap-2.5"
                 >
                   {a.items.map((item) => (
-                    <motion.span
+                    <MotionLink
                       key={item}
+                      to={`/life/arts/${slugify(item)}`}
                       variants={staggerItem}
                       whileHover={{ scale: 1.08, borderColor: "var(--color-brass-500)" }}
-                      className="rounded-full border border-camel-500/30 bg-parchment px-4 py-2 text-sm text-ink-soft transition-colors"
+                      whileTap={{ scale: 0.96 }}
+                      className="rounded-full border border-camel-500/30 bg-parchment px-4 py-2 text-sm text-ink-soft transition-colors hover:text-ink"
                     >
                       {item}
-                    </motion.span>
+                    </MotionLink>
                   ))}
                 </motion.div>
               </div>

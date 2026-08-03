@@ -52,7 +52,7 @@ export function Navbar() {
       className={cn(
         "sticky top-0 z-50 transition-all duration-300",
         scrolled
-          ? "bg-parchment/85 backdrop-blur-md shadow-[0_1px_0_0_rgba(36,26,16,0.1)]"
+          ? "bg-parchment/85 backdrop-blur-md shadow-[0_12px_28px_-20px_rgba(36,26,16,0.35)]"
           : "bg-transparent"
       )}
     >

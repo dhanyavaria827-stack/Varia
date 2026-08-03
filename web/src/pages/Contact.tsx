@@ -10,6 +10,7 @@ import { CONTACTS, SOCIAL, LOCATION } from "@/data/content";
 import { waLink, telLink } from "@/lib/utils";
 
 const ADMISSIONS_EMAIL = "Gurukulam941@Gmail.com";
+const ENQUIRY_CONTACT = CONTACTS.find((c) => c.name === "Ankita Ben") ?? CONTACTS[0];
 
 export function Contact() {
   const [submitted, setSubmitted] = useState(false);
@@ -23,14 +24,11 @@ export function Contact() {
     const subject = String(data.get("subject") ?? "");
     const message = String(data.get("message") ?? "");
 
-    const mailSubject = `Gurukulam enquiry: ${subject}`;
-    const mailBody = `Name: ${name}\nReply-to email: ${email}\n\n${message}`;
-    const mailtoUrl = `mailto:${ADMISSIONS_EMAIL}?subject=${encodeURIComponent(
-      mailSubject
-    )}&body=${encodeURIComponent(mailBody)}`;
+    const waMessage = `Hello Ankita Ben, I'm ${name} (${email}).\n\nSubject: ${subject}\n\n${message}`;
+    const whatsappUrl = waLink(ENQUIRY_CONTACT.phone, waMessage);
 
     setSubmitting(true);
-    window.location.href = mailtoUrl;
+    window.location.href = whatsappUrl;
     window.setTimeout(() => {
       setSubmitting(false);
       setSubmitted(true);
@@ -139,9 +137,9 @@ export function Contact() {
                     Almost there
                   </h3>
                   <p className="mx-auto mt-1 max-w-sm text-sm text-ink-soft">
-                    Your email app should have opened with this enquiry
-                    addressed to <strong className="font-semibold text-ink">{ADMISSIONS_EMAIL}</strong>.
-                    Just hit send there to reach Gurukulam.
+                    WhatsApp should have opened with this enquiry already
+                    typed out for <strong className="font-semibold text-ink">{ENQUIRY_CONTACT.name}</strong>.
+                    Just tap send there to reach Gurukulam directly.
                   </p>
                   <button
                     onClick={() => setSubmitted(false)}
@@ -192,7 +190,7 @@ export function Contact() {
                       ) : (
                         <Send size={15} />
                       )}
-                      {submitting ? "Sending..." : "Send message"}
+                      {submitting ? "Opening WhatsApp..." : "Send via WhatsApp"}
                     </motion.button>
                   </Magnetic>
                 </motion.form>

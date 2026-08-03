@@ -23,7 +23,7 @@ export function Academics() {
             Bhantar, taught at speed
           </h1>
           <p className="mx-auto mt-4 max-w-xl text-ink-soft">
-            From Bal Vibhag through Std. 10, every subject is paced to the
+            From Bal Vibhag through Std. 12, every subject is paced to the
             child — not the calendar.
           </p>
         </Reveal>

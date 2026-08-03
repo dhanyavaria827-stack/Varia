@@ -37,7 +37,7 @@ const PILLARS = [
     icon: BookHeart,
     name: "Sanskar",
     to: "/about#philosophy",
-    desc: "The 80 and 54 codes of Rushabhdev, lived daily — not memorised for a test.",
+    desc: "The 64 and 72 codes of Rushabhdev, lived daily — not memorised for a test.",
   },
   {
     icon: Palette,
@@ -68,11 +68,11 @@ export function Home() {
             Our foundation
           </span>
           <h2 className="mt-3 text-balance font-display text-2xl font-medium leading-snug text-ink sm:text-3xl">
-            An education built on the {PHILOSOPHY.eighty} codes of conduct for men and{" "}
-            {PHILOSOPHY.fiftyFour} for women, set down by {PHILOSOPHY.founder}.
+            An education built on the {PHILOSOPHY.menCodes} codes of conduct for men and{" "}
+            {PHILOSOPHY.womenCodes} for women, set down by {PHILOSOPHY.founder}.
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-ink-soft">
-            Gurukulam began in 2004 with five children and a simple belief:
+            Gurukulam began in 2004 with nine students and a simple belief:
             that bhantar — education — means little without ghadtar,
             character built through daily practice.
           </p>
@@ -121,7 +121,7 @@ export function Home() {
             Two divisions
           </span>
           <h2 className="mt-3 font-display text-3xl font-medium text-ink">
-            From first steps to Std. 10
+            From first steps to Std. 12
           </h2>
         </Reveal>
 
@@ -205,9 +205,8 @@ export function Home() {
               30–35 children are waiting for a seat
             </h2>
             <p className="mx-auto mt-3 max-w-xl text-camel-50/85">
-              Our current premises can't clear a fire-safety NOC to expand, and
-              we've outgrown the space we have. We're searching for a new home
-              for Gurukulam — and would welcome your support.
+              We've outgrown the premises we have and are searching for a
+              new home for Gurukulam — and would welcome your support.
             </p>
             <Magnetic strength={12} className="mt-8 inline-block">
               <Link

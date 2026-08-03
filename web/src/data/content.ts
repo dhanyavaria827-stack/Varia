@@ -2,7 +2,7 @@
 // institution's own founding notes and community messages.
 
 export const STATS = [
-  { value: 2004, prefix: "Est. ", label: "Founded with five children" },
+  { value: 2004, prefix: "Est. ", label: "Founded with nine students" },
   { value: 225, label: "Students learning today" },
   { value: 50, label: "Gurujans & staff" },
   { value: 80, suffix: "+", label: "Diksha taken by alumni" },
@@ -23,7 +23,7 @@ export const DIVISIONS = [
     subtitle: "Primary division",
     age: "7 – 15 years",
     hours: "8:30 am – 3:30 pm",
-    desc: "A full day of academics in the morning and arts in the afternoon, through to Std. 10, taught entirely within Gurukulam.",
+    desc: "A full day of academics in the morning and arts in the afternoon, through to Std. 12, taught entirely within Gurukulam.",
   },
 ] as const;
 
@@ -51,7 +51,13 @@ export const SUBJECTS = [
     id: "dharmic",
     name: "Special & Dharmic Knowledge",
     items: ["Character of great personalities", "Religious study", "Sanskar & conduct"],
-    desc: "Daily stories and study built around the 80 codes of conduct for men and 54 for women set down by Rushabhdev.",
+    desc: "Daily stories and study built around the 64 codes of conduct for men and 72 for women set down by Rushabhdev.",
+  },
+  {
+    id: "vishesh-gyan",
+    name: "Vishesh Gyan",
+    items: ["Diet & daily discipline", "History, civics & social science", "Moral values", "Ayurveda", "Jain shlokas"],
+    desc: "Extra knowledge that fuses science and social science — what to eat and when, how to behave, history, civics, moral values, Ayurveda and Jain shlokas, all taught together.",
   },
 ] as const;
 
@@ -92,8 +98,11 @@ export const ALUMNI_PATHS = [
   "Chartered Accountants",
   "CFAs",
   "Architects",
+  "Interior designers",
   "Ayurvedic doctors",
   "Fashion designers",
+  "Singers",
+  "Managers and directors",
   "Independent business owners",
   "Diksha, in service of dharma",
 ] as const;
@@ -116,35 +125,35 @@ export const QUOTES = [
 export const TIMELINE = [
   {
     year: "2004",
-    title: "Five children, one shared idea",
+    title: "Nine students, one shared idea",
     desc: "A handful of thoughtful parents wanted their children to receive sanskar alongside schooling. Gurukulam began on Ashadh Sud 2, Samvat 2060 — 19 June 2004.",
   },
   {
     year: "Since",
     title: "A waiting list, year after year",
-    desc: "Gurukulam grew from five children to 225 students and 50 gurujans and staff, with more families waiting than there is room to admit.",
+    desc: "Gurukulam grew from nine students to 225 students and 50 gurujans and staff, with more families waiting than there is room to admit.",
   },
   {
     year: "2026",
-    title: "Std. 10, inside Gurukulam",
-    desc: "Students now complete school entirely within Gurukulam. In March 2026, 15 students sat the Gujarat Navjivan Board exam — most scored above 40%.",
+    title: "Std. 12, inside Gurukulam",
+    desc: "Students now complete school entirely within Gurukulam, through to Std. 12. In March 2026, 15 students sat the Gujarat Navjivan Std. 10 Board exam — most scored above 40%.",
   },
   {
     year: "Today",
     title: "Outgrowing our home",
-    desc: "Kalavatsav 2.0, our cultural showcase at Sanjeevkumar Auditorium, drew wide praise — even as our current premises face a fire-safety NOC shortfall and 30–35 waiting students we cannot yet seat.",
+    desc: "Kalavatsav 2.0, our cultural showcase at Sanjeevkumar Auditorium, drew wide praise — even as we've outgrown our current premises, with 30–35 waiting students we cannot yet seat.",
   },
 ] as const;
 
 export const FESTIVALS = [
   { name: "Paryushan", desc: "The year's principal observance — Gurukulam closes so every student can keep it fully." },
   { name: "Chaumasi Chaudas", desc: "Marked three times a year, at each change of season." },
-  { name: "Maun Ekadashi", desc: "A day of silence and worship, observed by the whole Gurukulam Parivar." },
+  { name: "Maun Ekadashi", desc: "A day of silence and worship, observed by the whole Gurukulam Parivar — classes continue as usual." },
 ] as const;
 
 export const PHILOSOPHY = {
-  eighty: 80,
-  fiftyFour: 54,
+  menCodes: 64,
+  womenCodes: 72,
   founder: "Rushabhdev",
   tagline: "Today's child, tomorrow's guardian",
 } as const;

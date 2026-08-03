@@ -15,7 +15,7 @@ export function About() {
             Our story
           </span>
           <h1 className="mt-3 font-display text-4xl font-medium text-ink">
-            Five children, and a shared conviction
+            Nine students, and a shared conviction
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-lg leading-relaxed text-ink-soft">
             A handful of thoughtful parents in Surat believed their children
@@ -67,7 +67,7 @@ export function About() {
             The foundation
           </span>
           <h2 className="mt-3 font-display text-2xl font-medium text-ink sm:text-3xl">
-            {PHILOSOPHY.eighty} codes for men, {PHILOSOPHY.fiftyFour} for women
+            {PHILOSOPHY.menCodes} codes for men, {PHILOSOPHY.womenCodes} for women
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-ink-soft sm:mx-0">
             Gurukulam's curriculum is grounded in the codes of conduct laid

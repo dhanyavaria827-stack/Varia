@@ -141,11 +141,10 @@ export function Admissions() {
             We're looking for a new home
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-ink-soft">
-            Our current premises can't secure the fire-safety NOC needed to
-            expand, and Gurukulam has outgrown the space it has. Right now,
-            30–35 waiting students can't be admitted simply because there isn't
-            room. If you know of a suitable space in Surat, or would like to
-            support the search for one, we'd be glad to hear from you.
+            Gurukulam has outgrown the space it has. Right now, 30–35 waiting
+            students can't be admitted simply because there isn't room. If you
+            know of a suitable space in Surat, or would like to support the
+            search for one, we'd be glad to hear from you.
           </p>
           <div className="mx-auto mt-8 max-w-xs">
             <FlipStat value={35} prefix="Up to " label="students on our waiting list" />

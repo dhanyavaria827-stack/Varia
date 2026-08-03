@@ -16,3 +16,12 @@ export function waLink(phone: string, text?: string) {
 export function telLink(phone: string) {
   return `tel:${phone.replace(/[^\d+]/g, "")}`;
 }
+
+/** Converts a display name like "Fashion design" into a URL slug "fashion-design". */
+export function slugify(name: string) {
+  return name
+    .toLowerCase()
+    .trim()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+}

@@ -60,7 +60,7 @@ export function FlipStat({
       onMouseLeave={onMouseLeave}
       whileHover={{ z: 14, transition: { type: "spring", stiffness: 120, damping: 18 } }}
       style={{ rotateX, rotateY, transformPerspective: 700 }}
-      className="rounded-sm border border-camel-500/25 bg-parchment-2/50 px-4 py-6 text-center shadow-card"
+      className="rounded-sm bg-parchment-2/50 px-4 py-6 text-center shadow-card"
     >
       <div className="flap-digit flex items-baseline justify-center text-3xl font-medium text-camel-700 dark:text-brass-300 sm:text-4xl">
         {prefix && <span className="mr-0.5">{prefix}</span>}

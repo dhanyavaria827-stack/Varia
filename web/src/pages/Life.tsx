@@ -1,9 +1,10 @@
 import { motion } from "framer-motion";
 import { CalendarHeart } from "lucide-react";
+import { InstagramIcon } from "@/components/icons/InstagramIcon";
 import { Reveal, RevealStagger, staggerItem } from "@/components/Reveal";
 import { SwapTabs } from "@/components/SwapTabs";
 import { Gallery } from "@/components/Gallery";
-import { ARTS, FESTIVALS, DAILY_RHYTHM } from "@/data/content";
+import { ARTS, FESTIVALS, DAILY_RHYTHM, SOCIAL } from "@/data/content";
 import photoPottery from "@/assets/gallery-pottery.jpg";
 import photoSand from "@/assets/gallery-sand.jpg";
 import photoStudent from "@/assets/gallery-student.jpg";
@@ -36,6 +37,17 @@ export function Life() {
       {/* Glimpses */}
       <div className="mt-14">
         <Gallery photos={PHOTOS} />
+        <p className="mt-8 flex flex-wrap items-center justify-center gap-x-2 gap-y-1 text-center text-sm text-ink-soft">
+          <InstagramIcon size={14} className="text-camel-600 dark:text-brass-300" />
+          More moments on Instagram —{" "}
+          <a href={SOCIAL.instagram} target="_blank" rel="noreferrer" className="font-medium text-ink transition hover:text-camel-600">
+            {SOCIAL.instagramLabel}
+          </a>{" "}
+          and, for Bal Vibhag,{" "}
+          <a href={SOCIAL.instagramBalmandir} target="_blank" rel="noreferrer" className="font-medium text-ink transition hover:text-camel-600">
+            {SOCIAL.instagramBalmandirLabel}
+          </a>
+        </p>
       </div>
 
       {/* Arts swap tabs */}

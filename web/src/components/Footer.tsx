@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom";
 import { Mail, MapPin, Phone } from "lucide-react";
+import { InstagramIcon } from "@/components/icons/InstagramIcon";
 import logo from "@/assets/logo-icon.png";
+import { CONTACTS, SOCIAL } from "@/data/content";
+import { telLink } from "@/lib/utils";
 
 export function Footer() {
   return (
@@ -50,9 +53,36 @@ export function Footer() {
                 Gurukulam941@Gmail.com
               </a>
             </li>
-            <li className="flex items-center gap-2"><Phone size={15} /> +91 98765 43210</li>
+            {CONTACTS.map((c) => (
+              <li key={c.name} className="flex items-center gap-2">
+                <Phone size={15} />
+                <a href={telLink(c.phone)} className="transition hover:text-camel-600">
+                  {c.phone} <span className="text-xs">({c.role})</span>
+                </a>
+              </li>
+            ))}
             <li className="flex items-center gap-2"><MapPin size={15} /> Surat, Gujarat, India</li>
           </ul>
+          <div className="mt-4 flex items-center gap-3">
+            <a
+              href={SOCIAL.instagram}
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Gurukulam on Instagram"
+              className="grid h-8 w-8 place-items-center rounded-full border border-brass-500/50 text-camel-700 transition hover:border-brass-500 hover:text-camel-600 dark:text-brass-300"
+            >
+              <InstagramIcon size={15} />
+            </a>
+            <a
+              href={SOCIAL.instagramBalmandir}
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Balmandir Gurukulam on Instagram"
+              className="grid h-8 w-8 place-items-center rounded-full border border-brass-500/50 text-camel-700 transition hover:border-brass-500 hover:text-camel-600 dark:text-brass-300"
+            >
+              <InstagramIcon size={15} />
+            </a>
+          </div>
         </div>
       </div>
 

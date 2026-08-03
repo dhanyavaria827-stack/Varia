@@ -148,3 +148,15 @@ export const PHILOSOPHY = {
   founder: "Rushabhdev",
   tagline: "Today's child, tomorrow's guardian",
 } as const;
+
+export const CONTACTS = [
+  { name: "Chaitali Ben", role: "Principal", phone: "+91 94283 92421" },
+  { name: "Ankita Ben", role: "Gurukulam Parivar", phone: "+91 98249 82352" },
+] as const;
+
+export const SOCIAL = {
+  instagram: "https://www.instagram.com/gurukulam_surat/",
+  instagramLabel: "@gurukulam_surat",
+  instagramBalmandir: "https://www.instagram.com/balmandir_gurukulam/",
+  instagramBalmandirLabel: "@balmandir_gurukulam",
+} as const;

@@ -1,7 +1,10 @@
 import { useState, type FormEvent } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { Mail, MapPin, Phone, Send, CheckCircle2 } from "lucide-react";
+import { Mail, MapPin, Phone, MessageCircle, Send, CheckCircle2 } from "lucide-react";
+import { InstagramIcon } from "@/components/icons/InstagramIcon";
 import { Reveal } from "@/components/Reveal";
+import { CONTACTS, SOCIAL } from "@/data/content";
+import { waLink, telLink } from "@/lib/utils";
 
 const ADMISSIONS_EMAIL = "Gurukulam941@Gmail.com";
 
@@ -47,9 +50,65 @@ export function Contact() {
       <div className="mt-12 grid gap-8 lg:grid-cols-5">
         <Reveal className="lg:col-span-2">
           <div className="h-full space-y-5 rounded-sm border border-ink/10 bg-parchment-2/40 p-6 shadow-card">
-            <ContactRow icon={Mail} label="Email" value="Gurukulam941@Gmail.com" href="mailto:Gurukulam941@Gmail.com" />
-            <ContactRow icon={Phone} label="Phone" value="+91 98765 43210" />
+            <ContactRow icon={Mail} label="Email" value={ADMISSIONS_EMAIL} href={`mailto:${ADMISSIONS_EMAIL}`} />
             <ContactRow icon={MapPin} label="Location" value="Surat, Gujarat, India" />
+
+            <div className="rule-brass" />
+
+            {CONTACTS.map((c) => (
+              <div key={c.name} className="flex items-start gap-3">
+                <div className="grid h-10 w-10 shrink-0 place-items-center rounded-full border border-brass-500/50 text-camel-700 dark:text-brass-300">
+                  <Phone size={16} />
+                </div>
+                <div>
+                  <div className="text-xs font-medium uppercase tracking-wide text-ink-soft">
+                    {c.name} · {c.role}
+                  </div>
+                  <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
+                    <a href={telLink(c.phone)} className="text-sm font-medium text-ink transition hover:text-camel-600">
+                      {c.phone}
+                    </a>
+                    <a
+                      href={waLink(c.phone, "Hello! I'd like to ask about admission to Gurukulam.")}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex items-center gap-1 text-xs font-medium text-forest-500 transition hover:text-forest-600"
+                    >
+                      <MessageCircle size={13} /> WhatsApp
+                    </a>
+                  </div>
+                </div>
+              </div>
+            ))}
+
+            <div className="rule-brass" />
+
+            <div className="flex items-start gap-3">
+              <div className="grid h-10 w-10 shrink-0 place-items-center rounded-full border border-brass-500/50 text-camel-700 dark:text-brass-300">
+                <InstagramIcon size={16} />
+              </div>
+              <div className="space-y-1.5">
+                <div className="text-xs font-medium uppercase tracking-wide text-ink-soft">
+                  Follow us
+                </div>
+                <a
+                  href={SOCIAL.instagram}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="block text-sm font-medium text-ink transition hover:text-camel-600"
+                >
+                  {SOCIAL.instagramLabel}
+                </a>
+                <a
+                  href={SOCIAL.instagramBalmandir}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="block text-sm font-medium text-ink transition hover:text-camel-600"
+                >
+                  {SOCIAL.instagramBalmandirLabel} <span className="text-ink-soft">(Bal Vibhag)</span>
+                </a>
+              </div>
+            </div>
           </div>
         </Reveal>
 

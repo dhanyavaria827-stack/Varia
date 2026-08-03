@@ -48,14 +48,7 @@ export function About() {
         className="mx-auto mt-24 max-w-5xl scroll-mt-24 overflow-hidden rounded-sm border border-brass-500/30 bg-parchment-2/50 [perspective:1600px] sm:grid sm:grid-cols-5"
       >
         <Reveal className="sm:col-span-2">
-          <TiltCard
-            strength={6}
-            className="h-full"
-            initial={{ clipPath: "inset(0 0 100% 0)" }}
-            whileInView={{ clipPath: "inset(0 0 0% 0)" }}
-            viewport={{ once: true, amount: 0.4 }}
-            transition={{ duration: 1.6, ease: [0.16, 1, 0.3, 1] }}
-          >
+          <TiltCard strength={6} className="h-full">
             <Photo
               src={photoMealtime}
               alt="A gurujan feeding a young student at Gurukulam"

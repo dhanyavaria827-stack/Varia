@@ -1,9 +1,15 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter, HashRouter } from "react-router-dom";
 import "./index.css";
 import App from "./App.tsx";
 import { ThemeProvider } from "./lib/theme.tsx";
+
+// A standalone build (opened directly via file://, e.g. a double-clicked
+// export) has no server to resolve real paths against, so it needs
+// hash-based routing (#/about) instead of the History API.
+const isStandalone = import.meta.env.VITE_STANDALONE === "true";
+const Router = isStandalone ? HashRouter : BrowserRouter;
 
 // BASE_URL is only a real router prefix when it's root-relative (e.g. "/Varia/"
 // for a GitHub Pages project site). Builds that use a relative base (e.g. "./",
@@ -15,9 +21,9 @@ const basename = base.startsWith("/") ? base.replace(/\/$/, "") || "/" : "/";
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <ThemeProvider>
-      <BrowserRouter basename={basename}>
+      <Router basename={isStandalone ? undefined : basename}>
         <App />
-      </BrowserRouter>
+      </Router>
     </ThemeProvider>
   </StrictMode>
 );

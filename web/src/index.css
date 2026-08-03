@@ -126,6 +126,14 @@ button:focus-visible,
   animation: float-slower 10s ease-in-out infinite;
 }
 
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.animate-marquee {
+  animation: marquee 28s linear infinite;
+}
+
 .bg-grain {
   background-image: radial-gradient(currentColor 1px, transparent 1px);
   background-size: 20px 20px;

@@ -1,15 +1,20 @@
 import { Link } from "react-router-dom";
 import { Mail, MapPin, Phone } from "lucide-react";
 import { InstagramIcon } from "@/components/icons/InstagramIcon";
+import { RevealStagger, staggerItem } from "@/components/Reveal";
 import logo from "@/assets/logo-icon.png";
 import { CONTACTS, SOCIAL, LOCATION } from "@/data/content";
 import { telLink } from "@/lib/utils";
+import { motion } from "framer-motion";
 
 export function Footer() {
   return (
     <footer className="border-t border-ink/10 bg-parchment-2/60">
-      <div className="mx-auto grid max-w-6xl gap-10 px-5 py-14 sm:grid-cols-2 lg:grid-cols-4">
-        <div>
+      <RevealStagger
+        className="mx-auto grid max-w-6xl gap-10 px-5 py-14 sm:grid-cols-2 lg:grid-cols-4"
+        staggerDelay={0.08}
+      >
+        <motion.div variants={staggerItem}>
           <div className="flex items-center gap-2.5">
             <span className="h-9 w-9 overflow-hidden rounded-full border border-brass-500/60">
               <img src={logo} alt="Gurukulam" className="h-full w-full object-cover" />
@@ -23,9 +28,9 @@ export function Footer() {
             Surat, teaching bhantar (education) with ghadtar (character),
             since 2004.
           </p>
-        </div>
+        </motion.div>
 
-        <div>
+        <motion.div variants={staggerItem}>
           <h3 className="text-xs font-semibold uppercase tracking-[0.14em] text-ink">Explore</h3>
           <ul className="mt-3 space-y-2 text-sm text-ink-soft">
             <li><Link to="/" className="transition hover:text-camel-600">Home</Link></li>
@@ -33,18 +38,18 @@ export function Footer() {
             <li><Link to="/academics" className="transition hover:text-camel-600">Academics</Link></li>
             <li><Link to="/life" className="transition hover:text-camel-600">Life & Arts</Link></li>
           </ul>
-        </div>
+        </motion.div>
 
-        <div>
+        <motion.div variants={staggerItem}>
           <h3 className="text-xs font-semibold uppercase tracking-[0.14em] text-ink">Gurukulam</h3>
           <ul className="mt-3 space-y-2 text-sm text-ink-soft">
             <li><Link to="/admissions" className="transition hover:text-camel-600">Admissions</Link></li>
             <li><Link to="/admissions#support" className="transition hover:text-camel-600">Support a new campus</Link></li>
             <li><Link to="/contact" className="transition hover:text-camel-600">Contact</Link></li>
           </ul>
-        </div>
+        </motion.div>
 
-        <div>
+        <motion.div variants={staggerItem}>
           <h3 className="text-xs font-semibold uppercase tracking-[0.14em] text-ink">Get in touch</h3>
           <ul className="mt-3 space-y-2.5 text-sm text-ink-soft">
             <li className="flex items-center gap-2">
@@ -95,8 +100,8 @@ export function Footer() {
               <InstagramIcon size={15} />
             </a>
           </div>
-        </div>
-      </div>
+        </motion.div>
+      </RevealStagger>
 
       <div className="rule-brass mx-5" />
 

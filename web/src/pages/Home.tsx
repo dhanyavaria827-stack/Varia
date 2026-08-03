@@ -9,6 +9,8 @@ import { SwapTabs } from "@/components/SwapTabs";
 import { OrnamentRing } from "@/components/OrnamentRing";
 import { TiltCard } from "@/components/TiltCard";
 import { Magnetic } from "@/components/Magnetic";
+import { SplitText } from "@/components/SplitText";
+import { Timeline } from "@/components/Timeline";
 import {
   STATS,
   DIVISIONS,
@@ -51,13 +53,13 @@ export function Home() {
       <Hero />
 
       {/* Stats */}
-      <Reveal>
-        <div className="mx-auto grid max-w-4xl grid-cols-2 gap-3 px-5 pb-16 sm:grid-cols-4 sm:gap-4">
-          {STATS.map((s) => (
-            <FlipStat key={s.label} value={s.value} prefix={"prefix" in s ? s.prefix : undefined} suffix={"suffix" in s ? s.suffix : undefined} label={s.label} />
-          ))}
-        </div>
-      </Reveal>
+      <RevealStagger className="mx-auto grid max-w-4xl grid-cols-2 gap-3 px-5 pb-16 sm:grid-cols-4 sm:gap-4" staggerDelay={0.1}>
+        {STATS.map((s) => (
+          <motion.div key={s.label} variants={staggerItem}>
+            <FlipStat value={s.value} prefix={"prefix" in s ? s.prefix : undefined} suffix={"suffix" in s ? s.suffix : undefined} label={s.label} />
+          </motion.div>
+        ))}
+      </RevealStagger>
 
       {/* Philosophy strip */}
       <section className="mx-auto max-w-4xl px-5 pb-20 text-center">
@@ -157,7 +159,7 @@ export function Home() {
             <h2 className="mt-3 font-display text-3xl font-medium text-ink">The daily rhythm</h2>
           </Reveal>
 
-          <div className="relative mt-12 space-y-8 border-l border-brass-500/40 pl-8">
+          <Timeline className="relative mt-12 space-y-8 pl-8">
             {DAILY_RHYTHM.map((r, i) => (
               <Reveal key={r.time} delay={i * 0.06} className="relative">
                 <span className="absolute -left-[37px] top-1 h-3 w-3 rounded-full border-2 border-brass-500 bg-parchment" />
@@ -168,7 +170,7 @@ export function Home() {
                 <p className="mt-1 text-sm leading-relaxed text-ink-soft">{r.desc}</p>
               </Reveal>
             ))}
-          </div>
+          </Timeline>
         </div>
       </section>
 
@@ -226,21 +228,18 @@ export function Home() {
 function Marquee({ items }: { items: readonly string[] }) {
   const loop = [...items, ...items];
   return (
-    <div className="overflow-hidden">
-      <motion.div
-        className="flex w-max gap-4 px-5"
-        animate={{ x: ["0%", "-50%"] }}
-        transition={{ duration: 28, repeat: Infinity, ease: "linear" }}
-      >
+    <div className="group overflow-hidden">
+      <div className="animate-marquee flex w-max gap-4 px-5 group-hover:[animation-play-state:paused]">
         {loop.map((item, i) => (
-          <span
+          <motion.span
             key={i}
-            className="whitespace-nowrap rounded-full border border-camel-500/30 px-5 py-2 text-sm font-medium text-ink-soft"
+            whileHover={{ scale: 1.08 }}
+            className="whitespace-nowrap rounded-full border border-camel-500/30 px-5 py-2 text-sm font-medium text-ink-soft transition-colors hover:border-brass-500 hover:text-ink"
           >
             {item}
-          </span>
+          </motion.span>
         ))}
-      </motion.div>
+      </div>
     </div>
   );
 }
@@ -286,14 +285,9 @@ function Hero() {
           Surat, Gujarat · Established 2004
         </motion.p>
 
-        <motion.h1
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.15 }}
-          className="mt-5 text-balance font-display text-4xl font-medium leading-[1.1] tracking-tight text-ink sm:text-6xl"
-        >
-          Gurukulam
-        </motion.h1>
+        <h1 className="mt-5 text-balance font-display text-4xl font-medium leading-[1.1] tracking-tight text-ink [perspective:600px] sm:text-6xl">
+          <SplitText text="Gurukulam" delay={0.15} />
+        </h1>
 
         <motion.p
           initial={{ opacity: 0, y: 20 }}

@@ -28,7 +28,13 @@ export function Academics() {
 
       {/* Photo: personal attention */}
       <Reveal delay={0.08} className="mx-auto mt-12 max-w-2xl overflow-hidden rounded-sm border border-brass-500/30 [perspective:1400px]">
-        <TiltCard strength={6}>
+        <TiltCard
+          strength={6}
+          initial={{ clipPath: "inset(0 0 100% 0)" }}
+          whileInView={{ clipPath: "inset(0 0 0% 0)" }}
+          viewport={{ once: true, amount: 0.4 }}
+          transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+        >
           <img
             src={photoNotebook}
             alt="Gurujans recording each student's progress by hand"

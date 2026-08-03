@@ -1,6 +1,7 @@
 import { CheckCircle2 } from "lucide-react";
 import { Reveal, RevealStagger, staggerItem } from "@/components/Reveal";
 import { TiltCard } from "@/components/TiltCard";
+import { Timeline } from "@/components/Timeline";
 import { TIMELINE, UNIQUENESS, DRESS_CODE, PHILOSOPHY } from "@/data/content";
 import photoMealtime from "@/assets/gallery-mealtime.jpg";
 
@@ -23,7 +24,7 @@ export function About() {
 
       {/* Timeline */}
       <div className="mx-auto mt-16 max-w-3xl">
-        <div className="relative space-y-10 border-l border-brass-500/40 pl-8">
+        <Timeline className="relative space-y-10 pl-8">
           {TIMELINE.map((t, i) => (
             <Reveal key={t.year} delay={i * 0.05} className="relative">
               <span className="absolute -left-[37px] top-1 h-3 w-3 rounded-full border-2 border-brass-500 bg-parchment" />
@@ -34,7 +35,7 @@ export function About() {
               <p className="mt-1 max-w-xl text-sm leading-relaxed text-ink-soft">{t.desc}</p>
             </Reveal>
           ))}
-        </div>
+        </Timeline>
       </div>
 
       {/* Philosophy */}
@@ -43,7 +44,14 @@ export function About() {
         className="mx-auto mt-24 max-w-5xl scroll-mt-24 overflow-hidden rounded-sm border border-brass-500/30 bg-parchment-2/50 [perspective:1600px] sm:grid sm:grid-cols-5"
       >
         <Reveal className="sm:col-span-2">
-          <TiltCard strength={6} className="h-full">
+          <TiltCard
+            strength={6}
+            className="h-full"
+            initial={{ clipPath: "inset(0 0 100% 0)" }}
+            whileInView={{ clipPath: "inset(0 0 0% 0)" }}
+            viewport={{ once: true, amount: 0.4 }}
+            transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+          >
             <img
               src={photoMealtime}
               alt="A gurujan feeding a young student at Gurukulam"

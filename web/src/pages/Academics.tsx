@@ -1,13 +1,16 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
-import { Reveal } from "@/components/Reveal";
+import { Reveal, staggerItem } from "@/components/Reveal";
 import { FlipStat } from "@/components/FlipStat";
 import { TiltCard } from "@/components/TiltCard";
 import { CursorGlow } from "@/components/CursorGlow";
 import { SUBJECTS, DIVISIONS } from "@/data/content";
-import { cn } from "@/lib/utils";
+import { cn, slugify } from "@/lib/utils";
 import photoNotebook from "@/assets/gallery-notebook.jpg";
+
+const MotionLink = motion.create(Link);
 
 export function Academics() {
   const [open, setOpen] = useState<string | null>(SUBJECTS[0].id);
@@ -96,16 +99,25 @@ export function Academics() {
                       transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
                       className="overflow-hidden"
                     >
-                      <div className="flex flex-wrap gap-2 border-t border-ink/10 px-5 pb-6 pt-4">
+                      <motion.div
+                        initial="hidden"
+                        animate="show"
+                        variants={{ hidden: {}, show: { transition: { staggerChildren: 0.04 } } }}
+                        className="flex flex-wrap gap-2 border-t border-ink/10 px-5 pb-6 pt-4"
+                      >
                         {s.items.map((item) => (
-                          <span
+                          <MotionLink
                             key={item}
-                            className="rounded-full border border-camel-500/30 px-3 py-1.5 text-sm text-ink-soft"
+                            to={`/skills/${slugify(item)}`}
+                            variants={staggerItem}
+                            whileHover={{ scale: 1.08, borderColor: "var(--color-brass-500)" }}
+                            whileTap={{ scale: 0.96 }}
+                            className="rounded-full border border-camel-500/30 px-3 py-1.5 text-sm text-ink-soft transition-colors hover:text-ink"
                           >
                             {item}
-                          </span>
+                          </MotionLink>
                         ))}
-                      </div>
+                      </motion.div>
                     </motion.div>
                   )}
                 </AnimatePresence>

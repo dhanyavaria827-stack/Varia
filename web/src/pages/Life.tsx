@@ -9,12 +9,12 @@ import { CursorGlow } from "@/components/CursorGlow";
 import { TiltCard } from "@/components/TiltCard";
 import { ARTS, FESTIVALS, DAILY_RHYTHM, SOCIAL } from "@/data/content";
 import { slugify } from "@/lib/utils";
-
-const MotionLink = motion.create(Link);
 import photoPottery from "@/assets/gallery-pottery.jpg";
 import photoSand from "@/assets/gallery-sand.jpg";
 import photoStudent from "@/assets/gallery-student.jpg";
 import photoChalk from "@/assets/gallery-chalk.jpg";
+
+const MotionLink = motion.create(Link);
 
 const PHOTOS = [
   { src: photoChalk, caption: "Desi games, played barefoot", rotate: 2 },
@@ -75,7 +75,7 @@ export function Life() {
                   {a.items.map((item) => (
                     <MotionLink
                       key={item}
-                      to={`/life/arts/${slugify(item)}`}
+                      to={`/skills/${slugify(item)}`}
                       variants={staggerItem}
                       whileHover={{ scale: 1.08, borderColor: "var(--color-brass-500)" }}
                       whileTap={{ scale: 0.96 }}

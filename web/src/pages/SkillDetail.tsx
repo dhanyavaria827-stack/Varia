@@ -2,23 +2,28 @@ import { Link, Navigate, useParams } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
 import { CursorGlow } from "@/components/CursorGlow";
-import { findArtHistory } from "@/data/artHistory";
+import { findSkillHistory } from "@/data/skillHistory";
 
-export function ArtDetail() {
+export function SkillDetail() {
   const { slug } = useParams<{ slug: string }>();
-  const entry = slug ? findArtHistory(slug) : undefined;
+  const entry = slug ? findSkillHistory(slug) : undefined;
 
   if (!entry) return <Navigate to="/life" replace />;
+
+  const backTo = entry.section === "academics" ? "/academics" : "/life#arts";
+  const backLabel = entry.section === "academics" ? "Back to Academics" : "Back to Life & Arts";
+  const exploreLabel = entry.section === "academics" ? "Explore other subjects" : "Explore other arts";
+  const taughtIn = entry.section === "academics" ? "Academics" : "Gurukulam's afternoon Vividh Kalao";
 
   return (
     <div className="mx-auto max-w-3xl px-5 py-16">
       <Reveal>
         <Link
-          to="/life#arts"
+          to={backTo}
           className="inline-flex items-center gap-2 text-sm font-medium text-ink-soft transition hover:text-camel-600"
         >
           <ArrowLeft size={15} />
-          Back to Life & Arts
+          {backLabel}
         </Link>
       </Reveal>
 
@@ -41,13 +46,13 @@ export function ArtDetail() {
 
       <Reveal delay={0.2} className="mt-14 text-center">
         <p className="text-sm text-ink-soft">
-          {entry.name} is one of the skills taught in Gurukulam's afternoon Vividh Kalao.
+          {entry.name} is one of the skills taught in {taughtIn}.
         </p>
         <Link
-          to="/life#arts"
+          to={backTo}
           className="mt-5 inline-flex items-center gap-2 rounded-sm border border-ink/15 bg-parchment/60 px-6 py-3 text-sm font-medium uppercase tracking-[0.06em] text-ink backdrop-blur transition hover:border-brass-500 hover:text-camel-700"
         >
-          Explore other arts
+          {exploreLabel}
         </Link>
       </Reveal>
     </div>

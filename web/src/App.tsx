@@ -10,7 +10,7 @@ import { Home } from "@/pages/Home";
 import { About } from "@/pages/About";
 import { Academics } from "@/pages/Academics";
 import { Life } from "@/pages/Life";
-import { ArtDetail } from "@/pages/ArtDetail";
+import { SkillDetail } from "@/pages/SkillDetail";
 import { Admissions } from "@/pages/Admissions";
 import { Contact } from "@/pages/Contact";
 import { NotFound } from "@/pages/NotFound";
@@ -30,7 +30,7 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/academics" element={<Academics />} />
             <Route path="/life" element={<Life />} />
-            <Route path="/life/arts/:slug" element={<ArtDetail />} />
+            <Route path="/skills/:slug" element={<SkillDetail />} />
             <Route path="/admissions" element={<Admissions />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="*" element={<NotFound />} />

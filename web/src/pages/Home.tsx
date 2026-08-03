@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import type { MouseEvent } from "react";
+import { useState, type MouseEvent } from "react";
 import { motion, useMotionTemplate, useMotionValue, useScroll, useSpring, useTransform } from "framer-motion";
 import { ArrowRight, Languages, Calculator, BookHeart, Palette } from "lucide-react";
 import { Reveal, RevealStagger, staggerItem } from "@/components/Reveal";
@@ -249,6 +249,7 @@ function Hero() {
   const ringScale = useTransform(scrollY, [0, 600], [1, 1.3]);
   const ringRotate = useTransform(scrollY, [0, 600], [0, 55]);
 
+  const [glowActive, setGlowActive] = useState(false);
   const rawX = useMotionValue(0);
   const rawY = useMotionValue(0);
   const mouseX = useSpring(rawX, { stiffness: 55, damping: 20, mass: 0.6 });
@@ -259,6 +260,7 @@ function Hero() {
     const rect = e.currentTarget.getBoundingClientRect();
     rawX.set(e.clientX - rect.left);
     rawY.set(e.clientY - rect.top);
+    if (!glowActive) setGlowActive(true);
   }
 
   return (
@@ -266,6 +268,8 @@ function Hero() {
       <motion.div
         aria-hidden="true"
         style={{ background: glow }}
+        animate={{ opacity: glowActive ? 1 : 0 }}
+        transition={{ duration: 0.5 }}
         className="pointer-events-none absolute inset-0 -z-30"
       />
       <motion.div

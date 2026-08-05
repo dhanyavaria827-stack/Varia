@@ -14,10 +14,14 @@ export function SwapTabs({ tabs, className }: { tabs: SwapTab[]; className?: str
 
   return (
     <div className={className}>
-      <div className="flex flex-wrap justify-center gap-2">
+      <div role="tablist" className="flex flex-wrap justify-center gap-2">
         {tabs.map((tab) => (
           <button
             key={tab.id}
+            id={`tab-${tab.id}`}
+            role="tab"
+            aria-selected={active === tab.id}
+            aria-controls={`tabpanel-${tab.id}`}
             onClick={() => setActive(tab.id)}
             className={cn(
               "relative rounded-sm px-5 py-2 text-sm font-medium uppercase tracking-[0.08em] transition-colors",
@@ -40,6 +44,9 @@ export function SwapTabs({ tabs, className }: { tabs: SwapTab[]; className?: str
         <AnimatePresence mode="wait">
           <motion.div
             key={activeTab.id}
+            id={`tabpanel-${activeTab.id}`}
+            role="tabpanel"
+            aria-labelledby={`tab-${activeTab.id}`}
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -16 }}

@@ -1,8 +1,10 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowLeft } from "lucide-react";
+import { useDocumentTitle } from "@/lib/useDocumentTitle";
 
 export function NotFound() {
+  useDocumentTitle("Page not found");
   return (
     <div className="mx-auto flex min-h-[60vh] max-w-2xl flex-col items-center justify-center px-5 text-center">
       <motion.span

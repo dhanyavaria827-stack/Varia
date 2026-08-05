@@ -1,6 +1,7 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { BrowserRouter, HashRouter } from "react-router-dom";
+import { MotionConfig } from "framer-motion";
 import "./index.css";
 import App from "./App.tsx";
 import { ThemeProvider } from "./lib/theme.tsx";
@@ -20,10 +21,12 @@ const basename = base.startsWith("/") ? base.replace(/\/$/, "") || "/" : "/";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <ThemeProvider>
-      <Router basename={isStandalone ? undefined : basename}>
-        <App />
-      </Router>
-    </ThemeProvider>
+    <MotionConfig reducedMotion="user">
+      <ThemeProvider>
+        <Router basename={isStandalone ? undefined : basename}>
+          <App />
+        </Router>
+      </ThemeProvider>
+    </MotionConfig>
   </StrictMode>
 );

@@ -8,11 +8,13 @@ import { Magnetic } from "@/components/Magnetic";
 import { CursorGlow } from "@/components/CursorGlow";
 import { CONTACTS, SOCIAL, LOCATION } from "@/data/content";
 import { waLink, telLink } from "@/lib/utils";
+import { useDocumentTitle } from "@/lib/useDocumentTitle";
 
 const ADMISSIONS_EMAIL = "Gurukulam941@Gmail.com";
 const ENQUIRY_CONTACT = CONTACTS.find((c) => c.name === "Ankita Ben") ?? CONTACTS[0];
 
 export function Contact() {
+  useDocumentTitle("Contact");
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
 

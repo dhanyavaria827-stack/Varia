@@ -5,9 +5,11 @@ import { Timeline } from "@/components/Timeline";
 import { CursorGlow } from "@/components/CursorGlow";
 import { Photo } from "@/components/Photo";
 import { TIMELINE, UNIQUENESS, DRESS_CODE, PHILOSOPHY } from "@/data/content";
+import { useDocumentTitle } from "@/lib/useDocumentTitle";
 import photoMealtime from "@/assets/gallery-mealtime.jpg";
 
 export function About() {
+  useDocumentTitle("About");
   return (
     <div className="px-5 py-16">
       <CursorGlow className="py-2">

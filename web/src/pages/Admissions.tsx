@@ -8,6 +8,7 @@ import { Magnetic } from "@/components/Magnetic";
 import { CursorGlow } from "@/components/CursorGlow";
 import { Photo } from "@/components/Photo";
 import { DIVISIONS } from "@/data/content";
+import { useDocumentTitle } from "@/lib/useDocumentTitle";
 import photoPortrait from "@/assets/gallery-portrait.jpg";
 
 const STEPS = [
@@ -34,6 +35,7 @@ const STEPS = [
 ];
 
 export function Admissions() {
+  useDocumentTitle("Admissions");
   return (
     <div className="mx-auto max-w-4xl px-5 py-16">
       <CursorGlow className="py-2">

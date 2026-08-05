@@ -3,10 +3,13 @@ import { ArrowLeft } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
 import { CursorGlow } from "@/components/CursorGlow";
 import { findSkillHistory } from "@/data/skillHistory";
+import { useDocumentTitle } from "@/lib/useDocumentTitle";
 
 export function SkillDetail() {
   const { slug } = useParams<{ slug: string }>();
   const entry = slug ? findSkillHistory(slug) : undefined;
+
+  useDocumentTitle(entry ? entry.name : "Gurukulam, Surat");
 
   if (!entry) return <Navigate to="/life" replace />;
 

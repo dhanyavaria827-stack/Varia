@@ -9,6 +9,7 @@ import { CursorGlow } from "@/components/CursorGlow";
 import { TiltCard } from "@/components/TiltCard";
 import { ARTS, FESTIVALS, DAILY_RHYTHM, SOCIAL } from "@/data/content";
 import { slugify } from "@/lib/utils";
+import { useDocumentTitle } from "@/lib/useDocumentTitle";
 import photoPottery from "@/assets/gallery-pottery.jpg";
 import photoSand from "@/assets/gallery-sand.jpg";
 import photoStudent from "@/assets/gallery-student.jpg";
@@ -24,6 +25,7 @@ const PHOTOS = [
 ];
 
 export function Life() {
+  useDocumentTitle("Life & Arts");
   return (
     <div className="mx-auto max-w-4xl px-5 py-16">
       <CursorGlow className="py-2">

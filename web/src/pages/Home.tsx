@@ -19,6 +19,7 @@ import {
   ALUMNI_PATHS,
   PHILOSOPHY,
 } from "@/data/content";
+import { useDocumentTitle } from "@/lib/useDocumentTitle";
 
 const PILLARS = [
   {
@@ -48,6 +49,7 @@ const PILLARS = [
 ];
 
 export function Home() {
+  useDocumentTitle("Gurukulam, Surat — Bhantar with Ghadtar");
   return (
     <>
       <Hero />

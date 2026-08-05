@@ -9,11 +9,13 @@ import { CursorGlow } from "@/components/CursorGlow";
 import { Photo } from "@/components/Photo";
 import { SUBJECTS, DIVISIONS } from "@/data/content";
 import { cn, slugify } from "@/lib/utils";
+import { useDocumentTitle } from "@/lib/useDocumentTitle";
 import photoNotebook from "@/assets/gallery-notebook.jpg";
 
 const MotionLink = motion.create(Link);
 
 export function Academics() {
+  useDocumentTitle("Academics");
   const [open, setOpen] = useState<string | null>(SUBJECTS[0].id);
 
   return (

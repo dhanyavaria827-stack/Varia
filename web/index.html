@@ -10,6 +10,21 @@
     />
     <title>Gurukulam, Surat — Bhantar with Ghadtar</title>
 
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem("gurukulam-theme");
+          var theme =
+            stored === "light" || stored === "dark"
+              ? stored
+              : window.matchMedia("(prefers-color-scheme: dark)").matches
+                ? "dark"
+                : "light";
+          document.documentElement.setAttribute("data-theme", theme);
+        } catch (e) {}
+      })();
+    </script>
+
     <!-- Update this to the real domain once one is attached (see vite.config.ts BASE_PATH note) -->
     <link rel="canonical" href="https://dhanyavaria827-stack.github.io/Varia/" />
 
@@ -61,6 +76,23 @@
   </head>
   <body>
     <div id="root"></div>
+    <!-- Single Page Apps for GitHub Pages: restores the real path that
+         404.html encoded into a query string, before React Router reads
+         window.location. https://github.com/rafgraph/spa-github-pages -->
+    <script>
+      (function (l) {
+        if (l.search[1] === "/") {
+          var decoded = l.search
+            .slice(1)
+            .split("&")
+            .map(function (s) {
+              return s.replace(/~and~/g, "&");
+            })
+            .join("?");
+          window.history.replaceState(null, null, l.pathname.slice(0, -1) + decoded + l.hash);
+        }
+      })(window.location);
+    </script>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

@@ -4,6 +4,8 @@ import type { ReactNode } from "react";
 export function PageTransition({ children }: { children: ReactNode }) {
   return (
     <motion.main
+      id="main-content"
+      tabIndex={-1}
       initial={{ opacity: 0, y: 22, scale: 0.985 }}
       animate={{
         opacity: 1,

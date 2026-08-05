@@ -194,7 +194,7 @@ export function Home() {
       </section>
 
       {/* Campus appeal CTA */}
-      <section id="support" className="px-5 py-24 [perspective:1400px]">
+      <section id="campus-appeal" className="px-5 py-24 [perspective:1400px]">
         <Reveal className="mx-auto max-w-4xl">
           <TiltCard
             strength={5}

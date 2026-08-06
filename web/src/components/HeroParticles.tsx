@@ -55,15 +55,30 @@ export function HeroParticles({ className = "" }: { className?: string }) {
     ro.observe(mount);
 
     let raf = 0;
-    let visible = !document.hidden;
+    // Only render while both the tab is focused AND this canvas is actually
+    // scrolled into view — two Three.js scenes both rendering off-screen at
+    // once (this one plus the diya further down the page) is pure waste.
+    let tabVisible = !document.hidden;
+    let inView = false;
+    function maybeStart() {
+      if (tabVisible && inView && !reduceMotion && !raf) raf = requestAnimationFrame(tick);
+    }
     const onVisibility = () => {
-      visible = !document.hidden;
-      if (visible && !reduceMotion) raf = requestAnimationFrame(tick);
+      tabVisible = !document.hidden;
+      if (tabVisible) maybeStart();
     };
     document.addEventListener("visibilitychange", onVisibility);
+    const io = new IntersectionObserver(([entry]) => {
+      inView = entry.isIntersecting;
+      if (inView) maybeStart();
+    });
+    io.observe(mount);
 
     function tick(t: number) {
-      if (!visible) return;
+      if (!tabVisible || !inView) {
+        raf = 0;
+        return;
+      }
       points.rotation.y = t * 0.00002;
       points.rotation.x = Math.sin(t * 0.00001) * 0.05;
       renderer.render(scene, camera);
@@ -72,13 +87,12 @@ export function HeroParticles({ className = "" }: { className?: string }) {
 
     if (reduceMotion) {
       renderer.render(scene, camera);
-    } else {
-      raf = requestAnimationFrame(tick);
     }
 
     return () => {
       cancelAnimationFrame(raf);
       document.removeEventListener("visibilitychange", onVisibility);
+      io.disconnect();
       ro.disconnect();
       geometry.dispose();
       material.dispose();

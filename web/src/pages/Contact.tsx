@@ -26,7 +26,7 @@ export function Contact() {
     const subject = String(data.get("subject") ?? "");
     const message = String(data.get("message") ?? "");
 
-    const waMessage = `Hello Ankita Ben, I'm ${name} (${email}).\n\nSubject: ${subject}\n\n${message}`;
+    const waMessage = `Hi Ankita Ben, I'm ${name} (${email}), reaching out via the Gurukulam website (${ADMISSIONS_EMAIL}).\n\nSubject: ${subject}\n\nEnquiry: ${message}`;
     const whatsappUrl = waLink(ENQUIRY_CONTACT.phone, waMessage);
 
     setSubmitting(true);

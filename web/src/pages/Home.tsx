@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { useState, useRef, lazy, Suspense, type MouseEvent } from "react";
+import { useState, lazy, Suspense, type MouseEvent } from "react";
 import { motion, useMotionTemplate, useMotionValue, useScroll, useSpring, useTransform } from "framer-motion";
 import { ArrowRight, Languages, Calculator, BookHeart, Palette } from "lucide-react";
 import { Reveal, RevealStagger, staggerItem } from "@/components/Reveal";
@@ -11,13 +11,10 @@ import { TiltCard } from "@/components/TiltCard";
 import { Magnetic } from "@/components/Magnetic";
 import { SplitText } from "@/components/SplitText";
 import { TextShimmer } from "@/components/TextShimmer";
-import { WaveDivider } from "@/components/WaveDivider";
-import { DrawUnderline } from "@/components/DrawUnderline";
 
 const HeroParticles = lazy(() =>
   import("@/components/HeroParticles").then((m) => ({ default: m.HeroParticles }))
 );
-const Diya3D = lazy(() => import("@/components/Diya3D").then((m) => ({ default: m.Diya3D })));
 import { Timeline } from "@/components/Timeline";
 import {
   STATS,
@@ -77,7 +74,6 @@ export function Home() {
           <span className="text-xs font-semibold uppercase tracking-[0.2em] text-camel-600 dark:text-brass-300">
             Our foundation
           </span>
-          <DrawUnderline className="mx-auto mt-1.5 block" delay={0.2} />
           <h2 className="mt-3 text-balance font-display text-2xl font-medium leading-snug text-ink sm:text-3xl">
             An education built on the {PHILOSOPHY.menCodes} codes of conduct for men and{" "}
             {PHILOSOPHY.womenCodes} for women, set down by {PHILOSOPHY.founder}.
@@ -90,8 +86,6 @@ export function Home() {
         </Reveal>
       </section>
 
-      <WaveDivider color="var(--color-parchment-2)" />
-
       {/* Pillars */}
       <section className="bg-parchment-2/50 py-20">
         <div className="mx-auto max-w-6xl px-5">
@@ -99,7 +93,6 @@ export function Home() {
             <span className="text-xs font-semibold uppercase tracking-[0.2em] text-camel-600 dark:text-brass-300">
               What is taught
             </span>
-            <DrawUnderline className="mx-auto mt-1.5 block" delay={0.2} />
             <h2 className="mt-3 font-display text-3xl font-medium text-ink">
               Four pillars, every day
             </h2>
@@ -127,8 +120,6 @@ export function Home() {
           </RevealStagger>
         </div>
       </section>
-
-      <WaveDivider flip color="var(--color-parchment)" />
 
       {/* Two divisions swap tabs */}
       <section className="mx-auto max-w-4xl px-5 py-20">
@@ -165,8 +156,6 @@ export function Home() {
         </Reveal>
       </section>
 
-      <LightOfLearning />
-
       {/* Daily rhythm */}
       <section className="bg-parchment-2/50 py-20">
         <div className="mx-auto max-w-4xl px-5">
@@ -191,8 +180,6 @@ export function Home() {
           </Timeline>
         </div>
       </section>
-
-      <WaveDivider flip color="var(--color-parchment)" />
 
       {/* Quote carousel */}
       <section className="px-5 py-24">
@@ -241,57 +228,6 @@ export function Home() {
         </Reveal>
       </section>
     </>
-  );
-}
-
-function LightOfLearning() {
-  const sectionRef = useRef<HTMLElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ["start end", "end start"],
-  });
-  const [show3D] = useState(() => typeof window !== "undefined" && window.innerWidth >= 640);
-
-  return (
-    <section ref={sectionRef} className="overflow-hidden py-20">
-      <div className="mx-auto grid max-w-5xl items-center gap-10 px-5 sm:grid-cols-2">
-        <Reveal>
-          <span className="text-xs font-semibold uppercase tracking-[0.2em] text-camel-600 dark:text-brass-300">
-            A lamp for every child
-          </span>
-          <h2 className="mt-3 font-display text-3xl font-medium text-ink">
-            Bhantar and ghadtar, lit together
-          </h2>
-          <p className="mt-4 max-w-md text-ink-soft">
-            A gurujan doesn't only teach a lesson — they light something in a
-            child that keeps burning long after the class ends. Scroll, and
-            the lamp turns with you.
-          </p>
-        </Reveal>
-
-        <div className="relative aspect-square w-full sm:aspect-[4/5]">
-          {show3D ? (
-            <Suspense fallback={null}>
-              <Diya3D scrollProgress={scrollYProgress} className="h-full w-full" />
-            </Suspense>
-          ) : (
-            <div className="flex h-full w-full items-center justify-center text-camel-600 dark:text-brass-500/70">
-              <svg viewBox="0 0 100 100" className="h-2/3 w-2/3" aria-hidden="true">
-                <path
-                  d="M20,60 Q50,90 80,60 Q75,50 50,50 Q25,50 20,60 Z"
-                  fill="currentColor"
-                  opacity="0.85"
-                />
-                <path
-                  d="M50,50 C44,38 46,28 50,18 C54,28 56,38 50,50 Z"
-                  fill="currentColor"
-                />
-              </svg>
-            </div>
-          )}
-        </div>
-      </div>
-    </section>
   );
 }
 

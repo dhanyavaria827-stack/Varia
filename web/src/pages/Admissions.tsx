@@ -7,9 +7,13 @@ import { TiltCard } from "@/components/TiltCard";
 import { Magnetic } from "@/components/Magnetic";
 import { CursorGlow } from "@/components/CursorGlow";
 import { Photo } from "@/components/Photo";
+import { PlayableVideo } from "@/components/PlayableVideo";
 import { DIVISIONS } from "@/data/content";
 import { useDocumentTitle } from "@/lib/useDocumentTitle";
 import photoPortrait from "@/assets/gallery-portrait.jpg";
+import videoVidhyarambh from "@/assets/vidhyarambh.mp4";
+import videoVidhyarambhWebm from "@/assets/vidhyarambh.webm";
+import videoVidhyarambhPoster from "@/assets/vidhyarambh-poster.jpg";
 
 const STEPS = [
   {
@@ -62,6 +66,34 @@ export function Admissions() {
           <p className="bg-parchment-2/50 px-5 py-3 text-center font-display text-sm italic text-ink-soft">
             Curious, and ready to begin
           </p>
+        </TiltCard>
+      </Reveal>
+
+      {/* Vidhyarambh explainer video */}
+      <Reveal delay={0.12} className="mx-auto mt-12 max-w-sm text-center">
+        <span className="text-xs font-semibold uppercase tracking-[0.2em] text-camel-600 dark:text-brass-300">
+          Watch
+        </span>
+        <h2 className="mt-2 font-display text-xl font-medium text-ink">
+          Vidhyarambh, explained
+        </h2>
+        <p className="mt-2 text-sm leading-relaxed text-ink-soft">
+          A short walkthrough of Vidhyarambh — the admission ceremony — the
+          steps to enrol, and what Gurukulam is about.
+        </p>
+        <TiltCard
+          strength={5}
+          className="mx-auto mt-5 aspect-[9/16] w-full max-w-[280px] overflow-hidden rounded-sm border border-brass-500/30 shadow-card [perspective:1400px]"
+        >
+          <PlayableVideo
+            sources={[
+              { src: videoVidhyarambhWebm, type: "video/webm" },
+              { src: videoVidhyarambh, type: "video/mp4" },
+            ]}
+            poster={videoVidhyarambhPoster}
+            label="Vidhyarambh explained: the admission ceremony, the process, and Gurukulam"
+            className="h-full w-full"
+          />
         </TiltCard>
       </Reveal>
 

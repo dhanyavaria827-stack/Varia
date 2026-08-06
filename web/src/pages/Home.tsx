@@ -12,6 +12,7 @@ import { Magnetic } from "@/components/Magnetic";
 import { SplitText } from "@/components/SplitText";
 import { TextShimmer } from "@/components/TextShimmer";
 import { WaveDivider } from "@/components/WaveDivider";
+import { DrawUnderline } from "@/components/DrawUnderline";
 import { Timeline } from "@/components/Timeline";
 import {
   STATS,
@@ -71,6 +72,7 @@ export function Home() {
           <span className="text-xs font-semibold uppercase tracking-[0.2em] text-camel-600 dark:text-brass-300">
             Our foundation
           </span>
+          <DrawUnderline className="mx-auto mt-1.5 block" delay={0.2} />
           <h2 className="mt-3 text-balance font-display text-2xl font-medium leading-snug text-ink sm:text-3xl">
             An education built on the {PHILOSOPHY.menCodes} codes of conduct for men and{" "}
             {PHILOSOPHY.womenCodes} for women, set down by {PHILOSOPHY.founder}.
@@ -92,6 +94,7 @@ export function Home() {
             <span className="text-xs font-semibold uppercase tracking-[0.2em] text-camel-600 dark:text-brass-300">
               What is taught
             </span>
+            <DrawUnderline className="mx-auto mt-1.5 block" delay={0.2} />
             <h2 className="mt-3 font-display text-3xl font-medium text-ink">
               Four pillars, every day
             </h2>

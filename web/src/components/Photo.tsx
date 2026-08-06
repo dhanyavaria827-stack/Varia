@@ -29,8 +29,8 @@ export function Photo({ src, alt, className, style, ...rest }: ImgHTMLAttributes
       src={attempt > 0 ? `${src}?retry=${attempt}` : src}
       alt={alt}
       className={cn(
-        "transition-[opacity,filter,transform] duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]",
-        loaded ? "opacity-100 scale-100 blur-none" : "opacity-0 scale-[1.03] blur-sm",
+        "transition-[filter,transform] duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]",
+        loaded ? "scale-100 blur-none" : "photo-skeleton scale-[1.03] blur-sm",
         className
       )}
       style={style}

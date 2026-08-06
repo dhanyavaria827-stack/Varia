@@ -7,6 +7,7 @@ import { Photo } from "@/components/Photo";
 import { TIMELINE, UNIQUENESS, DRESS_CODE, PHILOSOPHY } from "@/data/content";
 import { useDocumentTitle } from "@/lib/useDocumentTitle";
 import photoMealtime from "@/assets/gallery-mealtime.jpg";
+import photoStudent from "@/assets/gallery-student.jpg";
 
 export function About() {
   useDocumentTitle("About");
@@ -107,8 +108,8 @@ export function About() {
       </div>
 
       {/* Dress code */}
-      <div className="mx-auto mt-20 max-w-3xl text-center">
-        <Reveal>
+      <div className="mx-auto mt-20 max-w-5xl">
+        <Reveal className="text-center">
           <span className="text-xs font-semibold uppercase tracking-[0.2em] text-camel-600 dark:text-brass-300">
             Traditional attire
           </span>
@@ -122,21 +123,33 @@ export function About() {
           </p>
         </Reveal>
 
-        <RevealStagger className="mt-8 grid gap-4 [perspective:1200px] sm:grid-cols-3">
-          {DRESS_CODE.map((d) => (
-            <TiltCard
-              key={d.group}
-              variants={staggerItem}
-              strength={6}
-              className="rounded-sm border border-ink/10 bg-parchment-2/40 p-5"
-            >
-              <div className="text-xs font-semibold uppercase tracking-[0.14em] text-camel-600 dark:text-brass-300">
-                {d.group}
-              </div>
-              <div className="mt-2 font-display text-lg text-ink">{d.attire}</div>
+        <div className="mt-10 grid gap-8 sm:grid-cols-5 sm:items-center">
+          <Reveal className="sm:col-span-2 [perspective:1400px]">
+            <TiltCard strength={6} className="overflow-hidden rounded-sm border border-brass-500/30 shadow-card">
+              <Photo
+                src={photoStudent}
+                alt="A student seated cross-legged, at practice"
+                className="h-64 w-full object-cover sm:h-80"
+              />
             </TiltCard>
-          ))}
-        </RevealStagger>
+          </Reveal>
+
+          <RevealStagger className="grid gap-4 [perspective:1200px] sm:col-span-3 sm:grid-cols-3">
+            {DRESS_CODE.map((d) => (
+              <TiltCard
+                key={d.group}
+                variants={staggerItem}
+                strength={6}
+                className="rounded-sm border border-ink/10 bg-parchment-2/40 p-5 text-center sm:text-left"
+              >
+                <div className="text-xs font-semibold uppercase tracking-[0.14em] text-camel-600 dark:text-brass-300">
+                  {d.group}
+                </div>
+                <div className="mt-2 font-display text-lg text-ink">{d.attire}</div>
+              </TiltCard>
+            ))}
+          </RevealStagger>
+        </div>
       </div>
     </div>
   );

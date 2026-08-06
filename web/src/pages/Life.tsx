@@ -11,6 +11,7 @@ import { ARTS, FESTIVALS, DAILY_RHYTHM, SOCIAL } from "@/data/content";
 import { slugify } from "@/lib/utils";
 import { useDocumentTitle } from "@/lib/useDocumentTitle";
 import { Photo } from "@/components/Photo";
+import { LazyVideo } from "@/components/LazyVideo";
 import photoPottery from "@/assets/gallery-pottery.jpg";
 import photoSand from "@/assets/gallery-sand.jpg";
 import photoStudent from "@/assets/gallery-student.jpg";
@@ -18,6 +19,9 @@ import photoChalk from "@/assets/gallery-chalk.jpg";
 import photoTabla from "@/assets/gallery-tabla.jpg";
 import photoGathering from "@/assets/gallery-gathering.jpg";
 import photoRitual from "@/assets/gallery-ritual.jpg";
+import videoRitualOm from "@/assets/ritual-om.mp4";
+import videoRitualOmWebm from "@/assets/ritual-om.webm";
+import videoRitualOmPoster from "@/assets/ritual-om-poster.jpg";
 
 const MotionLink = motion.create(Link);
 
@@ -154,8 +158,21 @@ export function Life() {
           ))}
         </RevealStagger>
 
-        <div className="mt-6 grid gap-4 [perspective:1200px] sm:grid-cols-2">
+        <div className="mt-6 grid gap-4 [perspective:1200px] sm:grid-cols-3">
           <Reveal className="[perspective:1400px]">
+            <TiltCard strength={5} className="overflow-hidden rounded-sm border border-ink/10 shadow-card">
+              <LazyVideo
+                sources={[
+                  { src: videoRitualOmWebm, type: "video/webm" },
+                  { src: videoRitualOm, type: "video/mp4" },
+                ]}
+                poster={videoRitualOmPoster}
+                label="An Om drawn on paper, resting on a puja thali with rice and rose petals"
+                className="h-64 w-full object-cover sm:h-72"
+              />
+            </TiltCard>
+          </Reveal>
+          <Reveal delay={0.06} className="[perspective:1400px]">
             <TiltCard strength={5} className="overflow-hidden rounded-sm border border-ink/10 shadow-card">
               <Photo
                 src={photoGathering}
@@ -164,7 +181,7 @@ export function Life() {
               />
             </TiltCard>
           </Reveal>
-          <Reveal delay={0.08} className="[perspective:1400px]">
+          <Reveal delay={0.12} className="[perspective:1400px]">
             <TiltCard strength={5} className="overflow-hidden rounded-sm border border-ink/10 shadow-card">
               <Photo
                 src={photoRitual}

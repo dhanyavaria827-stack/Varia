@@ -12,6 +12,7 @@ import { Magnetic } from "@/components/Magnetic";
 import { SplitText } from "@/components/SplitText";
 import { TextShimmer } from "@/components/TextShimmer";
 import { Photo } from "@/components/Photo";
+import { PremiumCTA } from "@/components/PremiumCTA";
 
 const HeroParticles = lazy(() =>
   import("@/components/HeroParticles").then((m) => ({ default: m.HeroParticles }))
@@ -259,13 +260,15 @@ export function Home() {
               new home for Gurukulam — and would welcome your support.
             </p>
             <Magnetic strength={12} className="mt-8 inline-block">
-              <Link
-                to="/admissions#support"
-                className="inline-flex items-center gap-2 rounded-sm bg-brass-500 px-7 py-3.5 text-sm font-medium uppercase tracking-[0.06em] text-camel-700 shadow-soft transition hover:bg-brass-300 active:scale-95"
-              >
-                See how to help
-                <ArrowRight size={16} />
-              </Link>
+              <PremiumCTA>
+                <Link
+                  to="/admissions#support"
+                  className="inline-flex items-center gap-2 rounded-sm bg-brass-500 px-7 py-3.5 text-sm font-medium uppercase tracking-[0.06em] text-camel-700 shadow-soft transition hover:bg-brass-300 active:scale-95"
+                >
+                  See how to help
+                  <ArrowRight size={16} />
+                </Link>
+              </PremiumCTA>
             </Magnetic>
           </TiltCard>
         </Reveal>
@@ -381,13 +384,15 @@ function Hero() {
           className="mt-9 flex flex-col gap-3 sm:flex-row"
         >
           <Magnetic strength={12}>
-            <Link
-              to="/admissions"
-              className="group inline-flex items-center justify-center gap-2 rounded-sm bg-camel-600 px-7 py-3.5 text-sm font-medium uppercase tracking-[0.06em] text-camel-50 shadow-soft transition hover:bg-camel-700 active:scale-95"
-            >
-              Enquire about admission
-              <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
-            </Link>
+            <PremiumCTA>
+              <Link
+                to="/admissions"
+                className="group inline-flex items-center justify-center gap-2 rounded-sm bg-camel-600 px-7 py-3.5 text-sm font-medium uppercase tracking-[0.06em] text-camel-50 shadow-soft transition hover:bg-camel-700 active:scale-95"
+              >
+                Enquire about admission
+                <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
+              </Link>
+            </PremiumCTA>
           </Magnetic>
           <Magnetic strength={12}>
             <Link

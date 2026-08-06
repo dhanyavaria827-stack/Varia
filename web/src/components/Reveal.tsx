@@ -2,8 +2,8 @@ import { motion, type Variants } from "framer-motion";
 import type { ReactNode } from "react";
 
 const variants: Variants = {
-  hidden: { opacity: 0, y: 36 },
-  show: { opacity: 1, y: 0 },
+  hidden: { opacity: 0, y: 36, filter: "blur(6px)" },
+  show: { opacity: 1, y: 0, filter: "blur(0px)" },
 };
 
 export function Reveal({
@@ -58,6 +58,12 @@ export function RevealStagger({
 }
 
 export const staggerItem: Variants = {
-  hidden: { opacity: 0, y: 30, scale: 0.96 },
-  show: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.9, ease: [0.16, 1, 0.3, 1] } },
+  hidden: { opacity: 0, y: 30, scale: 0.96, filter: "blur(4px)" },
+  show: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    filter: "blur(0px)",
+    transition: { duration: 0.9, ease: [0.16, 1, 0.3, 1] },
+  },
 };

@@ -5,6 +5,7 @@ import { Reveal, RevealStagger, staggerItem } from "@/components/Reveal";
 import { FlipStat } from "@/components/FlipStat";
 import { TiltCard } from "@/components/TiltCard";
 import { Magnetic } from "@/components/Magnetic";
+import { PremiumCTA } from "@/components/PremiumCTA";
 import { CursorGlow } from "@/components/CursorGlow";
 import { Photo } from "@/components/Photo";
 import { PlayableVideo } from "@/components/PlayableVideo";
@@ -190,13 +191,15 @@ export function Admissions() {
           Reach out and a gurujan will follow up to arrange a conversation.
         </p>
         <Magnetic strength={12} className="mt-7 inline-block">
-          <Link
-            to="/contact"
-            className="inline-flex items-center gap-2 rounded-sm bg-brass-500 px-7 py-3.5 text-sm font-medium uppercase tracking-[0.06em] text-camel-700 shadow-soft transition hover:bg-brass-300 active:scale-95"
-          >
-            Start a conversation
-            <ArrowRight size={16} />
-          </Link>
+          <PremiumCTA>
+            <Link
+              to="/contact"
+              className="inline-flex items-center gap-2 rounded-sm bg-brass-500 px-7 py-3.5 text-sm font-medium uppercase tracking-[0.06em] text-camel-700 shadow-soft transition hover:bg-brass-300 active:scale-95"
+            >
+              Start a conversation
+              <ArrowRight size={16} />
+            </Link>
+          </PremiumCTA>
         </Magnetic>
       </Reveal>
     </div>

@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { useState, type MouseEvent } from "react";
+import { useState, lazy, Suspense, type MouseEvent } from "react";
 import { motion, useMotionTemplate, useMotionValue, useScroll, useSpring, useTransform } from "framer-motion";
 import { ArrowRight, Languages, Calculator, BookHeart, Palette } from "lucide-react";
 import { Reveal, RevealStagger, staggerItem } from "@/components/Reveal";
@@ -13,6 +13,10 @@ import { SplitText } from "@/components/SplitText";
 import { TextShimmer } from "@/components/TextShimmer";
 import { WaveDivider } from "@/components/WaveDivider";
 import { DrawUnderline } from "@/components/DrawUnderline";
+
+const HeroParticles = lazy(() =>
+  import("@/components/HeroParticles").then((m) => ({ default: m.HeroParticles }))
+);
 import { Timeline } from "@/components/Timeline";
 import {
   STATS,
@@ -262,6 +266,11 @@ function Hero() {
   const ringScale = useTransform(scrollY, [0, 600], [1, 1.3]);
   const ringRotate = useTransform(scrollY, [0, 600], [0, 55]);
 
+  // Skip the WebGL particle field on narrow viewports entirely — not just
+  // visually hidden, since mounting it would still open a GL context and run
+  // its animation loop for nothing on the phones most parents will browse on.
+  const [showParticles] = useState(() => typeof window !== "undefined" && window.innerWidth >= 640);
+
   const [glowActive, setGlowActive] = useState(false);
   const rawX = useMotionValue(0);
   const rawY = useMotionValue(0);
@@ -285,6 +294,11 @@ function Hero() {
         transition={{ duration: 0.5 }}
         className="pointer-events-none absolute inset-0 -z-30"
       />
+      {showParticles && (
+        <Suspense fallback={null}>
+          <HeroParticles className="pointer-events-none absolute inset-0 -z-[25]" />
+        </Suspense>
+      )}
       <motion.div
         style={{ y: ringY, scale: ringScale, rotate: ringRotate }}
         className="pointer-events-none absolute inset-0 -z-10 flex items-center justify-center text-camel-600 dark:text-brass-500/70"

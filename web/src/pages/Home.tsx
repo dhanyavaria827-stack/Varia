@@ -10,6 +10,8 @@ import { OrnamentRing } from "@/components/OrnamentRing";
 import { TiltCard } from "@/components/TiltCard";
 import { Magnetic } from "@/components/Magnetic";
 import { SplitText } from "@/components/SplitText";
+import { TextShimmer } from "@/components/TextShimmer";
+import { WaveDivider } from "@/components/WaveDivider";
 import { Timeline } from "@/components/Timeline";
 import {
   STATS,
@@ -81,6 +83,8 @@ export function Home() {
         </Reveal>
       </section>
 
+      <WaveDivider color="var(--color-parchment-2)" />
+
       {/* Pillars */}
       <section className="bg-parchment-2/50 py-20">
         <div className="mx-auto max-w-6xl px-5">
@@ -115,6 +119,8 @@ export function Home() {
           </RevealStagger>
         </div>
       </section>
+
+      <WaveDivider flip color="var(--color-parchment)" />
 
       {/* Two divisions swap tabs */}
       <section className="mx-auto max-w-4xl px-5 py-20">
@@ -175,6 +181,8 @@ export function Home() {
           </Timeline>
         </div>
       </section>
+
+      <WaveDivider flip color="var(--color-parchment)" />
 
       {/* Quote carousel */}
       <section className="px-5 py-24">
@@ -302,7 +310,7 @@ function Hero() {
           transition={{ duration: 1, delay: 1.6, ease: [0.16, 1, 0.3, 1] }}
           className="mt-5 font-display text-xl italic text-camel-700 dark:text-brass-300 sm:text-2xl"
         >
-          {PHILOSOPHY.tagline}
+          <TextShimmer delay={2.6}>{PHILOSOPHY.tagline}</TextShimmer>
         </motion.p>
 
         <motion.p

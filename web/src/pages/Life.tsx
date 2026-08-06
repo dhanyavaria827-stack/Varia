@@ -10,15 +10,20 @@ import { TiltCard } from "@/components/TiltCard";
 import { ARTS, FESTIVALS, DAILY_RHYTHM, SOCIAL } from "@/data/content";
 import { slugify } from "@/lib/utils";
 import { useDocumentTitle } from "@/lib/useDocumentTitle";
+import { Photo } from "@/components/Photo";
 import photoPottery from "@/assets/gallery-pottery.jpg";
 import photoSand from "@/assets/gallery-sand.jpg";
 import photoStudent from "@/assets/gallery-student.jpg";
 import photoChalk from "@/assets/gallery-chalk.jpg";
+import photoTabla from "@/assets/gallery-tabla.jpg";
+import photoGathering from "@/assets/gallery-gathering.jpg";
+import photoRitual from "@/assets/gallery-ritual.jpg";
 
 const MotionLink = motion.create(Link);
 
 const PHOTOS = [
   { src: photoChalk, caption: "Desi games, played barefoot", rotate: 2 },
+  { src: photoTabla, caption: "Tabla and dholak, played together", rotate: -2 },
   { src: photoPottery, caption: "Guided, one letter at a time", rotate: -3 },
   { src: photoSand, caption: "First letters, traced in sand", rotate: 2 },
   { src: photoStudent, caption: "Seated cross-legged, at practice", rotate: -2 },
@@ -148,6 +153,27 @@ export function Life() {
             </TiltCard>
           ))}
         </RevealStagger>
+
+        <div className="mt-6 grid gap-4 [perspective:1200px] sm:grid-cols-2">
+          <Reveal className="[perspective:1400px]">
+            <TiltCard strength={5} className="overflow-hidden rounded-sm border border-ink/10 shadow-card">
+              <Photo
+                src={photoGathering}
+                alt="The Gurukulam Parivar gathered together for a ceremony"
+                className="h-64 w-full object-cover sm:h-72"
+              />
+            </TiltCard>
+          </Reveal>
+          <Reveal delay={0.08} className="[perspective:1400px]">
+            <TiltCard strength={5} className="overflow-hidden rounded-sm border border-ink/10 shadow-card">
+              <Photo
+                src={photoRitual}
+                alt="A ritual observance at Gurukulam, with children taking part"
+                className="h-64 w-full object-cover sm:h-72"
+              />
+            </TiltCard>
+          </Reveal>
+        </div>
       </div>
     </div>
   );

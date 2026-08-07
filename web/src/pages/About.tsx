@@ -8,6 +8,7 @@ import { TIMELINE, UNIQUENESS, DRESS_CODE, PHILOSOPHY } from "@/data/content";
 import { useDocumentTitle } from "@/lib/useDocumentTitle";
 import photoMealtime from "@/assets/gallery-mealtime.jpg";
 import photoStudent from "@/assets/gallery-student.jpg";
+import photoLeadership from "@/assets/gallery-leadership.jpg";
 
 export function About() {
   useDocumentTitle("About");
@@ -43,6 +44,31 @@ export function About() {
             </Reveal>
           ))}
         </Timeline>
+      </div>
+
+      {/* Leadership */}
+      <div className="mx-auto mt-24 max-w-4xl text-center">
+        <Reveal>
+          <span className="text-xs font-semibold uppercase tracking-[0.2em] text-camel-600 dark:text-brass-300">
+            Who guides us
+          </span>
+          <h2 className="mt-3 font-display text-3xl font-medium text-ink">
+            The Gurukulam Parivar's gurujis and trustees
+          </h2>
+          <p className="mx-auto mt-3 max-w-xl text-ink-soft">
+            The people who carry that founding conviction forward — in daily
+            teaching and in stewarding Gurukulam's future.
+          </p>
+        </Reveal>
+        <Reveal delay={0.08} className="mx-auto mt-8 overflow-hidden rounded-sm border border-brass-500/30 [perspective:1400px]">
+          <TiltCard strength={5}>
+            <Photo
+              src={photoLeadership}
+              alt="The Gurukulam Parivar's gurujis and trustees, seated together during a ceremony"
+              className="max-h-96 w-full object-cover"
+            />
+          </TiltCard>
+        </Reveal>
       </div>
 
       {/* Philosophy */}

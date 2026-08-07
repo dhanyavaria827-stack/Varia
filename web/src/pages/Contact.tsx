@@ -16,7 +16,7 @@ const ENQUIRY_CONTACT = CONTACTS.find((c) => c.name === "Ankita Ben") ?? CONTACT
 export function Contact() {
   useDocumentTitle("Contact");
   const [submitted, setSubmitted] = useState(false);
-  const [submitting, setSubmitting] = useState(false);
+  const [waUrl, setWaUrl] = useState("");
 
   function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -29,12 +29,13 @@ export function Contact() {
     const waMessage = `Hi Ankita Ben, I'm ${name} (${email}), reaching out via the Gurukulam website (${ADMISSIONS_EMAIL}).\n\nSubject: ${subject}\n\nEnquiry: ${message}`;
     const whatsappUrl = waLink(ENQUIRY_CONTACT.phone, waMessage);
 
-    setSubmitting(true);
-    window.location.href = whatsappUrl;
-    window.setTimeout(() => {
-      setSubmitting(false);
-      setSubmitted(true);
-    }, 600);
+    // Open in a new tab rather than navigating this one away. Whether the
+    // popup succeeded isn't reliably detectable across browsers, so instead
+    // of guessing, always keep the manual link and phone/email fallback
+    // visible rather than claiming delivery.
+    window.open(whatsappUrl, "_blank", "noopener,noreferrer");
+    setWaUrl(whatsappUrl);
+    setSubmitted(true);
   }
 
   return (
@@ -119,6 +120,9 @@ export function Contact() {
 
         <Reveal delay={0.1} className="lg:col-span-3">
           <div className="relative overflow-hidden rounded-sm border border-ink/10 bg-parchment-2/40 p-6 shadow-card sm:p-8">
+            <span role="status" aria-live="polite" className="sr-only">
+              {submitted ? "WhatsApp opened in a new tab with your enquiry ready to send." : ""}
+            </span>
             <AnimatePresence mode="wait">
               {submitted ? (
                 <motion.div
@@ -136,12 +140,30 @@ export function Contact() {
                     <CheckCircle2 className="text-forest-500" size={48} />
                   </motion.div>
                   <h3 className="mt-4 font-display text-xl font-medium text-ink">
-                    Almost there
+                    One more step
                   </h3>
                   <p className="mx-auto mt-1 max-w-sm text-sm text-ink-soft">
-                    WhatsApp should have opened with this enquiry already
-                    typed out for <strong className="font-semibold text-ink">{ENQUIRY_CONTACT.name}</strong>.
-                    Just tap send there to reach Gurukulam directly.
+                    WhatsApp should have opened in a new tab with this
+                    enquiry already typed out for{" "}
+                    <strong className="font-semibold text-ink">{ENQUIRY_CONTACT.name}</strong>.
+                    If it didn't, use the button below.
+                  </p>
+                  <a
+                    href={waUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="mt-5 inline-flex items-center gap-2 rounded-sm bg-camel-600 px-6 py-3 text-sm font-medium uppercase tracking-[0.06em] text-camel-50 shadow-soft transition hover:bg-camel-700"
+                  >
+                    Open WhatsApp
+                  </a>
+                  <p className="mx-auto mt-4 max-w-sm text-xs text-ink-soft">
+                    Or reach us directly:{" "}
+                    <a href={telLink(ENQUIRY_CONTACT.phone)} className="font-medium text-ink hover:text-camel-600">
+                      {ENQUIRY_CONTACT.phone}
+                    </a>{" "}
+                    · <a href={`mailto:${ADMISSIONS_EMAIL}`} className="font-medium text-ink hover:text-camel-600">
+                      {ADMISSIONS_EMAIL}
+                    </a>
                   </p>
                   <button
                     onClick={() => setSubmitted(false)}
@@ -165,10 +187,11 @@ export function Contact() {
                   </div>
                   <Field label="Subject" name="subject" placeholder="What's this about?" required />
                   <div>
-                    <label className="mb-1.5 block text-sm font-medium text-ink">
+                    <label htmlFor="message" className="mb-1.5 block text-sm font-medium text-ink">
                       Message
                     </label>
                     <textarea
+                      id="message"
                       required
                       name="message"
                       rows={5}
@@ -180,19 +203,10 @@ export function Contact() {
                     <motion.button
                       whileTap={{ scale: 0.97 }}
                       type="submit"
-                      disabled={submitting}
-                      className="inline-flex w-full items-center justify-center gap-2 rounded-sm bg-camel-600 px-6 py-3.5 text-sm font-medium uppercase tracking-[0.06em] text-camel-50 shadow-soft transition hover:bg-camel-700 disabled:opacity-70 sm:w-auto"
+                      className="inline-flex w-full items-center justify-center gap-2 rounded-sm bg-camel-600 px-6 py-3.5 text-sm font-medium uppercase tracking-[0.06em] text-camel-50 shadow-soft transition hover:bg-camel-700 sm:w-auto"
                     >
-                      {submitting ? (
-                        <motion.span
-                          animate={{ rotate: 360 }}
-                          transition={{ repeat: Infinity, duration: 0.8, ease: "linear" }}
-                          className="h-4 w-4 rounded-full border-2 border-camel-50/40 border-t-camel-50"
-                        />
-                      ) : (
-                        <Send size={15} />
-                      )}
-                      {submitting ? "Opening WhatsApp..." : "Send via WhatsApp"}
+                      <Send size={15} />
+                      Send via WhatsApp
                     </motion.button>
                   </Magnetic>
                 </motion.form>

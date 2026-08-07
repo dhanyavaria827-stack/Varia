@@ -1,4 +1,5 @@
 import { useState, type ImgHTMLAttributes } from "react";
+import { ImageOff } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 // A defensive <img> that retries a couple of times on a failed load
@@ -20,7 +21,22 @@ export function Photo({ src, alt, className, style, ...rest }: ImgHTMLAttributes
   }
 
   if (failed) {
-    return <div className={className} style={style} aria-hidden="true" />;
+    return (
+      <div
+        className={cn(
+          "flex flex-col items-center justify-center gap-1.5 bg-parchment-2/60 p-4 text-ink-soft",
+          className
+        )}
+        style={style}
+        role="img"
+        aria-label={typeof alt === "string" && alt ? alt : "Image failed to load"}
+      >
+        <ImageOff size={22} aria-hidden="true" />
+        {typeof alt === "string" && alt && (
+          <span className="max-w-[85%] text-center text-xs leading-snug">{alt}</span>
+        )}
+      </div>
+    );
   }
 
   return (

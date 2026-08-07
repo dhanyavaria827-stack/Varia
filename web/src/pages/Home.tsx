@@ -27,7 +27,6 @@ import {
   PHILOSOPHY,
 } from "@/data/content";
 import { useDocumentTitle } from "@/lib/useDocumentTitle";
-import photoGathering from "@/assets/gallery-gathering.jpg";
 import photoRitual from "@/assets/gallery-ritual.jpg";
 
 const PILLARS = [
@@ -126,7 +125,7 @@ export function Home() {
       </section>
 
       {/* Two divisions swap tabs */}
-      <section className="mx-auto max-w-5xl px-5 py-20">
+      <section className="mx-auto max-w-4xl px-5 py-20">
         <Reveal className="text-center">
           <span className="text-xs font-semibold uppercase tracking-[0.2em] text-camel-600 dark:text-brass-300">
             Two divisions
@@ -136,40 +135,28 @@ export function Home() {
           </h2>
         </Reveal>
 
-        <div className="mt-12 grid gap-8 sm:grid-cols-5 sm:items-center">
-          <Reveal className="sm:col-span-2 [perspective:1400px]">
-            <TiltCard strength={6} className="overflow-hidden rounded-sm border border-brass-500/30 shadow-card">
-              <Photo
-                src={photoGathering}
-                alt="The Gurukulam Parivar gathered together for a ceremony"
-                className="h-64 w-full object-cover sm:h-80"
-              />
-            </TiltCard>
-          </Reveal>
-
-          <Reveal delay={0.1} className="sm:col-span-3">
-            <SwapTabs
-              tabs={DIVISIONS.map((d) => ({
-                id: d.id,
-                label: d.name,
-                content: (
-                  <div className="rounded-sm border border-ink/10 bg-parchment-2/40 p-8 text-center">
-                    <span className="text-xs font-semibold uppercase tracking-[0.16em] text-camel-600 dark:text-brass-300">
-                      {d.subtitle}
-                    </span>
-                    <h3 className="mt-2 font-display text-2xl font-medium text-ink">{d.name}</h3>
-                    <div className="mt-3 flex flex-wrap items-center justify-center gap-x-6 gap-y-1 text-sm text-ink-soft">
-                      <span>Age {d.age}</span>
-                      <span className="hidden sm:inline">·</span>
-                      <span>{d.hours}</span>
-                    </div>
-                    <p className="mx-auto mt-4 max-w-lg text-ink-soft">{d.desc}</p>
+        <Reveal delay={0.1} className="mt-12">
+          <SwapTabs
+            tabs={DIVISIONS.map((d) => ({
+              id: d.id,
+              label: d.name,
+              content: (
+                <div className="rounded-sm border border-ink/10 bg-parchment-2/40 p-8 text-center">
+                  <span className="text-xs font-semibold uppercase tracking-[0.16em] text-camel-600 dark:text-brass-300">
+                    {d.subtitle}
+                  </span>
+                  <h3 className="mt-2 font-display text-2xl font-medium text-ink">{d.name}</h3>
+                  <div className="mt-3 flex flex-wrap items-center justify-center gap-x-6 gap-y-1 text-sm text-ink-soft">
+                    <span>Age {d.age}</span>
+                    <span className="hidden sm:inline">·</span>
+                    <span>{d.hours}</span>
                   </div>
-                ),
-              }))}
-            />
-          </Reveal>
-        </div>
+                  <p className="mx-auto mt-4 max-w-lg text-ink-soft">{d.desc}</p>
+                </div>
+              ),
+            }))}
+          />
+        </Reveal>
       </section>
 
       {/* A family, gathered */}

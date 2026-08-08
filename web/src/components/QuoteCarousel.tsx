@@ -33,10 +33,12 @@ export function QuoteCarousel({ quotes }: { quotes: readonly QuoteItem[] }) {
   const current = quotes[index];
 
   return (
-    <div className="mx-auto max-w-3xl text-center">
-      <QuoteIcon className="mx-auto mb-5 text-brass-500" size={28} />
-      <div className="relative min-h-[9rem] sm:min-h-[7rem]">
-        <AnimatePresence mode="popLayout" custom={direction} initial={false}>
+    <div className="mx-auto max-w-3xl text-center" role="group" aria-roledescription="carousel" aria-label="Quotes from the Gurukulam Parivar">
+      <QuoteIcon aria-hidden="true" className="mx-auto mb-5 text-brass-500" size={28} />
+      <div className="relative min-h-[9rem] sm:min-h-[7rem]" aria-live="off">
+        {/* mode="wait" (not "popLayout") so only one quote is ever in the DOM —
+            a screen reader landing mid-transition can't pick up the outgoing one. */}
+        <AnimatePresence mode="wait" custom={direction} initial={false}>
           <motion.div
             key={index}
             custom={direction}

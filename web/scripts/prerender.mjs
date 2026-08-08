@@ -166,9 +166,29 @@ async function main() {
     fs.writeFileSync(path.join(skillsDir, `${entry.slug}.html`), html);
   }
 
+  writeSitemap(skills);
+
   console.log(
     `prerender: wrote ${STATIC_ROUTES.length} route pages and ${skills.length} skill pages with route-specific metadata.`
   );
+}
+
+// The static sitemap.xml in public/ only ever listed the top-level routes —
+// the 36 skill pages generated above (which now return a real 200, not a
+// 404-redirect) were invisible to it. Generate the whole thing here instead,
+// from the same route lists this script already has, so it can't drift.
+function writeSitemap(skills) {
+  const urls = [
+    { loc: `${SITE_URL}/`, priority: "1.0" },
+    ...STATIC_ROUTES.map((r) => ({
+      loc: `${SITE_URL}/${r.path}`,
+      priority: r.path === "admissions" ? "0.9" : r.path === "about" || r.path === "academics" ? "0.8" : r.path === "life" ? "0.7" : "0.6",
+    })),
+    ...skills.map((s) => ({ loc: `${SITE_URL}/skills/${s.slug}`, priority: "0.5" })),
+  ];
+  const body = urls.map((u) => `  <url>\n    <loc>${u.loc}</loc>\n    <priority>${u.priority}</priority>\n  </url>`).join("\n");
+  const xml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${body}\n</urlset>\n`;
+  fs.writeFileSync(path.join(distDir, "sitemap.xml"), xml);
 }
 
 main();

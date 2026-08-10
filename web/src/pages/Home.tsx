@@ -1,14 +1,6 @@
 import { Link } from "react-router-dom";
 import { useState, lazy, Suspense, type MouseEvent } from "react";
-import {
-  motion,
-  useMotionTemplate,
-  useMotionValue,
-  useReducedMotion,
-  useScroll,
-  useSpring,
-  useTransform,
-} from "framer-motion";
+import { motion, useMotionTemplate, useMotionValue, useScroll, useSpring, useTransform } from "framer-motion";
 import { ArrowRight, Languages, Calculator, BookHeart, Palette } from "lucide-react";
 import { Reveal, RevealStagger, staggerItem } from "@/components/Reveal";
 import { FlipStat } from "@/components/FlipStat";
@@ -21,7 +13,6 @@ import { SplitText } from "@/components/SplitText";
 import { TextShimmer } from "@/components/TextShimmer";
 import { Photo } from "@/components/Photo";
 import { PremiumCTA } from "@/components/PremiumCTA";
-import logoIcon from "@/assets/logo-icon.png";
 
 const HeroParticles = lazy(() =>
   import("@/components/HeroParticles").then((m) => ({ default: m.HeroParticles }))
@@ -340,13 +331,11 @@ function Hero() {
       <div className="pointer-events-none absolute inset-0 -z-20 bg-grain opacity-[0.035] text-ink" />
 
       <div className="mx-auto flex max-w-6xl flex-col items-center px-5 pb-20 pt-20 text-center sm:pt-28">
-        <HeroEmblem />
-
         <motion.p
           initial={{ opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-          className="mt-6 text-xs font-semibold uppercase tracking-[0.3em] text-camel-600 dark:text-brass-300"
+          className="text-xs font-semibold uppercase tracking-[0.3em] text-camel-600 dark:text-brass-300"
         >
           Surat, Gujarat · Established 2004
         </motion.p>
@@ -403,45 +392,5 @@ function Hero() {
         </motion.div>
       </div>
     </section>
-  );
-}
-
-// A tilting, gently floating brass medallion above the headline — the one
-// unmistakably-3D moment on the page that doesn't need a mouse to read as
-// 3D: perspective + a slow idle rotateY drift give it real depth at rest,
-// and TiltCard layers an interactive hover-tilt on top for desktop visitors.
-// Pure Framer Motion (already loaded on every page), so unlike a WebGL
-// scene it costs nothing extra in bundle size.
-function HeroEmblem() {
-  const prefersReducedMotion = useReducedMotion();
-
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: -14, scale: 0.85 }}
-      animate={{ opacity: 1, y: 0, scale: 1 }}
-      transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
-      className="[perspective:1000px]"
-    >
-      <motion.div
-        animate={
-          prefersReducedMotion ? undefined : { y: [0, -10, 0], rotateY: [0, 12, 0, -12, 0] }
-        }
-        transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-      >
-        <TiltCard
-          strength={16}
-          lift={22}
-          className="mx-auto grid h-24 w-24 place-items-center rounded-full border border-brass-500/40 bg-gradient-to-br from-parchment to-camel-100 shadow-soft sm:h-28 sm:w-28 dark:from-ink-soft/60 dark:to-ink-soft/20"
-        >
-          <img
-            src={logoIcon}
-            alt=""
-            width={64}
-            height={64}
-            className="h-14 w-14 object-contain drop-shadow-md sm:h-16 sm:w-16"
-          />
-        </TiltCard>
-      </motion.div>
-    </motion.div>
   );
 }

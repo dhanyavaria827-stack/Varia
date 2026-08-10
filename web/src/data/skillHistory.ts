@@ -232,6 +232,36 @@ export const SKILL_HISTORY: SkillHistoryEntry[] = [
       "Modern fashion design draws directly on this inheritance, and several Gurukulam alumni have gone on to build careers in the field, carrying that craft heritage forward.",
     ],
   },
+  {
+    slug: "cooking-homemaking",
+    name: "Cooking & Homemaking",
+    category: "Craft & Skill",
+    section: "life",
+    history: [
+      "Indian home cooking is one of the subcontinent's oldest transmitted crafts, carried almost entirely by word of mouth and hand from one generation to the next, long before any of it was written into a cookbook. It draws on the same Ayurvedic understanding of food, season and balance that Gurukulam teaches as its own subject.",
+      "At Gurukulam, cooking and homemaking are taught as skills of independence — not chores set apart from learning, but part of the same daily discipline as everything else a student practises.",
+    ],
+  },
+  {
+    slug: "storytelling",
+    name: "Storytelling",
+    category: "Craft & Skill",
+    section: "life",
+    history: [
+      "Kathakathan, the art of oral storytelling, is how most of India's scripture, history and ethics were carried forward for centuries before literacy was widespread — pauranik reciters would narrate the Ramayana, Mahabharata and Puranas in temple courtyards and village gatherings, using voice and rhythm alone to hold an audience.",
+      "Gurukulam still leans on that same tradition: stories of dharma and character, told rather than lectured, are one of its oldest teaching tools.",
+    ],
+  },
+  {
+    slug: "memory-techniques",
+    name: "Memory Techniques",
+    category: "Craft & Skill",
+    section: "life",
+    history: [
+      "Before writing was widespread, India's Vedic tradition preserved vast bodies of scripture with near-perfect accuracy purely through trained memory, using structured recitation methods such as krama-patha and ghana-patha that check a text against itself by reciting its words in fixed permutations.",
+      "The memory techniques Gurukulam teaches today — association, visualisation, structured recall — are a modern form of that same ancient discipline: memory treated not as rote, but as something trainable.",
+    ],
+  },
   // ---- Academics: Languages ----
   {
     slug: "sanskrit-prathama-madhyama",

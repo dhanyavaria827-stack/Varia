@@ -78,6 +78,13 @@ export function About() {
             children as their own — which is why the school calls itself,
             without ceremony, the <em className="font-display not-italic text-ink">Gurukulam Parivar</em>.
           </p>
+          <p className="mx-auto mt-4 max-w-2xl text-ink-soft sm:mx-0">
+            Education builds the individual, the individual builds the
+            family, the family builds society, and society builds the
+            nation — whatever path a child eventually takes, Gurukulam's aim
+            is that the sanskar behind it stays intact, so it shapes how
+            they carry that career, not just what career they carry.
+          </p>
         </Reveal>
       </div>
 

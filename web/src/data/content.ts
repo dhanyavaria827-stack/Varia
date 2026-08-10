@@ -75,7 +75,19 @@ export const ARTS = [
   {
     id: "craft",
     name: "Craft & Skill",
-    items: ["Handwriting", "Drawing", "Gymnastics", "Desi games", "Mehendi", "Rangoli", "Pottery", "Fashion design"],
+    items: [
+      "Handwriting",
+      "Drawing",
+      "Gymnastics",
+      "Desi games",
+      "Mehendi",
+      "Rangoli",
+      "Pottery",
+      "Fashion design",
+      "Cooking & Homemaking",
+      "Storytelling",
+      "Memory Techniques",
+    ],
   },
 ] as const;
 
@@ -119,6 +131,10 @@ export const QUOTES = [
   {
     text: "The atmosphere here is that of a family — every gurujan cooks, cleans and cares for these children as their own. That is why we call ourselves the Gurukulam Parivar.",
     attribution: "From the Gurukulam founding notes",
+  },
+  {
+    text: "A mother becomes an enemy, and a father a foe, to the child they fail to educate — for such a person can never shine in company, any more than a crane can shine among swans.",
+    attribution: "Traditional Sanskrit shloka, taught at Gurukulam",
   },
 ] as const;
 

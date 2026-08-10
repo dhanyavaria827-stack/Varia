@@ -16,8 +16,8 @@ export function Footer() {
       >
         <motion.div variants={staggerItem}>
           <div className="flex items-center gap-2.5">
-            <span className="h-9 w-9 overflow-hidden rounded-full border border-brass-500/60">
-              <img src={logo} alt="Gurukulam" className="h-full w-full object-cover" />
+            <span className="block h-9 w-9">
+              <img src={logo} alt="Gurukulam" className="h-full w-full object-contain" />
             </span>
             <span className="font-display text-base font-medium text-ink">
               Gurukulam

@@ -62,9 +62,9 @@ export function Navbar() {
           <motion.span
             whileHover={{ rotate: 10 }}
             transition={{ type: "spring", stiffness: 160, damping: 14 }}
-            className="h-10 w-10 overflow-hidden rounded-full border border-brass-500/60"
+            className="block h-10 w-10"
           >
-            <img src={logo} alt="Gurukulam" className="h-full w-full object-cover" />
+            <img src={logo} alt="Gurukulam" className="h-full w-full object-contain" />
           </motion.span>
           <span className="leading-tight">
             <span className="block font-display text-lg font-medium tracking-tight text-ink">

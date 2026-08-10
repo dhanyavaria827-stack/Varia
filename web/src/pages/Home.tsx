@@ -17,9 +17,6 @@ import { PremiumCTA } from "@/components/PremiumCTA";
 const HeroParticles = lazy(() =>
   import("@/components/HeroParticles").then((m) => ({ default: m.HeroParticles }))
 );
-const ExplodedEmblem = lazy(() =>
-  import("@/components/ExplodedEmblem").then((m) => ({ default: m.ExplodedEmblem }))
-);
 import { Timeline } from "@/components/Timeline";
 import {
   STATS,
@@ -64,10 +61,6 @@ export function Home() {
   return (
     <>
       <Hero />
-
-      <Suspense fallback={null}>
-        <ExplodedEmblem />
-      </Suspense>
 
       {/* Stats */}
       <RevealStagger className="mx-auto grid max-w-4xl grid-cols-2 gap-3 px-5 pb-16 sm:grid-cols-4 sm:gap-4" staggerDelay={0.18}>

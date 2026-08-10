@@ -1,11 +1,11 @@
 import { useEffect, useRef, useState } from "react";
 import { motion, useMotionValueEvent, useReducedMotion, useScroll, useTransform } from "framer-motion";
 
-// 60 frames of the school mark (notebook, pencil, hand) coming apart, sampled
-// at 10fps from a ~6s source clip. Loaded lazily — only once this section is
-// close to the viewport — and scrubbed frame-by-frame against scroll
-// position rather than played as a video, so there's no autoplay cost and no
-// decode work until someone actually scrolls here.
+// 180 frames of the school mark (notebook, pencil, hand) coming apart,
+// sampled at 30fps from a ~6s source clip. Loaded lazily — only once this
+// section is close to the viewport — and scrubbed frame-by-frame against
+// scroll position rather than played as a video, so there's no autoplay
+// cost and no decode work until someone actually scrolls here.
 const frameModules = import.meta.glob("@/assets/explode-frames/*.jpg", {
   eager: true,
   query: "?url",
@@ -17,10 +17,12 @@ const FRAME_URLS = Object.keys(frameModules)
 const FRAME_COUNT = FRAME_URLS.length;
 const LAST_FRAME = FRAME_COUNT - 1;
 
-// The flat backdrop the frames were generated on — sampled directly from the
-// source video (RGB 208,208,208). Matching this exactly behind the canvas is
-// what makes the object read as floating rather than a photo with an edge.
-const FRAME_BG = "#d0d0d0";
+// The frames were generated on a neutral gray backdrop, then warm-shifted in
+// post to this exact site parchment tone (--color-parchment) so the section
+// blends into the page in light mode instead of sitting in a mismatched gray
+// box. Matching this exactly behind the canvas is what makes the object read
+// as floating rather than a photo with an edge.
+const FRAME_BG = "#f2e7d0";
 
 export function ExplodedEmblem() {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -117,10 +119,10 @@ export function ExplodedEmblem() {
     <section
       ref={sectionRef}
       className="relative"
-      style={{ height: prefersReducedMotion ? "auto" : "220vh" }}
+      style={{ height: prefersReducedMotion ? "auto" : "130vh" }}
     >
       <div
-        className="sticky top-0 flex h-[85vh] flex-col items-center justify-center gap-6 overflow-hidden px-5 sm:h-screen"
+        className="sticky top-0 flex h-[65vh] flex-col items-center justify-center gap-6 overflow-hidden px-5 sm:h-[75vh]"
         style={{ background: FRAME_BG }}
       >
         {/* This section keeps a fixed light backdrop matching the generated

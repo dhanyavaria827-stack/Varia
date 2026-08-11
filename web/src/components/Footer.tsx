@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { Mail, MapPin, Phone } from "lucide-react";
 import { InstagramIcon } from "@/components/icons/InstagramIcon";
 import { RevealStagger, staggerItem } from "@/components/Reveal";
-import logo from "@/assets/logo-icon.png";
+import logo from "@/assets/logo-icon.jpg";
 import { CONTACTS, SOCIAL, LOCATION } from "@/data/content";
 import { telLink } from "@/lib/utils";
 import { motion } from "framer-motion";
@@ -17,7 +17,7 @@ export function Footer() {
         <motion.div variants={staggerItem}>
           <div className="flex items-center gap-2.5">
             <span className="grid h-9 w-9 place-items-center rounded-full border border-brass-500/40 bg-parchment-2/60">
-              <img src={logo} alt="Gurukulam" className="h-[70%] w-[70%] object-contain" />
+              <img src={logo} alt="Gurukulam" className="h-full w-full rounded-full object-cover" />
             </span>
             <span className="font-display text-base font-medium text-ink">
               Gurukulam

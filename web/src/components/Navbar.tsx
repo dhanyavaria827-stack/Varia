@@ -6,7 +6,7 @@ import { useTheme } from "@/lib/theme";
 import { cn } from "@/lib/utils";
 import { Magnetic } from "@/components/Magnetic";
 import { PremiumCTA } from "@/components/PremiumCTA";
-import logo from "@/assets/logo-icon.png";
+import logo from "@/assets/logo-icon.jpg";
 
 const LINKS = [
   { to: "/", label: "Home" },
@@ -79,9 +79,10 @@ export function Navbar() {
             transition={{ type: "spring", stiffness: 160, damping: 14 }}
             className="grid h-10 w-10 place-items-center rounded-full border border-brass-500/40 bg-parchment-2/60"
           >
-            {/* Sized to 70% of the circle so the full square mark fits with
-                zero cropping — any larger and the corners would clip. */}
-            <img src={logo} alt="Gurukulam" className="h-[70%] w-[70%] object-contain" />
+            {/* This crop already has the artwork inset with just enough
+                margin that it fills the full circle without clipping — no
+                extra shrinking needed here. */}
+            <img src={logo} alt="Gurukulam" className="h-full w-full rounded-full object-cover" />
           </motion.span>
           <span className="leading-tight">
             <span className="block font-display text-lg font-medium tracking-tight text-ink">

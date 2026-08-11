@@ -1,4 +1,4 @@
-import { useEffect, useState, type MouseEvent } from "react";
+import { useEffect, useRef, useState, type MouseEvent } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X, Moon, Sun } from "lucide-react";
@@ -21,6 +21,7 @@ export function Navbar() {
   const { theme, toggle } = useTheme();
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
@@ -32,6 +33,20 @@ export function Navbar() {
   useEffect(() => {
     setOpen(false);
   }, [pathname]);
+
+  // Escape closes the mobile menu and returns focus to the toggle button,
+  // matching how the menu would behave if it were a native <dialog>.
+  useEffect(() => {
+    if (!open) return;
+    function onKeyDown(e: KeyboardEvent) {
+      if (e.key === "Escape") {
+        setOpen(false);
+        menuButtonRef.current?.focus();
+      }
+    }
+    document.addEventListener("keydown", onKeyDown);
+    return () => document.removeEventListener("keydown", onKeyDown);
+  }, [open]);
 
   function handleThemeToggle(e: MouseEvent<HTMLButtonElement>) {
     const { clientX, clientY } = e;
@@ -130,7 +145,10 @@ export function Navbar() {
           </Magnetic>
 
           <button
+            ref={menuButtonRef}
             aria-label="Toggle menu"
+            aria-expanded={open}
+            aria-controls="mobile-menu"
             className="grid h-10 w-10 place-items-center rounded-full border border-ink/10 text-ink dark:border-white/10 md:hidden"
             onClick={() => setOpen((o) => !o)}
           >
@@ -142,6 +160,7 @@ export function Navbar() {
       <AnimatePresence>
         {open && (
           <motion.div
+            id="mobile-menu"
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}

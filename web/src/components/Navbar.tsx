@@ -77,9 +77,11 @@ export function Navbar() {
           <motion.span
             whileHover={{ rotate: 10 }}
             transition={{ type: "spring", stiffness: 160, damping: 14 }}
-            className="block h-10 w-10"
+            className="grid h-10 w-10 place-items-center rounded-full border border-brass-500/40 bg-parchment-2/60"
           >
-            <img src={logo} alt="Gurukulam" className="h-full w-full object-contain" />
+            {/* Sized to 70% of the circle so the full square mark fits with
+                zero cropping — any larger and the corners would clip. */}
+            <img src={logo} alt="Gurukulam" className="h-[70%] w-[70%] object-contain" />
           </motion.span>
           <span className="leading-tight">
             <span className="block font-display text-lg font-medium tracking-tight text-ink">

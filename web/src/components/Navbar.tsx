@@ -106,8 +106,8 @@ export function Navbar() {
                 {active && (
                   <motion.span
                     layoutId="nav-pill"
-                    className="absolute inset-x-2 -bottom-0.5 h-[2px] bg-brass-500"
-                    transition={{ type: "spring", stiffness: 220, damping: 28 }}
+                    className="absolute -bottom-1 left-1/2 h-2 w-2 -translate-x-1/2 rounded-full bg-brass-500 shadow-[0_0_14px_4px_rgba(184,145,47,0.55)]"
+                    transition={{ type: "spring", stiffness: 260, damping: 22, mass: 0.6 }}
                   />
                 )}
                 <span className="relative z-10">{link.label}</span>

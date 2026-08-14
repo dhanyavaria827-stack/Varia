@@ -3,7 +3,7 @@ import { Mail, MapPin, Phone } from "lucide-react";
 import { InstagramIcon } from "@/components/icons/InstagramIcon";
 import { RevealStagger, staggerItem } from "@/components/Reveal";
 import logo from "@/assets/logo-icon.jpg";
-import { CONTACTS, SOCIAL, LOCATION } from "@/data/content";
+import { ADMISSIONS_EMAIL, CONTACTS, SOCIAL, LOCATION } from "@/data/content";
 import { telLink } from "@/lib/utils";
 import { motion } from "framer-motion";
 
@@ -54,8 +54,8 @@ export function Footer() {
           <ul className="mt-3 space-y-2.5 text-sm text-ink-soft">
             <li className="flex items-center gap-2">
               <Mail size={15} />
-              <a href="mailto:Gurukulam941@Gmail.com" className="transition hover:text-camel-600">
-                Gurukulam941@Gmail.com
+              <a href={`mailto:${ADMISSIONS_EMAIL}`} className="transition hover:text-camel-600">
+                {ADMISSIONS_EMAIL}
               </a>
             </li>
             {CONTACTS.map((c) => (

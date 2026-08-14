@@ -179,6 +179,8 @@ export const CONTACTS = [
   { name: "Ankita Ben", role: "Gurukulam Parivar", phone: "+91 98249 82352" },
 ] as const;
 
+export const ADMISSIONS_EMAIL = "Gurukulam941@Gmail.com";
+
 export const SOCIAL = {
   instagram: "https://www.instagram.com/gurukulam_surat/",
   instagramLabel: "@gurukulam_surat",

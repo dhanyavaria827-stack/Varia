@@ -40,7 +40,7 @@ function GalleryPhoto({ photo, index }: { photo: Photo; index: number }) {
           src={photo.src}
           alt={photo.caption}
           className="aspect-square w-full object-cover"
-          style={{ filter: "sepia(0.35) saturate(1.05) contrast(1.03)" }}
+          style={{ filter: "sepia(0.08) saturate(1.2) contrast(1.03)" }}
         />
       </div>
       <figcaption className="mt-2 pb-1 text-center font-display text-sm italic text-ink-soft">

@@ -70,7 +70,7 @@ export function Contact() {
                     {c.name} · {c.role}
                   </div>
                   <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
-                    <a href={telLink(c.phone)} className="text-sm font-medium text-ink transition hover:text-camel-600">
+                    <a href={telLink(c.phone)} className="text-sm font-medium text-ink transition hover:text-camel-600 dark:hover:text-brass-300">
                       {c.phone}
                     </a>
                     <a
@@ -100,7 +100,7 @@ export function Contact() {
                   href={SOCIAL.instagram}
                   target="_blank"
                   rel="noreferrer"
-                  className="block text-sm font-medium text-ink transition hover:text-camel-600"
+                  className="block text-sm font-medium text-ink transition hover:text-camel-600 dark:hover:text-brass-300"
                 >
                   {SOCIAL.instagramLabel}
                 </a>
@@ -108,7 +108,7 @@ export function Contact() {
                   href={SOCIAL.instagramBalmandir}
                   target="_blank"
                   rel="noreferrer"
-                  className="block text-sm font-medium text-ink transition hover:text-camel-600"
+                  className="block text-sm font-medium text-ink transition hover:text-camel-600 dark:hover:text-brass-300"
                 >
                   {SOCIAL.instagramBalmandirLabel} <span className="text-ink-soft">(Bal Vibhag)</span>
                 </a>
@@ -157,10 +157,10 @@ export function Contact() {
                   </a>
                   <p className="mx-auto mt-4 max-w-sm text-xs text-ink-soft">
                     Or reach us directly:{" "}
-                    <a href={telLink(ENQUIRY_CONTACT.phone)} className="font-medium text-ink hover:text-camel-600">
+                    <a href={telLink(ENQUIRY_CONTACT.phone)} className="font-medium text-ink hover:text-camel-600 dark:hover:text-brass-300">
                       {ENQUIRY_CONTACT.phone}
                     </a>{" "}
-                    · <a href={`mailto:${ADMISSIONS_EMAIL}`} className="font-medium text-ink hover:text-camel-600">
+                    · <a href={`mailto:${ADMISSIONS_EMAIL}`} className="font-medium text-ink hover:text-camel-600 dark:hover:text-brass-300">
                       {ADMISSIONS_EMAIL}
                     </a>
                   </p>
@@ -258,7 +258,7 @@ function ContactRow({
             href={href}
             target={external ? "_blank" : undefined}
             rel={external ? "noreferrer" : undefined}
-            className="text-sm font-medium text-ink transition hover:text-camel-600"
+            className="text-sm font-medium text-ink transition hover:text-camel-600 dark:hover:text-brass-300"
           >
             {value}
           </a>

@@ -101,6 +101,7 @@ export function Navbar() {
               <Link
                 key={link.to}
                 to={link.to}
+                aria-current={active ? "page" : undefined}
                 className="relative px-4 py-2 text-sm font-medium uppercase tracking-[0.06em] text-ink-soft transition-colors hover:text-ink"
               >
                 {active && (
@@ -120,7 +121,7 @@ export function Navbar() {
           <button
             aria-label="Toggle color theme"
             onClick={handleThemeToggle}
-            className="grid h-10 w-10 place-items-center rounded-full border border-ink/10 text-ink-soft transition hover:border-brass-500 hover:text-camel-600 dark:border-white/10"
+            className="grid h-10 w-10 place-items-center rounded-full border border-ink/10 text-ink-soft transition hover:border-brass-500 hover:text-camel-600 dark:hover:text-brass-300 dark:border-white/10"
           >
             <AnimatePresence mode="wait" initial={false}>
               <motion.span
@@ -180,6 +181,7 @@ export function Navbar() {
                 >
                   <Link
                     to={link.to}
+                    aria-current={pathname === link.to ? "page" : undefined}
                     className={cn(
                       "block rounded-sm px-3 py-2.5 text-base font-medium",
                       pathname === link.to

@@ -54,11 +54,11 @@ export function Life() {
         <p className="mt-8 flex flex-wrap items-center justify-center gap-x-2 gap-y-1 text-center text-sm text-ink-soft">
           <InstagramIcon size={14} className="text-camel-600 dark:text-brass-300" />
           More moments on Instagram —{" "}
-          <a href={SOCIAL.instagram} target="_blank" rel="noreferrer" className="font-medium text-ink transition hover:text-camel-600">
+          <a href={SOCIAL.instagram} target="_blank" rel="noreferrer" className="font-medium text-ink transition hover:text-camel-600 dark:hover:text-brass-300">
             {SOCIAL.instagramLabel}
           </a>{" "}
           and, for Bal Vibhag,{" "}
-          <a href={SOCIAL.instagramBalmandir} target="_blank" rel="noreferrer" className="font-medium text-ink transition hover:text-camel-600">
+          <a href={SOCIAL.instagramBalmandir} target="_blank" rel="noreferrer" className="font-medium text-ink transition hover:text-camel-600 dark:hover:text-brass-300">
             {SOCIAL.instagramBalmandirLabel}
           </a>
         </p>

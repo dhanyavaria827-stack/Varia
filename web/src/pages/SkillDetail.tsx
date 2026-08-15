@@ -23,7 +23,7 @@ export function SkillDetail() {
       <Reveal>
         <Link
           to={backTo}
-          className="inline-flex items-center gap-2 text-sm font-medium text-ink-soft transition hover:text-camel-600"
+          className="inline-flex items-center gap-2 text-sm font-medium text-ink-soft transition hover:text-camel-600 dark:hover:text-brass-300"
         >
           <ArrowLeft size={15} />
           {backLabel}

@@ -33,19 +33,19 @@ export function Footer() {
         <motion.div variants={staggerItem}>
           <h3 className="text-xs font-semibold uppercase tracking-[0.14em] text-ink">Explore</h3>
           <ul className="mt-3 space-y-2 text-sm text-ink-soft">
-            <li><Link to="/" className="transition hover:text-camel-600">Home</Link></li>
-            <li><Link to="/about" className="transition hover:text-camel-600">About</Link></li>
-            <li><Link to="/academics" className="transition hover:text-camel-600">Academics</Link></li>
-            <li><Link to="/life" className="transition hover:text-camel-600">Life & Arts</Link></li>
+            <li><Link to="/" className="transition hover:text-camel-600 dark:hover:text-brass-300">Home</Link></li>
+            <li><Link to="/about" className="transition hover:text-camel-600 dark:hover:text-brass-300">About</Link></li>
+            <li><Link to="/academics" className="transition hover:text-camel-600 dark:hover:text-brass-300">Academics</Link></li>
+            <li><Link to="/life" className="transition hover:text-camel-600 dark:hover:text-brass-300">Life & Arts</Link></li>
           </ul>
         </motion.div>
 
         <motion.div variants={staggerItem}>
           <h3 className="text-xs font-semibold uppercase tracking-[0.14em] text-ink">Gurukulam</h3>
           <ul className="mt-3 space-y-2 text-sm text-ink-soft">
-            <li><Link to="/admissions" className="transition hover:text-camel-600">Admissions</Link></li>
-            <li><Link to="/admissions#support" className="transition hover:text-camel-600">Support a new campus</Link></li>
-            <li><Link to="/contact" className="transition hover:text-camel-600">Contact</Link></li>
+            <li><Link to="/admissions" className="transition hover:text-camel-600 dark:hover:text-brass-300">Admissions</Link></li>
+            <li><Link to="/admissions#support" className="transition hover:text-camel-600 dark:hover:text-brass-300">Support a new campus</Link></li>
+            <li><Link to="/contact" className="transition hover:text-camel-600 dark:hover:text-brass-300">Contact</Link></li>
           </ul>
         </motion.div>
 
@@ -54,14 +54,14 @@ export function Footer() {
           <ul className="mt-3 space-y-2.5 text-sm text-ink-soft">
             <li className="flex items-center gap-2">
               <Mail size={15} />
-              <a href={`mailto:${ADMISSIONS_EMAIL}`} className="transition hover:text-camel-600">
+              <a href={`mailto:${ADMISSIONS_EMAIL}`} className="transition hover:text-camel-600 dark:hover:text-brass-300">
                 {ADMISSIONS_EMAIL}
               </a>
             </li>
             {CONTACTS.map((c) => (
               <li key={c.name} className="flex items-center gap-2">
                 <Phone size={15} />
-                <a href={telLink(c.phone)} className="transition hover:text-camel-600">
+                <a href={telLink(c.phone)} className="transition hover:text-camel-600 dark:hover:text-brass-300">
                   {c.phone} <span className="text-xs">({c.role})</span>
                 </a>
               </li>
@@ -72,7 +72,7 @@ export function Footer() {
                 href={LOCATION.mapsUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="transition hover:text-camel-600"
+                className="transition hover:text-camel-600 dark:hover:text-brass-300"
               >
                 {LOCATION.address}
               </a>
@@ -85,7 +85,7 @@ export function Footer() {
               rel="noreferrer"
               aria-label="Gurukulam on Instagram"
               title="Gurukulam on Instagram"
-              className="grid h-8 w-8 place-items-center rounded-full border border-brass-500/50 text-camel-700 transition hover:border-brass-500 hover:text-camel-600 dark:text-brass-300"
+              className="grid h-8 w-8 place-items-center rounded-full border border-brass-500/50 text-camel-700 transition hover:border-brass-500 hover:text-camel-600 dark:hover:text-brass-300 dark:text-brass-300"
             >
               <InstagramIcon size={15} />
             </a>
@@ -95,7 +95,7 @@ export function Footer() {
               rel="noreferrer"
               aria-label="Balmandir Gurukulam on Instagram"
               title="Balmandir Gurukulam on Instagram"
-              className="grid h-8 w-8 place-items-center rounded-full border border-brass-500/50 text-camel-700 transition hover:border-brass-500 hover:text-camel-600 dark:text-brass-300"
+              className="grid h-8 w-8 place-items-center rounded-full border border-brass-500/50 text-camel-700 transition hover:border-brass-500 hover:text-camel-600 dark:hover:text-brass-300 dark:text-brass-300"
             >
               <InstagramIcon size={15} />
             </a>

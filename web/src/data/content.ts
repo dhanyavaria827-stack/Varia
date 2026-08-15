@@ -184,8 +184,8 @@ export const ADMISSIONS_EMAIL = "Gurukulam941@Gmail.com";
 export const SOCIAL = {
   instagram: "https://www.instagram.com/gurukulam_surat/",
   instagramLabel: "@gurukulam_surat",
-  instagramBalmandir: "https://www.instagram.com/balmandir_gurukulam/",
-  instagramBalmandirLabel: "@balmandir_gurukulam",
+  instagramBalmandir: "https://www.instagram.com/gurukulam_balmandirr/",
+  instagramBalmandirLabel: "@gurukulam_balmandirr",
 } as const;
 
 export const LOCATION = {

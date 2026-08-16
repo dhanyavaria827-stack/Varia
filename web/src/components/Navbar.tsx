@@ -121,7 +121,7 @@ export function Navbar() {
           <button
             aria-label="Toggle color theme"
             onClick={handleThemeToggle}
-            className="grid h-10 w-10 place-items-center rounded-full border border-ink/10 text-ink-soft transition hover:border-brass-500 hover:text-camel-600 dark:hover:text-brass-300 dark:border-white/10"
+            className="grid h-11 w-11 place-items-center rounded-full border border-ink/10 text-ink-soft transition hover:border-brass-500 hover:text-camel-600 dark:hover:text-brass-300 dark:border-white/10"
           >
             <AnimatePresence mode="wait" initial={false}>
               <motion.span
@@ -153,7 +153,7 @@ export function Navbar() {
             aria-label="Toggle menu"
             aria-expanded={open}
             aria-controls="mobile-menu"
-            className="grid h-10 w-10 place-items-center rounded-full border border-ink/10 text-ink dark:border-white/10 md:hidden"
+            className="grid h-11 w-11 place-items-center rounded-full border border-ink/10 text-ink dark:border-white/10 md:hidden"
             onClick={() => setOpen((o) => !o)}
           >
             {open ? <X size={18} /> : <Menu size={18} />}

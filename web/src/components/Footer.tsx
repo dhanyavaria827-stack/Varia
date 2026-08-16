@@ -85,7 +85,7 @@ export function Footer() {
               rel="noreferrer"
               aria-label="Gurukulam on Instagram"
               title="Gurukulam on Instagram"
-              className="grid h-8 w-8 place-items-center rounded-full border border-brass-500/50 text-camel-700 transition hover:border-brass-500 hover:text-camel-600 dark:hover:text-brass-300 dark:text-brass-300"
+              className="grid h-11 w-11 place-items-center rounded-full border border-brass-500/50 text-camel-700 transition hover:border-brass-500 hover:text-camel-600 dark:hover:text-brass-300 dark:text-brass-300"
             >
               <InstagramIcon size={15} />
             </a>
@@ -95,7 +95,7 @@ export function Footer() {
               rel="noreferrer"
               aria-label="Balmandir Gurukulam on Instagram"
               title="Balmandir Gurukulam on Instagram"
-              className="grid h-8 w-8 place-items-center rounded-full border border-brass-500/50 text-camel-700 transition hover:border-brass-500 hover:text-camel-600 dark:hover:text-brass-300 dark:text-brass-300"
+              className="grid h-11 w-11 place-items-center rounded-full border border-brass-500/50 text-camel-700 transition hover:border-brass-500 hover:text-camel-600 dark:hover:text-brass-300 dark:text-brass-300"
             >
               <InstagramIcon size={15} />
             </a>

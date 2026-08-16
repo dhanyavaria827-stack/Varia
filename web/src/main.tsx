@@ -5,6 +5,7 @@ import { MotionConfig } from "framer-motion";
 import "./index.css";
 import App from "./App.tsx";
 import { ThemeProvider } from "./lib/theme.tsx";
+import { ErrorBoundary } from "./components/ErrorBoundary.tsx";
 
 // A standalone build (opened directly via file://, e.g. a double-clicked
 // export) has no server to resolve real paths against, so it needs
@@ -24,7 +25,9 @@ createRoot(document.getElementById("root")!).render(
     <MotionConfig reducedMotion="user">
       <ThemeProvider>
         <Router basename={isStandalone ? undefined : basename}>
-          <App />
+          <ErrorBoundary>
+            <App />
+          </ErrorBoundary>
         </Router>
       </ThemeProvider>
     </MotionConfig>

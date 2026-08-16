@@ -181,13 +181,17 @@ export function Contact() {
                   className="space-y-4"
                 >
                   <div className="grid gap-4 sm:grid-cols-2">
-                    <Field label="Name" name="name" placeholder="Your name" required />
-                    <Field label="Email" name="email" type="email" placeholder="you@example.com" required />
+                    <Field label="Name" name="name" placeholder="Your name" autoComplete="name" required />
+                    <Field label="Email" name="email" type="email" placeholder="you@example.com" autoComplete="email" required />
                   </div>
                   <Field label="Subject" name="subject" placeholder="What's this about?" required />
                   <div>
                     <label htmlFor="message" className="mb-1.5 block text-sm font-medium text-ink">
                       Message
+                      <span aria-hidden="true" className="text-camel-600 dark:text-brass-300">
+                        {" "}
+                        *
+                      </span>
                     </label>
                     <textarea
                       id="message"
@@ -276,23 +280,32 @@ function Field({
   type = "text",
   placeholder,
   required,
+  autoComplete,
 }: {
   label: string;
   name: string;
   type?: string;
   placeholder?: string;
   required?: boolean;
+  autoComplete?: string;
 }) {
   return (
     <div>
       <label htmlFor={name} className="mb-1.5 block text-sm font-medium text-ink">
         {label}
+        {required && (
+          <span aria-hidden="true" className="text-camel-600 dark:text-brass-300">
+            {" "}
+            *
+          </span>
+        )}
       </label>
       <input
         id={name}
         name={name}
         type={type}
         required={required}
+        autoComplete={autoComplete}
         placeholder={placeholder}
         className="w-full rounded-sm border border-ink/15 bg-parchment px-4 py-3 text-sm text-ink outline-none transition focus:border-brass-500"
       />

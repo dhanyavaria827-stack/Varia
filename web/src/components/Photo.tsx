@@ -7,7 +7,7 @@ import { cn } from "@/lib/utils";
 // plain block instead of the browser's broken-image icon. Fades and
 // settles into place on load instead of popping in, matching the easing
 // used for every other reveal on the site.
-export function Photo({ src, alt, className, style, ...rest }: ImgHTMLAttributes<HTMLImageElement>) {
+export function Photo({ src, alt, className, style, loading = "lazy", ...rest }: ImgHTMLAttributes<HTMLImageElement>) {
   const [attempt, setAttempt] = useState(0);
   const [failed, setFailed] = useState(false);
   const [loaded, setLoaded] = useState(false);
@@ -50,6 +50,7 @@ export function Photo({ src, alt, className, style, ...rest }: ImgHTMLAttributes
         className
       )}
       style={style}
+      loading={loading}
       onError={handleError}
       onLoad={() => setLoaded(true)}
       {...rest}

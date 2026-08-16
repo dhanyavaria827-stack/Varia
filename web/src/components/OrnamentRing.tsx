@@ -1,15 +1,16 @@
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 
 // A slow-rotating brass sundial/compass ring — an ambient, continuous
 // "swap" of position rather than a one-shot entrance animation.
 export function OrnamentRing({ className }: { className?: string }) {
   const ticks = Array.from({ length: 36 }, (_, i) => i);
+  const prefersReducedMotion = useReducedMotion();
 
   return (
     <motion.svg
       viewBox="0 0 400 400"
       className={className}
-      animate={{ rotate: 360 }}
+      animate={prefersReducedMotion ? undefined : { rotate: 360 }}
       transition={{ duration: 90, repeat: Infinity, ease: "linear" }}
       aria-hidden="true"
     >

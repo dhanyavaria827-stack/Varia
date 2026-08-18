@@ -35,9 +35,12 @@ export function QuoteCarousel({ quotes }: { quotes: readonly QuoteItem[] }) {
   return (
     <div className="mx-auto max-w-3xl text-center" role="group" aria-roledescription="carousel" aria-label="Quotes from the Gurukulam Parivar">
       <QuoteIcon aria-hidden="true" className="mx-auto mb-5 text-brass-500" size={28} />
-      <div className="relative min-h-[9rem] sm:min-h-[7rem]" aria-live="off">
+      <div className="relative" aria-live="off">
         {/* mode="wait" (not "popLayout") so only one quote is ever in the DOM —
-            a screen reader landing mid-transition can't pick up the outgoing one. */}
+            a screen reader landing mid-transition can't pick up the outgoing
+            one. That also means the two never overlap, so this can safely
+            size to whichever quote is current instead of a fixed min-height
+            that would clip the longer ones. */}
         <AnimatePresence mode="wait" custom={direction} initial={false}>
           <motion.div
             key={index}
@@ -47,7 +50,6 @@ export function QuoteCarousel({ quotes }: { quotes: readonly QuoteItem[] }) {
             animate="center"
             exit="exit"
             transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
-            className="absolute inset-0"
           >
             <p className="font-display text-xl italic leading-snug text-ink sm:text-2xl">
               "{current.text}"

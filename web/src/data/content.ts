@@ -121,8 +121,8 @@ export const ALUMNI_PATHS = [
 
 export const QUOTES = [
   {
-    text: "Every child of Gurukulam has moved into a different field — some CAs, some architects, some in fashion design, some running their own businesses. But one thing holds: wherever they land, they haven't forgotten their values, their character, or their culture.",
-    attribution: "Ankita Ben, Gurukulam Parivar",
+    text: "True education is that which brightens a person's character, and Gurukul has always been at the forefront in this matter. Gurukulam is a place where education is paired with character building, where learning goes hand in hand with values. Here students learn not only how to earn a living, but more importantly, how to live a meaningful life. In a Gurukulam environment, education is deeply rooted in moral integrity and cultural heritage.",
+    attribution: "Yamini Paras Sanghvi",
   },
   {
     text: "A Gurukulam child won't only excel at studies — they'll be number one at becoming a good human being. Because at Gurukulam, bhantar (education) always comes with ghadtar (character-building).",

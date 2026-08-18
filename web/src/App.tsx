@@ -6,6 +6,7 @@ import { PageTransition } from "@/components/PageTransition";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import { ScrollProgress } from "@/components/ScrollProgress";
 import { BackToTop } from "@/components/BackToTop";
+import { StickyMobileCTA } from "@/components/StickyMobileCTA";
 import { Home } from "@/pages/Home";
 import { About } from "@/pages/About";
 import { Academics } from "@/pages/Academics";
@@ -45,6 +46,7 @@ function App() {
       </AnimatePresence>
       <Footer />
       <BackToTop />
+      <StickyMobileCTA />
     </div>
   );
 }

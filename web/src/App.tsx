@@ -14,6 +14,7 @@ import { Life } from "@/pages/Life";
 import { SkillDetail } from "@/pages/SkillDetail";
 import { Admissions } from "@/pages/Admissions";
 import { Contact } from "@/pages/Contact";
+import { Privacy } from "@/pages/Privacy";
 import { NotFound } from "@/pages/NotFound";
 
 function App() {
@@ -40,6 +41,7 @@ function App() {
             <Route path="/skills/:slug" element={<SkillDetail />} />
             <Route path="/admissions" element={<Admissions />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/privacy" element={<Privacy />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </PageTransition>

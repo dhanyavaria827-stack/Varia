@@ -58,6 +58,12 @@ const STATIC_ROUTES = [
     description:
       "Contact Gurukulam, Surat — reach us by phone, WhatsApp, email or in person for questions about admissions or a visit.",
   },
+  {
+    path: "privacy",
+    title: "Privacy",
+    description:
+      "What happens with your information on the Gurukulam, Surat website, in plain language.",
+  },
 ];
 
 // The skill-history data is plain TypeScript with no imports of its own, so
@@ -182,7 +188,16 @@ function writeSitemap(skills) {
     { loc: `${SITE_URL}/`, priority: "1.0" },
     ...STATIC_ROUTES.map((r) => ({
       loc: `${SITE_URL}/${r.path}`,
-      priority: r.path === "admissions" ? "0.9" : r.path === "about" || r.path === "academics" ? "0.8" : r.path === "life" ? "0.7" : "0.6",
+      priority:
+        r.path === "admissions"
+          ? "0.9"
+          : r.path === "about" || r.path === "academics"
+            ? "0.8"
+            : r.path === "life"
+              ? "0.7"
+              : r.path === "privacy"
+                ? "0.2"
+                : "0.6",
     })),
     ...skills.map((s) => ({ loc: `${SITE_URL}/skills/${s.slug}`, priority: "0.5" })),
   ];

@@ -105,8 +105,12 @@ export function Footer() {
 
       <div className="rule-brass mx-5" />
 
-      <div className="py-5 text-center text-xs uppercase tracking-[0.12em] text-ink-soft">
-        © {new Date().getFullYear()} Gurukulam, Surat
+      <div className="flex flex-col items-center gap-2 py-5 text-center text-xs uppercase tracking-[0.12em] text-ink-soft sm:flex-row sm:justify-center sm:gap-4">
+        <span>© {new Date().getFullYear()} Gurukulam, Surat</span>
+        <span className="hidden sm:inline">·</span>
+        <Link to="/privacy" className="transition hover:text-camel-600 dark:hover:text-brass-300">
+          Privacy
+        </Link>
       </div>
     </footer>
   );

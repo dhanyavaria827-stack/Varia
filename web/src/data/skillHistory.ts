@@ -383,7 +383,7 @@ export const SKILL_HISTORY: SkillHistoryEntry[] = [
     section: "academics",
     history: [
       "Moral education at Gurukulam draws on Jain ethical principles — truthfulness, non-violence, humility and self-restraint — values that have shaped Jain philosophy and daily practice for over two thousand years.",
-      "Taught alongside academics rather than after them, these values are meant to be practised, not just discussed.",
+      "Taught alongside academics rather than after them, these values are meant to be practised daily, woven into how each day at Gurukulam actually runs.",
     ],
   },
   {

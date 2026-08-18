@@ -1,4 +1,3 @@
-import { CheckCircle2 } from "lucide-react";
 import { Reveal, RevealStagger, staggerItem } from "@/components/Reveal";
 import { TiltCard } from "@/components/TiltCard";
 import { Timeline } from "@/components/Timeline";
@@ -82,8 +81,8 @@ export function About() {
             Education builds the individual, the individual builds the
             family, the family builds society, and society builds the
             nation — whatever path a child eventually takes, Gurukulam's aim
-            is that the sanskar behind it stays intact, so it shapes how
-            they carry that career, not just what career they carry.
+            is for the sanskar behind it to stay intact, shaping how they
+            carry their career as much as what that career is.
           </p>
         </Reveal>
       </div>
@@ -107,7 +106,7 @@ export function About() {
               strength={6}
               className="flex items-start gap-3 rounded-sm border border-ink/10 bg-parchment p-5 shadow-card"
             >
-              <CheckCircle2 size={18} className="mt-0.5 shrink-0 text-camel-600 dark:text-brass-300" />
+              <span aria-hidden="true" className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brass-500" />
               <p className="text-sm leading-relaxed text-ink-soft">{u}</p>
             </TiltCard>
           ))}

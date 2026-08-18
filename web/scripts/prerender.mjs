@@ -9,15 +9,20 @@
 //
 // This script writes a real static HTML file per route (about.html,
 // admissions.html, skills/<slug>.html, ...) using the same built
-// index.html as a template, with just the <title>/description/canonical/
-// OG/Twitter tags swapped for that route. GitHub Pages resolves a request
-// for "/about" to "about.html" directly, so these routes now return a
-// genuine 200 with route-specific metadata baked in — the app still boots
-// and renders normally from the same empty #root once the bundle loads.
+// index.html as a template, with the <title>/description/canonical/
+// OG/Twitter tags swapped for that route, AND with the actual rendered
+// page content baked into #root (see renderRouteContents below) — so a
+// crawler or reader that never runs JavaScript still gets the real page,
+// not an empty <div id="root"></div>. The app still boots and re-renders
+// itself from scratch on top of this once the bundle loads for anyone
+// with JS enabled, so this is purely additive.
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { createRequire } from "node:module";
+import { createServer } from "vite";
+import { renderToStaticMarkup } from "react-dom/server";
+import React from "react";
 
 const require = createRequire(import.meta.url);
 const ts = require("typescript");
@@ -26,6 +31,10 @@ const root = path.dirname(path.dirname(fileURLToPath(import.meta.url)));
 const distDir = path.join(root, "dist");
 const SITE_URL = "https://dhanyavaria827-stack.github.io/Varia";
 const SITE_NAME = "Gurukulam, Surat";
+// Matches main.tsx's own basename logic, for the same BASE_PATH the real
+// client build used (set by CI; defaults to "/" for local builds).
+const BASE_PATH = process.env.BASE_PATH || "/";
+const basename = BASE_PATH.startsWith("/") ? BASE_PATH.replace(/\/$/, "") || "/" : "/";
 
 const STATIC_ROUTES = [
   {
@@ -98,6 +107,92 @@ function replaceTag(html, pattern, replacement) {
   return html.replace(pattern, replacement);
 }
 
+// Vite's own SSR module loader (ssrLoadModule) transforms TS/JSX exactly
+// like the real app, using the real vite.config.ts aliases — but it always
+// resolves imported assets to their raw dev-server path (e.g.
+// "/src/assets/logo-icon.jpg"), since it has no idea a production build
+// with hashed filenames already happened in the same process. This maps
+// those dev paths to the real hashed ones already sitting in dist/assets,
+// by reversing Vite's own "name-HASH.ext" naming convention.
+function buildAssetPathMap() {
+  const assetsDir = path.join(distDir, "assets");
+  const map = new Map();
+  if (!fs.existsSync(assetsDir)) return map;
+  for (const file of fs.readdirSync(assetsDir)) {
+    const match = file.match(/^(.+)-([A-Za-z0-9_-]{8})\.([a-zA-Z0-9]+)$/);
+    if (!match) continue;
+    const [, base, , ext] = match;
+    map.set(`/src/assets/${base}.${ext}`, `${BASE_PATH}assets/${file}`.replace(/\/{2,}/g, "/"));
+  }
+  return map;
+}
+
+function rewriteAssetPaths(html, assetMap) {
+  let out = html;
+  for (const [devPath, prodPath] of assetMap) {
+    out = out.split(devPath).join(prodPath);
+  }
+  return out;
+}
+
+// Renders the real component tree for every route up front (one Vite SSR
+// server, reused across routes), returning routePath -> inner HTML for
+// #root. Throws if anything fails — a broken prerender should fail the
+// build loudly, not silently ship an empty page.
+async function renderRouteContents(routePaths) {
+  const vite = await createServer({
+    root,
+    server: { middlewareMode: true },
+    appType: "custom",
+    base: "/",
+    logLevel: "error",
+    resolve: {
+      // Vite's default resolution for this package's "node" export
+      // condition picks a CJS build that Vite's own SSR module runner
+      // can't evaluate ("module is not defined") — pointing straight at
+      // the real ESM build sidesteps that entirely.
+      alias: {
+        "react-router-dom": path.resolve(root, "node_modules/react-router-dom/dist/index.mjs"),
+      },
+    },
+  });
+
+  try {
+    const { default: App } = await vite.ssrLoadModule("/src/App.tsx");
+    const { ThemeProvider } = await vite.ssrLoadModule("/src/lib/theme.tsx");
+    const { StaticRouter } = await vite.ssrLoadModule("react-router-dom");
+    const { MotionConfig } = await vite.ssrLoadModule("framer-motion");
+    const assetMap = buildAssetPathMap();
+
+    const contents = new Map();
+    for (const routePath of routePaths) {
+      // StaticRouter's `location` is matched against the full URL path
+      // (basename included) and only then has the basename stripped
+      // internally — unlike the routePath keys used elsewhere in this
+      // script, which are always basename-relative.
+      const location = basename === "/" ? routePath : `${basename}${routePath}`;
+      const el = React.createElement(
+        MotionConfig,
+        { reducedMotion: "user" },
+        React.createElement(
+          ThemeProvider,
+          null,
+          React.createElement(StaticRouter, { location, basename }, React.createElement(App))
+        )
+      );
+      const html = rewriteAssetPaths(renderToStaticMarkup(el), assetMap);
+      contents.set(routePath, html);
+    }
+    return contents;
+  } finally {
+    await vite.close();
+  }
+}
+
+function injectRootContent(html, rootHtml) {
+  return replaceTag(html, /<div id="root"><\/div>/, `<div id="root">${rootHtml}</div>`);
+}
+
 function renderPage(template, { routePath, title, description }) {
   const fullTitle = title.includes(SITE_NAME) ? title : `${title} — ${SITE_NAME}`;
   const url = `${SITE_URL}/${routePath}`;
@@ -150,6 +245,16 @@ async function main() {
     process.exit(1);
   }
   const template = fs.readFileSync(path.join(distDir, "index.html"), "utf8");
+  const skills = await loadSkillHistory();
+
+  const allRoutePaths = [
+    "/",
+    ...STATIC_ROUTES.map((r) => `/${r.path}`),
+    ...skills.map((s) => `/skills/${s.slug}`),
+  ];
+  const rootContents = await renderRouteContents(allRoutePaths);
+
+  fs.writeFileSync(path.join(distDir, "index.html"), injectRootContent(template, rootContents.get("/")));
 
   for (const route of STATIC_ROUTES) {
     const html = renderPage(template, {
@@ -157,10 +262,12 @@ async function main() {
       title: route.title,
       description: route.description,
     });
-    fs.writeFileSync(path.join(distDir, `${route.path}.html`), html);
+    fs.writeFileSync(
+      path.join(distDir, `${route.path}.html`),
+      injectRootContent(html, rootContents.get(`/${route.path}`))
+    );
   }
 
-  const skills = await loadSkillHistory();
   const skillsDir = path.join(distDir, "skills");
   fs.mkdirSync(skillsDir, { recursive: true });
   for (const entry of skills) {
@@ -169,13 +276,16 @@ async function main() {
       title: entry.name,
       description: truncate(entry.history[0]),
     });
-    fs.writeFileSync(path.join(skillsDir, `${entry.slug}.html`), html);
+    fs.writeFileSync(
+      path.join(skillsDir, `${entry.slug}.html`),
+      injectRootContent(html, rootContents.get(`/skills/${entry.slug}`))
+    );
   }
 
   writeSitemap(skills);
 
   console.log(
-    `prerender: wrote ${STATIC_ROUTES.length} route pages and ${skills.length} skill pages with route-specific metadata.`
+    `prerender: wrote ${STATIC_ROUTES.length} route pages and ${skills.length} skill pages with route-specific metadata and real rendered content.`
   );
 }
 

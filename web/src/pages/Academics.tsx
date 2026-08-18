@@ -59,6 +59,7 @@ export function Academics() {
       </Reveal>
 
       {/* Subjects — morphing expand cards */}
+      <h2 className="sr-only">Subjects</h2>
       <div className="mt-16 space-y-4">
         {SUBJECTS.map((s, i) => {
           const isOpen = open === s.id;
@@ -125,6 +126,7 @@ export function Academics() {
       </div>
 
       {/* Divisions recap */}
+      <h2 className="sr-only">Divisions</h2>
       <div className="mt-20 grid gap-5 [perspective:1200px] sm:grid-cols-2">
         {DIVISIONS.map((d, i) => (
           <Reveal key={d.id} delay={i * 0.06}>

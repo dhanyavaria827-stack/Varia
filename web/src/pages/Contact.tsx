@@ -138,9 +138,9 @@ export function Contact() {
                   >
                     <CheckCircle2 className="text-forest-500" size={48} />
                   </motion.div>
-                  <h3 className="mt-4 font-display text-xl font-medium text-ink">
+                  <h2 className="mt-4 font-display text-xl font-medium text-ink">
                     One more step
-                  </h3>
+                  </h2>
                   <p className="mx-auto mt-1 max-w-sm text-sm text-ink-soft">
                     WhatsApp should have opened in a new tab with this
                     enquiry already typed out for{" "}

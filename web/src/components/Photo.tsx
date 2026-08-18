@@ -1,4 +1,4 @@
-import { useState, type ImgHTMLAttributes } from "react";
+import { useEffect, useRef, useState, type ImgHTMLAttributes } from "react";
 import { ImageOff } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -11,10 +11,13 @@ export function Photo({ src, alt, className, style, loading = "lazy", ...rest }:
   const [attempt, setAttempt] = useState(0);
   const [failed, setFailed] = useState(false);
   const [loaded, setLoaded] = useState(false);
+  const retryTimeout = useRef<number | undefined>(undefined);
+
+  useEffect(() => () => window.clearTimeout(retryTimeout.current), []);
 
   function handleError() {
     if (attempt < 2) {
-      window.setTimeout(() => setAttempt((a) => a + 1), 700);
+      retryTimeout.current = window.setTimeout(() => setAttempt((a) => a + 1), 700);
     } else {
       setFailed(true);
     }

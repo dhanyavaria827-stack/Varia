@@ -1,11 +1,19 @@
 import { useEffect, useState } from "react";
-import { AnimatePresence, motion, useInView } from "framer-motion";
+import { AnimatePresence, motion, useInView, useReducedMotion } from "framer-motion";
 import { useTilt } from "@/lib/useTilt";
 
 const PLACEHOLDER = "–";
 const REVEAL_INTERVAL = 420;
 
-function FlipDigit({ char }: { char: string }) {
+function FlipDigit({ char, reduceMotion }: { char: string; reduceMotion: boolean }) {
+  if (reduceMotion) {
+    return (
+      <span className="relative inline-block h-[1em] w-[0.62em] overflow-hidden text-center">
+        <span className="absolute inset-0 flex items-center justify-center">{char}</span>
+      </span>
+    );
+  }
+
   return (
     <span className="relative inline-block h-[1em] w-[0.62em] overflow-hidden text-center">
       <AnimatePresence mode="popLayout" initial={false}>
@@ -37,11 +45,12 @@ export function FlipStat({
 }) {
   const { ref, rotateX, rotateY, onMouseMove, onMouseLeave } = useTilt(10);
   const inView = useInView(ref, { once: true, amount: 0.6 });
-  const [revealedCount, setRevealedCount] = useState(0);
+  const reduceMotion = useReducedMotion();
   const finalDigits = String(value).split("");
+  const [revealedCount, setRevealedCount] = useState(() => (reduceMotion ? finalDigits.length : 0));
 
   useEffect(() => {
-    if (!inView) return;
+    if (!inView || reduceMotion) return;
     let count = 0;
     const id = window.setInterval(() => {
       count += 1;
@@ -51,7 +60,7 @@ export function FlipStat({
     return () => window.clearInterval(id);
     // finalDigits is derived from `value`, which is stable per stat card.
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [inView, value]);
+  }, [inView, value, reduceMotion]);
 
   return (
     <motion.div
@@ -65,7 +74,7 @@ export function FlipStat({
       <div className="flap-digit flex items-baseline justify-center text-3xl font-medium text-camel-700 dark:text-brass-300 sm:text-4xl">
         {prefix && <span className="mr-0.5">{prefix}</span>}
         {finalDigits.map((d, i) => (
-          <FlipDigit key={i} char={i < revealedCount ? d : PLACEHOLDER} />
+          <FlipDigit key={i} char={i < revealedCount ? d : PLACEHOLDER} reduceMotion={!!reduceMotion} />
         ))}
         {suffix && <span className="ml-0.5">{suffix}</span>}
       </div>

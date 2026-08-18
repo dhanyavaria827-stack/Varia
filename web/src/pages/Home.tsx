@@ -202,7 +202,14 @@ export function Home() {
           label="An Om drawn on paper, resting on a puja thali with rice and rose petals"
           className="absolute inset-0 -z-20 h-full w-full object-cover"
         />
-        <div className="absolute inset-0 -z-10 bg-gradient-to-b from-parchment via-parchment/55 to-parchment-2/50" />
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 -z-10"
+          style={{
+            background:
+              "linear-gradient(to bottom, var(--color-parchment) 0%, color-mix(in srgb, var(--color-parchment) 55%, transparent) 28%, color-mix(in srgb, var(--color-parchment) 55%, transparent) 62%, color-mix(in srgb, var(--color-parchment) 50%, var(--color-parchment-2) 50%) 100%)",
+          }}
+        />
         <Reveal className="mx-auto max-w-2xl px-5 text-center">
           <span className="text-xs font-semibold uppercase tracking-[0.2em] text-camel-600 dark:text-brass-300">
             Lived, not taught

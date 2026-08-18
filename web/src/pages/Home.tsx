@@ -13,6 +13,7 @@ import { SplitText } from "@/components/SplitText";
 import { TextShimmer } from "@/components/TextShimmer";
 import { Photo } from "@/components/Photo";
 import { PremiumCTA } from "@/components/PremiumCTA";
+import { LazyVideo } from "@/components/LazyVideo";
 
 const HeroParticles = lazy(() =>
   import("@/components/HeroParticles").then((m) => ({ default: m.HeroParticles }))
@@ -28,6 +29,9 @@ import {
 } from "@/data/content";
 import { useDocumentTitle } from "@/lib/useDocumentTitle";
 import photoRitual from "@/assets/gallery-ritual.jpg";
+import videoRitualOm from "@/assets/ritual-om.mp4";
+import videoRitualOmWebm from "@/assets/ritual-om.webm";
+import videoRitualOmPoster from "@/assets/ritual-om-poster.jpg";
 
 const PILLARS = [
   {
@@ -185,6 +189,33 @@ export function Home() {
             </TiltCard>
           </Reveal>
         </div>
+      </section>
+
+      {/* Ritual moment */}
+      <section className="relative overflow-hidden py-24 sm:py-32">
+        <LazyVideo
+          sources={[
+            { src: videoRitualOmWebm, type: "video/webm" },
+            { src: videoRitualOm, type: "video/mp4" },
+          ]}
+          poster={videoRitualOmPoster}
+          label="An Om drawn on paper, resting on a puja thali with rice and rose petals"
+          className="absolute inset-0 -z-20 h-full w-full object-cover"
+        />
+        <div className="absolute inset-0 -z-10 bg-gradient-to-b from-parchment via-parchment/55 to-parchment-2/50" />
+        <Reveal className="mx-auto max-w-2xl px-5 text-center">
+          <span className="text-xs font-semibold uppercase tracking-[0.2em] text-camel-600 dark:text-brass-300">
+            Lived, not taught
+          </span>
+          <h2 className="mt-3 text-balance font-display text-3xl font-medium text-ink sm:text-4xl">
+            Every ceremony begins the same quiet way
+          </h2>
+          <p className="mx-auto mt-4 max-w-lg text-ink-soft">
+            Rice, rose petals, a thali, and a single Om — the same small
+            ritual that opens festivals and ceremonies at Gurukulam, year
+            after year.
+          </p>
+        </Reveal>
       </section>
 
       {/* Daily rhythm */}

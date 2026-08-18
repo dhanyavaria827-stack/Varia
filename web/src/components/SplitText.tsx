@@ -14,7 +14,8 @@ export function SplitText({
   const words = text.split(" ");
 
   return (
-    <span className={className} aria-label={text}>
+    <span className={className}>
+      <span className="sr-only">{text}</span>
       {words.map((word, wi) => (
         <span key={wi} className="inline-block whitespace-nowrap" aria-hidden="true">
           {word.split("").map((char, ci) => (

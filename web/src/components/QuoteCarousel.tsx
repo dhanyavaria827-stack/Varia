@@ -67,16 +67,20 @@ export function QuoteCarousel({ quotes }: { quotes: readonly QuoteItem[] }) {
             key={i}
             aria-label={`Show quote ${i + 1}`}
             onClick={() => go(i)}
-            className="relative h-1.5 rounded-full bg-camel-500/25 transition-all"
-            style={{ width: i === index ? 22 : 8 }}
+            className="grid h-6 w-6 place-items-center"
           >
-            {i === index && (
-              <motion.span
-                layoutId="quote-dot"
-                className="absolute inset-0 rounded-full bg-camel-600 dark:bg-brass-400"
-                transition={{ type: "spring", stiffness: 220, damping: 26 }}
-              />
-            )}
+            <span
+              className="relative block h-1.5 rounded-full bg-camel-500/25 transition-all"
+              style={{ width: i === index ? 22 : 8 }}
+            >
+              {i === index && (
+                <motion.span
+                  layoutId="quote-dot"
+                  className="absolute inset-0 rounded-full bg-camel-600 dark:bg-brass-400"
+                  transition={{ type: "spring", stiffness: 220, damping: 26 }}
+                />
+              )}
+            </span>
           </button>
         ))}
       </div>

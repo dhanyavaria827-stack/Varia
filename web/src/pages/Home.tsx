@@ -292,7 +292,7 @@ export function Home() {
               <PremiumCTA>
                 <Link
                   to="/admissions#support"
-                  className="inline-flex items-center gap-2 rounded-sm bg-brass-500 px-7 py-3.5 text-sm font-medium uppercase tracking-[0.06em] text-camel-700 shadow-soft transition hover:bg-brass-300 active:scale-95"
+                  className="inline-flex items-center gap-2 rounded-sm bg-brass-500 px-7 py-3.5 text-sm font-medium uppercase tracking-[0.06em] text-[#241a10] shadow-soft transition hover:bg-brass-300 active:scale-95"
                 >
                   See how to help
                   <ArrowRight size={16} />

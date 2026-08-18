@@ -20,7 +20,17 @@ const Router = isStandalone ? HashRouter : BrowserRouter;
 const base = import.meta.env.BASE_URL;
 const basename = base.startsWith("/") ? base.replace(/\/$/, "") || "/" : "/";
 
-createRoot(document.getElementById("root")!).render(
+// The static build bakes real prerendered markup into #root for crawlers
+// and no-JS visitors (see scripts/prerender.mjs). createRoot() doesn't
+// treat that as hydration — it silently layers its own tree on top
+// without discarding the old one, which left the prerendered copy's
+// elements in the DOM with no real React event handlers attached (e.g.
+// tab clicks doing nothing). Clearing it first forces a genuinely fresh
+// mount, same as when #root was always empty.
+const rootEl = document.getElementById("root")!;
+rootEl.innerHTML = "";
+
+createRoot(rootEl).render(
   <StrictMode>
     <MotionConfig reducedMotion="user">
       <ThemeProvider>

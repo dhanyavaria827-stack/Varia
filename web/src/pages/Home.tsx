@@ -180,11 +180,15 @@ export function Home() {
             </p>
           </Reveal>
           <Reveal delay={0.1} className="order-1 [perspective:1400px] sm:order-2">
-            <TiltCard strength={6} className="overflow-hidden rounded-sm border border-brass-500/30 shadow-card">
+            <TiltCard
+              strength={6}
+              className="overflow-hidden rounded-sm border border-brass-500/40 shadow-[0_28px_60px_-22px_rgba(36,26,16,0.4)]"
+            >
               <Photo
                 src={photoRitual}
                 alt="A ritual observance at Gurukulam, with children taking part"
-                className="h-72 w-full object-cover sm:h-80"
+                className="h-80 w-full object-cover sm:h-96"
+                style={{ filter: "saturate(1.18) contrast(1.08) brightness(1.03)" }}
               />
             </TiltCard>
           </Reveal>
@@ -200,7 +204,7 @@ export function Home() {
           ]}
           poster={videoRitualOmPoster}
           label="An Om drawn on paper, resting on a puja thali with rice and rose petals"
-          className="absolute inset-0 -z-20 h-full w-full object-cover"
+          className="absolute inset-0 -z-20 h-full w-full object-cover saturate-[1.2] contrast-[1.08] brightness-[1.05]"
         />
         <div
           aria-hidden="true"

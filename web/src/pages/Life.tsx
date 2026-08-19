@@ -10,14 +10,10 @@ import { TiltCard } from "@/components/TiltCard";
 import { ARTS, FESTIVALS, DAILY_RHYTHM, SOCIAL } from "@/data/content";
 import { slugify } from "@/lib/utils";
 import { useDocumentTitle } from "@/lib/useDocumentTitle";
-import { LazyVideo } from "@/components/LazyVideo";
 import photoSandTracing from "@/assets/gallery-sand-tracing.jpg";
 import photoSand from "@/assets/gallery-sand.jpg";
 import photoChalk from "@/assets/gallery-chalk.jpg";
 import photoHandprints from "@/assets/gallery-handprints.jpg";
-import videoRitualOm from "@/assets/ritual-om.mp4";
-import videoRitualOmWebm from "@/assets/ritual-om.webm";
-import videoRitualOmPoster from "@/assets/ritual-om-poster.jpg";
 
 const MotionLink = motion.create(Link);
 
@@ -152,20 +148,6 @@ export function Life() {
             </TiltCard>
           ))}
         </RevealStagger>
-
-        <Reveal delay={0.06} className="mx-auto mt-6 max-w-sm [perspective:1400px]">
-          <TiltCard strength={5} className="overflow-hidden rounded-sm border border-ink/10 shadow-card">
-            <LazyVideo
-              sources={[
-                { src: videoRitualOmWebm, type: "video/webm" },
-                { src: videoRitualOm, type: "video/mp4" },
-              ]}
-              poster={videoRitualOmPoster}
-              label="An Om drawn on paper, resting on a puja thali with rice and rose petals"
-              className="h-64 w-full object-cover sm:h-72"
-            />
-          </TiltCard>
-        </Reveal>
       </div>
     </div>
   );

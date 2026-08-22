@@ -560,19 +560,18 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
   <tr><td><strong>Inverse variation</strong></td><td>If an increase in A causes a proportional decrease in B (or vice versa), A &prop; 1/B, i.e. <strong>A = K/B</strong>, so K = AB. Example: speed &prop; 1/time for a fixed distance.</td></tr>
   <tr><td><strong>Joint variation</strong></td><td>A varies directly as the PRODUCT of several quantities: A &prop; (BCD&hellip;), i.e. <strong>A = K(BCD&hellip;)</strong>. Example: volume of a cuboid &prop; length &times; breadth &times; height.</td></tr>
 </table>
-<p class="body"><strong>Nine elementary results (ICMAI, with one correction noted below):</strong></p>
+<p class="body"><strong>Eight elementary results (ICMAI, with one correction noted below):</strong></p>
 <ol class="point-list numbered">
   <li>A&prop;B &rArr; B&prop;A.</li>
   <li>A&prop;B and B&prop;C &rArr; A&prop;C.</li>
   <li>A&prop;B and B&prop;C &rArr; (A&minus;B)&prop;C.</li>
   <li>A&prop;C and B&prop;C &rArr; (A&minus;B)&prop;C.</li>
-  <li>A&prop;C and B&prop;C &rArr; (A+B)&prop;C.</li>
   <li>A&prop;C and B&prop;C &rArr; &radic;(AB)&prop;C.</li>
   <li>A&prop;B &rArr; A&#8319;&prop;B&#8319;.</li>
   <li>A&prop;B and C&prop;D &rArr; AC&prop;BD and A/C&prop;B/D.</li>
   <li>A&prop;BC &rArr; B&prop;A/C and C&prop;A/B.</li>
 </ol>
-<div class="trap-block"><span class="pill amber">&#9888; TRAP</span><p class="trap-label">A book error, corrected here</p><p class="trap-row"><strong>THE TRAP:</strong> the source states result 6 as &ldquo;AB&prop;C&rdquo; (given A&prop;C and B&prop;C). This is not actually true &mdash; if A=k&#8321;C and B=k&#8322;C, then AB=k&#8321;k&#8322;C&sup2;, which is proportional to C&sup2;, not C. The CORRECT result is &radic;(AB)&prop;C, since &radic;(AB)=&radic;(k&#8321;k&#8322;)&middot;C &mdash; a genuine constant times C. Verified symbolically; use the corrected version above.</p></div>
+<div class="trap-block"><span class="pill amber">&#9888; TRAP</span><p class="trap-label">A book error, corrected here</p><p class="trap-row"><strong>THE TRAP:</strong> the source states result 5 as &ldquo;AB&prop;C&rdquo; (given A&prop;C and B&prop;C). This is not actually true &mdash; if A=k&#8321;C and B=k&#8322;C, then AB=k&#8321;k&#8322;C&sup2;, which is proportional to C&sup2;, not C. The CORRECT result is &radic;(AB)&prop;C, since &radic;(AB)=&radic;(k&#8321;k&#8322;)&middot;C &mdash; a genuine constant times C. Verified symbolically; use the corrected version above.</p></div>
 <div class="trap-block"><span class="pill amber">&#9888; TRAP</span><p class="trap-label">Direct vs inverse — the constant-K test</p><p class="trap-row"><strong>THE TRAP:</strong> both direct and inverse variation have a &ldquo;constant K&rdquo; — the test is what K equals. Direct: K = A/B (a ratio). Inverse: K = A&times;B (a product). Confusing which operation isolates K is the single most common slip.</p></div>
 </div>
 
@@ -805,7 +804,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
 <p class="ex-step">Series 7, 14, 28, 56, 112: r = 14/7 = <strong>2</strong>, a = <strong>7</strong>. Series 1875, &minus;375, 75, &minus;15, 3: r = &minus;375/1875 = <strong>&minus;1/5</strong>.</p>
 <p class="ex-step">9<sup>th</sup> term of 11, 33, 99, 297, 891 (r=3): t&#8309; = 11&times;3&#8312; = 11&times;6561 = <strong>72,171</strong></p>
 <p class="ex-step">Sum of first 9 terms of 5, 10, 20, 40, 80 (r=2&gt;1): S&#8309; = 5&times;(2&#8313;&minus;1)/(2&minus;1) = 5&times;511 = <strong>2,555</strong></p>
-<p class="ex-answer">Sum of first 10 terms of 48, 24, 12, 6, 3 (r=&frac12;&lt;1): S&#8321;&#8320; = 48&times;{1&minus;(&frac12;)&sup1;&#8304;}/(&frac12;) = 96&times;(1&minus;0.00098) = <strong>95.9059</strong></p>
+<p class="ex-answer">Sum of first 10 terms of 48, 24, 12, 6, 3 (r=&frac12;&lt;1): S&#8321;&#8320; = 48&times;{1&minus;(&frac12;)&sup1;&#8304;}/(&frac12;) = 96&times;(1&minus;0.0009766) = <strong>95.90625</strong></p>
 </div>
 </div>
 
@@ -1464,6 +1463,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
 <p class="ex-step">Factorising the denominator: x&sup2;&minus;7x+12 = (x&minus;3)(x&minus;4). Between x=3 and x=4, one factor is positive and the other negative, so their product is negative &mdash; making the expression undefined there, and the denominator is exactly zero at x=3 and x=4 themselves.</p>
 <p class="ex-answer">The function is undefined for the whole range <strong>3&le;x&le;4</strong>; its domain is all real x OUTSIDE that range.</p>
 </div>
+<div class="trap-block"><span class="pill amber">&#9888; TRAP</span><p class="trap-label">ICMAI&rsquo;s own justification conflates &ldquo;negative&rdquo; with &ldquo;imaginary&rdquo;</p><p class="trap-row"><strong>THE TRAP:</strong> ICMAI&rsquo;s own solution to this exact illustration reasons that since (x&minus;3)(x&minus;4) is NEGATIVE for 3&lt;x&lt;4, it is therefore &ldquo;imaginary,&rdquo; and concludes the function is undefined there. A negative real number is not imaginary &mdash; the expression (4x&minus;5)/(x&sup2;&minus;7x+12) is perfectly well-defined (just negative-valued) for every x strictly between 3 and 4; the denominator is only actually ZERO, and the function only actually undefined, exactly AT x=3 and x=4. Even so, ICMAI&rsquo;s printed answer excludes the whole closed interval [3,4] &mdash; know that answer for the exam as printed, but recognise the reasoning behind it is unsound.</p></div>
 <div class="definition-block"><p class="definition-text">The <strong>Absolute Value</strong> (or modulus) of a real number a, written |a|, equals a itself when a&ge;0, and equals &minus;a when a&lt;0 &mdash; so the result is always non-negative. For example, |&minus;4| = &minus;(&minus;4) = 4, and |4| = 4.</p></div>
 <div class="worked-example avoid-break">
 <p class="ex-label">Using the absolute value to show two outputs differ (independently re-verified)</p>
@@ -2820,7 +2820,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
 <div class="worked-example avoid-break">
 <p class="ex-label">Numbered tickets, four separate questions (independently re-verified)</p>
 <p class="ex-step">Tickets numbered 1 to 100 are shuffled; one is drawn. Find the probability it is (a) even, (b) a multiple of 5, (c) greater than 75, (d) a perfect square.</p>
-<p class="ex-answer">(a) 50/100 = <strong>&frac12;</strong>. (b) 20/100 = <strong>1/5</strong> (5,10,&hellip;,100 &mdash; 20 numbers). (c) 25/100 = <strong>&frac14;</strong> (76&ndash;100). (d) 10/100 = <strong>&frac14;</strong> (1,4,9,16,25,36,49,64,81,100 &mdash; 10 perfect squares).</p>
+<p class="ex-answer">(a) 50/100 = <strong>&frac12;</strong>. (b) 20/100 = <strong>1/5</strong> (5,10,&hellip;,100 &mdash; 20 numbers). (c) 25/100 = <strong>&frac14;</strong> (76&ndash;100). (d) 10/100 = <strong>1/10</strong> (1,4,9,16,25,36,49,64,81,100 &mdash; 10 perfect squares).</p>
 </div>
 </div>
 
@@ -3230,9 +3230,6 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
 <p>&#9316; Moving Average smooths fluctuations to reveal Trend. Odd n → one middle year per group. Even n → the average falls between years, needing a CENTERING pass (average adjacent pairs) to land back on real years.</p>
 </div>
 </div>
-
-</body>
-</html>
 
 <!-- ===== closing ===== -->
 <!-- ============ THE FINAL LADDER ============ -->

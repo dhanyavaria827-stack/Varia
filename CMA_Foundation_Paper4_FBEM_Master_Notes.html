@@ -47,14 +47,13 @@
   --font-mono:    'JetBrains Mono', 'Courier New', monospace;
 }
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-@page { size: A4; margin: 22mm 18mm 20mm 24mm; @top-center { content: element(running-header); } @bottom-center { content: element(running-footer); } @bottom-left { content: "© Dhanya Varia"; font-family: "EB Garamond", serif; font-size: 7pt; font-style: italic; color: #999999; } }
+@page { size: A4; margin: 22mm 18mm 20mm 24mm; @top-center { content: "ICMAI · CMA FOUNDATION · PAPER 4 — FBEM · MASTER NOTES"; font-family: "Cormorant Garamond", Georgia, serif; font-weight: 300; font-size: 8pt; letter-spacing: 0.15em; text-transform: uppercase; color: #6B7280; } @bottom-center { content: "CMA Foundation · Fundamentals of Business Economics & Management · Compiled & Adapted by Dhanya Varia"; font-family: "Cormorant Garamond", Georgia, serif; font-weight: 300; font-size: 7.5pt; color: #6B7280; } @bottom-left { content: "© Dhanya Varia"; font-family: "EB Garamond", serif; font-size: 7pt; font-style: italic; color: #999999; } @bottom-right { content: counter(page); font-family: "Cormorant Garamond", Georgia, serif; font-weight: 600; font-size: 9pt; color: #1A5C38; } }
 body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color: var(--ink); background: var(--white); }
 .page { position: relative; min-height: 1mm; }
 
 .page-break { page-break-before: always; break-before: page; }
 .avoid-break { page-break-inside: avoid; break-inside: avoid; }
-#running-header { position: running(running-header); font-family: var(--font-head); font-weight: 300; font-size: 8pt; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray); border-bottom: 1px solid var(--border-light); padding-bottom: 2px; text-align: center; width: 100%; }
-#running-footer { position: running(running-footer); font-family: var(--font-head); font-weight: 300; font-size: 8pt; color: var(--gray); display: flex; justify-content: space-between; width: 100%; }
+#running-header, #running-footer { display: none; }
 .page-number::before { content: counter(page); font-family: var(--font-head); font-weight: 600; font-size: 9pt; color: var(--green-deep); }
 .cover-title { font-family: var(--font-display); font-weight: 400; font-size: 48pt; letter-spacing: 0.08em; text-transform: uppercase; color: var(--green-deep); line-height: 1.15; display: block; text-align: center; }
 .cover-subtitle { font-family: var(--font-head); font-weight: 300; font-size: 13pt; letter-spacing: 0.06em; color: var(--green-mid); text-align: center; }
@@ -159,7 +158,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
 <div class="print-watermark">Dhanya Varia</div>
 <div class="screen-watermark">&copy; Compiled &amp; Adapted by Dhanya Varia</div>
 <div id="running-header">ICMAI · CMA FOUNDATION · PAPER 4 — FBEM · MASTER NOTES</div>
-<div id="running-footer"><span>CMA Foundation · Fundamentals of Business Economics &amp; Management &middot; <em>Compiled &amp; Adapted by Dhanya Varia</em></span><span class="page-number"></span></div>
+<div id="running-footer">CMA Foundation · Fundamentals of Business Economics &amp; Management &middot; <em>Compiled &amp; Adapted by Dhanya Varia</em></div>
 
 <!-- ============ PAGE 1 — COVER ============ -->
 <!-- © Dhanya Varia -->
@@ -179,7 +178,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
     <div class="cover-band-light">Basic Concepts &middot; Forms of Market &middot; Money and Banking &middot; Economic and Business Environment &middot; Fundamentals of Management</div>
     <div style="flex-grow:1;"></div>
     <hr class="cover-rule-dark">
-    <p style="font-family:var(--font-body);font-size:9pt;color:var(--gray);text-align:center;">Condensed strictly from ICMAI's own Paper 4 Study Notes (Syllabus 2022) &middot; Section A Economics 70% + Section B Management 30% &middot; MCQ-based paper &middot; Revise in proportion to weight</p>
+    <p style="font-family:var(--font-body);font-size:9pt;color:var(--gray);text-align:center;">Condensed strictly from ICMAI&rsquo;s own Paper 4 Study Notes (Syllabus 2022) &middot; Section A Economics 70% + Section B Management 30% &middot; MCQ-based paper &middot; Revise in proportion to weight</p>
     <p style="font-family:var(--font-body);font-size:9pt;color:var(--gray);text-align:center;margin-top:2mm;">Compiled &amp; Adapted by <strong>Dhanya Varia</strong></p>
     <p style="font-family:var(--font-head);font-weight:600;font-style:italic;font-size:12pt;color:var(--green-deep);text-align:center;margin-top:4mm;">Every Law Stated. Every Curve Drawn. Every Table Re-computed. Nothing Borrowed From Outside This Source.</p>
   </div>
@@ -190,9 +189,9 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
 <div class="page page-break">
   <div class="cover-band-dark" style="font-size:14pt;">How to Use This Document</div>
   <p class="body" style="margin:6mm 0 3mm;">Paper 4 is a definitions-laws-and-curves paper: marks come from recalling <em>who</em> defined economics which way, <em>which</em> curve slopes which way and why, <em>what</em> happens to equilibrium price in each of six demand&ndash;supply cases, and <em>where</em> a rational producer operates. The doctrine, wording, tables and figures below follow the ICMAI Study Notes page by page. What has been added is structure only: a plain-language glossary before the module, mind maps for one-glance revision, redrawn diagrams, and trap blocks for the classic MCQ snares.</p>
-  <p class="body" style="margin:3mm 0;"><strong>A note on sourcing.</strong> Nothing external has been imported — no other institute's content, no internet material. The presentation style (point-wise structure, symmetric layout, retrieval drills) follows the conventions of high-quality university lecture notes; the content inside that structure is the Institute's alone.</p>
-  <p class="body" style="margin:3mm 0;"><strong>A note on verification.</strong> Every numerical table has been re-computed independently. The printed book contains two arithmetic misprints in Module 1 — both are shown corrected, each with a clearly marked note at the exact spot. This document contains no MCQ practice sets; every worked example instead uses figures independently re-verified against the book's own doctrine.</p>
-  <div class="trigger-box"><strong>Attack priority by weight:</strong> Module 5 Management (30%) &rarr; Module 2 Forms of Market (20%) &rarr; Module 3 Money &amp; Banking (20%) &rarr; Module 1 Basic Concepts (15%) &rarr; Module 4 Environment (15%). Module 1 is the longest module in Section A (spanning 88 of the book's pages) but carries only 15 marks — master it once thoroughly, then revise through the drills at the end of the module, not by re-reading. (Module 5 runs longer still, at 150 pages, but its 30% weight matches that length.)</div>
+  <p class="body" style="margin:3mm 0;"><strong>A note on sourcing.</strong> Nothing external has been imported — no other institute&rsquo;s content, no internet material. The presentation style (point-wise structure, symmetric layout, retrieval drills) follows the conventions of high-quality university lecture notes; the content inside that structure is the Institute&rsquo;s alone.</p>
+  <p class="body" style="margin:3mm 0;"><strong>A note on verification.</strong> Every numerical table has been re-computed independently. The printed book contains two arithmetic misprints in Module 1 — both are shown corrected, each with a clearly marked note at the exact spot. This document contains no MCQ practice sets; every worked example instead uses figures independently re-verified against the book&rsquo;s own doctrine.</p>
+  <div class="trigger-box"><strong>Attack priority by weight:</strong> Module 5 Management (30%) &rarr; Module 2 Forms of Market (20%) &rarr; Module 3 Money &amp; Banking (20%) &rarr; Module 1 Basic Concepts (15%) &rarr; Module 4 Environment (15%). Module 1 is the longest module in Section A (spanning 88 of the book&rsquo;s pages) but carries only 15 marks — master it once thoroughly, then revise through the drills at the end of the module, not by re-reading. (Module 5 runs longer still, at 150 pages, but its 30% weight matches that length.)</div>
 </div>
 
 <!-- ============ FULL INDEX ============ -->
@@ -238,7 +237,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
 
   <p class="idx-module" style="margin-top:6mm;">CLOSING SECTION &middot; EXAM DAY ARSENAL</p>
   <div class="idx-topic"><span>&#8226;&nbsp;&nbsp;The Final Ladder — every formula in Paper 4 on one page</span><span class="dots"></span><span>closing</span></div>
-  <div class="idx-topic"><span>&#8226;&nbsp;&nbsp;The Master Trap List — 25 distractors the paper is built from</span><span class="dots"></span><span>closing</span></div>
+  <div class="idx-topic"><span>&#8226;&nbsp;&nbsp;The Master Trap List — 26 distractors the paper is built from</span><span class="dots"></span><span>closing</span></div>
   <div class="idx-topic"><span>&#8226;&nbsp;&nbsp;The Last 48 Hours — revision plan for this document</span><span class="dots"></span><span>closing</span></div>
 </div>
 
@@ -262,7 +261,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
 <!-- © Dhanya Varia -->
 <div class="page page-break">
   <div class="cover-band-dark" style="font-size:14pt;">Paper 4 at One Glance &mdash; Master Mind Map</div>
-  <p class="body" style="margin:4mm 0;">Study this map for 90 seconds before starting, and again after finishing a module &mdash; a picture plus words locks recall better than words alone. Section A's four Economics modules ring the hub; Section B's single Management module sits on its own axis below, sized to match its 30% weight. Numbers in the small circles = approximate MCQs per module out of 50, in proportion to the syllabus weights.</p>
+  <p class="body" style="margin:4mm 0;">Study this map for 90 seconds before starting, and again after finishing a module &mdash; a picture plus words locks recall better than words alone. Section A&rsquo;s four Economics modules ring the hub; Section B&rsquo;s single Management module sits on its own axis below, sized to match its 30% weight. Numbers in the small circles = approximate MCQs per module out of 50, in proportion to the syllabus weights.</p>
   <div class="mind-map-container avoid-break">
   <svg viewBox="0 0 800 500" width="620" height="388" xmlns="http://www.w3.org/2000/svg" style="max-width:100%;display:block;margin:0 auto;">
     <line x1="400" y1="250" x2="173" y2="104" stroke="#2D8653" stroke-width="1.5"/>
@@ -2544,7 +2543,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
 <p class="body"><strong>India&rsquo;s response, per ICMAI:</strong> maximising returns, managing risk and ensuring business continuity demanded a deep understanding of changing market conditions and government policy. <strong>&ldquo;PM-Gati Shakti&rdquo;</strong> — introduced in the Indian Budget 2022 — aimed to boost infrastructure to reinforce sustainable, resilient post-pandemic recovery. The outbreak spurred contactless digital payments, with <strong>NPCI (National Payments Corporation of India)</strong> pivotal to the digital-payment ecosystem&rsquo;s emergence; the Finance Minister assured a forthcoming <strong>Central Bank Digital Currency</strong>.</p>
 <p class="body">How business leaders navigated it:</p>
 <ul class="point-list">
-  <li>Keeping employees and customers safe through "work from home" and "contactless transaction" respectively.</li>
+  <li>Keeping employees and customers safe through &ldquo;work from home&rdquo; and &ldquo;contactless transaction&rdquo; respectively.</li>
   <li>Providing cash and liquidity support.</li>
   <li>Re-orienting operations.</li>
   <li>Navigating government support programmes.</li>
@@ -2638,7 +2637,6 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
     <line x1="400" y1="240" x2="120" y2="330" stroke="#2D8653" stroke-width="1.4"/>
     <line x1="400" y1="240" x2="400" y2="420" stroke="#2D8653" stroke-width="1.4"/>
     <line x1="400" y1="240" x2="680" y2="330" stroke="#2D8653" stroke-width="1.4"/>
-    <line x1="400" y1="240" x2="400" y2="240" stroke="#2D8653" stroke-width="1.4"/>
     <rect x="35" y="60" width="190" height="58" rx="7" fill="#EAF4EE" stroke="#1A5C38" stroke-width="1.3"/>
     <text x="130" y="83" text-anchor="middle" font-family="Georgia,serif" font-size="11.5" font-weight="bold" fill="#1A5C38">5.1 INTRO TO</text>
     <text x="130" y="98" text-anchor="middle" font-family="Georgia,serif" font-size="11.5" font-weight="bold" fill="#1A5C38">MANAGEMENT</text>
@@ -2661,7 +2659,6 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
     <text x="400" y="233" text-anchor="middle" font-family="Georgia,serif" font-size="12.5" font-weight="bold" fill="#FFFFFF">MODULE 5</text>
     <text x="400" y="250" text-anchor="middle" font-family="Georgia,serif" font-size="9.5" fill="#DCE9E1">MANAGEMENT</text>
     <text x="400" y="264" text-anchor="middle" font-family="Georgia,serif" font-size="9.5" fill="#DCE9E1">30%</text>
-    <rect x="305" y="240" width="0" height="0"/>
     <text x="400" y="470" text-anchor="middle" font-family="Georgia,serif" font-size="10.5" fill="#4E5B54">5.7 Decision-Making &mdash; Types and Process</text>
   </svg>
   </div>
@@ -2680,7 +2677,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
   <tr><td><strong>George R. Terry</strong></td><td>&ldquo;Management is a distinct process consisting of <strong>planning, organising, actuating and controlling</strong> performed to determine and accomplish the objectives by the use of people and resources.&rdquo;</td></tr>
   <tr><td><strong>Henry Fayol</strong></td><td>&ldquo;To manage is to <strong>forecast and plan, organise, command, co-ordinate and control.</strong>&rdquo;</td></tr>
   <tr><td><strong>Peter F. Drucker</strong></td><td>&ldquo;Management is a multi-purpose organ that manages a business and manages managers and manages worker and work.&rdquo;</td></tr>
-  <tr><td><strong>Koontz and O&rsquo;Donnel</strong></td><td>&ldquo;Management is the creation and maintenance of an internal environment in an enterprise where individuals working together in groups can perform efficiently and effectively towards the attainment of group goals.&rdquo;</td></tr>
+  <tr><td><strong>Koontz and O&rsquo;Donnell</strong></td><td>&ldquo;Management is the creation and maintenance of an internal environment in an enterprise where individuals working together in groups can perform efficiently and effectively towards the attainment of group goals.&rdquo;</td></tr>
   <tr><td><strong>Newman, Summer &amp; Warren</strong></td><td>&ldquo;The job of management is to make cooperative endeavour function properly. A manager is one who gets things done by working with people and other resources.&rdquo;</td></tr>
   <tr><td><strong>Kimball and Kimball</strong></td><td>&ldquo;Management embraces all duties and functions that pertain to the initiation of an enterprise, its financing, the establishment of all major policies, the provision of all necessary equipment, the outlining of the general form of organisation, and the selection of the principal officers.&rdquo;</td></tr>
 </table>
@@ -2799,7 +2796,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
 <div class="page page-break">
 <span class="pill">CONCEPT</span>
 <p class="section-header">5.2.2 Agency Theory — Origins and the Two Types <span style="float:right;">&#9733;&#9733;&#9733; HIGH</span></p>
-<p class="body"><strong>Context:</strong> the early-20th-century rise of joint stock companies drove an increasing divorce between ownership and management — it became infeasible and undesirable for a single owner/owner-group to control a large, diversified, geographically dispersed company. Contracting a professional executive to run day-to-day affairs became necessary for sustainable competitive advantage. The moment principal and agent are separated, the question of conflicting interests arises — the <strong>Agency Theory</strong>.</p>
+<p class="body"><strong>Context:</strong> the early-20th-century rise of joint stock companies drove an increasing divorce between ownership and management — it became infeasible and undesirable for a single owner/owner-group to control a large, diversified, geographically dispersed company. Contracting a professional executive to run day-to-day affairs became necessary for sustainable competitive advantage. The moment principal and agent are separated, the question of conflicting interests arises — the <strong>Agency theory</strong>.</p>
 <p class="body"><strong>Origins:</strong> the seminal papers of <strong>Alchian and Demsetz (1972)</strong> and <strong>Jensen and Meckling (1976)</strong>, later elaborated by <strong>Jensen and Fama (1983)</strong>. Some authors (Letza, Sun and Kirkbride, 2004) trace the problem back to <strong>Adam Smith&rsquo;s <em>Wealth of Nations</em></strong> — directors are not as careful with other people&rsquo;s money as with their own. <strong>Wilhelm Roscher</strong>, 130 years earlier, called it &ldquo;Princip der Vorhand&rdquo; — since knowledge is power, the superior power sits with the agent.</p>
 <p class="body"><strong>Jensen and Meckling (1976):</strong> the essence of the agency problem is the <strong>separation of management and finance</strong> — managers raise funds from investors to deploy in productive ventures; financiers need managers to generate returns. Agency theory holds that shareholders are the <strong>principals</strong> in whose interest the corporation should be run, even though they rely on others (agents) for its actual running.</p>
 <table class="comparison-table">
@@ -2982,7 +2979,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
   <defs><marker id="a5" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#4E5B54"/></marker></defs>
 </svg>
 </div>
-<p class="body">The process varies with organisational size and complexity, but ICMAI's eight steps run in order.</p>
+<p class="body">The process varies with organisational size and complexity, but ICMAI&rsquo;s eight steps run in order.</p>
 <ol class="point-list numbered">
   <li>Analysis of opportunities in the external and internal environment.</li>
   <li>Establishing objectives for the whole organisation and its departments.</li>
@@ -3372,7 +3369,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
 <span class="pill">CONCEPT</span>
 <p class="section-header">5.4.4 Monitoring — Definition, Significance, Purposes <span style="float:right;">&#9733;&#9733; MEDIUM</span></p>
 <div class="definition-block"><p class="definition-text">Monitoring is the systematic process of collecting, analysing and using information to track a programme&rsquo;s progress toward its objectives and guide management decisions. <strong>Gosling and Edwards (2003):</strong> &ldquo;systematic and continuous collecting and analysing of information about the progress of a piece of work over time.&rdquo;</p></div>
-<p class="body">Monitoring vs evaluation (ICMAI's own contrast):</p>
+<p class="body">Monitoring vs evaluation (ICMAI&rsquo;s own contrast):</p>
 <table class="comparison-table avoid-break">
   <tr><th>Basis</th><th>Monitoring</th><th>Evaluation</th></tr>
   <tr><td>Carried out by</td><td>INTERNAL staff</td><td>EXTERNAL staff</td></tr>
@@ -3785,7 +3782,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
 <p class="body">Two techniques for defining responsibility (ICMAI):</p>
 <ul class="point-list">
   <li><strong>Responsibility charting</strong> — summarises the relationship between tasks (vertical axis) and actors (horizontal axis), using four roles: is responsible for the activity/decision; must approve it; must be consulted beforehand; must be informed about it.</li>
-  <li><strong>Role negotiation</strong> — "nobody gets anything without promising something in exchange"; organisational members meet periodically to redefine tasks and maximise coordination, matching personal needs/preferences with the tasks that must be done.</li>
+  <li><strong>Role negotiation</strong> — &ldquo;nobody gets anything without promising something in exchange&rdquo;; organisational members meet periodically to redefine tasks and maximise coordination, matching personal needs/preferences with the tasks that must be done.</li>
 </ul>
 <div class="trap-block"><span class="pill amber">&#9888; TRAP</span><p class="trap-label">The magic pitcher — responsibility never actually leaves you</p><p class="trap-row"><strong>THE TRAP:</strong> whatever authority a manager delegates, HIS OWN responsibility to his superior is unchanged — this is the single most-tested line in this sub-topic, appearing as both MCQ and True/False (&ldquo;Responsibility is absolute and can be delegated&rdquo; is FALSE; &ldquo;Responsibility flows downward&rdquo; is FALSE — it flows upward).</p></div>
 </div>

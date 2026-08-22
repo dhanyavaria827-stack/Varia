@@ -49,14 +49,13 @@
   --font-mono:    'JetBrains Mono', 'Courier New', monospace;
 }
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-@page { size: A4; margin: 22mm 18mm 20mm 24mm; @top-center { content: element(running-header); } @bottom-center { content: element(running-footer); } @bottom-left { content: "© Dhanya Varia"; font-family: "EB Garamond", serif; font-size: 7pt; font-style: italic; color: #999999; } }
+@page { size: A4; margin: 22mm 18mm 20mm 24mm; @top-center { content: "ICMAI · CMA FOUNDATION · PAPER 2 — FFCA · MASTER NOTES"; font-family: "Cormorant Garamond", Georgia, serif; font-weight: 300; font-size: 8pt; letter-spacing: 0.15em; text-transform: uppercase; color: #6B7280; } @bottom-center { content: "CMA Foundation · Fundamentals of Financial & Cost Accounting · Compiled & Adapted by Dhanya Varia"; font-family: "Cormorant Garamond", Georgia, serif; font-weight: 300; font-size: 7.5pt; color: #6B7280; } @bottom-left { content: "© Dhanya Varia"; font-family: "EB Garamond", serif; font-size: 7pt; font-style: italic; color: #999999; } @bottom-right { content: counter(page); font-family: "Cormorant Garamond", Georgia, serif; font-weight: 600; font-size: 9pt; color: #1A5C38; } }
 body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color: var(--ink); background: var(--white); }
 .page { position: relative; min-height: 1mm; }
 
 .page-break { page-break-before: always; break-before: page; }
 .avoid-break { page-break-inside: avoid; break-inside: avoid; }
-#running-header { position: running(running-header); font-family: var(--font-head); font-weight: 300; font-size: 8pt; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray); border-bottom: 1px solid var(--border-light); padding-bottom: 2px; text-align: center; width: 100%; }
-#running-footer { position: running(running-footer); font-family: var(--font-head); font-weight: 300; font-size: 8pt; color: var(--gray); display: flex; justify-content: space-between; width: 100%; }
+#running-header, #running-footer { display: none; }
 .page-number::before { content: counter(page); font-family: var(--font-head); font-weight: 600; font-size: 9pt; color: var(--green-deep); }
 .cover-title { font-family: var(--font-display); font-weight: 400; font-size: 48pt; letter-spacing: 0.08em; text-transform: uppercase; color: var(--green-deep); line-height: 1.15; display: block; text-align: center; }
 .cover-subtitle { font-family: var(--font-head); font-weight: 300; font-size: 13pt; letter-spacing: 0.06em; color: var(--green-mid); text-align: center; }
@@ -87,6 +86,8 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
 .trap-block .trap-row { font-family: var(--font-body); font-size: 10.5pt; margin: 4px 0; }
 .trap-block .trap-row strong { font-family: var(--font-head); font-weight: 600; color: var(--ink); }
 .glossary-block { border: 1px solid var(--green-deep); background: var(--green-faint); padding: 4px 16px 12px; margin: 10px 0; }
+.glossary-block.glossary-lead { border-bottom: none; margin-bottom: 0; padding-bottom: 8px; }
+.glossary-block.glossary-continue { border-top: none; margin-top: 0; padding-top: 0; }
 .glossary-table { width: 100%; border-collapse: collapse; margin: 8px 0; }
 .glossary-table td { padding: 5px 10px; border-bottom: 1px solid var(--border-light); font-family: var(--font-body); font-size: 10pt; vertical-align: top; }
 .glossary-table td.term { font-family: var(--font-head); font-weight: 700; color: var(--green-deep); width: 26%; padding-right: 12px; }
@@ -154,7 +155,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
 <div class="print-watermark">Dhanya Varia</div>
 <div class="screen-watermark">&copy; Compiled &amp; Adapted by Dhanya Varia</div>
 <div id="running-header">ICMAI · CMA FOUNDATION · PAPER 2 — FFCA · MASTER NOTES</div>
-<div id="running-footer"><span>CMA Foundation · Fundamentals of Financial &amp; Cost Accounting &middot; <em>Compiled &amp; Adapted by Dhanya Varia</em></span><span class="page-number"></span></div>
+<div id="running-footer">CMA Foundation · Fundamentals of Financial &amp; Cost Accounting &middot; <em>Compiled &amp; Adapted by Dhanya Varia</em></div>
 
 <!-- ============ PAGE 1 — COVER ============ -->
 <!-- © Dhanya Varia -->
@@ -259,7 +260,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
   
   <p class="idx-module" style="margin-top:6mm;">CLOSING SECTION &middot; EXAM DAY ARSENAL</p>
   <div class="idx-topic"><span>&#8226;&nbsp;&nbsp;The Final Ladder — every formula in Paper 2 on one page</span><span class="dots"></span><span>closing</span></div>
-  <div class="idx-topic"><span>&#8226;&nbsp;&nbsp;The Master Trap List — 20 distractors the paper is built from</span><span class="dots"></span><span>closing</span></div>
+  <div class="idx-topic"><span>&#8226;&nbsp;&nbsp;The Master Trap List — 21 distractors the paper is built from</span><span class="dots"></span><span>closing</span></div>
   <div class="idx-topic"><span>&#8226;&nbsp;&nbsp;The Last 48 Hours — revision plan for this document</span><span class="dots"></span><span>closing</span></div>
 </div>
 
@@ -370,7 +371,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
   <p class="body">After studying this module, you will be able to: understand the four frameworks of accounting and the various accounting concepts and conventions; distinguish Capital and Revenue Transactions; understand the Accounting Cycle and its stages; record transactions in Journal and post them to Ledgers; prepare a Cash Book, Bank Book and Bank Reconciliation Statement; prepare and use a Trial Balance; pass adjustment and rectification entries before finalisation of accounts; and account for Depreciation and Provision for Doubtful Debts.</p>
 </div>
 
-<div class="glossary-block avoid-break">
+<div class="glossary-block glossary-lead avoid-break">
   <p class="section-header" style="margin-top:6px;">Glossary — Module 1, in Plain Words</p>
   <p class="body" style="margin-bottom:4px;">The technical terms and formula-shorthand used throughout this module, explained simply.</p>
   <table class="glossary-table">
@@ -393,7 +394,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
   </table>
 </div>
 
-<div class="glossary-block avoid-break">
+<div class="glossary-block glossary-continue avoid-break">
   <table class="glossary-table">
     <tr><td class="term">Contra Entry</td><td>A transaction (e.g. cash deposited into bank) posted on both sides of the same Double Column Cash Book, marked "C" in the L.F. column.</td></tr>
     <tr><td class="term">Imprest System</td><td>A petty-cash system where the cashier is reimbursed exactly what was spent, restoring the float to its fixed starting amount each period.</td></tr>
@@ -484,7 +485,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
   <p class="body"><strong>Book-keeping &rarr; Accounting &rarr; Accountancy (narrowest to widest):</strong> Book-keeping is the science/art of correctly recording transactions in the books; Accounting adds classifying, summarising, and interpreting results in money terms; Accountancy is the entire body of theory and practice. Book-keeping is a subset of Accounting, which is a part of Accountancy.</p>
   <p class="body">Accounting serves four objectives.</p>
 <ol class="point-list numbered">
-  <li>Providing information to users for rational decision-making — hence accounting is called the &ldquo;language of business.&rdquo;</li>
+  <li>Providing information to users for rational decision-making — hence accounting is called the "language of business."</li>
   <li>Systematic recording of transactions, via book-keeping.</li>
   <li>Ascertainment of results (profit or loss), via the Profit &amp; Loss Account.</li>
   <li>Ascertainment of financial position, via the Balance Sheet, showing Assets and Liabilities as on a date.</li>
@@ -1308,7 +1309,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
   <p class="body">After studying this module, you will be able to: account for a Consignment business in the books of both the consignor and the consignee, including stock valuation and losses; account for a Joint Venture business under separate books, own-books and memorandum methods; and account for Bills of Exchange (excluding Accommodation Bills and Insolvency) — drawing, discounting, endorsement, collection, dishonour, retirement and renewal.</p>
 </div>
 
-<div class="glossary-block avoid-break">
+<div class="glossary-block glossary-lead avoid-break">
   <p class="section-header" style="margin-top:6px;">Glossary — Module 2, in Plain Words</p>
   <p class="body" style="margin-bottom:4px;">The technical terms used throughout this module, explained simply.</p>
   <table class="glossary-table">
@@ -1331,7 +1332,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
   </table>
 </div>
 
-<div class="glossary-block avoid-break">
+<div class="glossary-block glossary-continue avoid-break">
   <table class="glossary-table">
     <tr><td class="term">Recurring Expenses</td><td>Ongoing expenses after arrival (godown rent, insurance, selling expenses) — these are NEVER added to stock value.</td></tr>
     <tr><td class="term">Joint Venture</td><td>A temporary partnership between two or more people for one specific deal, profits shared in an agreed ratio, dissolved when the job is done. It has no firm name.</td></tr>
@@ -1841,7 +1842,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
   <p class="body">After studying this module, you will be able to: prepare the Financial Statements of profit-seeking entities (Manufacturing Account, Trading Account, Profit &amp; Loss Account and Balance Sheet of a sole proprietorship, with all adjustments); and prepare the Financial Statements of not-for-profit organisations (Receipts &amp; Payments Account, Income &amp; Expenditure Account and Balance Sheet, including fund-based accounting).</p>
 </div>
 
-<div class="glossary-block avoid-break">
+<div class="glossary-block glossary-lead avoid-break">
   <p class="section-header" style="margin-top:6px;">Glossary — Module 3, in Plain Words</p>
   <p class="body" style="margin-bottom:4px;">The technical terms used throughout this module, explained simply.</p>
   <table class="glossary-table">
@@ -1863,7 +1864,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
   </table>
 </div>
 
-<div class="glossary-block avoid-break">
+<div class="glossary-block glossary-continue avoid-break">
   <table class="glossary-table">
     <tr><td class="term">Not-for-Profit Organisation</td><td>A club, school, hospital, library or trust that exists to serve, not to earn — its surplus is never distributed to members.</td></tr>
     <tr><td class="term">Receipts &amp; Payments A/c</td><td>The NPO's summarised cash book: every cash/bank receipt (debit) and payment (credit), capital or revenue, of ANY period. A real account.</td></tr>
@@ -2236,7 +2237,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
   <p class="body">After studying this module, you will be able to: explain the meaning, significance and evolution of cost accounting and its relationship with financial accounting; apply cost accounting to business decisions; define cost, cost centre, cost unit, cost object and cost driver; classify costs with reference to Cost Accounting Standard 1; and ascertain cost by preparing the Statement of Cost and Profit (Cost Sheet).</p>
 </div>
 
-<div class="glossary-block avoid-break">
+<div class="glossary-block glossary-lead avoid-break">
   <p class="section-header" style="margin-top:6px;">Glossary — Module 4, in Plain Words</p>
   <p class="body" style="margin-bottom:4px;">The technical terms used throughout this module, explained simply.</p>
   <table class="glossary-table">
@@ -2259,7 +2260,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
   </table>
 </div>
 
-<div class="glossary-block avoid-break">
+<div class="glossary-block glossary-continue avoid-break">
   <table class="glossary-table">
     <tr><td class="term">Relevant Cost</td><td>A cost that actually matters to the specific decision at hand — future, and different between the options.</td></tr>
     <tr><td class="term">Controllable Cost</td><td>Subject to direct control at some level of management; non-controllable is not — at any level.</td></tr>

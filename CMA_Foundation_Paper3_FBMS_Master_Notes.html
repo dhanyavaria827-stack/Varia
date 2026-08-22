@@ -45,14 +45,13 @@
   --font-mono:    'JetBrains Mono', 'Courier New', monospace;
 }
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-@page { size: A4; margin: 22mm 18mm 20mm 24mm; @top-center { content: element(running-header); } @bottom-center { content: element(running-footer); } @bottom-left { content: "© Dhanya Varia"; font-family: "EB Garamond", serif; font-size: 7pt; font-style: italic; color: #999999; } }
+@page { size: A4; margin: 22mm 18mm 20mm 24mm; @top-center { content: "ICMAI · CMA FOUNDATION · PAPER 3 — FBMS · MASTER NOTES"; font-family: "Cormorant Garamond", Georgia, serif; font-weight: 300; font-size: 8pt; letter-spacing: 0.15em; text-transform: uppercase; color: #6B7280; } @bottom-center { content: "CMA Foundation · Fundamentals of Business Mathematics and Statistics · Compiled & Adapted by Dhanya Varia"; font-family: "Cormorant Garamond", Georgia, serif; font-weight: 300; font-size: 7.5pt; color: #6B7280; } @bottom-left { content: "© Dhanya Varia"; font-family: "EB Garamond", serif; font-size: 7pt; font-style: italic; color: #999999; } @bottom-right { content: counter(page); font-family: "Cormorant Garamond", Georgia, serif; font-weight: 600; font-size: 9pt; color: #1A5C38; } }
 body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color: var(--ink); background: var(--white); }
 .page { position: relative; min-height: 1mm; }
 
 .page-break { page-break-before: always; break-before: page; }
 .avoid-break { page-break-inside: avoid; break-inside: avoid; }
-#running-header { position: running(running-header); font-family: var(--font-head); font-weight: 300; font-size: 8pt; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray); border-bottom: 1px solid var(--border-light); padding-bottom: 2px; text-align: center; width: 100%; }
-#running-footer { position: running(running-footer); font-family: var(--font-head); font-weight: 300; font-size: 8pt; color: var(--gray); display: flex; justify-content: space-between; width: 100%; }
+#running-header, .running-header, #running-footer, .running-footer { display: none; }
 .page-number::before { content: counter(page); font-family: var(--font-head); font-weight: 600; font-size: 9pt; color: var(--green-deep); }
 .cover-title { font-family: var(--font-display); font-weight: 400; font-size: 48pt; letter-spacing: 0.08em; text-transform: uppercase; color: var(--green-deep); line-height: 1.15; display: block; text-align: center; }
 .cover-subtitle { font-family: var(--font-head); font-weight: 300; font-size: 13pt; letter-spacing: 0.06em; color: var(--green-mid); text-align: center; }
@@ -158,8 +157,8 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
 
 <div class="print-watermark">Dhanya Varia</div>
 <div class="screen-watermark">&copy; Compiled &amp; Adapted by Dhanya Varia</div>
-<div class="running-header" style="position: running(running-header);"><span>ICMAI &middot; CMA FOUNDATION &middot; PAPER 3 — FBMS &middot; MASTER NOTES</span></div>
-<div class="running-footer" style="position: running(running-footer);">CMA Foundation &middot; Fundamentals of Business Mathematics and Statistics &middot; <em>Compiled &amp; Adapted by Dhanya Varia</em></div>
+<div class="running-header">ICMAI &middot; CMA FOUNDATION &middot; PAPER 3 — FBMS &middot; MASTER NOTES</div>
+<div class="running-footer">CMA Foundation &middot; Fundamentals of Business Mathematics and Statistics &middot; <em>Compiled &amp; Adapted by Dhanya Varia</em></div>
 
 <!-- ============ COVER ============ -->
 <!-- © Dhanya Varia -->
@@ -228,14 +227,14 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
 
   <p class="idx-module" style="font-size:12pt;margin-top:2mm;">SECTION A &middot; FUNDAMENTALS OF BUSINESS MATHEMATICS (40%)</p>
   <p class="idx-module" style="font-size:11.5pt;margin-top:4mm;">Module 1 &middot; Arithmetic (15%)</p>
-  <div class="idx-topic"><span>1.1&nbsp;&nbsp;Ratios, Variations and Proportions</span><span class="dots"></span></div>
-  <div class="idx-topic"><span>1.2&nbsp;&nbsp;Time Value of Money and Annuity — Simple &amp; Compound Interest</span><span class="dots"></span></div>
-  <div class="idx-topic"><span>1.3&nbsp;&nbsp;Arithmetic Progression and Geometric Progression</span><span class="dots"></span></div>
-  <div class="idx-topic"><span>1.4&nbsp;&nbsp;Time and Distance</span><span class="dots"></span></div>
+  <div class="idx-topic"><span>1.1&nbsp;&nbsp;Ratios, Variations and Proportions</span><span class="dots"></span><span>1.1</span></div>
+  <div class="idx-topic"><span>1.2&nbsp;&nbsp;Time Value of Money and Annuity — Simple &amp; Compound Interest</span><span class="dots"></span><span>1.2</span></div>
+  <div class="idx-topic"><span>1.3&nbsp;&nbsp;Arithmetic Progression and Geometric Progression</span><span class="dots"></span><span>1.3</span></div>
+  <div class="idx-topic"><span>1.4&nbsp;&nbsp;Time and Distance</span><span class="dots"></span><span>1.4</span></div>
 
   <p class="idx-module" style="font-size:11.5pt;margin-top:4mm;">Module 2 &middot; Algebra (20%)</p>
-  <div class="idx-topic"><span>2.1&nbsp;&nbsp;Set Theory, Venn Diagram</span><span class="dots"></span></div>
-  <div class="idx-topic"><span>2.2&nbsp;&nbsp;Indices and Logarithms</span><span class="dots"></span></div>
+  <div class="idx-topic"><span>2.1&nbsp;&nbsp;Set Theory, Venn Diagram</span><span class="dots"></span><span>2.1</span></div>
+  <div class="idx-topic"><span>2.2&nbsp;&nbsp;Indices and Logarithms</span><span class="dots"></span><span>2.2</span></div>
   <div class="idx-topic"><span>2.3&nbsp;&nbsp;Permutation and Combinations</span><span class="dots"></span><span>2.3</span></div>
   <div class="idx-topic"><span>2.4&nbsp;&nbsp;Quadratic Equations</span><span class="dots"></span><span>2.4</span></div>
 
@@ -254,12 +253,12 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
   <div class="idx-topic"><span>5.1&nbsp;&nbsp;Mean, Median, Mode, Mean Deviation</span><span class="dots"></span><span>5.1</span></div>
   <div class="idx-topic"><span>5.2&nbsp;&nbsp;Range, Quartiles and Quartile Deviation</span><span class="dots"></span><span>5.2</span></div>
   <div class="idx-topic"><span>5.3&nbsp;&nbsp;Standard Deviation</span><span class="dots"></span><span>5.3</span></div>
-  <div class="idx-topic"><span>5.4&nbsp;&nbsp;Co-efficient of Variation</span><span class="dots"></span><span>5.4</span></div>
-  <div class="idx-topic"><span>5.5&nbsp;&nbsp;Karl Pearson and Bowley's Co-efficient of Skewness</span><span class="dots"></span><span>5.5</span></div>
+  <div class="idx-topic"><span>5.4&nbsp;&nbsp;Coefficient of Variation</span><span class="dots"></span><span>5.4</span></div>
+  <div class="idx-topic"><span>5.5&nbsp;&nbsp;Karl Pearson and Bowley's Coefficient of Skewness</span><span class="dots"></span><span>5.5</span></div>
 
   <p class="idx-module" style="font-size:11.5pt;margin-top:4mm;">Module 6 &middot; Correlation and Regression (15%)</p>
   <div class="idx-topic"><span>6.1&nbsp;&nbsp;Scatter Diagram</span><span class="dots"></span><span>6.1</span></div>
-  <div class="idx-topic"><span>6.2&nbsp;&nbsp;Karl Pearson's Co-efficient of Correlation</span><span class="dots"></span><span>6.2</span></div>
+  <div class="idx-topic"><span>6.2&nbsp;&nbsp;Karl Pearson's Coefficient of Correlation</span><span class="dots"></span><span>6.2</span></div>
   <div class="idx-topic"><span>6.3&nbsp;&nbsp;Regression Analysis</span><span class="dots"></span><span>6.3</span></div>
 
   <p class="idx-module" style="font-size:11.5pt;margin-top:4mm;">Module 7 &middot; Probability (15%)</p>
@@ -813,9 +812,9 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
 <p class="section-header">Six Fast Shortcut-Style Problems (all independently re-verified) <span style="float:right;">&#9733;&#9733;&#9733; HIGHEST-VALUE PATTERNS</span></p>
 <table class="comparison-table" style="font-size:8.3pt;">
   <tr><th style="width:6%;">#</th><th style="width:30%;">Problem</th><th>Solution technique &amp; answer</th></tr>
-  <tr><td>1</td><td>Find t&#8319; of &minus;1, 2, &minus;4, 8, &hellip;</td><td>Alternating-sign GP: t<sub>n</sub> = (&minus;1)&#8319;&times;2&#8319;&supminus;&sup1;. Check n=3: (&minus;1)&sup3;&times;2&sup2;=&minus;4 &check;. <strong>General formula, no single numeric answer needed.</strong></td></tr>
+  <tr><td>1</td><td>Find t&#8319; of &minus;1, 2, &minus;4, 8, &hellip;</td><td>Alternating-sign GP: t<sub>n</sub> = (&minus;1)&#8319;&times;2&#8319;&#8315;&#185;. Check n=3: (&minus;1)&sup3;&times;2&sup2;=&minus;4 &check;. <strong>General formula, no single numeric answer needed.</strong></td></tr>
   <tr><td>2</td><td>If S<sub>n</sub>=n&sup2;+2n for an A.P., find t<sub>n</sub>.</td><td>t<sub>n</sub> = S<sub>n</sub>&minus;S<sub>n&minus;1</sub> = (n&sup2;+2n)&minus;[(n&minus;1)&sup2;+2(n&minus;1)] = <strong>2n+1</strong>. (This t<sub>n</sub>=S<sub>n</sub>&minus;S<sub>n&minus;1</sub> trick works for ANY series given as a formula for S<sub>n</sub>.)</td></tr>
-  <tr><td>3</td><td>x=1+&#8531;+&#8571;+&hellip;&infin;, y=1+&#188;+&#8115;+&hellip;&infin;, find xy.</td><td>Both infinite GPs: x=1/(1&minus;&#8531;)=3/2, y=1/(1&minus;&#188;)=4/3. xy = (3/2)(4/3) = <strong>2</strong></td></tr>
+  <tr><td>3</td><td>x=1+&#8531;+1/3&sup2;+&hellip;&infin;, y=1+&#188;+1/4&sup2;+&hellip;&infin;, find xy.</td><td>Both infinite GPs: x=1/(1&minus;&#8531;)=3/2, y=1/(1&minus;&#188;)=4/3. xy = (3/2)(4/3) = <strong>2</strong></td></tr>
   <tr><td>4</td><td>8<sup>th</sup> term of an A.P. is 15 &mdash; find S&#8321;&#8325;.</td><td>Recognise S&#8321;&#8325;=(15/2)(2a+14d)=15&times;(a+7d)=15&times;t&#8328;=15&times;15=<strong>225</strong>. (No need to find a or d separately &mdash; S&#8321;&#8325; always equals 15&times; the 8<sup>th</sup> term, since the 8th term is the exact middle of 15 terms.)</td></tr>
   <tr><td>5</td><td>Sum of 3<sup>rd</sup> and 9<sup>th</sup> terms of an A.P. is 8 &mdash; find S&#8321;&#8321;.</td><td>t&#8323;+t&#8339;=(a+2d)+(a+8d)=2a+10d=8. S&#8321;&#8321;=(11/2)(2a+10d)=(11/2)(8)=<strong>44</strong></td></tr>
   <tr><td>6</td><td>Sum of all multiples of 5 between 100 and 1000.</td><td>First=105, last=995, n=(995&minus;105)/5+1=179. S=(179/2)(105+995)=179&times;550=<strong>98,450</strong></td></tr>
@@ -850,7 +849,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
 <p>&#9317; Annuity due = regular annuity &times; (1+r), always, for both FV and PV &mdash; one extra compounding period since each flow lands one period earlier.</p>
 <p>&#9318; Effective rate = (1+k/m)&#7500;&minus;1, always &ge; nominal rate when m&gt;1. Rule of 72: doubling period &asymp; 72&divide;rate.</p>
 <p>&#9319; Watch precision: when a problem asks for an unknown from a SMALL difference (like C.I.&minus;S.I.), 2-decimal table rounding can swing the answer by several percent &mdash; carry extra decimals.</p>
-<p>&#9320; AP: t&#8319;=a+(n&minus;1)d, S&#8319;=(n/2){2a+(n&minus;1)d}. GP: t&#8319;=ar&#8319;&supminus;&sup1;, three sum formulas depending on r&gt;1, r&lt;1, or n&rarr;&infin;.</p>
+<p>&#9320; AP: t&#8319;=a+(n&minus;1)d, S&#8319;=(n/2){2a+(n&minus;1)d}. GP: t&#8319;=ar&#8319;&#8315;&#185;, three sum formulas depending on r&gt;1, r&lt;1, or n&rarr;&infin;.</p>
 <p>&#9321; tn=Sn&minus;Sn&minus;1 pulls any single term out of a given sum-formula. For an ODD count of AP terms, S = count &times; middle term &mdash; often faster than solving for a,d.</p>
 <p>&#9322; Time-Distance is 1.1&rsquo;s inverse variation wearing a costume: Distance=Speed&times;Time, and the other two forms follow by rearrangement.</p>
 <p>&#9323; Read "how much MORE" and "which took more time, HOW MUCH" carefully &mdash; the trap answer is always the bigger raw total, not the actual difference asked for.</p>
@@ -1233,7 +1232,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
 <p class="ex-answer">= <strong>6</strong>.</p>
 </div>
 <p class="body">Permutation and Combination connect directly through one relationship, which is worth remembering as a bridge between the two.</p>
-<div class="formula-box"><p class="formula-text">&sup;P<sub>r</sub> = r! &times; &#8319;C<sub>r</sub></p><hr class="var-divider"><p class="formula-vars">In words: the number of ARRANGEMENTS of r objects out of n equals the number of ways to first SELECT r objects out of n, multiplied by the r! ways to then arrange those chosen r objects among themselves. This is why permutation counts are always the LARGER number for the same n and r &mdash; permutation cares about order, combination does not.</p></div>
+<div class="formula-box"><p class="formula-text">&#8319;P<sub>r</sub> = r! &times; &#8319;C<sub>r</sub></p><hr class="var-divider"><p class="formula-vars">In words: the number of ARRANGEMENTS of r objects out of n equals the number of ways to first SELECT r objects out of n, multiplied by the r! ways to then arrange those chosen r objects among themselves. This is why permutation counts are always the LARGER number for the same n and r &mdash; permutation cares about order, combination does not.</p></div>
 </div>
 
 <div class="page page-break">
@@ -1719,7 +1718,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
 <p>&#9312; A function maps every x in its domain to exactly one (or more, if multi-valued) y. Nine types: constant, single/multi-valued, explicit/implicit, odd/even, inverse, polynomial, rational/irrational/algebraic.</p>
 <p>&#9313; Limit: what f(x) approaches as x&rarr;a, even if f(x) isn't defined AT a. Three evaluation methods: factorisation, substitution, rationalisation.</p>
 <p>&#9314; Continuity at x=a needs left-limit = right-limit = f(a), all three equal.</p>
-<p>&#9315; Derivative = lim<sub>h&rarr;0</sub>[f(x+h)&minus;f(x)]/h. Eleven rules: power, negative power, e&#x2093;, a&#x2093;, ln, log_a, constant, sum/difference, product, quotient, chain.</p>
+<p>&#9315; Derivative = lim<sub>h&rarr;0</sub>[f(x+h)&minus;f(x)]/h. Eleven rules: power, negative power, e&#739;, a&#739;, ln, log_a, constant, sum/difference, product, quotient, chain.</p>
 <p>&#9316; TR=PQ, AR=P, MR=d(TR)/dQ. TC=TFC+TVC, MC=d(TC)/dQ (independent of fixed cost). Profit=TR&minus;TC, maximised where MR=MC.</p>
 <p>&#9317; Optimization: f&prime;(x)=0 is NECESSARY for both max and min. f&Prime;(x)&lt;0 confirms MAX; f&Prime;(x)&gt;0 confirms MIN — the sufficient condition.</p>
 <p>&#9318; A cubic Profit function gives a quadratic first-order condition — expect TWO critical points, and always run the second-derivative test on both.</p>
@@ -2393,7 +2392,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
   <li>The S.D. of the first n natural numbers = &radic;[(n&sup2;&minus;1)/12].</li>
   <li>For any set of observations, <strong>Standard Deviation is always &ge; Mean Deviation</strong>.</li>
 </ol>
-<div class="formula-box"><p class="formula-text">Relation between the dispersion measures: Q.D. = &#8532;(S.D.) &nbsp;&nbsp;&middot;&nbsp;&nbsp; M.D. = &#8541;(S.D.)</p><hr class="var-divider"><p class="formula-vars">Also: Mean &plusmn; Q.D. covers roughly the middle 50% of the data; Mean &plusmn; M.D. covers roughly the middle 57.5%; and Mean &plusmn; S.D. covers roughly the middle 68% (matching the Empirical Rule).</p></div>
+<div class="formula-box"><p class="formula-text">Relation between the dispersion measures: Q.D. = &#8532;(S.D.) &nbsp;&nbsp;&middot;&nbsp;&nbsp; M.D. = &#8536;(S.D.)</p><hr class="var-divider"><p class="formula-vars">Also: Mean &plusmn; Q.D. covers roughly the middle 50% of the data; Mean &plusmn; M.D. covers roughly the middle 57.5%; and Mean &plusmn; S.D. covers roughly the middle 68% (matching the Empirical Rule).</p></div>
 <div class="shortcut-box"><span class="shortcut-label">&#9889; SHORTCUT</span> Remember the ratio chain QD : MD : SD = (2/3) : (4/5) : 1 — or equivalently 0.667 : 0.8 : 1 — a favourite fill-in-the-blank across all four papers whenever only one of the three is given and the other two must be derived.</div>
 </div>
 
@@ -2452,7 +2451,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
 <p>&#9312; Central tendency: AM (3 methods), GM (ratios/growth), HM (rates), Median (positional, odd/even/grouped), Mode (most frequent; Mean&minus;Mode=3(Mean&minus;Median)).</p>
 <p>&#9313; Dispersion, distance measures: Range=Highest&minus;Lowest. QD=(Q&#8323;&minus;Q&#8321;)/2 — both use only 2 values.</p>
 <p>&#9314; Dispersion, average-deviation measures: MD=&Sigma;|X&minus;A|/n (A=Mean/Median/Mode). SD=&radic;[&Sigma;(X&minus;Mean)&sup2;/N], the most important measure — 3 grouped methods (direct/shortcut/step-deviation).</p>
-<p>&#9315; QD:MD:SD = &#8532;:&#8541;:1. CV=SD/Mean&times;100 — the ONLY unit-free measure, essential for comparing differently-scaled distributions.</p>
+<p>&#9315; QD:MD:SD = &#8532;:&#8536;:1. CV=SD/Mean&times;100 — the ONLY unit-free measure, essential for comparing differently-scaled distributions.</p>
 <p>&#9316; Skewness: Mean=Median=Mode → symmetrical. Mode&lt;Median&lt;Mean → positive skew (tail right). Mode&gt;Median&gt;Mean → negative skew (tail left).</p>
 <p>&#9317; Karl Pearson's Sk=(Mean&minus;Mode)/SD, most-used in practice. Bowley's Sk=(Q&#8323;+Q&#8321;&minus;2Md)/(Q&#8323;&minus;Q&#8321;), ranges &plusmn;1. CV and Skewness can diverge — always check BOTH independently, never assume one implies the other.</p>
 </div>
@@ -3249,7 +3248,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
   <table class="comparison-table avoid-break">
     <tr><th style="width:22%;">Module</th><th>The Ladder</th></tr>
     <tr><td><strong>4. Statistical Representation of Data (5%)</strong></td><td>Pie-chart angle = (component value/total value)&times;360&deg; &middot; Class boundary = limit &plusmn; &frac12; inter-class gap &middot; Class mark = (Lower+Upper)/2 &middot; Relative frequency = class&divide;total; Percentage frequency = that&times;100; Frequency density = class frequency&divide;class width (use whenever widths are UNEQUAL) &middot; Histogram: adjacent bars, no gaps, height=frequency (equal widths) or density (unequal) &middot; Ogive: &ldquo;less-than&rdquo; rises 0&rarr;N, &ldquo;more-than&rdquo; falls N&rarr;0 &mdash; their crossing point's x-value is the Median.</td></tr>
-    <tr><td><strong>5. Central Tendency &amp; Dispersion (15%)</strong></td><td>AM: X&#772;=&Sigma;X/N (direct), A+&Sigma;dx/N (short-cut), A+(&Sigma;dx&prime;/N)&times;i (step-deviation) &middot; GM=Antilog[&Sigma;(logX)/n]; HM=n/&Sigma;(1/X) &middot; Median (grouped): Md=l&#8321;+[(N/2&minus;C)/f]&times;h &middot; Mode (grouped): M&#8320;=l&#8321;+[(f&#8320;&minus;f&#8321;)/(2f&#8320;&minus;f&#8321;&minus;f&#8322;)]&times;h &middot; Mean&minus;Mode=3(Mean&minus;Median) &middot; Range=Highest&minus;Lowest &middot; Q.D.=(Q&#8323;&minus;Q&#8321;)/2 &middot; M.D.=&Sigma;|X&minus;A|/n (A=Mean/Median/Mode) &middot; S.D.=&radic;[&Sigma;(X&minus;Mean)&sup2;/N] &middot; QD:MD:SD = &#8532;:&#8541;:1 &middot; C.V.=(S.D./Mean)&times;100 &middot; Karl Pearson's Sk=(Mean&minus;Mode)/S.D.; Bowley's Sk=(Q&#8323;+Q&#8321;&minus;2Md)/(Q&#8323;&minus;Q&#8321;).</td></tr>
+    <tr><td><strong>5. Central Tendency &amp; Dispersion (15%)</strong></td><td>AM: X&#772;=&Sigma;X/N (direct), A+&Sigma;dx/N (short-cut), A+(&Sigma;dx&prime;/N)&times;i (step-deviation) &middot; GM=Antilog[&Sigma;(logX)/n]; HM=n/&Sigma;(1/X) &middot; Median (grouped): Md=l&#8321;+[(N/2&minus;C)/f]&times;h &middot; Mode (grouped): M&#8320;=l&#8321;+[(f&#8320;&minus;f&#8321;)/(2f&#8320;&minus;f&#8321;&minus;f&#8322;)]&times;h &middot; Mean&minus;Mode=3(Mean&minus;Median) &middot; Range=Highest&minus;Lowest &middot; Q.D.=(Q&#8323;&minus;Q&#8321;)/2 &middot; M.D.=&Sigma;|X&minus;A|/n (A=Mean/Median/Mode) &middot; S.D.=&radic;[&Sigma;(X&minus;Mean)&sup2;/N] &middot; QD:MD:SD = &#8532;:&#8536;:1 &middot; C.V.=(S.D./Mean)&times;100 &middot; Karl Pearson's Sk=(Mean&minus;Mode)/S.D.; Bowley's Sk=(Q&#8323;+Q&#8321;&minus;2Md)/(Q&#8323;&minus;Q&#8321;).</td></tr>
     <tr><td><strong>6. Correlation &amp; Regression (15%)</strong></td><td>r = &Sigma;[(X&minus;X&#772;)(Y&minus;Y&#772;)] / &radic;[&Sigma;(X&minus;X&#772;)&sup2;&times;&Sigma;(Y&minus;Y&#772;)&sup2;], &minus;1&le;r&le;1 &middot; Probable Error = 0.6745&times;(1&minus;r&sup2;)/&radic;N; r significant only if r&gt;6&times;P.E. &middot; Spearman's r<sub>k</sub>=1&minus;[6&Sigma;D&sup2;/N(N&sup2;&minus;1)], plus (1/12)(m&sup3;&minus;m) correction per tied group &middot; b<sub>yx</sub>=&Sigma;(X&minus;X&#772;)(Y&minus;Y&#772;)/&Sigma;(X&minus;X&#772;)&sup2;; b<sub>xy</sub>=&Sigma;(X&minus;X&#772;)(Y&minus;Y&#772;)/&Sigma;(Y&minus;Y&#772;)&sup2; &middot; Y on X: Y&minus;Y&#772;=b<sub>yx</sub>(X&minus;X&#772;); X on Y: X&minus;X&#772;=b<sub>xy</sub>(Y&minus;Y&#772;) &middot; r&sup2;=b<sub>yx</sub>&times;b<sub>xy</sub> &middot; S<sub>e</sub>=&radic;{[&Sigma;Y&sup2;&minus;a&Sigma;Y&minus;b&Sigma;XY]/(n&minus;2)}.</td></tr>
     <tr><td><strong>7. Probability (15%)</strong></td><td>P(event)=favourable/total, p+q=1 &middot; Addition (mutually exclusive): P(A or B)=P(A)+P(B); (not exclusive): minus P(A and B) &middot; Multiplication (independent): P(A and B)=P(A)&times;P(B) &middot; Conditional: P(B/A)=P(AB)/P(A) &middot; Odds a:b in favour &rarr; P=a/(a+b) &middot; Bayes' Theorem: P(B<sub>i</sub>/A) = [P(B<sub>i</sub>)&middot;P(A/B<sub>i</sub>)] / &Sigma;[P(B<sub>i</sub>)&middot;P(A/B<sub>i</sub>)], built as Prior&times;Conditional=Joint, then Joint&divide;&Sigma;Joint=Posterior.</td></tr>
     <tr><td><strong>8. Index Numbers &amp; Time Series (10%)</strong></td><td>Simplest price index = (Current/Base)&times;100 &middot; Simple Aggregative P<sub>01</sub>=(&Sigma;P&#8321;/&Sigma;P&#8320;)&times;100; Weighted Aggregative = (&Sigma;P&#8321;W/&Sigma;P&#8320;W)&times;100 &middot; Laspeyres' = (&Sigma;P&#8321;Q&#8320;/&Sigma;P&#8320;Q&#8320;)&times;100 (base-year Q); Paasche's = (&Sigma;P&#8321;Q&#8321;/&Sigma;P&#8320;Q&#8321;)&times;100 (current-year Q) &middot; Fisher's = &radic;(Laspeyres&times;Paasche); Bowley's = (Laspeyres+Paasche)/2 &middot; Price Relative = (P&#8321;/P&#8320;)&times;100 &middot; Y=T+C+S+I (additive) or T&times;C&times;S&times;I (multiplicative, fits most real data) &middot; Moving Average smooths a series to reveal Trend; even-n averages need a CENTERING pass to land back on real years.</td></tr>

@@ -46,14 +46,13 @@
   --font-display: 'Italiana', 'Playfair Display', Georgia, serif;
 }
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-@page { size: A4; margin: 22mm 18mm 20mm 24mm; @top-center { content: element(running-header); } @bottom-center { content: element(running-footer); } @bottom-left { content: "© Dhanya Varia"; font-family: "EB Garamond", serif; font-size: 7pt; font-style: italic; color: #999999; } }
+@page { size: A4; margin: 22mm 18mm 20mm 24mm; @top-center { content: "ICMAI · CMA FOUNDATION · PAPER 1 — FBLC · MASTER NOTES"; font-family: "Cormorant Garamond", Georgia, serif; font-weight: 300; font-size: 8pt; letter-spacing: 0.15em; text-transform: uppercase; color: #6B7280; } @bottom-center { content: "CMA Foundation · Business Laws & Communication · Compiled & Adapted by Dhanya Varia"; font-family: "Cormorant Garamond", Georgia, serif; font-weight: 300; font-size: 7.5pt; color: #6B7280; } @bottom-left { content: "© Dhanya Varia"; font-family: "EB Garamond", serif; font-size: 7pt; font-style: italic; color: #999999; } @bottom-right { content: counter(page); font-family: "Cormorant Garamond", Georgia, serif; font-weight: 600; font-size: 9pt; color: #1A5C38; } }
 body { font-family: var(--font-body); font-size: 11pt; line-height: 1.7; color: var(--ink); background: var(--white); }
 .page { position: relative; min-height: 1mm; }
 
 .page-break { page-break-before: always; break-before: page; }
 .avoid-break { page-break-inside: avoid; break-inside: avoid; }
-#running-header { position: running(running-header); font-family: var(--font-head); font-weight: 300; font-size: 8pt; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray); border-bottom: 1px solid var(--border-light); padding-bottom: 2px; text-align: center; width: 100%; }
-#running-footer { position: running(running-footer); font-family: var(--font-head); font-weight: 300; font-size: 8pt; color: var(--gray); display: flex; justify-content: space-between; width: 100%; }
+#running-header, #running-footer { display: none; }
 .page-number::before { content: counter(page); font-family: var(--font-head); font-weight: 600; font-size: 9pt; color: var(--green-deep); }
 .cover-title { font-family: var(--font-display); font-weight: 400; font-size: 48pt; letter-spacing: 0.08em; text-transform: uppercase; color: var(--green-deep); line-height: 1.15; display: block; text-align: center; }
 .cover-subtitle { font-family: var(--font-head); font-weight: 300; font-size: 13pt; letter-spacing: 0.06em; color: var(--green-mid); text-align: center; }
@@ -136,7 +135,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.7; color: 
   <div class="print-watermark">Dhanya Varia</div>
   <div class="screen-watermark">&copy; Compiled &amp; Adapted by Dhanya Varia</div>
   <div id="running-header">ICMAI · CMA FOUNDATION · PAPER 1 — FBLC · MASTER NOTES</div>
-  <div id="running-footer"><span>CMA Foundation · Business Laws &amp; Communication &middot; <em>Compiled &amp; Adapted by Dhanya Varia</em></span><span class="page-number"></span></div>
+  <div id="running-footer">CMA Foundation · Business Laws &amp; Communication &middot; <em>Compiled &amp; Adapted by Dhanya Varia</em></div>
 
 <!-- ============ PAGE 1 — COVER ============ -->
 <!-- © Dhanya Varia -->
@@ -558,7 +557,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.7; color: 
 </div>
 
 <div class="worked-example avoid-break">
-  <p class="ex-label">Concept Check 4 — Primary or Subordinate Legislation?</p>
+  <p class="ex-label">Concept Check 3 — Primary or Subordinate Legislation?</p>
   <p class="ex-step">GIVEN: Classify each: (a) the Negotiable Instruments Act, 1881, passed by Parliament; (b) a municipal bye-law regulating waste collection timings in a city, made under powers delegated by the State Legislature; (c) a Presidential Ordinance issued while Parliament is not in session.</p>
   <p class="ex-step">STEP 1: (a) direct parliamentary enactment → Primary Legislation.</p>
   <p class="ex-step">STEP 2: (b) made by a LOCAL AUTHORITY under delegated power → Subordinate Legislation.</p>
@@ -660,7 +659,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.7; color: 
   <p class="module-title">Indian Contract<br>Act, 1872</p>
   <div class="rule"></div>
   <p class="overview">Essential elements and types of contract, offer and acceptance, void/voidable agreements, consideration, capacity and free consent, quasi/contingent contracts, performance, indemnity/guarantee/pledge/agency, e-contracts, discharge, and breach — the single largest module in the paper, built directly from the ICMAI Study Notes.</p>
-  <p class="must-not-skip">MUST NOT SKIP: Void vs Voidable, and the landmark cases (Carlill, Balfour v Balfour, Mohiri Bibi v Dharmodas Ghose) — the most repeated question type in this module</p>
+  <p class="must-not-skip">MUST NOT SKIP: Void vs Voidable, and the landmark cases (Carlill, Balfour vs Balfour, Mohiri Bibi vs Dharmodas Ghose) — the most repeated question type in this module</p>
   <span class="mcq-badge">15</span>
 </div>
 
@@ -1706,7 +1705,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.7; color: 
 </div>
 
 <div class="worked-example avoid-break">
-  <p class="ex-label">Concept Check 5 — Which Right Against the Goods?</p>
+  <p class="ex-label">Concept Check 4 — Which Right Against the Goods?</p>
   <p class="ex-step">GIVEN: (a) A sells goods to B on credit; the credit period expires unpaid, and A still has the goods in his own warehouse. (b) A sells goods to B; while the goods are with a carrier en route to B, A learns B has become insolvent. (c) A, having already exercised his lien on perishable goods, gives B notice of intent to sell them elsewhere.</p>
   <p class="ex-answer">ANSWER: (a) Right of Lien [Sec 47] — A still holds possession, credit period has expired. (b) Right of Stoppage in Transit [Sec 50] — goods are in transit, buyer is insolvent. (c) Right of Resale [Sec 54] — perishable goods, with proper notice given.</p>
 </div>
@@ -1955,7 +1954,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.7; color: 
 </div>
 
 <div class="worked-example avoid-break">
-  <p class="ex-label">Concept Check 2 — Note, Bill, or Cheque?</p>
+  <p class="ex-label">Concept Check 1 — Note, Bill, or Cheque?</p>
   <p class="ex-step">GIVEN: (a) A writes and signs a document promising to pay B ₹50,000, no bank involved. (b) A orders his bank to pay C ₹10,000 on demand. (c) A directs B (not a bank) to pay C ₹20,000 after 60 days.</p>
   <p class="ex-answer">ANSWER: (a) Promissory Note (a personal undertaking, no third party directed). (b) Cheque (drawn on a specified banker, payable on demand). (c) Bill of Exchange (an order directing a non-bank third party, with a specified future time).</p>
 </div>
@@ -2011,8 +2010,8 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.7; color: 
 </div>
 
 <div class="worked-example avoid-break">
-  <p class="ex-label">Concept Check 3 — Identify the Crossing Type</p>
-  <p class="ex-step">GIVEN: (a) a cheque bears two parallel lines with "& Co." written between them, no bank named. (b) a cheque bears the name "State Bank of India" written across its face, no parallel lines drawn. (c) a bank to whom a cheque is specially crossed re-crosses it specially to another bank purely for collection purposes.</p>
+  <p class="ex-label">Concept Check 2 — Identify the Crossing Type</p>
+  <p class="ex-step">GIVEN: (a) a cheque bears two parallel lines with "&amp; Co." written between them, no bank named. (b) a cheque bears the name "State Bank of India" written across its face, no parallel lines drawn. (c) a bank to whom a cheque is specially crossed re-crosses it specially to another bank purely for collection purposes.</p>
   <p class="ex-answer">ANSWER: (a) General Crossing [Sec 123]. (b) Special Crossing [Sec 124] — the bank's name alone is sufficient, lines aren't required. (c) Double Crossing / Second Special Crossing [Sec 125/127] — valid only because it's for collection.</p>
 </div>
 
@@ -2047,7 +2046,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.7; color: 
 </div>
 
 <div class="worked-example avoid-break">
-  <p class="ex-label">Concept Check 4 — Applying Section 138's Timeline</p>
+  <p class="ex-label">Concept Check 3 — Applying Section 138's Timeline</p>
   <p class="ex-step">GIVEN: A's cheque to B, drawn on 1 January, is presented on 15 March and returned unpaid on 18 March for insufficient funds. B learns of the dishonour on 20 March.</p>
   <p class="ex-step">STEP 1: presentation on 15 March is within 3 months of 1 January — condition (a) satisfied.</p>
   <p class="ex-step">STEP 2: B must give written notice within 30 days of 20 March — i.e. by roughly 19 April.</p>
@@ -2250,7 +2249,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.7; color: 
 </div>
 
 <div class="worked-example avoid-break">
-  <p class="ex-label">Concept Check 2 — Which "C" Is Missing?</p>
+  <p class="ex-label">Concept Check 1 — Which "C" Is Missing?</p>
   <p class="ex-step">GIVEN: Identify which "C" is violated in each: (a) "The company has received a new manufacturing order of tyres from a new client." (no quantity, no client name). (b) "This weak expenses have increased by 6.5%." (grammar error). (c) "The due date has been extended to next month. Arex Ltd. wants to discuss some new issues. They requested a meeting this Saturday." (illogical ordering).</p>
   <p class="ex-answer">ANSWER: (a) Completeness (missing quantity and client name). (b) Correctness (grammatical error — "weak" should be "week's"). (c) Coherence (the reason for the extension is mentioned AFTER the extension itself, breaking logical flow).</p>
 </div>
@@ -2309,7 +2308,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.7; color: 
 </table>
 
 <div class="worked-example avoid-break">
-  <p class="ex-label">Concept Check 3 — Classify the Feedback Type</p>
+  <p class="ex-label">Concept Check 2 — Classify the Feedback Type</p>
   <p class="ex-step">GIVEN: (a) A manager tells an employee, "Great work on last month's report." (b) A manager tells an employee, "For your NEXT report, please include more data visualisations."</p>
   <p class="ex-answer">ANSWER: (a) Positive Feedback (affirming, about PAST behaviour). (b) Negative Feedforward (corrective, about FUTURE behaviour).</p>
 </div>
@@ -2365,7 +2364,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.7; color: 
 </div>
 
 <div class="worked-example avoid-break">
-  <p class="ex-label">Concept Check 4 — Classify the Communication Type</p>
+  <p class="ex-label">Concept Check 3 — Classify the Communication Type</p>
   <p class="ex-step">GIVEN: (a) A production manager speaks directly with a marketing manager at the same level, in a different department. (b) A junior sales employee in one department raises an idea directly with a senior manager in a completely different department, bypassing his own direct supervisor. (c) A supervisor tells a subordinate about a new company policy.</p>
   <p class="ex-answer">ANSWER: (a) Horizontal (Lateral) Communication — same level, cross-department. (b) Diagonal Communication — crosses BOTH level and department/reporting line. (c) Vertical, specifically Downward Communication.</p>
 </div>
@@ -2522,7 +2521,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.7; color: 
 </div>
 
 <div class="worked-example avoid-break">
-  <p class="ex-label">Concept Check 5 — Internet Communication Type and PR Function</p>
+  <p class="ex-label">Concept Check 4 — Internet Communication Type and PR Function</p>
   <p class="ex-step">GIVEN: (a) A company hires remote employees across the country and conducts interviews via face-to-face internet calls. (b) A company prepares a press release announcing a new product launch.</p>
   <p class="ex-answer">ANSWER: (a) VoIP/Video Conferencing. (b) Publicity, one of the five PR functions.</p>
 </div>
@@ -2535,7 +2534,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.7; color: 
 
 <div class="concept-block avoid-break">
   <span class="pill">CONCEPT</span>
-  <p class="section-header">5.6 Do's &amp; Don'ts of Communication Through Social Media <span style="float:right">&#9733;&#9733; MED</span></p>
+  <p class="section-header">5.6 Do's &amp; Don'ts of Communication through Social Media <span style="float:right">&#9733;&#9733; MED</span></p>
   <div class="definition-block"><p class="definition-text">Social media has eliminated business&rsquo;s traditional dependency on what can be called the &ldquo;3 B&rsquo;s&rdquo; &mdash; the Building, the Boss, and the Boundaries &mdash; enabling businesses to start from essentially anywhere.</p></div>
   <p class="body">Seven practices are worth actively doing on social media.</p>
   <ol class="point-list numbered">
@@ -2660,7 +2659,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.7; color: 
 </div>
 
 <div class="worked-example avoid-break">
-  <p class="ex-label">Concept Check 6 — Identify the Document and Report Type</p>
+  <p class="ex-label">Concept Check 5 — Identify the Document and Report Type</p>
   <p class="ex-step">GIVEN: (a) A buyer writes asking about a product's price, quality, and delivery timeline before purchasing. (b) A company prepares a periodic report required by law each quarter. (c) A report written by a subordinate for daily internal decisions, with no visual aids and a personal writing style.</p>
   <p class="ex-answer">ANSWER: (a) Enquiry Letter. (b) A Statutory Report (also Routine, given its periodic nature). (c) An Informal Report.</p>
 </div>
@@ -2854,7 +2853,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.7; color: 
 </div>
 
 <div class="worked-example avoid-break">
-  <p class="ex-label">Concept Check 10 — Graphic Element or Referencing Feature?</p>
+  <p class="ex-label">Concept Check 6 — Graphic Element or Referencing Feature?</p>
   <p class="ex-step">GIVEN: (a) A company marks urgent documents in red and low-priority ones in green. (b) A researcher cites the original source for every borrowed idea in their report, letting readers trace it back. (c) A company creates a short animated video to train new employees on a new machine.</p>
   <p class="ex-answer">ANSWER: (a) Colour Coding. (b) Referencing — specifically the feature of allowing third parties to identify sources used. (c) Motion Graphics.</p>
 </div>
@@ -2929,7 +2928,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.7; color: 
     <tr><td><strong>1. Introduction (10%)</strong></td><td>Article 141=SC precedent binds ALL courts &middot; Article 123=President's ordinance power, Article 213=Governor's mirrored power at state level &middot; Article 79=Parliament (President+Rajya Sabha+Lok Sabha), Article 168=State Legislature &middot; Article 109=Money Bills, Lok Sabha ONLY (Article 107=ordinary Bills, either House) &middot; Article 254=Parliament's law wins a Concurrent-List conflict &middot; Article 368=amendment power, bounded by the basic-structure doctrine (Keshavananda Bharati, 1973) &middot; Article 32=SC writ jurisdiction (Fundamental Rights only), Article 226=HC writ jurisdiction (wider &mdash; Fundamental + ordinary legal rights) &middot; Article 131=SC Original Jurisdiction, Article 137=SC Review Jurisdiction (own orders) &middot; District Court=highest CIVIL court in a district; Sessions Court=top of the CRIMINAL hierarchy at that level &middot; Executive Magistrates=administrative, NOT judicial officers &middot; Lok Adalat orders=final, deemed civil-court decrees, NOT appealable &middot; Subordinate legislation is void the moment it exceeds its parent Act or the Constitution &mdash; the &ldquo;ultra vires&rdquo; test &middot; Seven regulators: SEBI (1992, capital markets)/RBI (1935, oldest, banking)/IRDAI (1999, insurance)/PFRDA (2013, pensions)/AMFI (1995, self-regulatory, a SEBI division)/MCA (companies)/NHB (1987, housing finance).</td></tr>
     <tr><td><strong>2. Indian Contract Act, 1872 (30%)</strong></td><td>Sec 2(h): Contract=Agreement+Enforceability by law; Sec 2(e): Agreement=Offer+Acceptance &middot; Sec 10: ten essential elements, including intention to create legal relations (Balfour vs Balfour) and consensus ad idem &middot; Thirteen categories of expressly-void agreement, running Secs 11/12&rarr;23&rarr;20&rarr;24&rarr;25&rarr;26&rarr;27&rarr;28&rarr;29&rarr;30&rarr;36&rarr;56&rarr;57 &middot; Sec 25's &ldquo;no consideration, no contract&rdquo; has SEVEN exceptions, not three: love/affection, past voluntary act, time-barred debt, completed gifts, agency creation, guarantee, remission &middot; Free consent's five vitiating factors: Coercion [Sec 15, Ammiraju vs Seshamma]/Undue Influence [Sec 16, Mannu Singh vs Umadat Pandey]/Fraud [Sec 17, Peek vs Gurney]/Misrepresentation [Sec 18, Bisset vs Wilkinson]/Mistake [Secs 20-22, Raffles vs Wichelhaus] &middot; Mohiri Bibi vs Dharmodas Ghose: a minor's agreement is void ab initio; the law of estoppel does not apply against a minor (Leslie vs Shiell) &middot; Quasi-Contract [Secs 68-72, law-imposed, no real agreement] vs Contingent Contract [Secs 31-36, real agreement, uncertain collateral event] &middot; Indemnity [Sec 124, TWO parties] vs Guarantee [Sec 126, THREE parties, surety's liability co-extensive with the debtor's] &middot; Pledge [Secs 172-178]: pawnee may retain, sue, or sell (with notice) on default &middot; Agency [Sec 182]: no consideration required to form it [Sec 185] &middot; E-contracts: Browse-wrap (using the site=acceptance)/Shrink-wrap (opening the box=acceptance)/Click-wrap (explicit &ldquo;I Agree&rdquo; click, terms visible first) &middot; Discharge: Novation/Alteration/Rescission [Sec 62], Remission/Waiver [Sec 63] &middot; Sec 73=compensation for natural/foreseeable loss; Sec 74=compensation capped at a pre-named penalty, recoverable whether or not actual loss is proven &middot; Five remedies for breach: Rescission, Damages, Quantum Meruit, Specific Performance, Injunction.</td></tr>
     <tr><td><strong>3. Sale of Goods Act, 1930 (20%)</strong></td><td>Sec 4(3): Sale=ownership transfers NOW (executed, right in rem) vs Agreement to Sell=ownership transfers LATER (executory, right in personam) &middot; Sec 2(7) Goods; Specific/Ascertained/Unascertained goods &middot; Sec 7/8: specific goods already perished &rarr; contract or agreement VOID &middot; Property passes: Sec 20 (specific goods, deliverable state, at contract) / Sec 21-22 (an act by the seller + notice) / Sec 23 (unascertained goods, unconditional appropriation) / Sec 24 (approval or sale-or-return) &middot; Sec 26: risk PRIMA FACIE follows OWNERSHIP, not possession &middot; Nemo Dat Quod Non Habet &mdash; SIX exceptions: mercantile agent [Sec 27], joint owner [Sec 28], voidable-contract possessor [Sec 29], seller/buyer left in possession after sale [Sec 30], estoppel, finder of goods &middot; Condition [Sec 12(2), essential, breach&rarr;reject+damages] vs Warranty [Sec 12(3), collateral, breach&rarr;damages only] &mdash; the label doesn't decide, construction does [Sec 12(4)] &middot; Caveat Emptor [Sec 16] &mdash; FIVE exceptions: disclosed purpose+skill reliance, merchantability, wholesomeness, fraud, trade usage &middot; Sec 39: delivery to a carrier is prima facie delivery to the buyer &middot; Unpaid seller's rights against the goods: Lien [Sec 47, still in possession] / Stoppage in Transit [Sec 50, goods in transit + buyer insolvent] / Resale [Sec 54, perishable/reserved right/notice] / Withholding Delivery; against the buyer: Suit for Price [Sec 55], Damages for Non-Acceptance [Sec 56], Repudiation, Interest [Sec 61].</td></tr>
-    <tr><td><strong>4. Negotiable Instruments Act, 1881 (20%)</strong></td><td>Sec 13: a Negotiable Instrument is a PN, Bill, or Cheque, payable to order or bearer &middot; Holder in Due Course needs ALL three: consideration paid, acquired BEFORE maturity, NO notice of any defect &middot; Sec 4: Promissory Note=an UNDERTAKING by the maker, 2 parties, 10 requisites &middot; Sec 5: Bill of Exchange=an ORDER by the drawer, 3 parties, 9 requisites &middot; Sec 6: Cheque=a bill drawn on a specified banker, payable on demand, 3 parties, 7 requisites &middot; Only a Cheque can be payable to bearer on demand simultaneously &middot; Grace period=3 days for time instruments, NEVER for a cheque or a pure demand instrument &middot; Crossing: General [Sec 123, two transverse lines] / Special [Sec 124, a NAMED bank, lines not essential] / Account Payee [pure trade custom, not in the Act] / Not Negotiable [Sec 130, caps title quality, never blocks transfer] / Double/Second Special [Secs 125&127, bank-to-bank, collection only] &middot; Sec 138: presentment within 3 months (post-2012) &rarr; written notice within 30 days of learning of dishonour &rarr; drawer's payment within 15 days of receiving notice; punishment up to 2 years and/or a fine up to TWICE the cheque amount &middot; Sec 143A: interim compensation capped at 20% of the cheque amount, repayable with RBI-rate interest on acquittal.</td></tr>
+    <tr><td><strong>4. Negotiable Instruments Act, 1881 (20%)</strong></td><td>Sec 13: a Negotiable Instrument is a PN, Bill, or Cheque, payable to order or bearer &middot; Holder in Due Course needs ALL three: consideration paid, acquired BEFORE maturity, NO notice of any defect &middot; Sec 4: Promissory Note=an UNDERTAKING by the maker, 2 parties, 10 requisites &middot; Sec 5: Bill of Exchange=an ORDER by the drawer, 3 parties, 9 requisites &middot; Sec 6: Cheque=a bill drawn on a specified banker, payable on demand, 3 parties, 7 requisites &middot; Only a Cheque can be payable to bearer on demand simultaneously &middot; Grace period=3 days for time instruments, NEVER for a cheque or a pure demand instrument &middot; Crossing: General [Sec 123, two transverse lines] / Special [Sec 124, a NAMED bank, lines not essential] / Account Payee [pure trade custom, not in the Act] / Not Negotiable [Sec 130, caps title quality, never blocks transfer] / Double/Second Special [Secs 125&amp;127, bank-to-bank, collection only] &middot; Sec 138: presentment within 3 months (post-2012) &rarr; written notice within 30 days of learning of dishonour &rarr; drawer's payment within 15 days of receiving notice; punishment up to 2 years and/or a fine up to TWICE the cheque amount &middot; Sec 143A: interim compensation capped at 20% of the cheque amount, repayable with RBI-rate interest on acquittal.</td></tr>
   </table>
 
   <p class="section-header" style="font-size:13pt;margin-top:5mm;">Section B &middot; Business Communication (20%)</p>
@@ -2992,7 +2991,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.7; color: 
     <tr><td>2 hours out</td><td>Read the Master Trap List above, start to finish, once, slowly. Nothing new after this point.</td></tr>
     <tr><td>In the hall</td><td>No negative marking on this 50 MCQ &times; 2 Marks paper &mdash; attempt every question. This is a precision-recall paper: Section, Act, and case-name accuracy matter more than working through multi-step reasoning, so before answering, first identify which Act and which specific Section the scenario belongs to, THEN apply the rule.</td></tr>
   </table>
-  <p class="body" style="margin-top:4mm;">Weight-based priority if time runs out anywhere in this plan: Module 2 (30%, Indian Contract Act) is never the one you cut &mdash; it alone outweighs Module 1 and Module 5 combined. Modules 3 and 4 (20% each, 40% combined) reward precise Section-number recall over broad conceptual reading &mdash; a focused pass on their comparison tables recovers most of their marks fast. Module 1 (10%) is the smallest module in the paper but the most Article-dense, so a targeted re-drill of its Article-number pairs is worth more than a full re-read. Module 5 (20%) is pure conceptual recall with essentially no numbers to memorise, making it the fastest full module to shore up if time is genuinely short.</p>
+  <p class="body" style="margin-top:4mm;">Weight-based priority if time runs out anywhere in this plan: Module 2 (30%, Indian Contract Act) is never the one you cut &mdash; it alone is worth as much as Module 1 and Module 5 combined. Modules 3 and 4 (20% each, 40% combined) reward precise Section-number recall over broad conceptual reading &mdash; a focused pass on their comparison tables recovers most of their marks fast. Module 1 (10%) is the smallest module in the paper but the most Article-dense, so a targeted re-drill of its Article-number pairs is worth more than a full re-read. Module 5 (20%) is pure conceptual recall with essentially no numbers to memorise, making it the fastest full module to shore up if time is genuinely short.</p>
   <p class="body" style="font-size:9.5pt;color:var(--gray);margin-top:3mm;">This page is exam strategy, not syllabus content &mdash; every fact it points to lives in the verified module pages above, condensed strictly from ICMAI's own Paper 1 Study Notes.</p>
 </div>
 

@@ -341,7 +341,7 @@ function Hero() {
   const rawY = useMotionValue(0);
   const mouseX = useSpring(rawX, { stiffness: 55, damping: 20, mass: 0.6 });
   const mouseY = useSpring(rawY, { stiffness: 55, damping: 20, mass: 0.6 });
-  const glow = useMotionTemplate`radial-gradient(480px circle at ${mouseX}px ${mouseY}px, rgba(111,42,46,0.16), transparent 70%)`;
+  const glow = useMotionTemplate`radial-gradient(480px circle at ${mouseX}px ${mouseY}px, rgba(92,26,27,0.16), transparent 70%)`;
 
   function handleMouseMove(e: MouseEvent<HTMLElement>) {
     const rect = e.currentTarget.getBoundingClientRect();

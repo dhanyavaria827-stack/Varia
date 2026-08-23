@@ -145,7 +145,7 @@ export function Home() {
               id: d.id,
               label: d.name,
               content: (
-                <div className="rounded-sm border border-clay-500/40 bg-clay-500/15 p-8 text-center">
+                <div className="rounded-sm border border-ink/10 bg-parchment-2/40 p-8 text-center">
                   <span className="text-xs font-semibold uppercase tracking-[0.16em] text-camel-600 dark:text-brass-300">
                     {d.subtitle}
                   </span>
@@ -182,7 +182,7 @@ export function Home() {
           <Reveal delay={0.1} className="order-1 [perspective:1400px] sm:order-2">
             <TiltCard
               strength={6}
-              className="overflow-hidden rounded-sm border border-brass-500/40 shadow-[0_28px_60px_-22px_rgba(44,40,37,0.4)]"
+              className="overflow-hidden rounded-sm border border-brass-500/40 shadow-[0_28px_60px_-22px_rgba(36,26,16,0.4)]"
             >
               <Photo
                 src={photoRitual}
@@ -292,7 +292,7 @@ export function Home() {
               <PremiumCTA>
                 <Link
                   to="/admissions#support"
-                  className="inline-flex items-center gap-2 rounded-sm bg-brass-500 px-7 py-3.5 text-sm font-medium uppercase tracking-[0.06em] text-[#2c2825] shadow-soft transition hover:bg-brass-300 active:scale-95"
+                  className="inline-flex items-center gap-2 rounded-sm bg-brass-500 px-7 py-3.5 text-sm font-medium uppercase tracking-[0.06em] text-[#241a10] shadow-soft transition hover:bg-brass-300 active:scale-95"
                 >
                   See how to help
                   <ArrowRight size={16} />
@@ -341,7 +341,7 @@ function Hero() {
   const rawY = useMotionValue(0);
   const mouseX = useSpring(rawX, { stiffness: 55, damping: 20, mass: 0.6 });
   const mouseY = useSpring(rawY, { stiffness: 55, damping: 20, mass: 0.6 });
-  const glow = useMotionTemplate`radial-gradient(480px circle at ${mouseX}px ${mouseY}px, rgba(92,26,27,0.16), transparent 70%)`;
+  const glow = useMotionTemplate`radial-gradient(480px circle at ${mouseX}px ${mouseY}px, rgba(184,145,47,0.16), transparent 70%)`;
 
   function handleMouseMove(e: MouseEvent<HTMLElement>) {
     const rect = e.currentTarget.getBoundingClientRect();
@@ -366,7 +366,7 @@ function Hero() {
       )}
       <motion.div
         style={{ y: ringY, scale: ringScale, rotate: ringRotate }}
-        className="pointer-events-none absolute inset-0 -z-10 flex items-center justify-center text-navy-500 dark:text-navy-300/70"
+        className="pointer-events-none absolute inset-0 -z-10 flex items-center justify-center text-camel-600 dark:text-brass-500/70"
       >
         <OrnamentRing className="h-[560px] w-[560px] opacity-40 sm:h-[720px] sm:w-[720px]" />
       </motion.div>
@@ -426,7 +426,7 @@ function Hero() {
           <Magnetic strength={12}>
             <Link
               to="/about"
-              className="inline-flex items-center justify-center gap-2 rounded-sm border border-ink/15 bg-parchment/60 px-7 py-3.5 text-sm font-medium uppercase tracking-[0.06em] text-ink backdrop-blur transition hover:border-navy-500 hover:text-navy-500 active:scale-95"
+              className="inline-flex items-center justify-center gap-2 rounded-sm border border-ink/15 bg-parchment/60 px-7 py-3.5 text-sm font-medium uppercase tracking-[0.06em] text-ink backdrop-blur transition hover:border-brass-500 hover:text-camel-700 active:scale-95"
             >
               Our story
             </Link>

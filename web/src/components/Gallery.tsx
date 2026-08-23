@@ -29,7 +29,7 @@ function GalleryPhoto({ photo, index }: { photo: Photo; index: number }) {
       transition={{ duration: 1, delay: index * 0.15, ease: [0.16, 1, 0.3, 1] }}
       className="w-40 shrink-0 border-8 border-parchment bg-parchment p-0 shadow-soft sm:w-48"
       style={{
-        boxShadow: "0 10px 30px -10px rgba(44,40,37,0.35)",
+        boxShadow: "0 10px 30px -10px rgba(36,26,16,0.35)",
         rotateX,
         rotateY,
         transformPerspective: 800,

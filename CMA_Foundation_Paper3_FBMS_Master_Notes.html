@@ -816,7 +816,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
   <tr><td>2</td><td>If S<sub>n</sub>=n&sup2;+2n for an A.P., find t<sub>n</sub>.</td><td>t<sub>n</sub> = S<sub>n</sub>&minus;S<sub>n&minus;1</sub> = (n&sup2;+2n)&minus;[(n&minus;1)&sup2;+2(n&minus;1)] = <strong>2n+1</strong>. (This t<sub>n</sub>=S<sub>n</sub>&minus;S<sub>n&minus;1</sub> trick works for ANY series given as a formula for S<sub>n</sub>.)</td></tr>
   <tr><td>3</td><td>x=1+&#8531;+1/3&sup2;+&hellip;&infin;, y=1+&#188;+1/4&sup2;+&hellip;&infin;, find xy.</td><td>Both infinite GPs: x=1/(1&minus;&#8531;)=3/2, y=1/(1&minus;&#188;)=4/3. xy = (3/2)(4/3) = <strong>2</strong></td></tr>
   <tr><td>4</td><td>8<sup>th</sup> term of an A.P. is 15 &mdash; find S&#8321;&#8325;.</td><td>Recognise S&#8321;&#8325;=(15/2)(2a+14d)=15&times;(a+7d)=15&times;t&#8328;=15&times;15=<strong>225</strong>. (No need to find a or d separately &mdash; S&#8321;&#8325; always equals 15&times; the 8<sup>th</sup> term, since the 8th term is the exact middle of 15 terms.)</td></tr>
-  <tr><td>5</td><td>Sum of 3<sup>rd</sup> and 9<sup>th</sup> terms of an A.P. is 8 &mdash; find S&#8321;&#8321;.</td><td>t&#8323;+t&#8339;=(a+2d)+(a+8d)=2a+10d=8. S&#8321;&#8321;=(11/2)(2a+10d)=(11/2)(8)=<strong>44</strong></td></tr>
+  <tr><td>5</td><td>Sum of 3<sup>rd</sup> and 9<sup>th</sup> terms of an A.P. is 8 &mdash; find S&#8321;&#8321;.</td><td>t&#8323;+t&#8329;=(a+2d)+(a+8d)=2a+10d=8. S&#8321;&#8321;=(11/2)(2a+10d)=(11/2)(8)=<strong>44</strong></td></tr>
   <tr><td>6</td><td>Sum of all multiples of 5 between 100 and 1000.</td><td>First=105, last=995, n=(995&minus;105)/5+1=179. S=(179/2)(105+995)=179&times;550=<strong>98,450</strong></td></tr>
 </table>
 <div class="shortcut-box"><span class="shortcut-label">&#9889; SHORTCUT</span> Patterns 4 and 5 generalise: whenever a sum S<sub>2k+1</sub> (an ODD number of terms) is needed and you&rsquo;re given (or can find) the exact MIDDLE term, S<sub>2k+1</sub> = (2k+1) &times; middle term &mdash; often faster than solving for a and d separately.</div>
@@ -847,7 +847,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
 <p>&#9315; Direct variation A=KB (K=A/B); inverse A=K/B (K=AB); joint A=K(BCD&hellip;). The K-formula IS the test for which type you have.</p>
 <p>&#9316; S.I. = Prt/100. C.I.: FV&#8319;=P(1+r)&#8319;. An annuity needs BOTH constant interval AND constant amount &mdash; either alone is just a &ldquo;multiple flow.&rdquo;</p>
 <p>&#9317; Annuity due = regular annuity &times; (1+r), always, for both FV and PV &mdash; one extra compounding period since each flow lands one period earlier.</p>
-<p>&#9318; Effective rate = (1+k/m)&#7500;&minus;1, always &ge; nominal rate when m&gt;1. Rule of 72: doubling period &asymp; 72&divide;rate.</p>
+<p>&#9318; Effective rate = (1+k/m)<sup>m</sup>&minus;1, always &ge; nominal rate when m&gt;1. Rule of 72: doubling period &asymp; 72&divide;rate.</p>
 <p>&#9319; Watch precision: when a problem asks for an unknown from a SMALL difference (like C.I.&minus;S.I.), 2-decimal table rounding can swing the answer by several percent &mdash; carry extra decimals.</p>
 <p>&#9320; AP: t&#8319;=a+(n&minus;1)d, S&#8319;=(n/2){2a+(n&minus;1)d}. GP: t&#8319;=ar&#8319;&#8315;&#185;, three sum formulas depending on r&gt;1, r&lt;1, or n&rarr;&infin;.</p>
 <p>&#9321; tn=Sn&minus;Sn&minus;1 pulls any single term out of a given sum-formula. For an ODD count of AP terms, S = count &times; middle term &mdash; often faster than solving for a,d.</p>
@@ -1199,7 +1199,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
 <p class="ex-label">Beads on a necklace &mdash; where direction doesn&rsquo;t matter (independently re-verified)</p>
 <p class="ex-step">In how many ways can 8 different beads be placed on a necklace?</p>
 <p class="ex-step">8 beads arrange in 7! ways around a fixed point, but a necklace read clockwise looks identical to the same necklace read anticlockwise, so the count must be halved.</p>
-<p class="ex-answer">Required ways = &half;&times;7! = &half;&times;5,040 = <strong>2,520</strong>.</p>
+<p class="ex-answer">Required ways = &frac12;&times;7! = &frac12;&times;5,040 = <strong>2,520</strong>.</p>
 </div>
 <table class="comparison-table" style="font-size:8.3pt;">
   <tr><th style="width:38%;">Problem</th><th>Solution (independently re-verified)</th></tr>
@@ -1386,7 +1386,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
 
 <!-- ===== M3_Calculus ===== -->
 <div class="module-divider page-break" data-module="MODULE 3 — CALCULUS">
-  <p style="font-family:var(--font-head);font-weight:300;font-size:8pt;letter-spacing:0.15em;text-transform:uppercase;color:#EAF4EE;">MODULE THREE OF EIGHT &middot; SECTION A &middot; 5% &middot; THE SMALLEST MODULE IN THE PAPER</p>
+  <p style="font-family:var(--font-head);font-weight:300;font-size:8pt;letter-spacing:0.15em;text-transform:uppercase;color:#EAF4EE;">MODULE THREE OF EIGHT &middot; SECTION A &middot; 5% &middot; TIED FOR THE LIGHTEST WEIGHT IN THE PAPER</p>
   <p class="module-title">Calculus &mdash; Application in Business</p>
   <div class="rule"></div>
   <p class="overview">Three sub-topics bringing calculus into a business setting: functions, limits, continuity, and differentiation as the mathematical foundation; revenue and cost functions as calculus applied directly to business quantities; and optimization techniques for finding maximum profit or minimum cost points.</p>
@@ -2417,7 +2417,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
 <p class="section-header">Karl Pearson's and Bowley's Coefficients of Skewness <span style="float:right;">&#9733;&#9733;&#9733; HIGHEST-VALUE TOPIC</span></p>
 <div class="formula-box"><p class="formula-text">Karl Pearson's Coefficient: Sk = (Mean&minus;Mode) / S.D.</p><hr class="var-divider"><p class="formula-vars">If Mode is hard to pin down or ill-defined, use the equivalent form instead: Sk = 3(Mean&minus;Median) / S.D. Both versions range roughly &plusmn;3 in theory, though in practice values mostly fall within &plusmn;1. This is the coefficient USED MOST OFTEN in practice.</p></div>
 <div class="formula-box"><p class="formula-text">Bowley's Coefficient (Quartile measure of skewness): Sk = (Q&#8323;+Q&#8321;&minus;2Md) / (Q&#8323;&minus;Q&#8321;)</p><hr class="var-divider"><p class="formula-vars">Ranges strictly between +1 and &minus;1. Useful specifically when the mode is unclear, since it relies only on quartiles and the median, never on mode.</p></div>
-<p class="body"><strong>Kelly's Coefficient</strong> (percentile or decile skewness): Sk = (P&#8329;&#8320;+P&#8321;&#8320;&minus;2P&#8320;&#8320;)/(P&#8329;&#8320;&minus;P&#8321;&#8320;), or the decile equivalent using D&#8329;, D&#8321;, D&#8320;. Ranges between &plusmn;1, but is seldom used in practice.</p>
+<p class="body"><strong>Kelly's Coefficient</strong> (percentile or decile skewness): Sk = (P&#8329;&#8320;+P&#8321;&#8320;&minus;2P&#8325;&#8320;)/(P&#8329;&#8320;&minus;P&#8321;&#8320;), or the decile equivalent using D&#8329;, D&#8321;, D&#8325;. Ranges between &plusmn;1, but is seldom used in practice.</p>
 <div class="worked-example avoid-break">
 <p class="ex-label">Karl Pearson's coefficient, directly from summary statistics (independently re-verified)</p>
 <p class="ex-step">For 10 items, &Sigma;X=452, &Sigma;X&sup2;=24,270, and Mode=43.7.</p>
@@ -2618,6 +2618,22 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
 <div class="shortcut-box"><span class="shortcut-label">&#9889; SHORTCUT</span> Spot which formula a question wants fast: raw VALUES given &rarr; Karl Pearson's r. Only RANKS or ORDERING given (or an abstract quality like skill/beauty) &rarr; Spearman's r_k. Any tie in either ranking &rarr; don't forget the correction term.</div>
 </div>
 
+<!-- ============ CONCURRENT DEVIATION METHOD ============ -->
+<!-- © Dhanya Varia -->
+<div class="page page-break">
+<span class="pill">FORMULA</span>
+<p class="section-header">Concurrent Deviation Method <span style="float:right;">&#9733;&#9733; MEDIUM</span></p>
+<div class="definition-block"><p class="definition-text">The <strong>Concurrent Deviation Method</strong> is a quick, rough method of correlation that looks ONLY at the DIRECTION of change in each variable from its own preceding value &mdash; not the magnitude &mdash; marking every step &lsquo;+&rsquo; for an increase and &lsquo;&minus;&rsquo; for a decrease.</p></div>
+<div class="formula-box"><p class="formula-text">r = &plusmn;&radic;[&plusmn;(2C&minus;N)/N]</p><hr class="var-divider"><p class="formula-vars">C = number of CONCURRENT deviations (steps where the two series&rsquo; signs match), N = number of pairs of deviations compared (one less than the number of original observations, since the first item has no preceding value to compare against).</p></div>
+<div class="trap-block"><span class="pill amber">&#9888; TRAP</span><p class="trap-label">Getting the sign right</p><p class="trap-row"><strong>THE RULE:</strong> if (2C&minus;N)/N comes out NEGATIVE, you can&rsquo;t take a square root of a negative number &mdash; so multiply it by &minus;1 to make the value under the root positive, take that square root, and then put a MINUS sign in front of the whole result. If (2C&minus;N)/N is already positive, both the inside and outside signs stay positive.</p></div>
+<div class="worked-example avoid-break">
+<p class="ex-label">Steel output vs. unemployment, 12 months (independently re-verified)</p>
+<p class="ex-step">Monthly output of steel and monthly unemployed workers in the steel industry, January&ndash;December. Marking &lsquo;+&rsquo; or &lsquo;&minus;&rsquo; for each month&rsquo;s change from the PREVIOUS month (11 comparisons possible from 12 months) and comparing the two sign-sequences gives 2 months where the signs concur (matching directions) and 9 where they don&rsquo;t &mdash; so C=2, N=11.</p>
+<p class="ex-answer">r = &plusmn;&radic;[&plusmn;(2&times;2&minus;11)/11] = &plusmn;&radic;[&plusmn;(&minus;7/11)] = &minus;&radic;(7/11) = &minus;&radic;0.636 = <strong>&minus;0.798</strong> &mdash; a fairly high degree of NEGATIVE correlation between steel output and steel-industry unemployment, computed without ever using the actual output or unemployment figures, only their month-to-month direction of change.</p>
+</div>
+<div class="shortcut-box"><span class="shortcut-label">&#9889; SHORTCUT</span> Concurrent Deviation is the FASTEST of the three correlation methods &mdash; no ranking, no squaring, no summing of products &mdash; but also the ROUGHEST, since it throws away everything except direction of change. Use it only for a quick approximate read, never as a substitute for Karl Pearson's r when precision matters.</div>
+</div>
+
 <!-- ============ 6.3 REGRESSION ANALYSIS ============ -->
 <!-- © Dhanya Varia -->
 <div class="page page-break">
@@ -2667,7 +2683,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
 </ol>
 <div class="worked-example avoid-break">
 <p class="ex-label">Cross-checking r from the two regression coefficients (independently re-verified)</p>
-<p class="ex-step">Household income and expenditure data gives: average absolute increase in expenditure per unit increase in income, b<sub>xy</sub>=1.5; average absolute increase in income per unit increase in expenditure, b<sub>yx</sub>=0.5.</p>
+<p class="ex-step">Household income and expenditure data gives: average absolute increase in income per unit increase in expenditure, b<sub>xy</sub>=1.5; average absolute increase in expenditure per unit increase in income, b<sub>yx</sub>=0.5.</p>
 <p class="ex-answer">r = &plusmn;&radic;(1.5&times;0.5) = &radic;0.75 = <strong>0.866</strong> &mdash; positive, since both regression coefficients are positive. Note that b<sub>xy</sub>=1.5 exceeds unity here, which is fine since b<sub>yx</sub>=0.5 is below it &mdash; only their PRODUCT is constrained to &le;1.</p>
 </div>
 </div>
@@ -2708,8 +2724,9 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
 <p>&#9313; r ranges &minus;1 to +1. Scatter Diagram gives a quick visual read; Karl Pearson's r = &Sigma;(X&minus;X&#772;)(Y&minus;Y&#772;)/&radic;[&Sigma;(X&minus;X&#772;)&sup2;&times;&Sigma;(Y&minus;Y&#772;)&sup2;] gives the precise value.</p>
 <p>&#9314; Probable Error = 0.6745&times;(1&minus;r&sup2;)/&radic;N tests significance — r must exceed 6&times;P.E. to be significant.</p>
 <p>&#9315; Rank Correlation (Spearman): r<sub>k</sub>=1&minus;6&Sigma;D&sup2;/N(N&sup2;&minus;1), for ranked/abstract data — add the (1/12)(m&sup3;&minus;m) correction for every group of tied ranks.</p>
-<p>&#9316; Regression predicts one variable from another — TWO distinct lines exist (Y on X, X on Y), found via normal equations OR regression coefficients (b<sub>yx</sub>, b<sub>xy</sub>).</p>
-<p>&#9317; r&sup2;=b<sub>yx</sub>&times;b<sub>xy</sub> links correlation and regression together — a useful cross-check between the two topics.</p>
+<p>&#9316; Concurrent Deviation: r=&plusmn;&radic;[&plusmn;(2C&minus;N)/N], a quick rough method using only the DIRECTION of change (C=concurrent deviations, N=pairs of deviations compared).</p>
+<p>&#9317; Regression predicts one variable from another — TWO distinct lines exist (Y on X, X on Y), found via normal equations OR regression coefficients (b<sub>yx</sub>, b<sub>xy</sub>).</p>
+<p>&#9318; r&sup2;=b<sub>yx</sub>&times;b<sub>xy</sub> links correlation and regression together — a useful cross-check between the two topics.</p>
 </div>
 </div>
 

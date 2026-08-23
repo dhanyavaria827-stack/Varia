@@ -12,18 +12,18 @@
   --color-ink: #2e2e2e;
   --color-ink-soft: #5c5450;
 
-  /* vintage rosewood */
-  --color-camel-50: #f5ebec;
-  --color-camel-100: #e2c6c9;
-  --color-camel-300: #bd7f86;
-  --color-camel-500: #793e45;
-  --color-camel-600: #5e3036;
-  --color-camel-700: #432326;
+  /* deep wine burgundy */
+  --color-camel-50: #f7e9ea;
+  --color-camel-100: #e7c0c3;
+  --color-camel-300: #c76b71;
+  --color-camel-500: #6f2a2e;
+  --color-camel-600: #511f22;
+  --color-camel-700: #381517;
 
-  /* rosewood, lightened — highlight accent */
-  --color-brass-300: #debabe;
-  --color-brass-500: #ba6e77;
-  --color-brass-600: #9f4c55;
+  /* wine, lightened — highlight accent */
+  --color-brass-300: #d59b9e;
+  --color-brass-500: #974045;
+  --color-brass-600: #733035;
 
   /* deep heritage green */
   --color-forest-500: #3e4a34;

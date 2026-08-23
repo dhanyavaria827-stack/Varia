@@ -182,7 +182,7 @@ export function Home() {
           <Reveal delay={0.1} className="order-1 [perspective:1400px] sm:order-2">
             <TiltCard
               strength={6}
-              className="overflow-hidden rounded-sm border border-brass-500/40 shadow-[0_28px_60px_-22px_rgba(36,26,16,0.4)]"
+              className="overflow-hidden rounded-sm border border-brass-500/40 shadow-[0_28px_60px_-22px_rgba(46,46,46,0.4)]"
             >
               <Photo
                 src={photoRitual}
@@ -341,7 +341,7 @@ function Hero() {
   const rawY = useMotionValue(0);
   const mouseX = useSpring(rawX, { stiffness: 55, damping: 20, mass: 0.6 });
   const mouseY = useSpring(rawY, { stiffness: 55, damping: 20, mass: 0.6 });
-  const glow = useMotionTemplate`radial-gradient(480px circle at ${mouseX}px ${mouseY}px, rgba(184,145,47,0.16), transparent 70%)`;
+  const glow = useMotionTemplate`radial-gradient(480px circle at ${mouseX}px ${mouseY}px, rgba(186,110,119,0.16), transparent 70%)`;
 
   function handleMouseMove(e: MouseEvent<HTMLElement>) {
     const rect = e.currentTarget.getBoundingClientRect();

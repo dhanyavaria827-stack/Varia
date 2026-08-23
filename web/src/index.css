@@ -6,24 +6,24 @@
   --font-display: "Cormorant", "Didot", Georgia, serif;
   --font-body: "Cormorant Garamond", Georgia, serif;
 
-  /* parchment / espresso ground */
-  --color-parchment: #f2e7d0;
-  --color-parchment-2: #e8d7ac;
-  --color-ink: #241a10;
-  --color-ink-soft: #6b5842;
+  /* alabaster / charcoal ground */
+  --color-parchment: #f1ece6;
+  --color-parchment-2: #ddd5cd;
+  --color-ink: #2e2e2e;
+  --color-ink-soft: #5c5450;
 
-  /* camel / leather */
-  --color-camel-50: #f7ede0;
-  --color-camel-100: #ecd7b8;
-  --color-camel-300: #cf9f68;
-  --color-camel-500: #a9683a;
-  --color-camel-600: #8f5327;
-  --color-camel-700: #6e3f1e;
+  /* vintage rosewood */
+  --color-camel-50: #f5ebec;
+  --color-camel-100: #e2c6c9;
+  --color-camel-300: #bd7f86;
+  --color-camel-500: #793e45;
+  --color-camel-600: #5e3036;
+  --color-camel-700: #432326;
 
-  /* brass / gold accent */
-  --color-brass-300: #e3c988;
-  --color-brass-500: #b8912f;
-  --color-brass-600: #9a7423;
+  /* rosewood, lightened — highlight accent */
+  --color-brass-300: #debabe;
+  --color-brass-500: #ba6e77;
+  --color-brass-600: #9f4c55;
 
   /* deep heritage green */
   --color-forest-500: #3e4a34;
@@ -34,8 +34,8 @@
   --color-oxblood-500: #6e2a2a;
   --color-oxblood-600: #551f1f;
 
-  --shadow-soft: 0 14px 34px -14px rgba(36, 26, 16, 0.35);
-  --shadow-card: 0 6px 20px -8px rgba(36, 26, 16, 0.22);
+  --shadow-soft: 0 14px 34px -14px rgba(46, 46, 46, 0.35);
+  --shadow-card: 0 6px 20px -8px rgba(46, 46, 46, 0.22);
 }
 
 html {
@@ -48,11 +48,11 @@ html {
 
 :root[data-theme="dark"] {
   color-scheme: dark;
-  --color-parchment: #18120c;
-  --color-parchment-2: #241b12;
-  --color-ink: #f0e4cc;
-  --color-ink-soft: #c3ac8b;
-  --color-camel-100: #3a2c1c;
+  --color-parchment: #181011;
+  --color-parchment-2: #2e2e2e;
+  --color-ink: #f1ece6;
+  --color-ink-soft: #c0b0b1;
+  --color-camel-100: #452b2e;
 }
 
 body {

@@ -68,7 +68,7 @@ export function Navbar() {
       className={cn(
         "sticky top-0 z-50 transition-all duration-300",
         scrolled
-          ? "bg-parchment/85 backdrop-blur-md shadow-[0_12px_28px_-20px_rgba(36,26,16,0.35)]"
+          ? "bg-parchment/85 backdrop-blur-md shadow-[0_12px_28px_-20px_rgba(46,46,46,0.35)]"
           : "bg-transparent"
       )}
     >
@@ -106,9 +106,10 @@ export function Navbar() {
               >
                 {active && (
                   <motion.span
-                    layoutId="nav-pill"
-                    className="absolute -bottom-1 left-1/2 h-2 w-2 -translate-x-1/2 rounded-full bg-brass-500 shadow-[0_0_14px_4px_rgba(184,145,47,0.55)]"
-                    transition={{ type: "spring", stiffness: 260, damping: 22, mass: 0.6 }}
+                    initial={{ opacity: 0, scale: 0.5 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+                    className="absolute -bottom-1 left-1/2 h-2 w-2 -translate-x-1/2 rounded-full bg-brass-500 shadow-[0_0_14px_4px_rgba(186,110,119,0.55)]"
                   />
                 )}
                 <span className="relative z-10">{link.label}</span>

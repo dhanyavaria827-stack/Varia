@@ -23,7 +23,7 @@ export function TiltCard({
 }: TiltCardProps) {
   const { ref, rotateX, rotateY, spotX, spotY, onMouseMove, onMouseLeave } = useTilt(strength);
   const [hovered, setHovered] = useState(false);
-  const spotlight = useMotionTemplate`radial-gradient(220px circle at ${spotX}px ${spotY}px, rgba(184,145,47,0.16), transparent 70%)`;
+  const spotlight = useMotionTemplate`radial-gradient(220px circle at ${spotX}px ${spotY}px, rgba(186,110,119,0.16), transparent 70%)`;
 
   return (
     <motion.div

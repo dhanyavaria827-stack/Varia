@@ -6,36 +6,48 @@
   --font-display: "Cormorant", "Didot", Georgia, serif;
   --font-body: "Cormorant Garamond", Georgia, serif;
 
-  /* alabaster / charcoal ground */
-  --color-parchment: #f1ece6;
-  --color-parchment-2: #ddd5cd;
-  --color-ink: #2e2e2e;
-  --color-ink-soft: #5c5450;
+  /* warm ivory / deep charcoal ground */
+  --color-parchment: #f7f3ec;
+  --color-parchment-2: #e8e0d5;
+  --color-ink: #2c2825;
+  --color-ink-soft: #6b635a;
 
-  /* deep wine burgundy */
+  /* deep burgundy — primary accent */
   --color-camel-50: #f7e9ea;
   --color-camel-100: #e7c0c3;
-  --color-camel-300: #c76b71;
+  --color-camel-300: #c4646a;
   --color-camel-500: #6f2a2e;
   --color-camel-600: #511f22;
   --color-camel-700: #381517;
 
-  /* wine, lightened — highlight accent */
-  --color-brass-300: #d59b9e;
-  --color-brass-500: #974045;
-  --color-brass-600: #733035;
+  /* soft brass gold — highlight accent */
+  --color-brass-300: #e1d5c1;
+  --color-brass-500: #b59764;
+  --color-brass-600: #917545;
 
-  /* deep heritage green */
-  --color-forest-500: #3e4a34;
-  --color-forest-600: #2e3827;
-  --color-forest-700: #212a1c;
+  /* deep forest — nature accent */
+  --color-forest-500: #354634;
+  --color-forest-600: #283527;
+  --color-forest-700: #1d261c;
+
+  /* french navy — secondary accent */
+  --color-navy-300: #819ecb;
+  --color-navy-500: #2d466c;
+  --color-navy-600: #1e2f48;
+  --color-navy-700: #152132;
+
+  /* true camel — warm neutral */
+  --color-clay-100: #eee6dd;
+  --color-clay-300: #dbc7b3;
+  --color-clay-500: #bd9975;
+  --color-clay-600: #a57a4f;
 
   /* oxblood, used sparingly */
   --color-oxblood-500: #6e2a2a;
   --color-oxblood-600: #551f1f;
 
-  --shadow-soft: 0 14px 34px -14px rgba(46, 46, 46, 0.35);
-  --shadow-card: 0 6px 20px -8px rgba(46, 46, 46, 0.22);
+  --shadow-soft: 0 14px 34px -14px rgba(44, 40, 37, 0.35);
+  --shadow-card: 0 6px 20px -8px rgba(44, 40, 37, 0.22);
 }
 
 html {
@@ -48,11 +60,11 @@ html {
 
 :root[data-theme="dark"] {
   color-scheme: dark;
-  --color-parchment: #181011;
-  --color-parchment-2: #2e2e2e;
-  --color-ink: #f1ece6;
-  --color-ink-soft: #c0b0b1;
-  --color-camel-100: #452b2e;
+  --color-parchment: #131211;
+  --color-parchment-2: #2c2826;
+  --color-ink: #f7f3ec;
+  --color-ink-soft: #b2aea9;
+  --color-camel-100: #432325;
 }
 
 body {
@@ -82,7 +94,7 @@ body {
   background: transparent;
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--color-camel-300);
+  background: var(--color-clay-500);
   border-radius: 999px;
 }
 
@@ -162,7 +174,7 @@ button:focus-visible,
   background-image: linear-gradient(
     100deg,
     var(--color-parchment-2) 30%,
-    var(--color-camel-100) 50%,
+    var(--color-clay-300) 50%,
     var(--color-parchment-2) 70%
   );
   background-size: 250% 100%;

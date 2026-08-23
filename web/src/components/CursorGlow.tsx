@@ -17,7 +17,7 @@ export function CursorGlow({
   const spring = { stiffness: 60, damping: 20, mass: 0.6 };
   const mouseX = useSpring(rawX, spring);
   const mouseY = useSpring(rawY, spring);
-  const background = useMotionTemplate`radial-gradient(${size}px circle at ${mouseX}px ${mouseY}px, rgba(186,110,119,0.13), transparent 70%)`;
+  const background = useMotionTemplate`radial-gradient(${size}px circle at ${mouseX}px ${mouseY}px, rgba(111,42,46,0.13), transparent 70%)`;
 
   function handleMouseMove(e: MouseEvent<HTMLDivElement>) {
     const rect = e.currentTarget.getBoundingClientRect();

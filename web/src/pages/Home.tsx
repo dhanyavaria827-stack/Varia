@@ -307,10 +307,22 @@ export function Home() {
 }
 
 function Marquee({ items }: { items: readonly string[] }) {
+  // The list is doubled to make the CSS scroll-loop seamless, which would
+  // otherwise read as every item spoken twice to a screen reader with no
+  // indication why. Hide the looping visual entirely and give assistive
+  // tech the real, undoubled list instead.
   const loop = [...items, ...items];
   return (
     <div className="group overflow-hidden">
-      <div className="animate-marquee flex w-max gap-4 px-5 group-hover:[animation-play-state:paused]">
+      <ul className="sr-only">
+        {items.map((item) => (
+          <li key={item}>{item}</li>
+        ))}
+      </ul>
+      <div
+        aria-hidden="true"
+        className="animate-marquee flex w-max gap-4 px-5 group-hover:[animation-play-state:paused]"
+      >
         {loop.map((item, i) => (
           <motion.span
             key={i}

@@ -43,14 +43,23 @@ export function HeroParticles({ className = "" }: { className?: string }) {
   return <div ref={mountRef} aria-hidden="true" className={className} />;
 }
 
-function setup(mount: HTMLDivElement) {
+function setup(mount: HTMLDivElement): (() => void) | undefined {
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   const scene = new THREE.Scene();
   const camera = new THREE.PerspectiveCamera(50, 1, 0.1, 100);
   camera.position.z = 12;
 
-  const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+  // WebGLRenderer's constructor throws synchronously when no WebGL context
+  // is available (disabled GPU, headless/sandboxed browser, restrictive
+  // privacy settings). This is a purely decorative, aria-hidden effect, so
+  // the right failure mode is "nothing appears" — not an uncaught error.
+  let renderer: THREE.WebGLRenderer;
+  try {
+    renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+  } catch {
+    return undefined;
+  }
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
   mount.appendChild(renderer.domElement);
 

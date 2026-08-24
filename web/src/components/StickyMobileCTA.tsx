@@ -6,7 +6,7 @@ import { useState } from "react";
 // A persistent enquiry CTA for phones, where the nav's own "Admissions"
 // button has long scrolled out of reach. Hidden on the pages that are
 // already the destination, so it never competes with itself.
-const HIDDEN_ON = ["/admissions", "/waitlist", "/contact"];
+const HIDDEN_ON = ["/admissions", "/contact"];
 
 export function StickyMobileCTA() {
   const location = useLocation();

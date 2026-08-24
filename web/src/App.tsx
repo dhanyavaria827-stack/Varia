@@ -13,7 +13,6 @@ import { Academics } from "@/pages/Academics";
 import { Life } from "@/pages/Life";
 import { SkillDetail } from "@/pages/SkillDetail";
 import { Admissions } from "@/pages/Admissions";
-import { Waitlist } from "@/pages/Waitlist";
 import { Contact } from "@/pages/Contact";
 import { Privacy } from "@/pages/Privacy";
 import { NotFound } from "@/pages/NotFound";
@@ -41,7 +40,6 @@ function App() {
             <Route path="/life" element={<Life />} />
             <Route path="/skills/:slug" element={<SkillDetail />} />
             <Route path="/admissions" element={<Admissions />} />
-            <Route path="/waitlist" element={<Waitlist />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/privacy" element={<Privacy />} />
             <Route path="*" element={<NotFound />} />

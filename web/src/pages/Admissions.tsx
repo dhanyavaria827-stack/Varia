@@ -160,16 +160,6 @@ export function Admissions() {
             </motion.div>
           ))}
         </RevealStagger>
-        <p className="mt-5 text-sm text-ink-soft">
-          Already know a seat isn't available right now?{" "}
-          <Link
-            to="/waitlist"
-            className="font-medium text-ink underline decoration-brass-500/50 underline-offset-2 transition hover:text-camel-600 dark:hover:text-brass-300"
-          >
-            Join the waiting list
-          </Link>
-          {" "}directly.
-        </p>
       </Reveal>
 
       {/* FAQ */}

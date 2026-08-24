@@ -44,6 +44,7 @@ export function Footer() {
           <h3 className="text-xs font-semibold uppercase tracking-[0.14em] text-ink">Gurukulam</h3>
           <ul className="mt-3 space-y-2 text-sm text-ink-soft">
             <li><Link to="/admissions" className="transition hover:text-camel-600 dark:hover:text-brass-300">Admissions</Link></li>
+            <li><Link to="/waitlist" className="transition hover:text-camel-600 dark:hover:text-brass-300">Join the waiting list</Link></li>
             <li><Link to="/admissions#support" className="transition hover:text-camel-600 dark:hover:text-brass-300">Support a new campus</Link></li>
             <li><Link to="/contact" className="transition hover:text-camel-600 dark:hover:text-brass-300">Contact</Link></li>
           </ul>

@@ -62,6 +62,12 @@ const STATIC_ROUTES = [
       "Admissions to Gurukulam, Surat — Bal Vibhag and Primary Vibhag, the steps to enrol, and how to support our search for a larger campus.",
   },
   {
+    path: "waitlist",
+    title: "Join the Waiting List",
+    description:
+      "Join Gurukulam, Surat's admission waiting list — 30–35 waiting students can't yet be seated as we search for a larger campus.",
+  },
+  {
     path: "contact",
     title: "Contact",
     description:

@@ -167,6 +167,29 @@ export const FESTIVALS = [
   { name: "Maun Ekadashi", desc: "A day of silence and worship, observed by the whole Gurukulam Parivar — classes continue as usual." },
 ] as const;
 
+export const FAQS = [
+  {
+    q: "What are the age groups for admission?",
+    a: "Bal Vibhag takes children age 3–7 for a half day, 8:30 am – 12:30 pm. Primary Vibhag continues from age 7 through Std. 12, a full day of academics and arts, 8:30 am – 3:30 pm.",
+  },
+  {
+    q: "What if there's no seat available right now?",
+    a: "Because of high demand, admission may begin on a waiting list — Gurukulam currently has 30–35 waiting students who can't yet be seated. You're welcome to join the waiting list while a seat opens up.",
+  },
+  {
+    q: "What does my child wear to class?",
+    a: "Footwear is left at the door. Sons and gurujans wear zabbho-lengho or a chudidar; daughters wear a chaniya-choli or Punjabi dress; women teachers wear a saree.",
+  },
+  {
+    q: "Can my child complete their entire schooling at Gurukulam?",
+    a: "Yes — students now complete school entirely within Gurukulam, through to Std. 12, rather than transferring elsewhere partway.",
+  },
+  {
+    q: "How do I start the admission process?",
+    a: "Share a little about your child through the contact form, then a gurujan will call to understand your child's needs and answer questions, followed by a visit to see a Bal Vibhag or Primary Vibhag day in progress before you decide.",
+  },
+] as const;
+
 export const PHILOSOPHY = {
   menCodes: 64,
   womenCodes: 72,

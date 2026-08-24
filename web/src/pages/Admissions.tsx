@@ -9,7 +9,8 @@ import { PremiumCTA } from "@/components/PremiumCTA";
 import { CursorGlow } from "@/components/CursorGlow";
 import { Photo } from "@/components/Photo";
 import { PlayableVideo } from "@/components/PlayableVideo";
-import { DIVISIONS } from "@/data/content";
+import { FAQAccordion } from "@/components/FAQAccordion";
+import { DIVISIONS, FAQS } from "@/data/content";
 import { useDocumentTitle } from "@/lib/useDocumentTitle";
 import photoPortrait from "@/assets/gallery-portrait.jpg";
 import videoVidhyarambh from "@/assets/vidhyarambh.mp4";
@@ -159,6 +160,26 @@ export function Admissions() {
             </motion.div>
           ))}
         </RevealStagger>
+        <p className="mt-5 text-sm text-ink-soft">
+          Already know a seat isn't available right now?{" "}
+          <Link
+            to="/waitlist"
+            className="font-medium text-ink underline decoration-brass-500/50 underline-offset-2 transition hover:text-camel-600 dark:hover:text-brass-300"
+          >
+            Join the waiting list
+          </Link>
+          {" "}directly.
+        </p>
+      </Reveal>
+
+      {/* FAQ */}
+      <Reveal className="mt-16">
+        <h2 className="text-center font-display text-2xl font-medium text-ink">
+          Frequently asked questions
+        </h2>
+        <div className="mx-auto mt-6 max-w-2xl">
+          <FAQAccordion items={FAQS} />
+        </div>
       </Reveal>
 
       {/* Campus appeal */}

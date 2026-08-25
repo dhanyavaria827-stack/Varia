@@ -152,7 +152,7 @@ export const TIMELINE = [
   {
     year: "2026",
     title: "Std. 12, inside Gurukulam",
-    desc: "Students now complete school entirely within Gurukulam, through to Std. 12. In March 2026, 15 students sat the Gujarat Navjivan Std. 10 Board exam — most scored above 40%.",
+    desc: "Students now complete school entirely within Gurukulam, through to Std. 12. In March 2026, 15 students sat the GSEB Std. 10 exam as external candidates — most scored above 40%.",
   },
   {
     year: "Today",
@@ -186,7 +186,7 @@ export const FAQS = [
   },
   {
     q: "What happens after Std. 10, since Gurukulam isn't affiliated with a board like GSEB or CBSE?",
-    a: "Students appear for their Std. 10 exams externally, through the Gujarat Navjivan Board — a recognized route the Gujarat government permits for schools outside the regular board system, the same kind of path many gurukul-style and alternative schools across India use. We don't issue a formal Leaving Certificate ourselves, since we aren't a registered board school, but the Navjivan Board's own mark sheet is what other schools ask for, so students are free to join any school they like for Std. 11–12, or continue right here at Gurukulam.",
+    a: "Though Gurukulam isn't itself a GSEB-affiliated school, students still appear for their Std. 10 exams as per GSEB — the Gujarat Secondary and Higher Secondary Education Board — sitting as external, private candidates. We don't issue a formal Leaving Certificate for this reason, but the GSEB mark sheet from that exam is what other schools ask for, so students are free to join any school they like for Std. 11–12, or continue right here at Gurukulam.",
   },
   {
     q: "Is Gurukulam's purpose to prepare children for diksha (renunciation)?",

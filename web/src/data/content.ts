@@ -123,16 +123,10 @@ export const QUOTES = [
   {
     text: "True education is that which brightens a person's character, and Gurukul has always been at the forefront in this matter. Gurukulam is a place where education is paired with character building, where learning goes hand in hand with values. Here students learn not only how to earn a living, but more importantly, how to live a meaningful life. In a Gurukulam environment, education is deeply rooted in moral integrity and cultural heritage.",
     attribution: "Yamini Paras Sanghvi",
-    // Shown as a monogram badge in the testimonial carousel — only set for
-    // attributions that are a real, named individual (not an institutional
-    // or traditional source), since a fabricated photo would misrepresent
-    // a real person and a made-up initial would misrepresent a non-person.
-    initial: "Y",
   },
   {
     text: "A Gurukulam child won't only excel at studies — they'll be number one at becoming a good human being. Because at Gurukulam, bhantar (education) always comes with ghadtar (character-building).",
     attribution: "Ankita Ben, Gurukulam Parivar",
-    initial: "A",
   },
   {
     text: "The atmosphere here is that of a family — every gurujan cooks, cleans and cares for these children as their own. That is why we call ourselves the Gurukulam Parivar.",

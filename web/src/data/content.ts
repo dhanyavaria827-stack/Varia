@@ -185,6 +185,18 @@ export const FAQS = [
     a: "Yes — students now complete school entirely within Gurukulam, through to Std. 12, rather than transferring elsewhere partway.",
   },
   {
+    q: "What happens after Std. 10, since Gurukulam isn't affiliated with a board like GSEB or CBSE?",
+    a: "Students appear for their Std. 10 exams externally — a route the Gujarat government permits for institutions outside the regular board system. We don't issue a formal Leaving Certificate ourselves, since we aren't a registered board school, but the external exam's own mark sheet is what other schools ask for, so students are free to join any school they like for Std. 11–12, or continue right here at Gurukulam.",
+  },
+  {
+    q: "Is Gurukulam's purpose to prepare children for diksha (renunciation)?",
+    a: "No. Gurukulam's day-to-day curriculum is built around character — good values, morals and the qualities that shape a good human being — not around directing children toward diksha or asking them to give anything up. Diksha is never pushed or promoted to students; some alumni have chosen that path over the years as adults, entirely by their own will, the same way others have gone on to become doctors, architects or business owners. The school's everyday focus is character alongside academics, not renunciation.",
+  },
+  {
+    q: "Does Gurukulam focus on English, or is it a strictly traditional school?",
+    a: "Gurukulam isn't an orthodox, religion-only school — alongside sanskar and moral values, students are prepared for the modern world too. English gets its own roughly 40-minute period most days, working on grammar, writing and full English conversation, with cursive handwriting introduced from as early as age 3. Character and values sit alongside a genuinely modern education, not instead of it.",
+  },
+  {
     q: "How do I start the admission process?",
     a: "Share a little about your child through the contact form, then a gurujan will call to understand your child's needs and answer questions, followed by a visit to see a Bal Vibhag or Primary Vibhag day in progress before you decide.",
   },

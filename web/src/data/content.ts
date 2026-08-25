@@ -186,7 +186,7 @@ export const FAQS = [
   },
   {
     q: "What happens after Std. 10, since Gurukulam isn't affiliated with a board like GSEB or CBSE?",
-    a: "Students appear for their Std. 10 exams externally — a route the Gujarat government permits for institutions outside the regular board system. We don't issue a formal Leaving Certificate ourselves, since we aren't a registered board school, but the external exam's own mark sheet is what other schools ask for, so students are free to join any school they like for Std. 11–12, or continue right here at Gurukulam.",
+    a: "Students appear for their Std. 10 exams externally, through the Gujarat Navjivan Board — a recognized route the Gujarat government permits for schools outside the regular board system, the same kind of path many gurukul-style and alternative schools across India use. We don't issue a formal Leaving Certificate ourselves, since we aren't a registered board school, but the Navjivan Board's own mark sheet is what other schools ask for, so students are free to join any school they like for Std. 11–12, or continue right here at Gurukulam.",
   },
   {
     q: "Is Gurukulam's purpose to prepare children for diksha (renunciation)?",

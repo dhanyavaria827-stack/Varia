@@ -74,7 +74,7 @@ export function QuoteCarousel({ quotes }: { quotes: readonly QuoteItem[] }) {
               transition={
                 reduceMotion
                   ? { duration: 0 }
-                  : { type: "spring", stiffness: 200, damping: 26 }
+                  : { type: "spring", stiffness: 500, damping: 34 }
               }
               style={{ zIndex: quotes.length - depth }}
               className="absolute inset-0 grid place-items-center rounded-full border border-brass-500/40 bg-parchment-2/70 shadow-card"
@@ -109,7 +109,7 @@ export function QuoteCarousel({ quotes }: { quotes: readonly QuoteItem[] }) {
               transition={
                 reduceMotion
                   ? { duration: 0 }
-                  : { duration: 0.9, ease: [0.16, 1, 0.3, 1] }
+                  : { duration: 0.22, ease: [0.16, 1, 0.3, 1] }
               }
             >
               <p className="font-display text-xl italic leading-snug text-ink sm:text-2xl">

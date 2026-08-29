@@ -42,13 +42,14 @@
   --font-mono:    'JetBrains Mono', 'Courier New', monospace;
 }
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-@page { size: A4; margin: 22mm 18mm 20mm 24mm; @top-center { content: element(running-header); } @bottom-center { content: element(running-footer); } }
+@page { size: A4; margin: 22mm 18mm 20mm 24mm; @top-center { content: "ICMAI · CMA INTERMEDIATE · PAPER 6 — FA · MASTER NOTES"; font-family: "Cormorant Garamond", Georgia, serif; font-weight: 300; font-size: 8pt; letter-spacing: 0.15em; color: #6B7280; } @bottom-center { content: "CMA Intermediate · Financial Accounting"; font-family: "Cormorant Garamond", Georgia, serif; font-weight: 300; font-size: 7.5pt; color: #6B7280; } @bottom-right { content: counter(page); font-family: "Cormorant Garamond", Georgia, serif; font-weight: 600; font-size: 9pt; color: #1A5C38; } }
 body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color: var(--ink); background: var(--white); }
 .page { position: relative; min-height: 1mm; }
 .page-break { page-break-before: always; break-before: page; }
 .avoid-break { page-break-inside: avoid; break-inside: avoid; }
-#running-header { position: running(running-header); font-family: var(--font-head); font-weight: 300; font-size: 8pt; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray); border-bottom: 1px solid var(--border-light); padding-bottom: 2px; text-align: center; width: 100%; }
-#running-footer { position: running(running-footer); font-family: var(--font-head); font-weight: 300; font-size: 8pt; color: var(--gray); display: flex; justify-content: space-between; width: 100%; }
+.comparison-table tr, .ledger-tbl tr, .glossary-table tr, .answer-table tr { page-break-inside: avoid; break-inside: avoid; }
+#running-header, 
+#running-header, #running-footer { display: none; }
 .page-number::before { content: counter(page); font-family: var(--font-head); font-weight: 600; font-size: 9pt; color: var(--green-deep); }
 .cover-title { font-family: var(--font-display); font-weight: 400; font-size: 48pt; letter-spacing: 0.08em; text-transform: uppercase; color: var(--green-deep); line-height: 1.15; display: block; text-align: center; }
 .cover-subtitle { font-family: var(--font-head); font-weight: 300; font-size: 13pt; letter-spacing: 0.06em; color: var(--green-mid); text-align: center; }

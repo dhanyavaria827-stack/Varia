@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
-import { Reveal, staggerItem } from "@/components/Reveal";
+import { Reveal, staggerItem, initialHidden } from "@/components/Reveal";
 import { FlipStat } from "@/components/FlipStat";
 import { TiltCard } from "@/components/TiltCard";
 import { CursorGlow } from "@/components/CursorGlow";
@@ -16,7 +16,7 @@ const MotionLink = motion.create(Link);
 
 export function Academics() {
   useDocumentTitle("Academics");
-  const [open, setOpen] = useState<string | null>(SUBJECTS[0].id);
+  const [open, setOpen] = useState<string | null>(SUBJECTS[0]?.id ?? null);
 
   return (
     <div className="mx-auto max-w-4xl px-5 py-16">
@@ -72,6 +72,9 @@ export function Academics() {
               >
                 <motion.button
                   layout
+                  type="button"
+                  aria-expanded={isOpen}
+                  aria-controls={`subject-panel-${s.id}`}
                   onClick={() => setOpen(isOpen ? null : s.id)}
                   className="flex w-full items-center gap-4 p-5 text-left"
                 >
@@ -91,6 +94,8 @@ export function Academics() {
                 <AnimatePresence initial={false}>
                   {isOpen && (
                     <motion.div
+                      id={`subject-panel-${s.id}`}
+                      role="region"
                       initial={{ height: 0, opacity: 0 }}
                       animate={{ height: "auto", opacity: 1 }}
                       exit={{ height: 0, opacity: 0 }}
@@ -98,7 +103,7 @@ export function Academics() {
                       className="overflow-hidden"
                     >
                       <motion.div
-                        initial="hidden"
+                        initial={initialHidden}
                         animate="show"
                         variants={{ hidden: {}, show: { transition: { staggerChildren: 0.04 } } }}
                         className="flex flex-wrap gap-2 border-t border-ink/10 px-5 pb-6 pt-4"

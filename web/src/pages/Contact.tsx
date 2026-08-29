@@ -120,7 +120,9 @@ export function Contact() {
         <Reveal delay={0.1} className="lg:col-span-3">
           <div className="relative overflow-hidden rounded-sm border border-ink/10 bg-parchment-2/40 p-6 shadow-card sm:p-8">
             <span role="status" aria-live="polite" className="sr-only">
-              {submitted ? "WhatsApp opened in a new tab with your enquiry ready to send." : ""}
+              {submitted
+                ? "Your enquiry is ready to send in WhatsApp. If WhatsApp did not open, use the Open WhatsApp button below."
+                : ""}
             </span>
             <AnimatePresence mode="wait">
               {submitted ? (

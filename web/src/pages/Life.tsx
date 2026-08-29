@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { CalendarHeart } from "lucide-react";
 import { InstagramIcon } from "@/components/icons/InstagramIcon";
-import { Reveal, RevealStagger, staggerItem } from "@/components/Reveal";
+import { Reveal, RevealStagger, staggerItem, initialHidden } from "@/components/Reveal";
 import { SwapTabs } from "@/components/SwapTabs";
 import { Gallery } from "@/components/Gallery";
 import { CursorGlow } from "@/components/CursorGlow";
@@ -69,7 +69,7 @@ export function Life() {
             content: (
               <div className="rounded-sm border border-ink/10 bg-parchment-2/40 p-8">
                 <motion.div
-                  initial="hidden"
+                  initial={initialHidden}
                   animate="show"
                   variants={{ hidden: {}, show: { transition: { staggerChildren: 0.04 } } }}
                   className="flex flex-wrap justify-center gap-2.5"

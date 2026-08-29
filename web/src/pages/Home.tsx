@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useState, lazy, Suspense, type MouseEvent } from "react";
-import { motion, useMotionTemplate, useMotionValue, useScroll, useSpring, useTransform } from "framer-motion";
+import { motion, useMotionTemplate, useMotionValue, useReducedMotion, useScroll, useSpring, useTransform } from "framer-motion";
 import { ArrowRight, Languages, Calculator, BookHeart, Palette } from "lucide-react";
 import { Reveal, RevealStagger, staggerItem } from "@/components/Reveal";
 import { FlipStat } from "@/components/FlipStat";
@@ -343,6 +343,14 @@ function Hero() {
   const ringScale = useTransform(scrollY, [0, 600], [1, 1.3]);
   const ringRotate = useTransform(scrollY, [0, 600], [0, 55]);
 
+  // The hero used to stagger in over ~3.4s, which meant the headline, the
+  // description and — worst of all — the "Enquire about admission" button
+  // were still absent seconds after the page looked ready. Cut to roughly a
+  // third of that so the whole hero has settled well inside a second, and
+  // collapse it entirely for anyone who asked for reduced motion.
+  const reduceMotion = useReducedMotion();
+  const t = (delay: number) => (reduceMotion ? 0 : delay);
+
   // Skip the WebGL particle field on narrow viewports entirely — not just
   // visually hidden, since mounting it would still open a GL context and run
   // its animation loop for nothing on the phones most parents will browse on.
@@ -388,29 +396,29 @@ function Hero() {
         <motion.p
           initial={{ opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ duration: 0.5, delay: t(0.05), ease: [0.16, 1, 0.3, 1] }}
           className="text-xs font-semibold uppercase tracking-[0.3em] text-camel-600 dark:text-brass-300"
         >
           Surat, Gujarat · Established 2004
         </motion.p>
 
         <h1 className="mt-5 text-balance font-display text-4xl font-medium leading-[1.1] tracking-tight text-ink [perspective:600px] sm:text-6xl">
-          <SplitText text="Gurukulam" delay={0.5} stagger={0.09} />
+          <SplitText text="Gurukulam" delay={t(0.15)} stagger={reduceMotion ? 0 : 0.035} />
         </h1>
 
         <motion.p
           initial={{ opacity: 0, y: 22 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 1.6, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ duration: 0.5, delay: t(0.42), ease: [0.16, 1, 0.3, 1] }}
           className="mt-5 font-display text-xl italic text-camel-700 dark:text-brass-300 sm:text-2xl"
         >
-          <TextShimmer delay={2.6}>{PHILOSOPHY.tagline}</TextShimmer>
+          <TextShimmer delay={t(0.85)}>{PHILOSOPHY.tagline}</TextShimmer>
         </motion.p>
 
         <motion.p
           initial={{ opacity: 0, y: 26 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 2, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ duration: 0.5, delay: t(0.54), ease: [0.16, 1, 0.3, 1] }}
           className="mt-6 max-w-2xl text-balance text-lg leading-relaxed text-ink-soft"
         >
           A gurukul-style school where 225 students learn Sanskrit,
@@ -421,7 +429,7 @@ function Hero() {
         <motion.div
           initial={{ opacity: 0, y: 26 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 2.4, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ duration: 0.5, delay: t(0.66), ease: [0.16, 1, 0.3, 1] }}
           className="mt-9 flex flex-col gap-3 sm:flex-row"
         >
           <Magnetic strength={12}>

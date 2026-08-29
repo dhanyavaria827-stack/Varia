@@ -4,7 +4,8 @@ import * as THREE from "three";
 // A quiet field of drifting gold motes behind the Hero — the one spot on the
 // site that gets real WebGL depth instead of a CSS/SVG approximation. Kept
 // deliberately minimal (a single Points cloud, no lighting/shadows/postfx)
-// and code-split via HeroParticles.lazy.tsx so no other page pays for it.
+// and lazy-imported from Home.tsx behind <Suspense> so no other page pays for
+// it — and so three.js stays out of the main bundle.
 export function HeroParticles({ className = "" }: { className?: string }) {
   const mountRef = useRef<HTMLDivElement>(null);
 
@@ -89,6 +90,10 @@ function setup(mount: HTMLDivElement): (() => void) | undefined {
     camera.aspect = w / h;
     camera.updateProjectionMatrix();
     renderer.setSize(w, h);
+    // setSize clears the canvas. With reduced motion there's no animation
+    // loop to paint the next frame, so without redrawing here the particles
+    // would simply vanish on the first resize (or orientation change).
+    if (reduceMotion) renderer.render(scene, camera);
   }
   resize();
   const ro = new ResizeObserver(resize);

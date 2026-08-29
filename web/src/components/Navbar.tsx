@@ -34,6 +34,19 @@ export function Navbar() {
     setOpen(false);
   }, [pathname]);
 
+  // Stop the page behind the open mobile menu from scrolling — otherwise a
+  // swipe over the overlay scrolls the content underneath it. The previous
+  // value is restored rather than assumed to be "", so this can't clobber an
+  // overflow set elsewhere.
+  useEffect(() => {
+    if (!open) return;
+    const previous = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = previous;
+    };
+  }, [open]);
+
   // Escape closes the mobile menu and returns focus to the toggle button,
   // matching how the menu would behave if it were a native <dialog>.
   useEffect(() => {

@@ -1,7 +1,26 @@
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import type { ReactNode } from "react";
 
 export function PageTransition({ children }: { children: ReactNode }) {
+  // MotionConfig reducedMotion="user" at the app root drops transforms but not
+  // filters, so the route-change blur would still play. Fall back to a plain
+  // cross-fade when reduced motion is requested.
+  const reduceMotion = useReducedMotion();
+
+  if (reduceMotion) {
+    return (
+      <motion.main
+        id="main-content"
+        tabIndex={-1}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1, transition: { duration: 0.2 } }}
+        exit={{ opacity: 0, transition: { duration: 0.12 } }}
+      >
+        {children}
+      </motion.main>
+    );
+  }
+
   return (
     <motion.main
       id="main-content"

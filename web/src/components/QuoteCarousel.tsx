@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { AnimatePresence, motion, type Variants } from "framer-motion";
+import { AnimatePresence, motion, useReducedMotion, type Variants } from "framer-motion";
 import { Quote as QuoteIcon } from "lucide-react";
 
 interface QuoteItem {
@@ -16,14 +16,22 @@ const slideVariants: Variants = {
 export function QuoteCarousel({ quotes }: { quotes: readonly QuoteItem[] }) {
   const [index, setIndex] = useState(0);
   const [direction, setDirection] = useState(1);
+  const [paused, setPaused] = useState(false);
+  const reduceMotion = useReducedMotion();
 
+  // Auto-rotating content needs a way to stop (WCAG 2.2.2): hovering or
+  // keyboard-focusing the carousel pauses it, so a quote can't slide away
+  // mid-sentence while it's being read. `index` is a dependency so manually
+  // choosing a quote restarts the full 8s rather than inheriting whatever was
+  // left of the previous tick.
   useEffect(() => {
+    if (paused || reduceMotion) return;
     const id = window.setInterval(() => {
       setDirection(1);
       setIndex((i) => (i + 1) % quotes.length);
     }, 8000);
     return () => window.clearInterval(id);
-  }, [quotes.length]);
+  }, [quotes.length, paused, reduceMotion, index]);
 
   function go(next: number) {
     setDirection(next > index ? 1 : -1);
@@ -33,7 +41,16 @@ export function QuoteCarousel({ quotes }: { quotes: readonly QuoteItem[] }) {
   const current = quotes[index];
 
   return (
-    <div className="mx-auto max-w-3xl text-center" role="group" aria-roledescription="carousel" aria-label="Quotes from the Gurukulam Parivar">
+    <div
+      className="mx-auto max-w-3xl text-center"
+      role="group"
+      aria-roledescription="carousel"
+      aria-label="Quotes from the Gurukulam Parivar"
+      onMouseEnter={() => setPaused(true)}
+      onMouseLeave={() => setPaused(false)}
+      onFocusCapture={() => setPaused(true)}
+      onBlurCapture={() => setPaused(false)}
+    >
       <QuoteIcon aria-hidden="true" className="mx-auto mb-5 text-brass-500" size={28} />
       <div className="relative" aria-live="off">
         {/* mode="wait" (not "popLayout") so only one quote is ever in the DOM —

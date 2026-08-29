@@ -45,7 +45,9 @@ export function Photo({ src, alt, className, style, loading = "lazy", ...rest }:
   return (
     <img
       key={attempt}
-      src={attempt > 0 ? `${src}?retry=${attempt}` : src}
+      // Cache-bust a failed load without producing a second "?" on a src that
+      // already carries a query string, which would make the retry 404 for good.
+      src={attempt > 0 && src ? `${src}${src.includes("?") ? "&" : "?"}retry=${attempt}` : src}
       alt={alt}
       className={cn(
         "transition-[filter,transform] duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]",

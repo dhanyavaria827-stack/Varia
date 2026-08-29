@@ -38,9 +38,10 @@ jobs:
         env:
           BASE_PATH: /Varia/
 
+      # `enablement: true` needs a token with Pages admin rights, which the
+      # default GITHUB_TOKEN is not. Pages is already enabled on this repo, so
+      # the input only adds a way for the job to fail before it ever uploads.
       - uses: actions/configure-pages@v5
-        with:
-          enablement: true
 
       - uses: actions/upload-pages-artifact@v3
         with:

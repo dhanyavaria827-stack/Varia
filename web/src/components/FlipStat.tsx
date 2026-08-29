@@ -50,7 +50,16 @@ export function FlipStat({
   const [revealedCount, setRevealedCount] = useState(() => (reduceMotion ? finalDigits.length : 0));
 
   useEffect(() => {
-    if (!inView || reduceMotion) return;
+    // useReducedMotion() resolves to null on the first render and only then
+    // reports the real preference, so the useState initializer above can't be
+    // trusted for it: a reduced-motion visitor starts at 0 and, without this
+    // branch, the early return below would leave every digit showing the "–"
+    // placeholder forever. Snap to the final value instead of animating.
+    if (reduceMotion) {
+      setRevealedCount(finalDigits.length);
+      return;
+    }
+    if (!inView) return;
     let count = 0;
     const id = window.setInterval(() => {
       count += 1;

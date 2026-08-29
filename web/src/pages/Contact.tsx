@@ -1,7 +1,8 @@
 import { useState, type FormEvent } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { Mail, MapPin, Phone, MessageCircle, Send, CheckCircle2 } from "lucide-react";
+import { Mail, MapPin, Send, CheckCircle2 } from "lucide-react";
 import { InstagramIcon } from "@/components/icons/InstagramIcon";
+import { WhatsAppIcon } from "@/components/icons/WhatsAppIcon";
 import { Reveal } from "@/components/Reveal";
 import { TiltCard } from "@/components/TiltCard";
 import { Magnetic } from "@/components/Magnetic";
@@ -62,26 +63,24 @@ export function Contact() {
 
             {CONTACTS.map((c) => (
               <div key={c.name} className="flex items-start gap-3">
+                {/* These are WhatsApp numbers, so they carry the WhatsApp mark
+                    — not a phone handset or a generic message bubble, which
+                    read as a call or an SMS. */}
                 <div className="grid h-10 w-10 shrink-0 place-items-center rounded-full border border-brass-500/50 text-camel-700 dark:text-brass-300">
-                  <Phone size={16} />
+                  <WhatsAppIcon size={16} />
                 </div>
                 <div>
                   <div className="text-xs font-medium uppercase tracking-wide text-ink-soft">
                     {c.name} · {c.role}
                   </div>
-                  <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
-                    <a href={telLink(c.phone)} className="text-sm font-medium text-ink transition hover:text-camel-600 dark:hover:text-brass-300">
-                      {c.phone}
-                    </a>
-                    <a
-                      href={waLink(c.phone, "Hello! I'd like to ask about admission to Gurukulam.")}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="inline-flex items-center gap-1 text-xs font-medium text-forest-500 transition hover:text-forest-600"
-                    >
-                      <MessageCircle size={13} /> WhatsApp
-                    </a>
-                  </div>
+                  <a
+                    href={waLink(c.phone, "Hello! I'd like to ask about admission to Gurukulam.")}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-sm font-medium text-ink transition hover:text-camel-600 dark:hover:text-brass-300"
+                  >
+                    {c.phone}
+                  </a>
                 </div>
               </div>
             ))}

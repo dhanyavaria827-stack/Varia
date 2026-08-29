@@ -7,6 +7,13 @@ import { cn } from "@/lib/utils";
 // plain block instead of the browser's broken-image icon. Fades and
 // settles into place on load instead of popping in, matching the easing
 // used for every other reveal on the site.
+function withRetry(src: string, attempt: number) {
+  const hashAt = src.indexOf("#");
+  const base = hashAt === -1 ? src : src.slice(0, hashAt);
+  const fragment = hashAt === -1 ? "" : src.slice(hashAt);
+  return `${base}${base.includes("?") ? "&" : "?"}retry=${attempt}${fragment}`;
+}
+
 export function Photo({ src, alt, className, style, loading = "lazy", ...rest }: ImgHTMLAttributes<HTMLImageElement>) {
   const [attempt, setAttempt] = useState(0);
   const [failed, setFailed] = useState(false);
@@ -45,9 +52,10 @@ export function Photo({ src, alt, className, style, loading = "lazy", ...rest }:
   return (
     <img
       key={attempt}
-      // Cache-bust a failed load without producing a second "?" on a src that
-      // already carries a query string, which would make the retry 404 for good.
-      src={attempt > 0 && src ? `${src}${src.includes("?") ? "&" : "?"}retry=${attempt}` : src}
+      // Cache-bust a failed load without breaking the URL: a src that already
+      // has a query needs "&" rather than a second "?", and the parameter has
+      // to go before any #fragment or it becomes part of the fragment instead.
+      src={attempt > 0 && src ? withRetry(src, attempt) : src}
       alt={alt}
       className={cn(
         "transition-[filter,transform] duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]",

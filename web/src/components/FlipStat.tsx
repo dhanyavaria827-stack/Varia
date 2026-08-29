@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion, useInView, useReducedMotion } from "framer-motion";
 import { useTilt } from "@/lib/useTilt";
+import { isServer } from "@/lib/utils";
 
 const PLACEHOLDER = "–";
 const REVEAL_INTERVAL = 420;
@@ -47,7 +48,13 @@ export function FlipStat({
   const inView = useInView(ref, { once: true, amount: 0.6 });
   const reduceMotion = useReducedMotion();
   const finalDigits = String(value).split("");
-  const [revealedCount, setRevealedCount] = useState(() => (reduceMotion ? finalDigits.length : 0));
+  // On the server there is no effect to run the reveal, so starting at 0
+  // would bake "Est. – – – –" into the prerendered HTML instead of the real
+  // figures. Render fully revealed there; the client still starts at 0 and
+  // animates, since it mounts a fresh tree rather than hydrating this markup.
+  const [revealedCount, setRevealedCount] = useState(() =>
+    isServer || reduceMotion ? finalDigits.length : 0
+  );
 
   useEffect(() => {
     // useReducedMotion() resolves to null on the first render and only then

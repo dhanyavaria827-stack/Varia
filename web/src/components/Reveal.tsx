@@ -1,5 +1,6 @@
 import { motion, useReducedMotion, type Variants } from "framer-motion";
 import type { ReactNode } from "react";
+import { isServer } from "@/lib/utils";
 
 // scripts/prerender.mjs renders these components through renderToStaticMarkup
 // to bake real content into every route for crawlers and no-JS visitors. On
@@ -10,8 +11,6 @@ import type { ReactNode } from "react";
 // server fixes it with no client cost: main.tsx clears #root and mounts a
 // fresh tree, so the browser never reuses this markup and the entrance
 // animation still plays normally for real visitors.
-const isServer = typeof window === "undefined";
-
 /**
  * Pass to a motion component's `initial` in place of `"hidden"`. Identical on
  * the client; on the server it renders the element visible so prerendered

@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
-import { Mail, MapPin } from "lucide-react";
+import { Mail, MapPin, Phone } from "lucide-react";
 import { InstagramIcon } from "@/components/icons/InstagramIcon";
 import { WhatsAppIcon } from "@/components/icons/WhatsAppIcon";
 import { RevealStagger, staggerItem } from "@/components/Reveal";
 import logo from "@/assets/logo-icon.jpg";
 import { ADMISSIONS_EMAIL, CONTACTS, SOCIAL, LOCATION } from "@/data/content";
-import { waLink } from "@/lib/utils";
+import { waLink, telLink } from "@/lib/utils";
 import { motion } from "framer-motion";
 
 export function Footer() {
@@ -61,17 +61,24 @@ export function Footer() {
             </li>
             {CONTACTS.map((c) => (
               <li key={c.name} className="flex items-center gap-2">
-                {/* WhatsApp numbers, so they carry the WhatsApp mark rather
-                    than a phone handset that would read as a voice call. */}
-                <WhatsAppIcon size={15} />
-                <a
-                  href={waLink(c.phone, "Hello! I'd like to ask about admission to Gurukulam.")}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="transition hover:text-camel-600 dark:hover:text-brass-300"
-                >
-                  {c.phone} <span className="text-xs">({c.role})</span>
-                </a>
+                {c.channel === "whatsapp" ? <WhatsAppIcon size={15} /> : <Phone size={15} />}
+                {c.channel === "whatsapp" ? (
+                  <a
+                    href={waLink(c.phone, "Hello! I'd like to ask about admission to Gurukulam.")}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="transition hover:text-camel-600 dark:hover:text-brass-300"
+                  >
+                    {c.phone} <span className="text-xs">({c.role})</span>
+                  </a>
+                ) : (
+                  <a
+                    href={telLink(c.phone)}
+                    className="transition hover:text-camel-600 dark:hover:text-brass-300"
+                  >
+                    {c.phone} <span className="text-xs">({c.role})</span>
+                  </a>
+                )}
               </li>
             ))}
             <li className="flex items-start gap-2">

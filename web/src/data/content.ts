@@ -210,8 +210,10 @@ export const PHILOSOPHY = {
 } as const;
 
 export const CONTACTS = [
-  { name: "Chaitali Ben", role: "Principal", phone: "+91 94283 92421" },
-  { name: "Ankita Ben", role: "Gurukulam Parivar", phone: "+91 98249 82352" },
+  // Chaitali Ben doesn't check WhatsApp much, so her number is a real call —
+  // Ankita Ben is usually reachable there, so hers goes to WhatsApp instead.
+  { name: "Chaitali Ben", role: "Principal", phone: "+91 94283 92421", channel: "call" },
+  { name: "Ankita Ben", role: "Gurukulam Parivar", phone: "+91 98249 82352", channel: "whatsapp" },
 ] as const;
 
 export const ADMISSIONS_EMAIL = "Gurukulam941@Gmail.com";

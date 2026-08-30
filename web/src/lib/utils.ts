@@ -12,6 +12,11 @@ export function waLink(phone: string, text?: string) {
   return `https://wa.me/${digits}${query}`;
 }
 
+/** Builds a tel: link from a display phone number. */
+export function telLink(phone: string) {
+  return `tel:${phone.replace(/[^\d+]/g, "")}`;
+}
+
 /** Converts a display name like "Fashion design" into a URL slug "fashion-design". */
 export function slugify(name: string) {
   return name

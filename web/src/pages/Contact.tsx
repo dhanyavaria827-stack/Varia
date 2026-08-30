@@ -1,6 +1,6 @@
 import { useState, type FormEvent } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { Mail, MapPin, Send, CheckCircle2 } from "lucide-react";
+import { Mail, MapPin, Phone, Send, CheckCircle2 } from "lucide-react";
 import { InstagramIcon } from "@/components/icons/InstagramIcon";
 import { WhatsAppIcon } from "@/components/icons/WhatsAppIcon";
 import { Reveal } from "@/components/Reveal";
@@ -8,7 +8,7 @@ import { TiltCard } from "@/components/TiltCard";
 import { Magnetic } from "@/components/Magnetic";
 import { CursorGlow } from "@/components/CursorGlow";
 import { ADMISSIONS_EMAIL, CONTACTS, SOCIAL, LOCATION } from "@/data/content";
-import { waLink } from "@/lib/utils";
+import { waLink, telLink } from "@/lib/utils";
 import { useDocumentTitle } from "@/lib/useDocumentTitle";
 
 const ENQUIRY_CONTACT = CONTACTS.find((c) => c.name === "Ankita Ben") ?? CONTACTS[0];
@@ -63,24 +63,33 @@ export function Contact() {
 
             {CONTACTS.map((c) => (
               <div key={c.name} className="flex items-start gap-3">
-                {/* These are WhatsApp numbers, so they carry the WhatsApp mark
-                    — not a phone handset or a generic message bubble, which
-                    read as a call or an SMS. */}
+                {/* The icon and link match how each person actually answers:
+                    a phone glyph + tel: for someone who mostly takes calls,
+                    the WhatsApp mark + wa.me for someone reachable there. */}
                 <div className="grid h-10 w-10 shrink-0 place-items-center rounded-full border border-brass-500/50 text-camel-700 dark:text-brass-300">
-                  <WhatsAppIcon size={16} />
+                  {c.channel === "whatsapp" ? <WhatsAppIcon size={16} /> : <Phone size={16} />}
                 </div>
                 <div>
                   <div className="text-xs font-medium uppercase tracking-wide text-ink-soft">
                     {c.name} · {c.role}
                   </div>
-                  <a
-                    href={waLink(c.phone, "Hello! I'd like to ask about admission to Gurukulam.")}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="text-sm font-medium text-ink transition hover:text-camel-600 dark:hover:text-brass-300"
-                  >
-                    {c.phone}
-                  </a>
+                  {c.channel === "whatsapp" ? (
+                    <a
+                      href={waLink(c.phone, "Hello! I'd like to ask about admission to Gurukulam.")}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="text-sm font-medium text-ink transition hover:text-camel-600 dark:hover:text-brass-300"
+                    >
+                      {c.phone}
+                    </a>
+                  ) : (
+                    <a
+                      href={telLink(c.phone)}
+                      className="text-sm font-medium text-ink transition hover:text-camel-600 dark:hover:text-brass-300"
+                    >
+                      {c.phone}
+                    </a>
+                  )}
                 </div>
               </div>
             ))}

@@ -8,7 +8,7 @@ import { TiltCard } from "@/components/TiltCard";
 import { Magnetic } from "@/components/Magnetic";
 import { CursorGlow } from "@/components/CursorGlow";
 import { ADMISSIONS_EMAIL, CONTACTS, SOCIAL, LOCATION } from "@/data/content";
-import { waLink, telLink } from "@/lib/utils";
+import { waLink } from "@/lib/utils";
 import { useDocumentTitle } from "@/lib/useDocumentTitle";
 
 const ENQUIRY_CONTACT = CONTACTS.find((c) => c.name === "Ankita Ben") ?? CONTACTS[0];
@@ -31,7 +31,7 @@ export function Contact() {
 
     // Open in a new tab rather than navigating this one away. Whether the
     // popup succeeded isn't reliably detectable across browsers, so instead
-    // of guessing, always keep the manual link and phone/email fallback
+    // of guessing, always keep the manual link and the email fallback
     // visible rather than claiming delivery.
     window.open(whatsappUrl, "_blank", "noopener,noreferrer");
     setWaUrl(whatsappUrl);
@@ -158,7 +158,12 @@ export function Contact() {
                   </a>
                   <p className="mx-auto mt-4 max-w-sm text-xs text-ink-soft">
                     Or reach us directly:{" "}
-                    <a href={telLink(ENQUIRY_CONTACT.phone)} className="font-medium text-ink hover:text-camel-600 dark:hover:text-brass-300">
+                    <a
+                      href={waLink(ENQUIRY_CONTACT.phone, "Hello! I'd like to ask about admission to Gurukulam.")}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="font-medium text-ink hover:text-camel-600 dark:hover:text-brass-300"
+                    >
                       {ENQUIRY_CONTACT.phone}
                     </a>{" "}
                     · <a href={`mailto:${ADMISSIONS_EMAIL}`} className="font-medium text-ink hover:text-camel-600 dark:hover:text-brass-300">

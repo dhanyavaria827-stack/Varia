@@ -20,4 +20,28 @@ export default defineConfig({
       '@': path.resolve(path.dirname(fileURLToPath(import.meta.url)), './src'),
     },
   },
+  build: {
+    rollupOptions: {
+      output: {
+        // The default single-file output was one ~520kB bundle covering
+        // every page plus every dependency. Splitting rarely-changing
+        // vendor code (React, the router, Framer Motion) into its own
+        // chunk lets browsers cache it separately from app code that
+        // actually changes when a page is edited, and lets the two load
+        // in parallel instead of one blocking chunk. This does not touch
+        // how any page component loads — no React.lazy()/Suspense here —
+        // because scripts/prerender.mjs renders every route synchronously
+        // via renderToStaticMarkup, which can't wait for a lazy chunk to
+        // resolve; a Suspense fallback would ship as the real page content.
+        manualChunks(id) {
+          if (id.includes('node_modules/react-dom') || id.includes('node_modules/react/') || id.includes('node_modules/react-router')) {
+            return 'vendor'
+          }
+          if (id.includes('node_modules/framer-motion')) {
+            return 'motion'
+          }
+        },
+      },
+    },
+  },
 })

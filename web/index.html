@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" sizes="48x48" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Gurukulam, Surat — a gurukul-style school teaching Sanskrit, Gujarati, English, mental mathematics and classical arts alongside sanskar, since 2004."
+    />
+    <title>Gurukulam, Surat — Bhantar with Ghadtar</title>
+
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem("gurukulam-theme");
+          var theme =
+            stored === "light" || stored === "dark"
+              ? stored
+              : window.matchMedia("(prefers-color-scheme: dark)").matches
+                ? "dark"
+                : "light";
+          document.documentElement.setAttribute("data-theme", theme);
+        } catch (e) {}
+      })();
+    </script>
+
+    <!-- Update this to the real domain once one is attached (see vite.config.ts BASE_PATH note) -->
+    <link rel="canonical" href="https://dhanyavaria827-stack.github.io/Varia/" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Gurukulam" />
+    <meta property="og:title" content="Gurukulam, Surat — Bhantar with Ghadtar" />
+    <meta
+      property="og:description"
+      content="A gurukul-style school in Surat teaching Sanskrit, Gujarati, English, mental mathematics and classical arts alongside sanskar, since 2004."
+    />
+    <meta property="og:url" content="https://dhanyavaria827-stack.github.io/Varia/" />
+    <meta property="og:image" content="https://dhanyavaria827-stack.github.io/Varia/og-image.jpg" />
+    <meta property="og:image:width" content="1000" />
+    <meta property="og:image:height" content="665" />
+    <meta property="og:image:alt" content="A young student at Gurukulam, Surat" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Gurukulam, Surat" />
+    <meta
+      name="twitter:description"
+      content="A gurukul-style school in Surat teaching Sanskrit, Gujarati, English, mental mathematics and classical arts alongside sanskar, since 2004."
+    />
+    <meta name="twitter:image" content="https://dhanyavaria827-stack.github.io/Varia/og-image.jpg" />
+
+    <!-- This is static markup, so "email"/"telephone" below can't import
+         from src/data/content.ts (ADMISSIONS_EMAIL, CONTACTS) — keep them
+         in sync by hand if either changes. -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "EducationalOrganization",
+        "name": "Gurukulam",
+        "description": "A gurukul-style school in Surat teaching Sanskrit, Gujarati, English, mental mathematics and classical arts alongside sanskar, since 2004.",
+        "foundingDate": "2004-06-19",
+        "url": "https://dhanyavaria827-stack.github.io/Varia/",
+        "image": "https://dhanyavaria827-stack.github.io/Varia/og-image.jpg",
+        "email": "Gurukulam941@Gmail.com",
+        "telephone": "+91 94283 92421",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "D, Third Floor, Agam Arcade, Opposite Jolly Residency, Vesu",
+          "addressLocality": "Surat",
+          "addressRegion": "Gujarat",
+          "postalCode": "395007",
+          "addressCountry": "IN"
+        }
+      }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="root"></div>
+    <!-- Single Page Apps for GitHub Pages: restores the real path that
+         404.html encoded into a query string, before React Router reads
+         window.location. https://github.com/rafgraph/spa-github-pages -->
+    <script>
+      (function (l) {
+        if (l.search[1] === "/") {
+          var decoded = l.search
+            .slice(1)
+            .split("&")
+            .map(function (s) {
+              return s.replace(/~and~/g, "&");
+            })
+            .join("?");
+          window.history.replaceState(null, null, l.pathname.slice(0, -1) + decoded + l.hash);
+        }
+      })(window.location);
+    </script>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

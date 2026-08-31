@@ -1,0 +1,33 @@
+# Gurukulam
+
+> A gurukul-style school in Surat, Gujarat, teaching Sanskrit, Gujarati,
+> English, mental mathematics and classical arts alongside sanskar
+> (character), since 2004. 225 students, Bal Vibhag (age 3–7) through
+> Primary Vibhag to Std. 12.
+
+Gurukulam pairs bhantar (education) with ghadtar (character-building).
+Students appear for Std. 10 as per GSEB, as external candidates, since
+Gurukulam is not itself a board-affiliated school.
+
+## Pages
+
+- [Home](https://dhanyavaria827-stack.github.io/Varia/): Overview, founding
+  story, the four pillars taught, and the two divisions.
+- [About](https://dhanyavaria827-stack.github.io/Varia/about): History,
+  philosophy, the 64 and 72 codes of conduct, daily life.
+- [Academics](https://dhanyavaria827-stack.github.io/Varia/academics):
+  Subjects taught — languages, mathematics, dharmic knowledge, vishesh gyan.
+- [Life & Arts](https://dhanyavaria827-stack.github.io/Varia/life): Classical
+  arts, festivals, and the rhythm of a Gurukulam day.
+- [Admissions](https://dhanyavaria827-stack.github.io/Varia/admissions):
+  Eligibility, the admission process, and frequently asked questions.
+- [Contact](https://dhanyavaria827-stack.github.io/Varia/contact): Phone,
+  WhatsApp, email and location.
+
+## Notes for AI agents and crawlers
+
+This site has no server of its own — it is a set of static, prerendered
+pages with no tracking, no analytics, and no accounts. See
+[Privacy](https://dhanyavaria827-stack.github.io/Varia/privacy) for the
+plain-language account of what the site does and does not do with a
+visitor's information.

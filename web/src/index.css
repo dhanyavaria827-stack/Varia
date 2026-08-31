@@ -1,0 +1,194 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+@theme {
+  --font-display: "Cormorant", "Didot", Georgia, serif;
+  --font-body: "Cormorant Garamond", Georgia, serif;
+
+  /* parchment / espresso ground */
+  --color-parchment: #f2e7d0;
+  --color-parchment-2: #e8d7ac;
+  --color-ink: #241a10;
+  --color-ink-soft: #6b5842;
+
+  /* camel / leather */
+  --color-camel-50: #f7ede0;
+  --color-camel-100: #ecd7b8;
+  --color-camel-300: #cf9f68;
+  --color-camel-500: #a9683a;
+  --color-camel-600: #8f5327;
+  --color-camel-700: #6e3f1e;
+
+  /* brass / gold accent */
+  --color-brass-300: #e3c988;
+  --color-brass-500: #b8912f;
+  --color-brass-600: #9a7423;
+
+  /* deep heritage green */
+  --color-forest-500: #3e4a34;
+  --color-forest-600: #2e3827;
+  --color-forest-700: #212a1c;
+
+  /* oxblood, used sparingly */
+  --color-oxblood-500: #6e2a2a;
+  --color-oxblood-600: #551f1f;
+
+  --shadow-soft: 0 14px 34px -14px rgba(36, 26, 16, 0.35);
+  --shadow-card: 0 6px 20px -8px rgba(36, 26, 16, 0.22);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  color-scheme: light;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --color-parchment: #18120c;
+  --color-parchment-2: #241b12;
+  --color-ink: #f0e4cc;
+  --color-ink-soft: #c3ac8b;
+  --color-camel-100: #3a2c1c;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  background: var(--color-parchment);
+  color: var(--color-ink);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+::selection {
+  background: var(--color-brass-300);
+  color: var(--color-ink);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-camel-300);
+  border-radius: 999px;
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+/* focus ring for accessibility */
+a:focus-visible,
+button:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--color-brass-500);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  ::view-transition-old(root) {
+    animation: none;
+  }
+  ::view-transition-new(root) {
+    animation: theme-reveal 1.7s cubic-bezier(0.65, 0, 0.35, 1) both;
+    clip-path: circle(0% at var(--theme-x, 50%) var(--theme-y, 50%));
+  }
+  @keyframes theme-reveal {
+    to {
+      clip-path: circle(150% at var(--theme-x, 50%) var(--theme-y, 50%));
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-18px) rotate(3deg); }
+}
+.animate-float-slow {
+  animation: float-slow 8s ease-in-out infinite;
+}
+
+@keyframes float-slower {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(14px) rotate(-2deg); }
+}
+.animate-float-slower {
+  animation: float-slower 10s ease-in-out infinite;
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.animate-marquee {
+  animation: marquee 55s linear infinite;
+}
+
+.bg-grain {
+  background-image: radial-gradient(currentColor 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+@keyframes photo-shimmer {
+  0% { background-position: -150% 0; }
+  100% { background-position: 150% 0; }
+}
+.photo-skeleton {
+  background-image: linear-gradient(
+    100deg,
+    var(--color-parchment-2) 30%,
+    var(--color-camel-100) 50%,
+    var(--color-parchment-2) 70%
+  );
+  background-size: 250% 100%;
+  animation: photo-shimmer 1.6s ease-in-out infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .photo-skeleton {
+    animation: none;
+  }
+}
+
+/* brass rule divider */
+.rule-brass {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--color-brass-500) 50%,
+    transparent
+  );
+  opacity: 0.55;
+}
+
+/* split-flap digit */
+.flap-digit {
+  font-family: var(--font-display);
+  font-variant-numeric: tabular-nums;
+  perspective: 240px;
+}

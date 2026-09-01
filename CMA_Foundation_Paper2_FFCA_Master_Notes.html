@@ -98,7 +98,9 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
 .comparison-table { width: 100%; border-collapse: collapse; margin: 12px 0; }
 .comparison-table th { background: var(--green-deep); color: var(--white); font-family: var(--font-head); font-weight: 600; font-size: 9.5pt; text-transform: uppercase; letter-spacing: 0.03em; padding: 6px 8px; text-align: left; }
 .comparison-table td { padding: 5px 8px; border: 1px solid var(--border-light); font-family: var(--font-body); font-size: 9.7pt; vertical-align: top; overflow-wrap: break-word; }
-.comparison-table tr:nth-child(even) td { background: var(--green-faint); }
+.comparison-table tbody tr:nth-child(odd) td { background: var(--green-faint); }
+thead { display: table-header-group; }
+tfoot { display: table-footer-group; }
 .comparison-table tr.exam-trick td { background: var(--amber-bg); font-family: var(--font-head); font-weight: 600; font-size: 9.7pt; }
 .module-divider { background: var(--green-deep); color: var(--white); min-height: 238mm; max-height: 250mm; page-break-inside: avoid; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 30mm 20mm; }
 .module-divider .rule { width: 80%; height: 2px; background: var(--white); margin: 16px auto; }
@@ -269,13 +271,13 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
 <div class="page page-break">
   <div class="cover-band-dark" style="font-size:14pt;">Syllabus Weight &amp; Attack Priority</div>
   <table class="comparison-table" style="margin-top:6mm;">
-    <tr><th>Section</th><th>Module</th><th>Weight</th><th>Est. MCQs</th><th>Priority</th></tr>
+    <thead><tr><th>Section</th><th>Module</th><th>Weight</th><th>Est. MCQs</th><th>Priority</th></tr></thead><tbody>
     <tr><td rowspan="3">A &mdash; Financial Accounting (70%)</td><td>1. Accounting Fundamentals</td><td>30%</td><td>~15</td><td>&#9733;&#9733;&#9733;</td></tr>
     <tr><td>2. Accounting for Special Transactions</td><td>15%</td><td>~7&ndash;8</td><td>&#9733;&#9733;</td></tr>
     <tr><td>3. Preparation of Final Accounts</td><td>25%</td><td>~12&ndash;13</td><td>&#9733;&#9733;&#9733;</td></tr>
     <tr><td>B &mdash; Cost Accounting (30%)</td><td>4. Fundamentals of Cost Accounting</td><td>30%</td><td>~15</td><td>&#9733;&#9733;&#9733;</td></tr>
     <tr class="exam-trick"><td colspan="5">EXAM TRICK: Module 1 alone equals Modules 2 and 3 combined — every later module (final accounts, cost sheets) leans on Module 1's journal/ledger/trial-balance mechanics, so weak fundamentals cost marks twice over.</td></tr>
-  </table>
+  </tbody></table>
   <p class="body" style="margin-top:5mm;">This is a procedure paper: correctly identifying which book an item is first recorded in, which side of a ledger it is posted to, and which formula applies, matters more than lengthy reasoning. Module 3 (Final Accounts) is the direct output of Module 1's mechanics; Module 4 (Cost Accounting) is conceptually separate from Sections A but shares the same "compute it correctly, format it correctly" testing style.</p>
 </div>
 
@@ -508,9 +510,9 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
   <p class="section-header">1.1.2 Forms of Organisation <span style="float:right">&#9733;&#9733; MED</span></p>
   <p class="body">The form of organisation decides the books kept, mode of maintaining accounts, and components/extent of disclosure in financial statements. Sole proprietorships are the least regulated (no dedicated accounting legislation, though large turnover may trigger the Income Tax Act 1961). Partnership firms are regulated by the Partnership Act 1932 and the Contract Act 1872 (the Partnership Act fills gaps on profit-sharing, remuneration, interest on loan when the partnership contract is silent). LLPs are governed by the LLP Act 2008. Companies are highly regulated by the Companies Act 2013.</p>
   <table class="comparison-table avoid-break">
-    <tr><th>Sole Proprietorship</th><th>Partnership</th><th>LLP</th><th>Company</th></tr>
+    <thead><tr><th>Sole Proprietorship</th><th>Partnership</th><th>LLP</th><th>Company</th></tr></thead><tbody>
     <tr><td>Manufacturing/Trading A/c<br>Profit &amp; Loss A/c<br>Balance Sheet</td><td>Manufacturing/Trading A/c<br>Profit &amp; Loss A/c<br>Profit &amp; Loss Appropriation A/c<br>Balance Sheet</td><td>LLP Profit &amp; Loss A/c<br>LLP Balance Sheet</td><td>Statement of Profit &amp; Loss<br>Balance Sheet<br>Cash Flow Statement<br>Statement of Changes in Other Equity</td></tr>
-  </table>
+  </tbody></table>
 </div>
 </div>
 
@@ -563,7 +565,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
 <div class="concept-block avoid-break">
   <p class="section-header">1.3.1 Capital vs. Revenue Expenditure</p>
   <table class="comparison-table avoid-break">
-    <tr><th>Capital Expenditure</th><th>Revenue Expenditure</th></tr>
+    <thead><tr><th>Capital Expenditure</th><th>Revenue Expenditure</th></tr></thead><tbody>
     <tr><td>Benefit consumed over several accounting periods</td><td>Benefit consumed within one accounting period</td></tr>
     <tr><td>Non-recurring in nature</td><td>Recurring in nature</td></tr>
     <tr><td>Amount generally large</td><td>Amount generally small</td></tr>
@@ -571,7 +573,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
     <tr><td>Not matched against capital receipts</td><td>Not matched against revenue receipts</td></tr>
     <tr><td>May be incurred before or after commencement of operations</td><td>Always incurred after commencement of operations</td></tr>
     <tr><td>Increases earning capacity / reduces operating expenses</td><td>Helps carry on current-period activities</td></tr>
-  </table>
+  </tbody></table>
   <p class="body">Four rules govern recognising Capital Expenditure.</p>
 <ol class="point-list numbered">
   <li>Acquiring long-term assets (useful life &gt; 1 period) for use, not resale.</li>
@@ -625,22 +627,22 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
 <div class="concept-block avoid-break">
   <p class="section-header">1.3.2 Capital vs. Revenue Receipts, Profits and Losses</p>
   <table class="comparison-table avoid-break">
-    <tr><th>Capital Receipt</th><th>Revenue Receipt</th></tr>
+    <thead><tr><th>Capital Receipt</th><th>Revenue Receipt</th></tr></thead><tbody>
     <tr><td>From operations OTHER than regular operations</td><td>From regular day-to-day operations</td></tr>
     <tr><td>Non-recurring</td><td>Recurring</td></tr>
     <tr><td>Not recognised as income</td><td>Recognised as income</td></tr>
     <tr><td>Reflected in Balance Sheet</td><td>Credited to Income Statement</td></tr>
     <tr><td>Does not affect operating result</td><td>Affects operating result</td></tr>
     <tr><td>May create a liability</td><td>Does not create a liability</td></tr>
-  </table>
+  </tbody></table>
   <p class="body">Capital receipts: additional capital introduced by owner; proceeds from sale of long-term assets. Revenue receipts: collections from customers on credit sales; fees for services rendered.</p>
   <table class="comparison-table avoid-break">
-  <tr><th style="width:18%;">Type</th><th>Arises from</th><th>Treatment</th></tr>
+  <thead><tr><th style="width:18%;">Type</th><th>Arises from</th><th>Treatment</th></tr></thead><tbody>
   <tr><td><strong>Capital Profit</strong></td><td>A non-recurring transaction — e.g. sale of a fixed asset above book value, share premium, profit on re-issue of forfeited shares, profit prior to incorporation.</td><td>Transferred to Capital Reserve.</td></tr>
   <tr><td><strong>Revenue Profit</strong></td><td>Ordinary business functions — e.g. profit on sale of goods/services.</td><td>Distributed to owners or credited to Reserves.</td></tr>
   <tr><td><strong>Capital Loss</strong></td><td>Outside the regular course of operations — sale of a non-inventory asset below WDV, loss on raising capital (shares issued at a discount), settling a liability at more than book value (debentures redeemed at premium).</td><td>Losses on fixed-asset sale usually appear in the Income Statement (deducted from net profit); other capital losses are adjusted against capital reserves.</td></tr>
   <tr><td><strong>Revenue Loss</strong></td><td>The normal course of business — discount to customers, bad debts, decline in inventory value.</td><td>Transferred to the Income Statement.</td></tr>
-</table>
+</tbody></table>
 </div>
 </div>
 
@@ -674,7 +676,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
   <li>Design the numbering starting from major headings, adding detail later. A three-layer code (Division &ndash; Department &ndash; Account, e.g. zz-aa-123) is common for multi-division firms.</li>
 </ol>
   <table class="comparison-table avoid-break">
-    <tr><th>Number Range</th><th>Account Category (ICMAI)</th><th>Group</th></tr>
+    <thead><tr><th>Number Range</th><th>Account Category (ICMAI)</th><th>Group</th></tr></thead><tbody>
     <tr><td>1000&ndash;1999</td><td>Assets</td><td rowspan="3">Balance Sheet accounts</td></tr>
     <tr><td>2000&ndash;2999</td><td>Liabilities</td></tr>
     <tr><td>3000&ndash;3999</td><td>Owner&rsquo;s Equity</td></tr>
@@ -683,7 +685,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
     <tr><td>6000&ndash;6999</td><td>Overhead Costs or Expenses</td></tr>
     <tr><td>7000&ndash;7999</td><td>Non-operating revenue and gains</td></tr>
     <tr><td>8000&ndash;8999</td><td>Non-operating expenses and Losses</td></tr>
-  </table>
+  </tbody></table>
 </div>
 
 <div class="concept-block avoid-break">
@@ -702,7 +704,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
   <p class="section-header">1.4.2.2 Double Entry System, Accounts, and the Two Rule Approaches</p>
   <p class="body">"Debit" (Dr.) is from Latin <em>debitum</em> ("what is due"); "Credit" (Cr.) from <em>credere</em> ("what is trusted"). Every transaction has a two-fold aspect — one party gives, another receives — recorded as an equal Debit and Credit.</p>
 <table class="comparison-table avoid-break">
-  <tr><th style="width:50%;">Advantages</th><th>Limitations</th></tr>
+  <thead><tr><th style="width:50%;">Advantages</th><th>Limitations</th></tr></thead><tbody>
   <tr><td>
     <ul class="point-list" style="margin:0;padding-left:4mm;">
       <li>Ensures arithmetical accuracy, via the Trial Balance.</li>
@@ -716,25 +718,23 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
       <li>Costly — many books to maintain.</li>
     </ul>
   </td></tr>
-</table>
+</tbody></table>
   <p class="body"><strong>Account classification:</strong> Personal (Natural — e.g. Suresh's A/c; Artificial — e.g. ABC Ltd; Representative — e.g. Outstanding Rent A/c), Real (Tangible — Machinery, Stock, Cash; Intangible — Goodwill, Patents), Nominal (expenses/losses and incomes/gains — Salary A/c, Commission Received A/c).</p>
   <table class="comparison-table avoid-break">
-    <tr><th colspan="3">A. Golden Rule / Traditional Approach</th></tr>
-    <tr><th>Nature of Account</th><th>Debit</th><th>Credit</th></tr>
+    <thead><tr><th colspan="3">A. Golden Rule / Traditional Approach</th></tr><tr><th>Nature of Account</th><th>Debit</th><th>Credit</th></tr></thead><tbody>
     <tr><td>Nominal Account</td><td>Expenses and Losses</td><td>Incomes and Gains</td></tr>
     <tr><td>Real Account</td><td>What comes in</td><td>What goes out</td></tr>
     <tr><td>Personal Account</td><td>The receiver</td><td>The giver</td></tr>
-  </table>
+  </tbody></table>
   <table class="comparison-table avoid-break">
-    <tr><th colspan="4">B. Accounting Equation / Modern Approach</th></tr>
-    <tr><th>Type of Account</th><th>Normal Balance</th><th>To be Debited</th><th>To be Credited</th></tr>
+    <thead><tr><th colspan="4">B. Accounting Equation / Modern Approach</th></tr><tr><th>Type of Account</th><th>Normal Balance</th><th>To be Debited</th><th>To be Credited</th></tr></thead><tbody>
     <tr><td>Assets</td><td>Debit</td><td>Increase</td><td>Decrease</td></tr>
     <tr><td>Liabilities</td><td>Credit</td><td>Decrease</td><td>Increase</td></tr>
     <tr><td>Capital</td><td>Credit</td><td>Decrease</td><td>Increase</td></tr>
     <tr><td>Revenue</td><td>Credit</td><td>Decrease</td><td>Increase</td></tr>
     <tr><td>Expense</td><td>Debit</td><td>Increase</td><td>Decrease</td></tr>
     <tr><td>Withdrawal/Drawings</td><td>Debit</td><td>Increase</td><td>Decrease</td></tr>
-  </table>
+  </tbody></table>
   <div class="shortcut-box avoid-break"><span class="shortcut-label">&#9889; SHORTCUT:</span> Under Modern Approach, Assets and Expenses behave alike (Debit = Increase); Liabilities, Capital and Revenue behave alike (Credit = Increase). Drawings behaves like an Expense (Debit = Increase) since it reduces owner's equity.</div>
 </div>
 
@@ -766,9 +766,9 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
 </ul>
   <table class="ledger-tbl avoid-break">
     <caption>Format of a Journal</caption>
-    <tr><th>Date</th><th>Particulars</th><th>Voucher No.</th><th>L.F.</th><th class="amt">Debit (&#8377;)</th><th class="amt">Credit (&#8377;)</th></tr>
+    <thead><tr><th>Date</th><th>Particulars</th><th>Voucher No.</th><th>L.F.</th><th class="amt">Debit (&#8377;)</th><th class="amt">Credit (&#8377;)</th></tr></thead><tbody>
     <tr><td>dd-mm-yy</td><td>Name of A/c to be debited&hellip;Dr.<br>&nbsp;&nbsp;To Name of A/c to be credited<br>(Narration describing the transaction)</td><td>&mdash;</td><td>&mdash;</td><td class="amt">&mdash;</td><td class="amt">&mdash;</td></tr>
-  </table>
+  </tbody></table>
   <p class="body">Columns: Date; Particulars (Dr./Cr. account names + narration); Voucher Number (source voucher reference); Ledger Folio (L.F. &mdash; filled only at the time of posting, not at entry time); Debit/Credit Amount (both filled, since every debit has an equal credit).</p>
   <p class="body"><strong>Simple vs. Compound entry:</strong> a Simple entry has exactly one Debit and one Credit account. A Compound entry has at least two debits with one credit, or one debit with two-or-more credits (e.g. a purchase settled part-cash, part-credit).</p>
 </div>
@@ -777,7 +777,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
   <p class="section-header">Sub-division of Journal</p>
   <p class="body"><strong>(1) Special Journals / Subsidiary Books</strong> — each records one specific transaction type.</p>
 <table class="comparison-table avoid-break">
-  <tr><th style="width:34%;">Special Journal</th><th>Records</th></tr>
+  <thead><tr><th style="width:34%;">Special Journal</th><th>Records</th></tr></thead><tbody>
   <tr><td>Cash Book</td><td>All cash inflows/outflows.</td></tr>
   <tr><td>Bank Book</td><td>Cheque/draft/EFT transactions, used where bank-transaction volume is high.</td></tr>
   <tr><td>Purchases (Day) Book</td><td>Credit purchases of goods only, from Purchase invoices.</td></tr>
@@ -786,7 +786,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
   <tr><td>Sales Returns Book / Returns Inward Book</td><td>Goods returned by customers &mdash; the Study Notes say &ldquo;from <strong>Credit Note issued by the customer</strong>.&rdquo; See the trap below before relying on that.</td></tr>
   <tr><td>Bills Receivable Book</td><td>Bills received from debtors.</td></tr>
   <tr><td>Bills Payable Book</td><td>Bills accepted, owed to creditors.</td></tr>
-</table>
+</tbody></table>
   <p class="body"><strong>(2) General Journal / Journal Proper</strong> — miscellaneous transactions with no dedicated Special Journal: Opening entries (balances brought forward from the prior period), Closing entries (transferring nominal-account balances to Trading/P&amp;L A/c), Transfer entries (moving a balance between accounts, e.g. Drawings to Capital), Adjustment entries, Rectification entries, and any transaction with no matching subsidiary book (e.g. credit purchase of a fixed asset).</p>
   <div class="trap-block avoid-break">
     <span class="pill amber">&#9888; TRAP</span>
@@ -814,9 +814,8 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
   <p class="body"><strong>Journal vs. Ledger:</strong> Journal is a chronological, detailed record; Ledger is a classified, account-wise record.</p>
   <table class="ledger-tbl avoid-break">
     <caption>Format of a Ledger Account</caption>
-    <tr><th colspan="8">Dr. &hellip;&hellip;&hellip;&hellip;&hellip; Account &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Cr.</th></tr>
-    <tr><th>Date</th><th>Particulars</th><th>J.F.</th><th class="amt">&#8377;</th><th>Date</th><th>Particulars</th><th>J.F.</th><th class="amt">&#8377;</th></tr>
-  </table>
+    <thead><tr><th colspan="8">Dr. &hellip;&hellip;&hellip;&hellip;&hellip; Account &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Cr.</th></tr><tr><th>Date</th><th>Particulars</th><th>J.F.</th><th class="amt">&#8377;</th><th>Date</th><th>Particulars</th><th>J.F.</th><th class="amt">&#8377;</th></tr></thead><tbody>
+  </tbody></table>
   <p class="body">Three posting rules apply.</p>
 <ol class="point-list numbered">
   <li>A separate account is opened for every item of income, expense, asset, or liability.</li>
@@ -910,7 +909,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
   <p class="section-header">The BRS Addition/Subtraction Rule Table <span style="float:right">&#9733;&#9733;&#9733; HIGH</span></p>
   <p class="body">CB = Cash Book, PB = Pass Book, OD = Overdraft. Read the row for the item; each column tells you whether that item is Added or Deducted, depending on which balance you start from.</p>
   <table class="comparison-table avoid-break" style="font-size:8.7pt;">
-    <tr><th>When reconciliation is started with</th><th>Bal. as per CB</th><th>OD as per CB</th><th>Bal. as per PB</th><th>OD as per PB</th></tr>
+    <thead><tr><th>When reconciliation is started with</th><th>Bal. as per CB</th><th>OD as per CB</th><th>Bal. as per PB</th><th>OD as per PB</th></tr></thead><tbody>
     <tr><td>Cheques deposited in Bank, but not cleared</td><td>Less</td><td>Add</td><td>Add</td><td>Less</td></tr>
     <tr><td>Cheques issued, but not presented</td><td>Add</td><td>Less</td><td>Less</td><td>Add</td></tr>
     <tr><td>Interest debited in PB only</td><td>Less</td><td>Add</td><td><strong>Less</strong>&#8224;</td><td><strong>Add</strong>&#8224;</td></tr>
@@ -929,7 +928,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
     <tr><td>Cheques drawn but not actually issued to creditors</td><td>Add</td><td>Less</td><td>Less</td><td>Add</td></tr>
     <tr><td>Bank charges recorded twice in CB</td><td>Add</td><td>Less</td><td>Less</td><td>Add</td></tr>
     <tr><td>Amount withdrawn from Bank not recorded in CB</td><td>Less</td><td>Add</td><td>Add</td><td>Less</td></tr>
-  </table>
+  </tbody></table>
   <p class="body" style="font-size:9.5pt;"><strong>Amended Cash Book:</strong> when the problem gives the Cash Book balance and asks for it to be corrected first, only two kinds of items go into the amended Cash Book — (i) items never recorded in the Cash Book at all, and (ii) errors made BY the Cash Book. All other items of difference still go into the BRS as usual, taken from the (now-corrected) amended Cash Book balance.</p>
 </div>
   <div class="trap-block avoid-break"><span class="pill amber">&#9888; TRAP</span><p class="trap-label">&#9888; TRAP: &#8224; A BOOK ERROR IN THIS VERY TABLE &mdash; THE &ldquo;INTEREST DEBITED IN PB ONLY&rdquo; ROW</p><p class="trap-row"><strong>WHAT THE BOOK PRINTS:</strong> the Study Notes give this row as Less / Add / <strong>Less</strong> / <strong>Add</strong>. The two marked&#8224; cells are reproduced above exactly as printed, but they are wrong.</p><p class="trap-row"><strong>WHY THEY ARE WRONG:</strong> in every other row of this table the &ldquo;Bal. as per CB&rdquo; and &ldquo;Bal. as per PB&rdquo; columns are OPPOSITES &mdash; they must be, because you are travelling between the same two balances in opposite directions. This row alone has &ldquo;Less&rdquo; in both. The book contradicts itself one row later: <em>Payments by Bank debited in PB only</em> is the same kind of item (something the bank has deducted that the Cash Book has not yet recorded) and is correctly given as Less / Add / <strong>Add</strong> / <strong>Less</strong>.</p><p class="trap-row"><strong>THE CORRECT ROW:</strong> Interest debited in PB only &rarr; <strong>Bal. as per CB: Less &middot; OD as per CB: Add &middot; Bal. as per PB: Add &middot; OD as per PB: Less.</strong> Reason it out rather than memorising: the bank has already taken the interest, so the Pass Book balance is the LOWER of the two. Starting from the Cash Book you deduct to get down to it; starting from the Pass Book you add to get back up.</p><p class="trap-row"><strong>IN THE EXAM:</strong> if a question simply quotes the table, answer as printed. If you are actually preparing a BRS, use the corrected directions above &mdash; otherwise your statement will not reconcile.</p></div>
@@ -963,14 +962,14 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
 <div class="concept-block avoid-break">
   <p class="section-header">Methods of Preparation</p>
   <table class="comparison-table avoid-break">
-    <tr><th>Method</th><th>How</th><th>Advantage</th><th>Disadvantage</th></tr>
+    <thead><tr><th>Method</th><th>How</th><th>Advantage</th><th>Disadvantage</th></tr></thead><tbody>
     <tr><td>Total / Gross Trial Balance</td><td>Both sides of every account are totalled; debit totals and credit totals are listed</td><td>Checks arithmetical accuracy; no need to extract balances first</td><td>Does not facilitate preparing final accounts</td></tr>
     <tr><td>Balance / Net Trial Balance</td><td>Every ledger account is balanced first; only the balance (Dr. or Cr.) is listed</td><td>Eases preparation of final accounts; saves time</td><td>Errors may remain undisclosed even if it tallies</td></tr>
     <tr><td>Compound Method</td><td>Both totals AND balances are shown, in separate columns</td><td>Offers advantages of both methods</td><td>Lengthy, more time-consuming</td></tr>
-  </table>
+  </tbody></table>
   <p class="body"><strong>Golden rule for the columns:</strong> all Assets, Drawings, Debtors, Expenses and Losses go in the Debit column; all Liabilities, Capital, Creditors, Gains and Incomes go in the Credit column.</p>
   <table class="comparison-table avoid-break" style="font-size:9.2pt;">
-    <tr><th>Selected Heads</th><th>Side</th><th>Selected Heads</th><th>Side</th></tr>
+    <thead><tr><th>Selected Heads</th><th>Side</th><th>Selected Heads</th><th>Side</th></tr></thead><tbody>
     <tr><td>Cash/Bank overdrawn, Bank Overdraft</td><td>Credit</td><td>Cash in hand, Cash at Bank</td><td>Debit</td></tr>
     <tr><td>Opening Stock, Wages, Purchase, Carriage Inwards</td><td>Debit</td><td>Sales, Discount Received, Returns Outward</td><td>Credit</td></tr>
     <tr><td>Discount Allowed, Bad Debts, Returns Inward</td><td>Debit</td><td>Commission Received, Interest Received</td><td>Credit</td></tr>
@@ -979,12 +978,11 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
     <tr><td>Prepaid Expenses, Accrued Income, Sinking Fund Investments</td><td>Debit</td><td>Outstanding Expenses, Provision for Depreciation, Sinking Fund</td><td>Credit</td></tr>
     <tr><td>Bills Receivable, Sundry Debtors, Loose Tools</td><td>Debit</td><td>Bills Payable, Debentures (from Public)</td><td>Credit</td></tr>
     <tr><td>Income Tax, L.I.C. Premium paid by proprietor</td><td>Debit (Drawings)</td><td>Bad Debts Recovered, Apprenticeship Premium received</td><td>Credit</td></tr>
-  </table>
+  </tbody></table>
   <table class="ledger-tbl avoid-break">
     <caption>Pro-forma of Trial Balance</caption>
-    <tr><th colspan="5">Trial Balance of &hellip;&hellip;&hellip; as on &hellip;&hellip;&hellip;</th></tr>
-    <tr><th>Sl. No.</th><th>Ledger Account</th><th>L.F.</th><th class="amt">Dr. (&#8377;)</th><th class="amt">Cr. (&#8377;)</th></tr>
-  </table>
+    <thead><tr><th colspan="5">Trial Balance of &hellip;&hellip;&hellip; as on &hellip;&hellip;&hellip;</th></tr><tr><th>Sl. No.</th><th>Ledger Account</th><th>L.F.</th><th class="amt">Dr. (&#8377;)</th><th class="amt">Cr. (&#8377;)</th></tr></thead><tbody>
+  </tbody></table>
 </div>
 </div>
 <!-- ============ 1.8 ADJUSTMENT ENTRIES AND RECTIFICATION OF ERRORS ============ -->
@@ -1015,7 +1013,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
 <div class="concept-block avoid-break">
   <p class="section-header">Typical Adjustment Entries</p>
   <table class="comparison-table avoid-break">
-    <tr><th>Adjustment</th><th>Journal Entry</th></tr>
+    <thead><tr><th>Adjustment</th><th>Journal Entry</th></tr></thead><tbody>
     <tr><td>Pre-received Income</td><td>Income A/c Dr. &nbsp;To Pre-received Income A/c</td></tr>
     <tr><td>Accrued Income</td><td>Accrued Income A/c Dr. &nbsp;To Income A/c</td></tr>
     <tr><td>Outstanding Expenses</td><td>Expenses A/c Dr. &nbsp;To Outstanding Expenses A/c</td></tr>
@@ -1026,7 +1024,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
     <tr><td>Provision for Bad Debts / Discount on Debtors</td><td>P/L A/c Dr. &nbsp;To Provision for Bad Debts (or Discount on Debtors) A/c</td></tr>
     <tr><td>Depreciation on tangible fixed assets</td><td>Depreciation A/c Dr. &nbsp;To Fixed Assets A/c</td></tr>
     <tr><td>Amortisation of intangible fixed assets</td><td>Amortisation A/c Dr. &nbsp;To Fixed Assets A/c</td></tr>
-  </table>
+  </tbody></table>
 </div>
 
 <div class="concept-block avoid-break">
@@ -1041,24 +1039,24 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
   <li><strong>Compensating Errors</strong> — two or more errors cancel each other's effect, so the <strong>Trial Balance still tallies</strong>.</li>
 </ol>
   <table class="comparison-table avoid-break">
-    <tr><th>Error Type</th><th>Effect on Trial Balance</th></tr>
+    <thead><tr><th>Error Type</th><th>Effect on Trial Balance</th></tr></thead><tbody>
     <tr><td>Errors of Principle</td><td>Tallies</td></tr>
     <tr><td>Errors of partial omission</td><td>Does NOT tally</td></tr>
     <tr><td>Errors of full/complete omission</td><td>Tallies</td></tr>
     <tr><td>Errors of Commission</td><td>Normally does NOT tally</td></tr>
     <tr><td>Compensating Errors</td><td>Tallies</td></tr>
-  </table>
+  </tbody></table>
 </div>
 
 <div class="concept-block avoid-break">
   <p class="section-header">Rectification at the Three Stages</p>
   <p class="body">"Single-sided" errors affect only one side (Debit or Credit) of one account; "Double-sided" errors affect both sides (across two accounts).</p>
   <table class="comparison-table avoid-break">
-    <tr><th>Stage Detected</th><th>Single-Sided Error</th><th>Double-Sided Error</th></tr>
+    <thead><tr><th>Stage Detected</th><th>Single-Sided Error</th><th>Double-Sided Error</th></tr></thead><tbody>
     <tr><td>(1) Before Trial Balance</td><td>Rectification statement only &mdash; no double entry needed (e.g. debit Purchase A/c directly for an under-cast)</td><td>Normal rectification entry (no Suspense A/c involved)</td></tr>
     <tr><td>(2) After Trial Balance</td><td>Rectification entry involving <strong>Suspense A/c</strong></td><td>Normal rectification entry (Suspense A/c NOT involved, since both sides are affected)</td></tr>
     <tr><td>(3) After Final Accounts</td><td>Rectification entry via Suspense A/c; any Nominal account is replaced by <strong>Profit &amp; Loss Adjustment A/c</strong></td><td>Normal rectification entry; Nominal accounts replaced by P&amp;L Adjustment A/c</td></tr>
-  </table>
+  </tbody></table>
   <div class="formula-box avoid-break" style="text-align:left;padding:10px 16px;">
     <p class="body" style="margin:0;"><strong>Worked pattern (Purchase of a Building wrongly passed through Purchase A/c):</strong><br>Correct entry: Building A/c Dr. / To Cash A/c &mdash; Wrong entry: Purchase A/c Dr. / To Cash A/c &mdash; Rectification entry (any stage): Building A/c Dr. / To Purchase A/c.</p>
   </div>
@@ -1097,13 +1095,13 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
 <div class="concept-block avoid-break">
   <p class="section-header">Depreciation vs. Its Near-Relatives</p>
   <table class="comparison-table avoid-break">
-    <tr><th>Term</th><th>Applies To</th><th>Cause</th></tr>
+    <thead><tr><th>Term</th><th>Applies To</th><th>Cause</th></tr></thead><tbody>
     <tr><td>Amortisation</td><td>Intangible fixed assets (Copyright, Patent)</td><td>Effluxion of time / expiry of legal right</td></tr>
     <tr><td>Obsolescence</td><td>Any fixed asset</td><td>New technology, better process, or changed taste/fashion &mdash; a sudden, hard-to-predict fall</td></tr>
     <tr><td>Depletion</td><td>Wasting natural-resource assets (mines, quarries, oil wells, timber stands)</td><td>Physical exhaustion through extraction</td></tr>
-  </table>
+  </tbody></table>
   <table class="comparison-table avoid-break">
-  <tr><th style="width:50%;">Internal causes</th><th>External causes</th></tr>
+  <thead><tr><th style="width:50%;">Internal causes</th><th>External causes</th></tr></thead><tbody>
   <tr><td>
     <ul class="point-list" style="margin:0;padding-left:4mm;">
       <li>Wear and tear (regular use).</li>
@@ -1118,7 +1116,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
       <li>Abnormal reasons — fire, calamity, accident.</li>
     </ul>
   </td></tr>
-</table>
+</tbody></table>
 </div>
 
 <div class="concept-block avoid-break">
@@ -1132,11 +1130,11 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
     <span class="formula-text" style="font-size:10.5pt;">Rate of Depreciation = [1 &ndash; <sup>n</sup>&radic;(Scrap Value &divide; Original Cost)] &times; 100</span>
   </div>
   <table class="comparison-table avoid-break">
-    <tr><th>Straight Line / Fixed Instalment / Original Cost Method</th><th>Reducing Balance / Written Down Value Method</th></tr>
+    <thead><tr><th>Straight Line / Fixed Instalment / Original Cost Method</th><th>Reducing Balance / Written Down Value Method</th></tr></thead><tbody>
     <tr><td>Depreciation always calculated on ORIGINAL cost</td><td>Depreciation calculated on the BOOK VALUE (original cost year 1, WDV thereafter)</td></tr>
     <tr><td>Equal amount written off every period</td><td>Rate stays constant; the AMOUNT of depreciation decreases every year</td></tr>
     <tr><td>WDV reduces to Scrap Value or Nil</td><td>WDV never reduces to zero</td></tr>
-  </table>
+  </tbody></table>
 </div>
 
 <div class="concept-block avoid-break">
@@ -1144,13 +1142,13 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
   <p class="body"><strong>Method A &mdash; no Provision for Depreciation A/c maintained:</strong> Depreciation A/c is debited and the ASSET A/c itself is credited directly &mdash; the Asset A/c thus shows WDV.</p>
   <p class="body"><strong>Method B &mdash; Provision for Depreciation A/c maintained:</strong> Depreciation A/c Dr. / To Provision for Depreciation A/c &mdash; the Asset A/c stays at original cost; on sale, the Provision balance is transferred against the asset (directly, or via an Asset Disposal A/c if opened) and any profit/loss on sale goes to P&amp;L A/c.</p>
   <table class="comparison-table avoid-break" style="font-size:8.7pt;">
-    <tr><th style="width:24%;">On sale of the asset</th><th>No Provision A/c</th><th>Provision A/c, no Disposal A/c</th><th>Provision A/c + Disposal A/c</th></tr>
+    <thead><tr><th style="width:24%;">On sale of the asset</th><th>No Provision A/c</th><th>Provision A/c, no Disposal A/c</th><th>Provision A/c + Disposal A/c</th></tr></thead><tbody>
     <tr><td>Transfer original cost</td><td>No entry</td><td>No entry</td><td>Asset Disposal A/c Dr. To Asset A/c</td></tr>
     <tr><td>Transfer accumulated provision</td><td>No entry</td><td>Provision for Dep. A/c Dr. To Asset A/c</td><td>Provision for Dep. A/c Dr. To Asset Disposal A/c</td></tr>
     <tr><td>Sale proceeds received</td><td>Cash/Bank A/c Dr. To Asset A/c</td><td>Cash/Bank A/c Dr. To Asset A/c</td><td>Cash/Bank A/c Dr. To Asset Disposal A/c</td></tr>
     <tr><td>Profit on sale</td><td>Asset A/c Dr. To P&amp;L A/c</td><td>Asset A/c Dr. To P&amp;L A/c</td><td>Asset Disposal A/c Dr. To P&amp;L A/c</td></tr>
     <tr><td>Loss on sale</td><td>P&amp;L A/c Dr. To Asset A/c</td><td>P&amp;L A/c Dr. To Asset A/c</td><td>P&amp;L A/c Dr. To Asset Disposal A/c</td></tr>
-  </table>
+  </tbody></table>
   <div class="trap-block avoid-break">
     <span class="pill amber">&#9888; TRAP</span>
     <p class="trap-label">&#9888; TRAP: PART-YEAR DEPRECIATION ON MID-YEAR PURCHASE/SALE</p>
@@ -1173,11 +1171,11 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
 <div class="concept-block avoid-break">
   <p class="section-header">Two Alternative Accounting Methods</p>
   <table class="comparison-table avoid-break">
-    <tr><th>Method 1 &mdash; via Provision A/c</th><th>Method 2 &mdash; via Profit &amp; Loss A/c</th></tr>
+    <thead><tr><th>Method 1 &mdash; via Provision A/c</th><th>Method 2 &mdash; via Profit &amp; Loss A/c</th></tr></thead><tbody>
     <tr><td>Bad Debt A/c Dr. / To Sundry Debtors A/c (bad debt after Trial Balance)</td><td>Same</td></tr>
     <tr><td>Provision for Doubtful Debt A/c Dr. / To Bad Debt A/c (write off against the provision)</td><td>Profit &amp; Loss A/c Dr. / To Bad Debt A/c (write off direct to P&amp;L)</td></tr>
     <tr><td>Profit &amp; Loss A/c Dr. / To Provision for Doubtful Debt A/c (create the FULL closing provision required)</td><td>Only the DIFFERENCE between closing and opening provision hits P&amp;L: if Closing &gt; Opening, P&amp;L A/c Dr. / To Provision A/c; if Closing &lt; Opening, Provision A/c Dr. / To P&amp;L A/c</td></tr>
-  </table>
+  </tbody></table>
   <div class="formula-box avoid-break">
     <span class="formula-text" style="font-size:10.5pt;">Amount charged to P&amp;L (Method 1) = Closing Provision Required + Bad Debt Written Off (total) &ndash; Opening Provision</span>
   </div>
@@ -1422,7 +1420,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
 </div>
 
 <table class="comparison-table avoid-break">
-  <tr><th style="width:22%;">Point</th><th>Consignment</th><th>Sale</th></tr>
+  <thead><tr><th style="width:22%;">Point</th><th>Consignment</th><th>Sale</th></tr></thead><tbody>
   <tr><td>Ownership</td><td>Stays with consignor; only POSSESSION passes</td><td>Passes immediately to the buyer</td></tr>
   <tr><td>Relationship</td><td>Principal and agent, continues till terminated</td><td>Buyer and seller, ends with payment and transfer</td></tr>
   <tr><td>Risk</td><td>Remains with consignor until goods are sold</td><td>Passes to buyer along with ownership</td></tr>
@@ -1430,7 +1428,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
   <tr><td>Account Sales</td><td>Submitted periodically by consignee</td><td>No such statement</td></tr>
   <tr><td>Consideration</td><td>Goods sold against commission</td><td>Goods sold against price</td></tr>
   <tr><td>Return of goods</td><td>Unsold goods returnable at any time</td><td>Goods not returnable once sale is complete</td></tr>
-</table>
+</tbody></table>
 
 <div class="concept-block avoid-break">
   <p class="section-header">2.1.1 The Two Key Documents</p>
@@ -1441,11 +1439,11 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
 <div class="concept-block avoid-break">
   <p class="section-header">2.1.2 Three Types of Commission</p>
   <table class="comparison-table avoid-break">
-    <tr><th style="width:26%;">Type</th><th>Paid for</th><th>Key point</th></tr>
+    <thead><tr><th style="width:26%;">Type</th><th>Paid for</th><th>Key point</th></tr></thead><tbody>
     <tr><td>Ordinary</td><td>Selling the goods</td><td>Consignee does NOT guarantee collection from customers; rate is generally lower</td></tr>
     <tr><td>Del Credere</td><td>Guaranteeing collection</td><td>Consignee absorbs bad-debt losses; calculated on TOTAL sales, not credit sales only</td></tr>
     <tr><td>Over-riding / Special</td><td>Beating a benchmark</td><td>Extra commission for selling above a pre-set price or exceeding the sales target</td></tr>
-  </table>
+  </tbody></table>
   <div class="trap-block avoid-break">
     <span class="pill amber">&#9888; TRAP</span>
     <p class="trap-label">&#9888; TRAP: DEL CREDERE COMMISSION BASE</p>
@@ -1481,7 +1479,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
 <div class="concept-block avoid-break">
   <p class="section-header">2.1.4 Journal Entries — Consignor (goods at cost)</p>
   <table class="comparison-table avoid-break">
-    <tr><th style="width:34%;">Event</th><th>Consignor's entry</th><th>Consignee's entry</th></tr>
+    <thead><tr><th style="width:34%;">Event</th><th>Consignor's entry</th><th>Consignee's entry</th></tr></thead><tbody>
     <tr><td>Opening stock brought down</td><td>Consignment A/c Dr. &nbsp;To Consignment Stock A/c</td><td>No entry</td></tr>
     <tr><td>Goods sent</td><td>Consignment A/c Dr. &nbsp;To Goods Sent on Consignment A/c</td><td>No entry</td></tr>
     <tr><td>Goods returned by consignee</td><td>Goods Sent on Consignment A/c Dr. &nbsp;To Consignment A/c</td><td>No entry</td></tr>
@@ -1492,7 +1490,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
     <tr><td>Commission</td><td>Consignment A/c Dr. &nbsp;To Consignee's A/c</td><td>Consignor's A/c Dr. &nbsp;To Commission A/c</td></tr>
     <tr><td>Closing stock with consignee</td><td>Stock on Consignment A/c Dr. &nbsp;To Consignment A/c</td><td>No entry</td></tr>
     <tr><td>Goods-in-transit</td><td>Goods-in-Transit A/c Dr. &nbsp;To Consignment A/c</td><td>No entry</td></tr>
-  </table>
+  </tbody></table>
   <p class="body">When the consignor discounts a bill received as advance: Bank A/c Dr., Discount on Bill A/c Dr., To Bills Receivable A/c — and the discount is then transferred to P&amp;L A/c (or Consignment A/c).</p>
 </div>
 
@@ -1500,12 +1498,12 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
   <p class="section-header">2.1.5 Goods Sent at Invoice Price — the Load Cancellations</p>
   <p class="body">When goods travel at invoice price (cost + margin), the Consignment A/c is debited at inflated figures, so the load must be cancelled everywhere it hides before true profit emerges. Four cancellation entries in the consignor's books:</p>
   <table class="comparison-table avoid-break">
-    <tr><th style="width:44%;">Load hiding in&hellip;</th><th>Cancellation entry</th></tr>
+    <thead><tr><th style="width:44%;">Load hiding in&hellip;</th><th>Cancellation entry</th></tr></thead><tbody>
     <tr><td>Opening stock</td><td>Consignment Stock Reserve A/c Dr. &nbsp;To Consignment A/c</td></tr>
     <tr><td>Goods sent (less returns)</td><td>Goods Sent on Consignment A/c Dr. &nbsp;To Consignment A/c</td></tr>
     <tr><td>Closing stock</td><td>Consignment A/c Dr. &nbsp;To Consignment Stock Reserve A/c</td></tr>
     <tr><td>Goods-in-transit</td><td>Consignment A/c Dr. &nbsp;To Goods-in-Transit A/c</td></tr>
-  </table>
+  </tbody></table>
   <div class="formula-box avoid-break">
     <span class="formula-text" style="font-size:11pt;">Load = Invoice Price &ndash; Cost</span>
     <hr class="var-divider">
@@ -1528,11 +1526,11 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
 <div class="concept-block avoid-break">
   <p class="section-header">2.1.7 Normal Loss vs. Abnormal Loss</p>
   <table class="comparison-table avoid-break">
-    <tr><th style="width:24%;">Point</th><th>Normal Loss</th><th>Abnormal Loss</th></tr>
+    <thead><tr><th style="width:24%;">Point</th><th>Normal Loss</th><th>Abnormal Loss</th></tr></thead><tbody>
     <tr><td>Nature</td><td>Unavoidable — inherent in the goods (evaporation, spillage)</td><td>Avoidable — theft, fire, accident, bad handling</td></tr>
     <tr><td>Valuation</td><td>NOT valued — it simply disappears</td><td>Valued like stock (cost + qualifying expenses up to the point of loss)</td></tr>
     <tr><td>Effect</td><td>Cost of surviving units rises: total cost is spread over FEWER units</td><td>Credited out of Consignment A/c to Abnormal Loss A/c (net of insurance claim, balance to P&amp;L)</td></tr>
-  </table>
+  </tbody></table>
   <p class="body"><strong>Where the abnormal loss happens changes the arithmetic:</strong> goods lost <em>in transit</em> are valued with the consignor's expenses only; goods lost <em>in the consignee's godown</em> are valued including the consignee's non-recurring expenses too — and the units base for per-unit cost excludes only the normal loss.</p>
   <div class="trap-block avoid-break">
     <span class="pill amber">&#9888; TRAP</span>
@@ -1545,11 +1543,11 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
 <div class="concept-block avoid-break">
   <p class="section-header">2.1.8 Del Credere &mdash; Who Books the Debtors and the Bad Debt</p>
   <table class="comparison-table avoid-break">
-    <tr><th style="width:30%;">Event</th><th>Del credere GIVEN</th><th>Del credere NOT given</th></tr>
+    <thead><tr><th style="width:30%;">Event</th><th>Del credere GIVEN</th><th>Del credere NOT given</th></tr></thead><tbody>
     <tr><td>Credit sales recorded by</td><td>Consignee (his Consignment Debtors A/c); consignor just debits Consignee's A/c</td><td>Consignor (his Consignment Debtors A/c); consignee passes no entry</td></tr>
     <tr><td>Bad debt hits</td><td>Consignee — debited to his Bad Debts A/c, absorbed against Commission Received</td><td>Consignor — Consignment A/c Dr. To Consignment Debtors A/c</td></tr>
     <tr><td>Consignor's risk</td><td>None for collection</td><td>Full collection risk</td></tr>
-  </table>
+  </tbody></table>
 </div>
 </div>
 <!-- ============ 2.2 JOINT VENTURE ============ -->
@@ -1563,7 +1561,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
 </div>
 
 <table class="comparison-table avoid-break">
-  <tr><th style="width:22%;">Point</th><th>Joint Venture</th><th>Consignment</th></tr>
+  <thead><tr><th style="width:22%;">Point</th><th>Joint Venture</th><th>Consignment</th></tr></thead><tbody>
   <tr><td>Relation</td><td>Co-venturers are OWNERS</td><td>Principal and agent</td></tr>
   <tr><td>Accounting methods</td><td>Multiple methods available</td><td>Only one method</td></tr>
   <tr><td>Ownership of goods</td><td>Belongs to the co-venturers jointly</td><td>Stays with the consignor; possession alone passes</td></tr>
@@ -1571,10 +1569,10 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
   <tr><td>Management</td><td>Co-venturers enjoy full powers and contribute funds</td><td>Consignee simply obeys the principal's instructions</td></tr>
   <tr><td>Finance</td><td>Contributed by all co-venturers in a proportion</td><td>Invested entirely by the consignor</td></tr>
   <tr><td>Risk</td><td>Shared between venturers</td><td>Sales are at the consignor's risk</td></tr>
-</table>
+</tbody></table>
 
 <table class="comparison-table avoid-break">
-  <tr><th style="width:24%;">Point</th><th>Joint Venture</th><th>Partnership</th></tr>
+  <thead><tr><th style="width:24%;">Point</th><th>Joint Venture</th><th>Partnership</th></tr></thead><tbody>
   <tr><td>Firm name</td><td>Carried on WITHOUT a firm's name</td><td>Carried on with a firm's name</td></tr>
   <tr><td>Parties called</td><td>Co-venturers</td><td>Partners</td></tr>
   <tr><td>Continuity</td><td>Temporary — ends with the particular venture</td><td>Continuous</td></tr>
@@ -1583,7 +1581,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
   <tr><td>Minor</td><td>Generally not admitted</td><td>May be admitted for benefits only</td></tr>
   <tr><td>Governing Act</td><td>No enactment applies</td><td>Indian Partnership Act, 1932</td></tr>
   <tr><td>Number of members</td><td>No limit</td><td>Limited to 20 (ordinary trade), 10 (banking)</td></tr>
-</table>
+</tbody></table>
 
 <div class="concept-block avoid-break">
   <p class="section-header">2.2.1 Method I — Separate Set of Books</p>
@@ -1594,7 +1592,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
   <li><strong>Co-venturers' A/cs</strong> — each venturer's personal claim, settled through the Joint Bank A/c at the end.</li>
 </ol>
   <table class="comparison-table avoid-break">
-    <tr><th style="width:52%;">Transaction</th><th>Entry</th></tr>
+    <thead><tr><th style="width:52%;">Transaction</th><th>Entry</th></tr></thead><tbody>
     <tr><td>Contribution by co-venturers</td><td>Joint Bank A/c Dr. &nbsp;To Co-venturers' A/c</td></tr>
     <tr><td>Goods supplied by a co-venturer from own stock / expenses paid personally</td><td>Joint Venture A/c Dr. &nbsp;To Co-venturers' A/c</td></tr>
     <tr><td>Purchases / expenses out of joint funds</td><td>Joint Venture A/c Dr. &nbsp;To Joint Bank A/c</td></tr>
@@ -1606,7 +1604,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
     <tr><td>Profit on venture</td><td>Joint Venture A/c Dr. &nbsp;To Co-venturers' A/cs (in ratio)</td></tr>
     <tr><td>Loss on venture</td><td>Co-venturers' A/cs Dr. &nbsp;To Joint Venture A/c</td></tr>
     <tr><td>Final distribution</td><td>Co-venturers' A/cs Dr. &nbsp;To Joint Bank A/c</td></tr>
-  </table>
+  </tbody></table>
   <div class="trap-block avoid-break">
     <span class="pill amber">&#9888; TRAP</span>
     <p class="trap-label">&#9888; TRAP: CAPITAL vs REVENUE INSIDE A JOINT VENTURE</p>
@@ -1619,7 +1617,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
   <p class="section-header">2.2.2 Method II(a) — No Separate Books, Each Records ALL Transactions</p>
   <p class="body">No joint bank account exists. Each co-venturer opens, in his own books, a <strong>Joint Venture A/c</strong> and a <strong>personal account for the other co-venturer</strong>, and records EVERY transaction — his own and the other's. Each therefore computes the profit independently (the figures agree). Key entries in A's books:</p>
 <table class="comparison-table avoid-break">
-  <tr><th style="width:44%;">Event</th><th>Entry in A's books</th></tr>
+  <thead><tr><th style="width:44%;">Event</th><th>Entry in A's books</th></tr></thead><tbody>
   <tr><td>Goods supplied / expenses paid by A</td><td>Joint Venture A/c Dr. &nbsp;To Goods / Cash</td></tr>
   <tr><td>Goods supplied or expenses paid by B</td><td>Joint Venture A/c Dr. &nbsp;To B's A/c</td></tr>
   <tr><td>Advance given by A to B, or a bill accepted by A</td><td>B's A/c Dr. &nbsp;To Cash/Bank A/c &nbsp;To B/P A/c</td></tr>
@@ -1629,7 +1627,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
   <tr><td>Unsold goods taken by B</td><td>B's A/c Dr. &nbsp;To Joint Venture A/c</td></tr>
   <tr><td>Profit</td><td>Joint Venture A/c Dr. &nbsp;To B's A/c and To P&amp;L A/c (own share)</td></tr>
   <tr><td>Loss</td><td>B's A/c Dr., P&amp;L A/c Dr. (own share) &nbsp;To Joint Venture A/c</td></tr>
-</table>
+</tbody></table>
 </div>
 
 <div class="concept-block avoid-break">
@@ -1662,19 +1660,19 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
   <p class="section-header">2.3.1 Types of Bills</p>
   <p class="body"><strong>Documentary</strong> (supported by documents proving the transaction) vs <strong>Clean</strong> (no documents — carries higher interest). <strong>Demand</strong> (payable whenever presented, no fixed date) vs <strong>Usance</strong> (time-bound). <strong>Inland</strong> (payable in one country only) vs <strong>Foreign</strong> (payable outside India — export and import bills). <strong>Trade</strong> (drawn to settle a genuine trade transaction) vs <strong>Accommodation</strong> (drawn without consideration, to help someone raise funds — excluded from this syllabus beyond the comparison below).</p>
   <table class="comparison-table avoid-break">
-    <tr><th style="width:24%;">Point</th><th>Trade Bill</th><th>Accommodation Bill</th></tr>
+    <thead><tr><th style="width:24%;">Point</th><th>Trade Bill</th><th>Accommodation Bill</th></tr></thead><tbody>
     <tr><td>Objective</td><td>Facilitates a sale/purchase of goods</td><td>Helps someone needing financial assistance</td></tr>
     <tr><td>Consideration</td><td>Definite consideration exists</td><td>Drawn without consideration</td></tr>
     <tr><td>Credit extension</td><td>A form of credit extension</td><td>Not a form of credit extension</td></tr>
     <tr><td>Discounting proceeds</td><td>Remain with the holder</td><td>May be shared between the parties in an agreed ratio</td></tr>
     <tr><td>Recovery on dishonour</td><td>Recoverable through court</td><td>Drawer cannot sue the drawee</td></tr>
-  </table>
+  </tbody></table>
 </div>
 
 <div class="concept-block avoid-break">
   <p class="section-header">2.3.2 Due Date, Days of Grace and the Holiday Rules</p>
   <table class="comparison-table avoid-break">
-    <tr><th style="width:34%;">Situation</th><th>Rule</th></tr>
+    <thead><tr><th style="width:34%;">Situation</th><th>Rule</th></tr></thead><tbody>
     <tr><td>On demand / at sight / on presentation</td><td>Due as soon as presented; no time stated; NO days of grace</td></tr>
     <tr><td>After DATE bill</td><td>Period runs from the DATE OF THE BILL; + 3 days of grace</td></tr>
     <tr><td>After SIGHT bill</td><td>Period runs from the DATE OF ACCEPTANCE; + 3 days of grace</td></tr>
@@ -1682,7 +1680,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
     <tr><td>Period in DAYS</td><td>Exclude the transaction date, include the payment date, then add 3 days. Bill dated 5 June 2023 at 65 days &rarr; 25 (June) + 31 (July) + 9 (Aug) + 3 = 12 Aug 2023</td></tr>
     <tr><td>Due date falls on a NATIONAL holiday</td><td>Shift to the PRECEDING business day (26 Jan &rarr; 25 Jan; 15 Aug &rarr; 14 Aug)</td></tr>
     <tr><td>Due date declared an EMERGENCY holiday</td><td>Shift to the day AFTER (25 July &rarr; 26 July)</td></tr>
-  </table>
+  </tbody></table>
   <div class="trap-block avoid-break">
     <span class="pill amber">&#9888; TRAP</span>
     <p class="trap-label">&#9888; TRAP: THE TWO HOLIDAY RULES RUN IN OPPOSITE DIRECTIONS</p>
@@ -1699,13 +1697,13 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
 <div class="concept-block avoid-break">
   <p class="section-header">2.3.4 The Five Things a Holder Can Do With a Bill — and the Entries</p>
   <table class="comparison-table avoid-break">
-    <tr><th style="width:20%;">Situation</th><th>Drawer's key entries</th><th>On dishonour, drawer debits Drawee for</th></tr>
+    <thead><tr><th style="width:20%;">Situation</th><th>Drawer's key entries</th><th>On dishonour, drawer debits Drawee for</th></tr></thead><tbody>
     <tr><td>1. Retain till maturity</td><td>B/R Dr. To Drawee; on payment: Bank Dr. To B/R</td><td>Bill amount + noting charges (To B/R and To Bank)</td></tr>
     <tr><td>2. Discount with bank</td><td>Bank Dr. (net) + Discount Dr. To B/R; no entry on payment</td><td>Bill + noting charges (To Bank — the bank recovers from the holder)</td></tr>
     <tr><td>3. Endorse to a creditor</td><td>Endorsee Dr. To B/R; no entry on payment</td><td>Bill + noting charges (To Endorsee)</td></tr>
     <tr><td>4. Send to bank for collection</td><td>Bill for Collection Dr. To B/R; on payment: Bank Dr. + Collection Charges Dr. To Bill for Collection</td><td>Bill + noting charges (To Bill for Collection and To Bank)</td></tr>
     <tr><td>5. Bill retired under rebate (early payment)</td><td>Cash Dr. + Rebate/Discount Dr. To B/R</td><td>&mdash; (payment already made)</td></tr>
-  </table>
+  </tbody></table>
   <p class="body">The drawee's entries barely change across situations 1&ndash;4: acceptance (Drawer Dr. To B/P), payment (B/P Dr. To Bank), dishonour (B/P Dr. + Noting Charges Dr. To Drawer). On retirement he pays early: B/P Dr. To Cash and To Rebate/Discount — the rebate is his GAIN for the unexpired period, and the holder's loss.</p>
   <div class="formula-box avoid-break">
     <span class="formula-text" style="font-size:11pt;">Discount = Bill Amount &times; Remaining Period to Maturity &times; Rate of Interest</span>
@@ -1718,12 +1716,12 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
   <p class="section-header">2.3.5 Renewal of a Bill</p>
   <p class="body">When the drawee cannot pay on the due date, he may ask the drawer to cancel the old bill and draw a fresh one, sometimes paying part in cash. <strong>New bill amount = face value of the original bill &ndash; any cash paid + interest for the renewed period</strong> (interest may instead be paid in cash).</p>
 <table class="comparison-table avoid-break">
-  <tr><th style="width:30%;">Stage</th><th>Drawer's entry</th><th>Drawee's entry</th></tr>
+  <thead><tr><th style="width:30%;">Stage</th><th>Drawer's entry</th><th>Drawee's entry</th></tr></thead><tbody>
   <tr><td>Dishonour/cancellation of the old bill</td><td>Usual entries</td><td>B/P Dr. &nbsp;To Drawer</td></tr>
   <tr><td>Interest</td><td>Drawee Dr. &nbsp;To Interest</td><td>Interest Dr. &nbsp;To Drawer</td></tr>
   <tr><td>If interest is paid in cash</td><td>Cash A/c Dr. &nbsp;To Interest A/c</td><td>Interest A/c Dr. &nbsp;To Cash A/c</td></tr>
   <tr><td>Fresh bill</td><td>B/R Dr. &nbsp;To Drawee</td><td>Drawer Dr. &nbsp;To B/P</td></tr>
-</table>
+</tbody></table>
   <div class="trap-block avoid-break">
     <span class="pill amber">&#9888; TRAP</span>
     <p class="trap-label">&#9888; TRAP: RETIREMENT vs RENEWAL</p>
@@ -1957,12 +1955,12 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
 <div class="concept-block avoid-break">
   <p class="section-header">3.1.1 The Statement Chain and What Goes Where</p>
   <table class="comparison-table avoid-break">
-    <tr><th style="width:24%;">Statement</th><th>Debit side carries</th><th>Credit side carries</th><th style="width:22%;">Result goes to</th></tr>
+    <thead><tr><th style="width:24%;">Statement</th><th>Debit side carries</th><th>Credit side carries</th><th style="width:22%;">Result goes to</th></tr></thead><tbody>
     <tr><td>Manufacturing A/c</td><td>Opening WIP, raw materials consumed, direct labour, direct expenses, factory overheads</td><td>Closing WIP</td><td>Cost of goods manufactured &rarr; Trading A/c</td></tr>
     <tr><td>Trading A/c</td><td>Opening stock (finished goods), net purchases, direct expenses (freight inward, octroi, wages, power &amp; fuel, import duty)</td><td>Net sales, closing stock (at lower of cost and NRV)</td><td>Gross Profit / Gross Loss &rarr; P&amp;L A/c</td></tr>
     <tr><td>Profit &amp; Loss A/c</td><td>Administrative, selling &amp; distribution and financial expenses; bad debts; depreciation; abnormal losses; loss on sale of assets; export duty; freight outward</td><td>Gross profit, indirect incomes (interest, commission, discount received, profit on sale of assets)</td><td>Net Profit / Net Loss &rarr; Capital A/c</td></tr>
     <tr><td>Balance Sheet</td><td colspan="2">Liabilities (capital, long-term loans, current liabilities) against Assets (fixed, investments, current) — marshalled in rigidity, liquidity or mixed order</td><td>&mdash; (a position statement, not an account)</td></tr>
-  </table>
+  </tbody></table>
   <div class="trap-block avoid-break">
     <span class="pill amber">&#9888; TRAP</span>
     <p class="trap-label">&#9888; TRAP: IMPORT DUTY vs EXPORT DUTY, INWARD vs OUTWARD</p>
@@ -1974,31 +1972,27 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
 <div class="concept-block avoid-break">
   <table class="ledger-tbl avoid-break">
     <caption>Format of a Manufacturing Account</caption>
-    <tr><th colspan="4">Dr.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Manufacturing Account for the period ended &hellip;&hellip;&hellip;&hellip;&hellip;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Cr.</th></tr>
-    <tr><th>Particulars</th><th class="amt">Amount</th><th>Particulars</th><th class="amt">Amount</th></tr>
+    <thead><tr><th colspan="4">Dr.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Manufacturing Account for the period ended &hellip;&hellip;&hellip;&hellip;&hellip;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Cr.</th></tr><tr><th>Particulars</th><th class="amt">Amount</th><th>Particulars</th><th class="amt">Amount</th></tr></thead><tbody>
     <tr><td>To Opening WIP<br>To Raw Materials Consumed<br>To Direct Labour<br>To Direct Expenses<br>To Factory Overhead</td><td class="amt">&mdash;</td><td>By Trading A/c<br>(cost of finished goods transferred) (bal. fig.)<br>By Closing WIP</td><td class="amt">&mdash;</td></tr>
-  </table>
+  </tbody></table>
   <table class="ledger-tbl avoid-break">
     <caption>Format of a Trading Account</caption>
-    <tr><th colspan="4">Dr.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Trading Account for the year ended &hellip;&hellip;&hellip;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Cr.</th></tr>
-    <tr><th>Particulars</th><th class="amt">&#8377;</th><th>Particulars</th><th class="amt">&#8377;</th></tr>
+    <thead><tr><th colspan="4">Dr.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Trading Account for the year ended &hellip;&hellip;&hellip;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Cr.</th></tr><tr><th>Particulars</th><th class="amt">&#8377;</th><th>Particulars</th><th class="amt">&#8377;</th></tr></thead><tbody>
     <tr><td>Opening Stock (finished goods)<br>Purchases<br>&nbsp;&nbsp;Less: Purchase returns<br>Wages<br>Gross Profit (transferred to P&amp;L A/c)</td><td class="amt">&mdash;</td><td>Sales<br>&nbsp;&nbsp;Less: Sales returns<br>Closing Stock (finished goods)<br>Gross Loss (transferred to P&amp;L A/c)</td><td class="amt">&mdash;</td></tr>
-  </table>
+  </tbody></table>
 </div>
 
 <div class="concept-block avoid-break">
   <table class="ledger-tbl avoid-break">
     <caption>Format of a Profit &amp; Loss Account</caption>
-    <tr><th colspan="4">Dr.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Profit &amp; Loss Account for the year ended &hellip;&hellip;&hellip;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Cr.</th></tr>
-    <tr><th>Particulars</th><th class="amt">&#8377;</th><th>Particulars</th><th class="amt">&#8377;</th></tr>
+    <thead><tr><th colspan="4">Dr.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Profit &amp; Loss Account for the year ended &hellip;&hellip;&hellip;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Cr.</th></tr><tr><th>Particulars</th><th class="amt">&#8377;</th><th>Particulars</th><th class="amt">&#8377;</th></tr></thead><tbody>
     <tr><td>To Trading A/c (Gross Loss transferred)<br>To Administrative expenses (office salaries, communication, travel &amp; conveyance, office rent, advertising, audit fees, insurance, repairs &amp; maintenance)<br>To Selling &amp; Distribution expenses (bad debts, salesmen commission, interest on loans, depreciation &amp; amortisation)<br>To Financial expenses (bank charges, loss on sale of assets)<br>To Capital A/c (Net profit transferred)</td><td class="amt">&mdash;</td><td>By Trading A/c (Gross Profit transferred)<br>By Other Income (interest received, commission received, profit on sale of assets, rent received)<br>By Capital A/c (Net loss transferred)</td><td class="amt">&mdash;</td></tr>
-  </table>
+  </tbody></table>
   <table class="ledger-tbl avoid-break">
     <caption>Format of a Balance Sheet</caption>
-    <tr><th colspan="4">Balance Sheet as on &hellip;&hellip;&hellip;</th></tr>
-    <tr><th>Liabilities</th><th class="amt">&#8377;</th><th>Assets</th><th class="amt">&#8377;</th></tr>
+    <thead><tr><th colspan="4">Balance Sheet as on &hellip;&hellip;&hellip;</th></tr><tr><th>Liabilities</th><th class="amt">&#8377;</th><th>Assets</th><th class="amt">&#8377;</th></tr></thead><tbody>
     <tr><td>Capital<br>Long Term Liabilities: loans from banks or financial institutions<br>Current Liabilities: sundry creditors, bills payable, advances from customers, outstanding expenses</td><td class="amt">&mdash;</td><td>Fixed Assets: land, building less depreciation, plant &amp; machinery less depreciation, vehicles less depreciation, computer systems less depreciation, office equipment less depreciation<br>Current Assets: stocks, sundry debtors less provisions, bills receivables, advances to suppliers, prepaid expenses, cash at bank, cash in hand</td><td class="amt">&mdash;</td></tr>
-  </table>
+  </tbody></table>
 </div>
 
 <div class="concept-block avoid-break">
@@ -2011,7 +2005,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
   <p class="section-header">3.1.3 The Single-vs-Double Treatment Rule (the heart of adjustments)</p>
   <div class="definition-block"><p class="definition-text">An item ALREADY INSIDE the Trial Balance has completed its double entry — it appears ONCE in the final accounts. An adjustment given OUTSIDE the Trial Balance still needs both legs — it appears TWICE.</p></div>
   <table class="comparison-table avoid-break">
-    <tr><th style="width:36%;">Adjustment (given outside TB)</th><th>First hit</th><th>Second hit</th></tr>
+    <thead><tr><th style="width:36%;">Adjustment (given outside TB)</th><th>First hit</th><th>Second hit</th></tr></thead><tbody>
     <tr><td>Closing stock</td><td>Trading A/c (credit)</td><td>Balance Sheet (asset)</td></tr>
     <tr><td>Outstanding expense</td><td>Add to expense</td><td>Current liability</td></tr>
     <tr><td>Prepaid expense</td><td>Deduct from expense</td><td>Current asset</td></tr>
@@ -2020,7 +2014,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
     <tr><td>Depreciation</td><td>P&amp;L (debit)</td><td>Deduct from the asset</td></tr>
     <tr><td>Further bad debts + new provision</td><td>P&amp;L (via bad debts / provision working)</td><td>Deduct from debtors</td></tr>
     <tr><td>Interest on capital / drawings</td><td>P&amp;L (debit / credit)</td><td>Add to / deduct from capital</td></tr>
-  </table>
+  </tbody></table>
   <div class="trap-block avoid-break">
     <span class="pill amber">&#9888; TRAP</span>
     <p class="trap-label">&#9888; TRAP: CLOSING STOCK APPEARING INSIDE THE TRIAL BALANCE</p>
@@ -2057,7 +2051,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
 <div class="concept-block avoid-break">
   <p class="section-header">3.2.1 Receipts &amp; Payments A/c vs Income &amp; Expenditure A/c</p>
   <table class="comparison-table avoid-break">
-    <tr><th>Receipts &amp; Payments Account</th><th>Income &amp; Expenditure Account</th></tr>
+    <thead><tr><th>Receipts &amp; Payments Account</th><th>Income &amp; Expenditure Account</th></tr></thead><tbody>
     <tr><td>A summarised CASH BOOK; receipts debited, payments credited</td><td>Closely resembles the P&amp;L; incomes credited, expenditures debited</td></tr>
     <tr><td>CASH basis; items of ANY period (past, current, future) may sit in it; current-year outstanding excluded</td><td>ACCRUAL basis; current period only — other periods' amounts excluded, current outstanding added</td></tr>
     <tr><td>Records BOTH capital and revenue transactions</td><td>Records REVENUE transactions only</td></tr>
@@ -2065,32 +2059,30 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
     <tr><td>Ignores non-cash items (depreciation, bad debts)</td><td>Charges all such items to match against revenue</td></tr>
     <tr><td>Closing balance carried forward to next period's same account</td><td>Closing balance transferred to Capital/General/Accumulated Fund in the same period's Balance Sheet</td></tr>
     <tr><td>Helps prepare the I&amp;E A/c</td><td>Helps prepare the Balance Sheet</td></tr>
-  </table>
+  </tbody></table>
   <p class="body">Against the P&amp;L Account: the I&amp;E is prepared by not-for-profit entities; its credit balance is "excess of income over expenditure" (surplus, added to Capital Fund) and its debit balance the deficit (deducted); the P&amp;L's debit balance is a net loss deducted from capital.</p>
   <table class="ledger-tbl avoid-break">
     <caption>Format of a Receipts &amp; Payments Account</caption>
-    <tr><th colspan="4">Receipts &amp; Payments Account</th></tr>
-    <tr><th>Receipts</th><th class="amt">&#8377;</th><th>Payments</th><th class="amt">&#8377;</th></tr>
+    <thead><tr><th colspan="4">Receipts &amp; Payments Account</th></tr><tr><th>Receipts</th><th class="amt">&#8377;</th><th>Payments</th><th class="amt">&#8377;</th></tr></thead><tbody>
     <tr><td>To Balance b/f<br>&nbsp;&nbsp;Cash in hand<br>&nbsp;&nbsp;Cash at bank<br>To All Receipts (capital or revenue, may relate to any period &mdash; previous, current or subsequent)</td><td class="amt">&mdash;</td><td>By All Payments (capital or revenue, may relate to any period &mdash; previous, current or subsequent)<br>By Balance c/f<br>&nbsp;&nbsp;Cash in hand<br>&nbsp;&nbsp;Cash at bank</td><td class="amt">&mdash;</td></tr>
-  </table>
+  </tbody></table>
   <table class="ledger-tbl avoid-break">
     <caption>Format of an Income &amp; Expenditure Account</caption>
-    <tr><th colspan="4">Dr.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Income &amp; Expenditure Account for the year ended &hellip;&hellip;&hellip;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Cr.</th></tr>
-    <tr><th>Expenses</th><th class="amt">&#8377;</th><th>Income</th><th class="amt">&#8377;</th></tr>
+    <thead><tr><th colspan="4">Dr.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Income &amp; Expenditure Account for the year ended &hellip;&hellip;&hellip;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Cr.</th></tr><tr><th>Expenses</th><th class="amt">&#8377;</th><th>Income</th><th class="amt">&#8377;</th></tr></thead><tbody>
     <tr><td>To All Revenue expenses relating to current period<br>To Capital Fund (Surplus)</td><td class="amt">&mdash;</td><td>By All Revenue receipts relating to current period<br>By Capital Fund (Deficit)</td><td class="amt">&mdash;</td></tr>
-  </table>
+  </tbody></table>
 </div>
 
 <div class="concept-block avoid-break">
   <p class="section-header">3.2.2 Fund Accounting — Capital Fund and Special Funds</p>
   <p class="body"><strong>Capital Fund</strong> (General Fund / Accumulated Fund) is the NPO's capital: assets minus liabilities; the period's surplus or deficit and capitalised incomes are adjusted into it. A <strong>Special Fund</strong> (e.g. Building Fund) is created from special donations or a slice of surplus, and everything about it stays inside it:</p>
   <table class="comparison-table avoid-break">
-    <tr><th style="width:52%;">Event</th><th>Entry / treatment</th></tr>
+    <thead><tr><th style="width:52%;">Event</th><th>Entry / treatment</th></tr></thead><tbody>
     <tr><td>Special fund used to meet its expense</td><td>Special Fund A/c Dr. To Bank A/c — the fund balance stays on the liability side</td></tr>
     <tr><td>Special fund used to purchase an asset</td><td>Asset A/c Dr. To Bank A/c; AND Special Fund A/c Dr. To Capital Fund A/c (fund closed to the extent utilised)</td></tr>
     <tr><td>Income earned on the fund's investments</td><td>Credited to the SPECIAL FUND — never to the I&amp;E Account</td></tr>
     <tr><td>Residual fund balance finally transferred</td><td>Special Fund A/c Dr. To Capital Fund A/c</td></tr>
-  </table>
+  </tbody></table>
   <div class="trap-block avoid-break">
     <span class="pill amber">&#9888; TRAP</span>
     <p class="trap-label">&#9888; TRAP: SPECIAL FUND ITEMS LEAKING INTO THE I&amp;E ACCOUNT</p>
@@ -2102,7 +2094,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
 <div class="concept-block avoid-break">
   <p class="section-header">3.2.3 Treatment of the Classic Items</p>
   <table class="comparison-table avoid-break">
-    <tr><th style="width:28%;">Item</th><th>Treatment</th></tr>
+    <thead><tr><th style="width:28%;">Item</th><th>Treatment</th></tr></thead><tbody>
     <tr><td>Subscriptions</td><td>I&amp;E on accrual basis — current year only (the Subscription Account handles arrears and advances at both ends)</td></tr>
     <tr><td>Donation — specific purpose</td><td>Credit to that Special Fund (capital receipt)</td></tr>
     <tr><td>Donation — general</td><td>Follow the by-laws; else non-recurring &rarr; Capital Fund, recurring &rarr; I&amp;E income. Donations PAID by the concern &rarr; I&amp;E expense</td></tr>
@@ -2114,7 +2106,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
     <tr><td>Honorarium paid</td><td>Expense, debited to I&amp;E</td></tr>
     <tr><td>Restaurant / bar trading</td><td>Separate Trading A/c; only the resulting profit or loss moves to I&amp;E</td></tr>
     <tr><td>Endowment fund receipt</td><td>Capital receipt</td></tr>
-  </table>
+  </tbody></table>
 </div>
 
 <div class="concept-block avoid-break">
@@ -2368,7 +2360,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
 <div class="concept-block avoid-break">
   <p class="section-header">4.1.1 Methods of Costing — Match the Industry</p>
   <table class="comparison-table avoid-break">
-    <tr><th style="width:22%;">Method</th><th>Logic</th><th>Industries (from the Study Notes' table)</th></tr>
+    <thead><tr><th style="width:22%;">Method</th><th>Logic</th><th>Industries (from the Study Notes' table)</th></tr></thead><tbody>
     <tr><td>Job costing</td><td>Each customer-specified job costed separately on a job cost sheet</td><td>Printing, interior decoration, advertising, foundries</td></tr>
     <tr><td>Batch costing</td><td>Costs collected per batch &divide; units in the batch</td><td>Toys, biscuits, medicines/pharma batches, readymade garments</td></tr>
     <tr><td>Process costing</td><td>Continuous flow — output of Process I feeds Process II</td><td>Sugar, chemicals, steel, cement, soft drinks, oil refining, soap, pharmaceuticals</td></tr>
@@ -2376,14 +2368,14 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
     <tr><td>Contract costing</td><td>Job costing stretched over months/years of construction</td><td>House building, bridges, highways</td></tr>
     <tr><td>Multiple costing</td><td>Combination of methods for assembled products</td><td>Bicycles, aircraft, video/audio manufacturing</td></tr>
     <tr><td>Single/output costing</td><td>One homogeneous product</td><td>Breweries, coal, brick kiln</td></tr>
-  </table>
+  </tbody></table>
   <p class="body"><strong>Cost accounting SYSTEMS</strong> (how costs are treated, not which industry): Historical (after the fact — post-mortem), Absorption (all fixed + variable production costs absorbed into units; fixed manufacturing overhead enters stock), Direct/Marginal (only variable costs to the unit; fixed written off against contribution — the internal decision system), Standard (predetermined costs + variance analysis), Uniform (identical principles adopted industry-wide by agreement — NOT a distinct method).</p>
 </div>
 
 <div class="concept-block avoid-break">
   <p class="section-header">4.1.2 Cost Accounting vs Financial Accounting — the 14 Points</p>
   <table class="comparison-table avoid-break">
-    <tr><th style="width:20%;">Point</th><th>Financial Accounting</th><th>Cost Accounting</th></tr>
+    <thead><tr><th style="width:20%;">Point</th><th>Financial Accounting</th><th>Cost Accounting</th></tr></thead><tbody>
     <tr><td>Purpose</td><td>Results of the business as a whole, for external users</td><td>Information to management for planning, control, decisions</td></tr>
     <tr><td>Compulsion</td><td>Kept to meet Companies Act / Income Tax Act</td><td>Generally voluntary — but the Companies Act now mandates cost records in some manufacturing industries</td></tr>
     <tr><td>Recording</td><td>Subjective — by NATURE of expense</td><td>Objective — by PURPOSE for which cost is incurred</td></tr>
@@ -2398,7 +2390,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
     <tr><td>Efficiency</td><td>No relative-efficiency information</td><td>Valuable information on plants, machinery, workers</td></tr>
     <tr><td>Stock valuation</td><td>Cost or market price, whichever is LESS</td><td>Always at COST</td></tr>
     <tr><td>Type of science</td><td>Positive (legally rigid)</td><td>Positive AND normative (budgets, standards)</td></tr>
-  </table>
+  </tbody></table>
   <div class="shortcut-box avoid-break"><span class="shortcut-label">&#9889; SHORTCUT:</span> the three most-tested rows are Stock Valuation (financial: lower of cost/market; cost: COST only), Recording (subjective vs objective) and Figures (facts vs facts + estimates).</div>
 </div>
 
@@ -2428,19 +2420,19 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
   <p class="section-header">4.3 Definition of Cost, Cost Centre, Cost Unit and Cost Drivers <span style="float:right">&#9733;&#9733;&#9733; HIGH</span></p>
   <div class="definition-block"><p class="definition-text">Cost (noun): the amount of expenditure, actual or notional, incurred on or attributable to a specified thing or activity. Cost (verb): to ascertain the cost of a specified thing or activity. &mdash; CIMA Official Terminology</p></div>
   <table class="comparison-table avoid-break">
-    <tr><th style="width:22%;">Term</th><th>One-line meaning</th><th>Exam hook</th></tr>
+    <thead><tr><th style="width:22%;">Term</th><th>One-line meaning</th><th>Exam hook</th></tr></thead><tbody>
     <tr><td>Cost Centre</td><td>WHERE costs are collected — location, function, activity or equipment (CIMA); a responsibility/expense centre</td><td>Personal vs impersonal; Operating (machine shop, call centre) vs Support-service (power house, stores, help desk)</td></tr>
     <tr><td>Cost Object</td><td>WHAT you want the cost of — product, service, centre, activity, customer, channel (CIMA; GACAP; CAS-1 para 4.7)</td><td>The target of ascertainment</td></tr>
     <tr><td>Cost Unit</td><td>The MEASURE — a unit of product or service in which cost is expressed (CAS-1 para 4.5)</td><td>Power &rarr; KWH; cement &rarr; MT; automobile &rarr; number of vehicles; audit firm &rarr; chargeable hour</td></tr>
     <tr><td>Composite Cost Unit</td><td>Two-part units for services</td><td>Hotel &rarr; room-day; hospital &rarr; patient-day; goods transport &rarr; tonne-km; passenger transport &rarr; passenger-km</td></tr>
     <tr><td>Cost Driver</td><td>What TRIGGERS a change in an activity's cost — the allocator in Activity Based Costing</td><td>Set-ups/set-up hours &rarr; machine set-up; inspection hours &rarr; inspection; no. of orders &rarr; ordering; no. of deliveries &rarr; delivery</td></tr>
-  </table>
+  </tbody></table>
 </div>
 
 <div class="concept-block avoid-break">
   <p class="section-header">4.3.1 The Decision-Making Cost Concepts</p>
   <table class="comparison-table avoid-break">
-    <tr><th style="width:26%;">Concept</th><th>Meaning</th></tr>
+    <thead><tr><th style="width:26%;">Concept</th><th>Meaning</th></tr></thead><tbody>
     <tr><td>Out-of-Pocket Cost</td><td>Involves actual cash payment (depreciation does NOT); relevant to price fixation in recession and make-or-buy calls</td></tr>
     <tr><td>Opportunity Cost</td><td>Value of the best alternative forgone — idle capacity rentable at &#8377;4,000 p.m. adds &#8377;4,000 to the cost of choosing to produce</td></tr>
     <tr><td>Sunk Cost</td><td>Irreversibly incurred; irrecoverable; NEVER relevant to a decision</td></tr>
@@ -2448,7 +2440,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
     <tr><td>Relevant Cost</td><td>Pertinent to the decision at hand — future costs; historical costs are irrelevant unless unchanged in future</td></tr>
     <tr><td>Avoidable / Unavoidable</td><td>Avoidable: should not have been incurred at given efficiency. Unavoidable: inescapable, fixed in nature</td></tr>
     <tr><td>Controllable / Non-controllable</td><td>Subject to direct control at SOME level of supervision / at NO level</td></tr>
-  </table>
+  </tbody></table>
   <div class="trap-block avoid-break">
     <span class="pill amber">&#9888; TRAP</span>
     <p class="trap-label">&#9888; TRAP: SUNK vs OPPORTUNITY COST IN "RELEVANCE" QUESTIONS</p>
@@ -2471,13 +2463,13 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
   <div class="definition-block"><p class="definition-text">CAS-1 para 4.3: classification of cost is the arrangement of items of costs in logical groups having regard to their NATURE (subjective classification) and PURPOSE (objective classification). Para 5: every item of cost shall be classified.</p></div>
   <p class="body">Para 6 of CAS-1 lays down FIVE classifications:</p>
   <table class="comparison-table avoid-break">
-    <tr><th style="width:30%;">Classification (CAS-1 para)</th><th>Categories</th></tr>
+    <thead><tr><th style="width:30%;">Classification (CAS-1 para)</th><th>Categories</th></tr></thead><tbody>
     <tr><td>1. By NATURE of expense (6.1)</td><td>Material &middot; Employee &middot; Expenses (costs other than material and employee — utilities, bought-out services, job processing)</td></tr>
     <tr><td>2. By TRACEABILITY to a cost object (6.2)</td><td>Direct (assignable in an economically feasible way: direct material, direct employee, direct expenses) &middot; Indirect (everything else, same three sub-heads)</td></tr>
     <tr><td>3. By FUNCTION (6.3)</td><td>Production (materials to PRIMARY packing) &middot; Administration &middot; Selling (creating and stimulating demand, securing orders) &middot; Distribution (from packed-product dispatch to reconditioned returned empties) &middot; Research &middot; Development</td></tr>
     <tr><td>4. By BEHAVIOUR (6.4)</td><td>Fixed (total unchanged with volume) &middot; Variable (total varies directly) &middot; Semi-variable (both elements)</td></tr>
     <tr><td>5. By nature of PRODUCTION PROCESS (6.5)</td><td>Job &middot; Batch &middot; Contract &middot; Process &middot; Joint costs (common resources producing two or more products simultaneously)</td></tr>
-  </table>
+  </tbody></table>
   <div class="trap-block avoid-break">
     <span class="pill amber">&#9888; TRAP</span>
     <p class="trap-label">&#9888; TRAP: FIXED PER UNIT, VARIABLE PER UNIT</p>
@@ -2520,14 +2512,14 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
 <div class="concept-block avoid-break">
   <p class="section-header">4.5.1 The Ladder — Learn the Sequence Cold</p>
   <table class="comparison-table avoid-break">
-    <tr><th style="width:38%;">Stage</th><th>Built as</th></tr>
+    <thead><tr><th style="width:38%;">Stage</th><th>Built as</th></tr></thead><tbody>
     <tr><td><strong>I. PRIME COST</strong></td><td>Direct Material consumed (opening stock + purchases + carriage inwards &ndash; closing stock) + Direct Wages + Direct Expenses</td></tr>
     <tr><td><strong>II. FACTORY / WORKS COST</strong></td><td>Prime Cost + Factory Overheads (indirect materials, loose tools, indirect wages, factory rent/lighting/power/repairs, drawing office, research &amp; experiment, plant depreciation, factory insurance, works manager's salary) + Opening WIP &ndash; Closing WIP</td></tr>
     <tr><td><strong>III. COST OF PRODUCTION</strong></td><td>Works Cost + Office &amp; Administrative Overheads (office rent, office salaries, office insurance, telephone &amp; postage, printing &amp; stationery, furniture depreciation, legal expenses, audit fees, bank charges)</td></tr>
     <tr><td><strong>IV. COST OF GOODS SOLD</strong></td><td>Cost of Production + Opening Stock of Finished Goods &ndash; Closing Stock of Finished Goods</td></tr>
     <tr><td><strong>V. COST OF SALES</strong></td><td>COGS + Selling &amp; Distribution Overheads (showroom rent, salesmen's salaries &amp; commission, travelling, advertising, collection expenses, carriage OUTWARD, delivery-van depreciation, samples &amp; free gifts)</td></tr>
     <tr><td><strong>VI./VII. PROFIT &rarr; SALES</strong></td><td>Sales = Cost of Sales + Profit</td></tr>
-  </table>
+  </tbody></table>
   <div class="shortcut-box avoid-break"><span class="shortcut-label">&#9889; SHORTCUT:</span> three stock adjustments, one per stage: RAW MATERIAL stocks inside Direct Material; WIP stocks at Works Cost; FINISHED GOODS stocks between Cost of Production and COGS. If you remember where each stock pair lives, every reverse-engineering MCQ solves itself.</div>
 </div>
 
@@ -2663,7 +2655,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
 <!-- ===== closing ===== -->
 <div class="cover-band-dark" style="font-size:14pt;">The Final Ladder &mdash; Every Formula in Paper 2 on One Page</div>
   <table class="comparison-table avoid-break" style="margin-top:4mm;">
-    <tr><th style="width:26%;">Area</th><th>Formula</th></tr>
+    <thead><tr><th style="width:26%;">Area</th><th>Formula</th></tr></thead><tbody>
     <tr><td>Accounting equation (M1)</td><td>Assets = Liabilities + Equity (Capital) &mdash; true after EVERY transaction</td></tr>
     <tr><td>SLM depreciation (M1)</td><td>(Cost + capital costs &ndash; Scrap) &divide; Useful life &mdash; same charge every year, on original cost</td></tr>
     <tr><td>WDV depreciation (M1)</td><td>Opening book value &times; Rate; Rate = [1 &ndash; <sup>n</sup>&radic;(Scrap &divide; Cost)] &times; 100 &mdash; falling charge, never reaches zero</td></tr>
@@ -2682,7 +2674,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
     <tr><td>Margin conversions (M3)</td><td>Profit 20% ON SALES = 25% mark-up on cost (20/80); x% on sales &rarr; x/(100&ndash;x) on cost</td></tr>
     <tr><td>Prime &amp; conversion cost (M4)</td><td>Prime = DM + DL + DE; Conversion = DL + DE + Production OH (DL is in both)</td></tr>
     <tr><td>The cost sheet ladder (M4)</td><td>Prime &rarr; (+factory OH, &plusmn;WIP) Works &rarr; (+admin OH) Production &rarr; (&plusmn;finished goods) COGS &rarr; (+S&amp;D OH) Cost of Sales &rarr; (+Profit) Sales</td></tr>
-  </table>
+  </tbody></table>
 </div>
 
 <!-- ============ MASTER TRAP LIST ============ -->
@@ -2719,14 +2711,14 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
 <div class="page page-break">
   <div class="cover-band-dark" style="font-size:14pt;">The Last 48 Hours &mdash; How to Use This Document Before the Exam</div>
   <table class="comparison-table avoid-break" style="margin-top:4mm;">
-    <tr><th style="width:24%;">When</th><th>What to do</th></tr>
+    <thead><tr><th style="width:24%;">When</th><th>What to do</th></tr></thead><tbody>
     <tr><td>48 hours out (90 min)</td><td>Read all four 15-fact REVISION STRIPS slowly — 60 facts, one screenful of the entire paper. Star any fact that feels unfamiliar and re-read that topic's page only.</td></tr>
     <tr><td>48 hours out (60 min)</td><td>Re-attempt every Worked Example cold, covering the solution first — then check your working against it. Mark the ones you got wrong or slow on; those topics get tomorrow's attention.</td></tr>
     <tr><td>24 hours out (60 min)</td><td>Do all four CLOSING DRILLS on rough paper. Retrieval, not re-reading, is what converts to marks. Re-attempt yesterday's Worked Examples you got wrong.</td></tr>
     <tr><td>24 hours out (30 min)</td><td>Redraw the four MODULE MIND MAPS from memory; compare; fix gaps. Then read the MASTER TRAP LIST once, slowly.</td></tr>
     <tr><td>Exam morning (20 min)</td><td>THE FINAL LADDER formula page + the trap list. Nothing new. Nothing else.</td></tr>
     <tr><td>In the hall</td><td>No negative marking &rarr; answer all 50. Set your per-question pace (total minutes &divide; 50). Theory sweep first; numericals second; the requirement line first in every numerical.</td></tr>
-  </table>
+  </tbody></table>
   <p class="body" style="margin-top:4mm;">Weight-based priority if time runs short: Module 1 (30%) and Module 4 (30%) first, Module 3 (25%) next, Module 2 (15%) last — but the Module 2 due-date and stock-valuation rules are quick marks; never drop them entirely.</p>
   <p class="body" style="font-size:9.5pt;color:var(--gray);">This page is exam strategy, not syllabus content — every fact it points to lives in the verified module pages above.</p>
 </div>

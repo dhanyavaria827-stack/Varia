@@ -106,7 +106,9 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.7; color: 
 .comparison-table tr { page-break-inside: avoid; break-inside: avoid; }
 .comparison-table th { background: var(--green-deep); color: var(--white); font-family: var(--font-head); font-weight: 600; font-size: 10pt; text-transform: uppercase; letter-spacing: 0.04em; padding: 6px 10px; text-align: left; }
 .comparison-table td { padding: 5px 10px; border: 1px solid var(--border-light); font-family: var(--font-body); font-size: 10pt; vertical-align: top; overflow-wrap: break-word; }
-.comparison-table tr:nth-child(even) td { background: var(--green-faint); }
+.comparison-table tbody tr:nth-child(odd) td { background: var(--green-faint); }
+thead { display: table-header-group; }
+tfoot { display: table-footer-group; }
 .comparison-table tr.exam-trick td { background: var(--green-pale); font-family: var(--font-head); font-weight: 700; font-size: 10pt; }
 .module-divider { background: var(--green-deep); color: var(--white); min-height: 238mm; max-height: 250mm; page-break-inside: avoid; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 30mm 20mm; }
 .module-divider .rule { width: 80%; height: 2px; background: var(--white); margin: 16px auto; }
@@ -181,7 +183,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.7; color: 
 
   <p class="section-header" style="margin-top:5mm;">Night-Before Schedule</p>
   <table class="comparison-table avoid-break">
-    <tr><th>Time Slot</th><th>Task</th><th>Why</th></tr>
+    <thead><tr><th>Time Slot</th><th>Task</th><th>Why</th></tr></thead><tbody>
     <tr><td>7:00 – 8:30 PM</td><td>Module 2 — Indian Contract Act, 1872</td><td>Single biggest module, 30% alone</td></tr>
     <tr><td>8:30 – 9:30 PM</td><td>Module 3 — Sale of Goods Act, 1930</td><td>20%; frequently confused with Contract Act basics</td></tr>
     <tr><td>9:30 – 10:30 PM</td><td>Module 4 — Negotiable Instruments Act, 1881</td><td>20%; three instruments, precise distinctions</td></tr>
@@ -189,7 +191,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.7; color: 
     <tr><td>11:15 – 11:40 PM</td><td>Module 1 — Introduction</td><td>10%; court hierarchy and Constitutional Articles</td></tr>
     <tr><td>Morning, 40 min</td><td>Every module's Revision Strip + Trap Analysis</td><td>Spaced second exposure, catches confused pairs</td></tr>
     <tr><td>Last 30 min</td><td>Re-attempt every Worked Example cold, covering the solution first — then check your working against it</td><td>Simulates real exam time pressure</td></tr>
-  </table>
+  </tbody></table>
 
   <p class="section-header" style="margin-top:5mm;">Exam Strategy — Precision-Recall Paper</p>
   <div class="body">
@@ -261,14 +263,14 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.7; color: 
 <div class="page page-break">
   <div class="cover-band-dark" style="font-size:14pt;">Syllabus Weight &amp; Attack Priority</div>
   <table class="comparison-table" style="margin-top:6mm;">
-    <tr><th>Section</th><th>Module</th><th>Weight</th><th>Est. MCQs</th><th>Priority</th></tr>
+    <thead><tr><th>Section</th><th>Module</th><th>Weight</th><th>Est. MCQs</th><th>Priority</th></tr></thead><tbody>
     <tr><td rowspan="4">A — Business Laws (80%)</td><td>1. Introduction</td><td>10%</td><td>~5</td><td>★★</td></tr>
     <tr><td>2. Indian Contract Act, 1872</td><td>30%</td><td>~15</td><td>★★★</td></tr>
     <tr><td>3. Sale of Goods Act, 1930</td><td>20%</td><td>~10</td><td>★★★</td></tr>
     <tr><td>4. Negotiable Instruments Act, 1881</td><td>20%</td><td>~10</td><td>★★★</td></tr>
     <tr><td>B — Business Communication (20%)</td><td>5. Business Communication</td><td>20%</td><td>~10</td><td>★★</td></tr>
     <tr class="exam-trick"><td colspan="5">★ EXAM TRICK: Module 2 alone (Contract Act) is worth as much as Modules 1+5 combined — the Contract Act is also the FOUNDATION the Sale of Goods Act builds on, so weak Contract Act basics cost marks twice over.</td></tr>
-  </table>
+  </tbody></table>
   <p class="body" style="margin-top:5mm;">This is a precision paper: correctly recalling which Section of which Act governs a scenario, and which named case established a principle, matters more than working through multi-step reasoning. The four Business Law Acts are related but distinct — the Sale of Goods Act, 1930 was originally PART of the Indian Contract Act, 1872 before being separated into its own statute, which is exactly why the exam likes testing whether a scenario needs general contract principles or the specific sale-of-goods rules.</p>
 </div>
 
@@ -486,7 +488,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.7; color: 
   <p class="section-header" style="font-size:13pt;">Tribunals</p>
   <p class="body"><strong>Tribunals</strong> are quasi-judicial bodies set up to handle specialised or technical matters, and they mix judicial members with technical members on their bench. Only persons with a genuine judicial background &mdash; meaning former High Court judges, or lawyers who are themselves eligible for appointment to a High Court &mdash; may serve as Judicial Members on a tribunal. The Tribunals Reforms (Rationalisation and Conditions of Service) Ordinance, 2021, abolished nine separate tribunals, transferring their functions directly to the High Courts.</p>
   <table class="comparison-table avoid-break">
-    <tr><th>Tribunal</th><th>Establishing Act</th><th>Appellate Court</th></tr>
+    <thead><tr><th>Tribunal</th><th>Establishing Act</th><th>Appellate Court</th></tr></thead><tbody>
     <tr><td>Industrial Tribunal</td><td>Industrial Disputes Act, 1947</td><td>High Court</td></tr>
     <tr><td>Income-Tax Appellate Tribunal</td><td>Income-tax Act, 1961</td><td>High Court</td></tr>
     <tr><td>Customs, Excise &amp; Service Tax Appellate Tribunal</td><td>Customs Act, 1962</td><td>High Court</td></tr>
@@ -502,7 +504,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.7; color: 
     <tr><td>Armed Forces Tribunal</td><td>Armed Forces Tribunal Act, 2007</td><td>Supreme Court</td></tr>
     <tr><td>National Green Tribunal</td><td>National Green Tribunal Act, 2010</td><td>Supreme Court</td></tr>
     <tr class="exam-trick"><td colspan="3">&#9733; EXAM TRICK: most tribunals appeal to the High Court, but the newer/specialised ones (Central Administrative, Securities Appellate, NCLAT, Consumer Disputes, Electricity, Armed Forces, National Green, Telecom) skip straight to the Supreme Court.</td></tr>
-  </table>
+  </tbody></table>
 </div>
 
 <div class="concept-block avoid-break">
@@ -610,7 +612,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.7; color: 
 <p class="section-header">Module 1 — Comparison Tables</p>
 
 <table class="comparison-table avoid-break">
-  <tr><th>Jurisdiction</th><th>Article</th><th>What It Covers</th></tr>
+  <thead><tr><th>Jurisdiction</th><th>Article</th><th>What It Covers</th></tr></thead><tbody>
   <tr><td>Original</td><td>Article 131</td><td>Union-State or State-State disputes</td></tr>
   <tr><td>Writ</td><td>Article 32</td><td>Fundamental Rights violations only</td></tr>
   <tr><td>Appellate</td><td>—</td><td>Appeals from High Court orders</td></tr>
@@ -618,15 +620,15 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.7; color: 
   <tr><td>Review</td><td>Article 137</td><td>Reviewing the Court's own past orders</td></tr>
   <tr><td>Contempt</td><td>Article 129</td><td>Punishing contempt of itself (Article 215 = same power for High Courts)</td></tr>
   <tr class="exam-trick"><td colspan="3">★ EXAM TRICK: the Study Notes list SIX powers of the Supreme Court — Original, Writ, Appellate, Advisory, Contempt and Review. Questions often test which single Article number matches which named power, and &ldquo;how many&rdquo; itself is a favourite MCQ.</td></tr>
-</table>
+</tbody></table>
 
 <table class="comparison-table avoid-break">
-  <tr><th>Basis</th><th>Supreme Court (Art. 32)</th><th>High Court (Art. 226)</th></tr>
+  <thead><tr><th>Basis</th><th>Supreme Court (Art. 32)</th><th>High Court (Art. 226)</th></tr></thead><tbody>
   <tr><td>Rights covered</td><td>Fundamental Rights only</td><td>Fundamental Rights + ordinary legal rights</td></tr>
   <tr><td>Scope</td><td>Narrower</td><td>Wider</td></tr>
   <tr><td>Territorial reach</td><td>All of India</td><td>The Court's own state/territory</td></tr>
   <tr class="exam-trick"><td colspan="3">★ EXAM TRICK: Article 226 is deliberately WIDER than Article 32 — a common wrong-answer instinct assumes the Supreme Court's power must always be "bigger," but on writs specifically, the High Court's reach is broader.</td></tr>
-</table>
+</tbody></table>
 
 </div>
 
@@ -1372,29 +1374,29 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.7; color: 
 <p class="section-header">Module 2 — Comparison Tables</p>
 
 <table class="comparison-table avoid-break">
-  <tr><th>Basis</th><th>Void Agreement [2(g)]</th><th>Voidable Contract [2(i)]</th><th>Void Contract [2(j)]</th></tr>
+  <thead><tr><th>Basis</th><th>Void Agreement [2(g)]</th><th>Voidable Contract [2(i)]</th><th>Void Contract [2(j)]</th></tr></thead><tbody>
   <tr><td>Enforceable at formation?</td><td>Never</td><td>Yes, at one party's option</td><td>Yes, fully</td></tr>
   <tr><td>When does it fail?</td><td>Ab initio</td><td>Only if the option-holder avoids it</td><td>Later, on a supervening event</td></tr>
   <tr class="exam-trick"><td colspan="4">★ EXAM TRICK: only a VOIDABLE contract gives one party a genuine choice — the other two are unenforceable regardless of anyone's preference.</td></tr>
-</table>
+</tbody></table>
 
 <table class="comparison-table avoid-break">
-  <tr><th>Basis</th><th>Indemnity [Sec 124]</th><th>Guarantee [Sec 126]</th></tr>
+  <thead><tr><th>Basis</th><th>Indemnity [Sec 124]</th><th>Guarantee [Sec 126]</th></tr></thead><tbody>
   <tr><td>Parties</td><td>Two</td><td>Three (Creditor, Principal Debtor, Surety)</td></tr>
   <tr><td>Covers</td><td>Promisor's OR a third person's conduct</td><td>A named third person's specific default</td></tr>
   <tr><td>Liability</td><td>Primary</td><td>Co-extensive with the principal debtor's</td></tr>
   <tr class="exam-trick"><td colspan="3">★ EXAM TRICK: count the parties first — two means Indemnity, three (with a named debtor whose default is covered) means Guarantee.</td></tr>
-</table>
+</tbody></table>
 
 <table class="comparison-table avoid-break">
-  <tr><th>Discharge Mode</th><th>Core Mechanism</th></tr>
+  <thead><tr><th>Discharge Mode</th><th>Core Mechanism</th></tr></thead><tbody>
   <tr><td>Novation [Sec 62]</td><td>An entirely NEW contract replaces the old</td></tr>
   <tr><td>Alteration [Sec 62]</td><td>Same contract, one or more TERMS change</td></tr>
   <tr><td>Rescission [Sec 62]</td><td>Cancelled outright</td></tr>
   <tr><td>Remission [Sec 63]</td><td>Promisee accepts LESS than owed</td></tr>
   <tr><td>Waiver [Sec 63]</td><td>Promisee gives up the right entirely</td></tr>
   <tr class="exam-trick"><td colspan="2">★ EXAM TRICK: five distinct mechanisms sit under just two Sections (62 and 63) — the exam tests which specific mechanism a scenario describes, not just "was the contract discharged by agreement."</td></tr>
-</table>
+</tbody></table>
 
 </div>
 
@@ -1502,7 +1504,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.7; color: 
 </div>
 
 <table class="comparison-table avoid-break">
-  <tr><th>Basis</th><th>Sale</th><th>Agreement to Sell</th></tr>
+  <thead><tr><th>Basis</th><th>Sale</th><th>Agreement to Sell</th></tr></thead><tbody>
   <tr><td>Transfer</td><td>Ownership transfers immediately</td><td>Ownership transfers at a future date</td></tr>
   <tr><td>Type</td><td>Executed contract</td><td>Executory contract</td></tr>
   <tr><td>Right created</td><td>Right in rem</td><td>Right in personam</td></tr>
@@ -1512,7 +1514,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.7; color: 
   <tr><td>Seller's insolvency</td><td>Buyer can claim the goods from the receiver</td><td>Buyer only gets a rateable dividend on amount paid</td></tr>
   <tr><td>Tax</td><td>Liable for sales tax</td><td>Liable for GST only once it "ripens" into a sale</td></tr>
   <tr class="exam-trick"><td colspan="3">★ EXAM TRICK: an Agreement to Sell isn't a weaker contract — it's simply timing-delayed; once its condition/date arrives, it automatically becomes a Sale without a fresh agreement.</td></tr>
-</table>
+</tbody></table>
 
 <div class="concept-block avoid-break">
   <span class="pill">CONCEPT</span>
@@ -1752,21 +1754,21 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.7; color: 
 <p class="section-header">Module 3 — Comparison Tables</p>
 
 <table class="comparison-table avoid-break">
-  <tr><th>Basis</th><th>Condition [Sec 12(2)]</th><th>Warranty [Sec 12(3)]</th></tr>
+  <thead><tr><th>Basis</th><th>Condition [Sec 12(2)]</th><th>Warranty [Sec 12(3)]</th></tr></thead><tbody>
   <tr><td>Nature</td><td>Essential to the contract's main purpose</td><td>Collateral (secondary) to the main purpose</td></tr>
   <tr><td>Remedy on breach</td><td>Repudiate (reject) + damages</td><td>Damages only</td></tr>
   <tr><td>Can be downgraded?</td><td>Yes — treated as a warranty breach if the buyer chooses to keep the goods</td><td>No — never upgraded into a condition breach</td></tr>
   <tr class="exam-trick"><td colspan="3">★ EXAM TRICK: the label in the contract text is NOT decisive — Sec 12(4) looks at actual construction/substance.</td></tr>
-</table>
+</tbody></table>
 
 <table class="comparison-table avoid-break">
-  <tr><th>Unpaid Seller's Right</th><th>Key Requirement</th></tr>
+  <thead><tr><th>Unpaid Seller's Right</th><th>Key Requirement</th></tr></thead><tbody>
   <tr><td>Lien [Sec 47]</td><td>Seller must STILL have possession</td></tr>
   <tr><td>Stoppage in Transit [Sec 50]</td><td>Goods IN TRANSIT + buyer INSOLVENT</td></tr>
   <tr><td>Resale [Sec 54]</td><td>Perishable goods, reserved resale right, or notice after lien/stoppage</td></tr>
   <tr><td>Suit for Price [Sec 55]</td><td>Property has passed, buyer wrongfully refuses to pay</td></tr>
   <tr class="exam-trick"><td colspan="2">★ EXAM TRICK: Lien and Stoppage in Transit are mutually exclusive by definition — you can't have both possession AND transit at once for the same goods.</td></tr>
-</table>
+</tbody></table>
 
 </div>
 
@@ -1970,7 +1972,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.7; color: 
 
 <p class="section-header">4.3 Difference Between Promissory Note, Bill of Exchange &amp; Cheque <span style="float:right">★★★ HIGHEST-VALUE TOPIC</span></p>
 <table class="comparison-table avoid-break">
-  <tr><th>Basis</th><th>Promissory Note</th><th>Bill of Exchange</th><th>Cheque</th></tr>
+  <thead><tr><th>Basis</th><th>Promissory Note</th><th>Bill of Exchange</th><th>Cheque</th></tr></thead><tbody>
   <tr><td>Parties</td><td>2 — Maker, Payee</td><td>3 — Drawer, Drawee, Payee</td><td>3 — Drawer, Banker, Payee</td></tr>
   <tr><td>Nature</td><td>Unconditional PROMISE by maker</td><td>Unconditional ORDER to drawee</td><td>Drawn on a specified banker, payable on demand</td></tr>
   <tr><td>Acceptance</td><td>Not necessary</td><td>Necessary if payable after sight</td><td>Not necessary</td></tr>
@@ -1983,7 +1985,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.7; color: 
   <tr><td>Number, date, place</td><td>Not essential</td><td>Not essential</td><td>Essential</td></tr>
   <tr><td>Stamping</td><td>Must be stamped</td><td>Must be stamped</td><td>Need not be stamped</td></tr>
   <tr class="exam-trick"><td colspan="4">★ EXAM TRICK: only a Cheque can be payable to bearer on demand — a Note or Bill payable "to bearer" AND "on demand" simultaneously is not permitted under the Act.</td></tr>
-</table>
+</tbody></table>
 
 </div>
 
@@ -2096,14 +2098,14 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.7; color: 
 <p class="section-header">Module 4 — Types of Crossing At a Glance</p>
 
 <table class="comparison-table avoid-break">
-  <tr><th>Crossing Type</th><th>Section</th><th>Key Requirement</th></tr>
+  <thead><tr><th>Crossing Type</th><th>Section</th><th>Key Requirement</th></tr></thead><tbody>
   <tr><td>General</td><td>123</td><td>Two transverse parallel lines (name/words optional)</td></tr>
   <tr><td>Special</td><td>124</td><td>A named bank appears (lines not essential)</td></tr>
   <tr><td>Account Payee</td><td>Trade usage, not in the Act</td><td>"A/c Payee" wording — proceeds only into the payee's own account</td></tr>
   <tr><td>Not Negotiable</td><td>130</td><td>Caps title quality on transfer — doesn't block transfer itself</td></tr>
   <tr><td>Double / Second Special</td><td>125, 127</td><td>Only a bank, only for collection, never by private parties</td></tr>
   <tr class="exam-trick"><td colspan="3">★ EXAM TRICK: "Account Payee" crossing is NOT defined anywhere in the Act itself — it's pure trade custom, unlike the other four which have explicit Sections.</td></tr>
-</table>
+</tbody></table>
 
 </div>
 
@@ -2302,14 +2304,14 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.7; color: 
 </div>
 
 <table class="comparison-table avoid-break">
-  <tr><th>Basis</th><th>One-Way Communication</th><th>Two-Way Communication</th></tr>
+  <thead><tr><th>Basis</th><th>One-Way Communication</th><th>Two-Way Communication</th></tr></thead><tbody>
   <tr><td>Model type</td><td>Linear</td><td>Cyclic</td></tr>
   <tr><td>Sender's awareness</td><td>Unaware if correctly perceived</td><td>Aware if correctly perceived</td></tr>
   <tr><td>Feedback</td><td>Eliminated / absent</td><td>Included, significant</td></tr>
   <tr><td>Nature</td><td>Monologue</td><td>Dialogue</td></tr>
   <tr><td>Example</td><td>Watching a video, listening to music</td><td>Conversation with a friend, an interview</td></tr>
   <tr class="exam-trick"><td colspan="3">&#9733; EXAM TRICK: modern business strongly favours two-way communication precisely BECAUSE it closes the feedback loop — a one-way message leaves the sender guessing whether it landed.</td></tr>
-</table>
+</tbody></table>
 
 <div class="worked-example avoid-break">
   <p class="ex-label">Concept Check 2 — Classify the Feedback Type</p>
@@ -2403,14 +2405,14 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.7; color: 
 <p class="section-header">Module 5, Part A — Formal vs Informal Communication</p>
 
 <table class="comparison-table avoid-break">
-  <tr><th>Basis</th><th>Formal Communication</th><th>Informal Communication</th></tr>
+  <thead><tr><th>Basis</th><th>Formal Communication</th><th>Informal Communication</th></tr></thead><tbody>
   <tr><td>Channel</td><td>Predefined, hierarchical</td><td>No fixed channel, multidimensional</td></tr>
   <tr><td>Speed</td><td>Slower (long chain of command)</td><td>Faster, rapid</td></tr>
   <tr><td>Reliability</td><td>More reliable, documented</td><td>Less reliable, no paper trail</td></tr>
   <tr><td>Secrecy</td><td>Fully maintained</td><td>Difficult to maintain</td></tr>
   <tr><td>Other name</td><td>Official communication</td><td>Grapevine communication</td></tr>
   <tr class="exam-trick"><td colspan="3">★ EXAM TRICK: informal communication CAN become formal, if it's later incorporated into the official information flow — the two aren't permanently separate categories.</td></tr>
-</table>
+</tbody></table>
 
 </div>
 
@@ -2604,7 +2606,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.7; color: 
 </div>
 
 <table class="comparison-table avoid-break">
-  <tr><th>Basis</th><th>Formal Report</th><th>Informal Report</th></tr>
+  <thead><tr><th>Basis</th><th>Formal Report</th><th>Informal Report</th></tr></thead><tbody>
   <tr><td>Structure</td><td>Highly structured, prescribed format</td><td>Less structured</td></tr>
   <tr><td>Purpose</td><td>Long-term, strategic decisions</td><td>Daily business decisions</td></tr>
   <tr><td>Length</td><td>Large</td><td>Short</td></tr>
@@ -2616,7 +2618,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.7; color: 
   <tr><td>Style</td><td>Indirect, impersonal</td><td>Direct, personal</td></tr>
   <tr><td>Recommendation</td><td>Essential part</td><td>Not required</td></tr>
   <tr class="exam-trick"><td colspan="3">&#9733; EXAM TRICK: TEN separate dimensions distinguish Formal from Informal reports — almost every one is the exact OPPOSITE of its counterpart, a genuinely memorisable pattern once you see the mirroring.</td></tr>
-</table>
+</tbody></table>
 
 <div class="concept-block avoid-break">
   <span class="pill">CONCEPT</span>
@@ -2805,7 +2807,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.7; color: 
     <li><strong>Motion Graphics</strong> are short animated or documentary-style videos used for training, product launches, or holding attention in meetings.</li>
   </ol>
   <table class="comparison-table avoid-break">
-  <tr><th style="width:50%;">Advantages</th><th>Disadvantages</th></tr>
+  <thead><tr><th style="width:50%;">Advantages</th><th>Disadvantages</th></tr></thead><tbody>
   <tr><td>
     <ul class="point-list" style="margin:0;padding-left:4mm;">
       <li>Spreadsheet tables enable both summary AND calculation.</li>
@@ -2823,7 +2825,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.7; color: 
       <li>Motion graphics require specialised skill to produce.</li>
     </ul>
   </td></tr>
-</table>
+</tbody></table>
 </div>
 
 <div class="concept-block avoid-break">
@@ -2836,7 +2838,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.7; color: 
   <li>Letting third parties trace the sources actually used.</li>
 </ul>
 <table class="comparison-table avoid-break">
-  <tr><th style="width:50%;">Advantages</th><th>Disadvantages</th></tr>
+  <thead><tr><th style="width:50%;">Advantages</th><th>Disadvantages</th></tr></thead><tbody>
   <tr><td>
     <ul class="point-list" style="margin:0;padding-left:4mm;">
       <li>Improving the perceived quality of the work, since editors and publishers judge partly by the references used.</li>
@@ -2852,7 +2854,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.7; color: 
       <li>It adds rigidity and time to the research process.</li>
     </ul>
   </td></tr>
-</table>
+</tbody></table>
   <div class="shortcut-box avoid-break"><span class="shortcut-label">&#9889; SHORTCUT:</span> Tables ORGANISE and enable CALCULATION. Graphs VISUALISE that same data for faster interpretation — the two are complementary, not interchangeable; a table is the source, a graph is often built FROM a table.</div>
 </div>
 
@@ -2892,13 +2894,13 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.7; color: 
 <p class="section-header">Module 5, Part C — Four Types of Communication Barriers</p>
 
 <table class="comparison-table avoid-break">
-  <tr><th>Barrier Type</th><th>Source</th><th>Example</th></tr>
+  <thead><tr><th>Barrier Type</th><th>Source</th><th>Example</th></tr></thead><tbody>
   <tr><td>Physical</td><td>The environment/surroundings</td><td>Poor network, broken equipment, distance</td></tr>
   <tr><td>Semantic</td><td>Language itself</td><td>Idioms, jargon, sound-alike words</td></tr>
   <tr><td>Psychological</td><td>The mind</td><td>Halo effect, information overload, emotions</td></tr>
   <tr><td>Organizational</td><td>Structure/politics</td><td>Rigid rules, arrogant hierarchy, departmental silos</td></tr>
   <tr class="exam-trick"><td colspan="3">★ EXAM TRICK: a single scenario can trigger MULTIPLE barrier types at once — e.g. a rigid, hierarchical organisation (Organizational) where a nervous junior (Psychological) also struggles with technical jargon (Semantic) from a senior on a bad phone line (Physical).</td></tr>
-</table>
+</tbody></table>
 
 </div>
 
@@ -2928,18 +2930,18 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.7; color: 
 
   <p class="section-header" style="font-size:13pt;margin-top:4mm;">Section A &middot; Fundamentals of Business Laws (80%)</p>
   <table class="comparison-table avoid-break">
-    <tr><th style="width:20%;">Module</th><th>The Ladder</th></tr>
+    <thead><tr><th style="width:20%;">Module</th><th>The Ladder</th></tr></thead><tbody>
     <tr><td><strong>1. Introduction (10%)</strong></td><td>Article 141=SC precedent binds ALL courts &middot; Article 123=President's ordinance power, Article 213=Governor's mirrored power at state level &middot; Article 79=Parliament (President+Rajya Sabha+Lok Sabha), Article 168=State Legislature &middot; Article 109=Money Bills, Lok Sabha ONLY (Article 107=ordinary Bills, either House) &middot; Article 254=Parliament's law wins a Concurrent-List conflict &middot; Article 368=Parliament may amend the Constitution by addition, variation or repeal &mdash; but an amendment contravening an individual&rsquo;s Fundamental Rights is unconstitutional (Keshavananda Bharati vs State of Kerala, 1973) &middot; Article 32=SC writ jurisdiction (Fundamental Rights only), Article 226=HC writ jurisdiction (wider &mdash; Fundamental + ordinary legal rights) &middot; Article 131=SC Original Jurisdiction, Article 137=SC Review Jurisdiction (own orders) &middot; District Court=highest CIVIL court in a district; Sessions Court=top of the CRIMINAL hierarchy at that level &middot; Executive Magistrates=administrative, NOT judicial officers &middot; Lok Adalat orders=final, deemed civil-court decrees, NOT appealable &middot; Subordinate legislation is void the moment it exceeds its parent Act or the Constitution &mdash; the &ldquo;ultra vires&rdquo; test &middot; Seven regulators: SEBI (1992, capital markets)/RBI (1935, oldest, banking)/IRDAI (1999, insurance)/PFRDA (2013, pensions)/AMFI (1995, self-regulatory, a SEBI division)/MCA (companies)/NHB (1987, housing finance).</td></tr>
     <tr><td><strong>2. Indian Contract Act, 1872 (30%)</strong></td><td>Sec 2(h): Contract=Agreement+Enforceability by law; Sec 2(e): Agreement=Offer+Acceptance &middot; Sec 10: ten essential elements, including intention to create legal relations (Balfour vs Balfour) and consensus ad idem &middot; Thirteen categories of expressly-void agreement, running Secs 11/12&rarr;23&rarr;20&rarr;24&rarr;25&rarr;26&rarr;27&rarr;28&rarr;29&rarr;30&rarr;36&rarr;56&rarr;57 &middot; Sec 25's &ldquo;no consideration, no contract&rdquo; has SEVEN exceptions, not three: love/affection, past voluntary act, time-barred debt, completed gifts, agency creation, guarantee, remission &middot; Free consent's five vitiating factors: Coercion [Sec 15, Ammiraju vs Seshamma]/Undue Influence [Sec 16, Mannu Singh vs Umadat Pandey]/Fraud [Sec 17, Peek vs Gurney]/Misrepresentation [Sec 18, Bisset vs Wilkinson]/Mistake [Secs 20-22, Raffles vs Wichelhaus] &middot; Mohiri Bibi vs Dharmodas Ghose: a minor's agreement is void ab initio; the law of estoppel does not apply against a minor (Leslie vs Shiell) &middot; Quasi-Contract [Secs 68-72, law-imposed, no real agreement] vs Contingent Contract [Secs 31-36, real agreement, uncertain collateral event] &middot; Indemnity [Sec 124, TWO parties] vs Guarantee [Sec 126, THREE parties, surety's liability co-extensive with the debtor's] &middot; Pledge [Secs 172-178]: pawnee may retain, sue, or sell (with notice) on default &middot; Agency [Sec 182]: no consideration required to form it [Sec 185] &middot; E-contracts: Browse-wrap (using the site=acceptance)/Shrink-wrap (opening the box=acceptance)/Click-wrap (explicit &ldquo;I Agree&rdquo; click, terms visible first) &middot; Discharge: Novation/Alteration/Rescission [Sec 62], Remission/Waiver [Sec 63] &middot; Sec 73=compensation for natural/foreseeable loss; Sec 74=compensation capped at a pre-named penalty, recoverable whether or not actual loss is proven &middot; Five remedies for breach: Rescission, Damages, Quantum Meruit, Specific Performance, Injunction.</td></tr>
     <tr><td><strong>3. Sale of Goods Act, 1930 (20%)</strong></td><td>Sec 4(3): Sale=ownership transfers NOW (executed, right in rem) vs Agreement to Sell=ownership transfers LATER (executory, right in personam) &middot; Sec 2(7) Goods; Specific/Ascertained/Unascertained goods &middot; Sec 7/8: specific goods already perished &rarr; contract or agreement VOID &middot; Property passes: Sec 20 (specific goods, deliverable state, at contract) / Sec 21-22 (an act by the seller + notice) / Sec 23 (unascertained goods, unconditional appropriation) / Sec 24 (approval or sale-or-return) &middot; Sec 26: risk PRIMA FACIE follows OWNERSHIP, not possession &middot; Nemo Dat Quod Non Habet &mdash; SEVEN exceptions: mercantile agent [Sec 27], joint owner [Sec 28], voidable-contract possessor [Sec 29], seller/buyer left in possession after sale [Sec 30], estoppel, finder of goods [Sec 169 Contract Act], official receiver/assignee &middot; Condition [Sec 12(2), essential, breach&rarr;reject+damages] vs Warranty [Sec 12(3), collateral, breach&rarr;damages only] &mdash; the label doesn't decide, construction does [Sec 12(4)] &middot; Caveat Emptor [Sec 16] &mdash; FIVE exceptions: disclosed purpose+skill reliance, merchantability, wholesomeness, fraud, trade usage &middot; Sec 39: delivery to a carrier is prima facie delivery to the buyer &middot; Unpaid seller's rights against the goods: Lien [Sec 47, still in possession] / Stoppage in Transit [Sec 50, goods in transit + buyer insolvent] / Resale [Sec 54, perishable/reserved right/notice] / Withholding Delivery; against the buyer: Suit for Price [Sec 55], Damages for Non-Acceptance [Sec 56], Repudiation, Interest [Sec 61].</td></tr>
     <tr><td><strong>4. Negotiable Instruments Act, 1881 (20%)</strong></td><td>Sec 13: a Negotiable Instrument is a PN, Bill, or Cheque, payable to order or bearer &middot; Holder in Due Course needs ALL three: consideration paid, acquired BEFORE maturity, NO notice of any defect &middot; Sec 4: Promissory Note=an UNDERTAKING by the maker, 2 parties, 10 requisites &middot; Sec 5: Bill of Exchange=an ORDER by the drawer, 3 parties, 9 requisites &middot; Sec 6: Cheque=a bill drawn on a specified banker, payable on demand, 3 parties, 7 requisites &middot; Only a Cheque can be payable to bearer on demand simultaneously &middot; Grace period=3 days for time instruments, NEVER for a cheque or a pure demand instrument &middot; Crossing: General [Sec 123, two transverse lines] / Special [Sec 124, a NAMED bank, lines not essential] / Account Payee [pure trade custom, not in the Act] / Not Negotiable [Sec 130, caps title quality, never blocks transfer] / Double/Second Special [Secs 125&amp;127, bank-to-bank, collection only] &middot; Sec 138: presentment within 3 months (post-2012) &rarr; written notice within 30 days of learning of dishonour &rarr; drawer's payment within 15 days of receiving notice; punishment up to 2 years and/or a fine up to TWICE the cheque amount &middot; Sec 143A: interim compensation capped at 20% of the cheque amount, repayable with RBI-rate interest on acquittal.</td></tr>
-  </table>
+  </tbody></table>
 
   <p class="section-header" style="font-size:13pt;margin-top:5mm;">Section B &middot; Business Communication (20%)</p>
   <table class="comparison-table avoid-break">
-    <tr><th style="width:20%;">Module</th><th>The Ladder</th></tr>
+    <thead><tr><th style="width:20%;">Module</th><th>The Ladder</th></tr></thead><tbody>
     <tr><td><strong>5. Business Communication (20%)</strong></td><td>The 8 C's of Effective Communication: Clarity, Conciseness, Courteous, Correctness, Completeness, Concreteness, Consideration, Coherence &middot; Process: Sender&rarr;Encoding&rarr;Message&rarr;Channel&rarr;Decoding&rarr;Receiver&rarr;Feedback &mdash; Decoding is one of the MOST CRUCIAL stages &middot; &ldquo;Kevin Eujeberry&rdquo; (ICMAI&rsquo;s spelling; published as Kevin Eikenberry) &mdash; four types: Feedback=about PAST behaviour, Feedforward=about FUTURE behaviour, each Positive (affirming) or Negative (corrective) &middot; One-way (linear, no feedback, monologue) vs Two-way (cyclic, has feedback, dialogue) &middot; Formal Communication (predefined, hierarchical) vs Informal/Grapevine (four chains: Single Strand, Cluster, Probability, Gossip) &mdash; informal CAN turn formal &middot; Six non-verbal types: Chronemics (time), Vocalics (tone), Haptics (touch), Kinesics (body language), Proxemics (distance), Artifacts (appearance) &middot; Horizontal/Lateral=SAME level; Vertical=UP/DOWN between levels; Diagonal=BOTH a different level AND a different reporting line at once &middot; VUCAFU marketing obstacles: Volatility, Uncertainty, Complexity, Ambiguity, Fear of unknown, Unprecedentedness &middot; Arthur W. Page's 7 PR principles; effective PR needs Awareness&rarr;Acceptance&rarr;Action &middot; Five business letters, in order: Enquiry (buyer asks)&rarr;Quotation (seller replies)&rarr;Order (buyer commits)&rarr;Complaint&rarr;Recovery &middot; Formal vs Informal Report &mdash; ten dimensions, almost every one the exact opposite of its counterpart &middot; Bennett's six stages of intercultural sensitivity: Denial&rarr;Defence&rarr;Minimization&rarr;Acceptance (a reasonable GOAL)&rarr;Adaptation&rarr;Integration (true cultural blending) &middot; Four barrier types by source: Physical (environment), Semantic (language), Psychological (the mind), Organizational (structure/politics) &middot; Five legal aspects: Product Disclaimers, Legal Disclosures, Financial Reporting, Contracts/Internal Communications, Marketing Communications &middot; Five graphic elements: Flowcharts, Presentations, Colour Coding, Tables/Graphs, Motion Graphics.</td></tr>
-  </table>
+  </tbody></table>
 </div>
 
 <!-- ============ MASTER TRAP LIST ============ -->
@@ -2986,7 +2988,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.7; color: 
 <div class="page page-break">
   <div class="cover-band-dark" style="font-size:14pt;">The Last 48 Hours &mdash; Revision Plan for This Document</div>
   <table class="comparison-table avoid-break" style="margin-top:5mm;">
-    <tr><th style="width:20%;">When</th><th>What to do</th></tr>
+    <thead><tr><th style="width:20%;">When</th><th>What to do</th></tr></thead><tbody>
     <tr><td>48 hours out</td><td>Re-read Module 2 (Indian Contract Act, 1872) end to end &mdash; at 30% of the paper, the single largest module, spanning ten numbered sub-topics (2.1&ndash;2.10) and carrying by far the highest case-law density in the syllabus. Rehearse three &ldquo;Distinguish between&hellip;&rdquo; tables out loud from memory: Void Agreement vs Voidable Contract vs Void Contract, Indemnity vs Guarantee, and Fraud vs Misrepresentation.</td></tr>
     <tr><td>36 hours out</td><td>Re-read Modules 3 and 4 (Sale of Goods Act, Negotiable Instruments Act, 20% each, 40% combined) &mdash; the two most Section-number-dense modules after Module 2. Rehearse Condition vs Warranty, Sale vs Agreement to Sell, the three-way Promissory Note / Bill of Exchange / Cheque comparison table, and Section 138's three shrinking deadlines (3 months &rarr; 30 days &rarr; 15 days).</td></tr>
     <tr><td>24 hours out</td><td>Sweep Module 5 (Business Communication, 20%) across all three of its parts &mdash; pure conceptual recall with almost no Section numbers to carry, once the 8 C's, the four barrier types, Bennett's six stages, and the five business-letter sequence are drilled cold. The cheapest marks-per-minute in the entire paper.</td></tr>
@@ -2994,7 +2996,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.7; color: 
     <tr><td>6 hours out</td><td>Read The Final Ladder above, start to finish, once, slowly.</td></tr>
     <tr><td>2 hours out</td><td>Read the Master Trap List above, start to finish, once, slowly. Nothing new after this point.</td></tr>
     <tr><td>In the hall</td><td>No negative marking on this 50 MCQ &times; 2 Marks paper &mdash; attempt every question. This is a precision-recall paper: Section, Act, and case-name accuracy matter more than working through multi-step reasoning, so before answering, first identify which Act and which specific Section the scenario belongs to, THEN apply the rule.</td></tr>
-  </table>
+  </tbody></table>
   <p class="body" style="margin-top:4mm;">Weight-based priority if time runs out anywhere in this plan: Module 2 (30%, Indian Contract Act) is never the one you cut &mdash; it alone is worth as much as Module 1 and Module 5 combined. Modules 3 and 4 (20% each, 40% combined) reward precise Section-number recall over broad conceptual reading &mdash; a focused pass on their comparison tables recovers most of their marks fast. Module 1 (10%) is the smallest module in the paper but the most Article-dense, so a targeted re-drill of its Article-number pairs is worth more than a full re-read. Module 5 (20%) is pure conceptual recall with essentially no numbers to memorise, making it the fastest full module to shore up if time is genuinely short.</p>
   <p class="body" style="font-size:9.5pt;color:var(--gray);margin-top:3mm;">This page is exam strategy, not syllabus content &mdash; every fact it points to lives in the verified module pages above, condensed strictly from ICMAI's own Paper 1 Study Notes.</p>
 </div>

@@ -92,7 +92,9 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
 .comparison-table { width: 100%; border-collapse: collapse; margin: 12px 0; }
 .comparison-table th { background: var(--green-deep); color: var(--white); font-family: var(--font-head); font-weight: 600; font-size: 9.5pt; text-transform: uppercase; letter-spacing: 0.03em; padding: 6px 8px; text-align: left; }
 .comparison-table tr { page-break-inside: avoid; } .comparison-table td { padding: 5px 8px; border: 1px solid var(--border-light); font-family: var(--font-body); font-size: 9.7pt; vertical-align: top; overflow-wrap: break-word; }
-.comparison-table tr:nth-child(even) td { background: var(--green-faint); }
+.comparison-table tbody tr:nth-child(odd) td { background: var(--green-faint); }
+thead { display: table-header-group; }
+tfoot { display: table-footer-group; }
 .comparison-table tr.exam-trick td { background: var(--amber-bg); font-family: var(--font-head); font-weight: 600; font-size: 9.7pt; }
 .module-divider { background: var(--green-deep); color: var(--white); min-height: 238mm; max-height: 250mm; page-break-inside: avoid; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 30mm 20mm; }
 .module-divider .rule { width: 80%; height: 2px; background: var(--white); margin: 16px auto; }
@@ -187,12 +189,12 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
 
   <p class="section-header" style="font-size:13pt;margin-top:6mm;">The Four Foundation Papers</p>
   <table class="comparison-table">
-    <tr><th>Paper</th><th>Full Title</th><th>Section Split</th></tr>
+    <thead><tr><th>Paper</th><th>Full Title</th><th>Section Split</th></tr></thead><tbody>
     <tr><td>Paper 1</td><td>Fundamentals of Business Laws and Business Communication</td><td>Business Laws 80% + Business Communication 20%</td></tr>
     <tr><td>Paper 2</td><td>Fundamentals of Financial and Cost Accounting</td><td>Financial Accounting 70% + Cost Accounting 30%</td></tr>
     <tr class="exam-trick"><td>Paper 3</td><td>Fundamentals of Business Mathematics and Statistics &mdash; <strong>this document</strong></td><td>Business Mathematics 40% + Business Statistics 60%</td></tr>
     <tr><td>Paper 4</td><td>Fundamentals of Business Economics and Management</td><td>Economics 70% + Management 30%</td></tr>
-  </table>
+  </tbody></table>
 
   <p class="section-header" style="font-size:13pt;margin-top:6mm;">Exam Pattern (Common to All Four Papers)</p>
   <p class="body" style="font-style:italic;">The three points below describe exam <em>administration</em>. They come from ICMAI&rsquo;s exam notification, NOT from the Study Notes, which say nothing about format, marking or pass marks. Administration can change between sessions &mdash; confirm all three against the official notification for the session you are sitting.</p>
@@ -276,7 +278,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
 <div class="page page-break">
   <div class="cover-band-dark" style="font-size:14pt;">Syllabus Weight &amp; Attack Priority</div>
   <table class="comparison-table" style="margin-top:6mm;">
-    <tr><th>Section</th><th>Module</th><th>Weight</th><th>Est. Marks</th><th>Est. MCQs</th><th>Priority</th></tr>
+    <thead><tr><th>Section</th><th>Module</th><th>Weight</th><th>Est. Marks</th><th>Est. MCQs</th><th>Priority</th></tr></thead><tbody>
     <tr><td rowspan="3">A &mdash; Business Mathematics (40%)</td><td>1. Arithmetic</td><td>15%</td><td>15</td><td>~7&ndash;8</td><td>&#9733;&#9733;</td></tr>
     <tr><td>2. Algebra</td><td>20%</td><td>20</td><td>~10</td><td>&#9733;&#9733;&#9733;</td></tr>
     <tr><td>3. Calculus &ndash; Application in Business</td><td>5%</td><td>5</td><td>~2&ndash;3</td><td>&#9733;</td></tr>
@@ -286,7 +288,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
     <tr><td>7. Probability</td><td>15%</td><td>15</td><td>~7&ndash;8</td><td>&#9733;&#9733;</td></tr>
     <tr><td>8. Index Numbers and Time Series</td><td>10%</td><td>10</td><td>~5</td><td>&#9733;&#9733;</td></tr>
     <tr class="exam-trick"><td colspan="6">&#9733; EXAM TRICK: Modules 5+6+7 (Central Tendency &amp; Dispersion, Correlation &amp; Regression, Probability) together carry 45% of the paper &mdash; more than the whole of Section A combined &mdash; making them the single largest attack block. Module 2 Algebra (20%) is the biggest individual module and underpins Module 3 Calculus, so weak Algebra costs marks twice over.</td></tr>
-  </table>
+  </tbody></table>
   <p class="body" style="margin-top:5mm;">This is a computation paper: correctly recalling the right formula and executing the worked method without an arithmetic slip matters more than lengthy conceptual reasoning. Statistics (Section B, 60%) outweighs Mathematics (Section A, 40%) &mdash; with limited revision time, protect Modules 5, 6 and 7 first, then Module 2, before spending time on the smaller Modules 3, 4 and 8.</p>
 </div>
 
@@ -424,21 +426,21 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
 <p class="section-header">1.1 Ratios — Definition, Properties, Types <span style="float:right;">&#9733;&#9733;&#9733; HIGH</span></p>
 <div class="definition-block"><p class="definition-text"><strong>Ratio</strong> is the comparative relation between two quantities of the same kind, expressed in the same units. If A secures 80 marks and B secures 40 out of the same 100, the ratio is 80/40 = 2 &mdash; a pure number, no unit attached. In the ratio a:b, &lsquo;a&rsquo; is the <strong>antecedent</strong> and &lsquo;b&rsquo; is the <strong>consequent</strong>.</p></div>
 <table class="comparison-table">
-  <tr><th style="width:26%;">Property</th><th>Content (ICMAI)</th></tr>
+  <thead><tr><th style="width:26%;">Property</th><th>Content (ICMAI)</th></tr></thead><tbody>
   <tr><td><strong>Unchanged by scaling</strong></td><td>A ratio&rsquo;s value is unchanged when both terms are multiplied or divided by the same number: 2:4 &times;2 &rarr; 4:8; 9:27 &divide;9 &rarr; 1:3.</td></tr>
   <tr><td><strong>Comparing two ratios</strong></td><td>Reduce both to a common denominator. E.g. compare 3:4 and 8:12 &mdash; scale 3:4 by 3 to get 9:12; since 9:12 &gt; 8:12, we conclude 3:4 &gt; 8:12.</td></tr>
   <tr><td><strong>Equal / greater / lesser inequality</strong></td><td>a:b is an equal ratio if a=b (e.g. 3:3); a greater inequality if a&gt;b (e.g. 4:3); a lesser inequality if a&lt;b (e.g. 3:4).</td></tr>
   <tr><td><strong>Inverse (reciprocal) ratio</strong></td><td>The inverse of a:b is b:a.</td></tr>
-</table>
+</tbody></table>
 <p class="body"><strong>Five named types of compounded ratio (ICMAI):</strong></p>
 <table class="comparison-table" style="font-size:9pt;">
-  <tr><th style="width:24%;">Type</th><th>Content</th></tr>
+  <thead><tr><th style="width:24%;">Type</th><th>Content</th></tr></thead><tbody>
   <tr><td><strong>Compound ratio</strong></td><td>Two or more ratios multiplied together: a:b, c:d, e:f compound to <strong>ace : bdf</strong>. (Compounding two reciprocal ratios a:b and b:a always gives unity: ab:ba = 1.)</td></tr>
   <tr><td><strong>Duplicate ratio</strong></td><td>a:b compounded with itself: a:b &times; a:b = <strong>a&sup2; : b&sup2;</strong>.</td></tr>
   <tr><td><strong>Triplicate ratio</strong></td><td>a:b compounded with itself twice more: <strong>a&sup3; : b&sup3;</strong>.</td></tr>
   <tr><td><strong>Sub-duplicate / sub-triplicate</strong></td><td>&radic;a : &radic;b is the sub-duplicate ratio of a:b; &sup3;&radic;a : &sup3;&radic;b is the sub-triplicate ratio.</td></tr>
   <tr><td><strong>Continued ratio</strong></td><td>The relation among three or more magnitudes, written a:b:c. E.g. the continued ratio of 2:3 and 4:10 is 8:12:30, or reduced, 4:6:15.</td></tr>
-</table>
+</tbody></table>
 <p class="body"><strong>Four points to remember when working with ratios (ICMAI):</strong></p>
 <ol class="point-list numbered">
   <li>Bring the quantities to the SAME UNITS before finding a ratio. E.g. A = &#8377;2, B = 50 paise &rArr; A:B = 200:50 = 4:1.</li>
@@ -455,12 +457,12 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
 <div class="definition-block"><p class="definition-text">Four quantities a, b, c, d are in <strong>proportion</strong> if a:b = c:d (equivalently a/b = c/d). The first and last (a, d) are the <strong>extremes</strong>; the two middle terms (b, c) are the <strong>means</strong>.</p></div>
 <div class="formula-box"><p class="formula-text">a:b = c:d &nbsp;&hArr;&nbsp; ad = bc &nbsp;&nbsp;(product of extremes = product of means, and the converse holds too)</p></div>
 <table class="comparison-table">
-  <tr><th style="width:26%;">Concept</th><th>Content (ICMAI)</th></tr>
+  <thead><tr><th style="width:26%;">Concept</th><th>Content (ICMAI)</th></tr></thead><tbody>
   <tr><td><strong>Continued proportion</strong></td><td>a:b = b:c (three quantities) &rArr; b&sup2; = ac. E.g. 3, 6, 12: 6&sup2; = 3&times;12 = 36 &check;. E.g. 2, &minus;4, 8: (&minus;4)&sup2; = 2&times;8 = 16 &check;.</td></tr>
   <tr><td><strong>Mean proportional</strong></td><td>If x, y, z are in continued proportion, y is the mean (geometric) proportional of x &amp; z: <strong>y = &radic;(xz)</strong>.</td></tr>
   <tr><td><strong>Third proportional</strong></td><td>In x:y = y:z, z is the third proportional of x and y — found with the same y&sup2;=xz-style relation.</td></tr>
   <tr><td><strong>Fourth proportional</strong></td><td>If a:b = c:d, then d is the fourth proportional of a, b, c.</td></tr>
-</table>
+</tbody></table>
 <div class="worked-example avoid-break">
 <p class="ex-label">WORKED EXAMPLES — all three proportional types (verified)</p>
 <p class="ex-step">Mean proportional between 0.08 and 0.18: &radic;(0.08&times;0.18) = &radic;0.0144 = <strong>0.12</strong></p>
@@ -469,13 +471,13 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
 </div>
 <p class="body"><strong>The five basic rules of proportion (ICMAI)</strong> — given a:b = c:d:</p>
 <table class="comparison-table" style="font-size:9pt;">
-  <tr><th style="width:22%;">Rule</th><th>Transformation</th></tr>
+  <thead><tr><th style="width:22%;">Rule</th><th>Transformation</th></tr></thead><tbody>
   <tr><td><strong>1. Invertendo</strong></td><td>a:b = c:d &rArr; b:a = d:c (flip both sides)</td></tr>
   <tr><td><strong>2. Alternendo</strong></td><td>a:b = c:d &rArr; a:c = b:d (swap the means)</td></tr>
   <tr><td><strong>3. Componendo</strong></td><td>a:b = c:d &rArr; (a+b):b = (c+d):d</td></tr>
   <tr><td><strong>4. Dividendo</strong></td><td>a:b = c:d &rArr; (a&minus;b):b = (c&minus;d):d</td></tr>
   <tr><td><strong>5. Componendo &amp; Dividendo</strong></td><td>a:b = c:d &rArr; (a+b):(a&minus;b) = (c+d):(c&minus;d)</td></tr>
-</table>
+</tbody></table>
 </div>
 
 <div class="page page-break">
@@ -539,13 +541,13 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
 <span class="pill">PRACTICE</span>
 <p class="section-header">Ratio &amp; Proportion Practice — from the ICMAI Problem Set (answers re-verified)</p>
 <table class="comparison-table" style="font-size:9pt;">
-  <tr><th style="width:6%;">#</th><th>Problem</th><th style="width:20%;">Answer</th></tr>
+  <thead><tr><th style="width:6%;">#</th><th>Problem</th><th style="width:20%;">Answer</th></tr></thead><tbody>
   <tr><td>1</td><td>Father:son present ages = 5:3; in 10 years, ratio becomes 3:2. Find present ages.</td><td><strong>50, 30</strong></td></tr>
   <tr><td>2</td><td>Two salaries in ratio 3:5; each gets a &#8377;20 rise, new ratio 13:21. Find the salaries.</td><td><strong>&#8377;240, &#8377;400</strong></td></tr>
   <tr><td>3</td><td>What must be subtracted from 17, 25, 31, 47 so the remainders are in proportion?</td><td><strong>3</strong></td></tr>
   <tr><td>11</td><td>Ram &amp; Rahim incomes in ratio 5:7, expenditures in ratio 7:11, each saves &#8377;60/month. Find incomes.</td><td><strong>&#8377;200, &#8377;280</strong></td></tr>
   <tr><td>12</td><td>Wages rise in ratio 22:25; labourers fall in ratio 15:11. Find the change in total wage bill.</td><td><strong>6:5 decrease</strong></td></tr>
-</table>
+</tbody></table>
 <div class="shortcut-box"><span class="shortcut-label">&#9889; SHORTCUT</span> Problem 12&rsquo;s pattern generalises: total wage bill &prop; (wage per head) &times; (number of workers) &mdash; multiply the TWO given ratios&rsquo; corresponding terms together, then simplify.</div>
 </div>
 
@@ -555,11 +557,11 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
 <span class="pill">CONCEPT</span>
 <p class="section-header">Variations — Direct, Inverse, Joint <span style="float:right;">&#9733;&#9733;&#9733; HIGH</span></p>
 <table class="comparison-table">
-  <tr><th style="width:22%;">Type</th><th>Content (ICMAI)</th></tr>
+  <thead><tr><th style="width:22%;">Type</th><th>Content (ICMAI)</th></tr></thead><tbody>
   <tr><td><strong>Direct variation</strong></td><td>If A changes in the SAME ratio as B, A &prop; B, i.e. <strong>A = KB</strong> (K &ne; 0). Example: circumference = 2&pi;r, so circumference &prop; radius. If A &prop; B then also B &prop; A.</td></tr>
   <tr><td><strong>Inverse variation</strong></td><td>If an increase in A causes a proportional decrease in B (or vice versa), A &prop; 1/B, i.e. <strong>A = K/B</strong>, so K = AB. Example: speed &prop; 1/time for a fixed distance.</td></tr>
   <tr><td><strong>Joint variation</strong></td><td>A varies directly as the PRODUCT of several quantities: A &prop; (BCD&hellip;), i.e. <strong>A = K(BCD&hellip;)</strong>. Example: volume of a cuboid &prop; length &times; breadth &times; height.</td></tr>
-</table>
+</tbody></table>
 <p class="body"><strong>Eight elementary results (ICMAI, with one correction noted below):</strong></p>
 <ol class="point-list numbered">
   <li>A&prop;B &rArr; B&prop;A.</li>
@@ -628,7 +630,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
 <span class="pill">FORMULA</span>
 <p class="section-header">Simple Interest — Seven More Applied Patterns <span style="float:right;">&#9733;&#9733;&#9733; HIGH</span></p>
 <table class="comparison-table" style="font-size:8.8pt;">
-  <tr><th style="width:30%;">Pattern</th><th>Worked (verified)</th></tr>
+  <thead><tr><th style="width:30%;">Pattern</th><th>Worked (verified)</th></tr></thead><tbody>
   <tr><td><strong>Split a sum, equal interest</strong></td><td>Split &#8377;2760 so S.I. on part-1 (2yrs, 12.5%) = S.I. on part-2 (3yrs, 12.5%). Let part-1=X: X(2)(0.125) = (2760&minus;X)(3)(0.125) &rArr; 0.625X=1035 &rArr; X=<strong>&#8377;1,656</strong>, other part=<strong>&#8377;1,104</strong>.</td></tr>
   <tr><td><strong>Two loans, related rates</strong></td><td>&#8377;8,000 for 2yrs at rate r, then &#8377;10,000 for 1yr at (r&minus;1)%; total interest &#8377;2,500. 160r+100(r&minus;1)=2500 &rArr; 260r=2600 &rArr; r=<strong>10%</strong>, second loan at <strong>9%</strong>.</td></tr>
   <tr><td><strong>Rate from an S.I. increase</strong></td><td>S.I. on &#8377;20,000 rises &#8377;4,000 when time rises 4yrs &rArr; r = (4000&times;100)/(20000&times;4) = <strong>5%</strong>.</td></tr>
@@ -636,7 +638,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
   <tr><td><strong>Time from an S.I. difference (two rates)</strong></td><td>S.I. on &#8377;300 rises &#8377;75 when rate rises 5% &rArr; 75=(300)(5)(t)/100 &rArr; t=<strong>5 years</strong>.</td></tr>
   <tr><td><strong>Find the original sum</strong></td><td>A sum amounts to &#8377;2,600 at end of yr 2, &#8377;2,900 at end of yr 3 &rArr; S.I./year=&#8377;300, so S.I. for 2yrs=&#8377;600 &rArr; Sum = 2600&minus;600 = <strong>&#8377;2,000</strong>.</td></tr>
   <tr><td><strong>Blended (weighted-average) rate</strong></td><td>&#8377;2,000 lent at 4% and &#8377;3,000 lent at 14% &rArr; r = (2000&times;4+3000&times;14)/(2000+3000) = <strong>10%</strong> on the whole sum.</td></tr>
-</table>
+</tbody></table>
 <div class="shortcut-box"><span class="shortcut-label">&#9889; SHORTCUT</span> Two reusable shortcut formulas: rate from an S.I. INCREASE with time = (&Delta;S.I.&times;100)/(&Delta;t&times;P); rate from an S.I. DIFFERENCE between two principals at the same rate/time = (S&#8321;&minus;S&#8322;)&times;100 &divide; [(P&#8321;&minus;P&#8322;)&times;t].</div>
 </div>
 
@@ -676,18 +678,18 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
 <p class="section-header">Annuities — Definition and the Two Types <span style="float:right;">&#9733;&#9733;&#9733; HIGH</span></p>
 <div class="definition-block"><p class="definition-text">An <strong>annuity</strong> is a periodical flow of money where BOTH conditions hold simultaneously: (i) the interval between successive flows is the same; (ii) the quantum of each flow is the same. Breaking either condition creates a &ldquo;multiple flow,&rdquo; NOT an annuity.</p></div>
 <table class="comparison-table" style="font-size:9pt;">
-  <tr><th style="width:10%;"></th><th>Is it an annuity? (ICMAI examples)</th></tr>
+  <thead><tr><th style="width:10%;"></th><th>Is it an annuity? (ICMAI examples)</th></tr></thead><tbody>
   <tr><td><strong>YES</strong></td><td>&#8377;5,000 deposited at the end of every month &mdash; same interval, same amount.</td></tr>
   <tr><td><strong>YES</strong></td><td>&#8377;10,000 deposited at the BEGINNING of every quarter &mdash; same interval, same amount (this one is an annuity DUE).</td></tr>
   <tr><td><strong>NO</strong></td><td>&#8377;5,000/month (Jan&ndash;Mar), &#8377;8,000/month (Apr&ndash;Sep), &#8377;10,000/month (Oct&ndash;Dec) &mdash; interval unchanged, but AMOUNT varies.</td></tr>
   <tr><td><strong>NO</strong></td><td>&#8377;10,000 at year-end 1, 4, and 9 &mdash; amount unchanged, but INTERVAL varies.</td></tr>
   <tr><td><strong>NO</strong></td><td>&#8377;10,000 (Q1), &#8377;20,000 (Q3), &#8377;18,000 (Q4), nothing in Q2 &mdash; BOTH interval and amount vary.</td></tr>
-</table>
+</tbody></table>
 <table class="comparison-table">
-  <tr><th style="width:26%;">Type</th><th>Content (ICMAI)</th></tr>
+  <thead><tr><th style="width:26%;">Type</th><th>Content (ICMAI)</th></tr></thead><tbody>
   <tr><td><strong>Regular (deferred) annuity</strong></td><td>Money flows at the END of each period.</td></tr>
   <tr><td><strong>Annuity due</strong></td><td>Money flows at the BEGINNING of each period.</td></tr>
-</table>
+</tbody></table>
 <div class="trap-block"><span class="pill amber">&#9888; TRAP</span><p class="trap-label">Two conditions, both must hold</p><p class="trap-row"><strong>THE TRAP:</strong> a sequence of deposits with EITHER constant interval OR constant amount &mdash; but not both &mdash; is a &ldquo;multiple flow,&rdquo; not an annuity. The exercise tests this distinction directly with near-miss examples designed to look like annuities.</p></div>
 </div>
 
@@ -697,11 +699,11 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
 <span class="pill">FORMULA</span>
 <p class="section-header">The Full Formula Family — Future &amp; Present Value, Single Flow &amp; Annuity <span style="float:right;">&#9733;&#9733;&#9733; HIGHEST-VALUE TABLE</span></p>
 <table class="comparison-table" style="font-size:8.5pt;">
-  <tr><th style="width:18%;">Flow type</th><th>Future Value (unit amount)</th><th>Present Value (unit amount)</th></tr>
+  <thead><tr><th style="width:18%;">Flow type</th><th>Future Value (unit amount)</th><th>Present Value (unit amount)</th></tr></thead><tbody>
   <tr><td><strong>Single flow</strong></td><td>(1+r)&#8319;</td><td>1 / (1+r)&#8319;</td></tr>
   <tr><td><strong>Regular annuity</strong></td><td>[(1+r)&#8319;&minus;1] / r</td><td>[(1+r)&#8319;&minus;1] / [r(1+r)&#8319;]</td></tr>
   <tr><td><strong>Annuity due</strong></td><td>[(1+r)&#8319;&minus;1] / r &times; (1+r)</td><td>[(1+r)&#8319;&minus;1] / [r(1+r)&#8319;] &times; (1+r)</td></tr>
-</table>
+</tbody></table>
 <p class="body" style="font-size:9pt;color:var(--gray);">Every &ldquo;annuity due&rdquo; formula is simply the regular-annuity formula &times; (1+r) &mdash; because each flow arrives one period earlier, it has one extra period to compound.</p>
 <div class="formula-box"><p class="formula-text">FV<sub>n</sub> = P &times; [(1+r)<sup>n</sup> &minus; 1] / r &nbsp;&nbsp;(future value, regular annuity)</p><hr class="var-divider"><p class="formula-vars">P = amount deposited each period &middot; the bracket term is the <strong>FVIFA</strong> (Future Value Interest Factor for an Annuity).</p></div>
 <div class="worked-example avoid-break">
@@ -756,14 +758,14 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
 <span class="pill">FORMULA</span>
 <p class="section-header">Compound Interest — Six More Techniques (all independently re-verified) <span style="float:right;">&#9733;&#9733;&#9733; HIGH</span></p>
 <table class="comparison-table" style="font-size:8.5pt;">
-  <tr><th style="width:26%;">Technique</th><th>Content</th></tr>
+  <thead><tr><th style="width:26%;">Technique</th><th>Content</th></tr></thead><tbody>
   <tr><td><strong>Doubling period — Rule of 72</strong></td><td>A quick estimate: doubling period &asymp; 72 &divide; interest rate. At 6% p.a., money doubles in &asymp;72/6 = <strong>12 years</strong>. A second version, the Rule of 69, gives doubling period = 0.35 + (69/rate) &mdash; both are approximations; the exact answer needs logarithms.</td></tr>
   <tr><td><strong>Effective vs nominal rate</strong></td><td>The effective annual rate that UNDER ANNUAL compounding matches a nominal rate compounded m times a year: <strong>Effective rate = (1 + k/m)<sup>m</sup> &minus; 1</strong>, where k = nominal rate. E.g. 8% nominal, compounded quarterly (m=4): (1.02)&#8308;&minus;1 &asymp; <strong>8.2%</strong> effective &mdash; always slightly ABOVE the nominal rate when m&gt;1.</td></tr>
   <tr><td><strong>Rate from two known amounts</strong></td><td>A deposit is worth &#8377;10,816 at year 2 and &#8377;11,248.64 at year 3. Divide: 11248.64/10816 = 1.04 &rArr; <strong>r = 4%</strong>. Then substitute back: 10816 = P(1.04)&sup2; &rArr; <strong>P = &#8377;10,000</strong>.</td></tr>
   <tr><td><strong>Rate from a single ratio (via logarithms)</strong></td><td>&#8377;1,000 today becomes &#8377;8,000 after 12 years &mdash; find r. 8=(1+r)&sup1;&sup2; &rArr; log 8 = 12 log(1+r) &rArr; log(1+r) = 0.90309/12 = 0.0752 &rArr; 1+r &asymp; 1.19 &rArr; <strong>r &asymp; 19%</strong>.</td></tr>
   <tr><td><strong>Multiple deposits, one accumulation date</strong></td><td>Deposits of &#8377;100, 200, 300, 400, 500 at successive year-ends, all earning 5% &mdash; find the total one year after the last deposit. Compound EACH deposit for its OWN remaining time (5,4,3,2,1 years) and sum: 127.63+243.10+347.29+441+525 = <strong>&#8377;1,684.02</strong>.</td></tr>
   <tr><td><strong>Doubling deposits &mdash; a GP in disguise</strong></td><td>Deposit X, then double it every year for 10 years, withdrawing only the interest each time. Total after 10 years: X(2&#8304;+2&sup1;+&hellip;+2&#8313;) = X&times;1023 = 2046 &rArr; <strong>X = &#8377;2</strong>. The bracket is a geometric series with ratio 2 &mdash; the exact tool 1.3 formalises next.</td></tr>
-</table>
+</tbody></table>
 </div>
 
 <div class="page page-break">
@@ -812,14 +814,14 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
 <span class="pill">FORMULA</span>
 <p class="section-header">Six Fast Shortcut-Style Problems (all independently re-verified) <span style="float:right;">&#9733;&#9733;&#9733; HIGHEST-VALUE PATTERNS</span></p>
 <table class="comparison-table" style="font-size:8.3pt;">
-  <tr><th style="width:6%;">#</th><th style="width:30%;">Problem</th><th>Solution technique &amp; answer</th></tr>
+  <thead><tr><th style="width:6%;">#</th><th style="width:30%;">Problem</th><th>Solution technique &amp; answer</th></tr></thead><tbody>
   <tr><td>1</td><td>Find t<sub>n</sub> of &minus;1, 2, &minus;4, 8, &hellip;</td><td>Alternating-sign GP: t<sub>n</sub> = (&minus;1)&#8319;&times;2&#8319;&#8315;&#185;. Check n=3: (&minus;1)&sup3;&times;2&sup2;=&minus;4 &check;. <strong>General formula, no single numeric answer needed.</strong></td></tr>
   <tr><td>2</td><td>If S<sub>n</sub>=n&sup2;+2n for an A.P., find t<sub>n</sub>.</td><td>t<sub>n</sub> = S<sub>n</sub>&minus;S<sub>n&minus;1</sub> = (n&sup2;+2n)&minus;[(n&minus;1)&sup2;+2(n&minus;1)] = <strong>2n+1</strong>. (This t<sub>n</sub>=S<sub>n</sub>&minus;S<sub>n&minus;1</sub> trick works for ANY series given as a formula for S<sub>n</sub>.)</td></tr>
   <tr><td>3</td><td>x=1+&#8531;+1/3&sup2;+&hellip;&infin;, y=1+&#188;+1/4&sup2;+&hellip;&infin;, find xy.</td><td>Both infinite GPs: x=1/(1&minus;&#8531;)=3/2, y=1/(1&minus;&#188;)=4/3. xy = (3/2)(4/3) = <strong>2</strong></td></tr>
   <tr><td>4</td><td>8<sup>th</sup> term of an A.P. is 15 &mdash; find S&#8321;&#8325;.</td><td>Recognise S&#8321;&#8325;=(15/2)(2a+14d)=15&times;(a+7d)=15&times;t&#8328;=15&times;15=<strong>225</strong>. (No need to find a or d separately &mdash; S&#8321;&#8325; always equals 15&times; the 8<sup>th</sup> term, since the 8th term is the exact middle of 15 terms.)</td></tr>
   <tr><td>5</td><td>Sum of 3<sup>rd</sup> and 9<sup>th</sup> terms of an A.P. is 8 &mdash; find S&#8321;&#8321;.</td><td>t&#8323;+t&#8329;=(a+2d)+(a+8d)=2a+10d=8. S&#8321;&#8321;=(11/2)(2a+10d)=(11/2)(8)=<strong>44</strong></td></tr>
   <tr><td>6</td><td>Sum of all multiples of 5 between 100 and 1000.</td><td>First=105, last=995, n=(995&minus;105)/5+1=179. S=(179/2)(105+995)=179&times;550=<strong>98,450</strong></td></tr>
-</table>
+</tbody></table>
 <div class="shortcut-box"><span class="shortcut-label">&#9889; SHORTCUT</span> Patterns 4 and 5 generalise: whenever a sum S<sub>2k+1</sub> (an ODD number of terms) is needed and you&rsquo;re given (or can find) the exact MIDDLE term, S<sub>2k+1</sub> = (2k+1) &times; middle term &mdash; often faster than solving for a and d separately.</div>
 </div>
 
@@ -911,7 +913,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
 <p class="section-header">2.1 Set Theory — Definition and Twelve Types of Sets <span style="float:right;">&#9733;&#9733;&#9733; HIGH</span></p>
 <div class="definition-block"><p class="definition-text">A <strong>Set</strong> is any well-defined collection of distinct, different objects, each called an <strong>Element</strong>. &ldquo;Well-defined&rdquo; means every object in the collection unambiguously belongs there. <strong>Set-builder form:</strong> W = {t : t is even and 81&lt;t&lt;100} reads as &ldquo;W is the set of all t such that t is even and lies between 81 and 100.&rdquo;</p></div>
 <table class="comparison-table" style="font-size:8.3pt;">
-  <tr><th style="width:20%;">Type</th><th>Content (ICMAI)</th></tr>
+  <thead><tr><th style="width:20%;">Type</th><th>Content (ICMAI)</th></tr></thead><tbody>
   <tr><td><strong>1. Set of sets</strong></td><td>Every element of the set is ITSELF a set. E.g. T={a,b,c,d} where a,b,c,d are each their own set of numbers.</td></tr>
   <tr><td><strong>2. Singleton set</strong></td><td>Exactly one element. E.g. L={33}.</td></tr>
   <tr><td><strong>3. Null / Void / Empty set</strong></td><td>No elements at all, denoted &empty; or {} &mdash; distinctly different from {0}, which has ONE element (zero).</td></tr>
@@ -924,7 +926,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
   <tr><td><strong>10. Universal set (U)</strong></td><td>The fixed set of which every set under discussion is a subset. Also called &ldquo;Space&rdquo;; its elements are &ldquo;Points.&rdquo;</td></tr>
   <tr><td><strong>11. Power set, P(V)</strong></td><td>The set of ALL subsets of V. For n elements, P(V) has <strong>2&#8319; elements</strong>. E.g. V={0,1,2} (n=3) &rArr; P(V) has 2&sup3;=8 subsets: &empty;,{0},{1},{2},{0,1},{0,2},{1,2},{0,1,2}.</td></tr>
   <tr><td><strong>12. Product set, A&times;B</strong></td><td>The set of ALL ordered pairs (a,b) with a&isin;A, b&isin;B. A&times;B &ne; B&times;A in general (different pair ordering).</td></tr>
-</table>
+</tbody></table>
 <div class="definition-block"><p class="definition-text"><strong>Cardinality (order), n(A):</strong> the count of distinct elements in a finite set. n({a,b,c})=3. <strong>Three chaining rules:</strong> every set is a subset of itself (Q&sube;Q); the null set is a subset of every set (&empty;&sube;Q); and subset relations chain &mdash; if Q&sube;W and W&sube;R, then Q&sube;R.</p></div>
 </div>
 
@@ -934,13 +936,13 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
 <span class="pill">CONCEPT</span>
 <p class="section-header">Set Operations — Five Ways to Combine Sets <span style="float:right;">&#9733;&#9733;&#9733; HIGH</span></p>
 <table class="comparison-table">
-  <tr><th style="width:22%;">Operation</th><th>Content (ICMAI)</th></tr>
+  <thead><tr><th style="width:22%;">Operation</th><th>Content (ICMAI)</th></tr></thead><tbody>
   <tr><td><strong>1. Union (A&cup;B)</strong></td><td>All elements of A and B combined, each counted ONCE. A={1,3,5,7}, B={5,7,9} &rArr; A&cup;B={1,3,5,7,9}. Extends to any number of sets.</td></tr>
   <tr><td><strong>2. Intersection (A&cap;B)</strong></td><td>Only the elements common to both. A={2,3,4}, B={3,4,6} &rArr; A&cap;B={3,4}.</td></tr>
   <tr><td><strong>3. Disjoint sets</strong></td><td>A&cap;B=&empty; &mdash; no shared elements. A={1,3,5}, B={2,4} &rArr; disjoint.</td></tr>
   <tr><td><strong>4. Difference (A&minus;B)</strong></td><td>Elements of A that are NOT in B. A={5,7,8,9}, B={9} &rArr; A&minus;B={5,7,8}.</td></tr>
   <tr><td><strong>5. Complement (A&prime;)</strong></td><td>Everything in U except A&rsquo;s own elements: A&prime;=U&minus;A. U={1..7}, A={1,2,3,4} &rArr; A&prime;={5,6,7}.</td></tr>
-</table>
+</tbody></table>
 <div class="formula-box"><p class="formula-text">n(A&cup;B) = n(A) + n(B) &minus; n(A&cap;B) &nbsp;&nbsp;(subtract the double-counted overlap)</p><hr class="var-divider"><p class="formula-vars">If A, B disjoint: n(A&cup;B)=n(A)+n(B) (no overlap to subtract). For three sets: n(A&cup;B&cup;C) = n(A)+n(B)+n(C) &minus; n(A&cap;B) &minus; n(B&cap;C) &minus; n(C&cap;A) + n(A&cap;B&cap;C) &mdash; subtract each PAIR overlap once, then add back the TRIPLE overlap (it got subtracted three times, so add it back once). If A, B, C disjoint: simply n(A)+n(B)+n(C).</p></div>
 </div>
 
@@ -950,7 +952,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
 <span class="pill">FORMULA</span>
 <p class="section-header">Laws of Algebra of Sets — Seven Families <span style="float:right;">&#9733;&#9733;&#9733; HIGH</span></p>
 <table class="comparison-table" style="font-size:8.3pt;">
-  <tr><th style="width:20%;">Law family</th><th>Content (ICMAI)</th></tr>
+  <thead><tr><th style="width:20%;">Law family</th><th>Content (ICMAI)</th></tr></thead><tbody>
   <tr><td><strong>1. Idempotent</strong></td><td>A&cap;A=A &nbsp;&middot;&nbsp; A&cup;A=A. Combining a set with itself changes nothing.</td></tr>
   <tr><td><strong>2. Commutative</strong></td><td>A&cap;B=B&cap;A &nbsp;&middot;&nbsp; A&cup;B=B&cup;A. Order doesn&rsquo;t matter.</td></tr>
   <tr><td><strong>3. Associative</strong></td><td>A&cup;(B&cup;C)=(A&cup;B)&cup;C &nbsp;&middot;&nbsp; A&cap;(B&cap;C)=(A&cap;B)&cap;C. Grouping doesn&rsquo;t matter.</td></tr>
@@ -958,7 +960,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
   <tr><td><strong>5. De Morgan&rsquo;s Law</strong></td><td>(A&cup;B)&prime;=A&prime;&cap;B&prime; (complement of a union = intersection of complements) &nbsp;&middot;&nbsp; (A&cap;B)&prime;=A&prime;&cup;B&prime; (complement of an intersection = union of complements).</td></tr>
   <tr><td><strong>6. Identity Law</strong></td><td>A&cup;U=U &nbsp;&middot;&nbsp; A&cup;&empty;=A &nbsp;&middot;&nbsp; A&cap;&empty;=&empty; &nbsp;&middot;&nbsp; A&cap;U=A.</td></tr>
   <tr><td><strong>7. Complement Law</strong></td><td>A&cup;A&prime;=U &nbsp;&middot;&nbsp; &empty;&prime;=U &nbsp;&middot;&nbsp; U&prime;=&empty; &nbsp;&middot;&nbsp; A&cap;A&prime;=&empty; &nbsp;&middot;&nbsp; (A&prime;)&prime;=A.</td></tr>
-</table>
+</tbody></table>
 <div class="trap-block"><span class="pill amber">&#9888; TRAP</span><p class="trap-label">De Morgan flips the operation, not just the sets</p><p class="trap-row"><strong>THE TRAP:</strong> complementing a UNION gives an INTERSECTION, and complementing an INTERSECTION gives a UNION &mdash; the operation itself flips. Distributing the prime symbol without swapping &cup;&harr;&cap; is the single most common De Morgan error.</p></div>
 </div>
 
@@ -1023,7 +1025,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
 <span class="pill">FORMULA</span>
 <p class="section-header">Set Theory — Ten Worked Examples (all independently re-verified) <span style="float:right;">&#9733;&#9733;&#9733; HIGH</span></p>
 <table class="comparison-table" style="font-size:8.3pt;">
-  <tr><th style="width:30%;">Problem</th><th>Solution (verified)</th></tr>
+  <thead><tr><th style="width:30%;">Problem</th><th>Solution (verified)</th></tr></thead><tbody>
   <tr><td>Set-builder form of M={1,8,27,64,125,&hellip;}</td><td>Each term is a perfect cube: <strong>M={x : x=n&sup3;, n&isin;N}</strong></td></tr>
   <tr><td>Roster form of B={letters in &lsquo;LANGUAGE&rsquo;}</td><td>8 letters, but G-A-A repeat &mdash; distinct letters only: <strong>B={L,A,N,G,U,E}</strong></td></tr>
   <tr><td>A={2,4,6,8,10}, B={1,3,5,7,9}, C={1,2,3,4,5}, D={6,7,8,9,10}. Find A&cup;B, A&cap;C, B&cap;D, A&cap;D.</td><td>A&cup;B=<strong>{1,2,&hellip;,10}</strong> (all 10, no overlap) &middot; A&cap;C=<strong>{2,4}</strong> &middot; B&cap;D=<strong>{7,9}</strong> &middot; A&cap;D=<strong>{6,8,10}</strong></td></tr>
@@ -1031,7 +1033,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
   <tr><td>A={1,2,3,4,6,7,12,17,21,35,52,56}; B=odd numbers in A, C=prime numbers in A. Find B&cap;C.</td><td>B={1,3,7,17,21,35}, C={2,3,7,17} &rArr; <strong>B&cap;C = {3,7,17}</strong></td></tr>
   <tr><td>A={1,2,3,4,5}, B={2,4,5,8}, C={3,4,5,6,7}. Find A&cup;(B&cup;C).</td><td>B&cup;C={2,3,4,5,6,7,8} &rArr; A&cup;(B&cup;C) = <strong>{1,2,3,4,5,6,7,8}</strong></td></tr>
   <tr><td>A={1,2,3}, B={2,3,4}. Find (A&minus;B)&cup;(B&minus;A).</td><td>A&minus;B={1}, B&minus;A={4} &rArr; <strong>{1,4}</strong> (this combination is called the &ldquo;symmetric difference&rdquo;)</td></tr>
-</table>
+</tbody></table>
 <div class="worked-example avoid-break">
 <p class="ex-label">Set-notation translation practice (verified)</p>
 <p class="ex-step">First ten even natural numbers: <strong>{x : x is an even integer, 2&le;x&le;20}</strong> = {2,4,6,8,10,12,14,16,18,20}</p>
@@ -1123,7 +1125,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
 <span class="pill">FORMULA</span>
 <p class="section-header">Logarithms — Nine Worked Examples (independently re-verified) <span style="float:right;">&#9733;&#9733;&#9733; HIGH</span></p>
 <table class="comparison-table" style="font-size:8.3pt;">
-  <tr><th style="width:34%;">Problem</th><th>Solution (verified)</th></tr>
+  <thead><tr><th style="width:34%;">Problem</th><th>Solution (verified)</th></tr></thead><tbody>
   <tr><td>Simplify log&#8322;49</td><td>49=7&times;7, so log&#8322;49 = log&#8322;(7&times;7) = log&#8322;7+log&#8322;7 = <strong>2&times;log&#8322;7</strong></td></tr>
   <tr><td>Simplify log&#8322;(97/7)</td><td>By the quotient rule: <strong>log&#8322;97 &minus; log&#8322;7</strong></td></tr>
   <tr><td>Express log&#8322;(15&times;3) as a sum</td><td>By the product rule: <strong>log&#8322;15 + log&#8322;3</strong></td></tr>
@@ -1133,7 +1135,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
   <tr><td>Express log&#8328;8&sup3; as a quotient of base-10 logarithms</td><td>By the change-of-base law: <strong>log&#8321;&#8320;8&sup3; / log&#8321;&#8320;8</strong></td></tr>
   <tr><td>Express log&#8322;3 with base 3</td><td>By the reciprocal-swap law: <strong>1/log&#8323;2</strong></td></tr>
   <tr><td>Express log&#8321;&#8322;3 with base 3, simplified</td><td>By the reciprocal-swap law, log&#8321;&#8322;3 = 1/log&#8323;12; since 12=3&times;4, log&#8323;12 = log&#8323;3+log&#8323;4 = 1+log&#8323;4: <strong>1/(1+log&#8323;4)</strong></td></tr>
-</table>
+</tbody></table>
 <div class="shortcut-box"><span class="shortcut-label">&#9889; SHORTCUT</span> Logarithm laws mirror the Indices laws exactly, one level up: multiplying indices &rarr; ADDING logs (product rule); dividing indices &rarr; SUBTRACTING logs (quotient rule); raising to a power &rarr; MULTIPLYING the log (power rule). If you know the index rule, you already know the matching log rule.</div>
 </div>
 
@@ -1216,13 +1218,13 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
 <p class="ex-answer">Required ways = &frac12;&times;7! = &frac12;&times;5,040 = <strong>2,520</strong>.</p>
 </div>
 <table class="comparison-table" style="font-size:8.3pt;">
-  <tr><th style="width:38%;">Problem</th><th>Solution (independently re-verified)</th></tr>
+  <thead><tr><th style="width:38%;">Problem</th><th>Solution (independently re-verified)</th></tr></thead><tbody>
   <tr><td>21 boys and 19 girls in a class &mdash; select one boy AND one girl</td><td>21 ways to pick the boy, and for each, 19 ways to pick the girl: 21&times;19 = <strong>399</strong></td></tr>
   <tr><td>Class of 40 &mdash; award 1st &amp; 2nd prizes in BOTH Maths and Stats</td><td>Maths&rsquo; two prizes go out in <sup>40</sup>P<sub>2</sub> ways; independently, so do Stats&rsquo;: <strong><sup>40</sup>P<sub>2</sub> &times; <sup>40</sup>P<sub>2</sub></strong></td></tr>
   <tr><td>Words from &ldquo;ALLAHABAD&rdquo; with vowels in the even positions</td><td>9 letters: A repeats 4&times;, L repeats 2&times;. The 4 vowels (all A) fill the 4 even positions in exactly 1 way; the 5 consonants (with L repeated) arrange among themselves in 5!/2! = 60 ways: total = 60&times;1 = <strong>60</strong></td></tr>
   <tr><td>3-letter words from &ldquo;SQUARE,&rdquo; no letter repeated</td><td>SQUARE has 6 distinct letters, so this is a direct permutation: 6&times;5&times;4 = 120 = <strong><sup>6</sup>P<sub>3</sub></strong></td></tr>
   <tr><td>5 doors and 4 windows &mdash; ways a cat can enter AND leave a room</td><td>9 openings to enter through, 9 to leave through, independently: 9&times;9 = <strong>81 ways</strong></td></tr>
-</table>
+</tbody></table>
 <div class="worked-example avoid-break">
 <p class="ex-label">Solving for an unknown inside factorials (independently re-verified)</p>
 <p class="ex-step">Given 1/4! + 1/5! = x/6!, find x.</p>
@@ -1276,22 +1278,22 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
 <div class="formula-box"><p class="formula-text"><sup>m+n</sup>C<sub>m</sub> = (m+n)! / [m!&times;n!]</p><hr class="var-divider"><p class="formula-vars"><strong>If m=n</strong> (equal groups), the count becomes (2m)!/(m!)&sup2;, halved from the plain formula, since the two equal groups could otherwise be swapped without producing a genuinely new division. This same figure, (2m)!/(m!)&sup2;, also gives the number of ways to divide 2m things equally between 2 people. <strong>For three groups</strong> of sizes m, n, p (m&ne;n&ne;p) out of (m+n+p) things, the count is (m+n+p)!/(m!&times;n!&times;p!); if all three groups are equal in size (m=n=p), this must further be divided by 3! since the three equal groups can themselves be rearranged 3! ways without creating a new division.</p></div>
 
 <table class="comparison-table" style="font-size:8.3pt;">
-  <tr><th style="width:40%;">Problem</th><th>Solution (independently re-verified)</th></tr>
+  <thead><tr><th style="width:40%;">Problem</th><th>Solution (independently re-verified)</th></tr></thead><tbody>
   <tr><td>Diagonals in a hexagon</td><td>Total lines between 6 vertices, minus the 6 sides themselves: &#8310;C&#8322; &minus; 6 = 15&minus;6 = <strong>9</strong></td></tr>
   <tr><td>Triangles from 8 points, no 3 collinear</td><td>Any 3 points form a triangle: &#8312;C&#8323; = <strong>56</strong></td></tr>
   <tr><td>Triangles from 12 points, 5 of them collinear</td><td>All possible triples, minus the collinear triples that fail to form a triangle: &#185;&#178;C&#8323; &minus; &#8309;C&#8323; = 220&minus;10 = <strong>210</strong></td></tr>
   <tr><td>Straight lines from 16 points, none collinear</td><td>Any 2 points determine a line: &#185;&#8310;C&#8322; = <strong>120</strong></td></tr>
   <tr><td>Team of 11 from 14 players, where 2 specific players can ONLY be goalkeeper</td><td>Exactly 1 goalkeeper must come from the 2 goalkeeper-only players; the remaining 10 spots come from the other 12 outfield players: &sup2;C&#8321; &times; &#185;&#178;C&#8321;&#8320; = 2&times;66 = <strong>132</strong></td></tr>
   <tr><td>A polygon has 27 diagonals &mdash; find its number of sides</td><td>Diagonals of an n-sided polygon = n(n&minus;3)/2. Setting this to 27: n&sup2;&minus;3n&minus;54=0, which factors as (n&minus;9)(n+6)=0. Since sides can&rsquo;t be negative, <strong>n=9</strong></td></tr>
-</table>
+</tbody></table>
 
 <table class="comparison-table">
-  <tr><th style="width:26%;">Basis</th><th>Permutation</th><th>Combination</th></tr>
+  <thead><tr><th style="width:26%;">Basis</th><th>Permutation</th><th>Combination</th></tr></thead><tbody>
   <tr><td><strong>Meaning</strong></td><td>Arrangement of objects selected from those available.</td><td>Selection of objects from those available.</td></tr>
   <tr><td><strong>Order</strong></td><td>Order of selection MATTERS.</td><td>Order of selection does NOT matter.</td></tr>
   <tr><td><strong>Formula</strong></td><td><sup>n</sup>P<sub>r</sub> = n!/(n&minus;r)!</td><td><sup>n</sup>C<sub>r</sub> = n!/[(n&minus;r)!&times;r!]</td></tr>
   <tr class="exam-trick"><td colspan="3">&#9733; EXAM TRICK: for the same n and r, permutation is always LARGER than combination (by a factor of r!) &mdash; because permutation additionally counts every different ORDER of the same selected group as a separate outcome.</td></tr>
-</table>
+</tbody></table>
 <div class="revision-strip">
 <p class="title-bar">2.3 IN NINETY SECONDS &mdash; PERMUTATION &amp; COMBINATION</p>
 <div class="facts">
@@ -1418,7 +1420,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
 <div class="concept-block avoid-break">
   <p class="section-header">Glossary — Terms Worth Knowing Cold</p>
   <table class="comparison-table" style="font-size:8.3pt;">
-    <tr><th style="width:26%;">Term</th><th>Plain meaning</th></tr>
+    <thead><tr><th style="width:26%;">Term</th><th>Plain meaning</th></tr></thead><tbody>
     <tr><td><strong>Function</strong></td><td>A rule assigning exactly one (or more, if multi-valued) output y for each input x in its domain.</td></tr>
     <tr><td><strong>Domain / Range</strong></td><td>Domain = every allowed input value. Range = every output value the function actually produces.</td></tr>
     <tr><td><strong>Limit</strong></td><td>The value a function APPROACHES as x approaches some point, whether or not the function is actually defined there.</td></tr>
@@ -1426,7 +1428,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
     <tr><td><strong>Derivative</strong></td><td>The instantaneous rate of change of a function &mdash; geometrically, the slope of its tangent line at a point.</td></tr>
     <tr><td><strong>Marginal Revenue/Cost</strong></td><td>The derivative of the Revenue or Cost function &mdash; the extra revenue or cost from ONE more unit.</td></tr>
     <tr><td><strong>Maxima / Minima</strong></td><td>Points where a function reaches a local peak or trough &mdash; found where its first derivative equals zero.</td></tr>
-  </table>
+  </tbody></table>
 </div>
 </div>
 
@@ -1447,7 +1449,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
 <span class="pill">CONCEPT</span>
 <p class="section-header">Nine Types of Function, Each With an Example <span style="float:right;">&#9733;&#9733;&#9733; HIGHEST-VALUE TOPIC</span></p>
 <table class="comparison-table" style="font-size:8.3pt;">
-  <tr><th style="width:24%;">Type</th><th>Definition and example (ICMAI)</th></tr>
+  <thead><tr><th style="width:24%;">Type</th><th>Definition and example (ICMAI)</th></tr></thead><tbody>
   <tr><td><strong>1. Constant function</strong></td><td>y has just ONE value for every value of x. Example: y=f(x)=7 for all real x.</td></tr>
   <tr><td><strong>2. Single-valued function</strong></td><td>Exactly one value of y for every value of x. Example: y=2x+3, so at x=1, y=5; at x=2, y=7.</td></tr>
   <tr><td><strong>3. Multi-valued function</strong></td><td>MORE than one value of y for a given x. Example: y&sup2;=x gives y=&plusmn;&radic;x for every x&gt;0.</td></tr>
@@ -1457,7 +1459,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
   <tr><td><strong>7. Inverse function</strong></td><td>If y=f(x) can be rearranged into x=F(y), each is the inverse of the other. Example: y=4x&minus;3 and x=&frac14;(y+3) are inverse to each other.</td></tr>
   <tr><td><strong>8. Polynomial function</strong></td><td>F(x)=a&#8320;+a&#8321;x+a&#8322;x&sup2;+&hellip;+a<sub>n</sub>x<sup>n</sup>, for positive integer n. Named by its highest power: n=0 gives a constant function, n=1 a linear function, n=2 a quadratic, n=3 a cubic.</td></tr>
   <tr><td><strong>9. Rational / Irrational / Algebraic function</strong></td><td>RATIONAL: expressed as one polynomial divided by another, P(x)/Q(x), defined wherever the denominator &ne;0. IRRATIONAL: cannot be written this way, e.g. &radic;x where x isn&rsquo;t a perfect square. ALGEBRAIC: any polynomial expression with a finite number of terms, e.g. x&sup2;+2x&minus;3.</td></tr>
-</table>
+</tbody></table>
 <div class="worked-example avoid-break">
 <p class="ex-label">A rational function that fails to exist at specific points (independently re-verified)</p>
 <p class="ex-step">For f(x) = (x+2)/(x&sup2;&minus;4x+3), the function is undefined wherever the denominator is zero.</p>
@@ -1571,7 +1573,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
 <span class="pill">FORMULA</span>
 <p class="section-header">Eleven Standard Rules of Differentiation <span style="float:right;">&#9733;&#9733;&#9733; HIGHEST-VALUE TOPIC</span></p>
 <table class="comparison-table" style="font-size:8.3pt;">
-  <tr><th style="width:8%;">#</th><th style="width:36%;">Rule</th><th>Statement</th></tr>
+  <thead><tr><th style="width:8%;">#</th><th style="width:36%;">Rule</th><th>Statement</th></tr></thead><tbody>
   <tr><td>1</td><td><strong>Power rule</strong></td><td>d/dx(x<sup>n</sup>) = n&middot;x<sup>n&minus;1</sup></td></tr>
   <tr><td>2</td><td><strong>Negative power rule</strong></td><td>d/dx(1/x<sup>n</sup>) = &minus;n/x<sup>n+1</sup></td></tr>
   <tr><td>3</td><td><strong>Exponential (base e)</strong></td><td>d/dx(e<sup>x</sup>) = e<sup>x</sup> &mdash; the one function that is its own derivative</td></tr>
@@ -1583,7 +1585,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
   <tr><td>9</td><td><strong>Product rule</strong></td><td>d/dx(uv) = u&middot;dv/dx + v&middot;du/dx</td></tr>
   <tr><td>10</td><td><strong>Quotient rule</strong></td><td>d/dx(u/v) = [v&middot;du/dx &minus; u&middot;dv/dx] / v&sup2;</td></tr>
   <tr><td>11</td><td><strong>Chain rule</strong></td><td>dy/dx = dy/du &times; du/dx, when y is a function of u, which is itself a function of x</td></tr>
-</table>
+</tbody></table>
 <div class="shortcut-box"><span class="shortcut-label">&#9889; SHORTCUT</span> Product rule: "first times derivative of second, PLUS second times derivative of first." Quotient rule: same numerator pattern but with a MINUS, all over the denominator squared — mixing up the sign or which term gets differentiated first is the most common error with both.</div>
 </div>
 
@@ -1591,14 +1593,14 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
 <span class="pill">FORMULA</span>
 <p class="section-header">Differentiation — Six Worked Examples (independently re-verified via symbolic computation) <span style="float:right;">&#9733;&#9733;&#9733; HIGH</span></p>
 <table class="comparison-table" style="font-size:8.3pt;">
-  <tr><th style="width:30%;">Function</th><th>Derivative (verified)</th></tr>
+  <thead><tr><th style="width:30%;">Function</th><th>Derivative (verified)</th></tr></thead><tbody>
   <tr><td>y = x&#8308;</td><td>By the power rule: <strong>4x&sup3;</strong></td></tr>
   <tr><td>y = 1/x</td><td>By the negative power rule: <strong>&minus;1/x&sup2;</strong></td></tr>
   <tr><td>y = x&sup3;+x&sup2;</td><td>By the sum rule, applied term by term: <strong>3x&sup2;+2x</strong></td></tr>
   <tr><td>y = x&sup2;&middot;e<sup>x</sup></td><td>By the product rule: x&sup2;&middot;e<sup>x</sup> + e<sup>x</sup>&middot;2x = <strong>x&sup2;e<sup>x</sup>+2xe<sup>x</sup></strong></td></tr>
   <tr><td>y = 2x&#8308;</td><td>By the power rule: <strong>8x&sup3;</strong></td></tr>
   <tr><td>y = x&#8308;+4x</td><td>By the sum rule: <strong>4x&sup3;+4</strong></td></tr>
-</table>
+</tbody></table>
 <div class="worked-example avoid-break">
 <p class="ex-label">The quotient rule in full (independently re-verified)</p>
 <p class="ex-step">Find dy/dx if y = x&sup2;/(x+1).</p>
@@ -1615,16 +1617,16 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
 <p class="section-header">3.2 Revenue and Cost Function — Revenue <span style="float:right;">&#9733;&#9733;&#9733; HIGHEST-VALUE TOPIC</span></p>
 <div class="definition-block"><p class="definition-text"><strong>Revenue</strong> refers to the receipts a firm obtains from selling quantities of a commodity at various prices. Three related concepts matter: Total, Average, and Marginal Revenue.</p></div>
 <table class="comparison-table">
-  <tr><th style="width:26%;">Concept</th><th>Formula and meaning</th></tr>
+  <thead><tr><th style="width:26%;">Concept</th><th>Formula and meaning</th></tr></thead><tbody>
   <tr><td><strong>Total Revenue (TR)</strong></td><td>TR = P&times;Q, where P is price per unit and Q is quantity sold &mdash; the total money the firm receives.</td></tr>
   <tr><td><strong>Average Revenue (AR)</strong></td><td>AR = TR/Q = (P&times;Q)/Q = P. Average revenue is simply the price of the commodity itself.</td></tr>
   <tr><td><strong>Marginal Revenue (MR)</strong></td><td>The extra revenue earned from selling exactly ONE more unit: MR = TR<sub>n+1</sub> &minus; TR<sub>n</sub>. Equivalently, MR is the RATE OF CHANGE of total revenue with respect to quantity: MR = d(TR)/dQ, the slope of the total revenue curve.</td></tr>
-</table>
+</tbody></table>
 <div class="worked-example avoid-break">
 <p class="ex-label">Building an AR/MR schedule from TR data (independently re-verified)</p>
 <p class="ex-step">Given the Total Revenue at each output level, find Average Revenue and Marginal Revenue at each point.</p>
 <table class="comparison-table" style="font-size:8.3pt;">
-  <tr><th>Q (units)</th><th>TR</th><th>AR = TR/Q</th><th>MR = TR<sub>n</sub>&minus;TR<sub>n&minus;1</sub></th></tr>
+  <thead><tr><th>Q (units)</th><th>TR</th><th>AR = TR/Q</th><th>MR = TR<sub>n</sub>&minus;TR<sub>n&minus;1</sub></th></tr></thead><tbody>
   <tr><td>0</td><td>0</td><td>&mdash;</td><td>&mdash;</td></tr>
   <tr><td>1</td><td>29</td><td>29</td><td>29</td></tr>
   <tr><td>2</td><td>54</td><td>27</td><td>25</td></tr>
@@ -1632,7 +1634,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
   <tr><td>4</td><td>80</td><td>20</td><td>8</td></tr>
   <tr><td>5</td><td>80</td><td>16</td><td>0</td></tr>
   <tr><td>6</td><td>72</td><td>12</td><td>&minus;8</td></tr>
-</table>
+</tbody></table>
 <p class="ex-answer">Notice MR turns <strong>zero exactly where TR peaks</strong> (Q=5), and turns NEGATIVE once TR starts falling (Q=6) &mdash; a pattern worth recognising on sight.</p>
 </div>
 </div>
@@ -1646,12 +1648,12 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
   <li><strong>Total Variable Cost (TVC)</strong> DOES change with output &mdash; raw materials, casual wages, transport. More output needs more of these.</li>
 </ul>
 <table class="comparison-table">
-  <tr><th style="width:30%;">Concept</th><th>Formula</th></tr>
+  <thead><tr><th style="width:30%;">Concept</th><th>Formula</th></tr></thead><tbody>
   <tr><td><strong>Average Cost (AC)</strong></td><td>AC = TC / Output</td></tr>
   <tr><td><strong>Average Fixed Cost (AFC)</strong></td><td>AFC = TFC / Output</td></tr>
   <tr><td><strong>Average Variable Cost (AVC)</strong></td><td>AVC = TVC / Output</td></tr>
   <tr><td><strong>Marginal Cost (MC)</strong></td><td>MC = TC<sub>n+1</sub>&minus;TC<sub>n</sub>, or as a derivative, MC = d(TC)/dQ &mdash; the extra cost of producing ONE more unit.</td></tr>
-</table>
+</tbody></table>
 <div class="trap-block"><span class="pill amber">&#9888; TRAP</span><p class="trap-label">Marginal cost ignores fixed cost entirely</p><p class="trap-row"><strong>THE TRAP:</strong> marginal cost is INDEPENDENT of fixed cost. Since fixed cost never changes with output, it contributes nothing to the CHANGE in cost from one more unit &mdash; there is no such thing as &ldquo;marginal fixed cost.&rdquo;</p></div>
 <div class="definition-block"><p class="definition-text"><strong>Profit</strong> = Total Revenue &minus; Total Cost. The <strong>Break-Even Point</strong> is where Profit = 0, i.e. where TR = TC exactly &mdash; the firm earns neither profit nor loss.</p></div>
 <div class="formula-box"><p class="formula-text">Profit maximises where MR = MC</p><hr class="var-divider"><p class="formula-vars">Since Profit = TR&minus;TC, setting d(Profit)/dQ = d(TR)/dQ &minus; d(TC)/dQ = 0 gives MR&minus;MC=0, i.e. MR=MC exactly &mdash; the single most important equilibrium condition in this whole topic, and the formal justification for why calculus is genuinely useful in business decision-making.</p></div>
@@ -1671,13 +1673,13 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
 </div>
 <p class="body">The SECOND derivative reveals curvature: if f&Prime;(x)&gt;0, the curve is <strong>convex</strong> (curving upward, like a bowl); if f&Prime;(x)&lt;0, the curve is <strong>concave</strong> (curving downward, like a dome).</p>
 <table class="comparison-table avoid-break">
-  <tr><th>f&prime;(x)</th><th>f&Prime;(x)</th><th>Meaning</th></tr>
+  <thead><tr><th>f&prime;(x)</th><th>f&Prime;(x)</th><th>Meaning</th></tr></thead><tbody>
   <tr><td>&gt; 0</td><td>&gt; 0</td><td>Rising at an increasing rate</td></tr>
   <tr><td>&gt; 0</td><td>&lt; 0</td><td>Rising at a decreasing rate</td></tr>
   <tr><td>&lt; 0</td><td>&gt; 0</td><td>Falling at an increasing rate</td></tr>
   <tr><td>&lt; 0</td><td>&lt; 0</td><td>Falling at a decreasing rate</td></tr>
   <tr><td>&mdash;</td><td>= 0</td><td>Changing at a perfectly constant rate, as with any straight line</td></tr>
-</table>
+</tbody></table>
 </div>
 
 <div class="page page-break">
@@ -1762,12 +1764,12 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
 <div class="concept-block avoid-break">
   <p class="section-header">Glossary — Terms Worth Knowing Cold</p>
   <table class="comparison-table" style="font-size:8.3pt;">
-    <tr><th style="width:26%;">Term</th><th>Plain meaning</th></tr>
+    <thead><tr><th style="width:26%;">Term</th><th>Plain meaning</th></tr></thead><tbody>
     <tr><td><strong>Frequency</strong></td><td>How many times a particular value, or values within a class interval, occurs in the data.</td></tr>
     <tr><td><strong>Class interval</strong></td><td>A range of values grouped together, e.g. 10&ndash;20, used when raw data has too many distinct values to list individually.</td></tr>
     <tr><td><strong>Histogram</strong></td><td>Adjacent bars over class intervals, with NO gaps between them (unlike a bar diagram).</td></tr>
     <tr><td><strong>Ogive</strong></td><td>A curve of CUMULATIVE frequency, either &ldquo;less than&rdquo; or &ldquo;more than&rdquo; type.</td></tr>
-  </table>
+  </tbody></table>
 </div>
 </div>
 
@@ -1799,14 +1801,14 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
 <p class="ex-label">Converting a frequency table into pie-chart angles (independently re-verified)</p>
 <p class="ex-step">120 students chose work-experience options as follows: Photography 6, Clay Modelling 30, Kitchen Gardening 48, Doll Making 12, Book Binding 24.</p>
 <table class="comparison-table" style="font-size:8.5pt;">
-  <tr><th>Area</th><th>Students</th><th>Angle</th></tr>
+  <thead><tr><th>Area</th><th>Students</th><th>Angle</th></tr></thead><tbody>
   <tr><td>Photography</td><td>6</td><td>(6/120)&times;360 = 18&deg;</td></tr>
   <tr><td>Clay Modelling</td><td>30</td><td>(30/120)&times;360 = 90&deg;</td></tr>
   <tr><td>Kitchen Gardening</td><td>48</td><td>(48/120)&times;360 = 144&deg;</td></tr>
   <tr><td>Doll Making</td><td>12</td><td>(12/120)&times;360 = 36&deg;</td></tr>
   <tr><td>Book Binding</td><td>24</td><td>(24/120)&times;360 = 72&deg;</td></tr>
   <tr><td><strong>Total</strong></td><td><strong>120</strong></td><td><strong>360&deg;</strong></td></tr>
-</table>
+</tbody></table>
 <p class="ex-answer">All five angles sum to exactly <strong>360&deg;</strong>, confirming the calculation before drawing.</p>
 </div>
 <div class="mind-map-container" style="margin:3mm 0;">
@@ -1827,14 +1829,14 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
 <p class="ex-label">A second pie-chart example, for practice (independently re-verified)</p>
 <p class="ex-step">A car dealer&rsquo;s vehicle sales by type: Wagon R 72, S-Cross 54, Amaze 27, Punch 18, City 9. Total 180.</p>
 <table class="comparison-table" style="font-size:8.5pt;">
-  <tr><th>Type</th><th>Nos. Sold</th><th>Angle</th></tr>
+  <thead><tr><th>Type</th><th>Nos. Sold</th><th>Angle</th></tr></thead><tbody>
   <tr><td>Wagon R</td><td>72</td><td>(72/180)&times;360 = 144&deg;</td></tr>
   <tr><td>S-Cross</td><td>54</td><td>(54/180)&times;360 = 108&deg;</td></tr>
   <tr><td>Amaze</td><td>27</td><td>(27/180)&times;360 = 54&deg;</td></tr>
   <tr><td>Punch</td><td>18</td><td>(18/180)&times;360 = 36&deg;</td></tr>
   <tr><td>City</td><td>9</td><td>(9/180)&times;360 = 18&deg;</td></tr>
   <tr><td><strong>Total</strong></td><td><strong>180</strong></td><td><strong>360&deg;</strong></td></tr>
-</table>
+</tbody></table>
 </div>
 </div>
 
@@ -1859,7 +1861,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
 <span class="pill">CONCEPT</span>
 <p class="section-header">Key Statistical Terms Worth Knowing Cold <span style="float:right;">&#9733;&#9733;&#9733; HIGHEST-VALUE TOPIC</span></p>
 <table class="comparison-table" style="font-size:8.3pt;">
-  <tr><th style="width:24%;">Term</th><th>Meaning</th></tr>
+  <thead><tr><th style="width:24%;">Term</th><th>Meaning</th></tr></thead><tbody>
   <tr><td><strong>Raw Data</strong></td><td>Statistical data in its original form, before any technique has been applied to process or summarise it.</td></tr>
   <tr><td><strong>Array</strong></td><td>Data arranged in order of magnitude &mdash; ASCENDING (lowest to highest) or DESCENDING (highest to lowest).</td></tr>
   <tr><td><strong>Range</strong></td><td>The difference between the largest and smallest values in the data.</td></tr>
@@ -1868,7 +1870,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
   <tr><td><strong>Class Boundaries</strong> (true/actual class limits)</td><td>Where a gap exists between adjacent classes, the limits are extended by half that gap to close it: Lower boundary = lower limit &minus; &frac12; gap; Upper boundary = upper limit + &frac12; gap. In an EXCLUSIVE series, the class boundaries and class limits are identical.</td></tr>
   <tr><td><strong>Class Mark</strong> (mid-point, mid-value)</td><td>The arithmetic mean of a class&rsquo;s lower and upper limits: (Lower + Upper)/2.</td></tr>
   <tr><td><strong>Class Magnitude</strong></td><td>Upper class BOUNDARY minus lower class BOUNDARY.</td></tr>
-</table>
+</tbody></table>
 <div class="worked-example avoid-break">
 <p class="ex-label">Ascending and descending arrays, and the range (independently re-verified)</p>
 <p class="ex-step">Given the data 17, 7, 11, 5, 13, 9, form the ascending and descending arrays and find the range.</p>
@@ -1884,7 +1886,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
 <p class="ex-label">A larger grouped table with class boundaries, from 100 raw daily-earnings figures (independently re-verified)</p>
 <p class="ex-step">Daily earnings (&#8377;) of 100 doctors, tallied into nine classes of equal width 10, give this frequency distribution.</p>
 <table class="comparison-table" style="font-size:8.3pt;">
-  <tr><th>Class (&#8377;)</th><th>Frequency</th><th>Class Boundaries</th></tr>
+  <thead><tr><th>Class (&#8377;)</th><th>Frequency</th><th>Class Boundaries</th></tr></thead><tbody>
   <tr><td>20&ndash;29</td><td>13</td><td>19.5&ndash;29.5</td></tr>
   <tr><td>30&ndash;39</td><td>11</td><td>29.5&ndash;39.5</td></tr>
   <tr><td>40&ndash;49</td><td>18</td><td>39.5&ndash;49.5</td></tr>
@@ -1895,7 +1897,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
   <tr><td>90&ndash;99</td><td>12</td><td>89.5&ndash;99.5</td></tr>
   <tr><td>100&ndash;109</td><td>11</td><td>99.5&ndash;109.5</td></tr>
   <tr><td><strong>Total</strong></td><td><strong>100</strong></td><td>&mdash;</td></tr>
-</table>
+</tbody></table>
 <p class="ex-answer">This is an inclusive series (gap of 1 between class limits), so every boundary is the limit &plusmn;0.5, exactly as in the smaller example above.</p>
 </div>
 </div>
@@ -1904,12 +1906,12 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
 <span class="pill">CONCEPT</span>
 <p class="section-header">Inclusive vs. Exclusive Series, and Three Frequency Ratios <span style="float:right;">&#9733;&#9733; MEDIUM</span></p>
 <table class="comparison-table">
-  <tr><th style="width:26%;">Basis</th><th>Inclusive Series</th><th>Exclusive Series</th></tr>
+  <thead><tr><th style="width:26%;">Basis</th><th>Inclusive Series</th><th>Exclusive Series</th></tr></thead><tbody>
   <tr><td><strong>Also called</strong></td><td>Discontinuous series</td><td>Continuous series</td></tr>
   <tr><td><strong>Upper limit treatment</strong></td><td>INCLUDED in its own class, e.g. 0&ndash;5, 6&ndash;10, 11&ndash;15</td><td>Becomes the LOWER limit of the next class, e.g. 10&ndash;15, 15&ndash;20, 20&ndash;25</td></tr>
   <tr><td><strong>Shared boundary point</strong></td><td>No overlap between classes</td><td>The shared value (e.g. 15 above) belongs to the HIGHER class</td></tr>
   <tr><td><strong>To make continuous</strong></td><td>Must be adjusted to class boundaries first</td><td>Already continuous, no adjustment needed</td></tr>
-</table>
+</tbody></table>
 <p class="body">Three further ratios describe a class&rsquo;s frequency relative to the whole distribution.</p>
 <ol class="point-list numbered">
   <li><strong>Relative Frequency</strong> = Class frequency &divide; Total frequency &mdash; the class frequency expressed as a fraction of the total.</li>
@@ -1935,7 +1937,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
 <div class="worked-example avoid-break">
 <p class="ex-label">Histogram with unequal class widths, using frequency density (independently re-verified)</p>
 <table class="comparison-table" style="font-size:8.3pt;">
-  <tr><th>Class Limits</th><th>Class Boundaries</th><th>Width</th><th>Frequency</th><th>Density</th></tr>
+  <thead><tr><th>Class Limits</th><th>Class Boundaries</th><th>Width</th><th>Frequency</th><th>Density</th></tr></thead><tbody>
   <tr><td>10&ndash;14</td><td>9.5&ndash;14.5</td><td>5</td><td>4</td><td>0.8</td></tr>
   <tr><td>15&ndash;19</td><td>14.5&ndash;19.5</td><td>5</td><td>12</td><td>2.4</td></tr>
   <tr><td>20&ndash;29</td><td>19.5&ndash;29.5</td><td>10</td><td>20</td><td>2.0</td></tr>
@@ -1943,7 +1945,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
   <tr><td>40&ndash;49</td><td>39.5&ndash;49.5</td><td>10</td><td>14</td><td>1.4</td></tr>
   <tr><td>50&ndash;74</td><td>49.5&ndash;74.5</td><td>25</td><td>25</td><td>1.0</td></tr>
   <tr><td>75&ndash;99</td><td>74.5&ndash;99.5</td><td>25</td><td>10</td><td>0.4</td></tr>
-</table>
+</tbody></table>
 <p class="ex-answer">Plotting Frequency Density (not raw frequency) against the class boundaries gives a fair, undistorted histogram despite the varying widths.</p>
 </div>
 </div>
@@ -1958,7 +1960,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
 <p class="ex-step">For the FREQUENCY POLYGON, the mid-points of each bar&rsquo;s top are joined in sequence, with the shape closed at zero on the class immediately before 50&ndash;59 and immediately after 110&ndash;119.</p>
 <p class="ex-step">For the OGIVES, cumulative frequency is built up (less-than) and drawn down (more-than) at each class boundary:</p>
 <table class="comparison-table" style="font-size:8.5pt;">
-  <tr><th>Class Boundary</th><th>&ldquo;Less-than&rdquo; c.f.</th><th>&ldquo;More-than&rdquo; c.f.</th></tr>
+  <thead><tr><th>Class Boundary</th><th>&ldquo;Less-than&rdquo; c.f.</th><th>&ldquo;More-than&rdquo; c.f.</th></tr></thead><tbody>
   <tr><td>49.5</td><td>0</td><td>65 = N</td></tr>
   <tr><td>59.5</td><td>8</td><td>57</td></tr>
   <tr><td>69.5</td><td>18</td><td>47</td></tr>
@@ -1967,7 +1969,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
   <tr><td>99.5</td><td>58</td><td>7</td></tr>
   <tr><td>109.5</td><td>63</td><td>2</td></tr>
   <tr><td>119.5</td><td>65 = N</td><td>0</td></tr>
-</table>
+</tbody></table>
 <p class="ex-answer">The two ogive curves ALWAYS cross at exactly one point &mdash; and the value directly below that crossing point on the horizontal axis is the distribution&rsquo;s <strong>Median</strong>, a graphical shortcut worth remembering.</p>
 </div>
 <div class="shortcut-box"><span class="shortcut-label">&#9889; SHORTCUT</span> "Less-than" ogive: starts at 0, climbs to N — think of it as accumulating UP. "More-than" ogive: starts at N, falls to 0 — accumulating DOWN. Where the two curves cross, read straight down to the x-axis: that value is the Median.</div>
@@ -2008,12 +2010,12 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
 <div class="concept-block avoid-break">
   <p class="section-header">Glossary — Terms Worth Knowing Cold</p>
   <table class="comparison-table" style="font-size:8.3pt;">
-    <tr><th style="width:26%;">Term</th><th>Plain meaning</th></tr>
+    <thead><tr><th style="width:26%;">Term</th><th>Plain meaning</th></tr></thead><tbody>
     <tr><td><strong>Central Tendency</strong></td><td>A single value that represents the whole distribution's centre &mdash; Mean, Median, or Mode.</td></tr>
     <tr><td><strong>Dispersion</strong></td><td>How spread out or scattered the data is around its centre.</td></tr>
     <tr><td><strong>Assumed Mean (A)</strong></td><td>A convenient reference value used to simplify calculation in the short-cut and step-deviation methods &mdash; the final answer does not depend on which value is chosen.</td></tr>
     <tr><td><strong>Weighted Mean</strong></td><td>A mean where each value's importance (its weight) differs, rather than every value counting equally.</td></tr>
-  </table>
+  </tbody></table>
 </div>
 </div>
 
@@ -2025,18 +2027,18 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
 <div class="definition-block"><p class="definition-text">Measures of central tendency split into two families: MATHEMATICAL measures (Arithmetic Mean, Geometric Mean, Harmonic Mean), calculated directly from every value, and POSITIONAL measures (Median, Mode), determined by a value&rsquo;s position or frequency in the data rather than by calculation on every value.</p></div>
 <p class="body">The <strong>Arithmetic Mean</strong> (denoted X&#772;) can be calculated three ways for individual or discrete data.</p>
 <table class="comparison-table" style="font-size:8.3pt;">
-  <tr><th style="width:30%;">Method</th><th>Formula</th></tr>
+  <thead><tr><th style="width:30%;">Method</th><th>Formula</th></tr></thead><tbody>
   <tr><td><strong>Direct Method</strong></td><td>X&#772; = &Sigma;X / N</td></tr>
   <tr><td><strong>Short-Cut (Indirect) Method</strong></td><td>X&#772; = A + &Sigma;dx/N, where dx = X&minus;A (deviation from an assumed mean A)</td></tr>
   <tr><td><strong>Step-Deviation Method</strong></td><td>X&#772; = A + (&Sigma;dx&prime;/N)&times;i, where dx&prime;=dx/i, and i is a common factor pulled out of every deviation</td></tr>
-</table>
+</tbody></table>
 <p class="body">For GROUPED data (with frequency f), the same three methods apply with f folded in.</p>
 <table class="comparison-table" style="font-size:8.3pt;">
-  <tr><th style="width:30%;">Method</th><th>Formula</th></tr>
+  <thead><tr><th style="width:30%;">Method</th><th>Formula</th></tr></thead><tbody>
   <tr><td><strong>Direct Method</strong></td><td>X&#772; = &Sigma;fX / &Sigma;f</td></tr>
   <tr><td><strong>Short-Cut Method</strong></td><td>X&#772; = A + &Sigma;fdx/&Sigma;f</td></tr>
   <tr><td><strong>Step-Deviation Method</strong></td><td>X&#772; = A + (&Sigma;fdx&prime;/&Sigma;f)&times;i</td></tr>
-</table>
+</tbody></table>
 <div class="formula-box"><p class="formula-text">Combined Mean (2+ series): X&#772; = (n&#8321;X&#772;&#8321;+n&#8322;X&#772;&#8322;+&hellip;+n<sub>k</sub>X&#772;<sub>k</sub>) / (n&#8321;+n&#8322;+&hellip;+n<sub>k</sub>)</p><hr class="var-divider"><p class="formula-vars"><strong>Weighted Mean:</strong> X&#772; = (w&#8321;X&#8321;+w&#8322;X&#8322;+&hellip;+w<sub>n</sub>X<sub>n</sub>) / (w&#8321;+w&#8322;+&hellip;+w<sub>n</sub>) &mdash; used whenever different values carry different importance, rather than counting equally.</p></div>
 <p class="body">Five <strong>Properties of the Arithmetic Mean</strong> are worth knowing:</p>
 <ol class="point-list numbered">
@@ -2108,11 +2110,11 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
 <p class="section-header">Median and Other Positional Measures <span style="float:right;">&#9733;&#9733;&#9733; HIGHEST-VALUE TOPIC</span></p>
 <div class="definition-block"><p class="definition-text">The <strong>Median</strong> (Md) is a POSITIONAL measure: the middle-most item once the data is arranged in order, dividing the series into two exactly equal halves.</p></div>
 <table class="comparison-table" style="font-size:8.3pt;">
-  <tr><th style="width:30%;">Case</th><th>Formula</th></tr>
+  <thead><tr><th style="width:30%;">Case</th><th>Formula</th></tr></thead><tbody>
   <tr><td><strong>Individual series, n odd</strong></td><td>Md = value of the [(n+1)/2]th item, once arranged in order</td></tr>
   <tr><td><strong>Individual series, n even</strong></td><td>Md = average of the (n/2)th and [(n/2)+1]th items</td></tr>
   <tr><td><strong>Discrete series with frequency</strong></td><td>Md = value at the [(N+1)/2]th position, where N=&Sigma;f, read off the cumulative frequency column</td></tr>
-</table>
+</tbody></table>
 <div class="formula-box"><p class="formula-text">Grouped data (&ldquo;less-than&rdquo; cumulative frequency): Md = l&#8321; + [(N/2&minus;C)/f]&times;h</p><hr class="var-divider"><p class="formula-vars">l&#8321; = lower boundary of the median class &middot; N=&Sigma;f &middot; C = cumulative frequency just BEFORE the median class &middot; f = the median class&rsquo;s own frequency &middot; h = width of the median class.</p></div>
 <div class="formula-box"><p class="formula-text">Grouped data (&ldquo;more-than&rdquo; cumulative frequency): Md = l&#8322; &minus; [(N/2&minus;C&Prime;)/f]&times;h</p><hr class="var-divider"><p class="formula-vars">l&#8322; = upper boundary of the median class &middot; C&Prime; = cumulative frequency just AFTER the median class. Both formulas, applied correctly to the same data, always agree.</p></div>
 </div>
@@ -2201,13 +2203,13 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
 <span class="pill">CONCEPT</span>
 <p class="section-header">When to Use Which Average <span style="float:right;">&#9733;&#9733; MEDIUM</span></p>
 <table class="comparison-table" style="font-size:8.3pt;">
-  <tr><th style="width:20%;">Average</th><th>Best suited for</th></tr>
+  <thead><tr><th style="width:20%;">Average</th><th>Best suited for</th></tr></thead><tbody>
   <tr><td><strong>Arithmetic Mean</strong></td><td>General-purpose averaging where every value counts equally.</td></tr>
   <tr><td><strong>Geometric Mean</strong></td><td>Series with WIDE dispersion; constructing index numbers; averaging proportions, percentages, and compound rates; measuring population growth, which itself compounds geometrically.</td></tr>
   <tr><td><strong>Harmonic Mean</strong></td><td>Problems where SMALL items deserve more relative weight than large ones &mdash; time, speed, rates, and prices. Has limited use in practice otherwise.</td></tr>
   <tr><td><strong>Median</strong></td><td>Qualitative characteristics (honesty, intelligence, ability); distributions that are positively skewed; problems of income, wealth, and investment distribution.</td></tr>
   <tr><td><strong>Mode</strong></td><td>Everyday sizing problems &mdash; the modal collar size, modal shoe size, modal garment size &mdash; and applications across biology, meteorology, business, and industry.</td></tr>
-</table>
+</tbody></table>
 </div>
 
 <!-- ============ 5.2 DISPERSION INTRODUCTION ============ -->
@@ -2247,10 +2249,10 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
 <p class="section-header">Quartile Deviation — Splitting the Data Into Four <span style="float:right;">&#9733;&#9733;&#9733; HIGH</span></p>
 <div class="definition-block"><p class="definition-text">Arranging data in order and splitting it into four EQUAL parts gives three cut points: Q&#8321; (first quartile, 25% of the way through), Q&#8322; (second quartile, the Median itself), and Q&#8323; (third quartile, 75% of the way through). The <strong>Interquartile Range</strong> = Q&#8323;&minus;Q&#8321; captures the spread of the MIDDLE half of the data.</p></div>
 <table class="comparison-table" style="font-size:8.3pt;">
-  <tr><th style="width:30%;">Case</th><th>Q&#8321; formula</th><th>Q&#8323; formula</th></tr>
+  <thead><tr><th style="width:30%;">Case</th><th>Q&#8321; formula</th><th>Q&#8323; formula</th></tr></thead><tbody>
   <tr><td><strong>Individual/discrete series</strong></td><td>[(n+1)/4]th item, once arranged in order</td><td>3&times;[(n+1)/4]th item</td></tr>
   <tr><td><strong>Grouped data</strong></td><td>l&#8321;+[(N/4&minus;C)/f]&times;h</td><td>l&#8321;+[(3N/4&minus;C)/f]&times;h</td></tr>
-</table>
+</tbody></table>
 <p class="body" style="font-size:8.3pt;">For grouped data, l&#8321; = lower boundary of the respective quartile class &middot; C = cumulative frequency just BEFORE that class &middot; f = that class&rsquo;s own frequency &middot; h = its width &mdash; the same variables as the Median formula, just anchored at N/4 or 3N/4 instead of N/2.</p>
 <div class="formula-box"><p class="formula-text">Quartile Deviation (Semi-Interquartile Range) = (Q&#8323;&minus;Q&#8321;)/2 &nbsp;&nbsp;&middot;&nbsp;&nbsp; Coefficient of QD = (Q&#8323;&minus;Q&#8321;)/(Q&#8323;+Q&#8321;)</p></div>
 <div class="worked-example avoid-break">
@@ -2274,10 +2276,10 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
 <p class="section-header">Mean Deviation — the First True &ldquo;Average Deviation&rdquo; Measure <span style="float:right;">&#9733;&#9733;&#9733; HIGHEST-VALUE TOPIC</span></p>
 <div class="definition-block"><p class="definition-text">Unlike Range or Quartile Deviation, <strong>Mean Deviation</strong> (or Average Absolute Deviation) genuinely uses EVERY observation. It is calculated in three steps: find the average (Mean, Median, or Mode &mdash; call it A); find the ABSOLUTE difference between each item and A, ignoring sign; and average those absolute differences.</p></div>
 <table class="comparison-table">
-  <tr><th style="width:30%;">Data type</th><th>Formula</th></tr>
+  <thead><tr><th style="width:30%;">Data type</th><th>Formula</th></tr></thead><tbody>
   <tr><td><strong>Ungrouped data</strong></td><td>M.D. = &Sigma;|X&minus;A| / n</td></tr>
   <tr><td><strong>Grouped data</strong></td><td>M.D. = &Sigma;f|X&minus;A| / &Sigma;f</td></tr>
-</table>
+</tbody></table>
 <p class="body">Here A can be the Mean, Median, or Mode &mdash; Mean Deviation can be measured from any of the three.</p>
 <div class="worked-example avoid-break">
 <p class="ex-label">Mean Deviation from the Mean, ungrouped data (independently re-verified)</p>
@@ -2320,10 +2322,10 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
 <p class="section-header">5.3 Standard Deviation — Variance and Its Square Root <span style="float:right;">&#9733;&#9733;&#9733; HIGHEST-VALUE TOPIC</span></p>
 <div class="definition-block"><p class="definition-text"><strong>Variance</strong> (&sigma;&sup2;) is the mean SQUARED deviation about the mean &mdash; squaring removes the sign problem that limited Mean Deviation, but leaves the units squared too (percent-squared, rupees-squared), which is hard to interpret directly. <strong>Standard Deviation</strong> (&sigma;) fixes this by taking the square root of variance, returning to the ORIGINAL units.</p></div>
 <table class="comparison-table">
-  <tr><th style="width:22%;">Measure</th><th>Direct formula</th><th>Shortcut (x&sup2;) formula</th></tr>
+  <thead><tr><th style="width:22%;">Measure</th><th>Direct formula</th><th>Shortcut (x&sup2;) formula</th></tr></thead><tbody>
   <tr><td><strong>Variance (&sigma;&sup2;)</strong></td><td>&Sigma;(x&minus;&mu;)&sup2; / N</td><td>&Sigma;x&sup2;/N &minus; &mu;&sup2;</td></tr>
   <tr><td><strong>Standard Deviation (&sigma;)</strong></td><td>&radic;[&Sigma;(x&minus;&mu;)&sup2;/N]</td><td>&radic;[&Sigma;x&sup2;/N &minus; &mu;&sup2;]</td></tr>
-</table>
+</tbody></table>
 <div class="worked-example avoid-break">
 <p class="ex-label">Variance and S.D. from ungrouped data, both methods (independently re-verified)</p>
 <p class="ex-step">15 impurity readings sum to 2.49, giving Mean = 2.49/15 = 0.166. &Sigma;(x&minus;m)&sup2; = 0.051, and separately, &Sigma;x&sup2; = 0.4643.</p>
@@ -2337,10 +2339,10 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
 <span class="pill">FORMULA</span>
 <p class="section-header">Standard Deviation for Grouped Data — a Full Worked Example <span style="float:right;">&#9733;&#9733;&#9733; HIGH</span></p>
 <table class="comparison-table">
-  <tr><th style="width:30%;">Measure</th><th>Formula</th></tr>
+  <thead><tr><th style="width:30%;">Measure</th><th>Formula</th></tr></thead><tbody>
   <tr><td><strong>Variance (grouped)</strong></td><td>&sigma;&sup2; = &Sigma;f(x&minus;m)&sup2;/&Sigma;f = &Sigma;fx&sup2;/&Sigma;f &minus; m&sup2;</td></tr>
   <tr><td><strong>Standard Deviation (grouped)</strong></td><td>&sigma; = &radic;[&Sigma;f(x&minus;m)&sup2;/&Sigma;f]</td></tr>
-</table>
+</tbody></table>
 <div class="worked-example avoid-break">
 <p class="ex-label">Salary distribution across 12 classes, 100 people (independently re-verified)</p>
 <p class="ex-step">Classes run from 700&ndash;799 through 1800&ndash;1899 (&#8377;&rsquo;000), with frequencies 4, 7, 8, 10, 12, 17, 13, 10, 9, 7, 2, 1 (&Sigma;f=100). Using class mid-points, &Sigma;fx = 124,950.</p>
@@ -2357,10 +2359,10 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
 <p class="section-header">Standard Deviation — Shortcut and Step-Deviation Methods <span style="float:right;">&#9733;&#9733;&#9733; HIGH</span></p>
 <p class="body">Beyond the direct method, two faster methods exist for calculating S.D. from grouped data.</p>
 <table class="comparison-table">
-  <tr><th style="width:26%;">Method</th><th>Formula</th></tr>
+  <thead><tr><th style="width:26%;">Method</th><th>Formula</th></tr></thead><tbody>
   <tr><td><strong>Shortcut Method</strong></td><td>&sigma; = &radic;[&Sigma;fdx&sup2;/&Sigma;f &minus; (&Sigma;fdx/&Sigma;f)&sup2;], where dx=x&minus;A, A is an assumed mean</td></tr>
   <tr><td><strong>Step-Deviation Method</strong></td><td>&sigma; = &radic;[&Sigma;fdx&prime;&sup2;/&Sigma;f &minus; (&Sigma;fdx&prime;/&Sigma;f)&sup2;] &times; h, where dx&prime;=(x&minus;A)/h, h is a common factor (usually the class width)</td></tr>
-</table>
+</tbody></table>
 <div class="worked-example avoid-break">
 <p class="ex-label">Shortcut method (independently re-verified)</p>
 <p class="ex-step">Ages of 480 people across 6 classes (20&ndash;25 through 45&ndash;50). Taking assumed mean A=32.5, working out fd and fd&sup2; for each class gives &Sigma;fd=&minus;1,100 and &Sigma;fd&sup2;=32,750.</p>
@@ -2417,11 +2419,11 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
 <p class="section-header">5.5 Skewness — When a Distribution Isn't Symmetrical <span style="float:right;">&#9733;&#9733;&#9733; HIGHEST-VALUE TOPIC</span></p>
 <div class="definition-block"><p class="definition-text"><strong>Skewness</strong> is the asymmetry, or lack of symmetry, in a frequency distribution&rsquo;s shape &mdash; specifically, how much further the curve extends on ONE side of its peak than the other. Skewness is best understood through how Mean, Median, and Mode relate to one another.</p></div>
 <table class="comparison-table">
-  <tr><th style="width:26%;">Relationship</th><th>Curve shape</th></tr>
+  <thead><tr><th style="width:26%;">Relationship</th><th>Curve shape</th></tr></thead><tbody>
   <tr><td><strong>Mean = Median = Mode</strong></td><td>Perfectly SYMMETRICAL &mdash; zero skewness.</td></tr>
   <tr><td><strong>Mode &lt; Median &lt; Mean</strong></td><td>POSITIVELY skewed &mdash; the tail stretches toward the RIGHT (higher values).</td></tr>
   <tr><td><strong>Mode &gt; Median &gt; Mean</strong></td><td>NEGATIVELY skewed &mdash; the tail stretches toward the LEFT (lower values).</td></tr>
-</table>
+</tbody></table>
 <p class="body">In BOTH skewed cases, the Median always sits BETWEEN the Mode and the Mean, never outside them. A further characteristic, based on quartiles: for positive skew, Q&#8323;&minus;Md &gt; Md&minus;Q&#8321;; for negative skew, Q&#8323;&minus;Md &lt; Md&minus;Q&#8321;; for a symmetrical distribution, the two differences are exactly equal.</p>
 <p class="body">Three ABSOLUTE measures of skewness exist, each simply a difference between two central-tendency measures: SK = Mean&minus;Mode, or SK = Mean&minus;Median, or SK = Median&minus;Mode. Being expressed in the original units, these can&rsquo;t compare across differently-scaled distributions &mdash; which is exactly what the RELATIVE (coefficient) measures below are for.</p>
 </div>
@@ -2494,11 +2496,11 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
 <div class="concept-block avoid-break">
   <p class="section-header">Glossary — Terms Worth Knowing Cold</p>
   <table class="comparison-table" style="font-size:8.3pt;">
-    <tr><th style="width:26%;">Term</th><th>Plain meaning</th></tr>
+    <thead><tr><th style="width:26%;">Term</th><th>Plain meaning</th></tr></thead><tbody>
     <tr><td><strong>Correlation</strong></td><td>The degree to which two variables are LINEARLY associated with each other — it does not, by itself, imply that one causes the other.</td></tr>
     <tr><td><strong>Regression</strong></td><td>A technique for predicting the value of one variable from the value of another, using a fitted straight line.</td></tr>
     <tr><td><strong>Scatter Diagram</strong></td><td>A plot of paired (X,Y) points, used to visually judge whether and how two variables relate.</td></tr>
-  </table>
+  </tbody></table>
 </div>
 </div>
 
@@ -2521,7 +2523,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
 <p class="section-header">Interpreting the Correlation Coefficient (r) <span style="float:right;">&#9733;&#9733;&#9733; HIGHEST-VALUE TOPIC</span></p>
 <div class="definition-block"><p class="definition-text">Karl Pearson&rsquo;s Coefficient of Correlation, r, always falls between &minus;1 and +1 inclusive: &minus;1&le;r&le;1. r=+1 means PERFECT positive correlation; r=&minus;1 means PERFECT negative correlation; r=0 means NO correlation at all.</p></div>
 <table class="comparison-table" style="font-size:8.5pt;">
-  <tr><th>Value of r</th><th>Interpretation</th></tr>
+  <thead><tr><th>Value of r</th><th>Interpretation</th></tr></thead><tbody>
   <tr><td>r = +1</td><td>Perfect positive correlation</td></tr>
   <tr><td>0.75 &lt; r &lt; 1</td><td>High degree of positive correlation</td></tr>
   <tr><td>0.5 &lt; r &lt; 0.75</td><td>Moderate degree of positive correlation</td></tr>
@@ -2531,7 +2533,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
   <tr><td>&minus;0.75 &lt; r &lt; &minus;0.5</td><td>Moderate degree of negative correlation</td></tr>
   <tr><td>&minus;1 &lt; r &lt; &minus;0.75</td><td>High degree of negative correlation</td></tr>
   <tr><td>r = &minus;1</td><td>Perfect negative correlation</td></tr>
-</table>
+</tbody></table>
 <div class="trap-block"><span class="pill amber">&#9888; TRAP</span><p class="trap-label">A book misprint, corrected here</p><p class="trap-row"><strong>THE TRAP:</strong> the source prints the &ldquo;high negative correlation&rdquo; row as &ldquo;1 &lt; r &lt; &minus;0.75,&rdquo; which is a logically impossible range (1 is never less than &minus;0.75). Mirroring the positive side&rsquo;s own structure, this is corrected to <strong>&minus;1 &lt; r &lt; &minus;0.75</strong> above &mdash; use the corrected version.</p></div>
 </div>
 
@@ -2542,13 +2544,13 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
 <p class="section-header">Scatter Diagram — Reading the Pattern of Dots <span style="float:right;">&#9733;&#9733; MEDIUM</span></p>
 <div class="definition-block"><p class="definition-text">A <strong>Scatter Diagram</strong> plots one dot for every (X,Y) pair in the data. The overall SHAPE the dots form gives a quick, visual first read on whether &mdash; and how strongly &mdash; two variables are correlated, well before any formula is applied.</p></div>
 <table class="comparison-table">
-  <tr><th style="width:40%;">Pattern of dots</th><th>Interpretation</th></tr>
+  <thead><tr><th style="width:40%;">Pattern of dots</th><th>Interpretation</th></tr></thead><tbody>
   <tr><td>A single straight line, rising left-to-right</td><td>Perfect positive correlation (r=+1)</td></tr>
   <tr><td>A single straight line, falling left-to-right</td><td>Perfect negative correlation (r=&minus;1)</td></tr>
   <tr><td>A loosely rising cloud of points</td><td>Low-to-moderate positive correlation</td></tr>
   <tr><td>A loosely falling cloud of points</td><td>Low-to-moderate negative correlation</td></tr>
   <tr><td>A shapeless, directionless cloud</td><td>No correlation (r&asymp;0)</td></tr>
-</table>
+</tbody></table>
 <p class="body">Scatter Diagram&rsquo;s <strong>advantages</strong>: genuinely easy to draw; easily understood and interpreted even by a non-specialist audience; and extreme items don&rsquo;t unduly distort the overall picture, since they simply remain isolated points rather than pulling a calculation off course. Its <strong>disadvantages</strong>: it gives no PRECISE numerical degree of correlation; and it doesn&rsquo;t lend itself to further mathematical treatment.</p>
 </div>
 
@@ -2657,10 +2659,10 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
 <p class="body">Regression serves four objectives: explaining variation in the dependent variable through the independent variable(s); describing the relationship precisely via a regression EQUATION; supporting prediction and forecasting; and helping remove the effect of unwanted, confounding factors.</p>
 <p class="body">Regression classifies two ways.</p>
 <table class="comparison-table">
-  <tr><th style="width:30%;">Basis</th><th>Types</th></tr>
+  <thead><tr><th style="width:30%;">Basis</th><th>Types</th></tr></thead><tbody>
   <tr><td><strong>Number of variables</strong></td><td><strong>Simple</strong> (one dependent, one independent) &middot; <strong>Partial</strong> (more variables exist, but only two are analysed at a time, others held constant) &middot; <strong>Multiple</strong> (one dependent variable, more than one independent variable)</td></tr>
   <tr><td><strong>Change in proportion</strong></td><td><strong>Linear</strong> (a straight-line relationship) &middot; <strong>Non-linear</strong> (a curved relationship)</td></tr>
-</table>
+</tbody></table>
 <p class="body">There are two distinct regression equations, since prediction can run in either direction.</p>
 <ul class="point-list">
   <li><strong>Regression equation of Y on X</strong> (form: Y=a+bX), used when Y is dependent and X is independent.</li>
@@ -2709,7 +2711,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
 <p class="section-header">Correlation vs. Regression &mdash; How They Relate and Differ <span style="float:right;">&#9733;&#9733;&#9733; HIGHEST-VALUE TOPIC</span></p>
 <div class="definition-block"><p class="definition-text"><strong>Relation:</strong> the two regression lines COINCIDE into a single line when correlation is perfect (r=&plusmn;1). When r=0 (the variables are independent), the two lines cut each other at right angles, running parallel to the axes. The closer |r| is to 1, the CLOSER the two regression lines sit to each other; the lower |r| is, the WIDER the gap between them. Wherever the two lines intersect, that point always gives the means (X&#772;, Y&#772;) of the two series.</p></div>
 <table class="comparison-table" style="font-size:8.3pt;">
-  <tr><th style="width:20%;">Basis</th><th>Correlation</th><th>Regression</th></tr>
+  <thead><tr><th style="width:20%;">Basis</th><th>Correlation</th><th>Regression</th></tr></thead><tbody>
   <tr><td><strong>Nature</strong></td><td>Tests the CLOSENESS between the variables.</td><td>Measures the EXTENT of change in the dependent variable due to change in the independent variable.</td></tr>
   <tr><td><strong>Dependence</strong></td><td>Studies the MUTUAL dependence of variables; both are treated at par, for study purposes.</td><td>Studies the FUNCTIONAL relationship, with one variable depending on the other; variables are differentiated as dependent and independent.</td></tr>
   <tr><td><strong>Spurious results</strong></td><td>Can suffer from spurious (&ldquo;non-sense&rdquo;) correlation with no practical importance.</td><td>No such possibility of a spurious relationship.</td></tr>
@@ -2718,7 +2720,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
   <tr><td><strong>Type of measure</strong></td><td>A RELATIVE measure of linear relationship, confined between &minus;1 and +1.</td><td>An ABSOLUTE measure, showing the actual change in the value of Y (or X) for a unit change in X (or Y).</td></tr>
   <tr><td><strong>Scope</strong></td><td>Limited &mdash; only linear relationships between two variables.</td><td>Much wider &mdash; covers both linear and non-linear relationships.</td></tr>
   <tr><td><strong>Symmetry</strong></td><td>SYMMETRICAL in formation: r<sub>xy</sub> = r<sub>yx</sub>.</td><td>ASYMMETRICAL in formation: b<sub>xy</sub> &ne; b<sub>yx</sub> in general.</td></tr>
-</table>
+</tbody></table>
 </div>
 
 <!-- ============ STANDARD ERROR OF ESTIMATE ============ -->
@@ -2767,13 +2769,13 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
 <div class="concept-block avoid-break">
   <p class="section-header">Glossary — Terms Worth Knowing Cold</p>
   <table class="comparison-table" style="font-size:8.3pt;">
-    <tr><th style="width:26%;">Term</th><th>Plain meaning</th></tr>
+    <thead><tr><th style="width:26%;">Term</th><th>Plain meaning</th></tr></thead><tbody>
     <tr><td><strong>Random Experiment</strong></td><td>A repeatable action whose individual outcome cannot be predicted in advance, though all POSSIBLE outcomes are known.</td></tr>
     <tr><td><strong>Sample Space</strong></td><td>The complete set of every possible outcome of a random experiment.</td></tr>
     <tr><td><strong>Event</strong></td><td>Any outcome, or set of outcomes, of a random experiment.</td></tr>
     <tr><td><strong>Mutually Exclusive</strong></td><td>Events that CANNOT occur together — one happening rules out the other in that same trial.</td></tr>
     <tr><td><strong>Independent Events</strong></td><td>Events where one occurring does NOT affect the probability of the other.</td></tr>
-  </table>
+  </tbody></table>
 </div>
 </div>
 
@@ -2789,7 +2791,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
 <span class="pill">CONCEPT</span>
 <p class="section-header">Eleven Terms That Are Frequently Confused <span style="float:right;">&#9733;&#9733;&#9733; HIGHEST-VALUE TOPIC</span></p>
 <table class="comparison-table" style="font-size:8.3pt;">
-  <tr><th style="width:24%;">Term</th><th>Meaning</th></tr>
+  <thead><tr><th style="width:24%;">Term</th><th>Meaning</th></tr></thead><tbody>
   <tr><td><strong>Random Experiment / Trial</strong></td><td>An action repeatable under the same conditions, where the total set of possible outcomes is known but the individual outcome of any one repetition is NOT predictable &mdash; e.g. tossing a coin.</td></tr>
   <tr><td><strong>Outcome</strong></td><td>A possible result of a random experiment &mdash; tossing a coin has outcomes H and T.</td></tr>
   <tr><td><strong>Event</strong></td><td>Any possible outcome of a random experiment. A SIMPLE event corresponds to exactly one outcome; a COMPOUND event corresponds to more than one.</td></tr>
@@ -2801,7 +2803,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
   <tr><td><strong>Dependent Events</strong></td><td>The occurrence of one DOES affect the other's probability &mdash; drawing a king from a deck WITHOUT replacement changes the probability of drawing a second king.</td></tr>
   <tr><td><strong>Complementary Events</strong></td><td>Two mutually exclusive AND exhaustive events, where one is simply &ldquo;NOT&rdquo; the other.</td></tr>
   <tr><td><strong>Favourable Cases</strong></td><td>The specific outcomes that result in the event of interest actually happening.</td></tr>
-</table>
+</tbody></table>
 </div>
 
 <div class="page page-break">
@@ -2819,13 +2821,13 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
 <div class="worked-example avoid-break">
 <p class="ex-label">Five classical-probability examples (independently re-verified)</p>
 <table class="comparison-table" style="font-size:8.3pt;">
-  <tr><th style="width:44%;">Problem</th><th>Solution</th></tr>
+  <thead><tr><th style="width:44%;">Problem</th><th>Solution</th></tr></thead><tbody>
   <tr><td>Drawing a king from 52 cards</td><td>4 favourable/52 total = <strong>1/13</strong></td></tr>
   <tr><td>Two coins tossed — getting one head and one tail</td><td>2 favourable (HT,TH)/4 total = <strong>1/2</strong></td></tr>
   <tr><td>One card drawn — a diamond? a queen?</td><td>Diamond: 13/52=<strong>1/4</strong>. Queen: 4/52=<strong>1/13</strong></td></tr>
   <tr><td>Two cards drawn — a king and a queen</td><td>(4&times;4) / <sup>52</sup>C<sub>2</sub> = 16/1,326 = <strong>8/663</strong></td></tr>
   <tr><td>3 balls from a bag of 7 red, 12 white, 4 green — (i) all white? (ii) one of each colour?</td><td>(i) <sup>12</sup>C<sub>3</sub>/<sup>23</sup>C<sub>3</sub> = 220/1,771 = <strong>0.1242</strong>. (ii) (<sup>7</sup>C<sub>1</sub>&times;<sup>12</sup>C<sub>1</sub>&times;<sup>4</sup>C<sub>1</sub>)/1,771 = 336/1,771 = <strong>0.1897</strong></td></tr>
-</table>
+</tbody></table>
 </div>
 </div>
 
@@ -2947,12 +2949,12 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
 <div class="worked-example avoid-break">
 <p class="ex-label">Three more independent-events examples, and one "either category" example (independently re-verified)</p>
 <table class="comparison-table" style="font-size:8.3pt;">
-  <tr><th style="width:50%;">Problem</th><th>Solution</th></tr>
+  <thead><tr><th style="width:50%;">Problem</th><th>Solution</th></tr></thead><tbody>
   <tr><td>P(X and Y both alive 10 years hence), P(X alive)=0.5, P(Y alive)=0.8</td><td>0.5&times;0.8 = <strong>0.4</strong></td></tr>
   <tr><td>P(a girl with 3 independent qualities, each 1/20, 1/50, 1/100)</td><td>1/20&times;1/50&times;1/100 = <strong>0.00001</strong></td></tr>
   <tr><td>P(selecting a Hindi-knowing woman teacher) from 50 candidates: 20 women, 10 Hindi-knowing, 15 teachers</td><td>20/50&times;15/50&times;10/50 = <strong>3/125 = 0.024</strong></td></tr>
   <tr><td>From 6 red, 4 white, 5 blue balls (15 total): P(Red), P(white), P(blue), P(not red), P(red or white)</td><td>6/15=0.4 &middot; 4/15=0.267 &middot; 5/15=0.333 &middot; 9/15=0.6 &middot; 10/15=0.667</td></tr>
-</table>
+</tbody></table>
 </div>
 </div>
 
@@ -2985,11 +2987,11 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
 <p class="ex-label">The "happy officer" problem (independently re-verified)</p>
 <p class="ex-step">P(officer happy)=0.6, so P(not happy)=0.4. If happy, P(accedes to request)=0.4; if not happy, P(accedes)=0.1. He accedes. Find P(he was happy).</p>
 <table class="comparison-table" style="font-size:8.3pt;">
-  <tr><th>Event</th><th>Prior</th><th>Conditional</th><th>Joint</th><th>Posterior</th></tr>
+  <thead><tr><th>Event</th><th>Prior</th><th>Conditional</th><th>Joint</th><th>Posterior</th></tr></thead><tbody>
   <tr><td>Happy</td><td>0.6</td><td>0.4</td><td>0.24</td><td>0.24/0.28 = <strong>6/7</strong></td></tr>
   <tr><td>Not happy</td><td>0.4</td><td>0.1</td><td>0.04</td><td>0.04/0.28 = 1/7</td></tr>
   <tr><td>Total</td><td>1</td><td>&mdash;</td><td>0.28</td><td>1</td></tr>
-</table>
+</tbody></table>
 <p class="ex-answer">P(happy, given he acceded) = <strong>6/7 &asymp; 0.857</strong>.</p>
 </div>
 </div>
@@ -3001,11 +3003,11 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
 <p class="ex-label">Which plant made the standard-quality scooter? (independently re-verified)</p>
 <p class="ex-step">Plant I makes 80% of scooters, Plant II makes 20%. Of Plant I&rsquo;s output, 85% is standard quality; of Plant II&rsquo;s, 65%. A standard-quality scooter is selected &mdash; find P(it came from Plant I) and P(it came from Plant II).</p>
 <table class="comparison-table" style="font-size:8.3pt;">
-  <tr><th>Event</th><th>Prior</th><th>Conditional</th><th>Joint</th><th>Posterior</th></tr>
+  <thead><tr><th>Event</th><th>Prior</th><th>Conditional</th><th>Joint</th><th>Posterior</th></tr></thead><tbody>
   <tr><td>Plant I</td><td>0.80</td><td>0.85</td><td>0.68</td><td>0.68/0.81 = <strong>68/81 &asymp; 0.840</strong></td></tr>
   <tr><td>Plant II</td><td>0.20</td><td>0.65</td><td>0.13</td><td>0.13/0.81 = <strong>13/81 &asymp; 0.160</strong></td></tr>
   <tr><td>Total</td><td>1</td><td>&mdash;</td><td>0.81</td><td>1</td></tr>
-</table>
+</tbody></table>
 <p class="ex-step">A genuinely helpful sanity check: imagine 1,000 scooters were made. Plant I makes 800, of which 800&times;85%=680 are standard. Plant II makes 200, of which 200&times;65%=130 are standard. Of the 680+130=810 standard-quality scooters total, 680 came from Plant I.</p>
 <p class="ex-answer">P(Plant I | standard) = 680/810 = <strong>68/81</strong> &mdash; matching the formula exactly, and making the abstract calculation tangible.</p>
 </div>
@@ -3047,12 +3049,12 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
 <div class="concept-block avoid-break">
   <p class="section-header">Glossary — Terms Worth Knowing Cold</p>
   <table class="comparison-table" style="font-size:8.3pt;">
-    <tr><th style="width:26%;">Term</th><th>Plain meaning</th></tr>
+    <thead><tr><th style="width:26%;">Term</th><th>Plain meaning</th></tr></thead><tbody>
     <tr><td><strong>Index Number</strong></td><td>A single ratio (usually %) measuring the combined/averaged change of several variables between two periods.</td></tr>
     <tr><td><strong>Base Year</strong></td><td>The reference period, always set to an index value of 100.</td></tr>
     <tr><td><strong>Current Year</strong></td><td>The period being compared against the base year.</td></tr>
     <tr><td><strong>Time Series</strong></td><td>Data recorded at successive points in time (e.g. monthly sales over 5 years).</td></tr>
-  </table>
+  </tbody></table>
 </div>
 </div>
 
@@ -3089,22 +3091,22 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
 <span class="pill">FORMULA</span>
 <p class="section-header">The Four Named Methods — One Dataset, All Four Answers <span style="float:right;">&#9733;&#9733;&#9733; HIGHEST-VALUE TOPIC</span></p>
 <table class="comparison-table">
-  <tr><th style="width:26%;">Method</th><th>Formula</th></tr>
+  <thead><tr><th style="width:26%;">Method</th><th>Formula</th></tr></thead><tbody>
   <tr><td><strong>Laspeyres'</strong></td><td>P<sub>01</sub> = (&Sigma;P&#8321;Q&#8320;/&Sigma;P&#8320;Q&#8320;)&times;100 &mdash; uses BASE year quantities as weights</td></tr>
   <tr><td><strong>Paasche's</strong></td><td>P<sub>01</sub> = (&Sigma;P&#8321;Q&#8321;/&Sigma;P&#8320;Q&#8321;)&times;100 &mdash; uses CURRENT year quantities as weights</td></tr>
   <tr><td><strong>Fisher's</strong></td><td>P<sub>01</sub> = &radic;(Laspeyres&times;Paasche) &mdash; the &ldquo;ideal&rdquo; index, geometric mean of the other two</td></tr>
   <tr><td><strong>Bowley's</strong></td><td>P<sub>01</sub> = (Laspeyres+Paasche)/2 &mdash; simple arithmetic mean of the other two</td></tr>
-</table>
+</tbody></table>
 <div class="worked-example avoid-break">
 <p class="ex-label">All four methods applied to the same 4-commodity dataset (independently re-verified)</p>
 <table class="comparison-table" style="font-size:8.3pt;">
-  <tr><th>Commodity</th><th>P&#8321;</th><th>P&#8320;</th><th>Q&#8321;</th><th>Q&#8320;</th><th>P&#8321;Q&#8320;</th><th>P&#8320;Q&#8320;</th><th>P&#8321;Q&#8321;</th><th>P&#8320;Q&#8321;</th></tr>
+  <thead><tr><th>Commodity</th><th>P&#8321;</th><th>P&#8320;</th><th>Q&#8321;</th><th>Q&#8320;</th><th>P&#8321;Q&#8320;</th><th>P&#8320;Q&#8320;</th><th>P&#8321;Q&#8321;</th><th>P&#8320;Q&#8321;</th></tr></thead><tbody>
   <tr><td>A</td><td>2.5</td><td>2</td><td>12</td><td>10</td><td>25</td><td>20</td><td>30</td><td>24</td></tr>
   <tr><td>B</td><td>3.2</td><td>1.8</td><td>10</td><td>16</td><td>51.2</td><td>28.8</td><td>32</td><td>18</td></tr>
   <tr><td>C</td><td>4.8</td><td>3.5</td><td>8</td><td>8</td><td>38.4</td><td>28</td><td>38.4</td><td>28</td></tr>
   <tr><td>D</td><td>4</td><td>2.8</td><td>10</td><td>12</td><td>48</td><td>33.6</td><td>40</td><td>28</td></tr>
   <tr><td><strong>Total</strong></td><td colspan="3"></td><td></td><td><strong>162.6</strong></td><td><strong>110.4</strong></td><td><strong>140.4</strong></td><td><strong>98</strong></td></tr>
-</table>
+</tbody></table>
 <p class="ex-answer"><strong>Laspeyres</strong> = 162.6/110.4&times;100 = 147.28. <strong>Paasche</strong> = 140.4/98&times;100 = 143.27. <strong>Fisher</strong> = &radic;(1.4728&times;1.4327)&times;100 = 145.26. <strong>Bowley</strong> = (1.4728+1.4327)/2&times;100 = <strong>145.27</strong>.</p>
 </div>
 <div class="shortcut-box"><span class="shortcut-label">&#9889; SHORTCUT</span> Remember which quantity anchors which method: LaspeyRes uses base-yeaR quantities (Q₀); PaaSche uses current-year quantitieS (Q₁). Fisher and Bowley both just COMBINE Laspeyres and Paasche — Fisher via geometric mean (√), Bowley via simple average.</div>
@@ -3136,11 +3138,11 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
 <p class="section-header">The Relatives Method <span style="float:right;">&#9733;&#9733; MEDIUM</span></p>
 <div class="formula-box"><p class="formula-text">Price Relative = (Current year price / Base year price) &times; 100</p><hr class="var-divider"><p class="formula-vars">Each commodity&rsquo;s current price is expressed as a percentage of its OWN base price first, before any averaging happens.</p></div>
 <table class="comparison-table">
-  <tr><th style="width:34%;">Method</th><th>Formula</th></tr>
+  <thead><tr><th style="width:34%;">Method</th><th>Formula</th></tr></thead><tbody>
   <tr><td><strong>Simple Average of Relatives (AM)</strong></td><td>P<sub>01</sub> = (1/n)&Sigma;(P&#8321;/P&#8320;&times;100)</td></tr>
   <tr><td><strong>Simple Average of Relatives (GM)</strong></td><td>P<sub>01</sub> = Antilog[&Sigma;log(P&#8321;/P&#8320;&times;100)/n]</td></tr>
   <tr><td><strong>Weighted Average of Relatives</strong></td><td>P<sub>01</sub> = &Sigma;[(P&#8321;/P&#8320;&times;100)&times;w] / &Sigma;w</td></tr>
-</table>
+</tbody></table>
 <p class="body">The Relatives method takes each commodity&rsquo;s OWN percentage change first, so unlike the Aggregative methods, it is naturally unaffected by whatever units the commodities happen to be quoted in.</p>
 </div>
 
@@ -3151,11 +3153,11 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
 <p class="section-header">Quantity Index — the Same Formulas, Applied to Quantities <span style="float:right;">&#9733;&#9733; MEDIUM</span></p>
 <div class="definition-block"><p class="definition-text">Every method built for the <strong>Price Index</strong> has a direct parallel for the <strong>Quantity Index</strong> &mdash; simply swap the roles of P and Q throughout each formula.</p></div>
 <table class="comparison-table">
-  <tr><th style="width:34%;">Method</th><th>Formula</th></tr>
+  <thead><tr><th style="width:34%;">Method</th><th>Formula</th></tr></thead><tbody>
   <tr><td><strong>Simple Aggregative</strong></td><td>Q<sub>01</sub> = (&Sigma;Q&#8321;/&Sigma;Q&#8320;)&times;100</td></tr>
   <tr><td><strong>Laspeyres'</strong></td><td>Q<sub>01</sub> = (&Sigma;Q&#8321;P&#8320;/&Sigma;Q&#8320;P&#8320;)&times;100 &mdash; uses BASE year PRICES as weights</td></tr>
   <tr><td><strong>Paasche's</strong></td><td>Q<sub>01</sub> = (&Sigma;Q&#8321;P&#8321;/&Sigma;Q&#8320;P&#8321;)&times;100 &mdash; uses CURRENT year PRICES as weights</td></tr>
-</table>
+</tbody></table>
 <div class="shortcut-box"><span class="shortcut-label">&#9889; SHORTCUT</span> Price Index asks "how much did PRICE change, holding a fixed basket of quantities?" Quantity Index asks the mirror question: "how much did QUANTITY change, holding a fixed set of prices?" Every formula pair mirrors this — just swap which variable is fixed (the weight) and which one varies.</div>
 </div>
 
@@ -3201,13 +3203,13 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
   <li><strong>Irregular Movement (I)</strong>: random, unpredictable fluctuation left over after the other three are accounted for.</li>
 </ol>
 <table class="comparison-table">
-  <tr><th style="width:26%;">Basis</th><th>Additive Model</th><th>Multiplicative Model</th></tr>
+  <thead><tr><th style="width:26%;">Basis</th><th>Additive Model</th><th>Multiplicative Model</th></tr></thead><tbody>
   <tr><td><strong>Formula</strong></td><td>Y = T+C+S+I</td><td>Y = T&times;C&times;S&times;I</td></tr>
   <tr><td><strong>S, C, I are</strong></td><td>Absolute quantitative deviations</td><td>Rates, percentages, or index numbers</td></tr>
   <tr><td><strong>Components</strong></td><td>Assumed independent of each other</td><td>Can affect one another</td></tr>
   <tr><td><strong>Forecasting</strong></td><td>Not well-suited to future extension</td><td>Relative values ARE suited to forecasting</td></tr>
   <tr><td><strong>Real-world use</strong></td><td>Rare in practice</td><td>Most economic/business data fit this &mdash; the model this Module focuses on</td></tr>
-</table>
+</tbody></table>
 </div>
 
 <div class="page page-break">
@@ -3218,7 +3220,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
 <p class="ex-label">Complete 7-year moving average, 26 years of sales data (independently re-verified)</p>
 <p class="ex-step">Sales (&#8377; million), 1988&ndash;2013. The first 7-year total (1988&ndash;1994): 1+2+3+4+5+4+3=22, average=22/7=3.143, positioned at the group's middle year, 1991. The next group shifts forward by one year (1989&ndash;1995), and so on through the last group (2007&ndash;2013).</p>
 <table class="comparison-table" style="font-size:8pt;">
-  <tr><th>Year</th><th>Sales</th><th>7yr Total</th><th>7yr Avg</th><th>Year</th><th>Sales</th><th>7yr Total</th><th>7yr Avg</th></tr>
+  <thead><tr><th>Year</th><th>Sales</th><th>7yr Total</th><th>7yr Avg</th><th>Year</th><th>Sales</th><th>7yr Total</th><th>7yr Avg</th></tr></thead><tbody>
   <tr><td>1988</td><td>1</td><td>&mdash;</td><td>&mdash;</td><td>2001</td><td>4</td><td>32</td><td>4.571</td></tr>
   <tr><td>1989</td><td>2</td><td>&mdash;</td><td>&mdash;</td><td>2002</td><td>3</td><td>33</td><td>4.714</td></tr>
   <tr><td>1990</td><td>3</td><td>&mdash;</td><td>&mdash;</td><td>2003</td><td>4</td><td>34</td><td>4.857</td></tr>
@@ -3232,7 +3234,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
   <tr><td>1998</td><td>5</td><td>29</td><td>4.143</td><td>2011</td><td>6</td><td>&mdash;</td><td>&mdash;</td></tr>
   <tr><td>1999</td><td>6</td><td>30</td><td>4.286</td><td>2012</td><td>7</td><td>&mdash;</td><td>&mdash;</td></tr>
   <tr><td>2000</td><td>5</td><td>31</td><td>4.429</td><td>2013</td><td>8</td><td>&mdash;</td><td>&mdash;</td></tr>
-</table>
+</tbody></table>
 <p class="ex-answer">The first and last 3 years of any 7-year moving average always stay blank &mdash; there aren&rsquo;t enough neighbouring years to centre a group on them.</p>
 </div>
 </div>
@@ -3269,21 +3271,21 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
 
   <p class="section-header" style="font-size:13pt;margin-top:4mm;">Section A &middot; Fundamentals of Business Mathematics (40%)</p>
   <table class="comparison-table avoid-break">
-    <tr><th style="width:22%;">Module</th><th>The Ladder</th></tr>
+    <thead><tr><th style="width:22%;">Module</th><th>The Ladder</th></tr></thead><tbody>
     <tr><td><strong>1. Arithmetic (15%)</strong></td><td>Duplicate ratio = a&sup2;:b&sup2; (squared, not doubled) &middot; Proportion: ad=bc, mean proportional y=&radic;(xz) &middot; Five rules: invertendo, alternendo, componendo, dividendo, componendo-dividendo &middot; Direct A=KB (K=A/B) &middot; Inverse A=K/B (K=AB) &middot; Joint A=K(BCD&hellip;) &middot; S.I.=Prt/100 &middot; C.I.: FV<sub>n</sub>=P(1+r)<sup>n</sup> &middot; Annuity due = regular annuity &times;(1+r), for both FV and PV &middot; FVIFA=[(1+r)<sup>n</sup>&minus;1]/r; PVIFA=[(1+r)<sup>n</sup>&minus;1]/[r(1+r)<sup>n</sup>] &middot; Effective rate=(1+k/m)<sup>m</sup>&minus;1 &middot; Rule of 72: doubling period&asymp;72&divide;rate &middot; AP: t<sub>n</sub>=a+(n&minus;1)d, S<sub>n</sub>=(n/2){2a+(n&minus;1)d} &middot; GP: t<sub>n</sub>=ar<sup>n&minus;1</sup>, S<sub>&infin;</sub>=a/(1&minus;r) for |r|&lt;1 &middot; Distance=Speed&times;Time.</td></tr>
     <tr><td><strong>2. Algebra (20%)</strong></td><td>n(A&cup;B)=n(A)+n(B)&minus;n(A&cap;B) &middot; De Morgan: (A&cup;B)&prime;=A&prime;&cap;B&prime;, (A&cap;B)&prime;=A&prime;&cup;B&prime; &middot; Power set has 2<sup>n</sup> elements &middot; Index rules: a<sup>m</sup>&times;a<sup>n</sup>=a<sup>m+n</sup>, a<sup>0</sup>=1, a<sup>&minus;m</sup>=1/a<sup>m</sup>, a<sup>1/n</sup>=<sup>n</sup>&radic;a &middot; Log laws: log<sub>a</sub>(mn)=log<sub>a</sub>m+log<sub>a</sub>n, log<sub>a</sub>(m/n)=log<sub>a</sub>m&minus;log<sub>a</sub>n, log<sub>a</sub>m<sup>n</sup>=n&times;log<sub>a</sub>m, log<sub>r</sub>s=1/log<sub>s</sub>r &middot; <sup>n</sup>P<sub>r</sub>=n!/(n&minus;r)! &middot; <sup>n</sup>C<sub>r</sub>=n!/[(n&minus;r)!r!] &middot; <sup>n</sup>P<sub>r</sub>=r!&times;<sup>n</sup>C<sub>r</sub> &middot; Circular permutation=(n&minus;1)!, halved if flip-symmetric &middot; Pascal's Law: <sup>n</sup>C<sub>r&minus;1</sub>+<sup>n</sup>C<sub>r</sub>=<sup>n+1</sup>C<sub>r</sub> &middot; Sridhar Acharya's formula: x=[&minus;b&plusmn;&radic;(b&sup2;&minus;4ac)]/2a &middot; Sum of roots=&minus;b/a, product=c/a &middot; Discriminant &Delta;=b&sup2;&minus;4ac: &gt;0 real &amp; unequal, =0 real &amp; equal, &lt;0 imaginary.</td></tr>
     <tr><td><strong>3. Calculus (5%)</strong></td><td>dy/dx = lim<sub>h&rarr;0</sub>[f(x+h)&minus;f(x)]/h &middot; Power rule: d/dx(x<sup>n</sup>)=nx<sup>n&minus;1</sup> &middot; Product rule: d/dx(uv)=u(dv/dx)+v(du/dx) &middot; Quotient rule: d/dx(u/v)=[v(du/dx)&minus;u(dv/dx)]/v&sup2; &middot; Chain rule: dy/dx=dy/du&times;du/dx &middot; TR=P&times;Q, AR=P, MR=d(TR)/dQ &middot; TC=TFC+TVC, MC=d(TC)/dQ (independent of fixed cost) &middot; Profit=TR&minus;TC, maximised where MR=MC &middot; f&prime;(x)=0 is necessary for a max or min; f&Prime;(x)&lt;0 confirms MAX, f&Prime;(x)&gt;0 confirms MIN.</td></tr>
-  </table>
+  </tbody></table>
 
   <p class="section-header" style="font-size:13pt;margin-top:5mm;">Section B &middot; Fundamentals of Business Statistics (60%)</p>
   <table class="comparison-table avoid-break">
-    <tr><th style="width:22%;">Module</th><th>The Ladder</th></tr>
+    <thead><tr><th style="width:22%;">Module</th><th>The Ladder</th></tr></thead><tbody>
     <tr><td><strong>4. Statistical Representation of Data (5%)</strong></td><td>Pie-chart angle = (component value/total value)&times;360&deg; &middot; Class boundary = limit &plusmn; &frac12; inter-class gap &middot; Class mark = (Lower+Upper)/2 &middot; Relative frequency = class&divide;total; Percentage frequency = that&times;100; Frequency density = class frequency&divide;class width (use whenever widths are UNEQUAL) &middot; Histogram: adjacent bars, no gaps, height=frequency (equal widths) or density (unequal) &middot; Ogive: &ldquo;less-than&rdquo; rises 0&rarr;N, &ldquo;more-than&rdquo; falls N&rarr;0 &mdash; their crossing point's x-value is the Median.</td></tr>
     <tr><td><strong>5. Central Tendency &amp; Dispersion (15%)</strong></td><td>AM: X&#772;=&Sigma;X/N (direct), A+&Sigma;dx/N (short-cut), A+(&Sigma;dx&prime;/N)&times;i (step-deviation) &middot; GM=Antilog[&Sigma;(logX)/n]; HM=n/&Sigma;(1/X) &middot; Median (grouped): Md=l&#8321;+[(N/2&minus;C)/f]&times;h &middot; Mode (grouped): M&#8320;=l&#8321;+[(f&#8320;&minus;f&#8321;)/(2f&#8320;&minus;f&#8321;&minus;f&#8322;)]&times;h &middot; Mean&minus;Mode=3(Mean&minus;Median) &middot; Range=Highest&minus;Lowest &middot; Q.D.=(Q&#8323;&minus;Q&#8321;)/2 &middot; M.D.=&Sigma;|X&minus;A|/n (A=Mean/Median/Mode) &middot; S.D.=&radic;[&Sigma;(X&minus;Mean)&sup2;/N] &middot; QD:MD:SD = &#8532;:&#8536;:1 &middot; C.V.=(S.D./Mean)&times;100 &middot; Karl Pearson's Sk=(Mean&minus;Mode)/S.D.; Bowley's Sk=(Q&#8323;+Q&#8321;&minus;2Md)/(Q&#8323;&minus;Q&#8321;).</td></tr>
     <tr><td><strong>6. Correlation &amp; Regression (15%)</strong></td><td>r = &Sigma;[(X&minus;X&#772;)(Y&minus;Y&#772;)] / &radic;[&Sigma;(X&minus;X&#772;)&sup2;&times;&Sigma;(Y&minus;Y&#772;)&sup2;], &minus;1&le;r&le;1 &middot; Probable Error = 0.6745&times;(1&minus;r&sup2;)/&radic;N; r significant only if r&gt;6&times;P.E. &middot; Spearman's r<sub>k</sub>=1&minus;[6&Sigma;D&sup2;/N(N&sup2;&minus;1)], plus (1/12)(m&sup3;&minus;m) correction per tied group &middot; b<sub>yx</sub>=&Sigma;(X&minus;X&#772;)(Y&minus;Y&#772;)/&Sigma;(X&minus;X&#772;)&sup2;; b<sub>xy</sub>=&Sigma;(X&minus;X&#772;)(Y&minus;Y&#772;)/&Sigma;(Y&minus;Y&#772;)&sup2; &middot; Y on X: Y&minus;Y&#772;=b<sub>yx</sub>(X&minus;X&#772;); X on Y: X&minus;X&#772;=b<sub>xy</sub>(Y&minus;Y&#772;) &middot; r&sup2;=b<sub>yx</sub>&times;b<sub>xy</sub> &middot; S<sub>e</sub>=&radic;{[&Sigma;Y&sup2;&minus;a&Sigma;Y&minus;b&Sigma;XY]/(n&minus;2)} &middot; Concurrent Deviation: r=&plusmn;&radic;[&plusmn;(2C&minus;N)/N] (C=concurrent deviations, N=pairs compared).</td></tr>
     <tr><td><strong>7. Probability (15%)</strong></td><td>P(event)=favourable/total, p+q=1 &middot; Addition (mutually exclusive): P(A or B)=P(A)+P(B); (not exclusive): minus P(A and B) &middot; Multiplication (independent): P(A and B)=P(A)&times;P(B) &middot; Conditional: P(B/A)=P(AB)/P(A) &middot; Odds a:b in favour &rarr; P=a/(a+b) &middot; Bayes' Theorem: P(B<sub>i</sub>/A) = [P(B<sub>i</sub>)&middot;P(A/B<sub>i</sub>)] / &Sigma;[P(B<sub>i</sub>)&middot;P(A/B<sub>i</sub>)], built as Prior&times;Conditional=Joint, then Joint&divide;&Sigma;Joint=Posterior.</td></tr>
     <tr><td><strong>8. Index Numbers &amp; Time Series (10%)</strong></td><td>Simplest price index = (Current/Base)&times;100 &middot; Simple Aggregative P<sub>01</sub>=(&Sigma;P&#8321;/&Sigma;P&#8320;)&times;100; Weighted Aggregative = (&Sigma;P&#8321;W/&Sigma;P&#8320;W)&times;100 &middot; Laspeyres' = (&Sigma;P&#8321;Q&#8320;/&Sigma;P&#8320;Q&#8320;)&times;100 (base-year Q); Paasche's = (&Sigma;P&#8321;Q&#8321;/&Sigma;P&#8320;Q&#8321;)&times;100 (current-year Q) &middot; Fisher's = &radic;(Laspeyres&times;Paasche); Bowley's = (Laspeyres+Paasche)/2 &middot; Price Relative = (P&#8321;/P&#8320;)&times;100 &middot; Y=T+C+S+I (additive) or T&times;C&times;S&times;I (multiplicative, fits most real data) &middot; Moving Average smooths a series to reveal Trend; even-n averages need a CENTERING pass to land back on real years.</td></tr>
-  </table>
+  </tbody></table>
 </div>
 
 <!-- ============ MASTER TRAP LIST ============ -->
@@ -3330,7 +3332,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
 <div class="page page-break">
   <div class="cover-band-dark" style="font-size:14pt;">The Last 48 Hours &mdash; Revision Plan for This Document</div>
   <table class="comparison-table avoid-break" style="margin-top:5mm;">
-    <tr><th style="width:20%;">When</th><th>What to do</th></tr>
+    <thead><tr><th style="width:20%;">When</th><th>What to do</th></tr></thead><tbody>
     <tr><td>48 hours out</td><td>Re-read Modules 2 and 1 end to end &mdash; Algebra (20%, the single largest module: sets, indices/logarithms, permutation &amp; combination, quadratic equations) and Arithmetic (15%: ratios/variations/proportions, time value of money, AP/GP, time &amp; distance). Together these are 35% of the paper. Re-attempt every worked example cold, covering the solution first.</td></tr>
     <tr><td>36 hours out</td><td>Re-read Modules 5, 6, and 7 &mdash; Central Tendency &amp; Dispersion, Correlation &amp; Regression, and Probability, each 15% and together the statistical core of the paper (45% combined). Rehearse the formula-heavy comparison tables out loud: Karl Pearson's vs Bowley's skewness, b<sub>yx</sub> vs b<sub>xy</sub>, the Addition vs Multiplication theorem.</td></tr>
     <tr><td>24 hours out</td><td>Sweep Module 8 (Index Numbers &amp; Time Series, 10%) and Module 3 (Calculus, 5%) &mdash; lighter modules, but full marks if their formula tables are drilled cold: Laspeyres/Paasche/Fisher/Bowley, and MR=MC with the first/second-derivative test.</td></tr>
@@ -3338,7 +3340,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
     <tr><td>6 hours out</td><td>Read The Final Ladder above, start to finish, once, slowly.</td></tr>
     <tr><td>2 hours out</td><td>Read the Master Trap List above, start to finish, once, slowly. Nothing new after this point.</td></tr>
     <tr><td>In the hall</td><td>No negative marking &mdash; attempt every question. Skim the full paper first, then work the modules you feel surest of before the heavier Algebra and Statistics numericals. Open every numerical by naming the formula or theorem it needs before starting the calculation &mdash; it catches a wrong setup before it wastes minutes.</td></tr>
-  </table>
+  </tbody></table>
   <p class="body" style="margin-top:4mm;">Weight-based priority if time runs out anywhere in this plan: Module 2 (20%, Algebra) is never the one you cut &mdash; it alone outweighs Modules 3 and 4 combined. Modules 1, 5, 6, and 7 (15% each, 60% combined) come next, roughly interchangeable in urgency. Module 8 (10%) and Module 4 (5%) reward memorising a handful of formulas over broad reading &mdash; a focused pass on just the Laspeyres/Paasche/Fisher/Bowley table, or the pie-chart angle formula, recovers most of their marks fast. Module 3 (5%, Calculus) is tied with Module 4 as the smallest module in the paper, and the fastest to shore up, since it is only three formula families: differentiation rules, MR=MC, and the first/second-derivative test.</p>
   <p class="body" style="font-size:9.5pt;color:var(--gray);margin-top:3mm;">This page is exam strategy, not syllabus content &mdash; every fact it points to lives in the verified module pages above, condensed strictly from ICMAI's own Paper 3 Study Notes.</p>
 </div>

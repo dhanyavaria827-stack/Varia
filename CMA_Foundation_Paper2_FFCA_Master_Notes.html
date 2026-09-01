@@ -674,15 +674,15 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
   <li>Design the numbering starting from major headings, adding detail later. A three-layer code (Division &ndash; Department &ndash; Account, e.g. zz-aa-123) is common for multi-division firms.</li>
 </ol>
   <table class="comparison-table avoid-break">
-    <tr><th>Number Range</th><th>Account Category</th></tr>
-    <tr><td>1000&ndash;1999</td><td>Asset accounts</td></tr>
-    <tr><td>2000&ndash;2999</td><td>Liability accounts</td></tr>
-    <tr><td>3000&ndash;3999</td><td>Equity accounts</td></tr>
-    <tr><td>4000&ndash;4999</td><td>Revenue accounts</td></tr>
-    <tr><td>5000&ndash;5999</td><td>Cost of goods sold accounts</td></tr>
-    <tr><td>6000&ndash;6999</td><td>Expense accounts</td></tr>
-    <tr><td>7000&ndash;7999</td><td>Other revenue (rent received, bad debt recovery)</td></tr>
-    <tr><td>8000&ndash;8999</td><td>Other expenses (depreciation, income taxes)</td></tr>
+    <tr><th>Number Range</th><th>Account Category (ICMAI)</th><th>Group</th></tr>
+    <tr><td>1000&ndash;1999</td><td>Assets</td><td rowspan="3">Balance Sheet accounts</td></tr>
+    <tr><td>2000&ndash;2999</td><td>Liabilities</td></tr>
+    <tr><td>3000&ndash;3999</td><td>Owner&rsquo;s Equity</td></tr>
+    <tr><td>4000&ndash;4999</td><td>Operating Revenues</td><td rowspan="5">Income Statement accounts</td></tr>
+    <tr><td>5000&ndash;5999</td><td>Operating Expense</td></tr>
+    <tr><td>6000&ndash;6999</td><td>Overhead Costs or Expenses</td></tr>
+    <tr><td>7000&ndash;7999</td><td>Non-operating revenue and gains</td></tr>
+    <tr><td>8000&ndash;8999</td><td>Non-operating expenses and Losses</td></tr>
   </table>
 </div>
 
@@ -782,8 +782,8 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
   <tr><td>Bank Book</td><td>Cheque/draft/EFT transactions, used where bank-transaction volume is high.</td></tr>
   <tr><td>Purchases (Day) Book</td><td>Credit purchases of goods only, from Purchase invoices.</td></tr>
   <tr><td>Sales (Day) Book</td><td>Credit sales of goods only, from Sales invoices.</td></tr>
-  <tr><td>Purchases Returns Book / Returns Outward Book</td><td>Goods returned to suppliers, from Debit Notes issued.</td></tr>
-  <tr><td>Sales Returns Book / Returns Inward Book</td><td>Goods returned by customers, from Credit Notes received.</td></tr>
+  <tr><td>Purchases Returns Book / Returns Outward Book</td><td>Goods returned to suppliers &mdash; written up from the <strong>Debit Note issued to the supplier</strong>, or the Credit Note received from the supplier.</td></tr>
+  <tr><td>Sales Returns Book / Returns Inward Book</td><td>Goods returned by customers &mdash; the Study Notes say &ldquo;from <strong>Credit Note issued by the customer</strong>.&rdquo; See the trap below before relying on that.</td></tr>
   <tr><td>Bills Receivable Book</td><td>Bills received from debtors.</td></tr>
   <tr><td>Bills Payable Book</td><td>Bills accepted, owed to creditors.</td></tr>
 </table>
@@ -795,6 +795,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
     <p class="trap-row"><strong>THE TWIST:</strong> the Purchase/Sales Day Books record credit purchase/sale of GOODS only. Any other asset (furniture, machinery) purchased on credit goes to the Journal Proper; cash purchases go to the Cash Book regardless of what is bought.</p>
   </div>
 </div>
+  <div class="trap-block avoid-break"><span class="pill amber">&#9888; TRAP</span><p class="trap-label">&#9888; TRAP: WHO ISSUES THE CREDIT NOTE &mdash; THE BOOK CONTRADICTS ITSELF</p><p class="trap-row"><strong>THE TRAP:</strong> the Study Notes state two things that cannot both be true. Under <em>Purchase Returns</em> they say entries come from the &ldquo;Debit Note issued to the supplier or Credit Note <em>received from</em> the supplier&rdquo; &mdash; i.e. the SELLER issues the credit note. Two paragraphs later, under <em>Sales Returns</em>, they say entries come from the &ldquo;Credit Note issued <em>by the customer</em>.&rdquo;</p><p class="trap-row"><strong>THE TWIST:</strong> in ordinary practice the <strong>seller issues the Credit Note</strong> (to the returning customer) and the <strong>buyer issues the Debit Note</strong> (to the supplier). So the Purchase-Returns sentence is the internally consistent one; the Sales-Returns sentence is the slip. Reading it from the seller&rsquo;s side, the Sales Returns Book is written up from the credit note that seller ISSUES.</p><p class="trap-row"><strong>THE FIX:</strong> remember the pair by who is complaining &mdash; the buyer sends a DEBIT note to reduce what he owes; the seller answers with a CREDIT note to reduce what he is owed. If a question quotes the Study Notes&rsquo; sales-return wording verbatim, answer it as printed; otherwise use the practice rule.</p></div>
 
 <div class="concept-block avoid-break">
   <p class="section-header">Typical Journal-Proper Entries</p>
@@ -912,7 +913,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
     <tr><th>When reconciliation is started with</th><th>Bal. as per CB</th><th>OD as per CB</th><th>Bal. as per PB</th><th>OD as per PB</th></tr>
     <tr><td>Cheques deposited in Bank, but not cleared</td><td>Less</td><td>Add</td><td>Add</td><td>Less</td></tr>
     <tr><td>Cheques issued, but not presented</td><td>Add</td><td>Less</td><td>Less</td><td>Add</td></tr>
-    <tr><td>Interest debited in PB only</td><td>Less</td><td>Add</td><td>Less</td><td>Add</td></tr>
+    <tr><td>Interest debited in PB only</td><td>Less</td><td>Add</td><td><strong>Less</strong>&#8224;</td><td><strong>Add</strong>&#8224;</td></tr>
     <tr><td>Payments by Bank debited in PB only</td><td>Less</td><td>Add</td><td>Add</td><td>Less</td></tr>
     <tr><td>Direct payment by customer in PB only</td><td>Add</td><td>Less</td><td>Less</td><td>Add</td></tr>
     <tr><td>Bills discounted &amp; dishonoured in PB only</td><td>Less</td><td>Add</td><td>Add</td><td>Less</td></tr>
@@ -931,6 +932,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
   </table>
   <p class="body" style="font-size:9.5pt;"><strong>Amended Cash Book:</strong> when the problem gives the Cash Book balance and asks for it to be corrected first, only two kinds of items go into the amended Cash Book — (i) items never recorded in the Cash Book at all, and (ii) errors made BY the Cash Book. All other items of difference still go into the BRS as usual, taken from the (now-corrected) amended Cash Book balance.</p>
 </div>
+  <div class="trap-block avoid-break"><span class="pill amber">&#9888; TRAP</span><p class="trap-label">&#9888; TRAP: &#8224; A BOOK ERROR IN THIS VERY TABLE &mdash; THE &ldquo;INTEREST DEBITED IN PB ONLY&rdquo; ROW</p><p class="trap-row"><strong>WHAT THE BOOK PRINTS:</strong> the Study Notes give this row as Less / Add / <strong>Less</strong> / <strong>Add</strong>. The two marked&#8224; cells are reproduced above exactly as printed, but they are wrong.</p><p class="trap-row"><strong>WHY THEY ARE WRONG:</strong> in every other row of this table the &ldquo;Bal. as per CB&rdquo; and &ldquo;Bal. as per PB&rdquo; columns are OPPOSITES &mdash; they must be, because you are travelling between the same two balances in opposite directions. This row alone has &ldquo;Less&rdquo; in both. The book contradicts itself one row later: <em>Payments by Bank debited in PB only</em> is the same kind of item (something the bank has deducted that the Cash Book has not yet recorded) and is correctly given as Less / Add / <strong>Add</strong> / <strong>Less</strong>.</p><p class="trap-row"><strong>THE CORRECT ROW:</strong> Interest debited in PB only &rarr; <strong>Bal. as per CB: Less &middot; OD as per CB: Add &middot; Bal. as per PB: Add &middot; OD as per PB: Less.</strong> Reason it out rather than memorising: the bank has already taken the interest, so the Pass Book balance is the LOWER of the two. Starting from the Cash Book you deduct to get down to it; starting from the Pass Book you add to get back up.</p><p class="trap-row"><strong>IN THE EXAM:</strong> if a question simply quotes the table, answer as printed. If you are actually preparing a BRS, use the corrected directions above &mdash; otherwise your statement will not reconcile.</p></div>
 </div>
 
 <!-- ============ 1.7 TRIAL BALANCE ============ -->

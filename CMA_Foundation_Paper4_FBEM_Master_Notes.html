@@ -48,7 +48,7 @@
 }
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
 @page { size: A4; margin: 22mm 18mm 20mm 24mm; @top-center { content: "ICMAI · CMA FOUNDATION · PAPER 4 — FBEM · MASTER NOTES"; font-family: "Cormorant Garamond", Georgia, serif; font-weight: 300; font-size: 8pt; letter-spacing: 0.15em; text-transform: uppercase; color: #6B7280; } @bottom-center { content: "CMA Foundation · Fundamentals of Business Economics & Management · Compiled & Adapted by Dhanya Varia"; font-family: "Cormorant Garamond", Georgia, serif; font-weight: 300; font-size: 7.5pt; color: #6B7280; } @bottom-left { content: "© Dhanya Varia"; font-family: "EB Garamond", serif; font-size: 7pt; font-style: italic; color: #999999; } @bottom-right { content: counter(page); font-family: "Cormorant Garamond", Georgia, serif; font-weight: 600; font-size: 9pt; color: #1A5C38; } }
-body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color: var(--ink); background: var(--white); }
+body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color: var(--ink); background: var(--white); overflow-wrap: break-word; }
 .page { position: relative; min-height: 1mm; }
 
 .page-break { page-break-before: always; break-before: page; }
@@ -58,7 +58,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
 .cover-title { font-family: var(--font-display); font-weight: 400; font-size: 48pt; letter-spacing: 0.08em; text-transform: uppercase; color: var(--green-deep); line-height: 1.15; display: block; text-align: center; }
 .cover-subtitle { font-family: var(--font-head); font-weight: 300; font-size: 13pt; letter-spacing: 0.06em; color: var(--green-mid); text-align: center; }
 .module-title { font-family: var(--font-display); font-weight: 400; font-size: 38pt; letter-spacing: 0.06em; text-transform: uppercase; text-align: center; color: var(--white); line-height: 1.2; }
-.section-header { font-family: var(--font-head); font-weight: 600; font-size: 16pt; color: var(--green-deep); margin: 8mm 0 4mm; letter-spacing: 0.03em; overflow: hidden; }
+.section-header { font-family: var(--font-head); font-weight: 600; font-size: 16pt; color: var(--green-deep); margin: 8mm 0 4mm; letter-spacing: 0.03em; overflow: hidden; page-break-after: avoid; break-after: avoid; }
 .body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color: var(--ink); }
 .numeric { font-family: var(--font-mono); font-size: 10pt; line-height: 1.5; }
 .table-header { font-family: var(--font-head); font-weight: 600; font-size: 10pt; text-transform: uppercase; letter-spacing: 0.05em; color: var(--white); background: var(--green-deep); }
@@ -80,7 +80,8 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
 .shortcut-box { border: 1px solid var(--green-mid); background: var(--green-faint); padding: 10px 16px; margin: 10px 0; page-break-inside: avoid; break-inside: avoid; }
 .shortcut-box .shortcut-label { font-family: var(--font-head); font-weight: 700; color: var(--green-mid); }
 .trap-block { border-left: 4px solid var(--amber); background: var(--amber-bg); padding: 12px 16px; margin: 12px 0; page-break-inside: avoid; break-inside: avoid; }
-.trap-block .trap-label { font-family: var(--font-head); font-weight: 700; font-size: 11pt; color: var(--amber); margin-bottom: 8px; }
+.trap-block .trap-label { font-family: var(--font-head); font-weight: 700; font-size: 11pt; color: var(--amber); margin-bottom: 8px; text-transform: uppercase; }
+.trap-block .trap-label::before { content: "\26A0  TRAP: "; }
 .trap-block .trap-row { font-family: var(--font-body); font-size: 10.5pt; margin: 4px 0; }
 .trap-block .trap-row strong { font-family: var(--font-head); font-weight: 600; color: var(--ink); }
 .glossary-block { border: 1px solid var(--green-deep); background: var(--green-faint); padding: 4px 16px 12px; margin: 10px 0; }
@@ -153,11 +154,38 @@ tfoot { display: table-footer-group; }
 .answer-table td { font-size: 9.5pt; }
 .screen-watermark { position: fixed; bottom: 10px; right: 14px; background: rgba(255,255,255,0.88); border: 1px solid var(--green-deep); border-radius: 4px; padding: 4px 10px; font-family: var(--font-head); font-size: 8pt; font-style: italic; color: var(--green-deep); z-index: 9999; box-shadow: 0 1px 4px rgba(0,0,0,0.12); }
 @media print { .screen-watermark { display: none; } }
-.print-watermark { position: fixed; bottom: 13mm; right: 4mm; font-family: "EB Garamond", serif; font-weight: 500; font-style: italic; font-size: 10.5pt; color: var(--green-deep); opacity: 0.32; pointer-events: none; letter-spacing: 0.03em; white-space: nowrap; z-index: 1; }
+
+.page.tight .section-header { margin-top: 5mm; margin-bottom: 2.5mm; }
+.page.tight p.body { margin-top: 8px; margin-bottom: 8px; }
+.page.tight .concept-block, .page.tight .formula-box, .page.tight .worked-example, .page.tight .comparison-table, .page.tight .trap-block, .page.tight .shortcut-box, .page.tight .ledger-tbl, .page.tight .answer-table { margin-top: 8px; margin-bottom: 8px; }
+.page.tight .definition-block, .page.tight .glossary-block, .page.tight .trigger-box { margin-top: 6px; margin-bottom: 6px; }
+.page.tight .revision-strip { margin-top: 9px; margin-bottom: 9px; }
+.page.tight .point-list { margin-top: 6px; margin-bottom: 7px; }
+.page.tight .point-list li { margin-bottom: 5px; }
+.page.tight .concept-block { padding-top: 8px; padding-bottom: 8px; }
+.page.tight .definition-block { padding-top: 7px; padding-bottom: 7px; }
+.page.tight .formula-box { padding-top: 10px; padding-bottom: 10px; }
+.page.tight .worked-example { padding-top: 8px; padding-bottom: 8px; }
+.page.tight .trap-block { padding-top: 8px; padding-bottom: 8px; }
+.page.tight .shortcut-box { padding-top: 7px; padding-bottom: 7px; }
+.page.tight .glossary-block { padding-bottom: 8px; }
+.page.tight .comparison-table td { padding-top: 3px; padding-bottom: 3px; }
+.page.tight .comparison-table th { padding-top: 4px; padding-bottom: 4px; }
+.page.tight .point-list li { margin-bottom: 4px; }
+.page.tight .ledger-tbl td, .page.tight .ledger-tbl th { padding-top: 3px; padding-bottom: 3px; }
+.page.tight2 .section-header { margin-top: 3.5mm; margin-bottom: 2mm; }
+.page.tight2 .body, .page.tight2 p.body, .page.tight2 .definition-text, .page.tight2 .point-list li { line-height: 1.55; }
+.page.tight2 .concept-block, .page.tight2 .worked-example, .page.tight2 .trap-block { padding-top: 7px; padding-bottom: 7px; }
+.page.tight2 p.body { margin-top: 7px; margin-bottom: 7px; }
+.page.page-break > *:first-child { margin-top: 0; }
+.page.tight2 .comparison-table td { padding-top: 2px; padding-bottom: 2px; }
+.page.tight2 .comparison-table th { padding-top: 3px; padding-bottom: 3px; }
+.page.tight2 .point-list li { margin-bottom: 3px; }
+.page.tight2 .concept-block, .page.tight2 .definition-block, .page.tight2 .shortcut-box, .page.tight2 .trap-block, .page.tight2 .formula-box, .page.tight2 .worked-example, .page.tight2 .comparison-table { margin-top: 6px; margin-bottom: 6px; }
 </style>
 </head>
 <body>
-<div class="print-watermark">Dhanya Varia</div>
+
 <div class="screen-watermark">&copy; Compiled &amp; Adapted by Dhanya Varia</div>
 <div id="running-header">ICMAI · CMA FOUNDATION · PAPER 4 — FBEM · MASTER NOTES</div>
 <div id="running-footer">CMA Foundation · Fundamentals of Business Economics &amp; Management &middot; <em>Compiled &amp; Adapted by Dhanya Varia</em></div>
@@ -414,7 +442,7 @@ tfoot { display: table-footer-group; }
 
 <!-- ============ 1.1 FUNDAMENTALS OF ECONOMICS ============ -->
 <!-- © Dhanya Varia -->
-<div class="page page-break">
+<div class="page page-break tight tight2">
 <span class="pill">CONCEPT</span>
 <p class="section-header">1.1 The Fundamentals of Economics <span style="float:right;">&#9733;&#9733; MEDIUM</span></p>
 <div class="definition-block"><p class="definition-text">Economics is one of the social sciences. It explains the economic activities of people <em>(in easy language: any activity related to earning money and spending money is called an economic activity)</em>. The central task of economics is to decide how much of which commodities should be produced for the optimum satisfaction of human wants, because human wants are unlimited while society&rsquo;s resources are limited.</p></div>
@@ -659,7 +687,7 @@ tfoot { display: table-footer-group; }
 
 <!-- ============ 1.3 ELASTICITY ============ -->
 <!-- © Dhanya Varia -->
-<div class="page page-break">
+<div class="page page-break tight">
 <span class="pill">FORMULA</span>
 <p class="section-header">1.3.1 (contd.) Elasticity of Demand — the Three Types <span style="float:right;">&#9733;&#9733;&#9733; HIGH</span></p>
 <div class="definition-block"><p class="definition-text">Elasticity means <strong>sensitiveness or responsiveness</strong> — the degree of response in demand to a change in its determinants. Marshall: &ldquo;Elasticity of demand in a market is great or small according as the demand increases much or little for a given fall in the price, and diminishes much or little for a given rise in the price.&rdquo; Mrs. John Robinson: &ldquo;Elasticity of demand is a degree of responsiveness of demand as a result of change in price.&rdquo;</p></div>
@@ -678,7 +706,7 @@ tfoot { display: table-footer-group; }
 <div class="shortcut-box"><span class="shortcut-label">&#9889; SHORTCUT</span> Luxuries &gt; 1 &middot; Necessities &lt; 1 &middot; Comforts = 1 &middot; Salt/life-saving drugs = 0 &middot; The word &ldquo;parallel&rdquo;: to OX means &infin;, to OY means 0.</div>
 </div>
 
-<div class="page page-break">
+<div class="page page-break tight tight2">
 <span class="pill">FORMAT</span>
 <p class="section-header">Four Methods of Measuring Elasticity <span style="float:right;">&#9733;&#9733;&#9733; HIGH</span></p>
 <p class="body"><strong>1. Percentage method:</strong> compute both changes in percentages and apply E<sub>p</sub> = proportionate change in demand &divide; proportionate change in price.</p>
@@ -887,7 +915,7 @@ tfoot { display: table-footer-group; }
 <div class="trap-block"><span class="pill amber">&#9888; TRAP</span><p class="trap-label">Immobile yet transferable</p><p class="trap-row"><strong>THE TRAP:</strong> land cannot be MOVED (immobile factor), but its OWNERSHIP can be transferred — the two claims coexist. And the &ldquo;sole factor of production&rdquo; attribution belongs to the classicals and Karl Marx, about <em>labour</em>.</p></div>
 </div>
 
-<div class="page page-break">
+<div class="page page-break tight">
 <span class="pill">CONCEPT</span>
 <p class="section-header">1.4.3 Law of Variable Proportions (Short Run) <span style="float:right;">&#9733;&#9733;&#9733; HIGH</span></p>
 <div class="definition-block"><p class="definition-text">Output is changed by changing some factors (variable) while others are constant — hence the name. Developed by <strong>Alfred Marshall</strong>: &ldquo;An increase in the amount of labour and capital applied in the cultivation of land causes in general a less than proportionate increase in the amount of output raised, unless it happens to coincide with improvements in the arts of agriculture.&rdquo; Also called the <strong>law of diminishing marginal returns</strong>; applicable not only to agriculture but also to industry and services.</p></div>
@@ -1060,7 +1088,7 @@ tfoot { display: table-footer-group; }
 <div class="formula-box"><p class="formula-text">AC = TC/Q = AFC + AVC &nbsp;&bull;&nbsp; AFC = TFC/Q &nbsp;&bull;&nbsp; AVC = TVC/Q &nbsp;&bull;&nbsp; MC = &Delta;TC/&Delta;Q = TC<sub>n</sub> &minus; TC<sub>n&minus;1</sub></p><hr class="var-divider"><p class="formula-vars"><strong>TFC</strong> = Total Fixed Cost &middot; <strong>TVC</strong> = Total Variable Cost &middot; <strong>TC</strong> = Total Cost &middot; <strong>AFC</strong> = Average Fixed Cost &middot; <strong>AVC</strong> = Average Variable Cost &middot; <strong>AC</strong> = Average Cost &middot; <strong>MC</strong> = Marginal Cost &middot; <strong>Q</strong> = output. Shapes: AC — U-shaped &middot; AFC — falls continuously, a <strong>rectangular hyperbola</strong>, never touches the X-axis &middot; AVC — U-shaped &middot; MC — U-shaped.</p></div>
 </div>
 
-<div class="page page-break">
+<div class="page page-break tight">
 <span class="pill">CONCEPT</span>
 <p class="section-header">The Cost-Curve Family &middot; MC vs AC &middot; Total Cost <span style="float:right;">&#9733;&#9733;&#9733; HIGH</span></p>
 <div class="mind-map-container" style="margin:3mm 0;">
@@ -1150,7 +1178,7 @@ tfoot { display: table-footer-group; }
 <span class="pill">FORMULA</span>
 <p class="section-header">Concepts of Revenue — TR, AR, MR under Two Markets <span style="float:right;">&#9733;&#9733;&#9733; HIGH</span></p>
 <div class="formula-box"><p class="formula-text">TR = P &times; Q = &Sigma;MR &nbsp;&nbsp;&bull;&nbsp;&nbsp; AR = TR / Q &nbsp;&nbsp;&bull;&nbsp;&nbsp; MR = &Delta;TR / &Delta;Q = TR<sub>n</sub> &minus; TR<sub>n&minus;1</sub></p><hr class="var-divider"><p class="formula-vars">Revenue = income from selling goods and services in the market. Total revenue is the sum of all marginal revenues; average revenue is revenue per unit sold; marginal revenue is the addition from one more unit.</p></div>
-<div class="worked-example avoid-break">
+<div class="worked-example">
 <p class="ex-label">ICMAI&rsquo;s two revenue schedules, side by side (all figures verified)</p>
 <table class="comparison-table" style="text-align:center;">
   <thead><tr><th colspan="5" style="background:var(--green-pale);color:var(--green-deep);">PERFECT COMPETITION — price constant (homogeneous goods)</th></tr><tr><th>Output</th><th>Price</th><th>TR</th><th>AR</th><th>MR</th></tr></thead><tbody>
@@ -1572,7 +1600,7 @@ tfoot { display: table-footer-group; }
 <div class="shortcut-box"><span class="shortcut-label">&#9889; SHORTCUT</span> First = paying capacity (perfect) &middot; Second = quantity blocks &middot; Third = market separation by elasticity (the common one). Pigou classified them — a direct fill-in answer.</div>
 </div>
 
-<div class="page page-break">
+<div class="page page-break tight">
 <span class="pill">CONCEPT</span>
 <p class="section-header">2.2 (contd.) When Is Discrimination Possible — and Profitable? <span style="float:right;">&#9733;&#9733;&#9733; HIGH</span></p>
 <p class="body"><strong>Five conditions that make price discrimination possible (ICMAI):</strong></p>
@@ -1718,7 +1746,7 @@ tfoot { display: table-footer-group; }
 
 <!-- ============ 3.1 MONEY ============ -->
 <!-- © Dhanya Varia -->
-<div class="page page-break">
+<div class="page page-break tight">
 <span class="pill">CONCEPT</span>
 <p class="section-header">3.1 Money — Barter, Evolution, Definitions, Four Types <span style="float:right;">&#9733;&#9733;&#9733; HIGH</span></p>
 <p class="body">ICMAI identifies five difficulties of the barter system.</p>
@@ -1760,7 +1788,7 @@ tfoot { display: table-footer-group; }
 <div class="definition-block"><p class="definition-text"><strong>Gresham&rsquo;s law</strong> — bad money drives good money out of circulation. True under bimetallism, where a two-metal standard (gold and silver) operated side by side and one metal currency drove the other out. It also means cheap money drives out dear money: if a country uses both paper and metal money, people will USE the paper and HOLD the metal.</p></div>
 </div>
 
-<div class="page page-break">
+<div class="page page-break tight">
 <span class="pill">FORMULA</span>
 <p class="section-header">The Quantity Theory of Money — Fisher, Cambridge, Keynes <span style="float:right;">&#9733;&#9733;&#9733; HIGH</span></p>
 <div class="formula-box"><p class="formula-text">Fisher: MV = PT</p><hr class="var-divider"><p class="formula-vars">M = money supply issued by the legal authority &middot; V = velocity of money &middot; P = price level &middot; T = total output. MV = money supply side; PT = money demand side. The rate of change in money supply (dM/M) equals the rate of change in P (dP/P).</p></div>
@@ -1993,7 +2021,7 @@ tfoot { display: table-footer-group; }
   <thead><tr><th style="width:24%;">Institution</th><th>Role and key facts (ICMAI)</th></tr></thead><tbody>
   <tr><td><strong>SWIFT</strong></td><td>Society for Worldwide Interbank Financial Telecommunications — the huge messaging network banks use to send money-transfer instructions rapidly, precisely, securely; a protected carrier that evades fraudulent transactions (Bank X&rsquo;s message reaches Bank Y only).</td></tr>
   <tr><td><strong>BIS</strong></td><td>Bank for International Settlements — owned by central banks; fosters international monetary and financial cooperation; <strong>the bank for central banks</strong>; <strong>60 members including the RBI</strong>.</td></tr>
-  <tr><td><strong>MUDRA &middot; 8 Apr 2015</strong></td><td>Micro Units Development and Refinance Agency — public-sector institution lending at low rates to micro-finance and non-banking financial institutions which finance MSMEs; applicant age <strong>18 to 65</strong>; <strong>non-farm</strong> income-generating manufacturing/trading/services; credit requirement <strong>&#8377;10 lakh or lower</strong>.</td></tr>
+  <tr><td><strong>MUDRA &middot; 8 Apr 2015</strong></td><td>Micro Units Development and Refinance Agency — public-sector institution lending at low rates to micro-finance and non-banking financial institutions which finance MSMEs; applicant age <strong>18 to 65</strong>; <strong>non-farm</strong> income-generating manufacturing/&#8203;trading/&#8203;services; credit requirement <strong>&#8377;10 lakh or lower</strong>.</td></tr>
   <tr><td><strong>AIF</strong></td><td>Alternative Investment Fund — privately pooled funds investing in private equity, venture capital, hedge funds, managed funds — different from conventional debt/stock investment.</td></tr>
   <tr><td><strong>Bad Bank</strong></td><td>An <strong>ARC/AMC</strong> that takes over banks&rsquo; bad loans (NPAs), manages and recovers them — not involved in lending or deposits. India&rsquo;s: <strong>NARCL</strong> acquires and aggregates the NPA accounts; <strong>IDRCL</strong> handles debt resolution.</td></tr>
   <tr><td><strong>Hedge fund</strong></td><td>Pooled fund trading relatively <strong>liquid assets</strong> with complex techniques — leverage, short selling, derivatives (e.g. Munoth Hedge Fund, IIFL Opportunities Fund).</td></tr>
@@ -2065,7 +2093,7 @@ tfoot { display: table-footer-group; }
 <div class="trap-block"><span class="pill amber">&#9888; TRAP</span><p class="trap-label">Quantitative vs qualitative — sort every instrument</p><p class="trap-row"><strong>THE TRAP:</strong> bank rate, open market operations, CRR &rarr; <strong>QUANTITATIVE</strong> (how much credit exists). Selective controls and moral suasion &rarr; <strong>QUALITATIVE</strong> (where credit goes). &ldquo;Moral suasion is a qualitative technique&rdquo; is TRUE in the key.</p></div>
 </div>
 
-<div class="page page-break">
+<div class="page page-break tight">
 <span class="pill">CONCEPT</span>
 <p class="section-header">3.4.2 The Money Market — Meaning, Objectives, Characteristics, Functions <span style="float:right;">&#9733;&#9733; MEDIUM</span></p>
 <div class="definition-block"><p class="definition-text"><strong>Crowther:</strong> &ldquo;The money market is a collective name given to the various firms and institutions that deal with various grades of near-money.&rdquo; <strong>RBI:</strong> &ldquo;the center for dealing, mainly of a short-term character, in monetary assets; it meets the short-term requirements of borrowers and provides liquidity of cash to the lenders.&rdquo;</p></div>
@@ -2335,7 +2363,7 @@ tfoot { display: table-footer-group; }
 
 <!-- ============ MICRO vs MACRO ============ -->
 <!-- © Dhanya Varia -->
-<div class="page page-break">
+<div class="page page-break tight tight2">
 <span class="pill">CONCEPT</span>
 <p class="section-header">4.1.5&ndash;4.1.7 The External Environment — Micro Business Environment <span style="float:right;">&#9733;&#9733;&#9733; HIGH</span></p>
 <p class="body">The external factors beyond any firm&rsquo;s control determine the external business environment, classified into <strong>micro</strong> and <strong>macro</strong> environment. The <strong>micro business environment</strong> is created by the activities of customers, suppliers, competitors and marketing agencies in a firm&rsquo;s <strong>immediate neighbourhood</strong> — it may differ from one firm to another even within the same industry (e.g. different supply sources).</p>
@@ -2374,7 +2402,7 @@ tfoot { display: table-footer-group; }
   <thead><tr><th style="width:22%;">Component</th><th>Content (ICMAI)</th></tr></thead><tbody>
   <tr><td><strong>1. Demographic</strong></td><td>Population&rsquo;s size, age structure, geographic distribution, ethnic make-up, income distribution — far-reaching implications for future competitiveness and strategy.</td></tr>
   <tr><td><strong>2. Economic</strong></td><td>The nature and direction of the economy: resource markets (money, labour, raw material, supply) affecting input cost/quality/availability; purchasing power (current income, prices, savings, credit); income distribution and propensity to consume determine marketing possibilities; inflation rate has far-reaching impact.</td></tr>
-  <tr><td><strong>3. Political-Legal</strong></td><td>Controlled by fiscal, monetary, industrial, labour and export-import policies; the legal system (company, consumer-protection, competition, IP, forex, labour laws); political pressure groups influence decisions via trade unions, consumer/women/minority-rights pressure. In India: party rivalries, poor political consciousness, ex-zamindar/business-group influence, and political instability all create uncertainty.</td></tr>
+  <tr><td><strong>3. Political-Legal</strong></td><td>Controlled by fiscal, monetary, industrial, labour and export-import policies; the legal system (company, consumer-protection, competition, IP, forex, labour laws); political pressure groups influence decisions via trade unions, consumer/&#8203;women/&#8203;minority-rights pressure. In India: party rivalries, poor political consciousness, ex-zamindar/business-group influence, and political instability all create uncertainty.</td></tr>
   <tr><td><strong>4. Socio-cultural</strong></td><td>Social traditions, values, beliefs, literacy/education level, ethical standards, social stratification. Core beliefs are persistent and hard to change (e.g. India&rsquo;s old caste system restricted labour mobility; the joint family system created dependency and reduced entrepreneurship/savings). Culture = knowledge &amp; beliefs + ideals + preferences (e.g. Nestl&eacute; brews different instant-coffee varieties per country&rsquo;s taste).</td></tr>
   <tr><td><strong>5. Technological</strong></td><td>Level of technological development, speed of adoption/diffusion, R&amp;D activity. India&rsquo;s Green Revolution created a market for tractors and power tillers; rising electricity access raised demand for home appliances. Quick adoption is an advantage; failure to adopt is a threat. IT/internet enabled work-from-home and online shopping.</td></tr>
   <tr><td><strong>6. Global</strong></td><td>See dedicated section below — globalization, WTO, trade blocks.</td></tr>
@@ -2567,7 +2595,7 @@ tfoot { display: table-footer-group; }
 <p>&#9318; PESTEL = Political, Economic, Social, Technological, Environmental, Legal — six macro forces, used with SWOT and Porter&rsquo;s Five Forces.</p>
 <p>&#9319; Porter&rsquo;s 5: rival sellers, new entrants, substitute products, supplier bargaining power, BUYER bargaining power (not employees).</p>
 <p>&#9320; VUCA coined 1987 (Bennis &amp; Nanus 1985), US Army War College, post-Cold-War. FU (Fear of unknown, Unprecedentedness) added after Covid-19.</p>
-<p>&#9321; Volatility = speed/volume/nature/magnitude of change (e.g. price shocks &rarr; stockpile inventory). Uncertainty = &ldquo;lack of clarity&rdquo; to predict the future.</p>
+<p>&#9321; Volatility = speed/&#8203;volume/&#8203;nature/&#8203;magnitude of change (e.g. price shocks &rarr; stockpile inventory). Uncertainty = &ldquo;lack of clarity&rdquo; to predict the future.</p>
 <p>&#9322; Decision rules under uncertainty: Minimax (Neumann/Morgenstern — minimize max LOSS) &middot; Maximax (maximize max PROFIT) &middot; Bayes&rsquo; rule &middot; Game Theory.</p>
 <p>&#9323; Complexity = non-linear cause-effect, many diversified states, impossible to fully analyze. Ambiguity = MULTIPLE valid interpretations — NOT the same as unclear.</p>
 <p>&#9324; Fear of Unknown/Unprecedentedness: Covid-19 strains Alpha&rarr;Omicron; PM-Gati Shakti (Budget 2022, infrastructure); NPCI (digital payments); work-from-home + contactless transactions.</p>
@@ -2686,7 +2714,7 @@ tfoot { display: table-footer-group; }
 <div class="shortcut-box"><span class="shortcut-label">&#9889; SHORTCUT</span> Terry&rsquo;s four verbs: PLAN &middot; ORGANISE &middot; ACTUATE &middot; CONTROL. Fayol&rsquo;s five: FORECAST/PLAN &middot; ORGANISE &middot; COMMAND &middot; CO-ORDINATE &middot; CONTROL. Match the author to the exact verb-list in MCQs — they don&rsquo;t interchange.</div>
 </div>
 
-<div class="page page-break">
+<div class="page page-break tight tight2">
 <span class="pill">FORMAT</span>
 <p class="section-header">5.1.2 Nature of Management — Fifteen Features <span style="float:right;">&#9733;&#9733;&#9733; HIGH</span></p>
 <table class="comparison-table" style="font-size:8.8pt;">
@@ -2732,7 +2760,7 @@ tfoot { display: table-footer-group; }
 <div class="shortcut-box"><span class="shortcut-label">&#9889; SHORTCUT</span> &ldquo;Management is the oldest of arts and the youngest of sciences.&rdquo; Science provides the KNOWLEDGE; art supplies the APPLICATION of that knowledge and skill — the settled ICMAI conclusion is that management is <strong>BOTH</strong>.</div>
 </div>
 
-<div class="page page-break">
+<div class="page page-break tight tight2">
 <span class="pill">CONCEPT</span>
 <p class="section-header">5.1.4&ndash;5.1.5 Scope of Management &amp; Management as a Profession <span style="float:right;">&#9733;&#9733; MEDIUM</span></p>
 <p class="body"><strong>Herbison and Myres</strong> restrict management&rsquo;s wide scope under three broad groups:</p>
@@ -2860,7 +2888,7 @@ tfoot { display: table-footer-group; }
 <div class="shortcut-box"><span class="shortcut-label">&#9889; SHORTCUT</span> One clean test for any MCQ: does the option describe TRUST and ALIGNED interests (&rarr; Stewardship), or MONITORING and POTENTIAL conflict (&rarr; Agency)? Board-composition questions flip on exactly this axis — executive-heavy = stewardship, independent-heavy = agency.</div>
 </div>
 
-<div class="page page-break">
+<div class="page page-break tight">
 <span class="pill">FORMAT</span>
 <p class="section-header">5.2.3 ICMAI&rsquo;s Own Comparison Table <span style="float:right;">&#9733;&#9733;&#9733; HIGH</span></p>
 <p class="body">Although both theories are considered important doctrines of management, they differ significantly across a number of conceptual issues. This is the book&rsquo;s own official summary table, verbatim in structure — the single richest source of Stewardship-vs-Agency MCQs in the module.</p>
@@ -2919,7 +2947,7 @@ tfoot { display: table-footer-group; }
   <tr><td><strong>8. Lack of orientation/training</strong></td><td>Planning is easy to put off — it isn&rsquo;t exciting or action-oriented for most managers.</td></tr>
   <tr><td><strong>9. Uncertainty</strong></td><td>Has to reckon with numerous environmental uncertainties.</td></tr>
 </tbody></table>
-<p class="body">Ultimately, planning risks becoming a mere ritual in a fast-changing environment — sudden shifts in technology, competition, government regulation, and political/legal/ethical/social conditions all reduce the effectiveness of planning effort.</p>
+<p class="body">Ultimately, planning risks becoming a mere ritual in a fast-changing environment — sudden shifts in technology, competition, government regulation, and political/&#8203;legal/&#8203;ethical/&#8203;social conditions all reduce the effectiveness of planning effort.</p>
 <div class="shortcut-box"><span class="shortcut-label">&#9889; SHORTCUT</span> Four general principles for effective plans (ICMAI): keep them SIMPLE, be SELECTIVE (don&rsquo;t cover too much territory), gear the plan to those who IMPLEMENT it, and make it THOROUGH (no omitted sub-functions, no ignored details, avoid controversial statements).</div>
 </div>
 
@@ -3139,7 +3167,7 @@ tfoot { display: table-footer-group; }
 </tbody></table>
 </div>
 
-<div class="page page-break">
+<div class="page page-break tight tight2">
 <span class="pill">CONCEPT</span>
 <p class="section-header">Training and Development <span style="float:right;">&#9733;&#9733;&#9733; HIGH</span></p>
 <div class="definition-block"><p class="definition-text"><strong>Edwin Flippo:</strong> training is &ldquo;an act of increasing the knowledge and skill of an employee for doing a particular job.&rdquo; <strong>O. Jeff Harris:</strong> training should aim at redirecting or improving behaviour so the trainee&rsquo;s performance becomes more useful and productive, typically concentrating on operative skills, interpersonal skills, decision-making skills, or a combination.</p></div>
@@ -3158,7 +3186,7 @@ tfoot { display: table-footer-group; }
   <thead><tr><th style="width:20%;"></th><th>On-the-job training</th><th>Off-the-job training</th></tr></thead><tbody>
   <tr><td><strong>Setting</strong></td><td>Given by the superior/supervisor, in the ACTUAL work environment — no artificial location.</td><td>Conducted AWAY from the actual work setting.</td></tr>
   <tr><td><strong>Methods</strong></td><td>Coaching, apprenticeship training, job rotation, vestibule training, self-improvement programmes.</td><td>Lectures/classroom instruction, conference method, group discussions, role playing, case studies, T-group (sensitivity) training.</td></tr>
-  <tr><td><strong>Merits</strong></td><td>Learning in a real (not artificial) environment; trainee observes actual rules/systems; economical (no extra personnel needed).</td><td>Relaxed, pressure-free absorption of information; access to latest trends/techniques/legislation; taught by experts to a reasonable standard; no added company equipment/space cost; can boost the trainee&rsquo;s sense of being valued; enables networking across companies.</td></tr>
+  <tr><td><strong>Merits</strong></td><td>Learning in a real (not artificial) environment; trainee observes actual rules/systems; economical (no extra personnel needed).</td><td>Relaxed, pressure-free absorption of information; access to latest trends/&#8203;techniques/&#8203;legislation; taught by experts to a reasonable standard; no added company equipment/space cost; can boost the trainee&rsquo;s sense of being valued; enables networking across companies.</td></tr>
   <tr><td><strong>Demerits</strong></td><td>Haphazard/disorganised learning; inexperienced handling of machines can cause costly damage; trainee productivity is low and can disrupt the production flow; hard to work AND learn simultaneously.</td><td>Can be expensive (travel, stay, expert fees); no guarantee of the external trainer&rsquo;s quality; forced to a compromise learning pace across different individuals; learners starting at the lowest skill level risk being left behind.</td></tr>
   <tr><td><strong>Best suited for</strong></td><td>Supervisors, operatives, lower-level executives.</td><td>&mdash;</td></tr>
 </tbody></table>
@@ -3430,7 +3458,7 @@ tfoot { display: table-footer-group; }
   <tr><td>7</td><td><strong>Reporting information</strong></td><td>Internal and external mechanisms — published reports, circulars, electronic disclosures.</td></tr>
   <tr><td>8</td><td><strong>Using information</strong></td><td>The KEY purpose — changing plans/budgets/targets or working approaches, especially in difficult or fast-changing environments.</td></tr>
 </tbody></table>
-<div class="shortcut-box"><span class="shortcut-label">&#9889; SHORTCUT</span> Monitoring data supports accountability to partners/communities/donors, institutional learning, marketing/PR, advocacy evidence, and resource-allocation decisions — and often feeds directly into LATER evaluations and formal reviews.</div>
+<div class="shortcut-box"><span class="shortcut-label">&#9889; SHORTCUT</span> Monitoring data supports accountability to partners/&#8203;communities/&#8203;donors, institutional learning, marketing/PR, advocacy evidence, and resource-allocation decisions — and often feeds directly into LATER evaluations and formal reviews.</div>
 </div>
 
 <!-- ============ 5.4.5 CONTROL ============ -->
@@ -3442,7 +3470,7 @@ tfoot { display: table-footer-group; }
 <p class="body">Control is planning&rsquo;s effective counterpart — the two are so entwined it is almost impossible to say where one ends and the other begins. <strong>Planning without corresponding controls produces only hollow hopes.</strong></p>
 <table class="comparison-table">
   <thead><tr><th style="width:8%;">#</th><th style="width:26%;">Step</th><th>Content (ICMAI)</th></tr></thead><tbody>
-  <tr><td>i</td><td><strong>Establishment of standards</strong></td><td>Standards/objectives/targets against which actual performance is measured; must be rationally flexible, not rigid. Fred Luthans: &ldquo;standards are used to control the objectives, objectives are used to control goals, and goals are used to control purpose.&rdquo;</td></tr>
+  <tr><td>i</td><td><strong>Establishment of standards</strong></td><td>Standards/&#8203;objectives/&#8203;targets against which actual performance is measured; must be rationally flexible, not rigid. Fred Luthans: &ldquo;standards are used to control the objectives, objectives are used to control goals, and goals are used to control purpose.&rdquo;</td></tr>
   <tr><td>ii</td><td><strong>Measurement of actual performance</strong></td><td>Especially difficult for less-technical tasks.</td></tr>
   <tr><td>iii</td><td><strong>Comparing performance with standards</strong></td><td>Perfect matches are rare; the manager watches that deviation stays within an acceptable range.</td></tr>
   <tr><td>iv</td><td><strong>Taking corrective action</strong></td><td>Needed for BOTH negative deviation (investigate why targets weren&rsquo;t met) and positive deviation (may mean the standard itself was set too low, needing revision).</td></tr>
@@ -3517,7 +3545,7 @@ tfoot { display: table-footer-group; }
 </tbody></table>
 </div>
 
-<div class="page page-break">
+<div class="page page-break tight">
 <span class="pill">FORMAT</span>
 <p class="section-header">Five Techniques of Control <span style="float:right;">&#9733;&#9733;&#9733; HIGH</span></p>
 <table class="comparison-table">
@@ -3533,7 +3561,7 @@ tfoot { display: table-footer-group; }
   </td></tr>
   <tr><td><strong>2. Financial statements</strong></td><td>Trading &amp; Profit and Loss Account (a period statement) and Balance Sheet (a position statement at period-end) &mdash; powerful control tools; historical statements reveal revenue/expenditure dynamics and trends; projected statements help monitor and regulate future transactions.</td></tr>
   <tr><td><strong>3. Break-even analysis</strong></td><td>Also Cost-Volume-Profit analysis &mdash; sizes up cost/revenue/profit behaviour across activity levels; the <strong>break-even point</strong> is where total revenue equals total cost (no profit, no loss). Both a planning AND a control technique &mdash; used for profit planning.</td></tr>
-  <tr><td><strong>4. Management Information System (MIS)</strong></td><td>Gathers, stores and converts data into useful information for planning, controlling and operations. Incorporates historical/current/projected, quantitative/non-quantitative data; supports strategic, administrative and operational decisions; supplies ONLY the information called for (avoiding overload); continuously updated to stay relevant; avoids overlapping information.</td></tr>
+  <tr><td><strong>4. Management Information System (MIS)</strong></td><td>Gathers, stores and converts data into useful information for planning, controlling and operations. Incorporates historical/&#8203;current/&#8203;projected, quantitative/non-quantitative data; supports strategic, administrative and operational decisions; supplies ONLY the information called for (avoiding overload); continuously updated to stay relevant; avoids overlapping information.</td></tr>
   <tr><td><strong>5. Management audit</strong></td><td>A systematic, independent evaluation of an organisation&rsquo;s management functioning, performance and effectiveness &mdash; typically by an outside firm. Covers:
     <ul class="point-list" style="margin:4px 0 0;padding-left:4mm;">
       <li>Objectives, strategies, and policies, and their success.</li>
@@ -3552,7 +3580,7 @@ tfoot { display: table-footer-group; }
 
 <!-- ============ 5.5.1 ORGANISATION STRUCTURE ============ -->
 <!-- © Dhanya Varia -->
-<div class="page page-break">
+<div class="page page-break tight tight2">
 <span class="pill">CONCEPT</span>
 <p class="section-header">5.5.1 Organisation Structure — Definition, Significance, Principles <span style="float:right;">&#9733;&#9733;&#9733; HIGH</span></p>
 <div class="definition-block"><p class="definition-text">An organisation structure shows the authority and responsibility relationships between the various positions in the organisation by showing who reports to whom — an established pattern of relationship among its components, usually shown on an organisation chart. <strong>March and Simon:</strong> &ldquo;Organisation structure consists simply of those aspects of pattern of behaviour in the organisation that are relatively stable and change only slowly.&rdquo;</p></div>
@@ -3764,7 +3792,7 @@ tfoot { display: table-footer-group; }
 
 <!-- ============ 5.5.2 RESPONSIBILITY ============ -->
 <!-- © Dhanya Varia -->
-<div class="page page-break">
+<div class="page page-break tight tight2">
 <span class="pill">CONCEPT</span>
 <p class="section-header">5.5.2 Responsibility — Definitions and Nine Characteristics <span style="float:right;">&#9733;&#9733;&#9733; HIGH</span></p>
 <div class="definition-block"><p class="definition-text"><strong>M.E. Hurley:</strong> &ldquo;Responsibility is the duty to which a person is bound by reason of his status or task&hellip; implies compliance with directives of the person making the initial delegation.&rdquo; <strong>Koontz and O&rsquo;Donnell:</strong> &ldquo;the obligation of a subordinate, to whom duty has been assigned, to perform the duty.&rdquo; <strong>R.C. Davis:</strong> &ldquo;the obligation of an individual to perform assigned duties to the best of his ability under the direction of his executive leader.&rdquo;</p></div>
@@ -4031,7 +4059,7 @@ tfoot { display: table-footer-group; }
     </ul>
   </td></tr>
 </tbody></table>
-<div class="trap-block"><span class="pill amber">&#9888; TRAP</span><p class="trap-label">Which style fits which situation</p><p class="trap-row"><strong>THE TRAP:</strong> autocratic suits uneducated/unskilled/submissive subordinates or fear-based discipline cultures; democratic suits subordinates with a high need for independence who&rsquo;ve accepted organisational goals; free-rein suits well-trained, highly knowledgeable, self-motivated subordinates ready to assume responsibility. Match the STYLE to the SUBORDINATE profile, not the other way round.</p></div>
+<div class="trap-block"><span class="pill amber">&#9888; TRAP</span><p class="trap-label">Which style fits which situation</p><p class="trap-row"><strong>THE TRAP:</strong> autocratic suits uneducated/&#8203;unskilled/&#8203;submissive subordinates or fear-based discipline cultures; democratic suits subordinates with a high need for independence who&rsquo;ve accepted organisational goals; free-rein suits well-trained, highly knowledgeable, self-motivated subordinates ready to assume responsibility. Match the STYLE to the SUBORDINATE profile, not the other way round.</p></div>
 </div>
 
 <div class="page page-break">
@@ -4058,7 +4086,7 @@ tfoot { display: table-footer-group; }
 
 <!-- ============ MANAGERIAL GRID ============ -->
 <!-- © Dhanya Varia -->
-<div class="page page-break">
+<div class="page page-break tight tight2">
 <span class="pill">FORMAT</span>
 <p class="section-header">Leadership Styles C — the Managerial Grid (Blake &amp; Mouton) <span style="float:right;">&#9733;&#9733;&#9733; HIGH</span></p>
 <p class="body">Developed by <strong>Robert Blake and Jane Mouton</strong>. The grid has two dimensions, each on a 1&ndash;9 scale: <strong>concern for people</strong> (working conditions, trust-based responsibility, self-esteem, interpersonal relations) and <strong>concern for production</strong> (quality of staff services, work efficiency, volume/quality of output).</p>
@@ -4236,7 +4264,7 @@ tfoot { display: table-footer-group; }
   <tr><td><strong>1. Physiological</strong></td><td>Survival needs — food, drink, air, sleep. Must be satisfied FIRST; finite but recur repeatedly (&ldquo;man lives by bread alone&rdquo; when there is none).</td></tr>
   <tr><td><strong>2. Safety</strong></td><td>Protection from danger, deprivation, threat; economic security. Finite, but can motivate under arbitrary/unpredictable management. Organisations influence this via pensions, insurance.</td></tr>
   <tr><td><strong>3. Social</strong></td><td>Belonging, acceptance, love/affection. INFINITE (secondary, not essential to survival) — needs of mind and spirit. Influenced via supervision, communication, work groups.</td></tr>
-  <tr><td><strong>4. Esteem</strong></td><td>Two types: self-esteem (self-respect, confidence, competence, achievement) and esteem OF others (reputation, status, recognition). Infinite; thwarting causes inferiority/weakness/helplessness.</td></tr>
+  <tr><td><strong>4. Esteem</strong></td><td>Two types: self-esteem (self-respect, confidence, competence, achievement) and esteem OF others (reputation, status, recognition). Infinite; thwarting causes inferiority/&#8203;weakness/&#8203;helplessness.</td></tr>
   <tr><td><strong>5. Self-actualisation</strong></td><td>Realising one&rsquo;s full potential, continued self-development, creativity. Infinite, a growth need, psychological — very few people fully satisfy it.</td></tr>
 </tbody></table>
 <div class="trap-block"><span class="pill amber">&#9888; TRAP</span><p class="trap-label">Finite vs infinite needs</p><p class="trap-row"><strong>THE TRAP:</strong> physiological and safety needs are <strong>FINITE</strong> (a fixed, satisfiable amount); social, esteem and self-actualisation are <strong>INFINITE</strong> (never fully satisfied). This finite/infinite split is a direct exam distinction, separate from the hierarchy order itself.</p></div>
@@ -4251,7 +4279,7 @@ tfoot { display: table-footer-group; }
   <tr><td>1</td><td>Needs are not the ONLY determinant of behaviour — perceptions, expectations, experience also drive it.</td></tr>
   <tr><td>2</td><td>Over-simplifies human needs; the hierarchy sequence is not always followed; classification is somewhat artificial.</td></tr>
   <tr><td>3</td><td>The hierarchy is not fixed — creative people (singers, painters) may chase self-actualisation before lower needs are met; priorities shift over time; the theory ignores individual differences.</td></tr>
-  <tr><td>4</td><td>Based on a relatively small, clinically-derived sample — weak on conventional reliability/validity/sampling standards.</td></tr>
+  <tr><td>4</td><td>Based on a relatively small, clinically-derived sample — weak on conventional reliability/&#8203;validity/&#8203;sampling standards.</td></tr>
   <tr><td>5</td><td>No definite evidence that a satisfied need loses its motivating force, or that satisfying one need automatically activates the next.</td></tr>
 </tbody></table>
 <p class="body">Despite the limitations, the theory retains common-sense appeal — it provides a convenient conceptual framework for studying motivation and explaining inter/intra-personal behavioural differences.</p>
@@ -4303,7 +4331,7 @@ tfoot { display: table-footer-group; }
   <li>The <strong>maintenance/motivator distinction isn&rsquo;t fixed</strong> &mdash; the same factor can motivate one person and merely maintain another.</li>
 </ol>
 <div class="definition-block"><p class="definition-text"><strong>Comparison with Maslow:</strong> Herzberg&rsquo;s theory EXTENDS Maslow&rsquo;s — the two are compatible/complementary. Survival needs (physiological, safety, social) correspond to hygiene/dissatisfiers; growth needs (esteem, self-actualisation) correspond to motivators/satisfiers. Maslow frames things in terms of NEEDS; Herzberg frames them in terms of REWARDS or GOALS. Both models tend to over-simplify the motivational process.</p></div>
-<div class="shortcut-box"><span class="shortcut-label">&#9889; SHORTCUT</span> Lower-order Maslow needs (physiological/safety/social) &harr; Herzberg&rsquo;s HYGIENE factors. Higher-order Maslow needs (esteem/self-actualisation) &harr; Herzberg&rsquo;s MOTIVATORS. Salary is a hygiene factor, not a motivator — a favourite trick option.</div>
+<div class="shortcut-box"><span class="shortcut-label">&#9889; SHORTCUT</span> Lower-order Maslow needs (physiological/&#8203;safety/&#8203;social) &harr; Herzberg&rsquo;s HYGIENE factors. Higher-order Maslow needs (esteem/self-actualisation) &harr; Herzberg&rsquo;s MOTIVATORS. Salary is a hygiene factor, not a motivator — a favourite trick option.</div>
 </div>
 
 <!-- ============ MCGREGOR ============ -->
@@ -4421,7 +4449,7 @@ tfoot { display: table-footer-group; }
 <p class="body">Not all inputs/outputs can be easily quantified — but the theory suggests managers should actively help employees manage the balance between what they give and what they get. A perceived sense of fairness drives maximum motivation, engagement and performance; perceived unfairness is a leading cause of good employees exiting at the first opportunity.</p>
 </div>
 
-<div class="page page-break">
+<div class="page page-break tight">
 <span class="pill">FORMULA</span>
 <p class="section-header">7. Victor Vroom&rsquo;s Expectancy Theory <span style="float:right;">&#9733;&#9733;&#9733; HIGH</span></p>
 <div class="definition-block"><p class="definition-text">Proposed by <strong>Victor Vroom</strong> of Yale School of Management, <strong>1964</strong>. Unlike Maslow and Herzberg, Vroom focuses on OUTCOMES, not needs: the intensity of a tendency to perform depends on the intensity of the expectation that performance will be followed by a definite outcome, and on how appealing that outcome is to the individual.</p></div>
@@ -4463,11 +4491,11 @@ tfoot { display: table-footer-group; }
 <p>&#9316; Likert&rsquo;s 4 Systems: 1 Exploitative autocratic &middot; 2 Benevolent autocratic &middot; 3 Consultative &middot; 4 Democratic (Likert&rsquo;s ideal).</p>
 <p>&#9317; Terry&rsquo;s contingency model: Leader + Followers + Organisation + Environment. Servant leadership: Greenleaf 1970, &ldquo;servant first.&rdquo;</p>
 <p>&#9318; Leadership effectiveness: trait view + behavioural view (productivity/satisfaction orientation) + situational view.</p>
-<p>&#9319; Motivation = inducing desired action; Robbins&rsquo;s definition; needs&rarr;tension&rarr;action&rarr;satisfaction cycle; TOTAL not piecemeal; continuous (McGregor&rsquo;s &ldquo;wanting animal&rdquo;).</p>
-<p>&#9320; Maslow: physiological&rarr;safety&rarr;social&rarr;esteem&rarr;self-actualisation. First two FINITE, last three INFINITE. Lower need must partly satisfy before next activates.</p>
+<p>&#9319; Motivation = inducing desired action; Robbins&rsquo;s definition; needs&rarr;&#8203;tension&rarr;&#8203;action&rarr;&#8203;satisfaction cycle; TOTAL not piecemeal; continuous (McGregor&rsquo;s &ldquo;wanting animal&rdquo;).</p>
+<p>&#9320; Maslow: physiological&rarr;&#8203;safety&rarr;&#8203;social&rarr;&#8203;esteem&rarr;&#8203;self-actualisation. First two FINITE, last three INFINITE. Lower need must partly satisfy before next activates.</p>
 <p>&#9321; Herzberg: 200 engineers/accountants, Pittsburgh. Hygiene (extrinsic, dissatisfiers: salary, policy, supervision) vs Motivators (intrinsic, satisfiers: achievement, recognition, growth). Two INDEPENDENT continuums, not one.</p>
 <p>&#9322; McGregor: Theory X (dislikes work, needs control) vs Theory Y (self-directed, seeks responsibility) — 8-point contrast table.</p>
-<p>&#9323; Alderfer ERG: Existence/Relatedness/Growth, maps to Maslow but allows FRUSTRATION-REGRESSION (blocked higher need &rarr; redouble effort on a lower one).</p>
+<p>&#9323; Alderfer ERG: Existence/&#8203;Relatedness/&#8203;Growth, maps to Maslow but allows FRUSTRATION-REGRESSION (blocked higher need &rarr; redouble effort on a lower one).</p>
 <p>&#9324; McClelland: n-Ach (excel at task, moderate risk) &middot; n-Pow (influence people) &middot; n-Aff (warm relationships) — everyone has all three, one dominates.</p>
 <p>&#9325; Adams&rsquo; Equity: compare OUTCOME/INPUT ratios against a referent other — overpaid &gt;, underpaid &lt;, equity =.</p>
 <p>&#9326; Vroom: Motivation = Valence &times; Expectancy &times; Instrumentality — multiplicative, so ANY zero factor means zero motivation. V = how much the individual actually WANTS the reward (ICMAI notation: outcome&rarr;reward), E = effort&rarr;performance, I = performance&rarr;outcome.</p>
@@ -4532,7 +4560,7 @@ tfoot { display: table-footer-group; }
   <tr><td><strong>1. Linear Programming</strong></td><td>Optimises an objective function (maximise a utility or minimise a disutility) under given resources and constraints. Useful under conditions of CERTAINTY.</td></tr>
   <tr><td><strong>2. Probability Decision Theory</strong></td><td>Premise: future behaviour is PROBABILISTIC, not deterministic. Probabilities assigned to &lsquo;states of nature&rsquo;; pay-off matrices and decision trees represent the variables.</td></tr>
   <tr><td><strong>3. Game Theory</strong></td><td>Aids decisions under competitive rivalry/conflict &mdash; adversaries gain at each other&rsquo;s expense. Two-person, three-person, n-person games; zero-sum and non-zero-sum games.</td></tr>
-  <tr><td><strong>4. Queuing Theory</strong></td><td>Solves waiting-line problems for personnel/equipment/services under irregular demand &mdash; finds the optimum facility volume to minimise BOTH waiting time and facility investment. Used by public transport, hospitals, big department stores.</td></tr>
+  <tr><td><strong>4. Queuing Theory</strong></td><td>Solves waiting-line problems for personnel/&#8203;equipment/&#8203;services under irregular demand &mdash; finds the optimum facility volume to minimise BOTH waiting time and facility investment. Used by public transport, hospitals, big department stores.</td></tr>
   <tr><td><strong>5. Simulation</strong></td><td>Observes system behaviour under alternative conditions in an ARTIFICIAL setting &mdash; useful when the real environment is too complex to find one best way; lets managers experiment safely.</td></tr>
   <tr><td><strong>6. Network Techniques</strong></td><td><strong>CPM</strong> (Critical Path Method) and <strong>PERT</strong> (Programme Evaluation and Review Technique) &mdash; for project planning/control. Minimise cost and time by working out a &lsquo;critical path&rsquo; where managerial attention concentrates.</td></tr>
 </tbody></table>
@@ -4569,18 +4597,18 @@ tfoot { display: table-footer-group; }
 <div class="facts">
 <p>&#9312; Management = getting things done through people (Terry: plan, organise, actuate, control; Fayol: forecast/plan, organise, command, coordinate, control). It is BOTH a science (universal principles, testable) and an art (practical skill, personal style) &mdash; and NOT yet a full profession.</p>
 <p>&#9313; Stewardship theory: NO inherent owner-manager conflict, trust-based, favours executive-heavy boards. Agency theory: potential conflict, monitoring-based, favours independent-heavy boards. Type I = owner-manager; Type II = majority-vs-minority shareholders. Agency costs = monitoring + bonding + residual loss.</p>
-<p>&#9314; Planning: 8-step process (opportunities&rarr;objectives&rarr;premises&rarr;alternatives&rarr;evaluate&rarr;select&rarr;implement&rarr;review). Standing plans repeat; single-use plans are consumed once. Top-down/bottom-up/composite/team approaches.</p>
-<p>&#9315; Organising: 6 steps (identify&rarr;group&rarr;formalise&rarr;measure&rarr;delegate&rarr;coordinate). Staffing: 5 steps (manpower planning&rarr;recruitment&rarr;selection&rarr;training&rarr;placement); selection has 7 steps; the Peter Principle is an INTERNAL-recruitment risk.</p>
-<p>&#9316; Communication: 8-element process (sender&rarr;encoding&rarr;message&rarr;medium&rarr;decoding&rarr;receiver&rarr;feedback, plus noise). Medium = carrier; encoding = language choice; decoding = interpretation. Coordination is the ESSENCE of management, not a separate function (Terry &amp; Haimann).</p>
+<p>&#9314; Planning: 8-step process (opportunities&rarr;&#8203;objectives&rarr;&#8203;premises&rarr;&#8203;alternatives&rarr;&#8203;evaluate&rarr;&#8203;select&rarr;&#8203;implement&rarr;&#8203;review). Standing plans repeat; single-use plans are consumed once. Top-down/&#8203;bottom-up/&#8203;composite/&#8203;team approaches.</p>
+<p>&#9315; Organising: 6 steps (identify&rarr;&#8203;group&rarr;&#8203;formalise&rarr;&#8203;measure&rarr;&#8203;delegate&rarr;&#8203;coordinate). Staffing: 5 steps (manpower planning&rarr;&#8203;recruitment&rarr;&#8203;selection&rarr;&#8203;training&rarr;&#8203;placement); selection has 7 steps; the Peter Principle is an INTERNAL-recruitment risk.</p>
+<p>&#9316; Communication: 8-element process (sender&rarr;&#8203;encoding&rarr;&#8203;message&rarr;&#8203;medium&rarr;&#8203;decoding&rarr;&#8203;receiver&rarr;&#8203;feedback, plus noise). Medium = carrier; encoding = language choice; decoding = interpretation. Coordination is the ESSENCE of management, not a separate function (Terry &amp; Haimann).</p>
 <p>&#9317; Collaboration (Pisano &amp; Verganti): closed+hierarchical=Elite Circle &middot; open+hierarchical=Innovation Mall &middot; closed+flat=Consortium &middot; open+flat=Innovation Community.</p>
 <p>&#9318; Control: feedback (after) &middot; concurrent (during) &middot; feed-forward (before). Critical point control + control by exception. 5 techniques: budgetary control, financial statements, break-even/CVP analysis, MIS, management audit.</p>
 <p>&#9319; Organisation forms: Line (unity of command, simplest) &middot; Line-and-Staff (staff advises, no command power) &middot; Functional (Taylor&rsquo;s 8 bosses, BREAKS unity of command) &middot; Committee (line/staff, formal/informal, standing/ad hoc).</p>
-<p>&#9320; Responsibility flows UPWARD and can never be delegated (the &ldquo;magic pitcher&rdquo;) &mdash; only authority can. Accountability = the liability created by using authority. Delegation: 4 steps (results&rarr;duties&rarr;authority&rarr;accountability), 7 principles.</p>
+<p>&#9320; Responsibility flows UPWARD and can never be delegated (the &ldquo;magic pitcher&rdquo;) &mdash; only authority can. Accountability = the liability created by using authority. Delegation: 4 steps (results&rarr;&#8203;duties&rarr;&#8203;authority&rarr;&#8203;accountability), 7 principles.</p>
 <p>&#9321; Centralisation vs decentralisation: relative, never absolute. Graicunas: span of management formula &mdash; n=5 gives 100 total relationships. Narrow span = more levels; wide span = supervisor overload.</p>
-<p>&#9322; Leadership styles: Autocratic/Democratic/Free-rein &middot; Tannenbaum-Schmidt Continuum &middot; Blake-Mouton Managerial Grid &middot; Likert&rsquo;s 4 systems (System 4 = the ideal) &middot; Servant Leadership (Greenleaf, 1970).</p>
+<p>&#9322; Leadership styles: Autocratic/&#8203;Democratic/&#8203;Free-rein &middot; Tannenbaum-Schmidt Continuum &middot; Blake-Mouton Managerial Grid &middot; Likert&rsquo;s 4 systems (System 4 = the ideal) &middot; Servant Leadership (Greenleaf, 1970).</p>
 <p>&#9323; Motivation theories: Maslow (5-tier hierarchy) &middot; Herzberg (hygiene vs motivator factors) &middot; McGregor (Theory X = dislikes work, carrot-and-stick; Theory Y = work is natural) &middot; Alderfer ERG &middot; McClelland&rsquo;s 3 needs &middot; Adams&rsquo; Equity (outcome/input ratio) &middot; Vroom&rsquo;s Expectancy (Motivation = Valence &times; Expectancy &times; Instrumentality).</p>
 <p>&#9324; Decision-making = Herbert Simon equates it with management itself. 5 classification pairs (routine/strategic, programmed/non-programmed, policy/operating, organisational/personal, individual/group).</p>
-<p>&#9325; Decision process: 5 steps (identify&rarr;develop alternatives&rarr;evaluate&rarr;select&rarr;implement/follow-up); Drucker&rsquo;s 4 selection criteria: risk, economy of effort, timing, limitation of resources.</p>
+<p>&#9325; Decision process: 5 steps (identify&rarr;develop alternatives&rarr;&#8203;evaluate&rarr;&#8203;select&rarr;&#8203;implement/&#8203;follow-up); Drucker&rsquo;s 4 selection criteria: risk, economy of effort, timing, limitation of resources.</p>
 <p>&#9326; Decision techniques: 6 quantitative (LP, probability theory, game theory, queuing theory, simulation, CPM/PERT) + 3 modern for non-programmed (creative/brainstorming, participative, heuristic).</p>
 </div>
 </div>
@@ -4594,7 +4622,7 @@ tfoot { display: table-footer-group; }
 
 <!-- ===== closing ===== -->
 <div class="cover-band-dark" style="font-size:14pt;">The Final Ladder &mdash; Every Formula in Paper 4 on One Page</div>
-  <table class="comparison-table avoid-break" style="margin-top:4mm;font-size:8.8pt;">
+  <table class="comparison-table" style="margin-top:4mm;font-size:8.8pt;">
     <thead><tr><th style="width:26%;">Area</th><th>Formula</th></tr></thead><tbody>
     <tr><td>Wealth vs income (M1)</td><td>Wealth = a STOCK at a point in time &middot; Income = a FLOW over a period</td></tr>
     <tr><td>National income equilibrium (M1)</td><td>Y = C + I &rArr; S = I in equilibrium</td></tr>

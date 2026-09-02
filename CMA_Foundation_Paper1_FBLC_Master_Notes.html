@@ -47,7 +47,7 @@
 }
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
 @page { size: A4; margin: 22mm 18mm 20mm 24mm; @top-center { content: "ICMAI · CMA FOUNDATION · PAPER 1 — FBLC · MASTER NOTES"; font-family: "Cormorant Garamond", Georgia, serif; font-weight: 300; font-size: 8pt; letter-spacing: 0.15em; text-transform: uppercase; color: #6B7280; } @bottom-center { content: "CMA Foundation · Business Laws & Communication · Compiled & Adapted by Dhanya Varia"; font-family: "Cormorant Garamond", Georgia, serif; font-weight: 300; font-size: 7.5pt; color: #6B7280; } @bottom-left { content: "© Dhanya Varia"; font-family: "EB Garamond", serif; font-size: 7pt; font-style: italic; color: #999999; } @bottom-right { content: counter(page); font-family: "Cormorant Garamond", Georgia, serif; font-weight: 600; font-size: 9pt; color: #1A5C38; } }
-body { font-family: var(--font-body); font-size: 11pt; line-height: 1.7; color: var(--ink); background: var(--white); }
+body { font-family: var(--font-body); font-size: 11pt; line-height: 1.7; color: var(--ink); background: var(--white); overflow-wrap: break-word; }
 .page { position: relative; min-height: 1mm; }
 
 .page-break { page-break-before: always; break-before: page; }
@@ -57,7 +57,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.7; color: 
 .cover-title { font-family: var(--font-display); font-weight: 400; font-size: 48pt; letter-spacing: 0.08em; text-transform: uppercase; color: var(--green-deep); line-height: 1.15; display: block; text-align: center; }
 .cover-subtitle { font-family: var(--font-head); font-weight: 300; font-size: 13pt; letter-spacing: 0.06em; color: var(--green-mid); text-align: center; }
 .module-title { font-family: var(--font-display); font-weight: 400; font-size: 38pt; letter-spacing: 0.06em; text-transform: uppercase; text-align: center; color: var(--white); line-height: 1.2; }
-.section-header { font-family: var(--font-head); font-weight: 600; font-size: 16pt; color: var(--green-deep); margin: 8mm 0 4mm; letter-spacing: 0.03em; overflow: hidden; }
+.section-header { font-family: var(--font-head); font-weight: 600; font-size: 16pt; color: var(--green-deep); margin: 8mm 0 4mm; letter-spacing: 0.03em; overflow: hidden; page-break-after: avoid; break-after: avoid; }
 .body { font-family: var(--font-body); font-size: 11pt; line-height: 1.7; color: var(--ink); }
 .point-list { margin: 8px 0 10px 0; padding-left: 6mm; list-style: none; }
 .point-list li { position: relative; margin-bottom: 8px; padding-left: 5mm; line-height: 1.55; font-family: var(--font-body); font-size: 10.3pt; color: var(--ink); }
@@ -130,11 +130,12 @@ tfoot { display: table-footer-group; }
 .index-page .idx-topic .dots { flex: 1; border-bottom: 1px dotted var(--border-light); margin: 0 6px 3px; }
 .screen-watermark { position: fixed; bottom: 10px; right: 14px; background: rgba(255,255,255,0.88); border: 1px solid var(--pink-deep, var(--green-deep)); border-radius: 4px; padding: 4px 10px; font-family: var(--font-head); font-size: 8pt; font-style: italic; color: var(--green-deep); z-index: 9999; box-shadow: 0 1px 4px rgba(0,0,0,0.12); }
 @media print { .screen-watermark { display: none; } }
-.print-watermark { position: fixed; bottom: 13mm; right: 4mm; font-family: "EB Garamond", serif; font-weight: 500; font-style: italic; font-size: 10.5pt; color: var(--green-deep); opacity: 0.32; pointer-events: none; letter-spacing: 0.03em; white-space: nowrap; z-index: 1; }
+
+.page.page-break > *:first-child { margin-top: 0; }
 </style>
 </head>
 <body>
-  <div class="print-watermark">Dhanya Varia</div>
+
   <div class="screen-watermark">&copy; Compiled &amp; Adapted by Dhanya Varia</div>
   <div id="running-header">ICMAI · CMA FOUNDATION · PAPER 1 — FBLC · MASTER NOTES</div>
   <div id="running-footer">CMA Foundation · Business Laws &amp; Communication &middot; <em>Compiled &amp; Adapted by Dhanya Varia</em></div>
@@ -341,7 +342,7 @@ tfoot { display: table-footer-group; }
 
 <!-- ============ MODULE 1 GLOSSARY ============ -->
 <!-- © Dhanya Varia -->
-<div class="glossary-block avoid-break">
+<div class="glossary-block">
   <p class="section-header" style="margin-top:6px;">Glossary — Module 1, in Plain Words</p>
   <p class="body" style="margin-bottom:4px;">The important legal and constitutional words from this module, explained simply.</p>
   <table class="glossary-table">
@@ -369,7 +370,7 @@ tfoot { display: table-footer-group; }
 <!-- © Dhanya Varia -->
 <div class="page page-break">
 
-<div class="concept-block avoid-break">
+<div class="concept-block">
   <span class="pill">CONCEPT</span>
   <p class="section-header">1.1 Sources of Law <span style="float:right">&#9733;&#9733; MED</span></p>
   <div class="definition-block"><p class="definition-text">H.L.A. Hart described law as &ldquo;a set of rules.&rdquo; In modern India, law derives from three broad sources: statutes, judicial precedents and customary law, and ordinances or regulations.</p></div>
@@ -382,7 +383,7 @@ tfoot { display: table-footer-group; }
   </ol>
 </div>
 
-<div class="concept-block avoid-break">
+<div class="concept-block">
   <p class="section-header" style="font-size:13pt;">A Brief History of Indian Law, in Four Periods</p>
   <p class="body">The Ancient Period was governed by kingdom-specific law guided by the concept of &ldquo;dharma,&rdquo; drawing on texts such as the Vedas, the Smritis, the Upanishads, and the Arthasastra. Courts during this period were arranged in a clear hierarchy, rising from Kula, meaning family councils, through Shreni, meaning trade or professional councils, then Gana, the village assembly, then Adhikrita, a court appointed by the king, then Sasita, the king&rsquo;s own court, and finally Nripa, the king himself as the ultimate authority.</p>
   <p class="body">The Medieval Period began in 1192 AD, when Mohammed Ghori defeated Prithviraj Chauhan, ushering in the Delhi Sultanate and later the Mughal courts. The Qazi-ul-Quzat was the chief judicial functionary of this era, assisted by the Mufti, who expounded the law, and the Mir Ad&rsquo;l, who enforced the court&rsquo;s decrees; the Qadi-e-Askar handled military justice, functioning much like today&rsquo;s Court Martial.</p>
@@ -416,7 +417,7 @@ tfoot { display: table-footer-group; }
 <!-- © Dhanya Varia -->
 <div class="page page-break">
 
-<div class="concept-block avoid-break">
+<div class="concept-block">
   <span class="pill">CONCEPT</span>
   <p class="section-header">1.2 Legislative Process in India <span style="float:right">&#9733;&#9733;&#9733; HIGH</span></p>
   <div class="definition-block"><p class="definition-text">India has a two-tier federal structure &mdash; affirmed by the Supreme Court in <strong>S.R. Bommai vs Union of India</strong> (1994) &mdash; but with a unitary bias strong enough that it is often described as &ldquo;quasi-federal.&rdquo; There are TWO major law-making bodies in this structure: Parliament at the Union level, and the State Legislature at the state level.</p></div>
@@ -484,10 +485,10 @@ tfoot { display: table-footer-group; }
   <p class="body">The CIVIL branch is arranged separately: the District Court is the highest civil court within a district, with its judges appointed by the Governor under Article 233, sitting above the Sub-Judge, who in turn sits above the Additional Sub-Judge, with Munsif Courts at the base of this hierarchy.</p>
 </div>
 
-<div class="concept-block avoid-break">
+<div class="concept-block">
   <p class="section-header" style="font-size:13pt;">Tribunals</p>
   <p class="body"><strong>Tribunals</strong> are quasi-judicial bodies set up to handle specialised or technical matters, and they mix judicial members with technical members on their bench. Only persons with a genuine judicial background &mdash; meaning former High Court judges, or lawyers who are themselves eligible for appointment to a High Court &mdash; may serve as Judicial Members on a tribunal. The Tribunals Reforms (Rationalisation and Conditions of Service) Ordinance, 2021, abolished nine separate tribunals, transferring their functions directly to the High Courts.</p>
-  <table class="comparison-table avoid-break">
+  <table class="comparison-table">
     <thead><tr><th>Tribunal</th><th>Establishing Act</th><th>Appellate Court</th></tr></thead><tbody>
     <tr><td>Industrial Tribunal</td><td>Industrial Disputes Act, 1947</td><td>High Court</td></tr>
     <tr><td>Income-Tax Appellate Tribunal</td><td>Income-tax Act, 1961</td><td>High Court</td></tr>
@@ -507,7 +508,7 @@ tfoot { display: table-footer-group; }
   </tbody></table>
 </div>
 
-<div class="concept-block avoid-break">
+<div class="concept-block">
   <p class="section-header" style="font-size:13pt;">Alternative Dispute Resolution</p>
   <p class="body">Section 89 of the Code of Civil Procedure, 1908, allows a court to refer a case to any of four recognised alternative dispute resolution mechanisms, and each works quite differently from the others.</p>
   <ol class="point-list numbered">
@@ -529,7 +530,7 @@ tfoot { display: table-footer-group; }
   <p class="body">The main advantages of these alternative mechanisms are that they are less time-consuming and more cost-effective than ordinary litigation.</p>
   <div class="shortcut-box avoid-break"><span class="shortcut-label">&#9889; SHORTCUT:</span> Article 32=Supreme Court writ (Fundamental Rights only); Article 226=High Court writ (Fundamental Rights + legal rights, hence WIDER); Article 131=Supreme Court original jurisdiction (Union-State disputes); Article 137=Supreme Court reviewing its OWN orders — four numbers covering four distinct jobs.</div>
 </div>
-<div class="concept-block avoid-break">
+<div class="concept-block">
   <span class="pill">CONCEPT</span>
   <p class="section-header">1.3 (cont&rsquo;d) Regulatory Bodies in India <span style="float:right">&#9733;&#9733;&#9733; HIGH</span></p>
   <p class="body">Seven key regulatory bodies oversee different parts of India&rsquo;s financial and administrative landscape, and each has its own distinct scope worth learning separately.</p>
@@ -546,7 +547,7 @@ tfoot { display: table-footer-group; }
   <div class="trap-block avoid-break"><span class="pill amber">&#9888; TRAP</span><p class="trap-label">&#9888; TRAP: TWO BOOK ERRORS, FLAGGED HERE</p><p class="trap-row"><strong>RBI &mdash; the Act year.</strong> The Study Notes state that the RBI &ldquo;was established under the Reserve Bank of India act in 1935.&rdquo; The figures above reproduce the Study Notes exactly, because that is what the examiner has set. Outside the exam, note that the <em>Reserve Bank of India Act</em> was passed in <strong>1934</strong>; the Bank itself commenced operations on 1 April <strong>1935</strong>. Answer 1935 if the question quotes the Study Notes; know 1934 as the Act&rsquo;s actual year.</p><p class="trap-row"><strong>AMFI &mdash; its legal character.</strong> The Study Notes describe AMFI as &ldquo;a division of the Securities and Exchange Board of India.&rdquo; Again, reproduced above as printed. In fact AMFI is an independent, self-regulatory industry association of asset management companies &mdash; it is <em>not</em> a division or an organ of SEBI, though it operates within SEBI&rsquo;s regulatory framework. The Study Notes themselves also call it &ldquo;a non-profit organization that is self-regulatory,&rdquo; which is the accurate description.</p></div>
 </div>
 
-<div class="concept-block avoid-break">
+<div class="concept-block">
   <span class="pill">CONCEPT</span>
   <p class="section-header">1.4 Primary &amp; Subordinate Legislation <span style="float:right">&#9733;&#9733; MED</span></p>
   <div class="definition-block"><p class="definition-text"><strong>Primary Legislation</strong> derives directly from Parliament or State Legislature enactments, along with the limited Presidential and Gubernatorial power to issue ordinances. <strong>Subordinate Legislation</strong>, also called Secondary or Delegated Legislation, is instead made by an authority to whom the legislature has DELEGATED law-making power, and it can never legally exceed the scope of that delegation.</p></div>
@@ -662,7 +663,7 @@ tfoot { display: table-footer-group; }
   <p class="running-header" style="color:#EAF4EE;">MODULE TWO OF FIVE · SECTION A · 30% · ≈15 MCQs</p>
   <p class="module-title">Indian Contract<br>Act, 1872</p>
   <div class="rule"></div>
-  <p class="overview">Essential elements and types of contract, offer and acceptance, void/voidable agreements, consideration, capacity and free consent, quasi/contingent contracts, performance, indemnity/guarantee/pledge/agency, e-contracts, discharge, and breach — the single largest module in the paper, built directly from the ICMAI Study Notes.</p>
+  <p class="overview">Essential elements and types of contract, offer and acceptance, void/voidable agreements, consideration, capacity and free consent, quasi/contingent contracts, performance, indemnity/&#8203;guarantee/&#8203;pledge/&#8203;agency, e-contracts, discharge, and breach — the single largest module in the paper, built directly from the ICMAI Study Notes.</p>
   <p class="must-not-skip">MUST NOT SKIP: Void vs Voidable, and the landmark cases (Carlill, Balfour vs Balfour, Mohiri Bibi vs Dharmodas Ghose) — the most repeated question type in this module</p>
   <span class="mcq-badge">15</span>
 </div>
@@ -677,7 +678,7 @@ tfoot { display: table-footer-group; }
 
 <!-- ============ MODULE 2 GLOSSARY ============ -->
 <!-- © Dhanya Varia -->
-<div class="glossary-block avoid-break">
+<div class="glossary-block">
   <p class="section-header" style="margin-top:6px;">Glossary — Module 2, in Plain Words</p>
   <p class="body" style="margin-bottom:4px;">The important legal words from this module, explained simply.</p>
   <table class="glossary-table">
@@ -710,7 +711,7 @@ tfoot { display: table-footer-group; }
 <!-- © Dhanya Varia -->
 <div class="page page-break">
 
-<div class="concept-block avoid-break">
+<div class="concept-block">
   <span class="pill">CONCEPT</span>
   <p class="section-header">2.1 Essential Elements, Types of Contract, Offer &amp; Acceptance <span style="float:right">★★★ HIGHEST-VALUE TOPIC</span></p>
   <div class="definition-block"><p class="definition-text">Section 2(h): "an agreement enforceable by law." Section 2(e): "every promise and every set of promises forming consideration for each other." Agreement = Offer + Acceptance; Contract = Agreement + Enforceability by Law.</p></div>
@@ -754,7 +755,7 @@ tfoot { display: table-footer-group; }
   <p class="ex-step">MCQ NOTE: distractor calls (a) a free-consent problem — but free consent (Sec 14) concerns defects in an agreement that DOES exist; here, no legally-intended agreement was ever on the table at all, since social/domestic arrangements are outside contract law's scope entirely.</p>
 </div>
 
-<div class="concept-block avoid-break">
+<div class="concept-block">
   <span class="pill">CONCEPT</span>
   <p class="section-header">2.1 (cont'd) Types of Contract <span style="float:right">★★★ HIGH</span></p>
   <p class="body"><strong>By enforceability:</strong></p>
@@ -785,7 +786,7 @@ tfoot { display: table-footer-group; }
 <!-- © Dhanya Varia -->
 <div class="page page-break">
 
-<div class="concept-block avoid-break">
+<div class="concept-block">
   <span class="pill">CONCEPT</span>
   <p class="section-header">2.1 (cont'd) Offer &amp; Acceptance <span style="float:right">★★★ HIGHEST-VALUE TOPIC</span></p>
   <p class="body"><strong>Types of offer:</strong> Specific (to a definite person) vs General — CARLILL vs CARBOLIC SMOKE BALL CO.: a company advertised a £100 reward to anyone catching influenza despite using its product as directed; Mrs Carlill did so and claimed the reward; held, compliance with a general offer's terms IS acceptance, she could recover. Cross Offer (two identical offers crossing in ignorance — no contract forms). Counter Offer (different terms proposed — kills the original offer).</p>
@@ -816,7 +817,7 @@ tfoot { display: table-footer-group; }
 <!-- © Dhanya Varia -->
 <div class="page page-break">
 
-<div class="concept-block avoid-break">
+<div class="concept-block">
   <span class="pill">CONCEPT</span>
   <p class="section-header">2.2 Void &amp; Voidable Agreements, No Consideration No Contract <span style="float:right">★★★ HIGHEST-VALUE TOPIC</span></p>
   <div class="definition-block"><p class="definition-text">Voidable Contract [Sec 2(i)]: enforceable at the option of one or more parties, but not the other — typically because free consent was absent (e.g. A compels B by force to sign an agreement — voidable at B's option). Void Agreement [Sec 2(g)]: never enforceable, null and void ab initio. Void Contract [Sec 2(j)]: valid at first, later ceases to be enforceable.</p></div>
@@ -854,7 +855,7 @@ tfoot { display: table-footer-group; }
 <!-- © Dhanya Varia -->
 <div class="page page-break">
 
-<div class="concept-block avoid-break">
+<div class="concept-block">
   <span class="pill">CONCEPT</span>
   <p class="section-header">2.3 Consideration, Legality of Object &amp; Consideration <span style="float:right">★★★ HIGH</span></p>
   <div class="definition-block"><p class="definition-text">Section 2(d): consideration is something done, abstained from, or promised, at the promisor's desire, by the promisee OR ANY OTHER PERSON.</p></div>
@@ -909,7 +910,7 @@ tfoot { display: table-footer-group; }
 
 <div class="definition-block"><p class="definition-text">Section 11 of the Indian Contract Act tells us who is legally competent to enter into a contract: a person must have attained the age of majority, must be of sound mind, and must not be disqualified from contracting by any other law that applies to them <em>(in easy language: the law only lets you sign a valid contract if you are old enough, mentally fit, and not specifically barred by some other rule)</em>. The Act then lists three categories of people who are NOT competent to contract: minors, persons of unsound mind, and persons disqualified by some other law.</p></div>
 
-<div class="concept-block avoid-break">
+<div class="concept-block">
 <p class="section-header" style="font-size:13pt;">Who Is a Minor, and the Nine Rules Governing a Minor&rsquo;s Agreement</p>
 <p class="body">A minor is defined, under Section 3 of the Indian Majority Act 1875, as anyone below the age of 18 &mdash; or below 21 if a court has appointed a guardian to manage that person, or a Court of Wards is managing their property <em>(in easy language: normally you become an adult at 18, but if a court has had to step in to look after you or your property, that age moves to 21)</em>. Once someone is a minor, nine specific rules govern how the law treats any agreement they enter into.</p>
 <ol class="point-list numbered">
@@ -946,7 +947,7 @@ tfoot { display: table-footer-group; }
 </ul>
 </div>
 
-<div class="concept-block avoid-break">
+<div class="concept-block">
 <p class="section-header" style="font-size:13pt;">Vitiating Factor 2 &mdash; Undue Influence [Section 16]</p>
 <p class="body">Undue influence arises when one party is in a position to dominate the will of the other &mdash; because of real or apparent authority over them, or a relationship of trust between them, or because the other party&rsquo;s mental capacity has been weakened by age, illness, or similar distress &mdash; and that dominant party uses their position to gain an unfair advantage <em>(in easy language: one person has power or influence over another, and instead of respecting that trust, uses it to push the weaker person into an agreement that mainly benefits the stronger one)</em>. Once it is shown that such a dominant relationship existed, the burden of proving that undue influence was NOT actually used shifts onto the dominant party themselves, rather than staying with the person who was influenced.</p>
 <ul class="point-list">
@@ -1000,7 +1001,7 @@ tfoot { display: table-footer-group; }
 <!-- © Dhanya Varia -->
 <div class="page page-break">
 
-<div class="concept-block avoid-break">
+<div class="concept-block">
   <span class="pill">CONCEPT</span>
   <p class="section-header">2.5 Quasi Contracts <span style="float:right">&#9733;&#9733;&#9733; HIGH</span></p>
   <div class="definition-block"><p class="definition-text">A <strong>Quasi-Contract</strong> is an obligation that the law itself creates and enforces even though the two parties never actually entered into a real contract with each other <em>(in easy language: no one ever sat down and agreed to anything, but the situation is so similar to a contract that the law treats it as if one existed, purely to prevent one person from unfairly benefiting at another&rsquo;s expense)</em>. The Act itself describes these as &ldquo;certain relations resembling those created by contract.&rdquo; A quasi-contract rests on principles of equity and justice, and the remedy available is compensation, not the kind of damages that would follow a genuine broken contract.</p></div>
@@ -1022,7 +1023,7 @@ tfoot { display: table-footer-group; }
   </ol>
 </div>
 
-<div class="concept-block avoid-break">
+<div class="concept-block">
   <p class="section-header" style="font-size:13pt;">Contingent Contracts [Section 31]</p>
   <div class="definition-block"><p class="definition-text">A <strong>Contingent Contract</strong> is defined by the Act as a contract to do, or not do, something if some event, COLLATERAL to that contract, does or does not happen <em>(in easy language: it is a perfectly real, valid contract, but whether it actually has to be carried out depends on some separate, outside event that isn&rsquo;t itself the main thing the contract is about)</em>. This is different from an absolute or unconditional contract, where performance does not depend on any such external condition.</p></div>
   <p class="body">Three things must all be true at once for a contract to count as contingent: a genuinely real contract must exist between the parties; the performance of that contract must depend on an event that is uncertain to happen; and that event must be collateral, meaning it stands apart from the contract&rsquo;s own main subject matter, rather than being the main subject matter itself.</p>
@@ -1123,7 +1124,7 @@ tfoot { display: table-footer-group; }
 <!-- © Dhanya Varia -->
 <div class="page page-break">
 
-<div class="concept-block avoid-break">
+<div class="concept-block">
   <span class="pill">CONCEPT</span>
 
 <!-- ===== M2b_ContractAct_2.7-2.10 ===== -->
@@ -1139,7 +1140,7 @@ tfoot { display: table-footer-group; }
   <p class="body">This last point was clarified in the well-known case of <strong>Gajanan Moreshwar vs Moreshwar Madan</strong>, where the court held that once a liability has been INCURRED and has become ABSOLUTE, the indemnity-holder does not first have to pay it out of their own pocket before calling on the indemnifier &mdash; they may instead require the indemnifier to make that payment directly.</p>
 </div>
 
-<div class="concept-block avoid-break">
+<div class="concept-block">
   <p class="section-header" style="font-size:13pt;">Guarantee [Section 126]</p>
   <div class="definition-block"><p class="definition-text">A contract of <strong>Guarantee</strong> is a contract to perform the promise, or to discharge the liability, of a THIRD person, in the event that third person defaults <em>(in easy language: someone steps in and promises that if a borrower fails to pay or perform, they personally will cover it instead)</em>. Unlike indemnity, a guarantee always involves THREE parties: the <strong>Surety</strong>, who is the person giving the guarantee; the <strong>Principal Debtor</strong>, who is the person on whose behalf the guarantee is given; and the <strong>Creditor</strong>, who is the person to whom the guarantee is given.</p></div>
   <p class="body">Guarantees can be classified along three different dimensions: they may be RETROSPECTIVE, covering an existing debt, or PROSPECTIVE, covering a future one; they may be SPECIFIC, covering a single transaction, or CONTINUING, covering a whole series of transactions; and they may cover the ENTIRE debt or only a PARTIAL portion of it.</p>
@@ -1162,7 +1163,7 @@ tfoot { display: table-footer-group; }
 </ul>
 </div>
 
-<div class="concept-block avoid-break">
+<div class="concept-block">
   <p class="section-header" style="font-size:13pt;">Bailment [Section 148] and Pledge [Sections 172&ndash;178]</p>
   <div class="definition-block"><p class="definition-text"><strong>Bailment</strong>, under <strong>Section 148</strong>, is the delivery of goods by one person to another for some purpose, upon a contract that they shall &mdash; once that purpose is accomplished &mdash; be returned, or otherwise disposed of according to the directions of the person delivering them. The person delivering the goods is the <strong>Bailor</strong>; the person to whom they are delivered is the <strong>Bailee</strong> <em>(in easy language: you hand something over for a reason, on the understanding that it comes back)</em>.</p></div>
   <div class="shortcut-box avoid-break"><span class="shortcut-label">&#9889; SHORTCUT:</span> Every PLEDGE is a BAILMENT, but not every bailment is a pledge. Bailment covers delivery for ANY purpose &mdash; repair, safe custody, hire, carriage. Pledge is bailment for ONE purpose only: SECURITY for a debt or a promise. Sections 172&ndash;182 deal specifically with the bailment of pledge.</div>
@@ -1177,7 +1178,7 @@ tfoot { display: table-footer-group; }
   <p class="body">Under Section 177, the pawnor retains a right to redeem the pledged goods even after defaulting, right up until the moment of actual sale, provided the pawnor pays any expenses that arose specifically because of that default. Under Section 178, a pledge made by a MERCANTILE AGENT who is in lawful possession of the goods, acting in the ordinary course of their business, is treated as being just as valid as if the true owner had personally authorised it &mdash; provided the pawnee accepted the pledge in good faith.</p>
 </div>
 
-<div class="concept-block avoid-break">
+<div class="concept-block">
   <p class="section-header" style="font-size:13pt;">Agency [Sections 182&ndash;230]</p>
   <div class="definition-block"><p class="definition-text">Under Section 182, an <strong>Agent</strong> is a person who does any act for, or represents, another person &mdash; called the <strong>Principal</strong> &mdash; in that other person&rsquo;s dealings with third parties <em>(in easy language: an agent acts on someone else&rsquo;s behalf, and whatever the agent properly does is treated as though the principal did it personally)</em>. Under Section 185, no consideration is necessary to create a valid agency relationship at all, unlike most other contracts.</p></div>
   <p class="body">Agency can be created in several distinct ways, and it helps to hold each of these as its own separate idea.</p>
@@ -1205,7 +1206,7 @@ tfoot { display: table-footer-group; }
 <!-- © Dhanya Varia -->
 <div class="page page-break">
 
-<div class="concept-block avoid-break">
+<div class="concept-block">
   <span class="pill">CONCEPT</span>
   <p class="section-header">2.8 E-Contracts &amp; E-Signature <span style="float:right">&#9733;&#9733; MED</span></p>
   <div class="definition-block"><p class="definition-text">Section 10A of the Information Technology Act, 2000, inserted by the IT (Amendment) Act, 2008, establishes that a contract formed through electronic means &mdash; where the proposal, its acceptance, and any revocation are all expressed electronically &mdash; is NOT unenforceable purely because it was carried out electronically rather than on paper.</p></div>
@@ -1317,7 +1318,7 @@ tfoot { display: table-footer-group; }
   </ul>
 </div>
 
-<div class="concept-block avoid-break">
+<div class="concept-block">
   <p class="section-header" style="font-size:13pt;">Five Remedies Available for Breach</p>
   <ol class="point-list numbered">
     <li><strong>Suit for Rescission</strong> is a suit to cancel the contract, which frees the aggrieved party from any further obligations under it, and may also include compensation for damage they have already suffered.</li>
@@ -1405,12 +1406,12 @@ tfoot { display: table-footer-group; }
 
 <!-- ============ MODULE 2 · REVISION STRIP ============ -->
 <!-- © Dhanya Varia -->
-<div class="revision-strip avoid-break">
+<div class="revision-strip">
   <div class="title-bar">16 EXAM FACTS — INDIAN CONTRACT ACT, 1872</div>
   <div class="facts">
     <p class="fact">① Agreement = Offer + Acceptance. Contract = Agreement + Enforceability by law [Sec 2(e)/2(h)].</p>
     <p class="fact">② Void Agreement [2(g)] = void ab initio. Voidable [2(i)] = at one party's option. Void Contract [2(j)] = valid, then later unenforceable.</p>
-    <p class="fact">③ Thirteen categories of expressly-void agreement, Sections 11/12→23→20→24→25→26→27→28→29→30→36→56→57.</p>
+    <p class="fact">③ Thirteen categories of expressly-void agreement, Sections 11/12→&#8203;23→&#8203;20→&#8203;24→&#8203;25→&#8203;26→&#8203;27→&#8203;28→&#8203;29→&#8203;30→&#8203;36→&#8203;56→&#8203;57.</p>
     <p class="fact">④ Section 25's "no consideration, no contract" has SEVEN exceptions, not three: love/affection, past voluntary act, time-barred debt, gifts, agency, guarantee, remission.</p>
     <p class="fact">⑤ Chinnayya vs Ramayya: consideration may move from the promisee OR any other person — a genuine departure from English privity.</p>
     <p class="fact">⑥ Mohiri Bibi vs Dharmodas Ghose: a minor's agreement is absolutely void; the law of estoppel does not apply against a minor (Leslie vs Shiell).</p>
@@ -1449,7 +1450,7 @@ tfoot { display: table-footer-group; }
 
 <!-- ============ MODULE 3 GLOSSARY ============ -->
 <!-- © Dhanya Varia -->
-<div class="glossary-block avoid-break">
+<div class="glossary-block">
   <p class="section-header" style="margin-top:6px;">Glossary — Module 3, in Plain Words</p>
   <p class="body" style="margin-bottom:4px;">Legal English uses a lot of words you won't hear in daily conversation. Here's what the important ones actually mean, in the simplest words possible.</p>
   <table class="glossary-table">
@@ -1486,7 +1487,7 @@ tfoot { display: table-footer-group; }
 <!-- © Dhanya Varia -->
 <div class="page page-break">
 
-<div class="concept-block avoid-break">
+<div class="concept-block">
   <span class="pill">CONCEPT</span>
   <p class="section-header">3.1 Definition <span style="float:right">&#9733;&#9733;&#9733; HIGHEST-VALUE TOPIC</span></p>
   <div class="definition-block"><p class="definition-text">Sections 76 to 123 of the Indian Contract Act, 1872 were repealed in 1930, and this content became the separate Sale of Goods Act, 1930, which took effect on 1 July 1930; the word &ldquo;Indian&rdquo; was later dropped from the Act&rsquo;s own name on 22 September 1963. A sale is the only NON-REVERSIONARY transfer that occurs in business <em>(in easy language: once goods are genuinely sold, they are gone for good — an absolute transfer, where the goods never come back to the seller the way they might under a lease or a loan)</em>.</p></div>
@@ -1519,7 +1520,7 @@ tfoot { display: table-footer-group; }
   <tr class="exam-trick"><td colspan="3">★ EXAM TRICK: an Agreement to Sell isn't a weaker contract — it's simply timing-delayed; once its condition/date arrives, it automatically becomes a Sale without a fresh agreement.</td></tr>
 </tbody></table>
 
-<div class="concept-block avoid-break">
+<div class="concept-block">
   <span class="pill">CONCEPT</span>
   <p class="section-header">3.1 (cont'd) Types of Goods &amp; Caveat Emptor <span style="float:right">★★★ HIGH</span></p>
   <p class="body"><strong>Types of Goods:</strong> Existing Goods (owned/possessed by the seller now) — split into Specific (identified and agreed at contract time), Ascertained (identified AFTER the contract, per its terms), and Unascertained (not separately identified — described only generically, e.g. "25 of these 200 identical chairs"). Future Goods (to be manufactured/acquired later). Contingent Goods — a SUBSET of future goods, dependent on a contingency that may or may not happen (goods yet to arrive, future crops, unlaid eggs) — gives no right of action if the contingency never occurs.</p>
@@ -1532,7 +1533,7 @@ tfoot { display: table-footer-group; }
   <li>Where the seller commits fraud.</li>
   <li>Where a trade usage implies a condition.</li>
 </ol>
-  <div class="shortcut-box avoid-break"><span class="shortcut-label">⚡ SHORTCUT:</span> Existing→Specific/Ascertained/Unascertained is about goods the seller ALREADY has. Future Goods (including the Contingent subset) are goods the seller does NOT yet have.</div>
+  <div class="shortcut-box avoid-break"><span class="shortcut-label">⚡ SHORTCUT:</span> Existing→&#8203;Specific/&#8203;Ascertained/&#8203;Unascertained is about goods the seller ALREADY has. Future Goods (including the Contingent subset) are goods the seller does NOT yet have.</div>
 </div>
 
 <div class="worked-example avoid-break">
@@ -1547,7 +1548,7 @@ tfoot { display: table-footer-group; }
 <!-- © Dhanya Varia -->
 <div class="page page-break">
 
-<div class="concept-block avoid-break">
+<div class="concept-block">
   <span class="pill">CONCEPT</span>
   <p class="section-header">3.2 Transfer of Ownership <span style="float:right">&#9733;&#9733;&#9733; HIGHEST-VALUE TOPIC</span></p>
   <div class="definition-block"><p class="definition-text">Sections 18 to 25 of the Act determine exactly WHEN property, meaning ownership, actually passes from the seller to the buyer <em>(in easy language: this is the single most important question in the whole module, because whoever legally owns the goods at a given moment is also the one who bears the risk if something happens to them)</em>.</p></div>
@@ -1574,7 +1575,7 @@ tfoot { display: table-footer-group; }
   </ul>
 </div>
 
-<div class="concept-block avoid-break">
+<div class="concept-block">
   <p class="section-header" style="font-size:13pt;">Nemo Dat Quod Non Habet, and Its Seven Exceptions</p>
   <div class="definition-block"><p class="definition-text">The doctrine of <strong>Nemo Dat Quod Non Habet</strong> means &ldquo;none gives what he doesn&rsquo;t have&rdquo; <em>(in easy language: as a general rule, someone who does not themselves own goods cannot sell you better ownership of those goods than they themselves actually had)</em>. This general rule exists to protect the true owner of goods from losing their property through no fault of their own.</p></div>
   <p class="body">Seven recognised exceptions to this general rule exist, each protecting a good-faith buyer in a particular situation.</p>
@@ -1604,7 +1605,7 @@ tfoot { display: table-footer-group; }
 <!-- © Dhanya Varia -->
 <div class="page page-break">
 
-<div class="concept-block avoid-break">
+<div class="concept-block">
   <span class="pill">CONCEPT</span>
   <p class="section-header">3.3 Essential Conditions of a Contract of Sale <span style="float:right">&#9733;&#9733; MED</span></p>
   <div class="definition-block"><p class="definition-text">Under Section 4(1), a contract of sale of goods is a contract by which the seller transfers, or agrees to transfer, the property in goods to the buyer for a price.</p></div>
@@ -1621,7 +1622,7 @@ tfoot { display: table-footer-group; }
   <div class="shortcut-box avoid-break"><span class="shortcut-label">&#9889; SHORTCUT:</span> If the "price" is another good rather than money, it's a BARTER/EXCHANGE, not a Sale of Goods contract at all — the presence of money consideration specifically is what makes Section 4 apply.</div>
 </div>
 
-<div class="concept-block avoid-break">
+<div class="concept-block">
   <span class="pill">CONCEPT</span>
   <p class="section-header">3.4 Conditions &amp; Warranties <span style="float:right">&#9733;&#9733;&#9733; HIGHEST-VALUE TOPIC</span></p>
   <div class="definition-block"><p class="definition-text">Under Section 12(2), a <strong>Condition</strong> is a stipulation that is ESSENTIAL to the main purpose of the contract, and breaching it gives the aggrieved party the right to REPUDIATE the contract entirely. Under Section 12(3), a <strong>Warranty</strong> is instead COLLATERAL to the main purpose of the contract, meaning it is a secondary term, and breaching it gives the aggrieved party only a claim for DAMAGES, never a right to reject the goods themselves.</p></div>
@@ -1661,7 +1662,7 @@ tfoot { display: table-footer-group; }
 <!-- © Dhanya Varia -->
 <div class="page page-break">
 
-<div class="concept-block avoid-break">
+<div class="concept-block">
   <span class="pill">CONCEPT</span>
   <p class="section-header">3.5 Performance of the Contract of Sale <span style="float:right">&#9733;&#9733;&#9733; HIGH</span></p>
   <div class="definition-block"><p class="definition-text">Under Section 31, performance of a contract of sale means, for the SELLER, the delivery of the goods, and for the BUYER, the acceptance of that delivery along with payment &mdash; both carried out in accordance with the terms the parties actually agreed to.</p></div>
@@ -1690,7 +1691,7 @@ tfoot { display: table-footer-group; }
   <div class="shortcut-box avoid-break"><span class="shortcut-label">&#9889; SHORTCUT:</span> Delivery to a carrier = prima facie delivery to the buyer (Sec 39) — this is a frequently-tested exception to the general rule that the SELLER bears the cost/risk of getting goods into deliverable shape.</div>
 </div>
 
-<div class="concept-block avoid-break">
+<div class="concept-block">
   <span class="pill">CONCEPT</span>
   <p class="section-header">3.6 Rights of Unpaid Seller <span style="float:right">&#9733;&#9733;&#9733; HIGHEST-VALUE TOPIC</span></p>
   <div class="definition-block"><p class="definition-text">Under Section 45, a seller is treated as &ldquo;unpaid&rdquo; whenever the WHOLE price has not been paid, or whenever a bill of exchange or other negotiable instrument that was received as conditional payment has been DISHONOURED. A seller who has been only partly paid still counts as an unpaid seller for these purposes.</p></div>
@@ -1818,7 +1819,7 @@ tfoot { display: table-footer-group; }
 
 <!-- ============ MODULE 4 GLOSSARY ============ -->
 <!-- © Dhanya Varia -->
-<div class="glossary-block avoid-break">
+<div class="glossary-block">
   <p class="section-header" style="margin-top:6px;">Glossary — Module 4, in Plain Words</p>
   <p class="body" style="margin-bottom:4px;">The important words from this module, explained simply.</p>
   <table class="glossary-table">
@@ -1850,7 +1851,7 @@ tfoot { display: table-footer-group; }
 <!-- © Dhanya Varia -->
 <div class="page page-break">
 
-<div class="concept-block avoid-break">
+<div class="concept-block">
   <span class="pill">CONCEPT</span>
   <p class="section-header">4.1 Characteristics of Negotiable Instruments <span style="float:right">&#9733;&#9733;&#9733; HIGHEST-VALUE TOPIC</span></p>
   <div class="definition-block"><p class="definition-text">Under Section 13, a <strong>Negotiable Instrument</strong> is a promissory note, bill of exchange, or cheque, payable either to order or to bearer. A holder of such an instrument acquires genuine property in it if they take it in good faith and for value, DESPITE any defect in the person who transferred it to them having had a defective title themselves &mdash; a key departure from the ordinary rules governing the transfer of property.</p></div>
@@ -1877,7 +1878,7 @@ tfoot { display: table-footer-group; }
   <div class="shortcut-box avoid-break"><span class="shortcut-label">&#9889; SHORTCUT:</span> A Holder in Due Course needs THREE things together: consideration paid, acquired BEFORE maturity, and NO NOTICE of any defect — missing any one of the three breaks the protection.</div>
 </div>
 
-<div class="concept-block avoid-break">
+<div class="concept-block">
   <p class="section-header" style="font-size:13pt;">4.1 (cont&rsquo;d) Parties &amp; Capacity</p>
   <p class="body">Several distinct roles can appear across the various parties to a negotiable instrument, and each carries its own precise meaning.</p>
   <ul class="point-list">
@@ -1899,7 +1900,7 @@ tfoot { display: table-footer-group; }
   <div class="shortcut-box avoid-break"><span class="shortcut-label">&#9889; SHORTCUT:</span> An agent who signs just their own name plus a title ("A, Manager") is PERSONALLY liable; signing "for [Company]" avoids personal liability — the exact wording of the signature is the entire test.</div>
 </div>
 
-<div class="concept-block avoid-break">
+<div class="concept-block">
   <span class="pill">CONCEPT</span>
   <p class="section-header">4.2 Definitions of Promissory Note, Bill of Exchange &amp; Cheque <span style="float:right">&#9733;&#9733;&#9733; HIGHEST-VALUE TOPIC</span></p>
   <div class="definition-block"><p class="definition-text">Under Section 4, a <strong>Promissory Note</strong> is a written instrument, distinct from a bank note or currency note, containing an UNCONDITIONAL undertaking, SIGNED BY THE MAKER, to pay a certain sum only to, or to the order of, a certain person, or to the bearer of the instrument.</p></div>
@@ -1918,7 +1919,7 @@ tfoot { display: table-footer-group; }
 </ol>
 </div>
 
-<div class="concept-block avoid-break">
+<div class="concept-block">
   <div class="definition-block"><p class="definition-text">Under Section 5, a <strong>Bill of Exchange</strong> is a written instrument containing an UNCONDITIONAL ORDER, signed by the maker, directing a certain person to pay a certain sum only to, or to the order of, a certain person, or to the bearer.</p></div>
   <p class="body">A bill of exchange involves THREE parties — Drawer, Drawee, and Payee — and must satisfy nine requisites.</p>
 <ol class="point-list numbered">
@@ -1934,7 +1935,7 @@ tfoot { display: table-footer-group; }
 </ol>
 </div>
 
-<div class="concept-block avoid-break">
+<div class="concept-block">
   <div class="definition-block"><p class="definition-text">Under Section 6, a <strong>Cheque</strong> is a bill of exchange drawn on a SPECIFIED BANKER, payable on DEMAND &mdash; this definition also extends to a truncated cheque&rsquo;s electronic image, and to an electronic cheque.</p></div>
   <p class="body">A cheque adds two further qualifications beyond an ordinary bill: it is always drawn on a specified banker, and it is always payable on demand. It involves three parties — the Drawer, who is the bank's own customer, the Drawee, who is the bank itself, and the Payee.</p>
 <p class="body">It must satisfy seven requisites:</p>
@@ -1949,7 +1950,7 @@ tfoot { display: table-footer-group; }
 </ol>
 </div>
 
-<div class="concept-block avoid-break">
+<div class="concept-block">
   <p class="body">On the question of the GRACE PERIOD, instruments payable otherwise than on demand are given THREE days of grace before they fall due. A cheque, any demand instrument, or an instrument with no time mentioned at all is NOT entitled to this grace period. A note or bill payable on a specified day, &ldquo;after sight,&rdquo; or on a certain event IS entitled to it. If the resulting due date falls on a public holiday, the instrument instead becomes due on the immediately preceding business day. Where an instrument is payable by instalments, each instalment falls due three days after the date fixed for paying it; and if the calendar month in which the period is to end has no day corresponding to the start date, the period instead ends on the last day of that month.</p>
   <p class="body"><strong>Payment in due course</strong>, which discharges the instrument entirely, requires five conditions to all be met together.</p>
 <ol class="point-list numbered">
@@ -1975,7 +1976,7 @@ tfoot { display: table-footer-group; }
 <div class="page page-break">
 
 <p class="section-header">4.3 Difference Between Promissory Note, Bill of Exchange &amp; Cheque <span style="float:right">★★★ HIGHEST-VALUE TOPIC</span></p>
-<table class="comparison-table avoid-break">
+<table class="comparison-table">
   <thead><tr><th>Basis</th><th>Promissory Note</th><th>Bill of Exchange</th><th>Cheque</th></tr></thead><tbody>
   <tr><td>Parties</td><td>2 — Maker, Payee</td><td>3 — Drawer, Drawee, Payee</td><td>3 — Drawer, Banker, Payee</td></tr>
   <tr><td>Nature</td><td>Unconditional PROMISE by maker</td><td>Unconditional ORDER to drawee</td><td>Drawn on a specified banker, payable on demand</td></tr>
@@ -1997,7 +1998,7 @@ tfoot { display: table-footer-group; }
 <!-- © Dhanya Varia -->
 <div class="page page-break">
 
-<div class="concept-block avoid-break">
+<div class="concept-block">
   <span class="pill">CONCEPT</span>
   <p class="section-header">4.4 Crossing &mdash; Meaning &amp; Types <span style="float:right">&#9733;&#9733;&#9733; HIGHEST-VALUE TOPIC</span></p>
   <div class="definition-block"><p class="definition-text">Sections 123 to 131A govern <strong>crossing</strong>, which means drawing two diagonal or transverse parallel lines across a cheque&rsquo;s face &mdash; an instruction that it must be paid only through a bank account, and never handed out as cash across the counter. An &ldquo;open&rdquo; cheque can be cashed directly, while a &ldquo;crossed&rdquo; cheque cannot.</p></div>
@@ -2030,7 +2031,7 @@ tfoot { display: table-footer-group; }
 <!-- © Dhanya Varia -->
 <div class="page page-break">
 
-<div class="concept-block avoid-break">
+<div class="concept-block">
   <span class="pill">CONCEPT</span>
   <p class="section-header">4.5 Dishonour of Cheques (Section 138) <span style="float:right">&#9733;&#9733;&#9733; HIGHEST-VALUE TOPIC</span></p>
   <div class="definition-block"><p class="definition-text">A cheque is HONOURED if the bank pays the payee, and DISHONOURED if the bank refuses to pay &mdash; most commonly because of insufficient funds in the account. The drawee bank issues a &ldquo;Cheque Return Memo&rdquo; stating its reason for the refusal, which is passed on to the payee through the payee&rsquo;s own bank.</p></div>
@@ -2141,7 +2142,7 @@ tfoot { display: table-footer-group; }
   <p class="running-header" style="color:#EAF4EE;">MODULE FIVE OF FIVE · SECTION B · 20% · ≈10 MCQs</p>
   <p class="module-title">Business<br>Communication</p>
   <div class="rule"></div>
-  <p class="overview">Introduction and significance of business communication, features of effective communication, the communication process, types of communication (formal/informal, verbal/non-verbal/written, vertical/horizontal/diagonal), internet-based communication, social media, writing and drafting, intercultural communication, barriers, legal aspects, and graphics/references — built directly from the ICMAI Study Notes. The only module in Section B, standing alone at 20% of the whole paper.</p>
+  <p class="overview">Introduction and significance of business communication, features of effective communication, the communication process, types of communication (formal/informal, verbal/non-verbal/written, vertical/&#8203;horizontal/&#8203;diagonal), internet-based communication, social media, writing and drafting, intercultural communication, barriers, legal aspects, and graphics/references — built directly from the ICMAI Study Notes. The only module in Section B, standing alone at 20% of the whole paper.</p>
   <p class="must-not-skip">MUST NOT SKIP: the 8 C's of Effective Communication and the Formal vs Informal / Verbal vs Non-verbal classification — the most repeated question types in this module</p>
   <span class="mcq-badge">10</span>
 </div>
@@ -2156,7 +2157,7 @@ tfoot { display: table-footer-group; }
 
 <!-- ============ MODULE 5 GLOSSARY ============ -->
 <!-- © Dhanya Varia -->
-<div class="glossary-block avoid-break">
+<div class="glossary-block">
   <p class="section-header" style="margin-top:6px;">Glossary — Module 5, in Plain Words</p>
   <p class="body" style="margin-bottom:4px;">The important words from this module, explained simply.</p>
   <table class="glossary-table">
@@ -2185,7 +2186,7 @@ tfoot { display: table-footer-group; }
 <!-- © Dhanya Varia -->
 <div class="page page-break">
 
-<div class="concept-block avoid-break">
+<div class="concept-block">
   <span class="pill">CONCEPT</span>
   <p class="section-header">5.1 Introduction to Business Communication <span style="float:right">&#9733;&#9733; MED</span></p>
   <div class="definition-block"><p class="definition-text">The word &ldquo;Communication&rdquo; derives from the Latin &ldquo;communicare,&rdquo; meaning &ldquo;to share.&rdquo; <strong>Business Communication</strong> is the process of sharing and exchanging information between people within and outside an organisation, in order to accomplish organisational goals and a mutual understanding of commercial benefit.</p></div>
@@ -2208,7 +2209,7 @@ tfoot { display: table-footer-group; }
   </ul>
 </div>
 
-<div class="concept-block avoid-break">
+<div class="concept-block">
   <p class="body"><strong>5.1.1 Role in Functional Areas &mdash; Marketing:</strong> communication is the core element of marketing itself. Five distinct benefits follow from this.</p>
   <ol class="point-list numbered">
     <li>It builds and maintains relationships, drawing on interpersonal skills and genuine emotional connection.</li>
@@ -2239,7 +2240,7 @@ tfoot { display: table-footer-group; }
   <div class="shortcut-box avoid-break"><span class="shortcut-label">&#9889; SHORTCUT:</span> VUCAFU (Volatility, Uncertainty, Complexity, Ambiguity, Fear of unknown, Unprecedentedness) — six letters, six named marketing obstacles, a favourite fill-in-the-blank target.</div>
 </div>
 
-<div class="concept-block avoid-break">
+<div class="concept-block">
   <span class="pill">CONCEPT</span>
   <p class="section-header">5.2 Features of Effective Business Communication <span style="float:right">&#9733;&#9733;&#9733; HIGHEST-VALUE TOPIC</span></p>
   <div class="definition-block"><p class="definition-text">Beyond formal training, genuinely effective communicators consistently show four qualities: good listening skills, which are actually more valuable than mere speaking skill and help avoid premature evaluation of what&rsquo;s being said; being open-minded; being attentive; and participating actively rather than passively.</p></div>
@@ -2269,7 +2270,7 @@ tfoot { display: table-footer-group; }
 <!-- © Dhanya Varia -->
 <div class="page page-break">
 
-<div class="concept-block avoid-break">
+<div class="concept-block">
   <span class="pill">CONCEPT</span>
   <p class="section-header">5.3 Process of Communication <span style="float:right">&#9733;&#9733;&#9733; HIGH</span></p>
   <div class="definition-block"><p class="definition-text">Communication is best understood as a dynamic framework explaining how a message travels from a sender to a receiver, by way of a communication channel: Sender &rarr; Encoding &rarr; Message &rarr; Channel &rarr; Decoding &rarr; Receiver &rarr; Feedback.</p></div>
@@ -2294,7 +2295,7 @@ tfoot { display: table-footer-group; }
 </ol>
   </div>
 
-<div class="concept-block avoid-break">
+<div class="concept-block">
   <p class="body">The Study Notes attribute this classification to &ldquo;Kevin Eujeberry,&rdquo; who identifies four distinct types of feedback; it helps to keep all four clearly separate in mind.</p>
   <ol class="point-list numbered">
     <li><strong>Positive Feedforward</strong> consists of affirming comments about FUTURE behaviour.</li>
@@ -2329,7 +2330,7 @@ tfoot { display: table-footer-group; }
 <!-- © Dhanya Varia -->
 <div class="page page-break">
 
-<div class="concept-block avoid-break">
+<div class="concept-block">
   <span class="pill">CONCEPT</span>
   <p class="section-header">5.4 Types of Business Communication &mdash; Formal/Informal, Verbal/Non-verbal <span style="float:right">&#9733;&#9733;&#9733; HIGHEST-VALUE TOPIC</span></p>
   <div class="definition-block"><p class="definition-text">Communication can be classified along three different dimensions: by the relationship between the parties, meaning Formal versus Informal; by the media used, meaning Written versus Gestural; and by its flow, meaning Upward, Downward, Diagonal, or Horizontal.</p></div>
@@ -2343,7 +2344,7 @@ tfoot { display: table-footer-group; }
   </ol>
 </div>
 
-<div class="concept-block avoid-break">
+<div class="concept-block">
   <p class="body"><strong>Verbal Communication</strong> uses spoken words, and is the most effective format for rapid interchange with fewer misunderstandings &mdash; though genuine LISTENING remains crucial to it working well. <strong>Non-Verbal Communication</strong> complements verbal communication, and covers six distinct types.</p>
   <ul class="point-list">
     <li><strong>Chronemics</strong> is the use of time, such as punctuality and the pace of speech.</li>
@@ -2364,7 +2365,7 @@ tfoot { display: table-footer-group; }
   <div class="shortcut-box avoid-break"><span class="shortcut-label">&#9889; SHORTCUT:</span> Six non-verbal types spell roughly to "CHKVPA" — Chronemics, Haptics, Kinesics, Vocalics, Proxemics, Artifacts — each governing a DIFFERENT non-verbal channel (time, touch, body, voice-quality, distance, looks).</div>
 </div>
 
-<div class="concept-block avoid-break">
+<div class="concept-block">
   <span class="pill">CONCEPT</span>
   <p class="section-header">5.4 (cont&rsquo;d) Vertical, Horizontal, Diagonal &amp; Lateral Communication <span style="float:right">&#9733;&#9733;&#9733; HIGH</span></p>
   <p class="body"><strong>Vertical Communication</strong> occurs between different hierarchy levels, and runs either UPWARD, from subordinate to senior, or DOWNWARD, from senior to subordinate. <strong>Horizontal, or Lateral, Communication</strong> occurs between employees at the SAME level; it is more timely, direct, and efficient than vertical communication, and can happen formally, through meetings and presentations, or informally, through casual exchanges; its barriers include differences in style, personality, and role, along with territoriality, rivalry, specialization, and simple lack of motivation. <strong>Diagonal, or Crosswise, Communication</strong> cuts across BOTH different levels AND different reporting lines at once; it promotes inter-departmental coordination and can boost morale, but if a bypassed superior refuses to implement the resulting suggestions, it risks creating internal friction.</p>
@@ -2442,7 +2443,7 @@ tfoot { display: table-footer-group; }
 <!-- © Dhanya Varia -->
 <div class="page page-break">
 
-<div class="concept-block avoid-break">
+<div class="concept-block">
   <span class="pill">CONCEPT</span>
   <p class="section-header">5.5 Internet Based Business Communication <span style="float:right">&#9733;&#9733; MED</span></p>
   <div class="definition-block"><p class="definition-text">E-communication has grown significantly in importance, changing everything from grocery shopping to overseas conferences.</p></div>
@@ -2462,7 +2463,7 @@ tfoot { display: table-footer-group; }
   </ol>
 </div>
 
-<div class="concept-block avoid-break">
+<div class="concept-block">
   <p class="section-header" style="font-size:13pt;">Business and Social Etiquette</p>
   <div class="definition-block"><p class="definition-text">Business and social etiquette means professionally acceptable manners and behaviour. It matters because it builds positive relationships, makes workplaces more productive, and tends to be rewarded with promotions.</p></div>
   <p class="body">Professional conduct rests on several features: respecting managers, colleagues, and clients; maintaining positive behaviour; staying calm under stress; making ethical decisions; and dressing appropriately. Ten specific dimensions flesh this out further.</p>
@@ -2485,7 +2486,7 @@ tfoot { display: table-footer-group; }
   <p class="body"><strong>Introductions</strong> follow their own etiquette: people are introduced by RANK rather than by gender or age, the client or guest is introduced FIRST because they are more important than the boss in that moment, and a proper introduction includes a firm handshake, eye contact, and using the surname first.</p>
 </div>
 
-<div class="concept-block avoid-break">
+<div class="concept-block">
   <p class="section-header" style="font-size:13pt;">Business Communication and Public Relations</p>
   <div class="definition-block"><p class="definition-text">Public Relations maintains a healthy relationship between an organisation and its public, employees, stakeholders, and investors.</p></div>
   <p class="body">Five functions together make up the practice of PR.</p>
@@ -2510,7 +2511,7 @@ tfoot { display: table-footer-group; }
   <div class="shortcut-box avoid-break"><span class="shortcut-label">&#9889; SHORTCUT:</span> Arthur W. Page's 7 PR principles all orbit ONE idea: the public's perception genuinely determines the organisation's success — every principle exists to protect or earn that perception honestly.</div>
 </div>
 
-<div class="concept-block avoid-break">
+<div class="concept-block">
   <p class="section-header" style="font-size:13pt;">Advertising</p>
   <div class="definition-block"><p class="definition-text">The word &ldquo;Advertising&rdquo; comes from the Latin &ldquo;Advertere,&rdquo; meaning &ldquo;to turn the mind towards.&rdquo; It is paid, non-personal mass communication.</p></div>
   <p class="body">Advertising pursues five main objectives.</p>
@@ -2542,7 +2543,7 @@ tfoot { display: table-footer-group; }
 <!-- © Dhanya Varia -->
 <div class="page page-break">
 
-<div class="concept-block avoid-break">
+<div class="concept-block">
   <span class="pill">CONCEPT</span>
   <p class="section-header">5.6 Do's &amp; Don'ts of Communication through Social Media <span style="float:right">&#9733;&#9733; MED</span></p>
   <div class="definition-block"><p class="definition-text">Social media has eliminated business&rsquo;s traditional dependency on what can be called the &ldquo;3 B&rsquo;s&rdquo; &mdash; the Building, the Boss, and the Boundaries &mdash; enabling businesses to start from essentially anywhere.</p></div>
@@ -2581,7 +2582,7 @@ tfoot { display: table-footer-group; }
   <p class="body">Businesses write for three main reasons: to Inform, covering policies, decisions, and offers, reinforced by laws such as the Right to Information; to Persuade, where PR builds reputation and marketing builds consumer interest; and to Create Goodwill, an intangible but genuinely valuable asset.</p>
 </div>
 
-<div class="concept-block avoid-break">
+<div class="concept-block">
   <p class="section-header" style="font-size:13pt;">5.7.1 Business Letters</p>
   <p class="body">Business letters can be informational, persuasive, motivational, or promotional in character, and five specific types recur constantly.</p>
   <ol class="point-list numbered">
@@ -2595,7 +2596,7 @@ tfoot { display: table-footer-group; }
   <p class="body">A <strong>Memorandum</strong> is a one-to-all note used for communicating policies, procedures, or updates within an organisation &mdash; it is broadcast-style rather than one-on-one, and follows a simple format of To, From, Date, RE (subject), and Body.</p>
 </div>
 
-<div class="concept-block avoid-break">
+<div class="concept-block">
   <p class="section-header" style="font-size:13pt;">5.7.2 Reports</p>
   <p class="body">A report presents structured information for a specific audience with a clear purpose, and six distinct types are recognised.</p>
   <ol class="point-list numbered">
@@ -2609,7 +2610,7 @@ tfoot { display: table-footer-group; }
   <div class="shortcut-box avoid-break"><span class="shortcut-label">&#9889; SHORTCUT:</span> Four audience types run from EASIEST to HARDEST: Friendly → Uninformed → Apathetic → Hostile — each needs a progressively different persuasion strategy.</div>
 </div>
 
-<table class="comparison-table avoid-break">
+<table class="comparison-table">
   <thead><tr><th>Basis</th><th>Formal Report</th><th>Informal Report</th></tr></thead><tbody>
   <tr><td>Structure</td><td>Highly structured, prescribed format</td><td>Less structured</td></tr>
   <tr><td>Purpose</td><td>Long-term, strategic decisions</td><td>Daily business decisions</td></tr>
@@ -2637,7 +2638,7 @@ tfoot { display: table-footer-group; }
 </ol>
 </div>
 
-<div class="concept-block avoid-break">
+<div class="concept-block">
   <p class="body">A <strong>Business Proposal</strong> is sent to prospective clients to win specific work, and is typically heavy on figures and statistics conveyed through charts. Five characteristics define an effective one.</p>
   <ol class="point-list numbered">
     <li><strong>Solutions</strong> that directly address the client&rsquo;s stated problem.</li>
@@ -2722,7 +2723,7 @@ tfoot { display: table-footer-group; }
 <!-- © Dhanya Varia -->
 <div class="page page-break">
 
-<div class="concept-block avoid-break">
+<div class="concept-block">
   <span class="pill">CONCEPT</span>
   <p class="section-header">5.8 Intercultural &amp; International Business Communication <span style="float:right">&#9733;&#9733;&#9733; HIGH</span></p>
   <div class="definition-block"><p class="definition-text">Cultural sensitivity means recognising different cultures, including both their similarities and their differences, without judgement or prejudice, and genuinely accepting them.</p></div>
@@ -2747,7 +2748,7 @@ tfoot { display: table-footer-group; }
   <div class="shortcut-box avoid-break"><span class="shortcut-label">&#9889; SHORTCUT:</span> Bennett's six stages run Denial → Defence → Minimization → Acceptance → Adaptation → Integration — DENIAL and DEFENCE are both NEGATIVE/unaware stages; ACCEPTANCE onward are increasingly POSITIVE, functional stages. Acceptance is the realistic organisational goal; Integration is the ideal endpoint.</div>
 </div>
 
-<div class="concept-block avoid-break">
+<div class="concept-block">
   <span class="pill">CONCEPT</span>
   <p class="section-header">5.9 Barriers to Business Communication <span style="float:right">&#9733;&#9733;&#9733; HIGHEST-VALUE TOPIC</span></p>
   <div class="definition-block"><p class="definition-text">Barriers are obstructions that affect the smooth transmission of messages, illustrated well by the &ldquo;Chinese Whisper&rdquo; game, where a message steadily deviates from its original form as it passes through a chain of people.</p></div>
@@ -2772,7 +2773,7 @@ tfoot { display: table-footer-group; }
   <div class="shortcut-box avoid-break"><span class="shortcut-label">&#9889; SHORTCUT:</span> Four barrier types, by ORIGIN: Physical = the ENVIRONMENT. Semantic = the LANGUAGE. Psychological = the MIND. Organizational = the STRUCTURE — each barrier type maps to a distinct source, which is the fastest way to classify an exam scenario.</div>
 </div>
 
-<div class="concept-block avoid-break">
+<div class="concept-block">
   <span class="pill">CONCEPT</span>
   <p class="section-header">5.10 Legal Aspects of Business Communication <span style="float:right">&#9733;&#9733;&#9733; HIGH</span></p>
   <div class="definition-block"><p class="definition-text">A legal aspect refers to the careful selection of words in business communication, in order to ensure conformity with the laws and regulations governing business and corporate conduct &mdash; non-compliance risks serious legal action.</p></div>
@@ -2798,7 +2799,7 @@ tfoot { display: table-footer-group; }
   <div class="shortcut-box avoid-break"><span class="shortcut-label">&#9889; SHORTCUT:</span> Disclaimer vs Disclosure: a Disclaimer warns of a SPECIFIC danger/risk (cigarette warnings). A Disclosure is a BROADER, less specific protective mechanism (an NDA). Both are legally enforceable, but for different reasons.</div>
 </div>
 
-<div class="concept-block avoid-break">
+<div class="concept-block">
   <span class="pill">CONCEPT</span>
   <p class="section-header">5.11 Use of Graphics &amp; References for Business Communication <span style="float:right">&#9733;&#9733; MED</span></p>
   <div class="definition-block"><p class="definition-text">Graphic elements give a &ldquo;bird&rsquo;s eye view&rdquo; of data, letting readers scan and summarise large volumes of information far faster than they could from plain text.</p></div>
@@ -2832,7 +2833,7 @@ tfoot { display: table-footer-group; }
 </tbody></table>
 </div>
 
-<div class="concept-block avoid-break">
+<div class="concept-block">
   <p class="body"><strong>Referencing</strong> provides a trail back to the original source, supporting a report's credibility and helping avoid plagiarism or window dressing.</p>
 <p class="body">It serves four features.</p>
 <ul class="point-list">
@@ -2933,18 +2934,18 @@ tfoot { display: table-footer-group; }
   <p class="body" style="margin:4mm 0 3mm;font-size:9.5pt;color:var(--gray);">One climb through all five modules, numbers only. Read this straight through the morning of the exam &mdash; not to learn anything new, only to fire the recall pathway for what you already know.</p>
 
   <p class="section-header" style="font-size:13pt;margin-top:4mm;">Section A &middot; Fundamentals of Business Laws (80%)</p>
-  <table class="comparison-table avoid-break">
+  <table class="comparison-table">
     <thead><tr><th style="width:20%;">Module</th><th>The Ladder</th></tr></thead><tbody>
     <tr><td><strong>1. Introduction (10%)</strong></td><td>Article 141=SC precedent binds ALL courts &middot; Article 123=President's ordinance power, Article 213=Governor's mirrored power at state level &middot; Article 79=Parliament (President+Rajya Sabha+Lok Sabha), Article 168=State Legislature &middot; Article 109=Money Bills, Lok Sabha ONLY (Article 107=ordinary Bills, either House) &middot; Article 254=Parliament's law wins a Concurrent-List conflict &middot; Article 368=Parliament may amend the Constitution by addition, variation or repeal &mdash; but an amendment contravening an individual&rsquo;s Fundamental Rights is unconstitutional (Keshavananda Bharati vs State of Kerala, 1973) &middot; Article 32=SC writ jurisdiction (Fundamental Rights only), Article 226=HC writ jurisdiction (wider &mdash; Fundamental + ordinary legal rights) &middot; Article 131=SC Original Jurisdiction, Article 137=SC Review Jurisdiction (own orders) &middot; District Court=highest CIVIL court in a district; Sessions Court=top of the CRIMINAL hierarchy at that level &middot; Executive Magistrates=administrative, NOT judicial officers &middot; Lok Adalat orders=final, deemed civil-court decrees, NOT appealable &middot; Subordinate legislation is void the moment it exceeds its parent Act or the Constitution &mdash; the &ldquo;ultra vires&rdquo; test &middot; Seven regulators: SEBI (1992, capital markets)/RBI (1935, oldest, banking)/IRDAI (1999, insurance)/PFRDA (2013, pensions)/AMFI (1995, self-regulatory, a SEBI division)/MCA (companies)/NHB (1987, housing finance).</td></tr>
-    <tr><td><strong>2. Indian Contract Act, 1872 (30%)</strong></td><td>Sec 2(h): Contract=Agreement+Enforceability by law; Sec 2(e): Agreement=Offer+Acceptance &middot; Sec 10: ten essential elements, including intention to create legal relations (Balfour vs Balfour) and consensus ad idem &middot; Thirteen categories of expressly-void agreement, running Secs 11/12&rarr;23&rarr;20&rarr;24&rarr;25&rarr;26&rarr;27&rarr;28&rarr;29&rarr;30&rarr;36&rarr;56&rarr;57 &middot; Sec 25's &ldquo;no consideration, no contract&rdquo; has SEVEN exceptions, not three: love/affection, past voluntary act, time-barred debt, completed gifts, agency creation, guarantee, remission &middot; Free consent's five vitiating factors: Coercion [Sec 15, Ammiraju vs Seshamma]/Undue Influence [Sec 16, Mannu Singh vs Umadat Pandey]/Fraud [Sec 17, Peek vs Gurney]/Misrepresentation [Sec 18, Bisset vs Wilkinson]/Mistake [Secs 20-22, Raffles vs Wichelhaus] &middot; Mohiri Bibi vs Dharmodas Ghose: a minor's agreement is void ab initio; the law of estoppel does not apply against a minor (Leslie vs Shiell) &middot; Quasi-Contract [Secs 68-72, law-imposed, no real agreement] vs Contingent Contract [Secs 31-36, real agreement, uncertain collateral event] &middot; Indemnity [Sec 124, TWO parties] vs Guarantee [Sec 126, THREE parties, surety's liability co-extensive with the debtor's] &middot; Pledge [Secs 172-178]: pawnee may retain, sue, or sell (with notice) on default &middot; Agency [Sec 182]: no consideration required to form it [Sec 185] &middot; E-contracts: Browse-wrap (using the site=acceptance)/Shrink-wrap (opening the box=acceptance)/Click-wrap (explicit &ldquo;I Agree&rdquo; click, terms visible first) &middot; Discharge: Novation/Alteration/Rescission [Sec 62], Remission/Waiver [Sec 63] &middot; Sec 73=compensation for natural/foreseeable loss; Sec 74=compensation capped at a pre-named penalty, recoverable whether or not actual loss is proven &middot; Five remedies for breach: Rescission, Damages, Quantum Meruit, Specific Performance, Injunction.</td></tr>
-    <tr><td><strong>3. Sale of Goods Act, 1930 (20%)</strong></td><td>Sec 4(3): Sale=ownership transfers NOW (executed, right in rem) vs Agreement to Sell=ownership transfers LATER (executory, right in personam) &middot; Sec 2(7) Goods; Specific/Ascertained/Unascertained goods &middot; Sec 7/8: specific goods already perished &rarr; contract or agreement VOID &middot; Property passes: Sec 20 (specific goods, deliverable state, at contract) / Sec 21-22 (an act by the seller + notice) / Sec 23 (unascertained goods, unconditional appropriation) / Sec 24 (approval or sale-or-return) &middot; Sec 26: risk PRIMA FACIE follows OWNERSHIP, not possession &middot; Nemo Dat Quod Non Habet &mdash; SEVEN exceptions: mercantile agent [Sec 27], joint owner [Sec 28], voidable-contract possessor [Sec 29], seller/buyer left in possession after sale [Sec 30], estoppel, finder of goods [Sec 169 Contract Act], official receiver/assignee &middot; Condition [Sec 12(2), essential, breach&rarr;reject+damages] vs Warranty [Sec 12(3), collateral, breach&rarr;damages only] &mdash; the label doesn't decide, construction does [Sec 12(4)] &middot; Caveat Emptor [Sec 16] &mdash; FIVE exceptions: disclosed purpose+skill reliance, merchantability, wholesomeness, fraud, trade usage &middot; Sec 39: delivery to a carrier is prima facie delivery to the buyer &middot; Unpaid seller's rights against the goods: Lien [Sec 47, still in possession] / Stoppage in Transit [Sec 50, goods in transit + buyer insolvent] / Resale [Sec 54, perishable/reserved right/notice] / Withholding Delivery; against the buyer: Suit for Price [Sec 55], Damages for Non-Acceptance [Sec 56], Repudiation, Interest [Sec 61].</td></tr>
+    <tr><td><strong>2. Indian Contract Act, 1872 (30%)</strong></td><td>Sec 2(h): Contract=Agreement+Enforceability by law; Sec 2(e): Agreement=Offer+Acceptance &middot; Sec 10: ten essential elements, including intention to create legal relations (Balfour vs Balfour) and consensus ad idem &middot; Thirteen categories of expressly-void agreement, running Secs 11/12&rarr;&#8203;23&rarr;&#8203;20&rarr;&#8203;24&rarr;&#8203;25&rarr;&#8203;26&rarr;&#8203;27&rarr;&#8203;28&rarr;&#8203;29&rarr;&#8203;30&rarr;&#8203;36&rarr;&#8203;56&rarr;&#8203;57 &middot; Sec 25's &ldquo;no consideration, no contract&rdquo; has SEVEN exceptions, not three: love/affection, past voluntary act, time-barred debt, completed gifts, agency creation, guarantee, remission &middot; Free consent's five vitiating factors: Coercion [Sec 15, Ammiraju vs Seshamma]/Undue Influence [Sec 16, Mannu Singh vs Umadat Pandey]/Fraud [Sec 17, Peek vs Gurney]/Misrepresentation [Sec 18, Bisset vs Wilkinson]/Mistake [Secs 20-22, Raffles vs Wichelhaus] &middot; Mohiri Bibi vs Dharmodas Ghose: a minor's agreement is void ab initio; the law of estoppel does not apply against a minor (Leslie vs Shiell) &middot; Quasi-Contract [Secs 68-72, law-imposed, no real agreement] vs Contingent Contract [Secs 31-36, real agreement, uncertain collateral event] &middot; Indemnity [Sec 124, TWO parties] vs Guarantee [Sec 126, THREE parties, surety's liability co-extensive with the debtor's] &middot; Pledge [Secs 172-178]: pawnee may retain, sue, or sell (with notice) on default &middot; Agency [Sec 182]: no consideration required to form it [Sec 185] &middot; E-contracts: Browse-wrap (using the site=acceptance)/Shrink-wrap (opening the box=acceptance)/Click-wrap (explicit &ldquo;I Agree&rdquo; click, terms visible first) &middot; Discharge: Novation/&#8203;Alteration/&#8203;Rescission [Sec 62], Remission/Waiver [Sec 63] &middot; Sec 73=compensation for natural/foreseeable loss; Sec 74=compensation capped at a pre-named penalty, recoverable whether or not actual loss is proven &middot; Five remedies for breach: Rescission, Damages, Quantum Meruit, Specific Performance, Injunction.</td></tr>
+    <tr><td><strong>3. Sale of Goods Act, 1930 (20%)</strong></td><td>Sec 4(3): Sale=ownership transfers NOW (executed, right in rem) vs Agreement to Sell=ownership transfers LATER (executory, right in personam) &middot; Sec 2(7) Goods; Specific/&#8203;Ascertained/&#8203;Unascertained goods &middot; Sec 7/8: specific goods already perished &rarr; contract or agreement VOID &middot; Property passes: Sec 20 (specific goods, deliverable state, at contract) / Sec 21-22 (an act by the seller + notice) / Sec 23 (unascertained goods, unconditional appropriation) / Sec 24 (approval or sale-or-return) &middot; Sec 26: risk PRIMA FACIE follows OWNERSHIP, not possession &middot; Nemo Dat Quod Non Habet &mdash; SEVEN exceptions: mercantile agent [Sec 27], joint owner [Sec 28], voidable-contract possessor [Sec 29], seller/buyer left in possession after sale [Sec 30], estoppel, finder of goods [Sec 169 Contract Act], official receiver/assignee &middot; Condition [Sec 12(2), essential, breach&rarr;reject+damages] vs Warranty [Sec 12(3), collateral, breach&rarr;damages only] &mdash; the label doesn't decide, construction does [Sec 12(4)] &middot; Caveat Emptor [Sec 16] &mdash; FIVE exceptions: disclosed purpose+skill reliance, merchantability, wholesomeness, fraud, trade usage &middot; Sec 39: delivery to a carrier is prima facie delivery to the buyer &middot; Unpaid seller's rights against the goods: Lien [Sec 47, still in possession] / Stoppage in Transit [Sec 50, goods in transit + buyer insolvent] / Resale [Sec 54, perishable/reserved right/notice] / Withholding Delivery; against the buyer: Suit for Price [Sec 55], Damages for Non-Acceptance [Sec 56], Repudiation, Interest [Sec 61].</td></tr>
     <tr><td><strong>4. Negotiable Instruments Act, 1881 (20%)</strong></td><td>Sec 13: a Negotiable Instrument is a PN, Bill, or Cheque, payable to order or bearer &middot; Holder in Due Course needs ALL three: consideration paid, acquired BEFORE maturity, NO notice of any defect &middot; Sec 4: Promissory Note=an UNDERTAKING by the maker, 2 parties, 10 requisites &middot; Sec 5: Bill of Exchange=an ORDER by the drawer, 3 parties, 9 requisites &middot; Sec 6: Cheque=a bill drawn on a specified banker, payable on demand, 3 parties, 7 requisites &middot; Only a Cheque can be payable to bearer on demand simultaneously &middot; Grace period=3 days for time instruments, NEVER for a cheque or a pure demand instrument &middot; Crossing: General [Sec 123, two transverse lines] / Special [Sec 124, a NAMED bank, lines not essential] / Account Payee [pure trade custom, not in the Act] / Not Negotiable [Sec 130, caps title quality, never blocks transfer] / Double/Second Special [Secs 125&amp;127, bank-to-bank, collection only] &middot; Sec 138: presentment within 3 months (post-2012) &rarr; written notice within 30 days of learning of dishonour &rarr; drawer's payment within 15 days of receiving notice; punishment up to 2 years and/or a fine up to TWICE the cheque amount &middot; Sec 143A: interim compensation capped at 20% of the cheque amount, repayable with RBI-rate interest on acquittal.</td></tr>
   </tbody></table>
 
   <p class="section-header" style="font-size:13pt;margin-top:5mm;">Section B &middot; Business Communication (20%)</p>
   <table class="comparison-table avoid-break">
     <thead><tr><th style="width:20%;">Module</th><th>The Ladder</th></tr></thead><tbody>
-    <tr><td><strong>5. Business Communication (20%)</strong></td><td>The 8 C's of Effective Communication: Clarity, Conciseness, Courteous, Correctness, Completeness, Concreteness, Consideration, Coherence &middot; Process: Sender&rarr;Encoding&rarr;Message&rarr;Channel&rarr;Decoding&rarr;Receiver&rarr;Feedback &mdash; Decoding is one of the MOST CRUCIAL stages &middot; &ldquo;Kevin Eujeberry&rdquo; (ICMAI&rsquo;s spelling; published as Kevin Eikenberry) &mdash; four types: Feedback=about PAST behaviour, Feedforward=about FUTURE behaviour, each Positive (affirming) or Negative (corrective) &middot; One-way (linear, no feedback, monologue) vs Two-way (cyclic, has feedback, dialogue) &middot; Formal Communication (predefined, hierarchical) vs Informal/Grapevine (four chains: Single Strand, Cluster, Probability, Gossip) &mdash; informal CAN turn formal &middot; Six non-verbal types: Chronemics (time), Vocalics (tone), Haptics (touch), Kinesics (body language), Proxemics (distance), Artifacts (appearance) &middot; Horizontal/Lateral=SAME level; Vertical=UP/DOWN between levels; Diagonal=BOTH a different level AND a different reporting line at once &middot; VUCAFU marketing obstacles: Volatility, Uncertainty, Complexity, Ambiguity, Fear of unknown, Unprecedentedness &middot; Arthur W. Page's 7 PR principles; effective PR needs Awareness&rarr;Acceptance&rarr;Action &middot; Five business letters, in order: Enquiry (buyer asks)&rarr;Quotation (seller replies)&rarr;Order (buyer commits)&rarr;Complaint&rarr;Recovery &middot; Formal vs Informal Report &mdash; ten dimensions, almost every one the exact opposite of its counterpart &middot; Bennett's six stages of intercultural sensitivity: Denial&rarr;Defence&rarr;Minimization&rarr;Acceptance (a reasonable GOAL)&rarr;Adaptation&rarr;Integration (true cultural blending) &middot; Four barrier types by source: Physical (environment), Semantic (language), Psychological (the mind), Organizational (structure/politics) &middot; Five legal aspects: Product Disclaimers, Legal Disclosures, Financial Reporting, Contracts/Internal Communications, Marketing Communications &middot; Five graphic elements: Flowcharts, Presentations, Colour Coding, Tables/Graphs, Motion Graphics.</td></tr>
+    <tr><td><strong>5. Business Communication (20%)</strong></td><td>The 8 C's of Effective Communication: Clarity, Conciseness, Courteous, Correctness, Completeness, Concreteness, Consideration, Coherence &middot; Process: Sender&rarr;&#8203;Encoding&rarr;&#8203;Message&rarr;&#8203;Channel&rarr;&#8203;Decoding&rarr;&#8203;Receiver&rarr;&#8203;Feedback &mdash; Decoding is one of the MOST CRUCIAL stages &middot; &ldquo;Kevin Eujeberry&rdquo; (ICMAI&rsquo;s spelling; published as Kevin Eikenberry) &mdash; four types: Feedback=about PAST behaviour, Feedforward=about FUTURE behaviour, each Positive (affirming) or Negative (corrective) &middot; One-way (linear, no feedback, monologue) vs Two-way (cyclic, has feedback, dialogue) &middot; Formal Communication (predefined, hierarchical) vs Informal/Grapevine (four chains: Single Strand, Cluster, Probability, Gossip) &mdash; informal CAN turn formal &middot; Six non-verbal types: Chronemics (time), Vocalics (tone), Haptics (touch), Kinesics (body language), Proxemics (distance), Artifacts (appearance) &middot; Horizontal/Lateral=SAME level; Vertical=UP/DOWN between levels; Diagonal=BOTH a different level AND a different reporting line at once &middot; VUCAFU marketing obstacles: Volatility, Uncertainty, Complexity, Ambiguity, Fear of unknown, Unprecedentedness &middot; Arthur W. Page's 7 PR principles; effective PR needs Awareness&rarr;Acceptance&rarr;Action &middot; Five business letters, in order: Enquiry (buyer asks)&rarr;Quotation (seller replies)&rarr;Order (buyer commits)&rarr;Complaint&rarr;Recovery &middot; Formal vs Informal Report &mdash; ten dimensions, almost every one the exact opposite of its counterpart &middot; Bennett's six stages of intercultural sensitivity: Denial&rarr;&#8203;Defence&rarr;&#8203;Minimization&rarr;&#8203;Acceptance (a reasonable GOAL)&rarr;&#8203;Adaptation&rarr;&#8203;Integration (true cultural blending) &middot; Four barrier types by source: Physical (environment), Semantic (language), Psychological (the mind), Organizational (structure/politics) &middot; Five legal aspects: Product Disclaimers, Legal Disclosures, Financial Reporting, Contracts/Internal Communications, Marketing Communications &middot; Five graphic elements: Flowcharts, Presentations, Colour Coding, Tables/Graphs, Motion Graphics.</td></tr>
   </tbody></table>
 </div>
 
@@ -2991,12 +2992,12 @@ tfoot { display: table-footer-group; }
 <!-- © Dhanya Varia -->
 <div class="page page-break">
   <div class="cover-band-dark" style="font-size:14pt;">The Last 48 Hours &mdash; Revision Plan for This Document</div>
-  <table class="comparison-table avoid-break" style="margin-top:5mm;">
+  <table class="comparison-table" style="margin-top:5mm;">
     <thead><tr><th style="width:20%;">When</th><th>What to do</th></tr></thead><tbody>
     <tr><td>48 hours out</td><td>Re-read Module 2 (Indian Contract Act, 1872) end to end &mdash; at 30% of the paper, the single largest module, spanning ten numbered sub-topics (2.1&ndash;2.10) and carrying by far the highest case-law density in the syllabus. Rehearse three &ldquo;Distinguish between&hellip;&rdquo; tables out loud from memory: Void Agreement vs Voidable Contract vs Void Contract, Indemnity vs Guarantee, and Fraud vs Misrepresentation.</td></tr>
     <tr><td>36 hours out</td><td>Re-read Modules 3 and 4 (Sale of Goods Act, Negotiable Instruments Act, 20% each, 40% combined) &mdash; the two most Section-number-dense modules after Module 2. Rehearse Condition vs Warranty, Sale vs Agreement to Sell, the three-way Promissory Note / Bill of Exchange / Cheque comparison table, and Section 138's three shrinking deadlines (3 months &rarr; 30 days &rarr; 15 days).</td></tr>
     <tr><td>24 hours out</td><td>Sweep Module 5 (Business Communication, 20%) across all three of its parts &mdash; pure conceptual recall with almost no Section numbers to carry, once the 8 C's, the four barrier types, Bennett's six stages, and the five business-letter sequence are drilled cold. The cheapest marks-per-minute in the entire paper.</td></tr>
-    <tr><td>18 hours out</td><td>Sweep Module 1 (Introduction, 10%) &mdash; the lightest weight in the paper, but the most Article-number-dense topic of all five modules. Re-drill the paired Article numbers specifically: 32/226, 123/213, 141/368, 131/137, and the seven regulatory bodies (SEBI/RBI/IRDAI/PFRDA/AMFI/MCA/NHB).</td></tr>
+    <tr><td>18 hours out</td><td>Sweep Module 1 (Introduction, 10%) &mdash; the lightest weight in the paper, but the most Article-number-dense topic of all five modules. Re-drill the paired Article numbers specifically: 32/226, 123/213, 141/368, 131/137, and the seven regulatory bodies (SEBI/&#8203;RBI/&#8203;IRDAI/&#8203;PFRDA/&#8203;AMFI/&#8203;MCA/&#8203;NHB).</td></tr>
     <tr><td>6 hours out</td><td>Read The Final Ladder above, start to finish, once, slowly.</td></tr>
     <tr><td>2 hours out</td><td>Read the Master Trap List above, start to finish, once, slowly. Nothing new after this point.</td></tr>
     <tr><td>In the hall</td><td>No negative marking on this 50 MCQ &times; 2 Marks paper &mdash; attempt every question. This is a precision-recall paper: Section, Act, and case-name accuracy matter more than working through multi-step reasoning, so before answering, first identify which Act and which specific Section the scenario belongs to, THEN apply the rule.</td></tr>

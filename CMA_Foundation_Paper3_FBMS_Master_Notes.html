@@ -46,7 +46,7 @@
 }
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
 @page { size: A4; margin: 22mm 18mm 20mm 24mm; @top-center { content: "ICMAI · CMA FOUNDATION · PAPER 3 — FBMS · MASTER NOTES"; font-family: "Cormorant Garamond", Georgia, serif; font-weight: 300; font-size: 8pt; letter-spacing: 0.15em; text-transform: uppercase; color: #6B7280; } @bottom-center { content: "CMA Foundation · Fundamentals of Business Mathematics and Statistics · Compiled & Adapted by Dhanya Varia"; font-family: "Cormorant Garamond", Georgia, serif; font-weight: 300; font-size: 7.5pt; color: #6B7280; } @bottom-left { content: "© Dhanya Varia"; font-family: "EB Garamond", serif; font-size: 7pt; font-style: italic; color: #999999; } @bottom-right { content: counter(page); font-family: "Cormorant Garamond", Georgia, serif; font-weight: 600; font-size: 9pt; color: #1A5C38; } }
-body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color: var(--ink); background: var(--white); }
+body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color: var(--ink); background: var(--white); overflow-wrap: break-word; }
 .page { position: relative; min-height: 1mm; }
 
 .page-break { page-break-before: always; break-before: page; }
@@ -56,7 +56,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
 .cover-title { font-family: var(--font-display); font-weight: 400; font-size: 48pt; letter-spacing: 0.08em; text-transform: uppercase; color: var(--green-deep); line-height: 1.15; display: block; text-align: center; }
 .cover-subtitle { font-family: var(--font-head); font-weight: 300; font-size: 13pt; letter-spacing: 0.06em; color: var(--green-mid); text-align: center; }
 .module-title { font-family: var(--font-display); font-weight: 400; font-size: 38pt; letter-spacing: 0.06em; text-transform: uppercase; text-align: center; color: var(--white); line-height: 1.2; }
-.section-header { font-family: var(--font-head); font-weight: 600; font-size: 16pt; color: var(--green-deep); margin: 8mm 0 4mm; letter-spacing: 0.03em; overflow: hidden; }
+.section-header { font-family: var(--font-head); font-weight: 600; font-size: 16pt; color: var(--green-deep); margin: 8mm 0 4mm; letter-spacing: 0.03em; overflow: hidden; page-break-after: avoid; break-after: avoid; }
 .body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color: var(--ink); }
 .numeric { font-family: var(--font-mono); font-size: 10pt; line-height: 1.5; }
 .table-header { font-family: var(--font-head); font-weight: 600; font-size: 10pt; text-transform: uppercase; letter-spacing: 0.05em; color: var(--white); background: var(--green-deep); }
@@ -78,7 +78,8 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
 .shortcut-box { border: 1px solid var(--green-mid); background: var(--green-faint); padding: 10px 16px; margin: 10px 0; page-break-inside: avoid; break-inside: avoid; }
 .shortcut-box .shortcut-label { font-family: var(--font-head); font-weight: 700; color: var(--green-mid); }
 .trap-block { border-left: 4px solid var(--amber); background: var(--amber-bg); padding: 12px 16px; margin: 12px 0; page-break-inside: avoid; break-inside: avoid; }
-.trap-block .trap-label { font-family: var(--font-head); font-weight: 700; font-size: 11pt; color: var(--amber); margin-bottom: 8px; }
+.trap-block .trap-label { font-family: var(--font-head); font-weight: 700; font-size: 11pt; color: var(--amber); margin-bottom: 8px; text-transform: uppercase; }
+.trap-block .trap-label::before { content: "\26A0  TRAP: "; }
 .trap-block .trap-row { font-family: var(--font-body); font-size: 10.5pt; margin: 4px 0; }
 .trap-block .trap-row strong { font-family: var(--font-head); font-weight: 600; color: var(--ink); }
 .glossary-block { border: 1px solid var(--green-deep); background: var(--green-faint); padding: 4px 16px 12px; margin: 10px 0; }
@@ -135,7 +136,6 @@ tfoot { display: table-footer-group; }
 .journal-entry .narration { font-style: italic; font-size: 9.5pt; color: var(--gray); padding-top: 2px; padding-bottom: 6px; }
 
 /* Worked example block */
-.worked-example { border-left: 4px solid var(--green-mid); background: var(--green-faint); padding: 12px 16px; margin: 12px 0; }
 .worked-example .ex-label { font-family: var(--font-head); font-weight: 600; font-size: 10pt; color: var(--green-deep); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 6px; }
 .worked-example .ex-step { font-family: var(--font-body); font-size: 10.5pt; padding: 2px 0; }
 .worked-example .ex-answer { font-family: var(--font-body); font-weight: 600; font-size: 10.5pt; color: var(--green-deep); margin-top: 4px; padding-top: 4px; border-top: 1px solid var(--border-light); }
@@ -152,12 +152,39 @@ tfoot { display: table-footer-group; }
 
 .screen-watermark { position: fixed; bottom: 10px; right: 14px; background: rgba(255,255,255,0.88); border: 1px solid var(--green-deep); border-radius: 4px; padding: 4px 10px; font-family: var(--font-head); font-size: 8pt; font-style: italic; color: var(--green-deep); z-index: 9999; box-shadow: 0 1px 4px rgba(0,0,0,0.12); }
 @media print { .screen-watermark { display: none; } }
-.print-watermark { position: fixed; bottom: 13mm; right: 4mm; font-family: "EB Garamond", serif; font-weight: 500; font-style: italic; font-size: 10.5pt; color: var(--green-deep); opacity: 0.32; pointer-events: none; letter-spacing: 0.03em; white-space: nowrap; z-index: 1; }
+
+.page.tight .section-header { margin-top: 5mm; margin-bottom: 2.5mm; }
+.page.tight p.body { margin-top: 8px; margin-bottom: 8px; }
+.page.tight .concept-block, .page.tight .formula-box, .page.tight .worked-example, .page.tight .comparison-table, .page.tight .trap-block, .page.tight .shortcut-box, .page.tight .ledger-tbl, .page.tight .answer-table { margin-top: 8px; margin-bottom: 8px; }
+.page.tight .definition-block, .page.tight .glossary-block, .page.tight .trigger-box { margin-top: 6px; margin-bottom: 6px; }
+.page.tight .revision-strip { margin-top: 9px; margin-bottom: 9px; }
+.page.tight .point-list { margin-top: 6px; margin-bottom: 7px; }
+.page.tight .point-list li { margin-bottom: 5px; }
+.page.tight .concept-block { padding-top: 8px; padding-bottom: 8px; }
+.page.tight .definition-block { padding-top: 7px; padding-bottom: 7px; }
+.page.tight .formula-box { padding-top: 10px; padding-bottom: 10px; }
+.page.tight .worked-example { padding-top: 8px; padding-bottom: 8px; }
+.page.tight .trap-block { padding-top: 8px; padding-bottom: 8px; }
+.page.tight .shortcut-box { padding-top: 7px; padding-bottom: 7px; }
+.page.tight .glossary-block { padding-bottom: 8px; }
+.page.tight .comparison-table td { padding-top: 3px; padding-bottom: 3px; }
+.page.tight .comparison-table th { padding-top: 4px; padding-bottom: 4px; }
+.page.tight .point-list li { margin-bottom: 4px; }
+.page.tight .ledger-tbl td, .page.tight .ledger-tbl th { padding-top: 3px; padding-bottom: 3px; }
+.page.tight2 .section-header { margin-top: 3.5mm; margin-bottom: 2mm; }
+.page.tight2 .body, .page.tight2 p.body, .page.tight2 .definition-text, .page.tight2 .point-list li { line-height: 1.55; }
+.page.tight2 .concept-block, .page.tight2 .worked-example, .page.tight2 .trap-block { padding-top: 7px; padding-bottom: 7px; }
+.page.tight2 p.body { margin-top: 7px; margin-bottom: 7px; }
+.page.page-break > *:first-child { margin-top: 0; }
+.page.tight2 .comparison-table td { padding-top: 2px; padding-bottom: 2px; }
+.page.tight2 .comparison-table th { padding-top: 3px; padding-bottom: 3px; }
+.page.tight2 .point-list li { margin-bottom: 3px; }
+.page.tight2 .concept-block, .page.tight2 .definition-block, .page.tight2 .shortcut-box, .page.tight2 .trap-block, .page.tight2 .formula-box, .page.tight2 .worked-example, .page.tight2 .comparison-table { margin-top: 6px; margin-bottom: 6px; }
 </style>
 </head>
 <body>
 
-<div class="print-watermark">Dhanya Varia</div>
+
 <div class="screen-watermark">&copy; Compiled &amp; Adapted by Dhanya Varia</div>
 <div class="running-header">ICMAI &middot; CMA FOUNDATION &middot; PAPER 3 — FBMS &middot; MASTER NOTES</div>
 <div class="running-footer">CMA Foundation &middot; Fundamentals of Business Mathematics and Statistics &middot; <em>Compiled &amp; Adapted by Dhanya Varia</em></div>
@@ -421,7 +448,7 @@ tfoot { display: table-footer-group; }
 
 <!-- ============ 1.1 RATIOS ============ -->
 <!-- © Dhanya Varia -->
-<div class="page page-break">
+<div class="page page-break tight tight2">
 <span class="pill">CONCEPT</span>
 <p class="section-header">1.1 Ratios — Definition, Properties, Types <span style="float:right;">&#9733;&#9733;&#9733; HIGH</span></p>
 <div class="definition-block"><p class="definition-text"><strong>Ratio</strong> is the comparative relation between two quantities of the same kind, expressed in the same units. If A secures 80 marks and B secures 40 out of the same 100, the ratio is 80/40 = 2 &mdash; a pure number, no unit attached. In the ratio a:b, &lsquo;a&rsquo; is the <strong>antecedent</strong> and &lsquo;b&rsquo; is the <strong>consequent</strong>.</p></div>
@@ -451,7 +478,7 @@ tfoot { display: table-footer-group; }
 <div class="trap-block"><span class="pill amber">&#9888; TRAP</span><p class="trap-label">Duplicate ratio is SQUARED, not doubled</p><p class="trap-row"><strong>THE TRAP:</strong> &ldquo;duplicate&rdquo; sounds like &times;2, but it means the ratio compounded WITH ITSELF &mdash; i.e. <strong>squared</strong> (a&sup2;:b&sup2;), not multiplied by 2 (2a:2b, which is just the same ratio again by the scaling property).</p></div>
 </div>
 
-<div class="page page-break">
+<div class="page page-break tight">
 <span class="pill">CONCEPT</span>
 <p class="section-header">Proportions — Means, Extremes, and the Proportional Family <span style="float:right;">&#9733;&#9733;&#9733; HIGH</span></p>
 <div class="definition-block"><p class="definition-text">Four quantities a, b, c, d are in <strong>proportion</strong> if a:b = c:d (equivalently a/b = c/d). The first and last (a, d) are the <strong>extremes</strong>; the two middle terms (b, c) are the <strong>means</strong>.</p></div>
@@ -497,7 +524,7 @@ tfoot { display: table-footer-group; }
 
 <!-- ============ SELECTED WORKED EXAMPLES ============ -->
 <!-- © Dhanya Varia -->
-<div class="page page-break">
+<div class="page page-break tight">
 <span class="pill">FORMULA</span>
 <p class="section-header">Ratio &amp; Proportion — Five More Worked Examples (all independently re-verified) <span style="float:right;">&#9733;&#9733;&#9733; HIGH</span></p>
 <div class="worked-example avoid-break">
@@ -644,7 +671,7 @@ tfoot { display: table-footer-group; }
 
 <!-- ============ COMPOUND INTEREST & TVM ============ -->
 <!-- © Dhanya Varia -->
-<div class="page page-break">
+<div class="page page-break tight">
 <span class="pill">CONCEPT</span>
 <p class="section-header">Time Value of Money — Why a Rupee Today Beats a Rupee Tomorrow <span style="float:right;">&#9733;&#9733;&#9733; HIGH</span></p>
 <div class="definition-block"><p class="definition-text">A rupee today is worth more than the same rupee in future, because a receipt today enables preferred CURRENT consumption while a receipt tomorrow only enables less-preferred FUTURE consumption. <strong>Interest is the compensation for foregoing current consumption.</strong></p></div>
@@ -834,7 +861,7 @@ tfoot { display: table-footer-group; }
 <div class="definition-block"><p class="definition-text">Time and Distance have a mathematical relationship with <strong>Speed</strong> &mdash; each of the three depends on the other two. Units must match: distance in km with time in hours gives speed in km/hr; distance in metres with time in seconds gives speed in m/sec.</p></div>
 <div class="formula-box"><p class="formula-text">Distance = Speed &times; Time &nbsp;&nbsp;&bull;&nbsp;&nbsp; Time = Distance / Speed &nbsp;&nbsp;&bull;&nbsp;&nbsp; Speed = Distance / Time</p><hr class="var-divider"><p class="formula-vars">Distance in km or m &middot; Time in hr, min or sec &middot; Speed in km/hr or m/sec. One relationship, three rearrangements &mdash; whichever quantity the question asks for, isolate it from the other two.</p></div>
 <div class="shortcut-box"><span class="shortcut-label">&#9889; SHORTCUT</span> ICMAI treats this sub-topic as the direct application layer for everything already built in 1.1: a Time-and-Distance question is very often a <strong>ratio or proportion problem wearing a travel costume</strong> &mdash; e.g. &ldquo;speed is inversely proportional to time for a fixed distance&rdquo; is exactly the inverse-variation pattern from 1.1, just relabelled.</div>
-<div class="trigger-box"><strong>MODULE 1 CLOSING NOTE:</strong> this completes all four sub-topics of Module 1 &mdash; Ratios/Variations/Proportions, Time Value of Money, AP/GP, and Time &amp; Distance. Every formula, worked example, and shortcut above is drawn exclusively from ICMAI's own Study Notes for this paper.</div>
+<div class="trigger-box"><strong>MODULE 1 CLOSING NOTE:</strong> this completes all four sub-topics of Module 1 &mdash; Ratios/&#8203;Variations/&#8203;Proportions, Time Value of Money, AP/GP, and Time &amp; Distance. Every formula, worked example, and shortcut above is drawn exclusively from ICMAI's own Study Notes for this paper.</div>
 </div>
 
 
@@ -1021,7 +1048,7 @@ tfoot { display: table-footer-group; }
 
 <!-- ============ WORKED EXAMPLES ============ -->
 <!-- © Dhanya Varia -->
-<div class="page page-break">
+<div class="page page-break tight">
 <span class="pill">FORMULA</span>
 <p class="section-header">Set Theory — Ten Worked Examples (all independently re-verified) <span style="float:right;">&#9733;&#9733;&#9733; HIGH</span></p>
 <table class="comparison-table" style="font-size:8.3pt;">
@@ -1074,7 +1101,7 @@ tfoot { display: table-footer-group; }
 
 <!-- ============ ROOTS + BASIC RULES ============ -->
 <!-- © Dhanya Varia -->
-<div class="page page-break">
+<div class="page page-break tight tight2">
 <span class="pill">FORMULA</span>
 <p class="section-header">Roots of a Number and the Nine Basic Rules of Indices <span style="float:right;">&#9733;&#9733;&#9733; HIGHEST-VALUE TOPIC</span></p>
 <div class="definition-block"><p class="definition-text">If x raised to the power n is equal to a, then we say that x is the <strong>n<sup>th</sup> root of a</strong>, and we can write this relationship either using the radical symbol as x = &#8319;&radic;a, or using fractional-index notation as x = a<sup>1/n</sup>. As a concrete example, since 2 raised to the power 4 gives us 16, we can equally say that 2 is the fourth root of 16.</p></div>
@@ -1167,7 +1194,7 @@ tfoot { display: table-footer-group; }
 <div class="formula-box"><p class="formula-text">Permutation of n different objects taken r at a time (r&le;n): &nbsp;&nbsp; <sup>n</sup>P<sub>r</sub> = n! / (n&minus;r)!</p><hr class="var-divider"><p class="formula-vars">Equivalently, <sup>n</sup>P<sub>r</sub> = n&times;(n&minus;1)&times;(n&minus;2)&times;&hellip;&times;(n&minus;r+1) &mdash; both n and r must be positive integers. &ldquo;Permutation&rdquo; means arrangement: it is used for arranging objects in a definite, linear order, or rearranging an already-ordered set. Here, &lsquo;n&rsquo; is the total number of objects available for selection, and &lsquo;r&rsquo; is how many are actually chosen.</p></div>
 </div>
 
-<div class="page page-break">
+<div class="page page-break tight tight2">
 <span class="pill">CONCEPT</span>
 <p class="section-header">Four Classifications of Permutation <span style="float:right;">&#9733;&#9733;&#9733; HIGHEST-VALUE TOPIC</span></p>
 <p class="body">Permutations split into four distinct cases, and it is essential to recognise which one a given problem actually calls for.</p>
@@ -1310,7 +1337,7 @@ tfoot { display: table-footer-group; }
 
 <!-- ============ 2.4 QUADRATIC EQUATIONS ============ -->
 <!-- © Dhanya Varia -->
-<div class="page page-break">
+<div class="page page-break tight">
 <span class="pill">CONCEPT</span>
 <p class="section-header">2.4 Quadratic Equations — Definitions and the Discriminant <span style="float:right;">&#9733;&#9733;&#9733; HIGHEST-VALUE TOPIC</span></p>
 <div class="definition-block"><p class="definition-text">A <strong>Quadratic Expression</strong> takes the form ax&sup2;+bx+c, where a, b, and c are constants and the highest power (the &ldquo;Degree&rdquo;) of the variable x is 2. Any EQUATION of the form ax&sup2;+bx+c=0 is a <strong>Quadratic Equation</strong>. For example, in 15x&sup2;+28x+13=0, we have a=15, b=28, c=13.</p></div>
@@ -1417,7 +1444,7 @@ tfoot { display: table-footer-group; }
   <p class="section-header">Module Learning Objectives</p>
   <p class="body">Per ICMAI, after studying this Module the student will be able to: understand the basic concept of a function and identify its domain and range; apply the ideas of limit, continuity, and differentiation; derive revenue and cost functions and their marginal (derivative) forms; and use optimization techniques to locate maximum or minimum points relevant to business decisions.</p>
 </div>
-<div class="concept-block avoid-break">
+<div class="concept-block">
   <p class="section-header">Glossary — Terms Worth Knowing Cold</p>
   <table class="comparison-table" style="font-size:8.3pt;">
     <thead><tr><th style="width:26%;">Term</th><th>Plain meaning</th></tr></thead><tbody>
@@ -1468,7 +1495,7 @@ tfoot { display: table-footer-group; }
 </div>
 </div>
 
-<div class="page page-break">
+<div class="page page-break tight">
 <span class="pill">CONCEPT</span>
 <p class="section-header">Domain, Range, and the Absolute Value <span style="float:right;">&#9733;&#9733;&#9733; HIGH</span></p>
 <div class="definition-block"><p class="definition-text">The <strong>Domain</strong> of a function is the full set of values the independent variable x may take. The <strong>Range</strong> is the corresponding set of values the dependent variable y actually produces. For y=x&sup2;, the pairs (1,1), (2,4), (3,9) show the domain as {&hellip;,&minus;2,&minus;1,0,1,2,3,&hellip;} and the range as {0,1,4,9,&hellip;}.</p></div>
@@ -1731,7 +1758,7 @@ tfoot { display: table-footer-group; }
 <div class="revision-strip">
 <p class="title-bar">MODULE 3 IN NINETY SECONDS &mdash; CALCULUS</p>
 <div class="facts">
-<p>&#9312; A function maps every x in its domain to exactly one (or more, if multi-valued) y. Nine types: constant, single/multi-valued, explicit/implicit, odd/even, inverse, polynomial, rational/irrational/algebraic.</p>
+<p>&#9312; A function maps every x in its domain to exactly one (or more, if multi-valued) y. Nine types: constant, single/multi-valued, explicit/implicit, odd/even, inverse, polynomial, rational/&#8203;irrational/&#8203;algebraic.</p>
 <p>&#9313; Limit: what f(x) approaches as x&rarr;a, even if f(x) isn't defined AT a. Three evaluation methods: factorisation, substitution, rationalisation.</p>
 <p>&#9314; Continuity at x=a needs left-limit = right-limit = f(a), all three equal.</p>
 <p>&#9315; Derivative = lim<sub>h&rarr;0</sub>[f(x+h)&minus;f(x)]/h. Eleven rules: power, negative power, e&#739;, a&#739;, ln, log_a, constant, sum/difference, product, quotient, chain.</p>
@@ -1978,7 +2005,7 @@ tfoot { display: table-footer-group; }
 <div class="revision-strip">
 <p class="title-bar">MODULE 4 IN NINETY SECONDS &mdash; STATISTICAL REPRESENTATION</p>
 <div class="facts">
-<p>&#9312; Three diagram types: line (trend over time), bar (6 variants — simple/multiple/component/percentage/deviation/broken), pie (angle = value/total &times; 360&deg;).</p>
+<p>&#9312; Three diagram types: line (trend over time), bar (6 variants — simple/&#8203;multiple/&#8203;component/&#8203;percentage/&#8203;deviation/&#8203;broken), pie (angle = value/total &times; 360&deg;).</p>
 <p>&#9313; Frequency distribution: {x,f} pairs, built via tally marks. Discrete (each value tallied) vs Grouped/Continuous (values tallied into class intervals).</p>
 <p>&#9314; Class boundary = limit &plusmn; half the inter-class gap. Class mark = (lower+upper)/2. Inclusive series (0&ndash;5, 6&ndash;10) vs Exclusive series (10&ndash;15, 15&ndash;20, boundary belongs to the higher class).</p>
 <p>&#9315; Relative frequency = class/total. Percentage frequency = that &times;100. Frequency density = class frequency &divide; class width — use density whenever class widths are UNEQUAL.</p>
@@ -2021,7 +2048,7 @@ tfoot { display: table-footer-group; }
 
 <!-- ============ 5.1 ARITHMETIC MEAN ============ -->
 <!-- © Dhanya Varia -->
-<div class="page page-break">
+<div class="page page-break tight">
 <span class="pill">CONCEPT</span>
 <p class="section-header">5.1 Measures of Central Tendency — the Arithmetic Mean <span style="float:right;">&#9733;&#9733;&#9733; HIGHEST-VALUE TOPIC</span></p>
 <div class="definition-block"><p class="definition-text">Measures of central tendency split into two families: MATHEMATICAL measures (Arithmetic Mean, Geometric Mean, Harmonic Mean), calculated directly from every value, and POSITIONAL measures (Median, Mode), determined by a value&rsquo;s position or frequency in the data rather than by calculation on every value.</p></div>
@@ -2244,7 +2271,7 @@ tfoot { display: table-footer-group; }
 <p class="body">Range has four limitations worth knowing: it is easy to understand, but limited in usefulness; it uses ONLY the highest and lowest values, ignoring everything in between; being based on just two values, it can change drastically from one sample to the next; and it simply does not exist for an open-ended distribution.</p>
 </div>
 
-<div class="page page-break">
+<div class="page page-break tight">
 <span class="pill">FORMULA</span>
 <p class="section-header">Quartile Deviation — Splitting the Data Into Four <span style="float:right;">&#9733;&#9733;&#9733; HIGH</span></p>
 <div class="definition-block"><p class="definition-text">Arranging data in order and splitting it into four EQUAL parts gives three cut points: Q&#8321; (first quartile, 25% of the way through), Q&#8322; (second quartile, the Median itself), and Q&#8323; (third quartile, 75% of the way through). The <strong>Interquartile Range</strong> = Q&#8323;&minus;Q&#8321; captures the spread of the MIDDLE half of the data.</p></div>
@@ -2306,8 +2333,8 @@ tfoot { display: table-footer-group; }
 <div class="revision-strip">
 <p class="title-bar">5.1 &amp; START OF 5.2 IN NINETY SECONDS &mdash; AVERAGES AND FIRST DISPERSION MEASURES</p>
 <div class="facts">
-<p>&#9312; AM: 3 methods (direct/short-cut/step-deviation) for individual AND grouped data. Combined mean pools sub-group means; weighted mean weights unequal-importance values.</p>
-<p>&#9313; GM (via logs) for ratios/growth/index-numbers; never exceeds AM. HM (reciprocal-based) for rates like speed/price-per-unit.</p>
+<p>&#9312; AM: 3 methods (direct/&#8203;short-cut/&#8203;step-deviation) for individual AND grouped data. Combined mean pools sub-group means; weighted mean weights unequal-importance values.</p>
+<p>&#9313; GM (via logs) for ratios/&#8203;growth/&#8203;index-numbers; never exceeds AM. HM (reciprocal-based) for rates like speed/price-per-unit.</p>
 <p>&#9314; Median: (n+1)/2th item (odd) or average of two middle items (even), individual series; grouped data uses either the less-than OR more-than cumulative-frequency formula — both agree.</p>
 <p>&#9315; Mode: most frequent value; grouped formula uses f&#8320;,f&#8321;,f&#8322;. Mean&minus;Mode=3(Mean&minus;Median) — solves for any one measure from the other two, vital for open-ended classes.</p>
 <p>&#9316; Dispersion = scatter around the centre; less dispersion means a MORE reliable central tendency. Range=Highest&minus;Lowest. QD=(Q&#8323;&minus;Q&#8321;)/2 — both are 2-value &ldquo;distance&rdquo; measures.</p>
@@ -2383,7 +2410,7 @@ tfoot { display: table-footer-group; }
 <span class="pill">CONCEPT</span>
 <p class="section-header">5.4 Coefficient of Variation <span style="float:right;">&#9733;&#9733;&#9733; HIGHEST-VALUE TOPIC</span></p>
 <div class="definition-block"><p class="definition-text">The <strong>Coefficient of Variation</strong> (C.V.) is the RELATIVE measure of dispersion based on Standard Deviation, expressed as a pure percentage with no units attached &mdash; which is exactly what makes it suitable for comparing the variability of two or more series, even when they&rsquo;re measured in completely different units or scales.</p></div>
-<div class="formula-box"><p class="formula-text">C.V. = (Standard Deviation / Mean) &times; 100</p><hr class="var-divider"><p class="formula-vars">A HIGHER C.V. means MORE variability in that data series. Since C.V. is unit-free, it is the correct tool whenever a question asks &ldquo;which of these two is more variable/consistent/stable,&rdquo; especially when the two series are on different scales.</p></div>
+<div class="formula-box"><p class="formula-text">C.V. = (Standard Deviation / Mean) &times; 100</p><hr class="var-divider"><p class="formula-vars">A HIGHER C.V. means MORE variability in that data series. Since C.V. is unit-free, it is the correct tool whenever a question asks &ldquo;which of these two is more variable/&#8203;consistent/&#8203;stable,&rdquo; especially when the two series are on different scales.</p></div>
 <div class="worked-example avoid-break">
 <p class="ex-label">Comparing variability across two differently-scaled series (independently re-verified)</p>
 <p class="ex-step">Monthly electricity charges average &#8377;2,400 with S.D. &#8377;120. Monthly direct wages average &#8377;42,000 with S.D. &#8377;1,200. Which is more variable?</p>
@@ -2466,7 +2493,7 @@ tfoot { display: table-footer-group; }
 <div class="facts">
 <p>&#9312; Central tendency: AM (3 methods), GM (ratios/growth), HM (rates), Median (positional, odd/even/grouped), Mode (most frequent; Mean&minus;Mode=3(Mean&minus;Median)).</p>
 <p>&#9313; Dispersion, distance measures: Range=Highest&minus;Lowest. QD=(Q&#8323;&minus;Q&#8321;)/2 — both use only 2 values.</p>
-<p>&#9314; Dispersion, average-deviation measures: MD=&Sigma;|X&minus;A|/n (A=Mean/Median/Mode). SD=&radic;[&Sigma;(X&minus;Mean)&sup2;/N], the most important measure — 3 grouped methods (direct/shortcut/step-deviation).</p>
+<p>&#9314; Dispersion, average-deviation measures: MD=&Sigma;|X&minus;A|/n (A=Mean/Median/Mode). SD=&radic;[&Sigma;(X&minus;Mean)&sup2;/N], the most important measure — 3 grouped methods (direct/&#8203;shortcut/&#8203;step-deviation).</p>
 <p>&#9315; QD:MD:SD = &#8532;:&#8536;:1. CV=SD/Mean&times;100 — the ONLY unit-free measure, essential for comparing differently-scaled distributions.</p>
 <p>&#9316; Skewness: Mean=Median=Mode → symmetrical. Mode&lt;Median&lt;Mean → positive skew (tail right). Mode&gt;Median&gt;Mean → negative skew (tail left).</p>
 <p>&#9317; Karl Pearson's Sk=(Mean&minus;Mode)/SD, most-used in practice. Bowley's Sk=(Q&#8323;+Q&#8321;&minus;2Md)/(Q&#8323;&minus;Q&#8321;), ranges &plusmn;1. CV and Skewness can diverge — always check BOTH independently, never assume one implies the other.</p>
@@ -2556,7 +2583,7 @@ tfoot { display: table-footer-group; }
 
 <!-- ============ 6.2 KARL PEARSON COEFFICIENT ============ -->
 <!-- © Dhanya Varia -->
-<div class="page page-break">
+<div class="page page-break tight">
 <span class="pill">FORMULA</span>
 <p class="section-header">6.2 Karl Pearson's Coefficient of Correlation <span style="float:right;">&#9733;&#9733;&#9733; HIGHEST-VALUE TOPIC</span></p>
 <div class="definition-block"><p class="definition-text">Scatter diagrams and graphic methods are too subjective for precise work &mdash; in practice, linear correlation is measured through <strong>Karl Pearson&rsquo;s Method</strong> (also called the Covariance Method).</p></div>
@@ -2613,7 +2640,7 @@ tfoot { display: table-footer-group; }
 
 <!-- ============ RANK CORRELATION ============ -->
 <!-- © Dhanya Varia -->
-<div class="page page-break">
+<div class="page page-break tight">
 <span class="pill">FORMULA</span>
 <p class="section-header">Rank Correlation (Spearman's Method) <span style="float:right;">&#9733;&#9733;&#9733; HIGHEST-VALUE TOPIC</span></p>
 <div class="definition-block"><p class="definition-text">Devised by Charles Spearman in 1904, <strong>Rank Correlation</strong> is based on the RANKS of items rather than their actual values &mdash; ideal when raw values aren&rsquo;t available, only rankings, or when comparing an abstract quality (like beauty, or honesty) that can only be ranked, not measured directly.</p></div>
@@ -2902,7 +2929,7 @@ tfoot { display: table-footer-group; }
 
 <!-- ============ MULTIPLICATION THEOREM ============ -->
 <!-- © Dhanya Varia -->
-<div class="page page-break">
+<div class="page page-break tight">
 <span class="pill">FORMULA</span>
 <p class="section-header">The Multiplication Theorem of Probability <span style="float:right;">&#9733;&#9733;&#9733; HIGHEST-VALUE TOPIC</span></p>
 <div class="definition-block"><p class="definition-text">Where the Addition Theorem handles &ldquo;OR,&rdquo; the <strong>Multiplication Theorem</strong> handles &ldquo;AND&rdquo; &mdash; the chance of two or more events happening in SUCCESSION.</p></div>
@@ -3035,7 +3062,7 @@ tfoot { display: table-footer-group; }
   <p class="module-title">Index Numbers and Time Series</p>
   <div class="rule"></div>
   <p class="overview">Two sub-topics closing out the paper: Index Numbers, for measuring how prices, quantities, or values have changed between two periods; and Time Series, for decomposing data collected over time into its underlying trend, seasonal, cyclical, and irregular components.</p>
-  <p class="must-not-skip">MUST NOT SKIP: the Laspeyres/Paasche/Fisher/Bowley formulas and how they differ, and the Moving Average method for calculating trend.</p>
+  <p class="must-not-skip">MUST NOT SKIP: the Laspeyres/&#8203;Paasche/&#8203;Fisher/&#8203;Bowley formulas and how they differ, and the Moving Average method for calculating trend.</p>
   <span class="topic-badge">8.1&ndash;8.2</span>
 </div>
 
@@ -3216,7 +3243,7 @@ tfoot { display: table-footer-group; }
 <span class="pill">FORMULA</span>
 <p class="section-header">Moving Average — Smoothing Out the Fluctuations <span style="float:right;">&#9733;&#9733;&#9733; HIGHEST-VALUE TOPIC</span></p>
 <div class="definition-block"><p class="definition-text">A <strong>Moving Average</strong> smooths a time series to reveal its Trend, by sliding an arithmetic mean of &lsquo;n&rsquo; consecutive values through the whole series. Choosing n depends on the data&rsquo;s natural cycle &mdash; 4 for quarterly data, 7 for daily (a week), or found via trial and error otherwise. Each computed average is positioned against the MIDDLE year of its own group.</p></div>
-<div class="worked-example avoid-break">
+<div class="worked-example">
 <p class="ex-label">Complete 7-year moving average, 26 years of sales data (independently re-verified)</p>
 <p class="ex-step">Sales (&#8377; million), 1988&ndash;2013. The first 7-year total (1988&ndash;1994): 1+2+3+4+5+4+3=22, average=22/7=3.143, positioned at the group's middle year, 1991. The next group shifts forward by one year (1989&ndash;1995), and so on through the last group (2007&ndash;2013).</p>
 <table class="comparison-table" style="font-size:8pt;">
@@ -3239,7 +3266,7 @@ tfoot { display: table-footer-group; }
 </div>
 </div>
 
-<div class="page page-break">
+<div class="page page-break tight">
 <span class="pill">FORMULA</span>
 <p class="section-header">Even-Numbered Moving Averages — the Centering Step <span style="float:right;">&#9733;&#9733;&#9733; HIGHEST-VALUE TOPIC</span></p>
 <div class="definition-block"><p class="definition-text">With an ODD n (like 7), each group has one natural middle year. With an EVEN n (like 4 or 6), a group has no single middle year &mdash; its moving total sits BETWEEN two years instead. Fixing this needs one extra step: <strong>Centering</strong>, averaging each pair of adjacent moving averages so the result lines up with an actual year again.</p></div>
@@ -3278,7 +3305,7 @@ tfoot { display: table-footer-group; }
   </tbody></table>
 
   <p class="section-header" style="font-size:13pt;margin-top:5mm;">Section B &middot; Fundamentals of Business Statistics (60%)</p>
-  <table class="comparison-table avoid-break">
+  <table class="comparison-table">
     <thead><tr><th style="width:22%;">Module</th><th>The Ladder</th></tr></thead><tbody>
     <tr><td><strong>4. Statistical Representation of Data (5%)</strong></td><td>Pie-chart angle = (component value/total value)&times;360&deg; &middot; Class boundary = limit &plusmn; &frac12; inter-class gap &middot; Class mark = (Lower+Upper)/2 &middot; Relative frequency = class&divide;total; Percentage frequency = that&times;100; Frequency density = class frequency&divide;class width (use whenever widths are UNEQUAL) &middot; Histogram: adjacent bars, no gaps, height=frequency (equal widths) or density (unequal) &middot; Ogive: &ldquo;less-than&rdquo; rises 0&rarr;N, &ldquo;more-than&rdquo; falls N&rarr;0 &mdash; their crossing point's x-value is the Median.</td></tr>
     <tr><td><strong>5. Central Tendency &amp; Dispersion (15%)</strong></td><td>AM: X&#772;=&Sigma;X/N (direct), A+&Sigma;dx/N (short-cut), A+(&Sigma;dx&prime;/N)&times;i (step-deviation) &middot; GM=Antilog[&Sigma;(logX)/n]; HM=n/&Sigma;(1/X) &middot; Median (grouped): Md=l&#8321;+[(N/2&minus;C)/f]&times;h &middot; Mode (grouped): M&#8320;=l&#8321;+[(f&#8320;&minus;f&#8321;)/(2f&#8320;&minus;f&#8321;&minus;f&#8322;)]&times;h &middot; Mean&minus;Mode=3(Mean&minus;Median) &middot; Range=Highest&minus;Lowest &middot; Q.D.=(Q&#8323;&minus;Q&#8321;)/2 &middot; M.D.=&Sigma;|X&minus;A|/n (A=Mean/Median/Mode) &middot; S.D.=&radic;[&Sigma;(X&minus;Mean)&sup2;/N] &middot; QD:MD:SD = &#8532;:&#8536;:1 &middot; C.V.=(S.D./Mean)&times;100 &middot; Karl Pearson's Sk=(Mean&minus;Mode)/S.D.; Bowley's Sk=(Q&#8323;+Q&#8321;&minus;2Md)/(Q&#8323;&minus;Q&#8321;).</td></tr>
@@ -3331,17 +3358,17 @@ tfoot { display: table-footer-group; }
 <!-- © Dhanya Varia -->
 <div class="page page-break">
   <div class="cover-band-dark" style="font-size:14pt;">The Last 48 Hours &mdash; Revision Plan for This Document</div>
-  <table class="comparison-table avoid-break" style="margin-top:5mm;">
+  <table class="comparison-table" style="margin-top:5mm;">
     <thead><tr><th style="width:20%;">When</th><th>What to do</th></tr></thead><tbody>
-    <tr><td>48 hours out</td><td>Re-read Modules 2 and 1 end to end &mdash; Algebra (20%, the single largest module: sets, indices/logarithms, permutation &amp; combination, quadratic equations) and Arithmetic (15%: ratios/variations/proportions, time value of money, AP/GP, time &amp; distance). Together these are 35% of the paper. Re-attempt every worked example cold, covering the solution first.</td></tr>
+    <tr><td>48 hours out</td><td>Re-read Modules 2 and 1 end to end &mdash; Algebra (20%, the single largest module: sets, indices/logarithms, permutation &amp; combination, quadratic equations) and Arithmetic (15%: ratios/&#8203;variations/&#8203;proportions, time value of money, AP/GP, time &amp; distance). Together these are 35% of the paper. Re-attempt every worked example cold, covering the solution first.</td></tr>
     <tr><td>36 hours out</td><td>Re-read Modules 5, 6, and 7 &mdash; Central Tendency &amp; Dispersion, Correlation &amp; Regression, and Probability, each 15% and together the statistical core of the paper (45% combined). Rehearse the formula-heavy comparison tables out loud: Karl Pearson's vs Bowley's skewness, b<sub>yx</sub> vs b<sub>xy</sub>, the Addition vs Multiplication theorem.</td></tr>
-    <tr><td>24 hours out</td><td>Sweep Module 8 (Index Numbers &amp; Time Series, 10%) and Module 3 (Calculus, 5%) &mdash; lighter modules, but full marks if their formula tables are drilled cold: Laspeyres/Paasche/Fisher/Bowley, and MR=MC with the first/second-derivative test.</td></tr>
+    <tr><td>24 hours out</td><td>Sweep Module 8 (Index Numbers &amp; Time Series, 10%) and Module 3 (Calculus, 5%) &mdash; lighter modules, but full marks if their formula tables are drilled cold: Laspeyres/&#8203;Paasche/&#8203;Fisher/&#8203;Bowley, and MR=MC with the first/second-derivative test.</td></tr>
     <tr><td>18 hours out</td><td>Sweep Module 4 (Statistical Representation of Data, 5%) &mdash; tied with Module 3 for the lightest module in the paper, and the cheapest marks per minute: the pie-chart angle formula, class boundary/class mark, frequency density for unequal widths, and the ogive-crossing-equals-median shortcut.</td></tr>
     <tr><td>6 hours out</td><td>Read The Final Ladder above, start to finish, once, slowly.</td></tr>
     <tr><td>2 hours out</td><td>Read the Master Trap List above, start to finish, once, slowly. Nothing new after this point.</td></tr>
     <tr><td>In the hall</td><td>No negative marking &mdash; attempt every question. Skim the full paper first, then work the modules you feel surest of before the heavier Algebra and Statistics numericals. Open every numerical by naming the formula or theorem it needs before starting the calculation &mdash; it catches a wrong setup before it wastes minutes.</td></tr>
   </tbody></table>
-  <p class="body" style="margin-top:4mm;">Weight-based priority if time runs out anywhere in this plan: Module 2 (20%, Algebra) is never the one you cut &mdash; it alone outweighs Modules 3 and 4 combined. Modules 1, 5, 6, and 7 (15% each, 60% combined) come next, roughly interchangeable in urgency. Module 8 (10%) and Module 4 (5%) reward memorising a handful of formulas over broad reading &mdash; a focused pass on just the Laspeyres/Paasche/Fisher/Bowley table, or the pie-chart angle formula, recovers most of their marks fast. Module 3 (5%, Calculus) is tied with Module 4 as the smallest module in the paper, and the fastest to shore up, since it is only three formula families: differentiation rules, MR=MC, and the first/second-derivative test.</p>
+  <p class="body" style="margin-top:4mm;">Weight-based priority if time runs out anywhere in this plan: Module 2 (20%, Algebra) is never the one you cut &mdash; it alone outweighs Modules 3 and 4 combined. Modules 1, 5, 6, and 7 (15% each, 60% combined) come next, roughly interchangeable in urgency. Module 8 (10%) and Module 4 (5%) reward memorising a handful of formulas over broad reading &mdash; a focused pass on just the Laspeyres/&#8203;Paasche/&#8203;Fisher/&#8203;Bowley table, or the pie-chart angle formula, recovers most of their marks fast. Module 3 (5%, Calculus) is tied with Module 4 as the smallest module in the paper, and the fastest to shore up, since it is only three formula families: differentiation rules, MR=MC, and the first/second-derivative test.</p>
   <p class="body" style="font-size:9.5pt;color:var(--gray);margin-top:3mm;">This page is exam strategy, not syllabus content &mdash; every fact it points to lives in the verified module pages above, condensed strictly from ICMAI's own Paper 3 Study Notes.</p>
 </div>
 

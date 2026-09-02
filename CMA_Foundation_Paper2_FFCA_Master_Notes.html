@@ -50,7 +50,7 @@
 }
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
 @page { size: A4; margin: 22mm 18mm 20mm 24mm; @top-center { content: "ICMAI · CMA FOUNDATION · PAPER 2 — FFCA · MASTER NOTES"; font-family: "Cormorant Garamond", Georgia, serif; font-weight: 300; font-size: 8pt; letter-spacing: 0.15em; text-transform: uppercase; color: #6B7280; } @bottom-center { content: "CMA Foundation · Fundamentals of Financial & Cost Accounting · Compiled & Adapted by Dhanya Varia"; font-family: "Cormorant Garamond", Georgia, serif; font-weight: 300; font-size: 7.5pt; color: #6B7280; } @bottom-left { content: "© Dhanya Varia"; font-family: "EB Garamond", serif; font-size: 7pt; font-style: italic; color: #999999; } @bottom-right { content: counter(page); font-family: "Cormorant Garamond", Georgia, serif; font-weight: 600; font-size: 9pt; color: #1A5C38; } }
-body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color: var(--ink); background: var(--white); }
+body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color: var(--ink); background: var(--white); overflow-wrap: break-word; }
 .page { position: relative; min-height: 1mm; }
 
 .page-break { page-break-before: always; break-before: page; }
@@ -60,7 +60,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
 .cover-title { font-family: var(--font-display); font-weight: 400; font-size: 48pt; letter-spacing: 0.08em; text-transform: uppercase; color: var(--green-deep); line-height: 1.15; display: block; text-align: center; }
 .cover-subtitle { font-family: var(--font-head); font-weight: 300; font-size: 13pt; letter-spacing: 0.06em; color: var(--green-mid); text-align: center; }
 .module-title { font-family: var(--font-display); font-weight: 400; font-size: 38pt; letter-spacing: 0.06em; text-transform: uppercase; text-align: center; color: var(--white); line-height: 1.2; }
-.section-header { font-family: var(--font-head); font-weight: 600; font-size: 16pt; color: var(--green-deep); margin: 8mm 0 4mm; letter-spacing: 0.03em; overflow: hidden; }
+.section-header { font-family: var(--font-head); font-weight: 600; font-size: 16pt; color: var(--green-deep); margin: 8mm 0 4mm; letter-spacing: 0.03em; overflow: hidden; page-break-after: avoid; break-after: avoid; }
 .body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color: var(--ink); }
 .numeric { font-family: var(--font-mono); font-size: 10pt; line-height: 1.5; }
 .table-header { font-family: var(--font-head); font-weight: 600; font-size: 10pt; text-transform: uppercase; letter-spacing: 0.05em; color: var(--white); background: var(--green-deep); }
@@ -81,7 +81,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
 .worked-example .ex-answer { font-family: var(--font-body); font-weight: 600; font-size: 10.5pt; color: var(--green-deep); margin-top: 4px; padding-top: 4px; border-top: 1px solid var(--border-light); }
 .shortcut-box { border: 1px solid var(--green-mid); background: var(--green-faint); padding: 10px 16px; margin: 10px 0; }
 .shortcut-box .shortcut-label { font-family: var(--font-head); font-weight: 700; color: var(--green-mid); }
-.trap-block { border-left: 4px solid var(--amber); background: var(--amber-bg); padding: 12px 16px; margin: 12px 0; }
+.trap-block { border-left: 4px solid var(--amber); background: var(--amber-bg); padding: 12px 16px; margin: 12px 0; page-break-inside: avoid; break-inside: avoid; }
 .trap-block .trap-label { font-family: var(--font-head); font-weight: 700; font-size: 11pt; color: var(--amber); margin-bottom: 8px; }
 .trap-block .trap-row { font-family: var(--font-body); font-size: 10.5pt; margin: 4px 0; }
 .trap-block .trap-row strong { font-family: var(--font-head); font-weight: 600; color: var(--ink); }
@@ -150,11 +150,12 @@ tfoot { display: table-footer-group; }
 .answer-table td { font-size: 9.5pt; }
 .screen-watermark { position: fixed; bottom: 10px; right: 14px; background: rgba(255,255,255,0.88); border: 1px solid var(--green-deep); border-radius: 4px; padding: 4px 10px; font-family: var(--font-head); font-size: 8pt; font-style: italic; color: var(--green-deep); z-index: 9999; box-shadow: 0 1px 4px rgba(0,0,0,0.12); }
 @media print { .screen-watermark { display: none; } }
-.print-watermark { position: fixed; bottom: 13mm; right: 4mm; font-family: "EB Garamond", serif; font-weight: 500; font-style: italic; font-size: 10.5pt; color: var(--green-deep); opacity: 0.32; pointer-events: none; letter-spacing: 0.03em; white-space: nowrap; z-index: 1; }
+
+.page.page-break > *:first-child { margin-top: 0; }
 </style>
 </head>
 <body>
-<div class="print-watermark">Dhanya Varia</div>
+
 <div class="screen-watermark">&copy; Compiled &amp; Adapted by Dhanya Varia</div>
 <div id="running-header">ICMAI · CMA FOUNDATION · PAPER 2 — FFCA · MASTER NOTES</div>
 <div id="running-footer">CMA Foundation · Fundamentals of Financial &amp; Cost Accounting &middot; <em>Compiled &amp; Adapted by Dhanya Varia</em></div>
@@ -276,7 +277,7 @@ tfoot { display: table-footer-group; }
     <tr><td>2. Accounting for Special Transactions</td><td>15%</td><td>~7&ndash;8</td><td>&#9733;&#9733;</td></tr>
     <tr><td>3. Preparation of Final Accounts</td><td>25%</td><td>~12&ndash;13</td><td>&#9733;&#9733;&#9733;</td></tr>
     <tr><td>B &mdash; Cost Accounting (30%)</td><td>4. Fundamentals of Cost Accounting</td><td>30%</td><td>~15</td><td>&#9733;&#9733;&#9733;</td></tr>
-    <tr class="exam-trick"><td colspan="5">EXAM TRICK: Module 1 alone equals Modules 2 and 3 combined — every later module (final accounts, cost sheets) leans on Module 1's journal/ledger/trial-balance mechanics, so weak fundamentals cost marks twice over.</td></tr>
+    <tr class="exam-trick"><td colspan="5">EXAM TRICK: Module 1 alone equals Modules 2 and 3 combined — every later module (final accounts, cost sheets) leans on Module 1's journal/&#8203;ledger/&#8203;trial-balance mechanics, so weak fundamentals cost marks twice over.</td></tr>
   </tbody></table>
   <p class="body" style="margin-top:5mm;">This is a procedure paper: correctly identifying which book an item is first recorded in, which side of a ledger it is posted to, and which formula applies, matters more than lengthy reasoning. Module 3 (Final Accounts) is the direct output of Module 1's mechanics; Module 4 (Cost Accounting) is conceptually separate from Sections A but shares the same "compute it correctly, format it correctly" testing style.</p>
 </div>
@@ -373,7 +374,7 @@ tfoot { display: table-footer-group; }
   <p class="body">After studying this module, you will be able to: understand the four frameworks of accounting and the various accounting concepts and conventions; distinguish Capital and Revenue Transactions; understand the Accounting Cycle and its stages; record transactions in Journal and post them to Ledgers; prepare a Cash Book, Bank Book and Bank Reconciliation Statement; prepare and use a Trial Balance; pass adjustment and rectification entries before finalisation of accounts; and account for Depreciation and Provision for Doubtful Debts.</p>
 </div>
 
-<div class="glossary-block glossary-lead avoid-break">
+<div class="glossary-block glossary-lead">
   <p class="section-header" style="margin-top:6px;">Glossary — Module 1, in Plain Words</p>
   <p class="body" style="margin-bottom:4px;">The technical terms and formula-shorthand used throughout this module, explained simply.</p>
   <table class="glossary-table">
@@ -396,7 +397,7 @@ tfoot { display: table-footer-group; }
   </table>
 </div>
 
-<div class="glossary-block glossary-continue avoid-break">
+<div class="glossary-block glossary-continue">
   <table class="glossary-table">
     <tr><td class="term">Contra Entry</td><td>A transaction (e.g. cash deposited into bank) posted on both sides of the same Double Column Cash Book, marked "C" in the L.F. column.</td></tr>
     <tr><td class="term">Imprest System</td><td>A petty-cash system where the cashier is reimbursed exactly what was spent, restoring the float to its fixed starting amount each period.</td></tr>
@@ -480,7 +481,7 @@ tfoot { display: table-footer-group; }
 <!-- ============ 1.1 FOUR FRAMEWORKS & FORMS OF ORGANISATION ============ -->
 <!-- © Dhanya Varia -->
 <div class="page page-break">
-<div class="concept-block avoid-break">
+<div class="concept-block">
   <span class="pill">CONCEPT</span>
   <p class="section-header">1.1 Four Frameworks of Accounting &amp; Forms of Organisation <span style="float:right">&#9733;&#9733; MED</span></p>
   <div class="definition-block"><p class="definition-text">A "framework" is a common set of rules and guidelines used to measure, recognise, present and disclose the information in an entity's financial statements.</p></div>
@@ -495,7 +496,7 @@ tfoot { display: table-footer-group; }
   <p class="body"><strong>Functions of Accounting:</strong> identification &rarr; measurement &rarr; recording &rarr; classifying/summarising &rarr; obtaining results/financial position &rarr; analysing/interpreting &rarr; communicating to users.</p>
 </div>
 
-<div class="concept-block avoid-break">
+<div class="concept-block">
   <p class="section-header">The Four Frameworks <span style="float:right">&#9733;&#9733;&#9733; HIGH</span></p>
   <ul class="point-list">
   <li><strong>(a) Conceptual Framework</strong> — a body of interrelated objectives (goals of financial reporting) and fundamentals (underlying concepts). Guides preparers on selecting, recognising and measuring transactions, and is used when no accounting standard applies or a standard allows a choice.</li>
@@ -562,7 +563,7 @@ tfoot { display: table-footer-group; }
   <p class="body"><strong>Why distinguish Capital from Revenue?</strong> It ensures proper classification of income/liability and expense/asset; helps determine profitability via correct income/expense identification; and helps assess financial position via correct asset/liability identification. Capital transactions have a long-term effect; Revenue transactions have a short-term effect. Each can be a Receipt or an Expenditure/Payment.</p>
 </div>
 
-<div class="concept-block avoid-break">
+<div class="concept-block">
   <p class="section-header">1.3.1 Capital vs. Revenue Expenditure</p>
   <table class="comparison-table avoid-break">
     <thead><tr><th>Capital Expenditure</th><th>Revenue Expenditure</th></tr></thead><tbody>
@@ -612,7 +613,7 @@ tfoot { display: table-footer-group; }
 </ul>
 </div>
 
-<div class="concept-block avoid-break">
+<div class="concept-block">
   <p class="section-header">Deferred Revenue Expenditure</p>
   <div class="definition-block"><p class="definition-text">Expenditure for which payment has been made or a liability incurred, but carried forward on the presumption it will benefit a subsequent period or periods (ICAI's Guidance Note on Terms used in Financial Statements) — also called Capitalised Revenue Expenditure.</p></div>
   <p class="body">Examples: heavy advertisement expenditure before launching a new product; product development expenses. Only the portion representing benefits consumed during the year is written off (debited to Income Statement); the unwritten-off portion appears as an asset in the Balance Sheet.</p>
@@ -624,7 +625,7 @@ tfoot { display: table-footer-group; }
   </div>
 </div>
 
-<div class="concept-block avoid-break">
+<div class="concept-block">
   <p class="section-header">1.3.2 Capital vs. Revenue Receipts, Profits and Losses</p>
   <table class="comparison-table avoid-break">
     <thead><tr><th>Capital Receipt</th><th>Revenue Receipt</th></tr></thead><tbody>
@@ -649,7 +650,7 @@ tfoot { display: table-footer-group; }
 <!-- ============ 1.4 ACCOUNTING CYCLE, ANALYSIS OF TRANSACTIONS ============ -->
 <!-- © Dhanya Varia -->
 <div class="page page-break">
-<div class="concept-block avoid-break">
+<div class="concept-block">
   <span class="pill">CONCEPT</span>
   <p class="section-header">1.4 Accounting Cycle, Analysis of Transaction, etc. <span style="float:right">&#9733;&#9733;&#9733; HIGH</span></p>
   <div class="definition-block"><p class="definition-text">The Accounting Cycle is the holistic process of recording and processing all financial transactions of a company, from occurrence to representation in the financial statements to closing the accounts.</p></div>
@@ -666,7 +667,7 @@ tfoot { display: table-footer-group; }
 </ol>
 </div>
 
-<div class="concept-block avoid-break">
+<div class="concept-block">
   <p class="section-header">Chart of Accounts (COA) &amp; Codification</p>
   <div class="definition-block"><p class="definition-text">A Chart of Accounts is the numbered, indexed list of every account in the general ledger — the foundation of financial reporting, developed for effective management and retrieval of accounting records as complexity grows.</p></div>
   <p class="body">Setting up a Chart of Accounts follows three steps.</p>
@@ -700,7 +701,7 @@ tfoot { display: table-footer-group; }
   <p class="body">Assets = valuable resources owned/controlled (cash, receivables, fixed assets, inventory). Liabilities = obligations to external stakeholders. Equity = owner's net claim on assets. The equation lies at the core of double-entry — it stays in balance before and after every transaction.</p>
 </div>
 
-<div class="concept-block avoid-break">
+<div class="concept-block">
   <p class="section-header">1.4.2.2 Double Entry System, Accounts, and the Two Rule Approaches</p>
   <p class="body">"Debit" (Dr.) is from Latin <em>debitum</em> ("what is due"); "Credit" (Cr.) from <em>credere</em> ("what is trusted"). Every transaction has a two-fold aspect — one party gives, another receives — recorded as an equal Debit and Credit.</p>
 <table class="comparison-table avoid-break">
@@ -746,7 +747,7 @@ tfoot { display: table-footer-group; }
 <!-- ============ 1.5 JOURNAL AND LEDGER ============ -->
 <!-- © Dhanya Varia -->
 <div class="page page-break">
-<div class="concept-block avoid-break">
+<div class="concept-block">
   <span class="pill">CONCEPT</span>
   <p class="section-header">1.5 Journal and Ledger <span style="float:right">&#9733;&#9733;&#9733; HIGH</span></p>
   <p class="body">"Journal" derives from French <em>jour</em> ("day") — transactions recorded daily, in chronological order and in detail; the act is "journalisation," each entry a "journal entry."</p>
@@ -773,7 +774,7 @@ tfoot { display: table-footer-group; }
   <p class="body"><strong>Simple vs. Compound entry:</strong> a Simple entry has exactly one Debit and one Credit account. A Compound entry has at least two debits with one credit, or one debit with two-or-more credits (e.g. a purchase settled part-cash, part-credit).</p>
 </div>
 
-<div class="concept-block avoid-break">
+<div class="concept-block">
   <p class="section-header">Sub-division of Journal</p>
   <p class="body"><strong>(1) Special Journals / Subsidiary Books</strong> — each records one specific transaction type.</p>
 <table class="comparison-table avoid-break">
@@ -808,7 +809,7 @@ tfoot { display: table-footer-group; }
 </ul>
 </div>
 
-<div class="concept-block avoid-break">
+<div class="concept-block">
   <p class="section-header">1.5.2 Ledger</p>
   <div class="definition-block"><p class="definition-text">A Ledger is a book containing a condensed and classified record of all pecuniary transactions of the business, posted from the Journal — the final destination of all accounts, hence "Book of Final Entry."</p></div>
   <p class="body"><strong>Journal vs. Ledger:</strong> Journal is a chronological, detailed record; Ledger is a classified, account-wise record.</p>
@@ -839,7 +840,7 @@ tfoot { display: table-footer-group; }
 <!-- ============ 1.6 CASH BOOK, BANK BOOK, PETTY CASH BOOK, BRS ============ -->
 <!-- © Dhanya Varia -->
 <div class="page page-break">
-<div class="concept-block avoid-break">
+<div class="concept-block">
   <span class="pill">CONCEPT</span>
   <p class="section-header">1.6 Cash Book, Bank Book, Petty Cash Book, BRS <span style="float:right">&#9733;&#9733;&#9733; HIGH</span></p>
   <div class="definition-block"><p class="definition-text">A Cash Book is a special journal recording all cash receipts (debit side) and all cash payments (credit side) — it is simultaneously a Journal (original entry) and a Ledger account (Cash A/c format), hence called a "journalised ledger."</p></div>
@@ -853,7 +854,7 @@ tfoot { display: table-footer-group; }
 </ul>
 </div>
 
-<div class="concept-block avoid-break">
+<div class="concept-block">
   <p class="section-header">Types of (Regular) Cash Book</p>
   <p class="body">Four types of Cash Book are used.</p>
 <ol class="point-list numbered">
@@ -867,7 +868,7 @@ tfoot { display: table-footer-group; }
   <p class="body"><strong>Petty Cash Book</strong> — records small, recurring expenses (postage, stationery, cartage) under separate columns per expense head; posted to the ledger in total, periodically. Funded either on the <strong>Ordinary System</strong> (lump-sum given, reimbursed only when fully spent) or the <strong>Imprest System</strong> (a fixed "Imprest Cash/Float" is topped back up to its original level each period after the petty cashier submits a Statement of Petty Cash).</p>
 </div>
 
-<div class="concept-block avoid-break">
+<div class="concept-block">
   <p class="section-header">1.6.2 Bank Reconciliation Statement (BRS)</p>
   <div class="definition-block"><p class="definition-text">A statement prepared to reconcile the balance as per Bank Book/Bank Column of Cash Book with the balance as per Bank Passbook/Statement on a given date, since these rarely agree in practice.</p></div>
   <p class="body">Six features define a Bank Reconciliation Statement.</p>
@@ -905,10 +906,10 @@ tfoot { display: table-footer-group; }
 <!-- ============ BRS ADDITIONS/SUBTRACTIONS TABLE ============ -->
 <!-- © Dhanya Varia -->
 <div class="page page-break">
-<div class="concept-block avoid-break">
+<div class="concept-block">
   <p class="section-header">The BRS Addition/Subtraction Rule Table <span style="float:right">&#9733;&#9733;&#9733; HIGH</span></p>
   <p class="body">CB = Cash Book, PB = Pass Book, OD = Overdraft. Read the row for the item; each column tells you whether that item is Added or Deducted, depending on which balance you start from.</p>
-  <table class="comparison-table avoid-break" style="font-size:8.7pt;">
+  <table class="comparison-table" style="font-size:8.7pt;">
     <thead><tr><th>When reconciliation is started with</th><th>Bal. as per CB</th><th>OD as per CB</th><th>Bal. as per PB</th><th>OD as per PB</th></tr></thead><tbody>
     <tr><td>Cheques deposited in Bank, but not cleared</td><td>Less</td><td>Add</td><td>Add</td><td>Less</td></tr>
     <tr><td>Cheques issued, but not presented</td><td>Add</td><td>Less</td><td>Less</td><td>Add</td></tr>
@@ -917,7 +918,7 @@ tfoot { display: table-footer-group; }
     <tr><td>Direct payment by customer in PB only</td><td>Add</td><td>Less</td><td>Less</td><td>Add</td></tr>
     <tr><td>Bills discounted &amp; dishonoured in PB only</td><td>Less</td><td>Add</td><td>Add</td><td>Less</td></tr>
     <tr><td>Cheques deposited, dishonoured in PB only</td><td>Less</td><td>Add</td><td>Add</td><td>Less</td></tr>
-    <tr><td>Interest/Dividend/Commission collected by Bank, not in CB</td><td>Add</td><td>Less</td><td>Less</td><td>Add</td></tr>
+    <tr><td>Interest/&#8203;Dividend/&#8203;Commission collected by Bank, not in CB</td><td>Add</td><td>Less</td><td>Less</td><td>Add</td></tr>
     <tr><td>Overcasting of payment side (or undercasting of receipt side) of CB</td><td>Add</td><td>Less</td><td>Less</td><td>Add</td></tr>
     <tr><td>Undercasting of payment side (or overcasting of receipt side) of CB</td><td>Less</td><td>Add</td><td>Add</td><td>Less</td></tr>
     <tr><td>Deposits recorded twice / excess amount in CB</td><td>Less</td><td>Add</td><td>Add</td><td>Less</td></tr>
@@ -937,7 +938,7 @@ tfoot { display: table-footer-group; }
 <!-- ============ 1.7 TRIAL BALANCE ============ -->
 <!-- © Dhanya Varia -->
 <div class="page page-break">
-<div class="concept-block avoid-break">
+<div class="concept-block">
   <span class="pill">CONCEPT</span>
   <p class="section-header">1.7 Trial Balance <span style="float:right">&#9733;&#9733;&#9733; HIGH</span></p>
   <div class="definition-block"><p class="definition-text">A statement or list of all ledger account balances taken from various ledgers on a particular date, to check the arithmetical accuracy of accounting (Eric L. Kohler); "the final list of balances, totalled and combined" (Rolland).</p></div>
@@ -959,7 +960,7 @@ tfoot { display: table-footer-group; }
 </ol>
 </div>
 
-<div class="concept-block avoid-break">
+<div class="concept-block">
   <p class="section-header">Methods of Preparation</p>
   <table class="comparison-table avoid-break">
     <thead><tr><th>Method</th><th>How</th><th>Advantage</th><th>Disadvantage</th></tr></thead><tbody>
@@ -988,7 +989,7 @@ tfoot { display: table-footer-group; }
 <!-- ============ 1.8 ADJUSTMENT ENTRIES AND RECTIFICATION OF ERRORS ============ -->
 <!-- © Dhanya Varia -->
 <div class="page page-break">
-<div class="concept-block avoid-break">
+<div class="concept-block">
   <span class="pill">CONCEPT</span>
 
 <!-- ===== M1b_AcctgFund_1.8-1.10 ===== -->
@@ -1010,9 +1011,9 @@ tfoot { display: table-footer-group; }
 </ol>
 </div>
 
-<div class="concept-block avoid-break">
+<div class="concept-block">
   <p class="section-header">Typical Adjustment Entries</p>
-  <table class="comparison-table avoid-break">
+  <table class="comparison-table">
     <thead><tr><th>Adjustment</th><th>Journal Entry</th></tr></thead><tbody>
     <tr><td>Pre-received Income</td><td>Income A/c Dr. &nbsp;To Pre-received Income A/c</td></tr>
     <tr><td>Accrued Income</td><td>Accrued Income A/c Dr. &nbsp;To Income A/c</td></tr>
@@ -1027,7 +1028,7 @@ tfoot { display: table-footer-group; }
   </tbody></table>
 </div>
 
-<div class="concept-block avoid-break">
+<div class="concept-block">
   <span class="pill">CONCEPT</span>
   <p class="section-header">1.8.2 Rectification of Errors <span style="float:right">&#9733;&#9733;&#9733; HIGH</span></p>
   <p class="body"><strong>Adjustment vs. Rectification:</strong> Adjustment entries determine the correct profit for finalisation (honouring concepts/conventions); Rectification entries correct errors made during recording, casting or posting. Errors should be rectified as soon as noticed, without waiting for Trial Balance preparation.</p>
@@ -1048,7 +1049,7 @@ tfoot { display: table-footer-group; }
   </tbody></table>
 </div>
 
-<div class="concept-block avoid-break">
+<div class="concept-block">
   <p class="section-header">Rectification at the Three Stages</p>
   <p class="body">"Single-sided" errors affect only one side (Debit or Credit) of one account; "Double-sided" errors affect both sides (across two accounts).</p>
   <table class="comparison-table avoid-break">
@@ -1068,7 +1069,7 @@ tfoot { display: table-footer-group; }
 <!-- ============ 1.9 DEPRECIATION ============ -->
 <!-- © Dhanya Varia -->
 <div class="page page-break">
-<div class="concept-block avoid-break">
+<div class="concept-block">
   <span class="pill">CONCEPT</span>
   <p class="section-header">1.9 Depreciation (Straight Line and Diminishing Balance Methods) <span style="float:right">&#9733;&#9733;&#9733; HIGH</span></p>
   <div class="definition-block"><p class="definition-text">Depreciation (Latin <em>Depretium</em>: De-decline + Pretium-price) is a gradual and permanent decline in the value of a tangible fixed asset due to use, wear and tear, obsolescence, effluxion of time, expiration of legal rights, or similar causes. Per AS-10 (Property, Plant &amp; Equipment): the systematic allocation of the depreciable amount of an asset over its useful life.</p></div>
@@ -1092,7 +1093,7 @@ tfoot { display: table-footer-group; }
 </ol>
 </div>
 
-<div class="concept-block avoid-break">
+<div class="concept-block">
   <p class="section-header">Depreciation vs. Its Near-Relatives</p>
   <table class="comparison-table avoid-break">
     <thead><tr><th>Term</th><th>Applies To</th><th>Cause</th></tr></thead><tbody>
@@ -1119,7 +1120,7 @@ tfoot { display: table-footer-group; }
 </tbody></table>
 </div>
 
-<div class="concept-block avoid-break">
+<div class="concept-block">
   <p class="section-header">The Two Prescribed Methods</p>
   <div class="formula-box avoid-break">
     <span class="formula-text" style="font-size:11pt;">Straight Line Method (SLM)</span>
@@ -1137,7 +1138,7 @@ tfoot { display: table-footer-group; }
   </tbody></table>
 </div>
 
-<div class="concept-block avoid-break">
+<div class="concept-block">
   <p class="section-header">Recording Depreciation &amp; the Golden Rule for Sale</p>
   <p class="body"><strong>Method A &mdash; no Provision for Depreciation A/c maintained:</strong> Depreciation A/c is debited and the ASSET A/c itself is credited directly &mdash; the Asset A/c thus shows WDV.</p>
   <p class="body"><strong>Method B &mdash; Provision for Depreciation A/c maintained:</strong> Depreciation A/c Dr. / To Provision for Depreciation A/c &mdash; the Asset A/c stays at original cost; on sale, the Provision balance is transferred against the asset (directly, or via an Asset Disposal A/c if opened) and any profit/loss on sale goes to P&amp;L A/c.</p>
@@ -1168,7 +1169,7 @@ tfoot { display: table-footer-group; }
   <p class="body"><strong>Debt classification by collectability:</strong> <strong>Good Debt</strong> &mdash; likely to be realised in full. <strong>Bad Debt</strong> &mdash; confirmed uncollectible/irrecoverable, a confirmed loss, charged direct to P&amp;L A/c along with a reduction in Debtors. <strong>Doubtful Debt</strong> &mdash; collectability uncertain (e.g. customer insolvency risk) &mdash; not confirmed, so it cannot be debited to P&amp;L until confirmed; instead it requires a <strong>Provision for Doubtful Debt</strong> (justified by the Conservatism convention).</p>
 </div>
 
-<div class="concept-block avoid-break">
+<div class="concept-block">
   <p class="section-header">Two Alternative Accounting Methods</p>
   <table class="comparison-table avoid-break">
     <thead><tr><th>Method 1 &mdash; via Provision A/c</th><th>Method 2 &mdash; via Profit &amp; Loss A/c</th></tr></thead><tbody>
@@ -1262,7 +1263,7 @@ tfoot { display: table-footer-group; }
 
 <!-- ============ MODULE 1 · REVISION STRIP ============ -->
 <!-- © Dhanya Varia -->
-<div class="revision-strip avoid-break">
+<div class="revision-strip">
   <div class="title-bar">15 EXAM FACTS — ACCOUNTING FUNDAMENTALS (Module 1)</div>
   <div class="facts">
     <p class="fact">&#9312; Book-keeping &sub; Accounting &sub; Accountancy, in order of increasing scope.</p>
@@ -1309,7 +1310,7 @@ tfoot { display: table-footer-group; }
   <p class="body">After studying this module, you will be able to: account for a Consignment business in the books of both the consignor and the consignee, including stock valuation and losses; account for a Joint Venture business under separate books, own-books and memorandum methods; and account for Bills of Exchange (excluding Accommodation Bills and Insolvency) — drawing, discounting, endorsement, collection, dishonour, retirement and renewal.</p>
 </div>
 
-<div class="glossary-block glossary-lead avoid-break">
+<div class="glossary-block glossary-lead">
   <p class="section-header" style="margin-top:6px;">Glossary — Module 2, in Plain Words</p>
   <p class="body" style="margin-bottom:4px;">The technical terms used throughout this module, explained simply.</p>
   <table class="glossary-table">
@@ -1332,7 +1333,7 @@ tfoot { display: table-footer-group; }
   </table>
 </div>
 
-<div class="glossary-block glossary-continue avoid-break">
+<div class="glossary-block glossary-continue">
   <table class="glossary-table">
     <tr><td class="term">Recurring Expenses</td><td>Ongoing expenses after arrival (godown rent, insurance, selling expenses) — these are NEVER added to stock value.</td></tr>
     <tr><td class="term">Joint Venture</td><td>A temporary partnership between two or more people for one specific deal, profits shared in an agreed ratio, dissolved when the job is done. It has no firm name.</td></tr>
@@ -1436,7 +1437,7 @@ tfoot { display: table-footer-group; }
   <p class="body"><strong>Account Sales</strong> — sent periodically by the consignee BACK to the consignor: gross sale proceeds (cash and credit), less expenses incurred and commission due, less advances already remitted, arriving at the balance due. It is the consignor's basis for recording sales and settling with the agent.</p>
 </div>
 
-<div class="concept-block avoid-break">
+<div class="concept-block">
   <p class="section-header">2.1.2 Three Types of Commission</p>
   <table class="comparison-table avoid-break">
     <thead><tr><th style="width:26%;">Type</th><th>Paid for</th><th>Key point</th></tr></thead><tbody>
@@ -1452,7 +1453,7 @@ tfoot { display: table-footer-group; }
   </div>
 </div>
 
-<div class="concept-block avoid-break">
+<div class="concept-block">
   <p class="section-header">2.1.3 The Accounts Each Party Keeps</p>
   <p class="body"><strong>Consignor's books</strong> keep five accounts:</p>
 <ol class="point-list numbered">
@@ -1476,9 +1477,9 @@ tfoot { display: table-footer-group; }
   </div>
 </div>
 
-<div class="concept-block avoid-break">
+<div class="concept-block">
   <p class="section-header">2.1.4 Journal Entries — Consignor (goods at cost)</p>
-  <table class="comparison-table avoid-break">
+  <table class="comparison-table">
     <thead><tr><th style="width:34%;">Event</th><th>Consignor's entry</th><th>Consignee's entry</th></tr></thead><tbody>
     <tr><td>Opening stock brought down</td><td>Consignment A/c Dr. &nbsp;To Consignment Stock A/c</td><td>No entry</td></tr>
     <tr><td>Goods sent</td><td>Consignment A/c Dr. &nbsp;To Goods Sent on Consignment A/c</td><td>No entry</td></tr>
@@ -1494,7 +1495,7 @@ tfoot { display: table-footer-group; }
   <p class="body">When the consignor discounts a bill received as advance: Bank A/c Dr., Discount on Bill A/c Dr., To Bills Receivable A/c — and the discount is then transferred to P&amp;L A/c (or Consignment A/c).</p>
 </div>
 
-<div class="concept-block avoid-break">
+<div class="concept-block">
   <p class="section-header">2.1.5 Goods Sent at Invoice Price — the Load Cancellations</p>
   <p class="body">When goods travel at invoice price (cost + margin), the Consignment A/c is debited at inflated figures, so the load must be cancelled everywhere it hides before true profit emerges. Four cancellation entries in the consignor's books:</p>
   <table class="comparison-table avoid-break">
@@ -1511,7 +1512,7 @@ tfoot { display: table-footer-group; }
   </div>
 </div>
 
-<div class="concept-block avoid-break">
+<div class="concept-block">
   <p class="section-header">2.1.6 Valuation of Unsold Consignment Stock</p>
   <div class="definition-block"><p class="definition-text">Consignment Stock = (Cost or Invoice Price of unsold units) + proportionate consignor's expenses + proportionate NON-RECURRING expenses of the consignee.</p></div>
   <p class="body">Per AS-2, the stock is finally carried at <strong>Cost or Net Realisable Value, whichever is lower</strong> (NRV = expected selling price less incidental selling expenses). <strong>Goods-in-transit</strong> are valued with the consignor's expenses ONLY — no consignee expense can attach to goods that never reached him.</p>
@@ -1523,7 +1524,7 @@ tfoot { display: table-footer-group; }
   </div>
 </div>
 
-<div class="concept-block avoid-break">
+<div class="concept-block">
   <p class="section-header">2.1.7 Normal Loss vs. Abnormal Loss</p>
   <table class="comparison-table avoid-break">
     <thead><tr><th style="width:24%;">Point</th><th>Normal Loss</th><th>Abnormal Loss</th></tr></thead><tbody>
@@ -1583,7 +1584,7 @@ tfoot { display: table-footer-group; }
   <tr><td>Number of members</td><td>No limit</td><td>Limited to 20 (ordinary trade), 10 (banking)</td></tr>
 </tbody></table>
 
-<div class="concept-block avoid-break">
+<div class="concept-block">
   <p class="section-header">2.2.1 Method I — Separate Set of Books</p>
   <p class="body">Only <strong>three accounts</strong> are kept.</p>
 <ol class="point-list numbered">
@@ -1591,7 +1592,7 @@ tfoot { display: table-footer-group; }
   <li><strong>Joint Bank A/c</strong> — all cash flows: contributions in, expenses out, sale proceeds in, and the final distribution out, entered last so the account tallies.</li>
   <li><strong>Co-venturers' A/cs</strong> — each venturer's personal claim, settled through the Joint Bank A/c at the end.</li>
 </ol>
-  <table class="comparison-table avoid-break">
+  <table class="comparison-table">
     <thead><tr><th style="width:52%;">Transaction</th><th>Entry</th></tr></thead><tbody>
     <tr><td>Contribution by co-venturers</td><td>Joint Bank A/c Dr. &nbsp;To Co-venturers' A/c</td></tr>
     <tr><td>Goods supplied by a co-venturer from own stock / expenses paid personally</td><td>Joint Venture A/c Dr. &nbsp;To Co-venturers' A/c</td></tr>
@@ -1613,7 +1614,7 @@ tfoot { display: table-footer-group; }
   </div>
 </div>
 
-<div class="concept-block avoid-break">
+<div class="concept-block">
   <p class="section-header">2.2.2 Method II(a) — No Separate Books, Each Records ALL Transactions</p>
   <p class="body">No joint bank account exists. Each co-venturer opens, in his own books, a <strong>Joint Venture A/c</strong> and a <strong>personal account for the other co-venturer</strong>, and records EVERY transaction — his own and the other's. Each therefore computes the profit independently (the figures agree). Key entries in A's books:</p>
 <table class="comparison-table avoid-break">
@@ -1639,7 +1640,7 @@ tfoot { display: table-footer-group; }
 <!-- ============ 2.3 BILLS OF EXCHANGE ============ -->
 <!-- © Dhanya Varia -->
 <div class="page page-break">
-<div class="concept-block avoid-break">
+<div class="concept-block">
   <span class="pill">CONCEPT</span>
   <p class="section-header">2.3 Bills of Exchange (excluding Accommodation Bill, Insolvency) <span style="float:right">&#9733;&#9733;&#9733; HIGH</span></p>
   <div class="definition-block"><p class="definition-text">Section 5, Negotiable Instruments Act, 1881: a bill of exchange is an instrument in writing containing an unconditional order, signed by the maker, directing a certain person to pay a certain sum of money only to, or to the order of, a certain person or to the bearer of the instrument.</p></div>
@@ -1656,7 +1657,7 @@ tfoot { display: table-footer-group; }
   <p class="body"><strong>Parties:</strong> the <strong>Drawer</strong> (draws the bill — typically the seller/creditor), the <strong>Drawee</strong> (on whom it is drawn — the buyer/debtor, who must pay the payee on the due date), and the <strong>Payee</strong> (to whom the money is payable — the drawer himself, or the drawer's creditor). Additionally: <strong>Endorser</strong> (transfers the right of payment), <strong>Endorsee</strong> (in whose favour it is endorsed), <strong>Bearer</strong> (holder of a bearer bill).</p>
 </div>
 
-<div class="concept-block avoid-break">
+<div class="concept-block">
   <p class="section-header">2.3.1 Types of Bills</p>
   <p class="body"><strong>Documentary</strong> (supported by documents proving the transaction) vs <strong>Clean</strong> (no documents — carries higher interest). <strong>Demand</strong> (payable whenever presented, no fixed date) vs <strong>Usance</strong> (time-bound). <strong>Inland</strong> (payable in one country only) vs <strong>Foreign</strong> (payable outside India — export and import bills). <strong>Trade</strong> (drawn to settle a genuine trade transaction) vs <strong>Accommodation</strong> (drawn without consideration, to help someone raise funds — excluded from this syllabus beyond the comparison below).</p>
   <table class="comparison-table avoid-break">
@@ -1669,7 +1670,7 @@ tfoot { display: table-footer-group; }
   </tbody></table>
 </div>
 
-<div class="concept-block avoid-break">
+<div class="concept-block">
   <p class="section-header">2.3.2 Due Date, Days of Grace and the Holiday Rules</p>
   <table class="comparison-table avoid-break">
     <thead><tr><th style="width:34%;">Situation</th><th>Rule</th></tr></thead><tbody>
@@ -1694,7 +1695,7 @@ tfoot { display: table-footer-group; }
   <p class="body">The same instrument is <strong>Bills Receivable</strong> to the drawer/holder (an ASSET side item) and <strong>Bills Payable</strong> to the acceptor (a LIABILITY side item). <strong>Dishonour</strong> = the acceptor's refusal or failure to pay on the due date. To create legal evidence, the fact is recorded on the bill by a <strong>Notary Public</strong> ("noting"); his fee — the <strong>noting charges</strong> — is paid by the holder on the day of default but, since the acceptor caused the dishonour, it is reimbursed by (recovered from) the acceptor.</p>
 </div>
 
-<div class="concept-block avoid-break">
+<div class="concept-block">
   <p class="section-header">2.3.4 The Five Things a Holder Can Do With a Bill — and the Entries</p>
   <table class="comparison-table avoid-break">
     <thead><tr><th style="width:20%;">Situation</th><th>Drawer's key entries</th><th>On dishonour, drawer debits Drawee for</th></tr></thead><tbody>
@@ -1712,7 +1713,7 @@ tfoot { display: table-footer-group; }
   </div>
 </div>
 
-<div class="concept-block avoid-break">
+<div class="concept-block">
   <p class="section-header">2.3.5 Renewal of a Bill</p>
   <p class="body">When the drawee cannot pay on the due date, he may ask the drawer to cancel the old bill and draw a fresh one, sometimes paying part in cash. <strong>New bill amount = face value of the original bill &ndash; any cash paid + interest for the renewed period</strong> (interest may instead be paid in cash).</p>
 <table class="comparison-table avoid-break">
@@ -1795,7 +1796,7 @@ tfoot { display: table-footer-group; }
 
 <!-- ============ MODULE 2 · REVISION STRIP ============ -->
 <!-- © Dhanya Varia -->
-<div class="revision-strip avoid-break">
+<div class="revision-strip">
   <div class="title-bar">15 EXAM FACTS — SPECIAL TRANSACTIONS (Module 2)</div>
   <div class="facts">
     <p class="fact">&#9312; Consignment: ownership NEVER passes to the consignee — the relationship is principal and agent, and goods become sales only when the consignee sells them.</p>
@@ -1842,7 +1843,7 @@ tfoot { display: table-footer-group; }
   <p class="body">After studying this module, you will be able to: prepare the Financial Statements of profit-seeking entities (Manufacturing Account, Trading Account, Profit &amp; Loss Account and Balance Sheet of a sole proprietorship, with all adjustments); and prepare the Financial Statements of not-for-profit organisations (Receipts &amp; Payments Account, Income &amp; Expenditure Account and Balance Sheet, including fund-based accounting).</p>
 </div>
 
-<div class="glossary-block glossary-lead avoid-break">
+<div class="glossary-block glossary-lead">
   <p class="section-header" style="margin-top:6px;">Glossary — Module 3, in Plain Words</p>
   <p class="body" style="margin-bottom:4px;">The technical terms used throughout this module, explained simply.</p>
   <table class="glossary-table">
@@ -1864,7 +1865,7 @@ tfoot { display: table-footer-group; }
   </table>
 </div>
 
-<div class="glossary-block glossary-continue avoid-break">
+<div class="glossary-block glossary-continue">
   <table class="glossary-table">
     <tr><td class="term">Not-for-Profit Organisation</td><td>A club, school, hospital, library or trust that exists to serve, not to earn — its surplus is never distributed to members.</td></tr>
     <tr><td class="term">Receipts &amp; Payments A/c</td><td>The NPO's summarised cash book: every cash/bank receipt (debit) and payment (credit), capital or revenue, of ANY period. A real account.</td></tr>
@@ -1938,7 +1939,7 @@ tfoot { display: table-footer-group; }
 <!-- ============ 3.1 SOLE PROPRIETORSHIP ============ -->
 <!-- © Dhanya Varia -->
 <div class="page page-break">
-<div class="concept-block avoid-break">
+<div class="concept-block">
   <span class="pill">CONCEPT</span>
   <p class="section-header">3.1 Financial Statements of a Sole Proprietorship <span style="float:right">&#9733;&#9733;&#9733; HIGH</span></p>
   <div class="definition-block"><p class="definition-text">A sole proprietorship is a business owned, controlled and operated by a single individual who is the sole beneficiary of all profits or losses and responsible for all risks.</p></div>
@@ -1952,7 +1953,7 @@ tfoot { display: table-footer-group; }
 <p class="body">The law makes no distinction between the proprietor and the business — <strong>but accounting treats them as two separate entities</strong> (the Entity Concept at work). Its financial statements: Manufacturing Account (manufacturers only) &rarr; Trading Account &rarr; Profit &amp; Loss Account &rarr; Balance Sheet. <strong>No P&amp;L Appropriation Account is needed</strong> — the entire profit belongs to the one owner.</p>
 </div>
 
-<div class="concept-block avoid-break">
+<div class="concept-block">
   <p class="section-header">3.1.1 The Statement Chain and What Goes Where</p>
   <table class="comparison-table avoid-break">
     <thead><tr><th style="width:24%;">Statement</th><th>Debit side carries</th><th>Credit side carries</th><th style="width:22%;">Result goes to</th></tr></thead><tbody>
@@ -1969,7 +1970,7 @@ tfoot { display: table-footer-group; }
   </div>
 </div>
 
-<div class="concept-block avoid-break">
+<div class="concept-block">
   <table class="ledger-tbl avoid-break">
     <caption>Format of a Manufacturing Account</caption>
     <thead><tr><th colspan="4">Dr.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Manufacturing Account for the period ended &hellip;&hellip;&hellip;&hellip;&hellip;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Cr.</th></tr><tr><th>Particulars</th><th class="amt">Amount</th><th>Particulars</th><th class="amt">Amount</th></tr></thead><tbody>
@@ -1982,7 +1983,7 @@ tfoot { display: table-footer-group; }
   </tbody></table>
 </div>
 
-<div class="concept-block avoid-break">
+<div class="concept-block">
   <table class="ledger-tbl avoid-break">
     <caption>Format of a Profit &amp; Loss Account</caption>
     <thead><tr><th colspan="4">Dr.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Profit &amp; Loss Account for the year ended &hellip;&hellip;&hellip;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Cr.</th></tr><tr><th>Particulars</th><th class="amt">&#8377;</th><th>Particulars</th><th class="amt">&#8377;</th></tr></thead><tbody>
@@ -2001,7 +2002,7 @@ tfoot { display: table-footer-group; }
   <div class="shortcut-box avoid-break"><span class="shortcut-label">&#9889; SHORTCUT — THE FIRST-WORD RULE:</span> a Trial Balance showing BOTH "Wages &amp; Salaries" and "Salaries &amp; Wages" is testing one thing: read the FIRST word. "Wages &amp; Salaries" &rarr; factory &rarr; Trading A/c. "Salaries &amp; Wages" &rarr; office &rarr; P&amp;L A/c.</div>
 </div>
 
-<div class="concept-block avoid-break">
+<div class="concept-block">
   <p class="section-header">3.1.3 The Single-vs-Double Treatment Rule (the heart of adjustments)</p>
   <div class="definition-block"><p class="definition-text">An item ALREADY INSIDE the Trial Balance has completed its double entry — it appears ONCE in the final accounts. An adjustment given OUTSIDE the Trial Balance still needs both legs — it appears TWICE.</p></div>
   <table class="comparison-table avoid-break">
@@ -2023,7 +2024,7 @@ tfoot { display: table-footer-group; }
   </div>
 </div>
 
-<div class="concept-block avoid-break">
+<div class="concept-block">
   <p class="section-header">3.1.4 Capital Account Build-up &amp; the Income-Tax Rule</p>
   <div class="formula-box avoid-break">
     <span class="formula-text" style="font-size:11pt;">Closing Capital = Opening Capital + Net Profit + Interest on Capital &ndash; Drawings &ndash; Interest on Drawings</span>
@@ -2048,7 +2049,7 @@ tfoot { display: table-footer-group; }
   <p class="body">Their income arrives as entrance fees, life membership fees, annual subscriptions, donations, grants and legacies; activities are run by a managing/executive committee elected by members; the constitution/by-laws decide how a doubtful item is treated. Their statements: <strong>Receipts &amp; Payments Account</strong> (cash flows), <strong>Income &amp; Expenditure Account</strong> (surplus/deficit), and <strong>Balance Sheet</strong>.</p>
 </div>
 
-<div class="concept-block avoid-break">
+<div class="concept-block">
   <p class="section-header">3.2.1 Receipts &amp; Payments A/c vs Income &amp; Expenditure A/c</p>
   <table class="comparison-table avoid-break">
     <thead><tr><th>Receipts &amp; Payments Account</th><th>Income &amp; Expenditure Account</th></tr></thead><tbody>
@@ -2073,7 +2074,7 @@ tfoot { display: table-footer-group; }
   </tbody></table>
 </div>
 
-<div class="concept-block avoid-break">
+<div class="concept-block">
   <p class="section-header">3.2.2 Fund Accounting — Capital Fund and Special Funds</p>
   <p class="body"><strong>Capital Fund</strong> (General Fund / Accumulated Fund) is the NPO's capital: assets minus liabilities; the period's surplus or deficit and capitalised incomes are adjusted into it. A <strong>Special Fund</strong> (e.g. Building Fund) is created from special donations or a slice of surplus, and everything about it stays inside it:</p>
   <table class="comparison-table avoid-break">
@@ -2091,9 +2092,9 @@ tfoot { display: table-footer-group; }
   </div>
 </div>
 
-<div class="concept-block avoid-break">
+<div class="concept-block">
   <p class="section-header">3.2.3 Treatment of the Classic Items</p>
-  <table class="comparison-table avoid-break">
+  <table class="comparison-table">
     <thead><tr><th style="width:28%;">Item</th><th>Treatment</th></tr></thead><tbody>
     <tr><td>Subscriptions</td><td>I&amp;E on accrual basis — current year only (the Subscription Account handles arrears and advances at both ends)</td></tr>
     <tr><td>Donation — specific purpose</td><td>Credit to that Special Fund (capital receipt)</td></tr>
@@ -2109,7 +2110,7 @@ tfoot { display: table-footer-group; }
   </tbody></table>
 </div>
 
-<div class="concept-block avoid-break">
+<div class="concept-block">
   <p class="section-header">3.2.4 The Subscription Account — Four Adjustments in One T</p>
   <div class="formula-box avoid-break">
     <span class="formula-text" style="font-size:10.5pt;">Subscription income = Received this year + Outstanding at END &ndash; Outstanding at START + Advance at START &ndash; Advance at END</span>
@@ -2231,7 +2232,7 @@ tfoot { display: table-footer-group; }
   <p class="body">After studying this module, you will be able to: explain the meaning, significance and evolution of cost accounting and its relationship with financial accounting; apply cost accounting to business decisions; define cost, cost centre, cost unit, cost object and cost driver; classify costs with reference to Cost Accounting Standard 1; and ascertain cost by preparing the Statement of Cost and Profit (Cost Sheet).</p>
 </div>
 
-<div class="glossary-block glossary-lead avoid-break">
+<div class="glossary-block glossary-lead">
   <p class="section-header" style="margin-top:6px;">Glossary — Module 4, in Plain Words</p>
   <p class="body" style="margin-bottom:4px;">The technical terms used throughout this module, explained simply.</p>
   <table class="glossary-table">
@@ -2254,7 +2255,7 @@ tfoot { display: table-footer-group; }
   </table>
 </div>
 
-<div class="glossary-block glossary-continue avoid-break">
+<div class="glossary-block glossary-continue">
   <table class="glossary-table">
     <tr><td class="term">Relevant Cost</td><td>A cost that actually matters to the specific decision at hand — future, and different between the options.</td></tr>
     <tr><td class="term">Controllable Cost</td><td>Subject to direct control at some level of management; non-controllable is not — at any level.</td></tr>
@@ -2337,7 +2338,7 @@ tfoot { display: table-footer-group; }
 <!-- ============ 4.1 MEANING, DEFINITION, SIGNIFICANCE ============ -->
 <!-- © Dhanya Varia -->
 <div class="page page-break">
-<div class="concept-block avoid-break">
+<div class="concept-block">
   <span class="pill">CONCEPT</span>
   <p class="section-header">4.1 Meaning, Definition, Significance of Cost Accounting &amp; Relationship with Financial Accounting <span style="float:right">&#9733;&#9733;&#9733; HIGH</span></p>
   <p class="body"><strong>Evolution in one paragraph:</strong> double entry began in 1494; cost accounting stayed a small branch of financial accounting until the Industrial Revolution forced textile mills and railroads to devise internal procedures (focused on prime costs); 1880&ndash;1925 brought scientific management, cost standards and variance analysis (Du Pont, General Motors); the World Wars' cost-plus defence contracts made cost estimation socially important. In India, the Cost and Works Accountants of India Act, 1959 established the Institute at Kolkata; Cost Audit came in 1968 under Section 233(B) of the Companies Act, 1956 — today it sits under <strong>Section 148 of the Companies Act, 2013</strong>.</p>
@@ -2357,7 +2358,7 @@ tfoot { display: table-footer-group; }
 </ul>
 </div>
 
-<div class="concept-block avoid-break">
+<div class="concept-block">
   <p class="section-header">4.1.1 Methods of Costing — Match the Industry</p>
   <table class="comparison-table avoid-break">
     <thead><tr><th style="width:22%;">Method</th><th>Logic</th><th>Industries (from the Study Notes' table)</th></tr></thead><tbody>
@@ -2372,9 +2373,9 @@ tfoot { display: table-footer-group; }
   <p class="body"><strong>Cost accounting SYSTEMS</strong> (how costs are treated, not which industry): Historical (after the fact — post-mortem), Absorption (all fixed + variable production costs absorbed into units; fixed manufacturing overhead enters stock), Direct/Marginal (only variable costs to the unit; fixed written off against contribution — the internal decision system), Standard (predetermined costs + variance analysis), Uniform (identical principles adopted industry-wide by agreement — NOT a distinct method).</p>
 </div>
 
-<div class="concept-block avoid-break">
+<div class="concept-block">
   <p class="section-header">4.1.2 Cost Accounting vs Financial Accounting — the 14 Points</p>
-  <table class="comparison-table avoid-break">
+  <table class="comparison-table">
     <thead><tr><th style="width:20%;">Point</th><th>Financial Accounting</th><th>Cost Accounting</th></tr></thead><tbody>
     <tr><td>Purpose</td><td>Results of the business as a whole, for external users</td><td>Information to management for planning, control, decisions</td></tr>
     <tr><td>Compulsion</td><td>Kept to meet Companies Act / Income Tax Act</td><td>Generally voluntary — but the Companies Act now mandates cost records in some manufacturing industries</td></tr>
@@ -2396,7 +2397,7 @@ tfoot { display: table-footer-group; }
 
 <!-- ============ 4.2 APPLICATION FOR BUSINESS DECISIONS ============ -->
 <!-- © Dhanya Varia -->
-<div class="concept-block avoid-break">
+<div class="concept-block">
   <span class="pill">CONCEPT</span>
   <p class="section-header">4.2 Application of Cost Accounting for Business Decisions <span style="float:right">&#9733; LOW</span></p>
   <p class="body">Cost accounting is an information-processing system for decisions, with seven major applications.</p>
@@ -2409,13 +2410,13 @@ tfoot { display: table-footer-group; }
   <li><strong>Best use of limited resources.</strong></li>
   <li><strong>Price determination</strong> — in depression, prices must at least recover the VARIABLE costs, and the fixed/variable distinction is what makes that call possible.</li>
 </ul>
-  <p class="body">Typical decisions supported: reduce price for volume? change production method? operate at full capacity? most profitable production level? <strong>make or buy</strong> a spare part? introduce/export/discontinue a product? invest in an asset?</p>
+  <p class="body">Typical decisions supported: reduce price for volume? change production method? operate at full capacity? most profitable production level? <strong>make or buy</strong> a spare part? introduce/&#8203;export/&#8203;discontinue a product? invest in an asset?</p>
 </div>
 </div>
 <!-- ============ 4.3 COST, COST CENTRE, COST UNIT, COST DRIVERS ============ -->
 <!-- © Dhanya Varia -->
 <div class="page page-break">
-<div class="concept-block avoid-break">
+<div class="concept-block">
   <span class="pill">CONCEPT</span>
   <p class="section-header">4.3 Definition of Cost, Cost Centre, Cost Unit and Cost Drivers <span style="float:right">&#9733;&#9733;&#9733; HIGH</span></p>
   <div class="definition-block"><p class="definition-text">Cost (noun): the amount of expenditure, actual or notional, incurred on or attributable to a specified thing or activity. Cost (verb): to ascertain the cost of a specified thing or activity. &mdash; CIMA Official Terminology</p></div>
@@ -2429,7 +2430,7 @@ tfoot { display: table-footer-group; }
   </tbody></table>
 </div>
 
-<div class="concept-block avoid-break">
+<div class="concept-block">
   <p class="section-header">4.3.1 The Decision-Making Cost Concepts</p>
   <table class="comparison-table avoid-break">
     <thead><tr><th style="width:26%;">Concept</th><th>Meaning</th></tr></thead><tbody>
@@ -2457,7 +2458,7 @@ tfoot { display: table-footer-group; }
 
 <!-- ============ 4.4 CLASSIFICATION OF COSTS (CAS-1) ============ -->
 <!-- © Dhanya Varia -->
-<div class="concept-block avoid-break">
+<div class="concept-block">
   <span class="pill">CONCEPT</span>
   <p class="section-header">4.4 Classification of Costs (with reference to CAS-1) <span style="float:right">&#9733;&#9733;&#9733; HIGH</span></p>
   <div class="definition-block"><p class="definition-text">CAS-1 para 4.3: classification of cost is the arrangement of items of costs in logical groups having regard to their NATURE (subjective classification) and PURPOSE (objective classification). Para 5: every item of cost shall be classified.</p></div>
@@ -2478,9 +2479,9 @@ tfoot { display: table-footer-group; }
   </div>
 </div>
 
-<div class="concept-block avoid-break">
+<div class="concept-block">
   <p class="section-header">4.4.1 Elements of Cost — the Three-Way Split and Its Fine Print</p>
-  <p class="body">Total cost splits into <strong>Material, Labour and Other Expenses</strong>, each direct or indirect; the indirect trio together forms the <strong>Overheads</strong>, sub-divided into Production (works/factory/manufacturing), Administration, Selling and Distribution.</p>
+  <p class="body">Total cost splits into <strong>Material, Labour and Other Expenses</strong>, each direct or indirect; the indirect trio together forms the <strong>Overheads</strong>, sub-divided into Production (works/&#8203;factory/&#8203;manufacturing), Administration, Selling and Distribution.</p>
   <p class="body"><strong>Direct material fine print:</strong> raw materials (jute for gunny bags, pig iron in foundry), job-specific purchases (glue for book binding), bought components (tyres for cycles), and <strong>PRIMARY packing materials</strong> are all direct. But sewing thread in dressmaking and nails in furniture — though physically in the product — are treated as INDIRECT because tracing tiny quantities is futile. <strong>Direct labour fine print:</strong> supervisors' and inspectors' wages CAN be direct if their hours on a specific product are measurable without much effort; trainees'/apprentices' wages, though spent on the product, are NOT direct (insignificant cost).</p>
   <div class="formula-box avoid-break">
     <span class="formula-text" style="font-size:11pt;">Prime Cost = Direct Material + Direct Labour + Direct Expenses</span>
@@ -2494,7 +2495,7 @@ tfoot { display: table-footer-group; }
 <!-- ============ 4.5 COST SHEET ============ -->
 <!-- © Dhanya Varia -->
 <div class="page page-break">
-<div class="concept-block avoid-break">
+<div class="concept-block">
   <span class="pill">CONCEPT</span>
   <p class="section-header">4.5 Ascertainment of Cost &amp; Preparation of Statement of Cost and Profit (Cost Sheet) <span style="float:right">&#9733;&#9733;&#9733; HIGH</span></p>
   <div class="definition-block"><p class="definition-text">A cost sheet (statement of cost) shows the various components of total cost for a product, from which the selling price can be deduced. It depicts the cost accumulation of a single output based on a single cost unit; an estimated cost sheet is prepared just before production begins.</p></div>
@@ -2509,12 +2510,12 @@ tfoot { display: table-footer-group; }
 </ul>
 </div>
 
-<div class="concept-block avoid-break">
+<div class="concept-block">
   <p class="section-header">4.5.1 The Ladder — Learn the Sequence Cold</p>
   <table class="comparison-table avoid-break">
     <thead><tr><th style="width:38%;">Stage</th><th>Built as</th></tr></thead><tbody>
     <tr><td><strong>I. PRIME COST</strong></td><td>Direct Material consumed (opening stock + purchases + carriage inwards &ndash; closing stock) + Direct Wages + Direct Expenses</td></tr>
-    <tr><td><strong>II. FACTORY / WORKS COST</strong></td><td>Prime Cost + Factory Overheads (indirect materials, loose tools, indirect wages, factory rent/lighting/power/repairs, drawing office, research &amp; experiment, plant depreciation, factory insurance, works manager's salary) + Opening WIP &ndash; Closing WIP</td></tr>
+    <tr><td><strong>II. FACTORY / WORKS COST</strong></td><td>Prime Cost + Factory Overheads (indirect materials, loose tools, indirect wages, factory rent/&#8203;lighting/&#8203;power/&#8203;repairs, drawing office, research &amp; experiment, plant depreciation, factory insurance, works manager's salary) + Opening WIP &ndash; Closing WIP</td></tr>
     <tr><td><strong>III. COST OF PRODUCTION</strong></td><td>Works Cost + Office &amp; Administrative Overheads (office rent, office salaries, office insurance, telephone &amp; postage, printing &amp; stationery, furniture depreciation, legal expenses, audit fees, bank charges)</td></tr>
     <tr><td><strong>IV. COST OF GOODS SOLD</strong></td><td>Cost of Production + Opening Stock of Finished Goods &ndash; Closing Stock of Finished Goods</td></tr>
     <tr><td><strong>V. COST OF SALES</strong></td><td>COGS + Selling &amp; Distribution Overheads (showroom rent, salesmen's salaries &amp; commission, travelling, advertising, collection expenses, carriage OUTWARD, delivery-van depreciation, samples &amp; free gifts)</td></tr>
@@ -2523,7 +2524,7 @@ tfoot { display: table-footer-group; }
   <div class="shortcut-box avoid-break"><span class="shortcut-label">&#9889; SHORTCUT:</span> three stock adjustments, one per stage: RAW MATERIAL stocks inside Direct Material; WIP stocks at Works Cost; FINISHED GOODS stocks between Cost of Production and COGS. If you remember where each stock pair lives, every reverse-engineering MCQ solves itself.</div>
 </div>
 
-<div class="concept-block avoid-break">
+<div class="concept-block">
   <p class="section-header">4.5.2 The Exclusions List — What NEVER Enters a Cost Sheet</p>
   <p class="body">Purely financial charges, appropriations and capital items stay out of a Cost Sheet.</p>
 <ul class="point-list">
@@ -2623,7 +2624,7 @@ tfoot { display: table-footer-group; }
 
 <!-- ============ MODULE 4 · REVISION STRIP ============ -->
 <!-- © Dhanya Varia -->
-<div class="revision-strip avoid-break">
+<div class="revision-strip">
   <div class="title-bar">15 EXAM FACTS — COST ACCOUNTING (Module 4)</div>
   <div class="facts">
     <p class="fact">&#9312; The ladder of terms: Cost (amount) &rarr; Costing (technique) &rarr; Cost Accounting (process) &rarr; Cost Accountancy (the discipline: science, art AND practice).</p>
@@ -2654,7 +2655,7 @@ tfoot { display: table-footer-group; }
 
 <!-- ===== closing ===== -->
 <div class="cover-band-dark" style="font-size:14pt;">The Final Ladder &mdash; Every Formula in Paper 2 on One Page</div>
-  <table class="comparison-table avoid-break" style="margin-top:4mm;">
+  <table class="comparison-table" style="margin-top:4mm;">
     <thead><tr><th style="width:26%;">Area</th><th>Formula</th></tr></thead><tbody>
     <tr><td>Accounting equation (M1)</td><td>Assets = Liabilities + Equity (Capital) &mdash; true after EVERY transaction</td></tr>
     <tr><td>SLM depreciation (M1)</td><td>(Cost + capital costs &ndash; Scrap) &divide; Useful life &mdash; same charge every year, on original cost</td></tr>

@@ -44,11 +44,11 @@
   --font-head:    'Cormorant Garamond', 'Playfair Display', Georgia, serif;
   --font-body:    'EB Garamond', Georgia, serif;
   --font-display: 'Italiana', 'Playfair Display', Georgia, serif;
-  --font-mono:    'JetBrains Mono', 'Courier New', monospace;
+  --font-mono:    'Courier New', Courier, monospace;
 }
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
 @page { size: A4; margin: 22mm 18mm 20mm 24mm; @top-center { content: "ICMAI · CMA FOUNDATION · PAPER 4 — FBEM · MASTER NOTES"; font-family: "Cormorant Garamond", Georgia, serif; font-weight: 300; font-size: 8pt; letter-spacing: 0.15em; text-transform: uppercase; color: #6B7280; } @bottom-center { content: "CMA Foundation · Fundamentals of Business Economics & Management"; font-family: "Cormorant Garamond", Georgia, serif; font-weight: 300; font-size: 7.5pt; color: #6B7280; } @bottom-left { content: "\00A9  Dhanya Varia"; font-family: "EB Garamond", serif; font-size: 9pt; font-weight: 600; font-style: italic; letter-spacing: 0.04em; color: #1A5C38; } @bottom-right { content: counter(page); font-family: "Cormorant Garamond", Georgia, serif; font-weight: 600; font-size: 9pt; color: #1A5C38; } }
-body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color: var(--ink); background: var(--white); overflow-wrap: break-word; }
+body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color: var(--ink); background: var(--white); }
 .page { position: relative; min-height: 1mm; }
 
 .page-break { page-break-before: always; break-before: page; }
@@ -94,7 +94,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
 .revision-strip .fact { font-family: var(--font-head); font-weight: 600; font-size: 9.7pt; margin: 4px 0; break-inside: avoid; }
 .comparison-table { width: 100%; border-collapse: collapse; margin: 12px 0; }
 .comparison-table th { background: var(--green-deep); color: var(--white); font-family: var(--font-head); font-weight: 600; font-size: 9.5pt; text-transform: uppercase; letter-spacing: 0.03em; padding: 6px 8px; text-align: left; }
-.comparison-table tr { page-break-inside: avoid; } .comparison-table td { padding: 5px 8px; border: 1px solid var(--border-light); font-family: var(--font-body); font-size: 9.7pt; vertical-align: top; overflow-wrap: break-word; }
+.comparison-table tr { page-break-inside: avoid; } .comparison-table td { padding: 5px 8px; border: 1px solid var(--border-light); font-family: var(--font-body); font-size: 9.7pt; vertical-align: top; }
 .comparison-table tbody tr:nth-child(odd) td { background: var(--green-faint); }
 thead { display: table-header-group; }
 tfoot { display: table-footer-group; }
@@ -414,27 +414,27 @@ tfoot { display: table-footer-group; }
     <line x1="400" y1="250" x2="400" y2="420" stroke="#277548" stroke-width="1.5"/>
     <line x1="400" y1="250" x2="655" y2="410" stroke="#277548" stroke-width="1.5"/>
     <rect x="55" y="58" width="180" height="60" rx="8" fill="#EAF4EE" stroke="#1A5C38" stroke-width="1.3"/>
-    <text x="145" y="82" text-anchor="middle" font-family="Georgia,serif" font-size="13" font-weight="bold" fill="#1A5C38">1.1 FUNDAMENTALS</text>
-    <text x="145" y="99" text-anchor="middle" font-family="Georgia,serif" font-size="10.5" fill="#4E5B54">4 definitions &middot; micro/macro</text>
+    <text x="145" y="82" text-anchor="middle" font-family="EB Garamond, serif" font-size="13" font-weight="bold" fill="#1A5C38">1.1 FUNDAMENTALS</text>
+    <text x="145" y="99" text-anchor="middle" font-family="EB Garamond, serif" font-size="10.5" fill="#4E5B54">4 definitions &middot; micro/macro</text>
     <rect x="310" y="48" width="180" height="60" rx="8" fill="#EAF4EE" stroke="#1A5C38" stroke-width="1.3"/>
-    <text x="400" y="72" text-anchor="middle" font-family="Georgia,serif" font-size="13" font-weight="bold" fill="#1A5C38">1.2 UTILITY &middot; WEALTH</text>
-    <text x="400" y="89" text-anchor="middle" font-family="Georgia,serif" font-size="10.5" fill="#4E5B54">PPC &middot; investment &middot; S = I</text>
+    <text x="400" y="72" text-anchor="middle" font-family="EB Garamond, serif" font-size="13" font-weight="bold" fill="#1A5C38">1.2 UTILITY &middot; WEALTH</text>
+    <text x="400" y="89" text-anchor="middle" font-family="EB Garamond, serif" font-size="10.5" fill="#4E5B54">PPC &middot; investment &middot; S = I</text>
     <rect x="565" y="58" width="180" height="60" rx="8" fill="#EAF4EE" stroke="#1A5C38" stroke-width="1.3"/>
-    <text x="655" y="82" text-anchor="middle" font-family="Georgia,serif" font-size="13" font-weight="bold" fill="#1A5C38">1.3 DEMAND &middot; SUPPLY</text>
-    <text x="655" y="99" text-anchor="middle" font-family="Georgia,serif" font-size="10.5" fill="#4E5B54">elasticity &middot; 6 equilibrium cases</text>
+    <text x="655" y="82" text-anchor="middle" font-family="EB Garamond, serif" font-size="13" font-weight="bold" fill="#1A5C38">1.3 DEMAND &middot; SUPPLY</text>
+    <text x="655" y="99" text-anchor="middle" font-family="EB Garamond, serif" font-size="10.5" fill="#4E5B54">elasticity &middot; 6 equilibrium cases</text>
     <rect x="55" y="382" width="180" height="60" rx="8" fill="#EAF4EE" stroke="#1A5C38" stroke-width="1.3"/>
-    <text x="145" y="406" text-anchor="middle" font-family="Georgia,serif" font-size="13" font-weight="bold" fill="#1A5C38">1.4 PRODUCTION</text>
-    <text x="145" y="423" text-anchor="middle" font-family="Georgia,serif" font-size="10.5" fill="#4E5B54">3 stages &middot; returns to scale</text>
+    <text x="145" y="406" text-anchor="middle" font-family="EB Garamond, serif" font-size="13" font-weight="bold" fill="#1A5C38">1.4 PRODUCTION</text>
+    <text x="145" y="423" text-anchor="middle" font-family="EB Garamond, serif" font-size="10.5" fill="#4E5B54">3 stages &middot; returns to scale</text>
     <rect x="310" y="392" width="180" height="60" rx="8" fill="#EAF4EE" stroke="#1A5C38" stroke-width="1.3"/>
-    <text x="400" y="416" text-anchor="middle" font-family="Georgia,serif" font-size="13" font-weight="bold" fill="#1A5C38">1.5 COST</text>
-    <text x="400" y="433" text-anchor="middle" font-family="Georgia,serif" font-size="10.5" fill="#4E5B54">cost-curve family &middot; economies</text>
+    <text x="400" y="416" text-anchor="middle" font-family="EB Garamond, serif" font-size="13" font-weight="bold" fill="#1A5C38">1.5 COST</text>
+    <text x="400" y="433" text-anchor="middle" font-family="EB Garamond, serif" font-size="10.5" fill="#4E5B54">cost-curve family &middot; economies</text>
     <rect x="565" y="382" width="180" height="60" rx="8" fill="#EAF4EE" stroke="#1A5C38" stroke-width="1.3"/>
-    <text x="655" y="406" text-anchor="middle" font-family="Georgia,serif" font-size="13" font-weight="bold" fill="#1A5C38">1.6 MEANS OF PRODN</text>
-    <text x="655" y="423" text-anchor="middle" font-family="Georgia,serif" font-size="10.5" fill="#4E5B54">Marx &middot; capitalism/socialism</text>
+    <text x="655" y="406" text-anchor="middle" font-family="EB Garamond, serif" font-size="13" font-weight="bold" fill="#1A5C38">1.6 MEANS OF PRODN</text>
+    <text x="655" y="423" text-anchor="middle" font-family="EB Garamond, serif" font-size="10.5" fill="#4E5B54">Marx &middot; capitalism/socialism</text>
     <circle cx="400" cy="250" r="56" fill="#1A5C38"/>
-    <text x="400" y="243" text-anchor="middle" font-family="Georgia,serif" font-size="14" font-weight="bold" fill="#FFFFFF">MODULE 1</text>
-    <text x="400" y="261" text-anchor="middle" font-family="Georgia,serif" font-size="11" fill="#DCE9E1">BASIC CONCEPTS</text>
-    <text x="400" y="276" text-anchor="middle" font-family="Georgia,serif" font-size="10.5" fill="#DCE9E1">15%</text>
+    <text x="400" y="243" text-anchor="middle" font-family="EB Garamond, serif" font-size="14" font-weight="bold" fill="#FFFFFF">MODULE 1</text>
+    <text x="400" y="261" text-anchor="middle" font-family="EB Garamond, serif" font-size="11" fill="#DCE9E1">BASIC CONCEPTS</text>
+    <text x="400" y="276" text-anchor="middle" font-family="EB Garamond, serif" font-size="10.5" fill="#DCE9E1">15%</text>
   </svg>
   </div>
   <div class="trigger-box"><strong>The module in one sentence:</strong> economics defined four ways (1.1) studies how wealth is created (1.2), how markets price it through demand and supply (1.3), how firms produce it (1.4) at what cost (1.5), and who owns the machinery of producing it (1.6).</div>
@@ -455,15 +455,15 @@ tfoot { display: table-footer-group; }
 <div class="mind-map-container" style="margin:3mm 0;">
 <svg viewBox="0 0 800 90" width="620" height="70" xmlns="http://www.w3.org/2000/svg" style="max-width:100%;display:block;margin:0 auto;">
   <rect x="60" y="20" width="160" height="50" rx="8" fill="#1A5C38"/>
-  <text x="140" y="50" text-anchor="middle" font-family="Georgia,serif" font-size="16" font-weight="bold" fill="#FFFFFF">WANTS</text>
+  <text x="140" y="50" text-anchor="middle" font-family="EB Garamond, serif" font-size="16" font-weight="bold" fill="#FFFFFF">WANTS</text>
   <line x1="220" y1="45" x2="310" y2="45" stroke="#277548" stroke-width="2"/>
   <path d="M310 45 l-10 -5 v10 z" fill="#277548"/>
   <rect x="315" y="20" width="160" height="50" rx="8" fill="#EAF4EE" stroke="#1A5C38" stroke-width="1.5"/>
-  <text x="395" y="50" text-anchor="middle" font-family="Georgia,serif" font-size="16" font-weight="bold" fill="#1A5C38">EFFORTS</text>
+  <text x="395" y="50" text-anchor="middle" font-family="EB Garamond, serif" font-size="16" font-weight="bold" fill="#1A5C38">EFFORTS</text>
   <line x1="475" y1="45" x2="565" y2="45" stroke="#277548" stroke-width="2"/>
   <path d="M565 45 l-10 -5 v10 z" fill="#277548"/>
   <rect x="570" y="20" width="180" height="50" rx="8" fill="#1A5C38"/>
-  <text x="660" y="50" text-anchor="middle" font-family="Georgia,serif" font-size="16" font-weight="bold" fill="#FFFFFF">SATISFACTION</text>
+  <text x="660" y="50" text-anchor="middle" font-family="EB Garamond, serif" font-size="16" font-weight="bold" fill="#FFFFFF">SATISFACTION</text>
 </svg>
 </div>
 <p class="body">This chain is the subject matter of economics, which is divided into <strong>four parts</strong>:</p>
@@ -558,17 +558,17 @@ tfoot { display: table-footer-group; }
 <svg viewBox="0 0 800 420" width="560" height="294" xmlns="http://www.w3.org/2000/svg" style="max-width:100%;display:block;margin:0 auto;">
   <line x1="110" y1="40" x2="110" y2="360" stroke="#233028" stroke-width="2"/>
   <line x1="110" y1="360" x2="740" y2="360" stroke="#233028" stroke-width="2"/>
-  <text x="70" y="55" font-family="Georgia,serif" font-size="15" fill="#233028">Guns</text>
-  <text x="700" y="392" font-family="Georgia,serif" font-size="15" fill="#233028">Butter</text>
-  <text x="98" y="378" font-family="Georgia,serif" font-size="14" fill="#233028">O</text>
+  <text x="70" y="55" font-family="EB Garamond, serif" font-size="15" fill="#233028">Guns</text>
+  <text x="700" y="392" font-family="EB Garamond, serif" font-size="15" fill="#233028">Butter</text>
+  <text x="98" y="378" font-family="EB Garamond, serif" font-size="14" fill="#233028">O</text>
   <path d="M110 70 Q 480 100 680 360" fill="none" stroke="#1A5C38" stroke-width="3"/>
   <circle cx="333" cy="114" r="6" fill="#1A5C38"/>
-  <text x="333" y="92" text-anchor="middle" font-family="Georgia,serif" font-size="14" font-weight="bold" fill="#1A5C38">D (on PPC — possible)</text>
+  <text x="333" y="92" text-anchor="middle" font-family="EB Garamond, serif" font-size="14" font-weight="bold" fill="#1A5C38">D (on PPC — possible)</text>
   <circle cx="560" cy="140" r="6" fill="#B23B2E"/>
-  <text x="588" y="132" font-family="Georgia,serif" font-size="13.5" fill="#B23B2E">beyond — impossible</text>
+  <text x="588" y="132" font-family="EB Garamond, serif" font-size="13.5" fill="#B23B2E">beyond — impossible</text>
   <circle cx="300" cy="280" r="6" fill="#8A6D1F"/>
-  <text x="300" y="305" text-anchor="middle" font-family="Georgia,serif" font-size="13.5" fill="#8A6D1F">below — unemployment</text>
-  <text x="430" y="230" font-family="Georgia,serif" font-size="13.5" font-style="italic" fill="#4E5B54" stroke="#FFFFFF" stroke-width="3.5" paint-order="stroke" stroke-linejoin="round">slope = MRT = opportunity cost</text>
+  <text x="300" y="305" text-anchor="middle" font-family="EB Garamond, serif" font-size="13.5" fill="#8A6D1F">below — unemployment</text>
+  <text x="430" y="230" font-family="EB Garamond, serif" font-size="13.5" font-style="italic" fill="#4E5B54" stroke="#FFFFFF" stroke-width="3.5" paint-order="stroke" stroke-linejoin="round">slope = MRT = opportunity cost</text>
 </svg>
 </div>
 <p class="body"><strong>Main points (ICMAI):</strong></p>
@@ -664,22 +664,22 @@ tfoot { display: table-footer-group; }
 <svg viewBox="0 0 800 320" width="560" height="224" xmlns="http://www.w3.org/2000/svg" style="max-width:100%;display:block;margin:0 auto;">
   <line x1="70" y1="30" x2="70" y2="270" stroke="#233028" stroke-width="2"/>
   <line x1="70" y1="270" x2="370" y2="270" stroke="#233028" stroke-width="2"/>
-  <text x="45" y="45" font-family="Georgia,serif" font-size="13" fill="#233028">P</text>
-  <text x="358" y="292" font-family="Georgia,serif" font-size="13" fill="#233028">Q</text>
+  <text x="45" y="45" font-family="EB Garamond, serif" font-size="13" fill="#233028">P</text>
+  <text x="358" y="292" font-family="EB Garamond, serif" font-size="13" fill="#233028">Q</text>
   <line x1="95" y1="55" x2="345" y2="245" stroke="#1A5C38" stroke-width="2.6"/>
   <circle cx="170" cy="112" r="5" fill="#1A5C38"/><circle cx="270" cy="188" r="5" fill="#1A5C38"/>
   <path d="M186 128 L 252 178" fill="none" stroke="#8A6D1F" stroke-width="1.8" stroke-dasharray="5 4"/>
   <path d="M252 178 l-9 -8 l3 11 z" fill="#8A6D1F"/>
-  <text x="220" y="120" text-anchor="middle" font-family="Georgia,serif" font-size="12.5" fill="#8A6D1F">extension &darr;price</text>
-  <text x="220" y="300" text-anchor="middle" font-family="Georgia,serif" font-size="13" font-weight="bold" fill="#1A5C38">MOVEMENT along one curve</text>
+  <text x="220" y="120" text-anchor="middle" font-family="EB Garamond, serif" font-size="12.5" fill="#8A6D1F">extension &darr;price</text>
+  <text x="220" y="300" text-anchor="middle" font-family="EB Garamond, serif" font-size="13" font-weight="bold" fill="#1A5C38">MOVEMENT along one curve</text>
   <line x1="470" y1="30" x2="470" y2="270" stroke="#233028" stroke-width="2"/>
   <line x1="470" y1="270" x2="770" y2="270" stroke="#233028" stroke-width="2"/>
-  <text x="445" y="45" font-family="Georgia,serif" font-size="13" fill="#233028">P</text>
-  <text x="758" y="292" font-family="Georgia,serif" font-size="13" fill="#233028">Q</text>
+  <text x="445" y="45" font-family="EB Garamond, serif" font-size="13" fill="#233028">P</text>
+  <text x="758" y="292" font-family="EB Garamond, serif" font-size="13" fill="#233028">Q</text>
   <line x1="495" y1="55" x2="715" y2="245" stroke="#1A5C38" stroke-width="2.6"/>
   <line x1="540" y1="45" x2="758" y2="232" stroke="#277548" stroke-width="2.2" stroke-dasharray="7 4"/>
-  <text x="705" y="70" text-anchor="middle" font-family="Georgia,serif" font-size="12.5" fill="#277548">increase &rarr; right</text>
-  <text x="620" y="300" text-anchor="middle" font-family="Georgia,serif" font-size="13" font-weight="bold" fill="#1A5C38">SHIFT to a new curve</text>
+  <text x="705" y="70" text-anchor="middle" font-family="EB Garamond, serif" font-size="12.5" fill="#277548">increase &rarr; right</text>
+  <text x="620" y="300" text-anchor="middle" font-family="EB Garamond, serif" font-size="13" font-weight="bold" fill="#1A5C38">SHIFT to a new curve</text>
 </svg>
 </div>
 <div class="trap-block"><span class="pill amber">&#9888; TRAP</span><p class="trap-label">Which word for which cause</p><p class="trap-row"><strong>THE TRAP:</strong> <em>price</em> change &rarr; extension/contraction (movement ALONG the curve). <em>Any other determinant</em> &rarr; increase/decrease (SHIFT of the curve). &ldquo;Change in demand due to change in price is called extension&rdquo; is marked FALSE in ICMAI&rsquo;s True/False key — because a price change can cause extension <em>or</em> contraction; the statement is one-sided.</p></div>
@@ -790,16 +790,16 @@ tfoot { display: table-footer-group; }
 <svg viewBox="0 0 800 330" width="560" height="231" xmlns="http://www.w3.org/2000/svg" style="max-width:100%;display:block;margin:0 auto;">
   <line x1="80" y1="25" x2="80" y2="270" stroke="#233028" stroke-width="2"/>
   <line x1="80" y1="270" x2="740" y2="270" stroke="#233028" stroke-width="2"/>
-  <text x="42" y="40" font-family="Georgia,serif" font-size="13" fill="#233028">Utility</text>
-  <text x="700" y="292" font-family="Georgia,serif" font-size="13" fill="#233028">Units</text>
+  <text x="42" y="40" font-family="EB Garamond, serif" font-size="13" fill="#233028">Utility</text>
+  <text x="700" y="292" font-family="EB Garamond, serif" font-size="13" fill="#233028">Units</text>
   <path d="M80 245 Q 260 60 450 55 Q 560 55 680 130" fill="none" stroke="#1A5C38" stroke-width="3"/>
-  <text x="475" y="42" font-family="Georgia,serif" font-size="14" font-weight="bold" fill="#1A5C38">TU</text>
+  <text x="475" y="42" font-family="EB Garamond, serif" font-size="14" font-weight="bold" fill="#1A5C38">TU</text>
   <path d="M80 150 Q 300 205 450 270 Q 520 300 600 317" fill="none" stroke="#8A6D1F" stroke-width="3"/>
-  <text x="612" y="318" font-family="Georgia,serif" font-size="14" font-weight="bold" fill="#8A6D1F">MU</text>
+  <text x="612" y="318" font-family="EB Garamond, serif" font-size="14" font-weight="bold" fill="#8A6D1F">MU</text>
   <circle cx="450" cy="55" r="6" fill="#1A5C38"/>
   <circle cx="450" cy="270" r="6" fill="#8A6D1F"/>
   <line x1="450" y1="55" x2="450" y2="270" stroke="#B9CDC1" stroke-width="1.4" stroke-dasharray="4 4"/>
-  <text x="452" y="248" font-family="Georgia,serif" font-size="12.5" fill="#4E5B54"> TU max &hArr; MU = 0</text>
+  <text x="452" y="248" font-family="EB Garamond, serif" font-size="12.5" fill="#4E5B54"> TU max &hArr; MU = 0</text>
 </svg>
 </div>
 <p class="body">Four main points summarise the law: while total utility rises, marginal utility diminishes, so the TU curve moves up while the MU curve moves down; when TU reaches its maximum, MU equals zero, meaning the MU curve intercepts the X-axis at that point; and when TU itself starts diminishing, MU turns negative.</p>
@@ -869,21 +869,21 @@ tfoot { display: table-footer-group; }
 <svg viewBox="0 0 800 350" width="560" height="245" xmlns="http://www.w3.org/2000/svg" style="max-width:100%;display:block;margin:0 auto;">
   <line x1="110" y1="25" x2="110" y2="300" stroke="#233028" stroke-width="2"/>
   <line x1="110" y1="300" x2="720" y2="300" stroke="#233028" stroke-width="2"/>
-  <text x="80" y="40" font-family="Georgia,serif" font-size="14" fill="#233028">Price</text>
-  <text x="660" y="325" font-family="Georgia,serif" font-size="14" fill="#233028">Quantity</text>
-  <text x="98" y="318" font-family="Georgia,serif" font-size="13" fill="#233028">O</text>
+  <text x="80" y="40" font-family="EB Garamond, serif" font-size="14" fill="#233028">Price</text>
+  <text x="660" y="325" font-family="EB Garamond, serif" font-size="14" fill="#233028">Quantity</text>
+  <text x="98" y="318" font-family="EB Garamond, serif" font-size="13" fill="#233028">O</text>
   <line x1="160" y1="55" x2="640" y2="275" stroke="#1A5C38" stroke-width="2.8"/>
-  <text x="655" y="282" font-family="Georgia,serif" font-size="15" font-weight="bold" fill="#1A5C38">D</text>
+  <text x="655" y="282" font-family="EB Garamond, serif" font-size="15" font-weight="bold" fill="#1A5C38">D</text>
   <line x1="160" y1="275" x2="640" y2="55" stroke="#8A6D1F" stroke-width="2.8"/>
-  <text x="655" y="60" font-family="Georgia,serif" font-size="15" font-weight="bold" fill="#8A6D1F">S</text>
+  <text x="655" y="60" font-family="EB Garamond, serif" font-size="15" font-weight="bold" fill="#8A6D1F">S</text>
   <circle cx="400" cy="165" r="7" fill="#233028"/>
-  <text x="418" y="152" font-family="Georgia,serif" font-size="14" font-weight="bold" fill="#233028">E — equilibrium</text>
+  <text x="418" y="152" font-family="EB Garamond, serif" font-size="14" font-weight="bold" fill="#233028">E — equilibrium</text>
   <line x1="110" y1="165" x2="400" y2="165" stroke="#B9CDC1" stroke-width="1.4" stroke-dasharray="4 4"/>
   <line x1="400" y1="165" x2="400" y2="300" stroke="#B9CDC1" stroke-width="1.4" stroke-dasharray="4 4"/>
-  <text x="88" y="170" font-family="Georgia,serif" font-size="13.5" fill="#233028">P</text>
-  <text x="395" y="318" font-family="Georgia,serif" font-size="13.5" fill="#233028">Q</text>
-  <text x="255" y="95" font-family="Georgia,serif" font-size="12.5" fill="#4E5B54">above P: supply &gt; demand</text>
-  <text x="255" y="262" font-family="Georgia,serif" font-size="12.5" fill="#4E5B54">below P: demand &gt; supply</text>
+  <text x="88" y="170" font-family="EB Garamond, serif" font-size="13.5" fill="#233028">P</text>
+  <text x="395" y="318" font-family="EB Garamond, serif" font-size="13.5" fill="#233028">Q</text>
+  <text x="255" y="95" font-family="EB Garamond, serif" font-size="12.5" fill="#4E5B54">above P: supply &gt; demand</text>
+  <text x="255" y="262" font-family="EB Garamond, serif" font-size="12.5" fill="#4E5B54">below P: demand &gt; supply</text>
 </svg>
 </div>
 <p class="body">At price P<sub>1</sub> above equilibrium, supply exceeds demand; at P<sub>2</sub> below it, demand exceeds supply — neither is an equilibrium price. The equilibrium changes only when demand and/or supply themselves change. <strong>The six ICMAI cases:</strong></p>
@@ -938,24 +938,24 @@ tfoot { display: table-footer-group; }
 <svg viewBox="0 0 800 340" width="560" height="238" xmlns="http://www.w3.org/2000/svg" style="max-width:100%;display:block;margin:0 auto;">
   <line x1="80" y1="20" x2="80" y2="290" stroke="#233028" stroke-width="2"/>
   <line x1="80" y1="290" x2="750" y2="290" stroke="#233028" stroke-width="2"/>
-  <text x="30" y="35" font-family="Georgia,serif" font-size="13" fill="#233028">Product</text>
-  <text x="700" y="312" font-family="Georgia,serif" font-size="13" fill="#233028">Labour</text>
+  <text x="30" y="35" font-family="EB Garamond, serif" font-size="13" fill="#233028">Product</text>
+  <text x="700" y="312" font-family="EB Garamond, serif" font-size="13" fill="#233028">Labour</text>
   <rect x="80" y="20" width="220" height="270" fill="#EAF4EE" opacity="0.55"/>
   <rect x="300" y="20" width="230" height="270" fill="#F7F1DC" opacity="0.55"/>
   <rect x="530" y="20" width="220" height="270" fill="#F5E3DF" opacity="0.55"/>
-  <text x="190" y="42" text-anchor="middle" font-family="Georgia,serif" font-size="13" font-weight="bold" fill="#1A5C38">STAGE 1</text>
-  <text x="415" y="42" text-anchor="middle" font-family="Georgia,serif" font-size="13" font-weight="bold" fill="#8A6D1F">STAGE 2 — operate here</text>
-  <text x="640" y="42" text-anchor="middle" font-family="Georgia,serif" font-size="13" font-weight="bold" fill="#B23B2E">STAGE 3</text>
+  <text x="190" y="42" text-anchor="middle" font-family="EB Garamond, serif" font-size="13" font-weight="bold" fill="#1A5C38">STAGE 1</text>
+  <text x="415" y="42" text-anchor="middle" font-family="EB Garamond, serif" font-size="13" font-weight="bold" fill="#8A6D1F">STAGE 2 — operate here</text>
+  <text x="640" y="42" text-anchor="middle" font-family="EB Garamond, serif" font-size="13" font-weight="bold" fill="#B23B2E">STAGE 3</text>
   <path d="M80 285 Q 250 150 420 80 Q 500 55 530 55 Q 590 57 660 100" fill="none" stroke="#1A5C38" stroke-width="3"/>
-  <text x="545" y="76" font-family="Georgia,serif" font-size="13.5" font-weight="bold" fill="#1A5C38">TP</text>
+  <text x="545" y="76" font-family="EB Garamond, serif" font-size="13.5" font-weight="bold" fill="#1A5C38">TP</text>
   <path d="M80 270 Q 220 185 300 180 Q 420 178 660 240" fill="none" stroke="#277548" stroke-width="2.4"/>
-  <text x="668" y="240" font-family="Georgia,serif" font-size="13" font-weight="bold" fill="#277548">AP</text>
+  <text x="668" y="240" font-family="EB Garamond, serif" font-size="13" font-weight="bold" fill="#277548">AP</text>
   <path d="M80 258 Q 190 130 300 168 Q 430 220 530 288 L 620 330" fill="none" stroke="#8A6D1F" stroke-width="2.4"/>
-  <text x="600" y="322" font-family="Georgia,serif" font-size="13" font-weight="bold" fill="#8A6D1F">MP</text>
+  <text x="600" y="322" font-family="EB Garamond, serif" font-size="13" font-weight="bold" fill="#8A6D1F">MP</text>
   <circle cx="300" cy="178" r="6" fill="#233028"/>
-  <text x="300" y="158" text-anchor="middle" font-family="Georgia,serif" font-size="11.5" fill="#233028" stroke="#FFFFFF" stroke-width="3.5" paint-order="stroke" stroke-linejoin="round">MP = AP (AP max)</text>
+  <text x="300" y="158" text-anchor="middle" font-family="EB Garamond, serif" font-size="11.5" fill="#233028" stroke="#FFFFFF" stroke-width="3.5" paint-order="stroke" stroke-linejoin="round">MP = AP (AP max)</text>
   <circle cx="530" cy="288" r="6" fill="#233028"/>
-  <text x="527" y="274" text-anchor="middle" font-family="Georgia,serif" font-size="11.5" fill="#233028" stroke="#FFFFFF" stroke-width="3.5" paint-order="stroke" stroke-linejoin="round">MP = 0 (TP max)</text>
+  <text x="527" y="274" text-anchor="middle" font-family="EB Garamond, serif" font-size="11.5" fill="#233028" stroke="#FFFFFF" stroke-width="3.5" paint-order="stroke" stroke-linejoin="round">MP = 0 (TP max)</text>
 </svg>
 </div>
 </div>
@@ -1095,18 +1095,18 @@ tfoot { display: table-footer-group; }
 <svg viewBox="0 0 800 340" width="560" height="238" xmlns="http://www.w3.org/2000/svg" style="max-width:100%;display:block;margin:0 auto;">
   <line x1="80" y1="20" x2="80" y2="290" stroke="#233028" stroke-width="2"/>
   <line x1="80" y1="290" x2="750" y2="290" stroke="#233028" stroke-width="2"/>
-  <text x="38" y="35" font-family="Georgia,serif" font-size="13" fill="#233028">Cost</text>
-  <text x="690" y="312" font-family="Georgia,serif" font-size="13" fill="#233028">Output</text>
+  <text x="38" y="35" font-family="EB Garamond, serif" font-size="13" fill="#233028">Cost</text>
+  <text x="690" y="312" font-family="EB Garamond, serif" font-size="13" fill="#233028">Output</text>
   <path d="M110 60 Q 240 240 380 262 Q 540 282 720 284" fill="none" stroke="#4E5B54" stroke-width="2.2"/>
-  <text x="140" y="65" font-family="Georgia,serif" font-size="13" font-weight="bold" fill="#4E5B54">AFC</text>
+  <text x="140" y="65" font-family="EB Garamond, serif" font-size="13" font-weight="bold" fill="#4E5B54">AFC</text>
   <path d="M110 200 Q 300 118 420 122 Q 560 130 700 70" fill="none" stroke="#1A5C38" stroke-width="3"/>
-  <text x="705" y="66" font-family="Georgia,serif" font-size="13.5" font-weight="bold" fill="#1A5C38">AC</text>
+  <text x="705" y="66" font-family="EB Garamond, serif" font-size="13.5" font-weight="bold" fill="#1A5C38">AC</text>
   <path d="M110 235 Q 280 170 400 176 Q 540 186 690 120" fill="none" stroke="#277548" stroke-width="2.4"/>
-  <text x="697" y="118" font-family="Georgia,serif" font-size="13" font-weight="bold" fill="#277548">AVC</text>
+  <text x="697" y="118" font-family="EB Garamond, serif" font-size="13" font-weight="bold" fill="#277548">AVC</text>
   <path d="M110 262 Q 215 212 300 209 Q 400 208 452 123 Q 530 40 660 18" fill="none" stroke="#8A6D1F" stroke-width="2.6"/>
-  <text x="628" y="30" font-family="Georgia,serif" font-size="13.5" font-weight="bold" fill="#8A6D1F">MC</text>
+  <text x="628" y="30" font-family="EB Garamond, serif" font-size="13.5" font-weight="bold" fill="#8A6D1F">MC</text>
   <circle cx="452" cy="124" r="6" fill="#233028"/>
-  <text x="452" y="104" text-anchor="middle" font-family="Georgia,serif" font-size="12" fill="#233028" stroke="#FFFFFF" stroke-width="3.5" paint-order="stroke" stroke-linejoin="round">MC cuts AC at AC minimum</text>
+  <text x="452" y="104" text-anchor="middle" font-family="EB Garamond, serif" font-size="12" fill="#233028" stroke="#FFFFFF" stroke-width="3.5" paint-order="stroke" stroke-linejoin="round">MC cuts AC at AC minimum</text>
 </svg>
 </div>
 <div class="trap-block"><span class="pill amber">&#9888; TRAP</span><p class="trap-label">Where MC crosses AC</p><p class="trap-row"><strong>THE TRAP:</strong> in the first stage both MC and AC fall and <strong>MC is below AC</strong>; in the second both rise and MC is above AC (changes in MC are more than changes in AC). <strong>The MC curve cuts the AC curve when AC is minimum.</strong> Mirror of MP-cuts-AP-at-AP-maximum in production.</p></div>
@@ -1333,24 +1333,24 @@ tfoot { display: table-footer-group; }
     <line x1="400" y1="250" x2="670" y2="400" stroke="#277548" stroke-width="1.5"/>
     <line x1="400" y1="250" x2="400" y2="425" stroke="#277548" stroke-width="1.5"/>
     <rect x="58" y="66" width="184" height="66" rx="8" fill="#EAF4EE" stroke="#1A5C38" stroke-width="1.3"/>
-    <text x="150" y="90" text-anchor="middle" font-family="Georgia,serif" font-size="12.5" font-weight="bold" fill="#1A5C38">11 PRICING STRATEGIES</text>
-    <text x="150" y="107" text-anchor="middle" font-family="Georgia,serif" font-size="10.5" fill="#4E5B54">cost-plus &middot; limit &middot; penetration &hellip;</text>
+    <text x="150" y="90" text-anchor="middle" font-family="EB Garamond, serif" font-size="12.5" font-weight="bold" fill="#1A5C38">11 PRICING STRATEGIES</text>
+    <text x="150" y="107" text-anchor="middle" font-family="EB Garamond, serif" font-size="10.5" fill="#4E5B54">cost-plus &middot; limit &middot; penetration &hellip;</text>
     <rect x="558" y="66" width="184" height="66" rx="8" fill="#EAF4EE" stroke="#1A5C38" stroke-width="1.3"/>
-    <text x="650" y="90" text-anchor="middle" font-family="Georgia,serif" font-size="12.5" font-weight="bold" fill="#1A5C38">PERFECT COMPETITION</text>
-    <text x="650" y="107" text-anchor="middle" font-family="Georgia,serif" font-size="10.5" fill="#4E5B54">6 features &middot; MC = MR &middot; BEP</text>
+    <text x="650" y="90" text-anchor="middle" font-family="EB Garamond, serif" font-size="12.5" font-weight="bold" fill="#1A5C38">PERFECT COMPETITION</text>
+    <text x="650" y="107" text-anchor="middle" font-family="EB Garamond, serif" font-size="10.5" fill="#4E5B54">6 features &middot; MC = MR &middot; BEP</text>
     <rect x="38" y="368" width="184" height="66" rx="8" fill="#EAF4EE" stroke="#1A5C38" stroke-width="1.3"/>
-    <text x="130" y="392" text-anchor="middle" font-family="Georgia,serif" font-size="12.5" font-weight="bold" fill="#1A5C38">MARKET CLASSIFICATION</text>
-    <text x="130" y="409" text-anchor="middle" font-family="Georgia,serif" font-size="10.5" fill="#4E5B54">area 3 &middot; time 3 &middot; competition 2</text>
+    <text x="130" y="392" text-anchor="middle" font-family="EB Garamond, serif" font-size="12.5" font-weight="bold" fill="#1A5C38">MARKET CLASSIFICATION</text>
+    <text x="130" y="409" text-anchor="middle" font-family="EB Garamond, serif" font-size="10.5" fill="#4E5B54">area 3 &middot; time 3 &middot; competition 2</text>
     <rect x="562" y="368" width="215" height="66" rx="8" fill="#EAF4EE" stroke="#1A5C38" stroke-width="1.3"/>
-    <text x="670" y="392" text-anchor="middle" font-family="Georgia,serif" font-size="12.5" font-weight="bold" fill="#1A5C38">PRICE DISCRIMINATION</text>
-    <text x="670" y="409" text-anchor="middle" font-family="Georgia,serif" font-size="10.5" fill="#4E5B54">Pigou&rsquo;s 3 degrees &middot; MR&#8321;=MR&#8322;=MC</text>
+    <text x="670" y="392" text-anchor="middle" font-family="EB Garamond, serif" font-size="12.5" font-weight="bold" fill="#1A5C38">PRICE DISCRIMINATION</text>
+    <text x="670" y="409" text-anchor="middle" font-family="EB Garamond, serif" font-size="10.5" fill="#4E5B54">Pigou&rsquo;s 3 degrees &middot; MR&#8321;=MR&#8322;=MC</text>
     <rect x="280" y="400" width="240" height="66" rx="8" fill="#EAF4EE" stroke="#1A5C38" stroke-width="1.3"/>
-    <text x="400" y="424" text-anchor="middle" font-family="Georgia,serif" font-size="12.5" font-weight="bold" fill="#1A5C38">IMPERFECT FORMS</text>
-    <text x="400" y="441" text-anchor="middle" font-family="Georgia,serif" font-size="10.5" fill="#4E5B54">monopoly &middot; duopoly &middot; oligopoly &middot; monopolistic</text>
+    <text x="400" y="424" text-anchor="middle" font-family="EB Garamond, serif" font-size="12.5" font-weight="bold" fill="#1A5C38">IMPERFECT FORMS</text>
+    <text x="400" y="441" text-anchor="middle" font-family="EB Garamond, serif" font-size="10.5" fill="#4E5B54">monopoly &middot; duopoly &middot; oligopoly &middot; monopolistic</text>
     <circle cx="400" cy="250" r="56" fill="#1A5C38"/>
-    <text x="400" y="243" text-anchor="middle" font-family="Georgia,serif" font-size="14" font-weight="bold" fill="#FFFFFF">MODULE 2</text>
-    <text x="400" y="261" text-anchor="middle" font-family="Georgia,serif" font-size="10.5" fill="#DCE9E1">FORMS OF MARKET</text>
-    <text x="400" y="276" text-anchor="middle" font-family="Georgia,serif" font-size="10.5" fill="#DCE9E1">20%</text>
+    <text x="400" y="243" text-anchor="middle" font-family="EB Garamond, serif" font-size="14" font-weight="bold" fill="#FFFFFF">MODULE 2</text>
+    <text x="400" y="261" text-anchor="middle" font-family="EB Garamond, serif" font-size="10.5" fill="#DCE9E1">FORMS OF MARKET</text>
+    <text x="400" y="276" text-anchor="middle" font-family="EB Garamond, serif" font-size="10.5" fill="#DCE9E1">20%</text>
   </svg>
   </div>
   <div class="trigger-box"><strong>The module in one sentence:</strong> markets are classified (by area, time and competition), each form prices differently — the perfectly competitive firm takes the price, the monopolist makes it, oligopolists watch each other and keep it rigid, monopolistic competitors differentiate and advertise — and only the monopolist can discriminate on price.</div>
@@ -1386,33 +1386,33 @@ tfoot { display: table-footer-group; }
 <div class="mind-map-container" style="margin:3mm 0;">
 <svg viewBox="0 0 800 330" width="600" height="248" xmlns="http://www.w3.org/2000/svg" style="max-width:100%;display:block;margin:0 auto;">
   <rect x="290" y="18" width="220" height="46" rx="8" fill="#1A5C38"/>
-  <text x="400" y="46" text-anchor="middle" font-family="Georgia,serif" font-size="15" font-weight="bold" fill="#FFFFFF">CLASSIFICATION OF MARKETS</text>
+  <text x="400" y="46" text-anchor="middle" font-family="EB Garamond, serif" font-size="15" font-weight="bold" fill="#FFFFFF">CLASSIFICATION OF MARKETS</text>
   <line x1="400" y1="64" x2="140" y2="120" stroke="#277548" stroke-width="1.6"/>
   <line x1="400" y1="64" x2="400" y2="120" stroke="#277548" stroke-width="1.6"/>
   <line x1="400" y1="64" x2="660" y2="120" stroke="#277548" stroke-width="1.6"/>
   <rect x="45" y="120" width="190" height="44" rx="8" fill="#EAF4EE" stroke="#1A5C38" stroke-width="1.3"/>
-  <text x="140" y="139" text-anchor="middle" font-family="Georgia,serif" font-size="12.5" font-weight="bold" fill="#1A5C38">BY AREA / LOCALITY</text>
-  <text x="140" y="156" text-anchor="middle" font-family="Georgia,serif" font-size="10.5" fill="#4E5B54">3 types</text>
+  <text x="140" y="139" text-anchor="middle" font-family="EB Garamond, serif" font-size="12.5" font-weight="bold" fill="#1A5C38">BY AREA / LOCALITY</text>
+  <text x="140" y="156" text-anchor="middle" font-family="EB Garamond, serif" font-size="10.5" fill="#4E5B54">3 types</text>
   <rect x="305" y="120" width="190" height="44" rx="8" fill="#EAF4EE" stroke="#1A5C38" stroke-width="1.3"/>
-  <text x="400" y="139" text-anchor="middle" font-family="Georgia,serif" font-size="12.5" font-weight="bold" fill="#1A5C38">BY TIME ELEMENT</text>
-  <text x="400" y="156" text-anchor="middle" font-family="Georgia,serif" font-size="10.5" fill="#4E5B54">3 types</text>
+  <text x="400" y="139" text-anchor="middle" font-family="EB Garamond, serif" font-size="12.5" font-weight="bold" fill="#1A5C38">BY TIME ELEMENT</text>
+  <text x="400" y="156" text-anchor="middle" font-family="EB Garamond, serif" font-size="10.5" fill="#4E5B54">3 types</text>
   <rect x="565" y="120" width="190" height="44" rx="8" fill="#EAF4EE" stroke="#1A5C38" stroke-width="1.3"/>
-  <text x="660" y="139" text-anchor="middle" font-family="Georgia,serif" font-size="12.5" font-weight="bold" fill="#1A5C38">BY COMPETITION</text>
-  <text x="660" y="156" text-anchor="middle" font-family="Georgia,serif" font-size="10.5" fill="#4E5B54">2 types</text>
+  <text x="660" y="139" text-anchor="middle" font-family="EB Garamond, serif" font-size="12.5" font-weight="bold" fill="#1A5C38">BY COMPETITION</text>
+  <text x="660" y="156" text-anchor="middle" font-family="EB Garamond, serif" font-size="10.5" fill="#4E5B54">2 types</text>
   <line x1="140" y1="164" x2="140" y2="196" stroke="#C4DDD0" stroke-width="1.4"/>
   <rect x="48" y="196" width="184" height="88" rx="8" fill="#FFFFFF" stroke="#C4DDD0" stroke-width="1.3"/>
-  <text x="140" y="220" text-anchor="middle" font-family="Georgia,serif" font-size="11.5" fill="#233028">Local — vegetables, flowers</text>
-  <text x="140" y="243" text-anchor="middle" font-family="Georgia,serif" font-size="11.5" fill="#233028">National — wheat, sugar, cotton</text>
-  <text x="140" y="266" text-anchor="middle" font-family="Georgia,serif" font-size="11.5" fill="#233028">International — gold, silver</text>
+  <text x="140" y="220" text-anchor="middle" font-family="EB Garamond, serif" font-size="11.5" fill="#233028">Local — vegetables, flowers</text>
+  <text x="140" y="243" text-anchor="middle" font-family="EB Garamond, serif" font-size="11.5" fill="#233028">National — wheat, sugar, cotton</text>
+  <text x="140" y="266" text-anchor="middle" font-family="EB Garamond, serif" font-size="11.5" fill="#233028">International — gold, silver</text>
   <line x1="400" y1="164" x2="400" y2="196" stroke="#C4DDD0" stroke-width="1.4"/>
   <rect x="308" y="196" width="184" height="88" rx="8" fill="#FFFFFF" stroke="#C4DDD0" stroke-width="1.3"/>
-  <text x="400" y="220" text-anchor="middle" font-family="Georgia,serif" font-size="11.5" fill="#233028">Very short period</text>
-  <text x="400" y="243" text-anchor="middle" font-family="Georgia,serif" font-size="11.5" fill="#233028">Short period</text>
-  <text x="400" y="266" text-anchor="middle" font-family="Georgia,serif" font-size="11.5" fill="#233028">Long period</text>
+  <text x="400" y="220" text-anchor="middle" font-family="EB Garamond, serif" font-size="11.5" fill="#233028">Very short period</text>
+  <text x="400" y="243" text-anchor="middle" font-family="EB Garamond, serif" font-size="11.5" fill="#233028">Short period</text>
+  <text x="400" y="266" text-anchor="middle" font-family="EB Garamond, serif" font-size="11.5" fill="#233028">Long period</text>
   <line x1="660" y1="164" x2="660" y2="196" stroke="#C4DDD0" stroke-width="1.4"/>
   <rect x="568" y="196" width="184" height="88" rx="8" fill="#FFFFFF" stroke="#C4DDD0" stroke-width="1.3"/>
-  <text x="660" y="226" text-anchor="middle" font-family="Georgia,serif" font-size="11.5" fill="#233028">Perfect competition</text>
-  <text x="660" y="252" text-anchor="middle" font-family="Georgia,serif" font-size="11.5" fill="#233028">Imperfect competition</text>
+  <text x="660" y="226" text-anchor="middle" font-family="EB Garamond, serif" font-size="11.5" fill="#233028">Perfect competition</text>
+  <text x="660" y="252" text-anchor="middle" font-family="EB Garamond, serif" font-size="11.5" fill="#233028">Imperfect competition</text>
 </svg>
 </div>
 <p class="body">Markets classify along three dimensions.</p>
@@ -1450,20 +1450,20 @@ tfoot { display: table-footer-group; }
 <svg viewBox="0 0 800 330" width="560" height="231" xmlns="http://www.w3.org/2000/svg" style="max-width:100%;display:block;margin:0 auto;">
   <line x1="90" y1="25" x2="90" y2="280" stroke="#233028" stroke-width="2"/>
   <line x1="90" y1="280" x2="740" y2="280" stroke="#233028" stroke-width="2"/>
-  <text x="28" y="40" font-family="Georgia,serif" font-size="12.5" fill="#233028">Cost &amp;</text>
-  <text x="28" y="56" font-family="Georgia,serif" font-size="12.5" fill="#233028">Revenue</text>
-  <text x="678" y="303" font-family="Georgia,serif" font-size="12.5" fill="#233028">Output</text>
-  <text x="78" y="298" font-family="Georgia,serif" font-size="12.5" fill="#233028">O</text>
+  <text x="28" y="40" font-family="EB Garamond, serif" font-size="12.5" fill="#233028">Cost &amp;</text>
+  <text x="28" y="56" font-family="EB Garamond, serif" font-size="12.5" fill="#233028">Revenue</text>
+  <text x="678" y="303" font-family="EB Garamond, serif" font-size="12.5" fill="#233028">Output</text>
+  <text x="78" y="298" font-family="EB Garamond, serif" font-size="12.5" fill="#233028">O</text>
   <line x1="90" y1="150" x2="700" y2="150" stroke="#1A5C38" stroke-width="2.6"/>
-  <text x="708" y="155" font-family="Georgia,serif" font-size="13.5" font-weight="bold" fill="#1A5C38">P = AR = MR</text>
+  <text x="708" y="155" font-family="EB Garamond, serif" font-size="13.5" font-weight="bold" fill="#1A5C38">P = AR = MR</text>
   <path d="M170 60 Q 260 240 400 218 Q 520 200 610 70" fill="none" stroke="#8A6D1F" stroke-width="2.6"/>
-  <text x="618" y="62" font-family="Georgia,serif" font-size="13.5" font-weight="bold" fill="#8A6D1F">MC</text>
+  <text x="618" y="62" font-family="EB Garamond, serif" font-size="13.5" font-weight="bold" fill="#8A6D1F">MC</text>
   <circle cx="540" cy="150" r="7" fill="#233028"/>
-  <text x="540" y="128" text-anchor="middle" font-family="Georgia,serif" font-size="13" font-weight="bold" fill="#233028" stroke="#FFFFFF" stroke-width="3.5" paint-order="stroke" stroke-linejoin="round">E&#8321; — MC cuts MR from below</text>
+  <text x="540" y="128" text-anchor="middle" font-family="EB Garamond, serif" font-size="13" font-weight="bold" fill="#233028" stroke="#FFFFFF" stroke-width="3.5" paint-order="stroke" stroke-linejoin="round">E&#8321; — MC cuts MR from below</text>
   <line x1="540" y1="150" x2="540" y2="280" stroke="#B9CDC1" stroke-width="1.4" stroke-dasharray="4 4"/>
-  <text x="540" y="298" text-anchor="middle" font-family="Georgia,serif" font-size="12.5" fill="#233028">M&#8321;</text>
+  <text x="540" y="298" text-anchor="middle" font-family="EB Garamond, serif" font-size="12.5" fill="#233028">M&#8321;</text>
   <circle cx="229" cy="150" r="5" fill="#B23B2E"/>
-  <text x="229" y="128" text-anchor="middle" font-family="Georgia,serif" font-size="11.5" fill="#B23B2E" stroke="#FFFFFF" stroke-width="3.5" paint-order="stroke" stroke-linejoin="round">not equilibrium (cut from above)</text>
+  <text x="229" y="128" text-anchor="middle" font-family="EB Garamond, serif" font-size="11.5" fill="#B23B2E" stroke="#FFFFFF" stroke-width="3.5" paint-order="stroke" stroke-linejoin="round">not equilibrium (cut from above)</text>
 </svg>
 </div>
 <p class="body">In ICMAI&rsquo;s diagram the MC curve intersects MR from below at point E&#8321;, where both conditions hold — so the equilibrium output is M&#8321;. (Where MC crosses MR from <em>above</em>, the first condition holds but not the second — no equilibrium.)</p>
@@ -1517,12 +1517,13 @@ tfoot { display: table-footer-group; }
 <table class="comparison-table">
   <thead><tr><th style="width:26%;">Model</th><th>Core idea</th></tr></thead><tbody>
   <tr><td><strong>1. Cournot&rsquo;s duopoly</strong></td><td>Each duopolist believes the other will go on producing the SAME quantity regardless of his actions. <strong>Cournot output = two-thirds of the competitive output; price = two-thirds of the most profitable (monopoly) price.</strong></td></tr>
-  <tr><td><strong>2. Stackelberg duopoly</strong></td><td>The producer incorporates the rival&rsquo;s decision level into his own profit function and maximises — non-collusion at large; a <strong>leader-follower relation</strong> emerges.</td></tr>
+  <tr><td><strong>2. Stackleberg duopoly</strong></td><td>The producer incorporates the rival&rsquo;s decision level into his own profit function and maximises — non-collusion at large; a <strong>leader-follower relation</strong> emerges.</td></tr>
   <tr><td><strong>3. Bertrand duopoly</strong></td><td>Assumptions similar to Cournot but with <strong>PRICE as the strategy variable</strong> — each producer can lower the price until price equals cost of production.</td></tr>
   <tr><td><strong>4. Edgeworth model</strong></td><td>Each duopolist believes the rival will keep charging the SAME PRICE whatever price he himself sets — <strong>no determinate equilibrium can exist</strong> under duopoly.</td></tr>
   <tr><td><strong>5. Collusive oligopoly</strong></td><td>A <strong>cartel</strong> — firms jointly fix price and output to maximise joint profit; e.g. the OPEC countries.</td></tr>
 </tbody></table>
-<div class="trap-block"><span class="pill amber">&#9888; TRAP</span><p class="trap-label">Cournot vs Bertrand vs Edgeworth</p><p class="trap-row"><strong>THE TRAP:</strong> Cournot — rival&rsquo;s <em>quantity</em> fixed; Bertrand — <em>price</em> is the strategy variable, driven down to cost; Edgeworth — rival&rsquo;s <em>price</em> assumed fixed, no determinate equilibrium; Stackelberg — leader-follower. The kinky (rigid-price) demand curve belongs to OLIGOPOLY — the True/False key marks it FALSE for monopoly.</p></div>
+<div class="trap-block"><span class="pill amber">&#9888; TRAP</span><p class="trap-label">Cournot vs Bertrand vs Edgeworth</p><p class="trap-row"><strong>THE TRAP:</strong> Cournot — rival&rsquo;s <em>quantity</em> fixed; Bertrand — <em>price</em> is the strategy variable, driven down to cost; Edgeworth — rival&rsquo;s <em>price</em> assumed fixed, no determinate equilibrium; Stackleberg — leader-follower. The kinky (rigid-price) demand curve belongs to OLIGOPOLY — the True/False key marks it FALSE for monopoly.</p></div>
+  <div class="trap-block"><span class="pill amber">&#9888; TRAP</span><p class="trap-label">A book spelling, flagged here — the duopoly model’s name</p><p class="trap-row">The Study Notes print this model as <strong>“Stackleberg Duopoly Model,”</strong> and it is reproduced above exactly as printed, because that is the form the examiner has set. The economist actually credited with the leader–follower duopoly model is <strong>Heinrich von Stackelberg</strong>. Recognise BOTH spellings: answer from the Study Notes’ form in the exam, and do not be thrown if you meet the correct spelling anywhere else. The model itself — the leader incorporates the rival’s decision level into its own profit function, with non-collusion practised at large — is identical either way.</p></div>
 </div>
 
 <!-- ============ 2.1 MONOPOLISTIC COMPETITION ============ -->
@@ -1545,14 +1546,14 @@ tfoot { display: table-footer-group; }
 <svg viewBox="0 0 800 300" width="480" height="180" xmlns="http://www.w3.org/2000/svg" style="max-width:100%;display:block;margin:0 auto;">
   <line x1="100" y1="25" x2="100" y2="255" stroke="#233028" stroke-width="2"/>
   <line x1="100" y1="255" x2="720" y2="255" stroke="#233028" stroke-width="2"/>
-  <text x="60" y="40" font-family="Georgia,serif" font-size="13" fill="#233028">Price</text>
-  <text x="660" y="278" font-family="Georgia,serif" font-size="13" fill="#233028">Quantity</text>
+  <text x="60" y="40" font-family="EB Garamond, serif" font-size="13" fill="#233028">Price</text>
+  <text x="660" y="278" font-family="EB Garamond, serif" font-size="13" fill="#233028">Quantity</text>
   <line x1="150" y1="55" x2="680" y2="215" stroke="#1A5C38" stroke-width="2.6"/>
-  <text x="690" y="222" font-family="Georgia,serif" font-size="13.5" font-weight="bold" fill="#1A5C38">dd</text>
+  <text x="690" y="222" font-family="EB Garamond, serif" font-size="13.5" font-weight="bold" fill="#1A5C38">dd</text>
   <line x1="280" y1="35" x2="560" y2="245" stroke="#8A6D1F" stroke-width="2.6"/>
-  <text x="568" y="252" font-family="Georgia,serif" font-size="13.5" font-weight="bold" fill="#8A6D1F">DD</text>
+  <text x="568" y="252" font-family="EB Garamond, serif" font-size="13.5" font-weight="bold" fill="#8A6D1F">DD</text>
   <circle cx="412" cy="134" r="7" fill="#233028"/>
-  <text x="440" y="122" font-family="Georgia,serif" font-size="12.5" font-weight="bold" fill="#233028" stroke="#FFFFFF" stroke-width="3.5" paint-order="stroke" stroke-linejoin="round">price set here</text>
+  <text x="440" y="122" font-family="EB Garamond, serif" font-size="12.5" font-weight="bold" fill="#233028" stroke="#FFFFFF" stroke-width="3.5" paint-order="stroke" stroke-linejoin="round">price set here</text>
 </svg>
 </div>
 <p class="body"><strong>Short-run:</strong> the firm can earn super-normal (abnormal) profit — TR &minus; TC geometry gives abnormal profit <strong>Pabc</strong> in ICMAI&rsquo;s Figure 2.8.</p>
@@ -1633,7 +1634,7 @@ tfoot { display: table-footer-group; }
 <p>&#9318; Shut down when price &lt; AVC; in the long run price is governed by cost of production.</p>
 <p>&#9319; Monopoly: mono + poly; firm = industry; price maker; controls price OR output, never both; demand less elastic.</p>
 <p>&#9320; Oligopoly: oligo + pollien; interdependence, HIGHEST selling costs, uncertainty (no definite demand curve), rigid/kinky price.</p>
-<p>&#9321; Duopoly models: Cournot — output &#8532; of competitive, price &#8532; of monopoly; Stackelberg — leader-follower; Bertrand — price war to cost; Edgeworth — no determinate equilibrium; collusive — cartel (OPEC).</p>
+<p>&#9321; Duopoly models: Cournot — output &#8532; of competitive, price &#8532; of monopoly; Stackleberg — leader-follower; Bertrand — price war to cost; Edgeworth — no determinate equilibrium; collusive — cartel (OPEC).</p>
 <p>&#9322; Monopolistic competition (Chamberlin): differentiation, selling costs, dd &amp; DD curves; price where they cross.</p>
 <p>&#9323; Its long run: normal profit + EXCESS CAPACITY (Q<sub>mc</sub> vs Q<sub>pc</sub>); average selling cost is U-shaped; true AC = vertical summation.</p>
 <p>&#9324; Price discrimination: monopoly only. Pigou&rsquo;s degrees — 1st paying capacity (perfect), 2nd block pricing, 3rd elasticity separation (the common one).</p>
@@ -1720,25 +1721,25 @@ tfoot { display: table-footer-group; }
     <line x1="400" y1="250" x2="160" y2="390" stroke="#277548" stroke-width="1.5"/>
     <line x1="400" y1="250" x2="640" y2="390" stroke="#277548" stroke-width="1.5"/>
     <rect x="62" y="72" width="196" height="70" rx="8" fill="#EAF4EE" stroke="#1A5C38" stroke-width="1.3"/>
-    <text x="160" y="97" text-anchor="middle" font-family="Georgia,serif" font-size="13" font-weight="bold" fill="#1A5C38">3.1 MONEY</text>
-    <text x="160" y="114" text-anchor="middle" font-family="Georgia,serif" font-size="10.5" fill="#4E5B54">4 types &middot; M1/M2/M3 &middot; Fisher,</text>
-    <text x="160" y="129" text-anchor="middle" font-family="Georgia,serif" font-size="10.5" fill="#4E5B54">Cambridge, Keynes &middot; inflation</text>
+    <text x="160" y="97" text-anchor="middle" font-family="EB Garamond, serif" font-size="13" font-weight="bold" fill="#1A5C38">3.1 MONEY</text>
+    <text x="160" y="114" text-anchor="middle" font-family="EB Garamond, serif" font-size="10.5" fill="#4E5B54">4 types &middot; M1/M2/M3 &middot; Fisher,</text>
+    <text x="160" y="129" text-anchor="middle" font-family="EB Garamond, serif" font-size="10.5" fill="#4E5B54">Cambridge, Keynes &middot; inflation</text>
     <rect x="542" y="72" width="196" height="70" rx="8" fill="#EAF4EE" stroke="#1A5C38" stroke-width="1.3"/>
-    <text x="640" y="97" text-anchor="middle" font-family="Georgia,serif" font-size="13" font-weight="bold" fill="#1A5C38">3.2 BANKING</text>
-    <text x="640" y="114" text-anchor="middle" font-family="Georgia,serif" font-size="10.5" fill="#4E5B54">deposits &middot; loans &middot; agency &middot; utility</text>
-    <text x="640" y="129" text-anchor="middle" font-family="Georgia,serif" font-size="10.5" fill="#4E5B54">14 principles</text>
+    <text x="640" y="97" text-anchor="middle" font-family="EB Garamond, serif" font-size="13" font-weight="bold" fill="#1A5C38">3.2 BANKING</text>
+    <text x="640" y="114" text-anchor="middle" font-family="EB Garamond, serif" font-size="10.5" fill="#4E5B54">deposits &middot; loans &middot; agency &middot; utility</text>
+    <text x="640" y="129" text-anchor="middle" font-family="EB Garamond, serif" font-size="10.5" fill="#4E5B54">14 principles</text>
     <rect x="62" y="355" width="196" height="70" rx="8" fill="#EAF4EE" stroke="#1A5C38" stroke-width="1.3"/>
-    <text x="160" y="380" text-anchor="middle" font-family="Georgia,serif" font-size="13" font-weight="bold" fill="#1A5C38">3.3 COMMERCIAL &amp; CENTRAL</text>
-    <text x="160" y="397" text-anchor="middle" font-family="Georgia,serif" font-size="10.5" fill="#4E5B54">RBI 1935/1949 &middot; 9 distinctions</text>
-    <text x="160" y="412" text-anchor="middle" font-family="Georgia,serif" font-size="10.5" fill="#4E5B54">institutions IFCI&hellip;MUDRA</text>
+    <text x="160" y="380" text-anchor="middle" font-family="EB Garamond, serif" font-size="13" font-weight="bold" fill="#1A5C38">3.3 COMMERCIAL &amp; CENTRAL</text>
+    <text x="160" y="397" text-anchor="middle" font-family="EB Garamond, serif" font-size="10.5" fill="#4E5B54">RBI 1935/1949 &middot; 9 distinctions</text>
+    <text x="160" y="412" text-anchor="middle" font-family="EB Garamond, serif" font-size="10.5" fill="#4E5B54">institutions IFCI&hellip;MUDRA</text>
     <rect x="525" y="355" width="230" height="70" rx="8" fill="#EAF4EE" stroke="#1A5C38" stroke-width="1.3"/>
-    <text x="640" y="380" text-anchor="middle" font-family="Georgia,serif" font-size="13" font-weight="bold" fill="#1A5C38">3.4 CREDIT CONTROL &amp;</text>
-    <text x="640" y="396" text-anchor="middle" font-family="Georgia,serif" font-size="13" font-weight="bold" fill="#1A5C38">MONEY MARKET</text>
-    <text x="640" y="412" text-anchor="middle" font-family="Georgia,serif" font-size="10.5" fill="#4E5B54">credit creation &middot; RBI tools &middot; 7 instruments</text>
+    <text x="640" y="380" text-anchor="middle" font-family="EB Garamond, serif" font-size="13" font-weight="bold" fill="#1A5C38">3.4 CREDIT CONTROL &amp;</text>
+    <text x="640" y="396" text-anchor="middle" font-family="EB Garamond, serif" font-size="13" font-weight="bold" fill="#1A5C38">MONEY MARKET</text>
+    <text x="640" y="412" text-anchor="middle" font-family="EB Garamond, serif" font-size="10.5" fill="#4E5B54">credit creation &middot; RBI tools &middot; 7 instruments</text>
     <circle cx="400" cy="250" r="58" fill="#1A5C38"/>
-    <text x="400" y="243" text-anchor="middle" font-family="Georgia,serif" font-size="14" font-weight="bold" fill="#FFFFFF">MODULE 3</text>
-    <text x="400" y="261" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#DCE9E1">MONEY &amp; BANKING</text>
-    <text x="400" y="276" text-anchor="middle" font-family="Georgia,serif" font-size="10.5" fill="#DCE9E1">20%</text>
+    <text x="400" y="243" text-anchor="middle" font-family="EB Garamond, serif" font-size="14" font-weight="bold" fill="#FFFFFF">MODULE 3</text>
+    <text x="400" y="261" text-anchor="middle" font-family="EB Garamond, serif" font-size="10" fill="#DCE9E1">MONEY &amp; BANKING</text>
+    <text x="400" y="276" text-anchor="middle" font-family="EB Garamond, serif" font-size="10.5" fill="#DCE9E1">20%</text>
   </svg>
   </div>
   <div class="trigger-box"><strong>The module in one sentence:</strong> money (3.1) flows through banks (3.2), banks are supervised by the RBI beside a family of special institutions (3.3), and the RBI steers the whole machine through credit control while the money market moves the short-term funds (3.4).</div>
@@ -2044,27 +2045,27 @@ tfoot { display: table-footer-group; }
 <div class="mind-map-container" style="margin:3mm 0;">
 <svg viewBox="0 0 800 300" width="600" height="225" xmlns="http://www.w3.org/2000/svg" style="max-width:100%;display:block;margin:0 auto;">
   <rect x="30" y="40" width="150" height="60" rx="6" fill="#EAF4EE" stroke="#1A5C38" stroke-width="1.3"/>
-  <text x="105" y="65" text-anchor="middle" font-family="Georgia,serif" font-size="13" font-weight="bold" fill="#1A5C38">&#8377;1000</text>
-  <text x="105" y="83" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#4E5B54">Bank A deposit</text>
+  <text x="105" y="65" text-anchor="middle" font-family="EB Garamond, serif" font-size="13" font-weight="bold" fill="#1A5C38">&#8377;1000</text>
+  <text x="105" y="83" text-anchor="middle" font-family="EB Garamond, serif" font-size="10" fill="#4E5B54">Bank A deposit</text>
   <rect x="230" y="40" width="150" height="60" rx="6" fill="#EAF4EE" stroke="#1A5C38" stroke-width="1.3"/>
-  <text x="305" y="65" text-anchor="middle" font-family="Georgia,serif" font-size="13" font-weight="bold" fill="#1A5C38">&#8377;800</text>
-  <text x="305" y="83" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#4E5B54">lent (80%) &rarr; Bank B</text>
+  <text x="305" y="65" text-anchor="middle" font-family="EB Garamond, serif" font-size="13" font-weight="bold" fill="#1A5C38">&#8377;800</text>
+  <text x="305" y="83" text-anchor="middle" font-family="EB Garamond, serif" font-size="10" fill="#4E5B54">lent (80%) &rarr; Bank B</text>
   <rect x="430" y="40" width="150" height="60" rx="6" fill="#EAF4EE" stroke="#1A5C38" stroke-width="1.3"/>
-  <text x="505" y="65" text-anchor="middle" font-family="Georgia,serif" font-size="13" font-weight="bold" fill="#1A5C38">&#8377;640</text>
-  <text x="505" y="83" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#4E5B54">lent (80%) &rarr; Bank C</text>
+  <text x="505" y="65" text-anchor="middle" font-family="EB Garamond, serif" font-size="13" font-weight="bold" fill="#1A5C38">&#8377;640</text>
+  <text x="505" y="83" text-anchor="middle" font-family="EB Garamond, serif" font-size="10" fill="#4E5B54">lent (80%) &rarr; Bank C</text>
   <rect x="630" y="40" width="150" height="60" rx="6" fill="#EAF4EE" stroke="#1A5C38" stroke-width="1.3"/>
-  <text x="705" y="65" text-anchor="middle" font-family="Georgia,serif" font-size="13" font-weight="bold" fill="#1A5C38">&#8377;512</text>
-  <text x="705" y="83" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#4E5B54">lent (80%) &rarr; Bank D&hellip;</text>
+  <text x="705" y="65" text-anchor="middle" font-family="EB Garamond, serif" font-size="13" font-weight="bold" fill="#1A5C38">&#8377;512</text>
+  <text x="705" y="83" text-anchor="middle" font-family="EB Garamond, serif" font-size="10" fill="#4E5B54">lent (80%) &rarr; Bank D&hellip;</text>
   <line x1="180" y1="70" x2="228" y2="70" stroke="#8A6D1F" stroke-width="2.4" marker-end="url(#arrM3)"/>
   <line x1="380" y1="70" x2="428" y2="70" stroke="#8A6D1F" stroke-width="2.4" marker-end="url(#arrM3)"/>
   <line x1="580" y1="70" x2="628" y2="70" stroke="#8A6D1F" stroke-width="2.4" marker-end="url(#arrM3)"/>
   <defs><marker id="arrM3" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#8A6D1F"/></marker></defs>
-  <text x="105" y="118" text-anchor="middle" font-family="Georgia,serif" font-size="9.5" fill="#B23B2E">keeps &#8377;200 as CRR (20%)</text>
-  <text x="305" y="118" text-anchor="middle" font-family="Georgia,serif" font-size="9.5" fill="#B23B2E">keeps &#8377;160 as CRR</text>
-  <text x="505" y="118" text-anchor="middle" font-family="Georgia,serif" font-size="9.5" fill="#B23B2E">keeps &#8377;128 as CRR</text>
+  <text x="105" y="118" text-anchor="middle" font-family="EB Garamond, serif" font-size="9.5" fill="#B23B2E">keeps &#8377;200 as CRR (20%)</text>
+  <text x="305" y="118" text-anchor="middle" font-family="EB Garamond, serif" font-size="9.5" fill="#B23B2E">keeps &#8377;160 as CRR</text>
+  <text x="505" y="118" text-anchor="middle" font-family="EB Garamond, serif" font-size="9.5" fill="#B23B2E">keeps &#8377;128 as CRR</text>
   <rect x="180" y="160" width="440" height="70" rx="8" fill="#1A5C38"/>
-  <text x="400" y="188" text-anchor="middle" font-family="Georgia,serif" font-size="14" font-weight="bold" fill="#FFFFFF">Total deposits = &#8377;5,000 (1000 &divide; 20%)</text>
-  <text x="400" y="210" text-anchor="middle" font-family="Georgia,serif" font-size="12.5" fill="#DCE9E1">Secondary (derived) deposits = &#8377;5,000 &minus; &#8377;1,000 = &#8377;4,000</text>
+  <text x="400" y="188" text-anchor="middle" font-family="EB Garamond, serif" font-size="14" font-weight="bold" fill="#FFFFFF">Total deposits = &#8377;5,000 (1000 &divide; 20%)</text>
+  <text x="400" y="210" text-anchor="middle" font-family="EB Garamond, serif" font-size="12.5" fill="#DCE9E1">Secondary (derived) deposits = &#8377;5,000 &minus; &#8377;1,000 = &#8377;4,000</text>
 </svg>
 </div>
 <div class="formula-box"><p class="formula-text">Credit multiplier = 1 / CRR &nbsp;&nbsp;&bull;&nbsp;&nbsp; Total deposits = Initial deposit &times; (1/CRR)</p><hr class="var-divider"><p class="formula-vars">Worked (ICMAI&rsquo;s own figures, verified): initial deposit &#8377;1,000, CRR 20% &rarr; multiplier 1/0.20 = <strong>5</strong> &rarr; total deposits = 1,000 &times; 5 = <strong>&#8377;5,000</strong>; secondary deposits = 5,000 &minus; 1,000 = <strong>&#8377;4,000</strong>. Cascade: 1000 &rarr; lend 800 &rarr; 640 &rarr; 512 &rarr; &hellip; falling until the deposited sum equals the CRR and the process ends. <strong>One single bank cannot create credit — the banking system as a whole does, jointly.</strong></p></div>
@@ -2134,24 +2135,24 @@ tfoot { display: table-footer-group; }
 <div class="mind-map-container" style="margin:3mm 0;">
 <svg viewBox="0 0 800 300" width="600" height="225" xmlns="http://www.w3.org/2000/svg" style="max-width:100%;display:block;margin:0 auto;">
   <rect x="255" y="18" width="290" height="42" rx="7" fill="#1A5C38"/>
-  <text x="400" y="44" text-anchor="middle" font-family="Georgia,serif" font-size="14" font-weight="bold" fill="#FFFFFF">INDIAN MONEY MARKET</text>
+  <text x="400" y="44" text-anchor="middle" font-family="EB Garamond, serif" font-size="14" font-weight="bold" fill="#FFFFFF">INDIAN MONEY MARKET</text>
   <line x1="400" y1="60" x2="190" y2="100" stroke="#277548" stroke-width="1.6"/>
   <line x1="400" y1="60" x2="610" y2="100" stroke="#277548" stroke-width="1.6"/>
   <rect x="60" y="100" width="260" height="46" rx="7" fill="#EAF4EE" stroke="#1A5C38" stroke-width="1.3"/>
-  <text x="190" y="128" text-anchor="middle" font-family="Georgia,serif" font-size="12.5" font-weight="bold" fill="#1A5C38">ORGANIZED SECTOR</text>
+  <text x="190" y="128" text-anchor="middle" font-family="EB Garamond, serif" font-size="12.5" font-weight="bold" fill="#1A5C38">ORGANIZED SECTOR</text>
   <rect x="480" y="100" width="260" height="46" rx="7" fill="#EAF4EE" stroke="#1A5C38" stroke-width="1.3"/>
-  <text x="610" y="128" text-anchor="middle" font-family="Georgia,serif" font-size="12.5" font-weight="bold" fill="#1A5C38">UNORGANIZED SECTOR</text>
+  <text x="610" y="128" text-anchor="middle" font-family="EB Garamond, serif" font-size="12.5" font-weight="bold" fill="#1A5C38">UNORGANIZED SECTOR</text>
   <line x1="190" y1="146" x2="190" y2="175" stroke="#C4DDD0" stroke-width="1.4"/>
   <rect x="35" y="175" width="310" height="80" rx="7" fill="#FFFFFF" stroke="#C4DDD0" stroke-width="1.3"/>
-  <text x="190" y="196" text-anchor="middle" font-family="Georgia,serif" font-size="10.5" fill="#233028">RBI &middot; SBI group &middot; scheduled &amp;</text>
-  <text x="190" y="213" text-anchor="middle" font-family="Georgia,serif" font-size="10.5" fill="#233028">non-scheduled commercial banks</text>
-  <text x="190" y="230" text-anchor="middle" font-family="Georgia,serif" font-size="10.5" fill="#233028">exchange banks &middot; State &amp; Central</text>
-  <text x="190" y="247" text-anchor="middle" font-family="Georgia,serif" font-size="10.5" fill="#233028">cooperative banks (only these two)</text>
+  <text x="190" y="196" text-anchor="middle" font-family="EB Garamond, serif" font-size="10.5" fill="#233028">RBI &middot; SBI group &middot; scheduled &amp;</text>
+  <text x="190" y="213" text-anchor="middle" font-family="EB Garamond, serif" font-size="10.5" fill="#233028">non-scheduled commercial banks</text>
+  <text x="190" y="230" text-anchor="middle" font-family="EB Garamond, serif" font-size="10.5" fill="#233028">exchange banks &middot; State &amp; Central</text>
+  <text x="190" y="247" text-anchor="middle" font-family="EB Garamond, serif" font-size="10.5" fill="#233028">cooperative banks (only these two)</text>
   <line x1="610" y1="146" x2="610" y2="175" stroke="#C4DDD0" stroke-width="1.4"/>
   <rect x="480" y="175" width="260" height="80" rx="7" fill="#FFFFFF" stroke="#C4DDD0" stroke-width="1.3"/>
-  <text x="610" y="205" text-anchor="middle" font-family="Georgia,serif" font-size="11" fill="#233028">Indigenous bankers</text>
-  <text x="610" y="228" text-anchor="middle" font-family="Georgia,serif" font-size="11" fill="#233028">Money lenders</text>
-  <text x="610" y="248" text-anchor="middle" font-family="Georgia,serif" font-size="9.5" fill="#4E5B54">no coordination by RBI</text>
+  <text x="610" y="205" text-anchor="middle" font-family="EB Garamond, serif" font-size="11" fill="#233028">Indigenous bankers</text>
+  <text x="610" y="228" text-anchor="middle" font-family="EB Garamond, serif" font-size="11" fill="#233028">Money lenders</text>
+  <text x="610" y="248" text-anchor="middle" font-family="EB Garamond, serif" font-size="9.5" fill="#4E5B54">no coordination by RBI</text>
 </svg>
 </div>
 <p class="body"><strong>Organized sector</strong> — systematically coordinated by the RBI: RBI, SBI and associates, scheduled and non-scheduled Indian joint-stock commercial banks, exchange banks (finance foreign trade), cooperative banks, and special institutions (IDBI, State Finance Corporations, NABARD, EXIM) operating indirectly through banks. Non-bank institutions (LIC, GIC, UTI) also operate indirectly through banks. <strong>Quasi-Government bodies and large companies</strong> also market their short-term surplus funds through the organized market via banks. <strong>Cooperative credit institutions occupy an intermediary position</strong> — only <strong>State and Central cooperative banks</strong> are counted in the organized sector; local primary credit societies are only loosely linked.</p>
@@ -2169,7 +2170,7 @@ tfoot { display: table-footer-group; }
   <tr><td><strong>3. Treasury bills</strong></td><td>Short-term promissory notes issued by the GOI at a discount, generally for <strong>91 days</strong>; <strong>182-day</strong> bills since <strong>November 1986</strong>; up to <strong>364 days</strong> introduced in <strong>April 1992</strong>. Issued at discount — <strong>no interest payment obligation</strong>.</td></tr>
   <tr><td><strong>4. Commercial paper</strong></td><td>Introduced <strong>January 1990</strong> on the <strong>Vaghul Working Group&rsquo;s</strong> recommendation. Unsecured promissory notes issued by corporate entities for short-term needs instead of bank borrowing.</td></tr>
   <tr><td><strong>5. Certificate of Deposit</strong></td><td>Introduced <strong>June 1989</strong> by the RBI. Deposit receipts issued by banks against deposits from individuals, companies, PSUs; <strong>NRIs may subscribe only on a non-repatriation basis</strong>.</td></tr>
-  <tr><td><strong>6. Inter-bank term money</strong></td><td>Banks (commercial and cooperative) only, lending to each other for <strong>over 14 up to about 90 days</strong>; <strong>no collateral</strong>; per <strong>IBA rules lenders cannot prematurely recall</strong> these loans — hence <strong>NOT liquid</strong>.</td></tr>
+  <tr><td><strong>6. Inter-bank term money</strong></td><td>Banks (commercial and cooperative) only, lending to each other for <strong>a period over 14 days and generally up to 90 days</strong>; <strong>no collateral</strong>; per <strong>IBA rules lenders cannot prematurely recall</strong> these loans — hence <strong>NOT liquid</strong>.</td></tr>
   <tr><td><strong>7. Collateral loan market</strong></td><td>Loans backed by security — commercial banks lend against <strong>government securities and bonds</strong>.</td></tr>
 </tbody></table>
 <div class="trap-block"><span class="pill amber">&#9888; TRAP</span><p class="trap-label">Which instruments need NO collateral</p><p class="trap-row"><strong>THE TRAP:</strong> call/notice money and inter-bank term money need <strong>NO collateral</strong> — but they are opposite on liquidity: call money IS liquid (short, callable), inter-bank term money is <strong>NOT liquid</strong> (cannot be recalled prematurely). Collateral loans are the only instrument explicitly backed by security.</p></div>
@@ -2299,25 +2300,25 @@ tfoot { display: table-footer-group; }
     <line x1="400" y1="230" x2="170" y2="350" stroke="#277548" stroke-width="1.5"/>
     <line x1="400" y1="230" x2="630" y2="350" stroke="#277548" stroke-width="1.5"/>
     <rect x="72" y="82" width="196" height="72" rx="8" fill="#EAF4EE" stroke="#1A5C38" stroke-width="1.3"/>
-    <text x="170" y="108" text-anchor="middle" font-family="Georgia,serif" font-size="12.5" font-weight="bold" fill="#1A5C38">MICRO ENVIRONMENT</text>
-    <text x="170" y="125" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#4E5B54">suppliers &middot; consumers &middot; competitors</text>
-    <text x="170" y="140" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#4E5B54">intermediaries &middot; market &middot; organization</text>
+    <text x="170" y="108" text-anchor="middle" font-family="EB Garamond, serif" font-size="12.5" font-weight="bold" fill="#1A5C38">MICRO ENVIRONMENT</text>
+    <text x="170" y="125" text-anchor="middle" font-family="EB Garamond, serif" font-size="10" fill="#4E5B54">suppliers &middot; consumers &middot; competitors</text>
+    <text x="170" y="140" text-anchor="middle" font-family="EB Garamond, serif" font-size="10" fill="#4E5B54">intermediaries &middot; market &middot; organization</text>
     <rect x="532" y="82" width="196" height="72" rx="8" fill="#EAF4EE" stroke="#1A5C38" stroke-width="1.3"/>
-    <text x="630" y="108" text-anchor="middle" font-family="Georgia,serif" font-size="12.5" font-weight="bold" fill="#1A5C38">MACRO ENVIRONMENT</text>
-    <text x="630" y="125" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#4E5B54">demographic &middot; economic &middot; political-legal</text>
-    <text x="630" y="140" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#4E5B54">socio-cultural &middot; technological &middot; global</text>
+    <text x="630" y="108" text-anchor="middle" font-family="EB Garamond, serif" font-size="12.5" font-weight="bold" fill="#1A5C38">MACRO ENVIRONMENT</text>
+    <text x="630" y="125" text-anchor="middle" font-family="EB Garamond, serif" font-size="10" fill="#4E5B54">demographic &middot; economic &middot; political-legal</text>
+    <text x="630" y="140" text-anchor="middle" font-family="EB Garamond, serif" font-size="10" fill="#4E5B54">socio-cultural &middot; technological &middot; global</text>
     <rect x="72" y="312" width="196" height="72" rx="8" fill="#EAF4EE" stroke="#1A5C38" stroke-width="1.3"/>
-    <text x="170" y="338" text-anchor="middle" font-family="Georgia,serif" font-size="13" font-weight="bold" fill="#1A5C38">PESTEL</text>
-    <text x="170" y="355" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#4E5B54">6 macro factors, one framework</text>
-    <text x="170" y="370" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#4E5B54">+ Porter&rsquo;s Five Forces</text>
+    <text x="170" y="338" text-anchor="middle" font-family="EB Garamond, serif" font-size="13" font-weight="bold" fill="#1A5C38">PESTEL</text>
+    <text x="170" y="355" text-anchor="middle" font-family="EB Garamond, serif" font-size="10" fill="#4E5B54">6 macro factors, one framework</text>
+    <text x="170" y="370" text-anchor="middle" font-family="EB Garamond, serif" font-size="10" fill="#4E5B54">+ Porter&rsquo;s Five Forces</text>
     <rect x="505" y="312" width="250" height="72" rx="8" fill="#EAF4EE" stroke="#1A5C38" stroke-width="1.3"/>
-    <text x="630" y="338" text-anchor="middle" font-family="Georgia,serif" font-size="13" font-weight="bold" fill="#1A5C38">VUCAFU</text>
-    <text x="630" y="355" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#4E5B54">Volatility &middot; Uncertainty &middot; Complexity</text>
-    <text x="630" y="370" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#4E5B54">Ambiguity &middot; Fear of Unknown &middot; Unprecedentedness</text>
+    <text x="630" y="338" text-anchor="middle" font-family="EB Garamond, serif" font-size="13" font-weight="bold" fill="#1A5C38">VUCAFU</text>
+    <text x="630" y="355" text-anchor="middle" font-family="EB Garamond, serif" font-size="10" fill="#4E5B54">Volatility &middot; Uncertainty &middot; Complexity</text>
+    <text x="630" y="370" text-anchor="middle" font-family="EB Garamond, serif" font-size="10" fill="#4E5B54">Ambiguity &middot; Fear of Unknown &middot; Unprecedentedness</text>
     <circle cx="400" cy="230" r="58" fill="#1A5C38"/>
-    <text x="400" y="223" text-anchor="middle" font-family="Georgia,serif" font-size="13" font-weight="bold" fill="#FFFFFF">MODULE 4</text>
-    <text x="400" y="241" text-anchor="middle" font-family="Georgia,serif" font-size="9.5" fill="#DCE9E1">ECONOMIC &amp; BUSINESS</text>
-    <text x="400" y="255" text-anchor="middle" font-family="Georgia,serif" font-size="9.5" fill="#DCE9E1">ENVIRONMENT &middot; 15%</text>
+    <text x="400" y="223" text-anchor="middle" font-family="EB Garamond, serif" font-size="13" font-weight="bold" fill="#FFFFFF">MODULE 4</text>
+    <text x="400" y="241" text-anchor="middle" font-family="EB Garamond, serif" font-size="9.5" fill="#DCE9E1">ECONOMIC &amp; BUSINESS</text>
+    <text x="400" y="255" text-anchor="middle" font-family="EB Garamond, serif" font-size="9.5" fill="#DCE9E1">ENVIRONMENT &middot; 15%</text>
   </svg>
   </div>
   <div class="trigger-box"><strong>The module in one sentence:</strong> every firm sits inside a micro ring it can partly influence and a macro ring it cannot — PESTEL names the six macro forces to scan, and VUCAFU names the six ways today&rsquo;s world makes that scanning hard.</div>
@@ -2372,12 +2373,12 @@ tfoot { display: table-footer-group; }
   <circle cx="400" cy="175" r="155" fill="#F3F8F5" stroke="#C4DDD0" stroke-width="1.6"/>
   <circle cx="400" cy="175" r="88" fill="#EAF4EE" stroke="#277548" stroke-width="1.6"/>
   <circle cx="400" cy="175" r="34" fill="#1A5C38"/>
-  <text x="400" y="171" text-anchor="middle" font-family="Georgia,serif" font-size="12" font-weight="bold" fill="#FFFFFF">THE</text>
-  <text x="400" y="186" text-anchor="middle" font-family="Georgia,serif" font-size="12" font-weight="bold" fill="#FFFFFF">FIRM</text>
-  <text x="400" y="98" text-anchor="middle" font-family="Georgia,serif" font-size="11.5" font-weight="bold" fill="#1A5C38">MICRO — immediate neighbourhood</text>
-  <text x="400" y="113" text-anchor="middle" font-family="Georgia,serif" font-size="9.5" fill="#4E5B54">suppliers &middot; consumers &middot; competitors &middot; intermediaries &middot; market &middot; organization</text>
-  <text x="400" y="38" text-anchor="middle" font-family="Georgia,serif" font-size="11.5" font-weight="bold" fill="#233028">MACRO — entirely external, beyond direct influence</text>
-  <text x="400" y="53" text-anchor="middle" font-family="Georgia,serif" font-size="9.5" fill="#4E5B54">demographic &middot; economic &middot; political-legal &middot; socio-cultural &middot; technological &middot; global</text>
+  <text x="400" y="171" text-anchor="middle" font-family="EB Garamond, serif" font-size="12" font-weight="bold" fill="#FFFFFF">THE</text>
+  <text x="400" y="186" text-anchor="middle" font-family="EB Garamond, serif" font-size="12" font-weight="bold" fill="#FFFFFF">FIRM</text>
+  <text x="400" y="98" text-anchor="middle" font-family="EB Garamond, serif" font-size="11.5" font-weight="bold" fill="#1A5C38">MICRO — immediate neighbourhood</text>
+  <text x="400" y="113" text-anchor="middle" font-family="EB Garamond, serif" font-size="9.5" fill="#4E5B54">suppliers &middot; consumers &middot; competitors &middot; intermediaries &middot; market &middot; organization</text>
+  <text x="400" y="38" text-anchor="middle" font-family="EB Garamond, serif" font-size="11.5" font-weight="bold" fill="#233028">MACRO — entirely external, beyond direct influence</text>
+  <text x="400" y="53" text-anchor="middle" font-family="EB Garamond, serif" font-size="9.5" fill="#4E5B54">demographic &middot; economic &middot; political-legal &middot; socio-cultural &middot; technological &middot; global</text>
 </svg>
 </div>
 <p class="body"><strong>Six components of the micro business environment (ICMAI):</strong></p>
@@ -2446,26 +2447,26 @@ tfoot { display: table-footer-group; }
 <svg viewBox="0 0 800 420" width="560" height="294" xmlns="http://www.w3.org/2000/svg" style="max-width:100%;display:block;margin:0 auto;">
   <polygon points="400,60 570,140 570,280 400,360 230,280 230,140" fill="#F3F8F5" stroke="#C4DDD0" stroke-width="1.5"/>
   <circle cx="400" cy="210" r="52" fill="#1A5C38"/>
-  <text x="400" y="204" text-anchor="middle" font-family="Georgia,serif" font-size="12" font-weight="bold" fill="#FFFFFF">THE</text>
-  <text x="400" y="220" text-anchor="middle" font-family="Georgia,serif" font-size="12" font-weight="bold" fill="#FFFFFF">FIRM</text>
+  <text x="400" y="204" text-anchor="middle" font-family="EB Garamond, serif" font-size="12" font-weight="bold" fill="#FFFFFF">THE</text>
+  <text x="400" y="220" text-anchor="middle" font-family="EB Garamond, serif" font-size="12" font-weight="bold" fill="#FFFFFF">FIRM</text>
   <circle cx="400" cy="60" r="34" fill="#EAF4EE" stroke="#1A5C38" stroke-width="1.4"/>
-  <text x="400" y="65" text-anchor="middle" font-family="Georgia,serif" font-size="15" font-weight="bold" fill="#1A5C38">P</text>
+  <text x="400" y="65" text-anchor="middle" font-family="EB Garamond, serif" font-size="15" font-weight="bold" fill="#1A5C38">P</text>
   <circle cx="570" cy="140" r="34" fill="#EAF4EE" stroke="#1A5C38" stroke-width="1.4"/>
-  <text x="570" y="145" text-anchor="middle" font-family="Georgia,serif" font-size="15" font-weight="bold" fill="#1A5C38">E</text>
+  <text x="570" y="145" text-anchor="middle" font-family="EB Garamond, serif" font-size="15" font-weight="bold" fill="#1A5C38">E</text>
   <circle cx="570" cy="280" r="34" fill="#EAF4EE" stroke="#1A5C38" stroke-width="1.4"/>
-  <text x="570" y="285" text-anchor="middle" font-family="Georgia,serif" font-size="15" font-weight="bold" fill="#1A5C38">S</text>
+  <text x="570" y="285" text-anchor="middle" font-family="EB Garamond, serif" font-size="15" font-weight="bold" fill="#1A5C38">S</text>
   <circle cx="400" cy="360" r="34" fill="#EAF4EE" stroke="#1A5C38" stroke-width="1.4"/>
-  <text x="400" y="365" text-anchor="middle" font-family="Georgia,serif" font-size="15" font-weight="bold" fill="#1A5C38">T</text>
+  <text x="400" y="365" text-anchor="middle" font-family="EB Garamond, serif" font-size="15" font-weight="bold" fill="#1A5C38">T</text>
   <circle cx="230" cy="280" r="34" fill="#EAF4EE" stroke="#1A5C38" stroke-width="1.4"/>
-  <text x="230" y="285" text-anchor="middle" font-family="Georgia,serif" font-size="15" font-weight="bold" fill="#1A5C38">E</text>
+  <text x="230" y="285" text-anchor="middle" font-family="EB Garamond, serif" font-size="15" font-weight="bold" fill="#1A5C38">E</text>
   <circle cx="230" cy="140" r="34" fill="#EAF4EE" stroke="#1A5C38" stroke-width="1.4"/>
-  <text x="230" y="145" text-anchor="middle" font-family="Georgia,serif" font-size="15" font-weight="bold" fill="#1A5C38">L</text>
-  <text x="400" y="24" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#4E5B54">Political</text>
-  <text x="640" y="140" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#4E5B54">Economic</text>
-  <text x="640" y="280" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#4E5B54">Social</text>
-  <text x="400" y="404" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#4E5B54">Technological</text>
-  <text x="150" y="280" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#4E5B54">Environmental</text>
-  <text x="145" y="140" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#4E5B54">Legal</text>
+  <text x="230" y="145" text-anchor="middle" font-family="EB Garamond, serif" font-size="15" font-weight="bold" fill="#1A5C38">L</text>
+  <text x="400" y="24" text-anchor="middle" font-family="EB Garamond, serif" font-size="10" fill="#4E5B54">Political</text>
+  <text x="640" y="140" text-anchor="middle" font-family="EB Garamond, serif" font-size="10" fill="#4E5B54">Economic</text>
+  <text x="640" y="280" text-anchor="middle" font-family="EB Garamond, serif" font-size="10" fill="#4E5B54">Social</text>
+  <text x="400" y="404" text-anchor="middle" font-family="EB Garamond, serif" font-size="10" fill="#4E5B54">Technological</text>
+  <text x="150" y="280" text-anchor="middle" font-family="EB Garamond, serif" font-size="10" fill="#4E5B54">Environmental</text>
+  <text x="145" y="140" text-anchor="middle" font-family="EB Garamond, serif" font-size="10" fill="#4E5B54">Legal</text>
 </svg>
 </div>
 <div class="shortcut-box"><span class="shortcut-label">&#9889; SHORTCUT</span> PESTEL = Political &middot; Economic &middot; Socio-cultural (Social) &middot; Technological &middot; Environmental &middot; Legal — six letters, six macro forces, one firm at the centre. &ldquo;Population factors&rdquo; and &ldquo;Perceptions&rdquo; are NOT among them — favourite wrong options in the exercise.</div>
@@ -2510,27 +2511,27 @@ tfoot { display: table-footer-group; }
 <div class="mind-map-container" style="margin:3mm 0;">
 <svg viewBox="0 0 800 260" width="600" height="195" xmlns="http://www.w3.org/2000/svg" style="max-width:100%;display:block;margin:0 auto;">
   <rect x="15" y="70" width="118" height="90" rx="7" fill="#EAF4EE" stroke="#1A5C38" stroke-width="1.3"/>
-  <text x="74" y="105" text-anchor="middle" font-family="Georgia,serif" font-size="12.5" font-weight="bold" fill="#1A5C38">V</text>
-  <text x="74" y="122" text-anchor="middle" font-family="Georgia,serif" font-size="9" fill="#4E5B54">Volatility</text>
+  <text x="74" y="105" text-anchor="middle" font-family="EB Garamond, serif" font-size="12.5" font-weight="bold" fill="#1A5C38">V</text>
+  <text x="74" y="122" text-anchor="middle" font-family="EB Garamond, serif" font-size="9" fill="#4E5B54">Volatility</text>
   <rect x="145" y="70" width="118" height="90" rx="7" fill="#EAF4EE" stroke="#1A5C38" stroke-width="1.3"/>
-  <text x="204" y="105" text-anchor="middle" font-family="Georgia,serif" font-size="12.5" font-weight="bold" fill="#1A5C38">U</text>
-  <text x="204" y="122" text-anchor="middle" font-family="Georgia,serif" font-size="9" fill="#4E5B54">Uncertainty</text>
+  <text x="204" y="105" text-anchor="middle" font-family="EB Garamond, serif" font-size="12.5" font-weight="bold" fill="#1A5C38">U</text>
+  <text x="204" y="122" text-anchor="middle" font-family="EB Garamond, serif" font-size="9" fill="#4E5B54">Uncertainty</text>
   <rect x="275" y="70" width="118" height="90" rx="7" fill="#EAF4EE" stroke="#1A5C38" stroke-width="1.3"/>
-  <text x="334" y="105" text-anchor="middle" font-family="Georgia,serif" font-size="12.5" font-weight="bold" fill="#1A5C38">C</text>
-  <text x="334" y="122" text-anchor="middle" font-family="Georgia,serif" font-size="9" fill="#4E5B54">Complexity</text>
+  <text x="334" y="105" text-anchor="middle" font-family="EB Garamond, serif" font-size="12.5" font-weight="bold" fill="#1A5C38">C</text>
+  <text x="334" y="122" text-anchor="middle" font-family="EB Garamond, serif" font-size="9" fill="#4E5B54">Complexity</text>
   <rect x="405" y="70" width="118" height="90" rx="7" fill="#EAF4EE" stroke="#1A5C38" stroke-width="1.3"/>
-  <text x="464" y="105" text-anchor="middle" font-family="Georgia,serif" font-size="12.5" font-weight="bold" fill="#1A5C38">A</text>
-  <text x="464" y="122" text-anchor="middle" font-family="Georgia,serif" font-size="9" fill="#4E5B54">Ambiguity</text>
+  <text x="464" y="105" text-anchor="middle" font-family="EB Garamond, serif" font-size="12.5" font-weight="bold" fill="#1A5C38">A</text>
+  <text x="464" y="122" text-anchor="middle" font-family="EB Garamond, serif" font-size="9" fill="#4E5B54">Ambiguity</text>
   <rect x="535" y="70" width="128" height="90" rx="7" fill="#F3E9D0" stroke="#8A6D1F" stroke-width="1.3"/>
-  <text x="599" y="100" text-anchor="middle" font-family="Georgia,serif" font-size="12.5" font-weight="bold" fill="#8A6D1F">F</text>
-  <text x="599" y="118" text-anchor="middle" font-family="Georgia,serif" font-size="8.7" fill="#4E5B54">Fear of</text>
-  <text x="599" y="131" text-anchor="middle" font-family="Georgia,serif" font-size="8.7" fill="#4E5B54">Unknown</text>
+  <text x="599" y="100" text-anchor="middle" font-family="EB Garamond, serif" font-size="12.5" font-weight="bold" fill="#8A6D1F">F</text>
+  <text x="599" y="118" text-anchor="middle" font-family="EB Garamond, serif" font-size="8.7" fill="#4E5B54">Fear of</text>
+  <text x="599" y="131" text-anchor="middle" font-family="EB Garamond, serif" font-size="8.7" fill="#4E5B54">Unknown</text>
   <rect x="675" y="70" width="118" height="90" rx="7" fill="#F3E9D0" stroke="#8A6D1F" stroke-width="1.3"/>
-  <text x="734" y="100" text-anchor="middle" font-family="Georgia,serif" font-size="12.5" font-weight="bold" fill="#8A6D1F">U</text>
-  <text x="734" y="118" text-anchor="middle" font-family="Georgia,serif" font-size="8.3" fill="#4E5B54">Unprece-</text>
-  <text x="734" y="131" text-anchor="middle" font-family="Georgia,serif" font-size="8.3" fill="#4E5B54">dentedness</text>
-  <text x="204" y="45" text-anchor="middle" font-family="Georgia,serif" font-size="11" fill="#233028">VUCA &mdash; 1987, US Army War College</text>
-  <text x="666" y="45" text-anchor="middle" font-family="Georgia,serif" font-size="11" fill="#8A6D1F">FU added after Covid-19</text>
+  <text x="734" y="100" text-anchor="middle" font-family="EB Garamond, serif" font-size="12.5" font-weight="bold" fill="#8A6D1F">U</text>
+  <text x="734" y="118" text-anchor="middle" font-family="EB Garamond, serif" font-size="8.3" fill="#4E5B54">Unprece-</text>
+  <text x="734" y="131" text-anchor="middle" font-family="EB Garamond, serif" font-size="8.3" fill="#4E5B54">dentedness</text>
+  <text x="204" y="45" text-anchor="middle" font-family="EB Garamond, serif" font-size="11" fill="#233028">VUCA &mdash; 1987, US Army War College</text>
+  <text x="666" y="45" text-anchor="middle" font-family="EB Garamond, serif" font-size="11" fill="#8A6D1F">FU added after Covid-19</text>
   <line x1="393" y1="115" x2="405" y2="115" stroke="#B9CDC1" stroke-width="1.4"/>
   <line x1="523" y1="115" x2="535" y2="115" stroke="#8A6D1F" stroke-width="2" stroke-dasharray="4 3"/>
 </svg>
@@ -2667,28 +2668,28 @@ tfoot { display: table-footer-group; }
     <line x1="400" y1="240" x2="400" y2="420" stroke="#277548" stroke-width="1.4"/>
     <line x1="400" y1="240" x2="680" y2="330" stroke="#277548" stroke-width="1.4"/>
     <rect x="35" y="60" width="190" height="58" rx="7" fill="#EAF4EE" stroke="#1A5C38" stroke-width="1.3"/>
-    <text x="130" y="83" text-anchor="middle" font-family="Georgia,serif" font-size="11.5" font-weight="bold" fill="#1A5C38">5.1 INTRO TO</text>
-    <text x="130" y="98" text-anchor="middle" font-family="Georgia,serif" font-size="11.5" font-weight="bold" fill="#1A5C38">MANAGEMENT</text>
+    <text x="130" y="83" text-anchor="middle" font-family="EB Garamond, serif" font-size="11.5" font-weight="bold" fill="#1A5C38">5.1 INTRO TO</text>
+    <text x="130" y="98" text-anchor="middle" font-family="EB Garamond, serif" font-size="11.5" font-weight="bold" fill="#1A5C38">MANAGEMENT</text>
     <rect x="305" y="20" width="190" height="58" rx="7" fill="#EAF4EE" stroke="#1A5C38" stroke-width="1.3"/>
-    <text x="400" y="43" text-anchor="middle" font-family="Georgia,serif" font-size="11.5" font-weight="bold" fill="#1A5C38">5.2 STEWARDSHIP</text>
-    <text x="400" y="58" text-anchor="middle" font-family="Georgia,serif" font-size="11.5" font-weight="bold" fill="#1A5C38">&amp; AGENCY THEORY</text>
+    <text x="400" y="43" text-anchor="middle" font-family="EB Garamond, serif" font-size="11.5" font-weight="bold" fill="#1A5C38">5.2 STEWARDSHIP</text>
+    <text x="400" y="58" text-anchor="middle" font-family="EB Garamond, serif" font-size="11.5" font-weight="bold" fill="#1A5C38">&amp; AGENCY THEORY</text>
     <rect x="575" y="60" width="190" height="58" rx="7" fill="#F3E9D0" stroke="#8A6D1F" stroke-width="1.3"/>
-    <text x="670" y="83" text-anchor="middle" font-family="Georgia,serif" font-size="11.5" font-weight="bold" fill="#8A6D1F">5.3 PLAN &middot; ORG &middot;</text>
-    <text x="670" y="98" text-anchor="middle" font-family="Georgia,serif" font-size="11.5" font-weight="bold" fill="#8A6D1F">STAFF &middot; LEAD</text>
+    <text x="670" y="83" text-anchor="middle" font-family="EB Garamond, serif" font-size="11.5" font-weight="bold" fill="#8A6D1F">5.3 PLAN &middot; ORG &middot;</text>
+    <text x="670" y="98" text-anchor="middle" font-family="EB Garamond, serif" font-size="11.5" font-weight="bold" fill="#8A6D1F">STAFF &middot; LEAD</text>
     <rect x="25" y="300" width="190" height="58" rx="7" fill="#F3E9D0" stroke="#8A6D1F" stroke-width="1.3"/>
-    <text x="120" y="323" text-anchor="middle" font-family="Georgia,serif" font-size="11" font-weight="bold" fill="#8A6D1F">5.4 COMMUNICATION,</text>
-    <text x="120" y="338" text-anchor="middle" font-family="Georgia,serif" font-size="11" font-weight="bold" fill="#8A6D1F">COORDINATION &amp; CONTROL</text>
+    <text x="120" y="323" text-anchor="middle" font-family="EB Garamond, serif" font-size="11" font-weight="bold" fill="#8A6D1F">5.4 COMMUNICATION,</text>
+    <text x="120" y="338" text-anchor="middle" font-family="EB Garamond, serif" font-size="11" font-weight="bold" fill="#8A6D1F">COORDINATION &amp; CONTROL</text>
     <rect x="305" y="392" width="190" height="58" rx="7" fill="#F3E9D0" stroke="#8A6D1F" stroke-width="1.3"/>
-    <text x="400" y="415" text-anchor="middle" font-family="Georgia,serif" font-size="11" font-weight="bold" fill="#8A6D1F">5.5 STRUCTURE,</text>
-    <text x="400" y="430" text-anchor="middle" font-family="Georgia,serif" font-size="11" font-weight="bold" fill="#8A6D1F">DELEGATION</text>
+    <text x="400" y="415" text-anchor="middle" font-family="EB Garamond, serif" font-size="11" font-weight="bold" fill="#8A6D1F">5.5 STRUCTURE,</text>
+    <text x="400" y="430" text-anchor="middle" font-family="EB Garamond, serif" font-size="11" font-weight="bold" fill="#8A6D1F">DELEGATION</text>
     <rect x="585" y="300" width="190" height="58" rx="7" fill="#F3E9D0" stroke="#8A6D1F" stroke-width="1.3"/>
-    <text x="680" y="323" text-anchor="middle" font-family="Georgia,serif" font-size="11" font-weight="bold" fill="#8A6D1F">5.6 LEADERSHIP &amp;</text>
-    <text x="680" y="338" text-anchor="middle" font-family="Georgia,serif" font-size="11" font-weight="bold" fill="#8A6D1F">MOTIVATION</text>
+    <text x="680" y="323" text-anchor="middle" font-family="EB Garamond, serif" font-size="11" font-weight="bold" fill="#8A6D1F">5.6 LEADERSHIP &amp;</text>
+    <text x="680" y="338" text-anchor="middle" font-family="EB Garamond, serif" font-size="11" font-weight="bold" fill="#8A6D1F">MOTIVATION</text>
     <circle cx="400" cy="240" r="52" fill="#1A5C38"/>
-    <text x="400" y="233" text-anchor="middle" font-family="Georgia,serif" font-size="12.5" font-weight="bold" fill="#FFFFFF">MODULE 5</text>
-    <text x="400" y="250" text-anchor="middle" font-family="Georgia,serif" font-size="9.5" fill="#DCE9E1">MANAGEMENT</text>
-    <text x="400" y="264" text-anchor="middle" font-family="Georgia,serif" font-size="9.5" fill="#DCE9E1">30%</text>
-    <text x="400" y="470" text-anchor="middle" font-family="Georgia,serif" font-size="10.5" fill="#4E5B54">5.7 Decision-Making &mdash; Types and Process</text>
+    <text x="400" y="233" text-anchor="middle" font-family="EB Garamond, serif" font-size="12.5" font-weight="bold" fill="#FFFFFF">MODULE 5</text>
+    <text x="400" y="250" text-anchor="middle" font-family="EB Garamond, serif" font-size="9.5" fill="#DCE9E1">MANAGEMENT</text>
+    <text x="400" y="264" text-anchor="middle" font-family="EB Garamond, serif" font-size="9.5" fill="#DCE9E1">30%</text>
+    <text x="400" y="470" text-anchor="middle" font-family="EB Garamond, serif" font-size="10.5" fill="#4E5B54">5.7 Decision-Making &mdash; Types and Process</text>
   </svg>
   </div>
 </div>
@@ -2806,16 +2807,16 @@ tfoot { display: table-footer-group; }
 <div class="mind-map-container" style="margin:3mm 0;">
 <svg viewBox="0 0 800 220" width="560" height="154" xmlns="http://www.w3.org/2000/svg" style="max-width:100%;display:block;margin:0 auto;">
   <rect x="60" y="70" width="220" height="80" rx="8" fill="#EAF4EE" stroke="#1A5C38" stroke-width="1.4"/>
-  <text x="170" y="103" text-anchor="middle" font-family="Georgia,serif" font-size="13" font-weight="bold" fill="#1A5C38">PRINCIPAL</text>
-  <text x="170" y="122" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#4E5B54">(owner / shareholder)</text>
+  <text x="170" y="103" text-anchor="middle" font-family="EB Garamond, serif" font-size="13" font-weight="bold" fill="#1A5C38">PRINCIPAL</text>
+  <text x="170" y="122" text-anchor="middle" font-family="EB Garamond, serif" font-size="10" fill="#4E5B54">(owner / shareholder)</text>
   <rect x="520" y="70" width="220" height="80" rx="8" fill="#EAF4EE" stroke="#1A5C38" stroke-width="1.4"/>
-  <text x="630" y="103" text-anchor="middle" font-family="Georgia,serif" font-size="13" font-weight="bold" fill="#1A5C38">STEWARD</text>
-  <text x="630" y="122" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#4E5B54">(manager)</text>
+  <text x="630" y="103" text-anchor="middle" font-family="EB Garamond, serif" font-size="13" font-weight="bold" fill="#1A5C38">STEWARD</text>
+  <text x="630" y="122" text-anchor="middle" font-family="EB Garamond, serif" font-size="10" fill="#4E5B54">(manager)</text>
   <line x1="280" y1="95" x2="518" y2="95" stroke="#277548" stroke-width="2.6"/>
   <line x1="518" y1="125" x2="280" y2="125" stroke="#277548" stroke-width="2.6"/>
-  <text x="400" y="85" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#1A5C38">trust &amp; delegated authority</text>
-  <text x="400" y="145" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#1A5C38">aligned goals &rarr; maximised wealth</text>
-  <text x="400" y="35" text-anchor="middle" font-family="Georgia,serif" font-size="11.5" font-weight="bold" fill="#233028">NO inherent conflict of interest</text>
+  <text x="400" y="85" text-anchor="middle" font-family="EB Garamond, serif" font-size="10" fill="#1A5C38">trust &amp; delegated authority</text>
+  <text x="400" y="145" text-anchor="middle" font-family="EB Garamond, serif" font-size="10" fill="#1A5C38">aligned goals &rarr; maximised wealth</text>
+  <text x="400" y="35" text-anchor="middle" font-family="EB Garamond, serif" font-size="11.5" font-weight="bold" fill="#233028">NO inherent conflict of interest</text>
 </svg>
 </div>
 </div>
@@ -2859,16 +2860,16 @@ tfoot { display: table-footer-group; }
 <div class="mind-map-container" style="margin:3mm 0;">
 <svg viewBox="0 0 800 220" width="560" height="154" xmlns="http://www.w3.org/2000/svg" style="max-width:100%;display:block;margin:0 auto;">
   <rect x="60" y="70" width="220" height="80" rx="8" fill="#EAF4EE" stroke="#1A5C38" stroke-width="1.4"/>
-  <text x="170" y="103" text-anchor="middle" font-family="Georgia,serif" font-size="13" font-weight="bold" fill="#1A5C38">PRINCIPAL</text>
-  <text x="170" y="122" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#4E5B54">(owner / shareholder)</text>
+  <text x="170" y="103" text-anchor="middle" font-family="EB Garamond, serif" font-size="13" font-weight="bold" fill="#1A5C38">PRINCIPAL</text>
+  <text x="170" y="122" text-anchor="middle" font-family="EB Garamond, serif" font-size="10" fill="#4E5B54">(owner / shareholder)</text>
   <rect x="520" y="70" width="220" height="80" rx="8" fill="#F3E9D0" stroke="#8A6D1F" stroke-width="1.4"/>
-  <text x="630" y="103" text-anchor="middle" font-family="Georgia,serif" font-size="13" font-weight="bold" fill="#8A6D1F">AGENT</text>
-  <text x="630" y="122" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#4E5B54">(executive director)</text>
+  <text x="630" y="103" text-anchor="middle" font-family="EB Garamond, serif" font-size="13" font-weight="bold" fill="#8A6D1F">AGENT</text>
+  <text x="630" y="122" text-anchor="middle" font-family="EB Garamond, serif" font-size="10" fill="#4E5B54">(executive director)</text>
   <line x1="280" y1="90" x2="518" y2="90" stroke="#8A6D1F" stroke-width="2.4" stroke-dasharray="6 4"/>
   <line x1="518" y1="130" x2="280" y2="130" stroke="#B23B2E" stroke-width="2.4" stroke-dasharray="6 4"/>
-  <text x="400" y="80" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#8A6D1F">monitoring costs &darr;</text>
-  <text x="400" y="150" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#B23B2E">information asymmetry &middot; residual loss</text>
-  <text x="400" y="35" text-anchor="middle" font-family="Georgia,serif" font-size="11.5" font-weight="bold" fill="#233028">POTENTIAL conflict of interest &mdash; needs monitoring</text>
+  <text x="400" y="80" text-anchor="middle" font-family="EB Garamond, serif" font-size="10" fill="#8A6D1F">monitoring costs &darr;</text>
+  <text x="400" y="150" text-anchor="middle" font-family="EB Garamond, serif" font-size="10" fill="#B23B2E">information asymmetry &middot; residual loss</text>
+  <text x="400" y="35" text-anchor="middle" font-family="EB Garamond, serif" font-size="11.5" font-weight="bold" fill="#233028">POTENTIAL conflict of interest &mdash; needs monitoring</text>
 </svg>
 </div>
 </div>
@@ -2975,29 +2976,29 @@ tfoot { display: table-footer-group; }
 <div class="mind-map-container" style="margin:3mm 0;">
 <svg viewBox="0 0 800 340" width="600" height="255" xmlns="http://www.w3.org/2000/svg" style="max-width:100%;display:block;margin:0 auto;">
   <rect x="10" y="30" width="180" height="52" rx="6" fill="#EAF4EE" stroke="#1A5C38" stroke-width="1.2"/>
-  <text x="100" y="53" text-anchor="middle" font-family="Georgia,serif" font-size="10" font-weight="bold" fill="#1A5C38">1. Analysis of</text>
-  <text x="100" y="68" text-anchor="middle" font-family="Georgia,serif" font-size="10" font-weight="bold" fill="#1A5C38">opportunities</text>
+  <text x="100" y="53" text-anchor="middle" font-family="EB Garamond, serif" font-size="10" font-weight="bold" fill="#1A5C38">1. Analysis of</text>
+  <text x="100" y="68" text-anchor="middle" font-family="EB Garamond, serif" font-size="10" font-weight="bold" fill="#1A5C38">opportunities</text>
   <rect x="210" y="30" width="180" height="52" rx="6" fill="#EAF4EE" stroke="#1A5C38" stroke-width="1.2"/>
-  <text x="300" y="53" text-anchor="middle" font-family="Georgia,serif" font-size="10" font-weight="bold" fill="#1A5C38">2. Establishing</text>
-  <text x="300" y="68" text-anchor="middle" font-family="Georgia,serif" font-size="10" font-weight="bold" fill="#1A5C38">objectives</text>
+  <text x="300" y="53" text-anchor="middle" font-family="EB Garamond, serif" font-size="10" font-weight="bold" fill="#1A5C38">2. Establishing</text>
+  <text x="300" y="68" text-anchor="middle" font-family="EB Garamond, serif" font-size="10" font-weight="bold" fill="#1A5C38">objectives</text>
   <rect x="410" y="30" width="180" height="52" rx="6" fill="#EAF4EE" stroke="#1A5C38" stroke-width="1.2"/>
-  <text x="500" y="53" text-anchor="middle" font-family="Georgia,serif" font-size="10" font-weight="bold" fill="#1A5C38">3. Determining</text>
-  <text x="500" y="68" text-anchor="middle" font-family="Georgia,serif" font-size="10" font-weight="bold" fill="#1A5C38">planning premises</text>
+  <text x="500" y="53" text-anchor="middle" font-family="EB Garamond, serif" font-size="10" font-weight="bold" fill="#1A5C38">3. Determining</text>
+  <text x="500" y="68" text-anchor="middle" font-family="EB Garamond, serif" font-size="10" font-weight="bold" fill="#1A5C38">planning premises</text>
   <rect x="610" y="30" width="180" height="52" rx="6" fill="#EAF4EE" stroke="#1A5C38" stroke-width="1.2"/>
-  <text x="700" y="53" text-anchor="middle" font-family="Georgia,serif" font-size="10" font-weight="bold" fill="#1A5C38">4. Identifying</text>
-  <text x="700" y="68" text-anchor="middle" font-family="Georgia,serif" font-size="10" font-weight="bold" fill="#1A5C38">alternatives</text>
+  <text x="700" y="53" text-anchor="middle" font-family="EB Garamond, serif" font-size="10" font-weight="bold" fill="#1A5C38">4. Identifying</text>
+  <text x="700" y="68" text-anchor="middle" font-family="EB Garamond, serif" font-size="10" font-weight="bold" fill="#1A5C38">alternatives</text>
   <rect x="10" y="258" width="180" height="52" rx="6" fill="#F3E9D0" stroke="#8A6D1F" stroke-width="1.2"/>
-  <text x="100" y="281" text-anchor="middle" font-family="Georgia,serif" font-size="10" font-weight="bold" fill="#8A6D1F">8. Reviewing</text>
-  <text x="100" y="296" text-anchor="middle" font-family="Georgia,serif" font-size="10" font-weight="bold" fill="#8A6D1F">the plan</text>
+  <text x="100" y="281" text-anchor="middle" font-family="EB Garamond, serif" font-size="10" font-weight="bold" fill="#8A6D1F">8. Reviewing</text>
+  <text x="100" y="296" text-anchor="middle" font-family="EB Garamond, serif" font-size="10" font-weight="bold" fill="#8A6D1F">the plan</text>
   <rect x="210" y="258" width="180" height="52" rx="6" fill="#F3E9D0" stroke="#8A6D1F" stroke-width="1.2"/>
-  <text x="300" y="281" text-anchor="middle" font-family="Georgia,serif" font-size="10" font-weight="bold" fill="#8A6D1F">7. Implementing</text>
-  <text x="300" y="296" text-anchor="middle" font-family="Georgia,serif" font-size="10" font-weight="bold" fill="#8A6D1F">the plan</text>
+  <text x="300" y="281" text-anchor="middle" font-family="EB Garamond, serif" font-size="10" font-weight="bold" fill="#8A6D1F">7. Implementing</text>
+  <text x="300" y="296" text-anchor="middle" font-family="EB Garamond, serif" font-size="10" font-weight="bold" fill="#8A6D1F">the plan</text>
   <rect x="410" y="258" width="180" height="52" rx="6" fill="#F3E9D0" stroke="#8A6D1F" stroke-width="1.2"/>
-  <text x="500" y="281" text-anchor="middle" font-family="Georgia,serif" font-size="10" font-weight="bold" fill="#8A6D1F">6. Selecting</text>
-  <text x="500" y="296" text-anchor="middle" font-family="Georgia,serif" font-size="10" font-weight="bold" fill="#8A6D1F">best alternative</text>
+  <text x="500" y="281" text-anchor="middle" font-family="EB Garamond, serif" font-size="10" font-weight="bold" fill="#8A6D1F">6. Selecting</text>
+  <text x="500" y="296" text-anchor="middle" font-family="EB Garamond, serif" font-size="10" font-weight="bold" fill="#8A6D1F">best alternative</text>
   <rect x="610" y="258" width="180" height="52" rx="6" fill="#F3E9D0" stroke="#8A6D1F" stroke-width="1.2"/>
-  <text x="700" y="281" text-anchor="middle" font-family="Georgia,serif" font-size="10" font-weight="bold" fill="#8A6D1F">5. Evaluating</text>
-  <text x="700" y="296" text-anchor="middle" font-family="Georgia,serif" font-size="10" font-weight="bold" fill="#8A6D1F">alternatives</text>
+  <text x="700" y="281" text-anchor="middle" font-family="EB Garamond, serif" font-size="10" font-weight="bold" fill="#8A6D1F">5. Evaluating</text>
+  <text x="700" y="296" text-anchor="middle" font-family="EB Garamond, serif" font-size="10" font-weight="bold" fill="#8A6D1F">alternatives</text>
   <path d="M190 56 H210" stroke="#277548" stroke-width="2" marker-end="url(#a5)"/>
   <path d="M390 56 H410" stroke="#277548" stroke-width="2" marker-end="url(#a5)"/>
   <path d="M590 56 H610" stroke="#277548" stroke-width="2" marker-end="url(#a5)"/>
@@ -3109,17 +3110,17 @@ tfoot { display: table-footer-group; }
 <div class="mind-map-container" style="margin:3mm 0;">
 <svg viewBox="0 0 800 130" width="620" height="101" xmlns="http://www.w3.org/2000/svg" style="max-width:100%;display:block;margin:0 auto;">
   <rect x="10" y="30" width="144" height="60" rx="6" fill="#EAF4EE" stroke="#1A5C38" stroke-width="1.2"/>
-  <text x="82" y="55" text-anchor="middle" font-family="Georgia,serif" font-size="10" font-weight="bold" fill="#1A5C38">1. Manpower</text>
-  <text x="82" y="70" text-anchor="middle" font-family="Georgia,serif" font-size="10" font-weight="bold" fill="#1A5C38">Planning</text>
+  <text x="82" y="55" text-anchor="middle" font-family="EB Garamond, serif" font-size="10" font-weight="bold" fill="#1A5C38">1. Manpower</text>
+  <text x="82" y="70" text-anchor="middle" font-family="EB Garamond, serif" font-size="10" font-weight="bold" fill="#1A5C38">Planning</text>
   <rect x="166" y="30" width="144" height="60" rx="6" fill="#EAF4EE" stroke="#1A5C38" stroke-width="1.2"/>
-  <text x="238" y="65" text-anchor="middle" font-family="Georgia,serif" font-size="11" font-weight="bold" fill="#1A5C38">2. Recruitment</text>
+  <text x="238" y="65" text-anchor="middle" font-family="EB Garamond, serif" font-size="11" font-weight="bold" fill="#1A5C38">2. Recruitment</text>
   <rect x="322" y="30" width="144" height="60" rx="6" fill="#EAF4EE" stroke="#1A5C38" stroke-width="1.2"/>
-  <text x="394" y="65" text-anchor="middle" font-family="Georgia,serif" font-size="11" font-weight="bold" fill="#1A5C38">3. Selection</text>
+  <text x="394" y="65" text-anchor="middle" font-family="EB Garamond, serif" font-size="11" font-weight="bold" fill="#1A5C38">3. Selection</text>
   <rect x="478" y="30" width="144" height="60" rx="6" fill="#EAF4EE" stroke="#1A5C38" stroke-width="1.2"/>
-  <text x="550" y="65" text-anchor="middle" font-family="Georgia,serif" font-size="11" font-weight="bold" fill="#1A5C38">4. Training</text>
+  <text x="550" y="65" text-anchor="middle" font-family="EB Garamond, serif" font-size="11" font-weight="bold" fill="#1A5C38">4. Training</text>
   <rect x="634" y="30" width="150" height="60" rx="6" fill="#EAF4EE" stroke="#1A5C38" stroke-width="1.2"/>
-  <text x="709" y="55" text-anchor="middle" font-family="Georgia,serif" font-size="10" font-weight="bold" fill="#1A5C38">5. Placement &amp;</text>
-  <text x="709" y="70" text-anchor="middle" font-family="Georgia,serif" font-size="10" font-weight="bold" fill="#1A5C38">Induction</text>
+  <text x="709" y="55" text-anchor="middle" font-family="EB Garamond, serif" font-size="10" font-weight="bold" fill="#1A5C38">5. Placement &amp;</text>
+  <text x="709" y="70" text-anchor="middle" font-family="EB Garamond, serif" font-size="10" font-weight="bold" fill="#1A5C38">Induction</text>
   <path d="M154 60 H166" stroke="#277548" stroke-width="2" marker-end="url(#a6)"/>
   <path d="M310 60 H322" stroke="#277548" stroke-width="2" marker-end="url(#a6)"/>
   <path d="M466 60 H478" stroke="#277548" stroke-width="2" marker-end="url(#a6)"/>
@@ -3238,26 +3239,26 @@ tfoot { display: table-footer-group; }
 <div class="mind-map-container" style="margin:3mm 0;">
 <svg viewBox="0 0 800 250" width="600" height="188" xmlns="http://www.w3.org/2000/svg" style="max-width:100%;display:block;margin:0 auto;">
   <rect x="10" y="90" width="120" height="60" rx="6" fill="#EAF4EE" stroke="#1A5C38" stroke-width="1.2"/>
-  <text x="70" y="115" text-anchor="middle" font-family="Georgia,serif" font-size="10" font-weight="bold" fill="#1A5C38">1. Sender</text>
-  <text x="70" y="130" text-anchor="middle" font-family="Georgia,serif" font-size="9" fill="#4E5B54">(communicator)</text>
+  <text x="70" y="115" text-anchor="middle" font-family="EB Garamond, serif" font-size="10" font-weight="bold" fill="#1A5C38">1. Sender</text>
+  <text x="70" y="130" text-anchor="middle" font-family="EB Garamond, serif" font-size="9" fill="#4E5B54">(communicator)</text>
   <rect x="150" y="90" width="110" height="60" rx="6" fill="#EAF4EE" stroke="#1A5C38" stroke-width="1.2"/>
-  <text x="205" y="125" text-anchor="middle" font-family="Georgia,serif" font-size="10" font-weight="bold" fill="#1A5C38">2. Encoding</text>
+  <text x="205" y="125" text-anchor="middle" font-family="EB Garamond, serif" font-size="10" font-weight="bold" fill="#1A5C38">2. Encoding</text>
   <rect x="280" y="90" width="110" height="60" rx="6" fill="#EAF4EE" stroke="#1A5C38" stroke-width="1.2"/>
-  <text x="335" y="125" text-anchor="middle" font-family="Georgia,serif" font-size="10" font-weight="bold" fill="#1A5C38">3. Message</text>
+  <text x="335" y="125" text-anchor="middle" font-family="EB Garamond, serif" font-size="10" font-weight="bold" fill="#1A5C38">3. Message</text>
   <rect x="410" y="90" width="110" height="60" rx="6" fill="#EAF4EE" stroke="#1A5C38" stroke-width="1.2"/>
-  <text x="465" y="125" text-anchor="middle" font-family="Georgia,serif" font-size="10" font-weight="bold" fill="#1A5C38">4. Medium</text>
+  <text x="465" y="125" text-anchor="middle" font-family="EB Garamond, serif" font-size="10" font-weight="bold" fill="#1A5C38">4. Medium</text>
   <rect x="540" y="90" width="110" height="60" rx="6" fill="#EAF4EE" stroke="#1A5C38" stroke-width="1.2"/>
-  <text x="595" y="125" text-anchor="middle" font-family="Georgia,serif" font-size="10" font-weight="bold" fill="#1A5C38">5. Decoding</text>
+  <text x="595" y="125" text-anchor="middle" font-family="EB Garamond, serif" font-size="10" font-weight="bold" fill="#1A5C38">5. Decoding</text>
   <rect x="670" y="90" width="120" height="60" rx="6" fill="#EAF4EE" stroke="#1A5C38" stroke-width="1.2"/>
-  <text x="730" y="115" text-anchor="middle" font-family="Georgia,serif" font-size="10" font-weight="bold" fill="#1A5C38">6. Receiver</text>
+  <text x="730" y="115" text-anchor="middle" font-family="EB Garamond, serif" font-size="10" font-weight="bold" fill="#1A5C38">6. Receiver</text>
   <path d="M130 120 H150" stroke="#277548" stroke-width="2" marker-end="url(#a7)"/>
   <path d="M260 120 H280" stroke="#277548" stroke-width="2" marker-end="url(#a7)"/>
   <path d="M390 120 H410" stroke="#277548" stroke-width="2" marker-end="url(#a7)"/>
   <path d="M520 120 H540" stroke="#277548" stroke-width="2" marker-end="url(#a7)"/>
   <path d="M650 120 H670" stroke="#277548" stroke-width="2" marker-end="url(#a7)"/>
   <path d="M730 150 Q 400 210 70 150" stroke="#8A6D1F" stroke-width="2" fill="none" marker-end="url(#a8)"/>
-  <text x="400" y="205" text-anchor="middle" font-family="Georgia,serif" font-size="10.5" font-weight="bold" fill="#8A6D1F">7. Feedback</text>
-  <text x="400" y="65" text-anchor="middle" font-family="Georgia,serif" font-size="10.5" fill="#B23B2E">8. Noise &mdash; can disrupt any stage of the chain</text>
+  <text x="400" y="205" text-anchor="middle" font-family="EB Garamond, serif" font-size="10.5" font-weight="bold" fill="#8A6D1F">7. Feedback</text>
+  <text x="400" y="65" text-anchor="middle" font-family="EB Garamond, serif" font-size="10.5" fill="#B23B2E">8. Noise &mdash; can disrupt any stage of the chain</text>
   <defs>
     <marker id="a7" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#4E5B54"/></marker>
     <marker id="a8" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#8A6D1F"/></marker>
@@ -3345,35 +3346,35 @@ tfoot { display: table-footer-group; }
 <div class="mind-map-container" style="margin:3mm 0;">
 <svg viewBox="0 0 800 340" width="600" height="255" xmlns="http://www.w3.org/2000/svg" style="max-width:100%;display:block;margin:0 auto;">
   <rect x="120" y="30" width="330" height="130" rx="6" fill="#EAF4EE" stroke="#1A5C38" stroke-width="1.4"/>
-  <text x="285" y="65" text-anchor="middle" font-family="Georgia,serif" font-size="13" font-weight="bold" fill="#1A5C38">ELITE CIRCLE</text>
-  <text x="285" y="85" text-anchor="middle" font-family="Georgia,serif" font-size="9.5" fill="#4E5B54">closed + hierarchical</text>
-  <text x="285" y="103" text-anchor="middle" font-family="Georgia,serif" font-size="9" fill="#4E5B54">company picks a select group,</text>
-  <text x="285" y="118" text-anchor="middle" font-family="Georgia,serif" font-size="9" fill="#4E5B54">defines problem, picks solution</text>
-  <text x="285" y="140" text-anchor="middle" font-family="Georgia,serif" font-size="9" fill="#277548">e.g. Alessi&rsquo;s 200+ design experts</text>
+  <text x="285" y="65" text-anchor="middle" font-family="EB Garamond, serif" font-size="13" font-weight="bold" fill="#1A5C38">ELITE CIRCLE</text>
+  <text x="285" y="85" text-anchor="middle" font-family="EB Garamond, serif" font-size="9.5" fill="#4E5B54">closed + hierarchical</text>
+  <text x="285" y="103" text-anchor="middle" font-family="EB Garamond, serif" font-size="9" fill="#4E5B54">company picks a select group,</text>
+  <text x="285" y="118" text-anchor="middle" font-family="EB Garamond, serif" font-size="9" fill="#4E5B54">defines problem, picks solution</text>
+  <text x="285" y="140" text-anchor="middle" font-family="EB Garamond, serif" font-size="9" fill="#277548">e.g. Alessi&rsquo;s 200+ design experts</text>
   <rect x="470" y="30" width="330" height="130" rx="6" fill="#EAF4EE" stroke="#1A5C38" stroke-width="1.4"/>
-  <text x="635" y="65" text-anchor="middle" font-family="Georgia,serif" font-size="13" font-weight="bold" fill="#1A5C38">INNOVATION MALL</text>
-  <text x="635" y="85" text-anchor="middle" font-family="Georgia,serif" font-size="9.5" fill="#4E5B54">open + hierarchical</text>
-  <text x="635" y="103" text-anchor="middle" font-family="Georgia,serif" font-size="9" fill="#4E5B54">anyone can propose solutions,</text>
-  <text x="635" y="118" text-anchor="middle" font-family="Georgia,serif" font-size="9" fill="#4E5B54">company chooses which to use</text>
-  <text x="635" y="140" text-anchor="middle" font-family="Georgia,serif" font-size="9" fill="#277548">e.g. InnoCentive.com</text>
+  <text x="635" y="65" text-anchor="middle" font-family="EB Garamond, serif" font-size="13" font-weight="bold" fill="#1A5C38">INNOVATION MALL</text>
+  <text x="635" y="85" text-anchor="middle" font-family="EB Garamond, serif" font-size="9.5" fill="#4E5B54">open + hierarchical</text>
+  <text x="635" y="103" text-anchor="middle" font-family="EB Garamond, serif" font-size="9" fill="#4E5B54">anyone can propose solutions,</text>
+  <text x="635" y="118" text-anchor="middle" font-family="EB Garamond, serif" font-size="9" fill="#4E5B54">company chooses which to use</text>
+  <text x="635" y="140" text-anchor="middle" font-family="EB Garamond, serif" font-size="9" fill="#277548">e.g. InnoCentive.com</text>
   <rect x="120" y="175" width="330" height="130" rx="6" fill="#F3E9D0" stroke="#8A6D1F" stroke-width="1.4"/>
-  <text x="285" y="210" text-anchor="middle" font-family="Georgia,serif" font-size="13" font-weight="bold" fill="#8A6D1F">CONSORTIUM</text>
-  <text x="285" y="230" text-anchor="middle" font-family="Georgia,serif" font-size="9.5" fill="#4E5B54">closed + flat</text>
-  <text x="285" y="248" text-anchor="middle" font-family="Georgia,serif" font-size="9" fill="#4E5B54">private group jointly selects</text>
-  <text x="285" y="263" text-anchor="middle" font-family="Georgia,serif" font-size="9" fill="#4E5B54">problems, decides work, solutions</text>
-  <text x="285" y="285" text-anchor="middle" font-family="Georgia,serif" font-size="9" fill="#8A6D1F">e.g. IBM semiconductor partnerships</text>
+  <text x="285" y="210" text-anchor="middle" font-family="EB Garamond, serif" font-size="13" font-weight="bold" fill="#8A6D1F">CONSORTIUM</text>
+  <text x="285" y="230" text-anchor="middle" font-family="EB Garamond, serif" font-size="9.5" fill="#4E5B54">closed + flat</text>
+  <text x="285" y="248" text-anchor="middle" font-family="EB Garamond, serif" font-size="9" fill="#4E5B54">private group jointly selects</text>
+  <text x="285" y="263" text-anchor="middle" font-family="EB Garamond, serif" font-size="9" fill="#4E5B54">problems, decides work, solutions</text>
+  <text x="285" y="285" text-anchor="middle" font-family="EB Garamond, serif" font-size="9" fill="#8A6D1F">e.g. IBM semiconductor partnerships</text>
   <rect x="470" y="175" width="330" height="130" rx="6" fill="#F3E9D0" stroke="#8A6D1F" stroke-width="1.4"/>
-  <text x="635" y="210" text-anchor="middle" font-family="Georgia,serif" font-size="13" font-weight="bold" fill="#8A6D1F">INNOVATION COMMUNITY</text>
-  <text x="635" y="230" text-anchor="middle" font-family="Georgia,serif" font-size="9.5" fill="#4E5B54">open + flat</text>
-  <text x="635" y="248" text-anchor="middle" font-family="Georgia,serif" font-size="9" fill="#4E5B54">anybody proposes problems,</text>
-  <text x="635" y="263" text-anchor="middle" font-family="Georgia,serif" font-size="9" fill="#4E5B54">solutions, and decides what to use</text>
-  <text x="635" y="285" text-anchor="middle" font-family="Georgia,serif" font-size="9" fill="#8A6D1F">e.g. Linux open-source community</text>
-  <text x="40" y="100" text-anchor="middle" font-family="Georgia,serif" font-size="11" font-weight="bold" fill="#233028" transform="rotate(-90 40 100)">HIERARCHICAL</text>
-  <text x="40" y="245" text-anchor="middle" font-family="Georgia,serif" font-size="11" font-weight="bold" fill="#233028" transform="rotate(-90 40 245)">FLAT</text>
-  <text x="60" y="18" text-anchor="middle" font-family="Georgia,serif" font-size="10.5" fill="#4E5B54">GOVERNANCE</text>
-  <text x="285" y="325" text-anchor="middle" font-family="Georgia,serif" font-size="11" font-weight="bold" fill="#233028">CLOSED</text>
-  <text x="635" y="325" text-anchor="middle" font-family="Georgia,serif" font-size="11" font-weight="bold" fill="#233028">OPEN</text>
-  <text x="460" y="325" text-anchor="middle" font-family="Georgia,serif" font-size="10.5" fill="#4E5B54">PARTICIPATION &rarr;</text>
+  <text x="635" y="210" text-anchor="middle" font-family="EB Garamond, serif" font-size="13" font-weight="bold" fill="#8A6D1F">INNOVATION COMMUNITY</text>
+  <text x="635" y="230" text-anchor="middle" font-family="EB Garamond, serif" font-size="9.5" fill="#4E5B54">open + flat</text>
+  <text x="635" y="248" text-anchor="middle" font-family="EB Garamond, serif" font-size="9" fill="#4E5B54">anybody proposes problems,</text>
+  <text x="635" y="263" text-anchor="middle" font-family="EB Garamond, serif" font-size="9" fill="#4E5B54">solutions, and decides what to use</text>
+  <text x="635" y="285" text-anchor="middle" font-family="EB Garamond, serif" font-size="9" fill="#8A6D1F">e.g. Linux open-source community</text>
+  <text x="40" y="100" text-anchor="middle" font-family="EB Garamond, serif" font-size="11" font-weight="bold" fill="#233028" transform="rotate(-90 40 100)">HIERARCHICAL</text>
+  <text x="40" y="245" text-anchor="middle" font-family="EB Garamond, serif" font-size="11" font-weight="bold" fill="#233028" transform="rotate(-90 40 245)">FLAT</text>
+  <text x="60" y="18" text-anchor="middle" font-family="EB Garamond, serif" font-size="10.5" fill="#4E5B54">GOVERNANCE</text>
+  <text x="285" y="325" text-anchor="middle" font-family="EB Garamond, serif" font-size="11" font-weight="bold" fill="#233028">CLOSED</text>
+  <text x="635" y="325" text-anchor="middle" font-family="EB Garamond, serif" font-size="11" font-weight="bold" fill="#233028">OPEN</text>
+  <text x="460" y="325" text-anchor="middle" font-family="EB Garamond, serif" font-size="10.5" fill="#4E5B54">PARTICIPATION &rarr;</text>
 </svg>
 </div>
 <p class="body" style="font-size:9pt;color:var(--gray);">Source: Gary P. Pisano and Roberto Verganti, Harvard Business Review, December 2008.</p>
@@ -4094,33 +4095,33 @@ tfoot { display: table-footer-group; }
 <svg viewBox="0 0 800 420" width="560" height="294" xmlns="http://www.w3.org/2000/svg" style="max-width:100%;display:block;margin:0 auto;">
   <line x1="100" y1="30" x2="100" y2="360" stroke="#233028" stroke-width="2"/>
   <line x1="100" y1="360" x2="740" y2="360" stroke="#233028" stroke-width="2"/>
-  <text x="45" y="45" font-family="Georgia,serif" font-size="11.5" fill="#233028">High 9</text>
-  <text x="55" y="200" font-family="Georgia,serif" font-size="11.5" fill="#233028">CONCERN</text>
-  <text x="55" y="216" font-family="Georgia,serif" font-size="11.5" fill="#233028">FOR PEOPLE</text>
-  <text x="65" y="358" font-family="Georgia,serif" font-size="11.5" fill="#233028">Low 1</text>
-  <text x="700" y="382" font-family="Georgia,serif" font-size="11.5" fill="#233028">High 9</text>
-  <text x="380" y="400" font-family="Georgia,serif" font-size="11.5" fill="#233028">CONCERN FOR PRODUCTION</text>
-  <text x="95" y="382" font-family="Georgia,serif" font-size="11.5" fill="#233028">Low 1</text>
+  <text x="45" y="45" font-family="EB Garamond, serif" font-size="11.5" fill="#233028">High 9</text>
+  <text x="55" y="200" font-family="EB Garamond, serif" font-size="11.5" fill="#233028">CONCERN</text>
+  <text x="55" y="216" font-family="EB Garamond, serif" font-size="11.5" fill="#233028">FOR PEOPLE</text>
+  <text x="65" y="358" font-family="EB Garamond, serif" font-size="11.5" fill="#233028">Low 1</text>
+  <text x="700" y="382" font-family="EB Garamond, serif" font-size="11.5" fill="#233028">High 9</text>
+  <text x="380" y="400" font-family="EB Garamond, serif" font-size="11.5" fill="#233028">CONCERN FOR PRODUCTION</text>
+  <text x="95" y="382" font-family="EB Garamond, serif" font-size="11.5" fill="#233028">Low 1</text>
   <rect x="120" y="45" width="140" height="80" rx="6" fill="#F3E9D0" stroke="#8A6D1F" stroke-width="1.3"/>
-  <text x="190" y="72" text-anchor="middle" font-family="Georgia,serif" font-size="12" font-weight="bold" fill="#8A6D1F">(1,9)</text>
-  <text x="190" y="90" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#4E5B54">Country Club</text>
-  <text x="190" y="105" text-anchor="middle" font-family="Georgia,serif" font-size="9" fill="#4E5B54">low prod / high people</text>
+  <text x="190" y="72" text-anchor="middle" font-family="EB Garamond, serif" font-size="12" font-weight="bold" fill="#8A6D1F">(1,9)</text>
+  <text x="190" y="90" text-anchor="middle" font-family="EB Garamond, serif" font-size="10" fill="#4E5B54">Country Club</text>
+  <text x="190" y="105" text-anchor="middle" font-family="EB Garamond, serif" font-size="9" fill="#4E5B54">low prod / high people</text>
   <rect x="560" y="45" width="150" height="80" rx="6" fill="#EAF4EE" stroke="#1A5C38" stroke-width="1.6"/>
-  <text x="635" y="72" text-anchor="middle" font-family="Georgia,serif" font-size="12" font-weight="bold" fill="#1A5C38">(9,9)</text>
-  <text x="635" y="90" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#4E5B54">Team / Sound</text>
-  <text x="635" y="105" text-anchor="middle" font-family="Georgia,serif" font-size="9" fill="#4E5B54">high prod / high people</text>
+  <text x="635" y="72" text-anchor="middle" font-family="EB Garamond, serif" font-size="12" font-weight="bold" fill="#1A5C38">(9,9)</text>
+  <text x="635" y="90" text-anchor="middle" font-family="EB Garamond, serif" font-size="10" fill="#4E5B54">Team / Sound</text>
+  <text x="635" y="105" text-anchor="middle" font-family="EB Garamond, serif" font-size="9" fill="#4E5B54">high prod / high people</text>
   <rect x="330" y="160" width="150" height="80" rx="6" fill="#F5F1E5" stroke="#B9AE8C" stroke-width="1.3"/>
-  <text x="405" y="187" text-anchor="middle" font-family="Georgia,serif" font-size="12" font-weight="bold" fill="#8A7A45">(5,5)</text>
-  <text x="405" y="205" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#4E5B54">Middle-of-road</text>
-  <text x="405" y="220" text-anchor="middle" font-family="Georgia,serif" font-size="9" fill="#4E5B54">medium / medium</text>
+  <text x="405" y="187" text-anchor="middle" font-family="EB Garamond, serif" font-size="12" font-weight="bold" fill="#8A7A45">(5,5)</text>
+  <text x="405" y="205" text-anchor="middle" font-family="EB Garamond, serif" font-size="10" fill="#4E5B54">Middle-of-road</text>
+  <text x="405" y="220" text-anchor="middle" font-family="EB Garamond, serif" font-size="9" fill="#4E5B54">medium / medium</text>
   <rect x="120" y="275" width="140" height="80" rx="6" fill="#F0EAE8" stroke="#8A6D6D" stroke-width="1.3"/>
-  <text x="190" y="302" text-anchor="middle" font-family="Georgia,serif" font-size="12" font-weight="bold" fill="#6D4A4A">(1,1)</text>
-  <text x="190" y="320" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#4E5B54">Impoverished</text>
-  <text x="190" y="335" text-anchor="middle" font-family="Georgia,serif" font-size="9" fill="#4E5B54">low prod / low people</text>
+  <text x="190" y="302" text-anchor="middle" font-family="EB Garamond, serif" font-size="12" font-weight="bold" fill="#6D4A4A">(1,1)</text>
+  <text x="190" y="320" text-anchor="middle" font-family="EB Garamond, serif" font-size="10" fill="#4E5B54">Impoverished</text>
+  <text x="190" y="335" text-anchor="middle" font-family="EB Garamond, serif" font-size="9" fill="#4E5B54">low prod / low people</text>
   <rect x="560" y="275" width="150" height="80" rx="6" fill="#F3DDD5" stroke="#B23B2E" stroke-width="1.3"/>
-  <text x="635" y="302" text-anchor="middle" font-family="Georgia,serif" font-size="12" font-weight="bold" fill="#B23B2E">(9,1)</text>
-  <text x="635" y="320" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#4E5B54">Produce-or-Perish</text>
-  <text x="635" y="335" text-anchor="middle" font-family="Georgia,serif" font-size="9" fill="#4E5B54">high prod / low people</text>
+  <text x="635" y="302" text-anchor="middle" font-family="EB Garamond, serif" font-size="12" font-weight="bold" fill="#B23B2E">(9,1)</text>
+  <text x="635" y="320" text-anchor="middle" font-family="EB Garamond, serif" font-size="10" fill="#4E5B54">Produce-or-Perish</text>
+  <text x="635" y="335" text-anchor="middle" font-family="EB Garamond, serif" font-size="9" fill="#4E5B54">high prod / low people</text>
 </svg>
 </div>
 <table class="comparison-table" style="font-size:8.8pt;">
@@ -4244,19 +4245,19 @@ tfoot { display: table-footer-group; }
   <polygon points="290,150 410,150 380,210 320,210" fill="#4E9B71"/>
   <polygon points="320,210 380,210 360,265 340,265" fill="#8FBFA3"/>
   <polygon points="340,265 360,265 350,300 350,300" fill="#C4DDD0"/>
-  <text x="350" y="60" text-anchor="middle" font-family="Georgia,serif" font-size="9.5" fill="#FFFFFF">Self-</text>
-  <text x="350" y="73" text-anchor="middle" font-family="Georgia,serif" font-size="9.5" fill="#FFFFFF">actualization</text>
-  <text x="350" y="124" text-anchor="middle" font-family="Georgia,serif" font-size="9.5" fill="#FFFFFF">Esteem needs</text>
-  <text x="350" y="184" text-anchor="middle" font-family="Georgia,serif" font-size="9" fill="#FFFFFF">Social needs</text>
-  <text x="350" y="235" text-anchor="middle" font-family="Georgia,serif" font-size="8.5" fill="#233028">Safety needs</text>
-  <text x="465" y="82" font-family="Georgia,serif" font-size="9" fill="#4E5B54">apex &mdash; least essential,</text>
-  <text x="465" y="94" font-family="Georgia,serif" font-size="9" fill="#4E5B54">hardest to satisfy</text>
-  <text x="465" y="142" font-family="Georgia,serif" font-size="9" fill="#4E5B54">esteem: self-respect +</text>
-  <text x="465" y="154" font-family="Georgia,serif" font-size="9" fill="#4E5B54">recognition from others</text>
-  <text x="465" y="210" font-family="Georgia,serif" font-size="9" fill="#4E5B54">belonging, acceptance, love</text>
-  <text x="465" y="238" font-family="Georgia,serif" font-size="9" fill="#4E5B54">protection from danger,</text>
-  <text x="465" y="250" font-family="Georgia,serif" font-size="9" fill="#4E5B54">job security</text>
-  <text x="350" y="315" text-anchor="middle" font-family="Georgia,serif" font-size="9" fill="#4E5B54">&larr; base: physiological (food, air, sleep) &mdash; most essential</text>
+  <text x="350" y="60" text-anchor="middle" font-family="EB Garamond, serif" font-size="9.5" fill="#FFFFFF">Self-</text>
+  <text x="350" y="73" text-anchor="middle" font-family="EB Garamond, serif" font-size="9.5" fill="#FFFFFF">actualization</text>
+  <text x="350" y="124" text-anchor="middle" font-family="EB Garamond, serif" font-size="9.5" fill="#FFFFFF">Esteem needs</text>
+  <text x="350" y="184" text-anchor="middle" font-family="EB Garamond, serif" font-size="9" fill="#FFFFFF">Social needs</text>
+  <text x="350" y="235" text-anchor="middle" font-family="EB Garamond, serif" font-size="8.5" fill="#233028">Safety needs</text>
+  <text x="465" y="82" font-family="EB Garamond, serif" font-size="9" fill="#4E5B54">apex &mdash; least essential,</text>
+  <text x="465" y="94" font-family="EB Garamond, serif" font-size="9" fill="#4E5B54">hardest to satisfy</text>
+  <text x="465" y="142" font-family="EB Garamond, serif" font-size="9" fill="#4E5B54">esteem: self-respect +</text>
+  <text x="465" y="154" font-family="EB Garamond, serif" font-size="9" fill="#4E5B54">recognition from others</text>
+  <text x="465" y="210" font-family="EB Garamond, serif" font-size="9" fill="#4E5B54">belonging, acceptance, love</text>
+  <text x="465" y="238" font-family="EB Garamond, serif" font-size="9" fill="#4E5B54">protection from danger,</text>
+  <text x="465" y="250" font-family="EB Garamond, serif" font-size="9" fill="#4E5B54">job security</text>
+  <text x="350" y="315" text-anchor="middle" font-family="EB Garamond, serif" font-size="9" fill="#4E5B54">&larr; base: physiological (food, air, sleep) &mdash; most essential</text>
 </svg>
 </div>
 <table class="comparison-table" style="font-size:8.8pt;">

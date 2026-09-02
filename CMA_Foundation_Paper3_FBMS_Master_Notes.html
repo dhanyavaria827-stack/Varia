@@ -42,11 +42,11 @@
   --font-head:    'Cormorant Garamond', 'Playfair Display', Georgia, serif;
   --font-body:    'EB Garamond', Georgia, serif;
   --font-display: 'Italiana', 'Playfair Display', Georgia, serif;
-  --font-mono:    'JetBrains Mono', 'Courier New', monospace;
+  --font-mono:    'Courier New', Courier, monospace;
 }
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
 @page { size: A4; margin: 22mm 18mm 20mm 24mm; @top-center { content: "ICMAI · CMA FOUNDATION · PAPER 3 — FBMS · MASTER NOTES"; font-family: "Cormorant Garamond", Georgia, serif; font-weight: 300; font-size: 8pt; letter-spacing: 0.15em; text-transform: uppercase; color: #6B7280; } @bottom-center { content: "CMA Foundation · Fundamentals of Business Mathematics and Statistics"; font-family: "Cormorant Garamond", Georgia, serif; font-weight: 300; font-size: 7.5pt; color: #6B7280; } @bottom-left { content: "\00A9  Dhanya Varia"; font-family: "EB Garamond", serif; font-size: 9pt; font-weight: 600; font-style: italic; letter-spacing: 0.04em; color: #1A5C38; } @bottom-right { content: counter(page); font-family: "Cormorant Garamond", Georgia, serif; font-weight: 600; font-size: 9pt; color: #1A5C38; } }
-body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color: var(--ink); background: var(--white); overflow-wrap: break-word; }
+body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color: var(--ink); background: var(--white); }
 .page { position: relative; min-height: 1mm; }
 
 .page-break { page-break-before: always; break-before: page; }
@@ -92,7 +92,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
 .revision-strip .fact { font-family: var(--font-head); font-weight: 600; font-size: 9.7pt; margin: 4px 0; break-inside: avoid; }
 .comparison-table { width: 100%; border-collapse: collapse; margin: 12px 0; }
 .comparison-table th { background: var(--green-deep); color: var(--white); font-family: var(--font-head); font-weight: 600; font-size: 9.5pt; text-transform: uppercase; letter-spacing: 0.03em; padding: 6px 8px; text-align: left; }
-.comparison-table tr { page-break-inside: avoid; } .comparison-table td { padding: 5px 8px; border: 1px solid var(--border-light); font-family: var(--font-body); font-size: 9.7pt; vertical-align: top; overflow-wrap: break-word; }
+.comparison-table tr { page-break-inside: avoid; } .comparison-table td { padding: 5px 8px; border: 1px solid var(--border-light); font-family: var(--font-body); font-size: 9.7pt; vertical-align: top; }
 .comparison-table tbody tr:nth-child(odd) td { background: var(--green-faint); }
 thead { display: table-header-group; }
 tfoot { display: table-footer-group; }
@@ -335,33 +335,33 @@ tfoot { display: table-footer-group; }
     <line x1="400" y1="280" x2="620" y2="480" stroke="#277548" stroke-width="1.4"/>
     <line x1="400" y1="280" x2="680" y2="330" stroke="#277548" stroke-width="1.4"/>
     <rect x="35" y="60" width="190" height="58" rx="7" fill="#EAF4EE" stroke="#1A5C38" stroke-width="1.3"/>
-    <text x="130" y="83" text-anchor="middle" font-family="Georgia,serif" font-size="11.5" font-weight="bold" fill="#1A5C38">M1 ARITHMETIC</text>
-    <text x="130" y="99" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#4E5B54">15% &middot; ratios, interest, AP/GP</text>
+    <text x="130" y="83" text-anchor="middle" font-family="EB Garamond, serif" font-size="11.5" font-weight="bold" fill="#1A5C38">M1 ARITHMETIC</text>
+    <text x="130" y="99" text-anchor="middle" font-family="EB Garamond, serif" font-size="10" fill="#4E5B54">15% &middot; ratios, interest, AP/GP</text>
     <rect x="305" y="20" width="190" height="58" rx="7" fill="#EAF4EE" stroke="#1A5C38" stroke-width="1.3"/>
-    <text x="400" y="43" text-anchor="middle" font-family="Georgia,serif" font-size="11.5" font-weight="bold" fill="#1A5C38">M2 ALGEBRA</text>
-    <text x="400" y="59" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#4E5B54">20% &middot; the single biggest module</text>
+    <text x="400" y="43" text-anchor="middle" font-family="EB Garamond, serif" font-size="11.5" font-weight="bold" fill="#1A5C38">M2 ALGEBRA</text>
+    <text x="400" y="59" text-anchor="middle" font-family="EB Garamond, serif" font-size="10" fill="#4E5B54">20% &middot; the single biggest module</text>
     <rect x="575" y="60" width="190" height="58" rx="7" fill="#EAF4EE" stroke="#1A5C38" stroke-width="1.3"/>
-    <text x="670" y="83" text-anchor="middle" font-family="Georgia,serif" font-size="11.5" font-weight="bold" fill="#1A5C38">M3 CALCULUS</text>
-    <text x="670" y="99" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#4E5B54">5% &middot; smallest, fast to revise</text>
+    <text x="670" y="83" text-anchor="middle" font-family="EB Garamond, serif" font-size="11.5" font-weight="bold" fill="#1A5C38">M3 CALCULUS</text>
+    <text x="670" y="99" text-anchor="middle" font-family="EB Garamond, serif" font-size="10" fill="#4E5B54">5% &middot; smallest, fast to revise</text>
     <rect x="15" y="300" width="200" height="58" rx="7" fill="#F3E9D0" stroke="#8A6D1F" stroke-width="1.3"/>
-    <text x="115" y="323" text-anchor="middle" font-family="Georgia,serif" font-size="11" font-weight="bold" fill="#8A6D1F">M4 STAT. REPRESENTATION</text>
-    <text x="115" y="339" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#4E5B54">5% &middot; diagrams, frequency</text>
+    <text x="115" y="323" text-anchor="middle" font-family="EB Garamond, serif" font-size="11" font-weight="bold" fill="#8A6D1F">M4 STAT. REPRESENTATION</text>
+    <text x="115" y="339" text-anchor="middle" font-family="EB Garamond, serif" font-size="10" fill="#4E5B54">5% &middot; diagrams, frequency</text>
     <rect x="70" y="450" width="210" height="58" rx="7" fill="#F3E9D0" stroke="#8A6D1F" stroke-width="1.3"/>
-    <text x="175" y="473" text-anchor="middle" font-family="Georgia,serif" font-size="11" font-weight="bold" fill="#8A6D1F">M5 CENTRAL TENDENCY</text>
-    <text x="175" y="489" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#4E5B54">15% &middot; mean/median/mode/SD</text>
+    <text x="175" y="473" text-anchor="middle" font-family="EB Garamond, serif" font-size="11" font-weight="bold" fill="#8A6D1F">M5 CENTRAL TENDENCY</text>
+    <text x="175" y="489" text-anchor="middle" font-family="EB Garamond, serif" font-size="10" fill="#4E5B54">15% &middot; mean/median/mode/SD</text>
     <rect x="300" y="500" width="200" height="58" rx="7" fill="#F3E9D0" stroke="#8A6D1F" stroke-width="1.3"/>
-    <text x="400" y="523" text-anchor="middle" font-family="Georgia,serif" font-size="11" font-weight="bold" fill="#8A6D1F">M6 CORRELATION</text>
-    <text x="400" y="539" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#4E5B54">15% &middot; &amp; Regression</text>
+    <text x="400" y="523" text-anchor="middle" font-family="EB Garamond, serif" font-size="11" font-weight="bold" fill="#8A6D1F">M6 CORRELATION</text>
+    <text x="400" y="539" text-anchor="middle" font-family="EB Garamond, serif" font-size="10" fill="#4E5B54">15% &middot; &amp; Regression</text>
     <rect x="520" y="450" width="200" height="58" rx="7" fill="#F3E9D0" stroke="#8A6D1F" stroke-width="1.3"/>
-    <text x="620" y="473" text-anchor="middle" font-family="Georgia,serif" font-size="11" font-weight="bold" fill="#8A6D1F">M7 PROBABILITY</text>
-    <text x="620" y="489" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#4E5B54">15%</text>
+    <text x="620" y="473" text-anchor="middle" font-family="EB Garamond, serif" font-size="11" font-weight="bold" fill="#8A6D1F">M7 PROBABILITY</text>
+    <text x="620" y="489" text-anchor="middle" font-family="EB Garamond, serif" font-size="10" fill="#4E5B54">15%</text>
     <rect x="580" y="300" width="200" height="58" rx="7" fill="#F3E9D0" stroke="#8A6D1F" stroke-width="1.3"/>
-    <text x="680" y="323" text-anchor="middle" font-family="Georgia,serif" font-size="11" font-weight="bold" fill="#8A6D1F">M8 INDEX NUMBERS</text>
-    <text x="680" y="339" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#4E5B54">10% &middot; &amp; Time Series</text>
+    <text x="680" y="323" text-anchor="middle" font-family="EB Garamond, serif" font-size="11" font-weight="bold" fill="#8A6D1F">M8 INDEX NUMBERS</text>
+    <text x="680" y="339" text-anchor="middle" font-family="EB Garamond, serif" font-size="10" fill="#4E5B54">10% &middot; &amp; Time Series</text>
     <circle cx="400" cy="280" r="56" fill="#1A5C38"/>
-    <text x="400" y="273" text-anchor="middle" font-family="Georgia,serif" font-size="13" font-weight="bold" fill="#FFFFFF">PAPER 3</text>
-    <text x="400" y="291" text-anchor="middle" font-family="Georgia,serif" font-size="9.5" fill="#DCE9E1">FBMS</text>
-    <text x="400" y="305" text-anchor="middle" font-family="Georgia,serif" font-size="9.5" fill="#DCE9E1">100 marks</text>
+    <text x="400" y="273" text-anchor="middle" font-family="EB Garamond, serif" font-size="13" font-weight="bold" fill="#FFFFFF">PAPER 3</text>
+    <text x="400" y="291" text-anchor="middle" font-family="EB Garamond, serif" font-size="9.5" fill="#DCE9E1">FBMS</text>
+    <text x="400" y="305" text-anchor="middle" font-family="EB Garamond, serif" font-size="9.5" fill="#DCE9E1">100 marks</text>
   </svg>
   </div>
   <p class="body" style="font-size:9.5pt;color:var(--gray);">Green branches = Section A, Mathematics (40%). Amber branches = Section B, Statistics (60%) — the larger half of the paper.</p>
@@ -426,21 +426,21 @@ tfoot { display: table-footer-group; }
     <line x1="400" y1="200" x2="150" y2="320" stroke="#277548" stroke-width="1.4"/>
     <line x1="400" y1="200" x2="650" y2="320" stroke="#277548" stroke-width="1.4"/>
     <rect x="35" y="52" width="230" height="56" rx="7" fill="#EAF4EE" stroke="#1A5C38" stroke-width="1.3"/>
-    <text x="150" y="76" text-anchor="middle" font-family="Georgia,serif" font-size="12.5" font-weight="bold" fill="#1A5C38">1.1 RATIOS, VARIATIONS</text>
-    <text x="150" y="93" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#4E5B54">&amp; PROPORTIONS &middot; the k-method</text>
+    <text x="150" y="76" text-anchor="middle" font-family="EB Garamond, serif" font-size="12.5" font-weight="bold" fill="#1A5C38">1.1 RATIOS, VARIATIONS</text>
+    <text x="150" y="93" text-anchor="middle" font-family="EB Garamond, serif" font-size="10" fill="#4E5B54">&amp; PROPORTIONS &middot; the k-method</text>
     <rect x="535" y="52" width="230" height="56" rx="7" fill="#EAF4EE" stroke="#1A5C38" stroke-width="1.3"/>
-    <text x="650" y="76" text-anchor="middle" font-family="Georgia,serif" font-size="12.5" font-weight="bold" fill="#1A5C38">1.2 TIME VALUE</text>
-    <text x="650" y="93" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#4E5B54">OF MONEY &middot; SI, CI, annuity</text>
+    <text x="650" y="76" text-anchor="middle" font-family="EB Garamond, serif" font-size="12.5" font-weight="bold" fill="#1A5C38">1.2 TIME VALUE</text>
+    <text x="650" y="93" text-anchor="middle" font-family="EB Garamond, serif" font-size="10" fill="#4E5B54">OF MONEY &middot; SI, CI, annuity</text>
     <rect x="35" y="292" width="230" height="56" rx="7" fill="#EAF4EE" stroke="#1A5C38" stroke-width="1.3"/>
-    <text x="150" y="316" text-anchor="middle" font-family="Georgia,serif" font-size="12.5" font-weight="bold" fill="#1A5C38">1.3 AP &amp; GP</text>
-    <text x="150" y="333" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#4E5B54">common difference vs common ratio</text>
+    <text x="150" y="316" text-anchor="middle" font-family="EB Garamond, serif" font-size="12.5" font-weight="bold" fill="#1A5C38">1.3 AP &amp; GP</text>
+    <text x="150" y="333" text-anchor="middle" font-family="EB Garamond, serif" font-size="10" fill="#4E5B54">common difference vs common ratio</text>
     <rect x="535" y="292" width="230" height="56" rx="7" fill="#EAF4EE" stroke="#1A5C38" stroke-width="1.3"/>
-    <text x="650" y="316" text-anchor="middle" font-family="Georgia,serif" font-size="12.5" font-weight="bold" fill="#1A5C38">1.4 TIME &amp;</text>
-    <text x="650" y="333" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#4E5B54">DISTANCE</text>
+    <text x="650" y="316" text-anchor="middle" font-family="EB Garamond, serif" font-size="12.5" font-weight="bold" fill="#1A5C38">1.4 TIME &amp;</text>
+    <text x="650" y="333" text-anchor="middle" font-family="EB Garamond, serif" font-size="10" fill="#4E5B54">DISTANCE</text>
     <circle cx="400" cy="200" r="54" fill="#1A5C38"/>
-    <text x="400" y="193" text-anchor="middle" font-family="Georgia,serif" font-size="12.5" font-weight="bold" fill="#FFFFFF">MODULE 1</text>
-    <text x="400" y="210" text-anchor="middle" font-family="Georgia,serif" font-size="9.5" fill="#DCE9E1">ARITHMETIC</text>
-    <text x="400" y="224" text-anchor="middle" font-family="Georgia,serif" font-size="9.5" fill="#DCE9E1">15%</text>
+    <text x="400" y="193" text-anchor="middle" font-family="EB Garamond, serif" font-size="12.5" font-weight="bold" fill="#FFFFFF">MODULE 1</text>
+    <text x="400" y="210" text-anchor="middle" font-family="EB Garamond, serif" font-size="9.5" fill="#DCE9E1">ARITHMETIC</text>
+    <text x="400" y="224" text-anchor="middle" font-family="EB Garamond, serif" font-size="9.5" fill="#DCE9E1">15%</text>
   </svg>
   </div>
   <div class="trigger-box"><strong>The module in one sentence:</strong> ratios compare, proportions equate, variations formalise how one quantity tracks another — then 1.2-1.4 apply that same toolkit to money growing over time, sequences with a fixed pattern, and motion.</div>
@@ -804,7 +804,7 @@ tfoot { display: table-footer-group; }
 <p class="ex-step">[X(1.16&minus;1)] &minus; 0.15X = 46.80 &rArr; X(0.16&minus;0.15) = 46.80 &rArr; X(0.01) = 46.80</p>
 <p class="ex-answer">X = 46.80/0.01 = <strong>&#8377;4,680 (approx.)</strong> &mdash; and ICMAI itself labels this &ldquo;approx.,&rdquo; for good reason.</p>
 </div>
-<div class="trap-block"><span class="pill amber">&#9888; TRAP</span><p class="trap-label">Why the &ldquo;approx.&rdquo; matters here more than usual</p><p class="trap-row"><strong>THE TRAP:</strong> (1.03)&#8309; is actually 1.159274, not 1.16 &mdash; a tiny rounding of 0.0007. But this problem finds X from the DIFFERENCE (C.I.&minus;S.I.), which is itself a small number (&asymp;0.0093 per rupee) &mdash; so that tiny rounding error gets massively amplified. Using the full-precision factor, the answer is closer to <strong>&#8377;5,046</strong>, a 7% swing from the book&rsquo;s rounded &#8377;4,680. <strong>Whenever a problem asks you to find something from a SMALL difference between two compounding results, carry extra decimal places</strong> &mdash; this is exactly the kind of question where 2-decimal table rounding stops being harmless.</p></div>
+<div class="trap-block"><span class="pill amber">&#9888; TRAP</span><p class="trap-label">Why the &ldquo;approx.&rdquo; matters here more than usual</p><p class="trap-row"><strong>THE TRAP:</strong> (1.03)&#8309; is actually 1.159274, not 1.16 &mdash; a tiny rounding of 0.0007. But this problem finds X from the DIFFERENCE (C.I.&minus;S.I.), which is itself a small number (&asymp;0.0093 per rupee) &mdash; so that tiny rounding error gets massively amplified. Using the full-precision factor, the answer is closer to <strong>&#8377;5,046</strong>, a swing of nearly 8% from the book&rsquo;s rounded &#8377;4,680. <strong>Whenever a problem asks you to find something from a SMALL difference between two compounding results, carry extra decimal places</strong> &mdash; this is exactly the kind of question where 2-decimal table rounding stops being harmless.</p></div>
 </div>
 
 
@@ -1000,48 +1000,48 @@ tfoot { display: table-footer-group; }
 <div class="mind-map-container" style="margin:3mm 0;">
 <svg viewBox="0 0 800 460" width="620" height="357" xmlns="http://www.w3.org/2000/svg" style="max-width:100%;display:block;margin:0 auto;">
   <rect x="10" y="10" width="230" height="200" rx="4" fill="none" stroke="#4E5B54" stroke-width="1.3"/>
-  <text x="25" y="28" font-family="Georgia,serif" font-size="11" fill="#4E5B54">U</text>
+  <text x="25" y="28" font-family="EB Garamond, serif" font-size="11" fill="#4E5B54">U</text>
   <circle cx="90" cy="110" r="55" fill="#1A5C38" fill-opacity="0.35" stroke="#1A5C38" stroke-width="1.3"/>
   <circle cx="150" cy="110" r="55" fill="#277548" fill-opacity="0.35" stroke="#277548" stroke-width="1.3"/>
-  <text x="65" y="90" font-family="Georgia,serif" font-size="13" fill="#233028">A</text>
-  <text x="175" y="90" font-family="Georgia,serif" font-size="13" fill="#233028">B</text>
-  <text x="120" y="190" text-anchor="middle" font-family="Georgia,serif" font-size="10.5" fill="#233028">A &cup; B</text>
-  <text x="120" y="225" text-anchor="middle" font-family="Georgia,serif" font-size="9.5" font-style="italic" fill="#4E5B54">Union: either, or both (shaded)</text>
+  <text x="65" y="90" font-family="EB Garamond, serif" font-size="13" fill="#233028">A</text>
+  <text x="175" y="90" font-family="EB Garamond, serif" font-size="13" fill="#233028">B</text>
+  <text x="120" y="190" text-anchor="middle" font-family="EB Garamond, serif" font-size="10.5" fill="#233028">A &cup; B</text>
+  <text x="120" y="225" text-anchor="middle" font-family="EB Garamond, serif" font-size="9.5" font-style="italic" fill="#4E5B54">Union: either, or both (shaded)</text>
 
   <rect x="290" y="10" width="230" height="200" rx="4" fill="none" stroke="#4E5B54" stroke-width="1.3"/>
-  <text x="305" y="28" font-family="Georgia,serif" font-size="11" fill="#4E5B54">U</text>
+  <text x="305" y="28" font-family="EB Garamond, serif" font-size="11" fill="#4E5B54">U</text>
   <circle cx="365" cy="110" r="45" fill="none" stroke="#1A5C38" stroke-width="1.3"/>
   <circle cx="450" cy="110" r="45" fill="none" stroke="#277548" stroke-width="1.3"/>
-  <text x="350" y="90" font-family="Georgia,serif" font-size="13" fill="#233028">A</text>
-  <text x="460" y="90" font-family="Georgia,serif" font-size="13" fill="#233028">B</text>
-  <text x="408" y="190" text-anchor="middle" font-family="Georgia,serif" font-size="10.5" fill="#233028">A &cap; B = &empty;</text>
-  <text x="408" y="225" text-anchor="middle" font-family="Georgia,serif" font-size="9.5" font-style="italic" fill="#4E5B54">Disjoint: no overlap at all</text>
+  <text x="350" y="90" font-family="EB Garamond, serif" font-size="13" fill="#233028">A</text>
+  <text x="460" y="90" font-family="EB Garamond, serif" font-size="13" fill="#233028">B</text>
+  <text x="408" y="190" text-anchor="middle" font-family="EB Garamond, serif" font-size="10.5" fill="#233028">A &cap; B = &empty;</text>
+  <text x="408" y="225" text-anchor="middle" font-family="EB Garamond, serif" font-size="9.5" font-style="italic" fill="#4E5B54">Disjoint: no overlap at all</text>
 
   <rect x="570" y="10" width="220" height="200" rx="4" fill="none" stroke="#4E5B54" stroke-width="1.3"/>
-  <text x="585" y="28" font-family="Georgia,serif" font-size="11" fill="#4E5B54">U</text>
+  <text x="585" y="28" font-family="EB Garamond, serif" font-size="11" fill="#4E5B54">U</text>
   <circle cx="645" cy="110" r="55" fill="none" stroke="#1A5C38" stroke-width="1.3"/>
   <circle cx="705" cy="110" r="55" fill="none" stroke="#277548" stroke-width="1.3"/>
   <path d="M675,72 A55,55 0 0,1 675,148 A55,55 0 0,1 675,72 Z" fill="#8A6D1F" fill-opacity="0.4"/>
-  <text x="620" y="90" font-family="Georgia,serif" font-size="13" fill="#233028">A</text>
-  <text x="730" y="90" font-family="Georgia,serif" font-size="13" fill="#233028">B</text>
-  <text x="675" y="190" text-anchor="middle" font-family="Georgia,serif" font-size="10.5" fill="#233028">A &cap; B</text>
-  <text x="675" y="225" text-anchor="middle" font-family="Georgia,serif" font-size="9.5" font-style="italic" fill="#4E5B54">Intersection: only the overlap</text>
+  <text x="620" y="90" font-family="EB Garamond, serif" font-size="13" fill="#233028">A</text>
+  <text x="730" y="90" font-family="EB Garamond, serif" font-size="13" fill="#233028">B</text>
+  <text x="675" y="190" text-anchor="middle" font-family="EB Garamond, serif" font-size="10.5" fill="#233028">A &cap; B</text>
+  <text x="675" y="225" text-anchor="middle" font-family="EB Garamond, serif" font-size="9.5" font-style="italic" fill="#4E5B54">Intersection: only the overlap</text>
 
   <rect x="150" y="250" width="230" height="200" rx="4" fill="none" stroke="#4E5B54" stroke-width="1.3"/>
-  <text x="165" y="268" font-family="Georgia,serif" font-size="11" fill="#4E5B54">U</text>
+  <text x="165" y="268" font-family="EB Garamond, serif" font-size="11" fill="#4E5B54">U</text>
   <circle cx="235" cy="350" r="55" fill="none" stroke="#1A5C38" stroke-width="1.3"/>
   <circle cx="258" cy="356" r="24" fill="#277548" fill-opacity="0.4" stroke="#277548" stroke-width="1.3"/>
-  <text x="200" y="318" font-family="Georgia,serif" font-size="13" fill="#233028">A</text>
-  <text x="255" y="361" font-family="Georgia,serif" font-size="11" fill="#233028">B</text>
-  <text x="265" y="430" text-anchor="middle" font-family="Georgia,serif" font-size="10.5" fill="#233028">B &sub; A (proper subset)</text>
+  <text x="200" y="318" font-family="EB Garamond, serif" font-size="13" fill="#233028">A</text>
+  <text x="255" y="361" font-family="EB Garamond, serif" font-size="11" fill="#233028">B</text>
+  <text x="265" y="430" text-anchor="middle" font-family="EB Garamond, serif" font-size="10.5" fill="#233028">B &sub; A (proper subset)</text>
 
   <rect x="430" y="250" width="230" height="200" rx="4" fill="none" stroke="#4E5B54" stroke-width="1.3"/>
-  <text x="445" y="268" font-family="Georgia,serif" font-size="11" fill="#4E5B54">U</text>
+  <text x="445" y="268" font-family="EB Garamond, serif" font-size="11" fill="#4E5B54">U</text>
   <circle cx="545" cy="350" r="55" fill="#8A6D1F" fill-opacity="0.35" stroke="#8A6D1F" stroke-width="1.3"/>
-  <text x="545" y="355" text-anchor="middle" font-family="Georgia,serif" font-size="12" fill="#233028">A&prime;</text>
+  <text x="545" y="355" text-anchor="middle" font-family="EB Garamond, serif" font-size="12" fill="#233028">A&prime;</text>
   <circle cx="545" cy="350" r="30" fill="#F4FAF6" stroke="#1A5C38" stroke-width="1.3"/>
-  <text x="545" y="354" text-anchor="middle" font-family="Georgia,serif" font-size="11" fill="#233028">A</text>
-  <text x="545" y="430" text-anchor="middle" font-family="Georgia,serif" font-size="10.5" fill="#233028">A&prime; = complement of A (shaded)</text>
+  <text x="545" y="354" text-anchor="middle" font-family="EB Garamond, serif" font-size="11" fill="#233028">A</text>
+  <text x="545" y="430" text-anchor="middle" font-family="EB Garamond, serif" font-size="10.5" fill="#233028">A&prime; = complement of A (shaded)</text>
 </svg>
 </div>
 </div>
@@ -1841,15 +1841,15 @@ tfoot { display: table-footer-group; }
 <div class="mind-map-container" style="margin:3mm 0;">
 <svg viewBox="0 0 600 460" width="480" height="368" xmlns="http://www.w3.org/2000/svg" style="max-width:100%;display:block;margin:0 auto;">
   <path d="M285,220 L285.0,90.0 A130,130 0 0 1 325.2,96.4 Z" fill="#1A5C38" stroke="#FFFFFF" stroke-width="1.5"/>
-  <text x="310.0" y="62.0" text-anchor="start" font-family="Georgia,serif" font-size="10.5" fill="#233028">Photography (6, 18&deg;)</text>
+  <text x="310.0" y="62.0" text-anchor="start" font-family="EB Garamond, serif" font-size="10.5" fill="#233028">Photography (6, 18&deg;)</text>
   <path d="M285,220 L325.2,96.4 A130,130 0 0 1 408.6,260.2 Z" fill="#277548" stroke="#FFFFFF" stroke-width="1.5"/>
-  <text x="427.6" y="147.4" text-anchor="start" font-family="Georgia,serif" font-size="10.5" fill="#233028">Clay Modelling (30, 90&deg;)</text>
+  <text x="427.6" y="147.4" text-anchor="start" font-family="EB Garamond, serif" font-size="10.5" fill="#233028">Clay Modelling (30, 90&deg;)</text>
   <path d="M285,220 L408.6,260.2 A130,130 0 0 1 161.4,260.2 Z" fill="#4E9B71" stroke="#FFFFFF" stroke-width="1.5"/>
-  <text x="285.0" y="380.0" text-anchor="middle" font-family="Georgia,serif" font-size="10.5" fill="#233028">Kitchen Gardening (48, 144&deg;)</text>
+  <text x="285.0" y="380.0" text-anchor="middle" font-family="EB Garamond, serif" font-size="10.5" fill="#233028">Kitchen Gardening (48, 144&deg;)</text>
   <path d="M285,220 L161.4,260.2 A130,130 0 0 1 161.4,179.8 Z" fill="#8FBFA3" stroke="#FFFFFF" stroke-width="1.5"/>
-  <text x="125.0" y="220.0" text-anchor="end" font-family="Georgia,serif" font-size="10.5" fill="#233028">Doll Making (12, 36&deg;)</text>
+  <text x="125.0" y="220.0" text-anchor="end" font-family="EB Garamond, serif" font-size="10.5" fill="#233028">Doll Making (12, 36&deg;)</text>
   <path d="M285,220 L161.4,179.8 A130,130 0 0 1 285.0,90.0 Z" fill="#C4DDD0" stroke="#FFFFFF" stroke-width="1.5"/>
-  <text x="191.0" y="90.6" text-anchor="end" font-family="Georgia,serif" font-size="10.5" fill="#233028">Book Binding (24, 72&deg;)</text>
+  <text x="191.0" y="90.6" text-anchor="end" font-family="EB Garamond, serif" font-size="10.5" fill="#233028">Book Binding (24, 72&deg;)</text>
 </svg>
 </div>
 <div class="worked-example avoid-break">
@@ -2359,7 +2359,7 @@ tfoot { display: table-footer-group; }
 <p class="ex-step">Direct method: Variance = 0.051/15 = 0.0034. Shortcut method: Variance = 0.4643/15 &minus; (0.166)&sup2; = 0.0310&minus;0.0276 = 0.0034 &mdash; both methods agree exactly.</p>
 <p class="ex-answer">Standard Deviation = &radic;0.0034 = <strong>0.058%</strong>.</p>
 </div>
-<div class="formula-box"><p class="formula-text">The Empirical Rule: about 68% of values lie within &plusmn;1&sigma; of the mean, about 95% within &plusmn;2&sigma;, and about 99% within &plusmn;3&sigma;</p><hr class="var-divider"><p class="formula-vars"><strong>Standard Score (Z-score)</strong> = (x&minus;m)/&sigma; &mdash; tells you how many standard deviations a given observation sits above or below the mean. In the impurity example above, a reading of 0.108 gives Z=(0.108&minus;0.166)/0.058=&minus;1, meaning it sits exactly 1 S.D. below the mean.</p></div>
+<div class="formula-box"><p class="formula-text">Coverage, on ICMAI&rsquo;s own figures: X&#772; &plusmn; S.D. covers <strong>68.27%</strong> of the total terms &nbsp;&middot;&nbsp; X&#772; &plusmn; 2 S.D. covers <strong>95.45%</strong> &nbsp;&middot;&nbsp; X&#772; &plusmn; 3 S.D. covers <strong>99.73%</strong></p><hr class="var-divider"><p class="formula-vars"><strong>Standard Score (Z-score)</strong> = (x&minus;m)/&sigma; &mdash; tells you how many standard deviations a given observation sits above or below the mean. In the impurity example above, a reading of 0.108 gives Z=(0.108&minus;0.166)/0.058=&minus;1, meaning it sits exactly 1 S.D. below the mean.</p></div>
 </div>
 
 <div class="page page-break">
@@ -2376,7 +2376,7 @@ tfoot { display: table-footer-group; }
 <p class="ex-step">Mean = 1,24,950/100 = 1,249.5. Working out f(x&minus;m)&sup2; for every class and summing gives &Sigma;f(x&minus;m)&sup2; = 66,80,000.</p>
 <p class="ex-answer">Variance = 66,80,000/100 = <strong>66,800</strong> (&#8377;&rsquo;000)&sup2;. Standard Deviation = &radic;66,800 = <strong>&#8377;258.46 (&rsquo;000)</strong>.</p>
 </div>
-<div class="shortcut-box"><span class="shortcut-label">&#9889; SHORTCUT</span> Standard Deviation is the single most important dispersion measure precisely because it: (1) uses every observation, (2) never loses the sign problem that plagued Mean Deviation, since squaring makes everything positive automatically, and (3) supports the Empirical Rule for estimating what proportion of data falls in any given range — none of Range, QD, or MD can do that.</div>
+<div class="shortcut-box"><span class="shortcut-label">&#9889; SHORTCUT</span> Standard Deviation is, in ICMAI&rsquo;s own words, &ldquo;the most important measure of dispersion and is widely used.&rdquo; Three reasons: (1) it uses every observation, unlike Range and Quartile Deviation, which each rest on only two values; (2) it overcomes Mean Deviation&rsquo;s drawback of ignoring the algebraic sign, by squaring the deviations so that all of them become positive; and (3) it is the only measure ICMAI&rsquo;s coverage table carries beyond a single multiple &mdash; X&#772; &plusmn; S.D., &plusmn; 2 S.D. and &plusmn; 3 S.D. are all listed, while Q.D. and M.D. get one figure each.</div>
 </div>
 
 <!-- ============ SD SHORTCUT AND STEP-DEVIATION ============ -->
@@ -2435,7 +2435,7 @@ tfoot { display: table-footer-group; }
   <li>The S.D. of the first n natural numbers = &radic;[(n&sup2;&minus;1)/12].</li>
   <li>For any set of observations, <strong>Standard Deviation is always &ge; Mean Deviation</strong>.</li>
 </ol>
-<div class="formula-box"><p class="formula-text">Relation between the dispersion measures: Q.D. = &#8532;(S.D.) &nbsp;&nbsp;&middot;&nbsp;&nbsp; M.D. = &#8536;(S.D.)</p><hr class="var-divider"><p class="formula-vars">Also: Mean &plusmn; Q.D. covers roughly the middle 50% of the data; Mean &plusmn; M.D. covers roughly the middle 57.5%; and Mean &plusmn; S.D. covers roughly the middle 68% (matching the Empirical Rule).</p></div>
+<div class="formula-box"><p class="formula-text">Relation between the dispersion measures: Q.D. = &#8532;(S.D.) &nbsp;&nbsp;&middot;&nbsp;&nbsp; M.D. = &#8536;(S.D.)</p><hr class="var-divider"><p class="formula-vars">ICMAI lists the coverage of each measure exactly: X&#772; &plusmn; Q.D. covers <strong>50%</strong> of the total terms; X&#772; &plusmn; M.D. covers <strong>57.51%</strong>; X&#772; &plusmn; S.D. covers <strong>68.27%</strong>; X&#772; &plusmn; 2 S.D. covers <strong>95.45%</strong>; and X&#772; &plusmn; 3 S.D. covers <strong>99.73%</strong>. Learn the exact figures &mdash; a rounded &ldquo;about 99%&rdquo; is a wrong option in an MCQ that offers 99.73%.</p></div>
 <div class="shortcut-box"><span class="shortcut-label">&#9889; SHORTCUT</span> Remember the ratio chain QD : MD : SD = (2/3) : (4/5) : 1 — or equivalently 0.667 : 0.8 : 1 — a favourite fill-in-the-blank across all four papers whenever only one of the three is given and the other two must be derived.</div>
 </div>
 
@@ -2494,7 +2494,7 @@ tfoot { display: table-footer-group; }
 <p>&#9312; Central tendency: AM (3 methods), GM (ratios/growth), HM (rates), Median (positional, odd/even/grouped), Mode (most frequent; Mean&minus;Mode=3(Mean&minus;Median)).</p>
 <p>&#9313; Dispersion, distance measures: Range=Highest&minus;Lowest. QD=(Q&#8323;&minus;Q&#8321;)/2 — both use only 2 values.</p>
 <p>&#9314; Dispersion, average-deviation measures: MD=&Sigma;|X&minus;A|/n (A=Mean/Median/Mode). SD=&radic;[&Sigma;(X&minus;Mean)&sup2;/N], the most important measure — 3 grouped methods (direct/&#8203;shortcut/&#8203;step-deviation).</p>
-<p>&#9315; QD:MD:SD = &#8532;:&#8536;:1. CV=SD/Mean&times;100 — the ONLY unit-free measure, essential for comparing differently-scaled distributions.</p>
+<p>&#9315; QD:MD:SD = &#8532;:&#8536;:1. CV=SD/Mean&times;100 — a PURE NUMBER, independent of the units of measurement (ICMAI&rsquo;s own wording), which is what makes it suitable for comparing the variability of two or more series. Higher CV = more variable.</p>
 <p>&#9316; Skewness: Mean=Median=Mode → symmetrical. Mode&lt;Median&lt;Mean → positive skew (tail right). Mode&gt;Median&gt;Mean → negative skew (tail left).</p>
 <p>&#9317; Karl Pearson's Sk=(Mean&minus;Mode)/SD, most-used in practice. Bowley's Sk=(Q&#8323;+Q&#8321;&minus;2Md)/(Q&#8323;&minus;Q&#8321;), ranges &plusmn;1. CV and Skewness can diverge — always check BOTH independently, never assume one implies the other.</p>
 </div>

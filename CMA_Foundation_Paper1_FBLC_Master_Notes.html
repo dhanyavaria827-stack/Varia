@@ -47,7 +47,7 @@
 }
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
 @page { size: A4; margin: 22mm 18mm 20mm 24mm; @top-center { content: "ICMAI · CMA FOUNDATION · PAPER 1 — FBLC · MASTER NOTES"; font-family: "Cormorant Garamond", Georgia, serif; font-weight: 300; font-size: 8pt; letter-spacing: 0.15em; text-transform: uppercase; color: #6B7280; } @bottom-center { content: "CMA Foundation · Business Laws & Communication"; font-family: "Cormorant Garamond", Georgia, serif; font-weight: 300; font-size: 7.5pt; color: #6B7280; } @bottom-left { content: "\00A9  Dhanya Varia"; font-family: "EB Garamond", serif; font-size: 9pt; font-weight: 600; font-style: italic; letter-spacing: 0.04em; color: #1A5C38; } @bottom-right { content: counter(page); font-family: "Cormorant Garamond", Georgia, serif; font-weight: 600; font-size: 9pt; color: #1A5C38; } }
-body { font-family: var(--font-body); font-size: 11pt; line-height: 1.7; color: var(--ink); background: var(--white); overflow-wrap: break-word; }
+body { font-family: var(--font-body); font-size: 11pt; line-height: 1.7; color: var(--ink); background: var(--white); }
 .page { position: relative; min-height: 1mm; }
 
 .page-break { page-break-before: always; break-before: page; }
@@ -105,7 +105,7 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.7; color: 
 .comparison-table { width: 100%; border-collapse: collapse; margin: 12px 0; }
 .comparison-table tr { page-break-inside: avoid; break-inside: avoid; }
 .comparison-table th { background: var(--green-deep); color: var(--white); font-family: var(--font-head); font-weight: 600; font-size: 10pt; text-transform: uppercase; letter-spacing: 0.04em; padding: 6px 10px; text-align: left; }
-.comparison-table td { padding: 5px 10px; border: 1px solid var(--border-light); font-family: var(--font-body); font-size: 10pt; vertical-align: top; overflow-wrap: break-word; }
+.comparison-table td { padding: 5px 10px; border: 1px solid var(--border-light); font-family: var(--font-body); font-size: 10pt; vertical-align: top; }
 .comparison-table tbody tr:nth-child(odd) td { background: var(--green-faint); }
 thead { display: table-header-group; }
 tfoot { display: table-footer-group; }
@@ -2059,7 +2059,7 @@ tfoot { display: table-footer-group; }
   <p class="ex-label">Concept Check 3 — Applying Section 138's Timeline</p>
   <p class="ex-step">GIVEN: A's cheque to B, drawn on 1 January, is presented on 15 March and returned unpaid on 18 March for insufficient funds. B learns of the dishonour on 20 March.</p>
   <p class="ex-step">STEP 1: presentation on 15 March is within 3 months of 1 January — condition (a) satisfied.</p>
-  <p class="ex-step">STEP 2: B must give written notice within 30 days of 20 March — i.e. by roughly 19 April.</p>
+  <p class="ex-step">STEP 2: B must give written notice within 30 days of 20 March — i.e. by 19 April.</p>
   <p class="ex-step">STEP 3: once A receives that notice, A has 15 days to pay before the Section 138 offence is complete.</p>
   <p class="ex-answer">ANSWER: B's notice deadline is ~19 April; A's payment deadline is 15 days after actually receiving that notice — only if A fails to pay within that window does the Section 138 offence become complete.</p>
 </div>

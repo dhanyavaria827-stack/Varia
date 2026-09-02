@@ -64,6 +64,12 @@ body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color:
 .cover-subtitle { font-family: var(--font-head); font-weight: 300; font-size: 13pt; letter-spacing: 0.06em; color: var(--green-mid); text-align: center; }
 .module-title { font-family: var(--font-display); font-weight: 400; font-size: 38pt; letter-spacing: 0.06em; text-transform: uppercase; text-align: center; color: var(--white); line-height: 1.2; }
 .section-header { font-family: var(--font-head); font-weight: 600; font-size: 16pt; color: var(--green-deep); margin: 8mm 0 4mm; letter-spacing: 0.03em; overflow: hidden; page-break-after: avoid; break-after: avoid; }
+.point-list { margin: 8px 0 10px 0; padding-left: 6mm; list-style: none; }
+.point-list li { position: relative; margin-bottom: 8px; padding-left: 5mm; line-height: 1.55; font-family: var(--font-body); font-size: 10.3pt; color: var(--ink); }
+.point-list li::before { content: "•"; position: absolute; left: 0; color: var(--green-deep); font-weight: 700; font-size: 12pt; line-height: 1.4; }
+.point-list.numbered { counter-reset: pointnum; }
+.point-list.numbered li { counter-increment: pointnum; padding-left: 7mm; }
+.point-list.numbered li::before { content: counter(pointnum) "."; font-family: var(--font-head); font-weight: 700; font-size: 10.3pt; width: 6mm; }
 .body { font-family: var(--font-body); font-size: 11pt; line-height: 1.65; color: var(--ink); }
 .numeric { font-family: var(--font-mono); font-size: 10pt; line-height: 1.5; }
 .table-header { font-family: var(--font-head); font-weight: 600; font-size: 10pt; text-transform: uppercase; letter-spacing: 0.05em; color: var(--white); background: var(--green-deep); }
@@ -307,48 +313,48 @@ tfoot { display: table-footer-group; }
     <circle cx="400" cy="250" r="48" fill="#1A5C38"/>
     <text x="400" y="246" text-anchor="middle" font-family="Cormorant Garamond, Garamond Math, serif" font-weight="700" font-size="12" fill="#FFFFFF">PAPER 2</text>
     <text x="400" y="262" text-anchor="middle" font-family="Cormorant Garamond, Garamond Math, serif" font-weight="700" font-size="11" fill="#FFFFFF">FFCA</text>
-    <rect x="110" y="90" width="110" height="36" rx="4" fill="#EAF4EE" stroke="#1A5C38" stroke-width="1.5"/>
+    <rect x="110" y="90" width="110" height="37.37" rx="4" fill="#EAF4EE" stroke="#1A5C38" stroke-width="1.5"/>
     <text x="165" y="106" text-anchor="middle" font-family="Cormorant Garamond, Garamond Math, serif" font-weight="600" font-size="9" fill="#1A5C38">M1 &#183; FUNDAMENTALS</text>
     <text x="165" y="118" text-anchor="middle" font-family="Cormorant Garamond, Garamond Math, serif" font-weight="600" font-size="9" fill="#1A5C38">WEIGHT 30%</text>
-    <circle cx="245" cy="108" r="13" fill="#277548"/>
+    <circle cx="245" cy="108" r="16" fill="#277548"/>
     <text x="245" y="112" text-anchor="middle" font-family="Cormorant Garamond, Garamond Math, serif" font-weight="700" font-size="10" fill="#FFFFFF">15</text>
     <rect x="580" y="90" width="110" height="36" rx="4" fill="#EAF4EE" stroke="#1A5C38" stroke-width="1.5"/>
     <text x="635" y="106" text-anchor="middle" font-family="Cormorant Garamond, Garamond Math, serif" font-weight="600" font-size="9" fill="#1A5C38">M2 &#183; SPECIAL TXNS</text>
     <text x="635" y="118" text-anchor="middle" font-family="Cormorant Garamond, Garamond Math, serif" font-weight="600" font-size="9" fill="#1A5C38">WEIGHT 15%</text>
-    <circle cx="555" cy="108" r="13" fill="#277548"/>
+    <circle cx="555" cy="108" r="16" fill="#277548"/>
     <text x="555" y="112" text-anchor="middle" font-family="Cormorant Garamond, Garamond Math, serif" font-weight="700" font-size="10" fill="#FFFFFF">7&#8211;8</text>
     <rect x="110" y="370" width="110" height="36" rx="4" fill="#EAF4EE" stroke="#1A5C38" stroke-width="1.5"/>
     <text x="165" y="386" text-anchor="middle" font-family="Cormorant Garamond, Garamond Math, serif" font-weight="600" font-size="9" fill="#1A5C38">M3 &#183; FINAL ACCOUNTS</text>
     <text x="165" y="398" text-anchor="middle" font-family="Cormorant Garamond, Garamond Math, serif" font-weight="600" font-size="9" fill="#1A5C38">WEIGHT 25%</text>
-    <circle cx="245" cy="388" r="13" fill="#1A5C38"/>
+    <circle cx="245" cy="388" r="16" fill="#1A5C38"/>
     <text x="245" y="392" text-anchor="middle" font-family="Cormorant Garamond, Garamond Math, serif" font-weight="700" font-size="9" fill="#FFFFFF">12&#8211;13</text>
-    <rect x="580" y="370" width="110" height="36" rx="4" fill="#EAF4EE" stroke="#1A5C38" stroke-width="1.5"/>
+    <rect x="578.81" y="370" width="112.38" height="37.37" rx="4" fill="#EAF4EE" stroke="#1A5C38" stroke-width="1.5"/>
     <text x="635" y="386" text-anchor="middle" font-family="Cormorant Garamond, Garamond Math, serif" font-weight="600" font-size="9" fill="#1A5C38">M4 &#183; COST ACCOUNTING</text>
     <text x="635" y="398" text-anchor="middle" font-family="Cormorant Garamond, Garamond Math, serif" font-weight="600" font-size="9" fill="#1A5C38">WEIGHT 30%</text>
-    <circle cx="555" cy="388" r="13" fill="#1A5C38"/>
+    <circle cx="555" cy="388" r="16" fill="#1A5C38"/>
     <text x="555" y="392" text-anchor="middle" font-family="Cormorant Garamond, Garamond Math, serif" font-weight="700" font-size="10" fill="#FFFFFF">15</text>
-    <rect x="40" y="15" width="130" height="30" rx="3" fill="none" stroke="#C4DDD0" stroke-width="1"/>
+    <rect x="40" y="13.76" width="130" height="33.32" rx="3" fill="none" stroke="#C4DDD0" stroke-width="1"/>
     <text x="105" y="27" text-anchor="middle" font-family="EB Garamond, Garamond Math, serif" font-style="italic" font-size="8" fill="#111111">Golden Rules &amp; Equation</text>
     <text x="105" y="39" text-anchor="middle" font-family="EB Garamond, Garamond Math, serif" font-style="italic" font-size="7.5" fill="#6B7280">A = L + E, always</text>
-    <rect x="190" y="15" width="130" height="30" rx="3" fill="none" stroke="#C4DDD0" stroke-width="1"/>
+    <rect x="190" y="13.76" width="130" height="33.32" rx="3" fill="none" stroke="#C4DDD0" stroke-width="1"/>
     <text x="255" y="27" text-anchor="middle" font-family="EB Garamond, Garamond Math, serif" font-style="italic" font-size="8" fill="#111111">Journal &#8594; Ledger &#8594; TB</text>
     <text x="255" y="39" text-anchor="middle" font-family="EB Garamond, Garamond Math, serif" font-style="italic" font-size="7.5" fill="#6B7280">plus BRS, depreciation, bad debts</text>
-    <rect x="450" y="15" width="130" height="30" rx="3" fill="none" stroke="#C4DDD0" stroke-width="1"/>
+    <rect x="450" y="13.76" width="130" height="33.32" rx="3" fill="none" stroke="#C4DDD0" stroke-width="1"/>
     <text x="515" y="27" text-anchor="middle" font-family="EB Garamond, Garamond Math, serif" font-style="italic" font-size="8" fill="#111111">Consignment &#183; Joint Venture</text>
     <text x="515" y="39" text-anchor="middle" font-family="EB Garamond, Garamond Math, serif" font-style="italic" font-size="7.5" fill="#6B7280">2.1 and 2.2</text>
-    <rect x="610" y="15" width="130" height="30" rx="3" fill="none" stroke="#C4DDD0" stroke-width="1"/>
+    <rect x="610" y="13.76" width="130" height="33.32" rx="3" fill="none" stroke="#C4DDD0" stroke-width="1"/>
     <text x="675" y="27" text-anchor="middle" font-family="EB Garamond, Garamond Math, serif" font-style="italic" font-size="8" fill="#111111">Bills of Exchange</text>
     <text x="675" y="39" text-anchor="middle" font-family="EB Garamond, Garamond Math, serif" font-style="italic" font-size="7.5" fill="#6B7280">2.3</text>
-    <rect x="40" y="455" width="130" height="30" rx="3" fill="none" stroke="#C4DDD0" stroke-width="1"/>
+    <rect x="40" y="453.76" width="130" height="33.32" rx="3" fill="none" stroke="#C4DDD0" stroke-width="1"/>
     <text x="105" y="467" text-anchor="middle" font-family="EB Garamond, Garamond Math, serif" font-style="italic" font-size="8" fill="#111111">Sole Proprietorship</text>
     <text x="105" y="479" text-anchor="middle" font-family="EB Garamond, Garamond Math, serif" font-style="italic" font-size="7.5" fill="#6B7280">3.1 &#183; Trading, P&amp;L, B/S</text>
-    <rect x="190" y="455" width="130" height="30" rx="3" fill="none" stroke="#C4DDD0" stroke-width="1"/>
+    <rect x="190" y="453.76" width="130" height="33.32" rx="3" fill="none" stroke="#C4DDD0" stroke-width="1"/>
     <text x="255" y="467" text-anchor="middle" font-family="EB Garamond, Garamond Math, serif" font-style="italic" font-size="8" fill="#111111">Not-for-Profit</text>
     <text x="255" y="479" text-anchor="middle" font-family="EB Garamond, Garamond Math, serif" font-style="italic" font-size="7.5" fill="#6B7280">3.2 &#183; Receipts &amp; Payments, I&amp;E</text>
-    <rect x="450" y="455" width="130" height="30" rx="3" fill="none" stroke="#C4DDD0" stroke-width="1"/>
+    <rect x="450" y="453.76" width="130" height="33.32" rx="3" fill="none" stroke="#C4DDD0" stroke-width="1"/>
     <text x="515" y="467" text-anchor="middle" font-family="EB Garamond, Garamond Math, serif" font-style="italic" font-size="8" fill="#111111">Cost Concepts &amp; Elements</text>
     <text x="515" y="479" text-anchor="middle" font-family="EB Garamond, Garamond Math, serif" font-style="italic" font-size="7.5" fill="#6B7280">4.1&#8211;4.4</text>
-    <rect x="610" y="455" width="130" height="30" rx="3" fill="none" stroke="#C4DDD0" stroke-width="1"/>
+    <rect x="610" y="453.76" width="130" height="33.32" rx="3" fill="none" stroke="#C4DDD0" stroke-width="1"/>
     <text x="675" y="467" text-anchor="middle" font-family="EB Garamond, Garamond Math, serif" font-style="italic" font-size="8" fill="#111111">Cost Sheet (CAS-1)</text>
     <text x="675" y="479" text-anchor="middle" font-family="EB Garamond, Garamond Math, serif" font-style="italic" font-size="7.5" fill="#6B7280">4.5 &#183; the sequence is the mark</text>
   </svg>
@@ -442,40 +448,40 @@ tfoot { display: table-footer-group; }
     <circle cx="400" cy="250" r="48" fill="#1A5C38"/>
     <text x="400" y="246" text-anchor="middle" font-family="Cormorant Garamond, Garamond Math, serif" font-weight="700" font-size="10" fill="#FFFFFF">MODULE 1</text>
     <text x="400" y="260" text-anchor="middle" font-family="Cormorant Garamond, Garamond Math, serif" font-weight="700" font-size="10" fill="#FFFFFF">FUNDAMENTALS</text>
-    <rect x="110" y="90" width="110" height="36" rx="4" fill="#EAF4EE" stroke="#1A5C38" stroke-width="1.5"/>
+    <rect x="110" y="90" width="110" height="37.37" rx="4" fill="#EAF4EE" stroke="#1A5C38" stroke-width="1.5"/>
     <text x="165" y="106" text-anchor="middle" font-family="Cormorant Garamond, Garamond Math, serif" font-weight="600" font-size="9" fill="#1A5C38">FOUNDATIONS</text>
     <text x="165" y="118" text-anchor="middle" font-family="Cormorant Garamond, Garamond Math, serif" font-weight="600" font-size="9" fill="#1A5C38">1.1 &#8211; 1.3</text>
     <rect x="580" y="90" width="110" height="36" rx="4" fill="#EAF4EE" stroke="#1A5C38" stroke-width="1.5"/>
     <text x="635" y="106" text-anchor="middle" font-family="Cormorant Garamond, Garamond Math, serif" font-weight="600" font-size="9" fill="#1A5C38">EQUATION &amp; RULES</text>
     <text x="635" y="118" text-anchor="middle" font-family="Cormorant Garamond, Garamond Math, serif" font-weight="600" font-size="9" fill="#1A5C38">1.4</text>
-    <rect x="110" y="370" width="110" height="36" rx="4" fill="#EAF4EE" stroke="#1A5C38" stroke-width="1.5"/>
+    <rect x="110" y="370" width="110" height="37.37" rx="4" fill="#EAF4EE" stroke="#1A5C38" stroke-width="1.5"/>
     <text x="165" y="386" text-anchor="middle" font-family="Cormorant Garamond, Garamond Math, serif" font-weight="600" font-size="9" fill="#1A5C38">RECORDING CHAIN</text>
     <text x="165" y="398" text-anchor="middle" font-family="Cormorant Garamond, Garamond Math, serif" font-weight="600" font-size="9" fill="#1A5C38">1.5 &#8211; 1.7</text>
     <rect x="580" y="370" width="110" height="36" rx="4" fill="#EAF4EE" stroke="#1A5C38" stroke-width="1.5"/>
     <text x="635" y="386" text-anchor="middle" font-family="Cormorant Garamond, Garamond Math, serif" font-weight="600" font-size="9" fill="#1A5C38">ADJUST &amp; CORRECT</text>
     <text x="635" y="398" text-anchor="middle" font-family="Cormorant Garamond, Garamond Math, serif" font-weight="600" font-size="9" fill="#1A5C38">1.8 &#8211; 1.10</text>
-    <rect x="40" y="15" width="130" height="30" rx="3" fill="none" stroke="#C4DDD0" stroke-width="1"/>
+    <rect x="40" y="13.76" width="130" height="33.32" rx="3" fill="none" stroke="#C4DDD0" stroke-width="1"/>
     <text x="105" y="27" text-anchor="middle" font-family="EB Garamond, Garamond Math, serif" font-style="italic" font-size="8" fill="#111111">9 Concepts + 4 Conventions</text>
     <text x="105" y="39" text-anchor="middle" font-family="EB Garamond, Garamond Math, serif" font-style="italic" font-size="7.5" fill="#6B7280">assumptions vs customs (1.2)</text>
-    <rect x="190" y="15" width="130" height="30" rx="3" fill="none" stroke="#C4DDD0" stroke-width="1"/>
+    <rect x="190" y="13.76" width="130" height="33.32" rx="3" fill="none" stroke="#C4DDD0" stroke-width="1"/>
     <text x="255" y="27" text-anchor="middle" font-family="EB Garamond, Garamond Math, serif" font-style="italic" font-size="8" fill="#111111">Capital vs Revenue</text>
     <text x="255" y="39" text-anchor="middle" font-family="EB Garamond, Garamond Math, serif" font-style="italic" font-size="7.5" fill="#6B7280">B/S vs P&amp;L destination (1.3)</text>
-    <rect x="450" y="15" width="130" height="30" rx="3" fill="none" stroke="#C4DDD0" stroke-width="1"/>
+    <rect x="450" y="13.76" width="130" height="33.32" rx="3" fill="none" stroke="#C4DDD0" stroke-width="1"/>
     <text x="515" y="27" text-anchor="middle" font-family="EB Garamond, Garamond Math, serif" font-style="italic" font-size="8" fill="#111111">A = L + E</text>
     <text x="515" y="39" text-anchor="middle" font-family="EB Garamond, Garamond Math, serif" font-style="italic" font-size="7.5" fill="#6B7280">true after every transaction</text>
-    <rect x="610" y="15" width="130" height="30" rx="3" fill="none" stroke="#C4DDD0" stroke-width="1"/>
+    <rect x="610" y="13.76" width="130" height="33.32" rx="3" fill="none" stroke="#C4DDD0" stroke-width="1"/>
     <text x="675" y="27" text-anchor="middle" font-family="EB Garamond, Garamond Math, serif" font-style="italic" font-size="8" fill="#111111">Golden Rules &#183; 3 accounts</text>
     <text x="675" y="39" text-anchor="middle" font-family="EB Garamond, Garamond Math, serif" font-style="italic" font-size="7.5" fill="#6B7280">Personal &#183; Real &#183; Nominal</text>
-    <rect x="40" y="455" width="130" height="30" rx="3" fill="none" stroke="#C4DDD0" stroke-width="1"/>
+    <rect x="40" y="453.76" width="130" height="33.32" rx="3" fill="none" stroke="#C4DDD0" stroke-width="1"/>
     <text x="105" y="467" text-anchor="middle" font-family="EB Garamond, Garamond Math, serif" font-style="italic" font-size="8" fill="#111111">Journal &#8594; Ledger &#8594; TB</text>
     <text x="105" y="479" text-anchor="middle" font-family="EB Garamond, Garamond Math, serif" font-style="italic" font-size="7.5" fill="#6B7280">Cash Book &#183; BRS on the way</text>
-    <rect x="190" y="455" width="130" height="30" rx="3" fill="none" stroke="#C4DDD0" stroke-width="1"/>
+    <rect x="190" y="453.76" width="130" height="33.32" rx="3" fill="none" stroke="#C4DDD0" stroke-width="1"/>
     <text x="255" y="467" text-anchor="middle" font-family="EB Garamond, Garamond Math, serif" font-style="italic" font-size="8" fill="#111111">Trial Balance</text>
     <text x="255" y="479" text-anchor="middle" font-family="EB Garamond, Garamond Math, serif" font-style="italic" font-size="7.5" fill="#6B7280">arithmetical check only (1.7)</text>
-    <rect x="450" y="455" width="130" height="30" rx="3" fill="none" stroke="#C4DDD0" stroke-width="1"/>
+    <rect x="450" y="453.76" width="130" height="33.32" rx="3" fill="none" stroke="#C4DDD0" stroke-width="1"/>
     <text x="515" y="467" text-anchor="middle" font-family="EB Garamond, Garamond Math, serif" font-style="italic" font-size="8" fill="#111111">Errors &amp; Suspense A/c</text>
     <text x="515" y="479" text-anchor="middle" font-family="EB Garamond, Garamond Math, serif" font-style="italic" font-size="7.5" fill="#6B7280">one-sided errors only (1.8)</text>
-    <rect x="610" y="455" width="130" height="30" rx="3" fill="none" stroke="#C4DDD0" stroke-width="1"/>
+    <rect x="610" y="453.76" width="130" height="33.32" rx="3" fill="none" stroke="#C4DDD0" stroke-width="1"/>
     <text x="675" y="467" text-anchor="middle" font-family="EB Garamond, Garamond Math, serif" font-style="italic" font-size="8" fill="#111111">Depreciation &#183; Bad Debts</text>
     <text x="675" y="479" text-anchor="middle" font-family="EB Garamond, Garamond Math, serif" font-style="italic" font-size="7.5" fill="#6B7280">SLM/WDV &#183; Provisions (1.9&#8211;1.10)</text>
   </svg>
@@ -1387,25 +1393,25 @@ tfoot { display: table-footer-group; }
     <rect x="345" y="382" width="110" height="36" rx="4" fill="#EAF4EE" stroke="#1A5C38" stroke-width="1.5"/>
     <text x="400" y="398" text-anchor="middle" font-family="Cormorant Garamond, Garamond Math, serif" font-weight="600" font-size="9" fill="#1A5C38">2.3 BILLS OF EXCHANGE</text>
     <text x="400" y="410" text-anchor="middle" font-family="Cormorant Garamond, Garamond Math, serif" font-weight="600" font-size="9" fill="#1A5C38">Sec 5, NI Act 1881</text>
-    <rect x="40" y="15" width="130" height="30" rx="3" fill="none" stroke="#C4DDD0" stroke-width="1"/>
+    <rect x="40" y="13.76" width="130" height="33.32" rx="3" fill="none" stroke="#C4DDD0" stroke-width="1"/>
     <text x="105" y="27" text-anchor="middle" font-family="EB Garamond, Garamond Math, serif" font-style="italic" font-size="8" fill="#111111">Stock valuation</text>
     <text x="105" y="39" text-anchor="middle" font-family="EB Garamond, Garamond Math, serif" font-style="italic" font-size="7.5" fill="#6B7280">+ non-recurring exp. only</text>
-    <rect x="190" y="15" width="130" height="30" rx="3" fill="none" stroke="#C4DDD0" stroke-width="1"/>
+    <rect x="190" y="13.76" width="130" height="33.32" rx="3" fill="none" stroke="#C4DDD0" stroke-width="1"/>
     <text x="255" y="27" text-anchor="middle" font-family="EB Garamond, Garamond Math, serif" font-style="italic" font-size="8" fill="#111111">Normal vs Abnormal Loss</text>
     <text x="255" y="39" text-anchor="middle" font-family="EB Garamond, Garamond Math, serif" font-style="italic" font-size="7.5" fill="#6B7280">no value vs valued &amp; removed</text>
-    <rect x="450" y="15" width="130" height="30" rx="3" fill="none" stroke="#C4DDD0" stroke-width="1"/>
+    <rect x="450" y="13.76" width="130" height="33.32" rx="3" fill="none" stroke="#C4DDD0" stroke-width="1"/>
     <text x="515" y="27" text-anchor="middle" font-family="EB Garamond, Garamond Math, serif" font-style="italic" font-size="8" fill="#111111">Separate books method</text>
     <text x="515" y="39" text-anchor="middle" font-family="EB Garamond, Garamond Math, serif" font-style="italic" font-size="7.5" fill="#6B7280">JV A/c &#183; Joint Bank &#183; Co-venturers</text>
-    <rect x="610" y="15" width="130" height="30" rx="3" fill="none" stroke="#C4DDD0" stroke-width="1"/>
+    <rect x="610" y="13.76" width="130" height="33.32" rx="3" fill="none" stroke="#C4DDD0" stroke-width="1"/>
     <text x="675" y="27" text-anchor="middle" font-family="EB Garamond, Garamond Math, serif" font-style="italic" font-size="8" fill="#111111">Memorandum method</text>
     <text x="675" y="39" text-anchor="middle" font-family="EB Garamond, Garamond Math, serif" font-style="italic" font-size="7.5" fill="#6B7280">outside double entry</text>
-    <rect x="115" y="452" width="130" height="30" rx="3" fill="none" stroke="#C4DDD0" stroke-width="1"/>
+    <rect x="115" y="450.76" width="130" height="33.32" rx="3" fill="none" stroke="#C4DDD0" stroke-width="1"/>
     <text x="180" y="464" text-anchor="middle" font-family="EB Garamond, Garamond Math, serif" font-style="italic" font-size="8" fill="#111111">Due date + 3 days grace</text>
     <text x="180" y="476" text-anchor="middle" font-family="EB Garamond, Garamond Math, serif" font-style="italic" font-size="7.5" fill="#6B7280">holiday rules flip the date</text>
-    <rect x="335" y="452" width="130" height="30" rx="3" fill="none" stroke="#C4DDD0" stroke-width="1"/>
+    <rect x="335" y="450.76" width="130" height="33.32" rx="3" fill="none" stroke="#C4DDD0" stroke-width="1"/>
     <text x="400" y="464" text-anchor="middle" font-family="EB Garamond, Garamond Math, serif" font-style="italic" font-size="8" fill="#111111">Discount &#183; Endorse &#183; Collect</text>
     <text x="400" y="476" text-anchor="middle" font-family="EB Garamond, Garamond Math, serif" font-style="italic" font-size="7.5" fill="#6B7280">five ways to hold a bill</text>
-    <rect x="555" y="452" width="130" height="30" rx="3" fill="none" stroke="#C4DDD0" stroke-width="1"/>
+    <rect x="555" y="450.76" width="130" height="33.32" rx="3" fill="none" stroke="#C4DDD0" stroke-width="1"/>
     <text x="620" y="464" text-anchor="middle" font-family="EB Garamond, Garamond Math, serif" font-style="italic" font-size="8" fill="#111111">Dishonour &#183; Renewal &#183; Rebate</text>
     <text x="620" y="476" text-anchor="middle" font-family="EB Garamond, Garamond Math, serif" font-style="italic" font-size="7.5" fill="#6B7280">noting charges to acceptor</text>
   </svg>
@@ -1911,28 +1917,28 @@ tfoot { display: table-footer-group; }
     <rect x="565" y="232" width="110" height="36" rx="4" fill="#EAF4EE" stroke="#1A5C38" stroke-width="1.5"/>
     <text x="620" y="248" text-anchor="middle" font-family="Cormorant Garamond, Garamond Math, serif" font-weight="600" font-size="9" fill="#1A5C38">3.2 NOT-FOR-PROFIT</text>
     <text x="620" y="260" text-anchor="middle" font-family="Cormorant Garamond, Garamond Math, serif" font-weight="600" font-size="9" fill="#1A5C38">service-seeking</text>
-    <rect x="40" y="105" width="130" height="30" rx="3" fill="none" stroke="#C4DDD0" stroke-width="1"/>
+    <rect x="40" y="103.76" width="130" height="33.32" rx="3" fill="none" stroke="#C4DDD0" stroke-width="1"/>
     <text x="105" y="117" text-anchor="middle" font-family="EB Garamond, Garamond Math, serif" font-style="italic" font-size="8" fill="#111111">Manufacturing &#8594; Trading</text>
     <text x="105" y="129" text-anchor="middle" font-family="EB Garamond, Garamond Math, serif" font-style="italic" font-size="7.5" fill="#6B7280">cost made &#8594; gross profit</text>
-    <rect x="190" y="105" width="130" height="30" rx="3" fill="none" stroke="#C4DDD0" stroke-width="1"/>
+    <rect x="190" y="103.76" width="130" height="33.32" rx="3" fill="none" stroke="#C4DDD0" stroke-width="1"/>
     <text x="255" y="117" text-anchor="middle" font-family="EB Garamond, Garamond Math, serif" font-style="italic" font-size="8" fill="#111111">P&amp;L &#8594; Balance Sheet</text>
     <text x="255" y="129" text-anchor="middle" font-family="EB Garamond, Garamond Math, serif" font-style="italic" font-size="7.5" fill="#6B7280">net profit &#8594; capital</text>
-    <rect x="40" y="365" width="130" height="30" rx="3" fill="none" stroke="#C4DDD0" stroke-width="1"/>
+    <rect x="40" y="363.76" width="130" height="33.32" rx="3" fill="none" stroke="#C4DDD0" stroke-width="1"/>
     <text x="105" y="377" text-anchor="middle" font-family="EB Garamond, Garamond Math, serif" font-style="italic" font-size="8" fill="#111111">Adjustments: inside TB = 1 hit</text>
     <text x="105" y="389" text-anchor="middle" font-family="EB Garamond, Garamond Math, serif" font-style="italic" font-size="7.5" fill="#6B7280">outside TB = 2 hits</text>
-    <rect x="190" y="365" width="130" height="30" rx="3" fill="none" stroke="#C4DDD0" stroke-width="1"/>
+    <rect x="190" y="363.76" width="130" height="33.32" rx="3" fill="none" stroke="#C4DDD0" stroke-width="1"/>
     <text x="255" y="377" text-anchor="middle" font-family="EB Garamond, Garamond Math, serif" font-style="italic" font-size="8" fill="#111111">Marshalling</text>
     <text x="255" y="389" text-anchor="middle" font-family="EB Garamond, Garamond Math, serif" font-style="italic" font-size="7.5" fill="#6B7280">rigidity &#183; liquidity &#183; mixed</text>
-    <rect x="480" y="105" width="130" height="30" rx="3" fill="none" stroke="#C4DDD0" stroke-width="1"/>
+    <rect x="480" y="103.76" width="130" height="33.32" rx="3" fill="none" stroke="#C4DDD0" stroke-width="1"/>
     <text x="545" y="117" text-anchor="middle" font-family="EB Garamond, Garamond Math, serif" font-style="italic" font-size="8" fill="#111111">R&amp;P A/c: cash, any period</text>
     <text x="545" y="129" text-anchor="middle" font-family="EB Garamond, Garamond Math, serif" font-style="italic" font-size="7.5" fill="#6B7280">real account</text>
-    <rect x="630" y="105" width="130" height="30" rx="3" fill="none" stroke="#C4DDD0" stroke-width="1"/>
+    <rect x="630" y="103.76" width="130" height="33.32" rx="3" fill="none" stroke="#C4DDD0" stroke-width="1"/>
     <text x="695" y="117" text-anchor="middle" font-family="EB Garamond, Garamond Math, serif" font-style="italic" font-size="8" fill="#111111">I&amp;E A/c: accrual, this period</text>
     <text x="695" y="129" text-anchor="middle" font-family="EB Garamond, Garamond Math, serif" font-style="italic" font-size="7.5" fill="#6B7280">nominal account</text>
-    <rect x="480" y="365" width="130" height="30" rx="3" fill="none" stroke="#C4DDD0" stroke-width="1"/>
+    <rect x="480" y="363.76" width="130" height="33.32" rx="3" fill="none" stroke="#C4DDD0" stroke-width="1"/>
     <text x="545" y="377" text-anchor="middle" font-family="EB Garamond, Garamond Math, serif" font-style="italic" font-size="8" fill="#111111">Subscriptions on accrual</text>
     <text x="545" y="389" text-anchor="middle" font-family="EB Garamond, Garamond Math, serif" font-style="italic" font-size="7.5" fill="#6B7280">the four-adjustment account</text>
-    <rect x="630" y="365" width="130" height="30" rx="3" fill="none" stroke="#C4DDD0" stroke-width="1"/>
+    <rect x="630" y="363.76" width="130" height="33.32" rx="3" fill="none" stroke="#C4DDD0" stroke-width="1"/>
     <text x="695" y="377" text-anchor="middle" font-family="EB Garamond, Garamond Math, serif" font-style="italic" font-size="8" fill="#111111">Funds: capital vs special</text>
     <text x="695" y="389" text-anchor="middle" font-family="EB Garamond, Garamond Math, serif" font-style="italic" font-size="7.5" fill="#6B7280">legacy &#183; life fees &#183; donations</text>
   </svg>
@@ -2301,7 +2307,7 @@ tfoot { display: table-footer-group; }
     <rect x="110" y="90" width="110" height="36" rx="4" fill="#EAF4EE" stroke="#1A5C38" stroke-width="1.5"/>
     <text x="165" y="106" text-anchor="middle" font-family="Cormorant Garamond, Garamond Math, serif" font-weight="600" font-size="9" fill="#1A5C38">MEANING &amp; ROLE</text>
     <text x="165" y="118" text-anchor="middle" font-family="Cormorant Garamond, Garamond Math, serif" font-weight="600" font-size="9" fill="#1A5C38">4.1 &#8211; 4.2</text>
-    <rect x="580" y="90" width="110" height="36" rx="4" fill="#EAF4EE" stroke="#1A5C38" stroke-width="1.5"/>
+    <rect x="580" y="90" width="110" height="37.37" rx="4" fill="#EAF4EE" stroke="#1A5C38" stroke-width="1.5"/>
     <text x="635" y="106" text-anchor="middle" font-family="Cormorant Garamond, Garamond Math, serif" font-weight="600" font-size="9" fill="#1A5C38">THE VOCABULARY</text>
     <text x="635" y="118" text-anchor="middle" font-family="Cormorant Garamond, Garamond Math, serif" font-weight="600" font-size="9" fill="#1A5C38">4.3</text>
     <rect x="110" y="370" width="110" height="36" rx="4" fill="#EAF4EE" stroke="#1A5C38" stroke-width="1.5"/>
@@ -2310,28 +2316,28 @@ tfoot { display: table-footer-group; }
     <rect x="580" y="370" width="110" height="36" rx="4" fill="#EAF4EE" stroke="#1A5C38" stroke-width="1.5"/>
     <text x="635" y="386" text-anchor="middle" font-family="Cormorant Garamond, Garamond Math, serif" font-weight="600" font-size="9" fill="#1A5C38">COST SHEET</text>
     <text x="635" y="398" text-anchor="middle" font-family="Cormorant Garamond, Garamond Math, serif" font-weight="600" font-size="9" fill="#1A5C38">4.5 &#183; the ladder</text>
-    <rect x="40" y="15" width="130" height="30" rx="3" fill="none" stroke="#C4DDD0" stroke-width="1"/>
+    <rect x="40" y="13.76" width="130" height="33.32" rx="3" fill="none" stroke="#C4DDD0" stroke-width="1"/>
     <text x="105" y="27" text-anchor="middle" font-family="EB Garamond, Garamond Math, serif" font-style="italic" font-size="8" fill="#111111">Cost vs Financial Accounting</text>
     <text x="105" y="39" text-anchor="middle" font-family="EB Garamond, Garamond Math, serif" font-style="italic" font-size="7.5" fill="#6B7280">14-point comparison</text>
-    <rect x="190" y="15" width="130" height="30" rx="3" fill="none" stroke="#C4DDD0" stroke-width="1"/>
+    <rect x="190" y="13.76" width="130" height="33.32" rx="3" fill="none" stroke="#C4DDD0" stroke-width="1"/>
     <text x="255" y="27" text-anchor="middle" font-family="EB Garamond, Garamond Math, serif" font-style="italic" font-size="8" fill="#111111">Methods &amp; Systems</text>
     <text x="255" y="39" text-anchor="middle" font-family="EB Garamond, Garamond Math, serif" font-style="italic" font-size="7.5" fill="#6B7280">job &#183; batch &#183; process &#183; operating</text>
-    <rect x="450" y="15" width="130" height="30" rx="3" fill="none" stroke="#C4DDD0" stroke-width="1"/>
+    <rect x="450" y="13.76" width="130" height="33.32" rx="3" fill="none" stroke="#C4DDD0" stroke-width="1"/>
     <text x="515" y="27" text-anchor="middle" font-family="EB Garamond, Garamond Math, serif" font-style="italic" font-size="8" fill="#111111">Centre &#183; Unit &#183; Driver &#183; Object</text>
     <text x="515" y="39" text-anchor="middle" font-family="EB Garamond, Garamond Math, serif" font-style="italic" font-size="7.5" fill="#6B7280">collect &#183; measure &#183; trigger &#183; target</text>
-    <rect x="610" y="15" width="130" height="30" rx="3" fill="none" stroke="#C4DDD0" stroke-width="1"/>
+    <rect x="610" y="13.76" width="130" height="33.32" rx="3" fill="none" stroke="#C4DDD0" stroke-width="1"/>
     <text x="675" y="27" text-anchor="middle" font-family="EB Garamond, Garamond Math, serif" font-style="italic" font-size="8" fill="#111111">Decision costs</text>
     <text x="675" y="39" text-anchor="middle" font-family="EB Garamond, Garamond Math, serif" font-style="italic" font-size="7.5" fill="#6B7280">sunk &#183; opportunity &#183; imputed</text>
-    <rect x="40" y="455" width="130" height="30" rx="3" fill="none" stroke="#C4DDD0" stroke-width="1"/>
+    <rect x="30" y="453.76" width="150" height="33.32" rx="3" fill="none" stroke="#C4DDD0" stroke-width="1"/>
     <text x="105" y="467" text-anchor="middle" font-family="EB Garamond, Garamond Math, serif" font-style="italic" font-size="8" fill="#111111">Five CAS-1 classifications</text>
-    <text x="105" y="479" text-anchor="middle" font-family="EB Garamond, Garamond Math, serif" font-style="italic" font-size="7.5" fill="#6B7280">nature &#183; traceability &#183; function &#183; behaviour &#183; process</text>
-    <rect x="190" y="455" width="130" height="30" rx="3" fill="none" stroke="#C4DDD0" stroke-width="1"/>
+    <text x="105" y="479" text-anchor="middle" font-family="EB Garamond, Garamond Math, serif" font-style="italic" font-size="7.2" fill="#6B7280">nature &#183; traceability &#183; function &#183; behaviour &#183; process</text>
+    <rect x="190" y="453.76" width="130" height="33.32" rx="3" fill="none" stroke="#C4DDD0" stroke-width="1"/>
     <text x="255" y="467" text-anchor="middle" font-family="EB Garamond, Garamond Math, serif" font-style="italic" font-size="8" fill="#111111">Elements of cost</text>
     <text x="255" y="479" text-anchor="middle" font-family="EB Garamond, Garamond Math, serif" font-style="italic" font-size="7.5" fill="#6B7280">material &#183; labour &#183; expenses</text>
-    <rect x="450" y="455" width="130" height="30" rx="3" fill="none" stroke="#C4DDD0" stroke-width="1"/>
+    <rect x="450" y="453.76" width="130" height="33.32" rx="3" fill="none" stroke="#C4DDD0" stroke-width="1"/>
     <text x="515" y="467" text-anchor="middle" font-family="EB Garamond, Garamond Math, serif" font-style="italic" font-size="8" fill="#111111">Prime &#8594; Works &#8594; Production</text>
     <text x="515" y="479" text-anchor="middle" font-family="EB Garamond, Garamond Math, serif" font-style="italic" font-size="7.5" fill="#6B7280">&#8594; COGS &#8594; Cost of Sales &#8594; Sales</text>
-    <rect x="610" y="455" width="130" height="30" rx="3" fill="none" stroke="#C4DDD0" stroke-width="1"/>
+    <rect x="610" y="453.76" width="130" height="33.32" rx="3" fill="none" stroke="#C4DDD0" stroke-width="1"/>
     <text x="675" y="467" text-anchor="middle" font-family="EB Garamond, Garamond Math, serif" font-style="italic" font-size="8" fill="#111111">The exclusions list</text>
     <text x="675" y="479" text-anchor="middle" font-family="EB Garamond, Garamond Math, serif" font-style="italic" font-size="7.5" fill="#6B7280">tax &#183; dividends &#183; interest &#183; donations</text>
   </svg>
